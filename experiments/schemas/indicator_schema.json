@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "indicators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "feature_type": {"type": "string"},
+          "description": {"type": "string"},
+          "description_english": {"type": "string"},
+          "source_variables": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "protocol_reference": {"type": ["string", "null"]},
+          "suggested": {"type": "boolean"},
+          "suggested_reason": {"type": ["string", "null"]},
+          "calculation": {"type": ["string", "null"]}
+        },
+        "required": ["id", "name", "feature_type", "description_english"]
+      }
+    }
+  },
+  "required": ["indicators"]
+}
+

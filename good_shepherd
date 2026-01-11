@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# good_shepherd - Main orchestration script
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+EXPERIMENTS_DIR="$SCRIPT_DIR/experiments"
+
+# Change to experiments directory so imports work correctly
+cd "$EXPERIMENTS_DIR" || exit 1
+
+case "$1" in
+    setup-experiment)
+        shift
+        python3 tools/setup_experiment.py \
+            --experiments-dir "$EXPERIMENTS_DIR" \
+            "$@"
+        ;;
+    process-datasheets)
+        shift
+        python3 tools/process_datasheets.py \
+            --experiments-dir "$EXPERIMENTS_DIR" \
+            "$@"
+        ;;
+    *)
+        echo "Usage: $0 {setup-experiment|process-datasheets|...} [options]"
+        echo ""
+        echo "Commands:"
+        echo "  setup-experiment    Set up a new experiment from protocol and maps"
+        echo "  process-datasheets  Process datasheet images (Phase 2)"
+        exit 1
+        ;;
+esac
+

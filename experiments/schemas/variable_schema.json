@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "feature_type": {"type": "string"},
+          "description": {"type": "string"},
+          "data_type": {"type": "string"},
+          "unit": {"type": "string"},
+          "required": {"type": "boolean"},
+          "constraints": {"type": "object"},
+          "protocol_reference": {"type": "string"},
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "type": {"type": "string"},
+                "required": {"type": "boolean"},
+                "constraints": {"type": "object"},
+                "source": {"type": "string"}
+              },
+              "required": ["name", "type"]
+            }
+          },
+          "collection_instructions": {"type": "string"}
+        },
+        "required": ["id", "name", "feature_type", "description"]
+      }
+    }
+  },
+  "required": ["variables"]
+}
+

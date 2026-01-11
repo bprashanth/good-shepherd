@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "feature_mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kml_feature_name": {"type": "string"},
+          "feature_type": {"type": "string"},
+          "protocol_reference": {"type": "string"},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+        },
+        "required": ["kml_feature_name", "feature_type"]
+      }
+    },
+    "feature_hierarchy": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    },
+    "unmatched_kml": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "missing_protocol": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "required": ["feature_mappings", "feature_hierarchy"]
+}
+

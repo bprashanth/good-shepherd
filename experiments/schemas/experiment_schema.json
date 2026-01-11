@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "created": {"type": "string"},
+    "updated": {"type": "string"},
+    "protocol_files": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "map_files": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "feature_types": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": ["initialized", "features", "variables", "indicators", "mismatches", "html", "setup_complete"]
+        },
+        "features": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "complete", "failed"]
+        },
+        "variables": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "complete", "failed"]
+        },
+        "indicators": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "complete", "failed"]
+        },
+        "mismatches": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "complete", "failed"]
+        },
+        "html": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "complete", "failed"]
+        }
+      },
+      "required": ["stage"]
+    },
+    "status_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stage": {"type": "string"},
+          "timestamp": {"type": "string"}
+        },
+        "required": ["stage", "timestamp"]
+      }
+    }
+  },
+  "required": ["id", "name", "created", "status"]
+}
+
