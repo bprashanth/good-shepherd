@@ -1,0 +1,317 @@
+{
+  "blocks": [
+    {
+      "name": "Bikkapathimund_Shola_A",
+      "geometry_type": "Polygon",
+      "children": [
+        {
+          "type": "transect",
+          "name": "A_T1"
+        },
+        {
+          "type": "transect",
+          "name": "A_T3"
+        },
+        {
+          "type": "transect",
+          "name": "A_T2"
+        },
+        {
+          "type": "transect",
+          "name": "A_T7"
+        },
+        {
+          "type": "transect",
+          "name": "A_T5"
+        },
+        {
+          "type": "transect",
+          "name": "A_T6"
+        },
+        {
+          "type": "transect",
+          "name": "A_T4"
+        },
+        {
+          "type": "plot",
+          "name": "A_VHD-5"
+        },
+        {
+          "type": "plot",
+          "name": "A_VHd-4"
+        }
+      ]
+    },
+    {
+      "name": "Biikkapathimund_Shola_B",
+      "geometry_type": "Polygon",
+      "children": [
+        {
+          "type": "transect",
+          "name": "B_T1"
+        },
+        {
+          "type": "transect",
+          "name": "B_T2"
+        },
+        {
+          "type": "transect",
+          "name": "B_T3"
+        }
+      ]
+    }
+  ],
+  "transects": [
+    {
+      "name": "A_T1",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_HD-1"
+        },
+        {
+          "type": "plot",
+          "name": "A_LD-1"
+        },
+        {
+          "type": "plot",
+          "name": "A_VHD_1"
+        }
+      ]
+    },
+    {
+      "name": "A_T3",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_VHD-2"
+        },
+        {
+          "type": "plot",
+          "name": "A_VHD-3"
+        },
+        {
+          "type": "plot",
+          "name": "A_HD_2"
+        }
+      ]
+    },
+    {
+      "name": "A_T2",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_MD-5"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-6"
+        },
+        {
+          "type": "plot",
+          "name": "A_LD-2"
+        }
+      ]
+    },
+    {
+      "name": "A_T7",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_HD-3"
+        },
+        {
+          "type": "plot",
+          "name": "A_VHD-6"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-3"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-4"
+        }
+      ]
+    },
+    {
+      "name": "A_T5",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_LD-3"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-8"
+        }
+      ]
+    },
+    {
+      "name": "A_T6",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_HD-4"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-1"
+        },
+        {
+          "type": "plot",
+          "name": "A_MD-2"
+        }
+      ]
+    },
+    {
+      "name": "A_T4",
+      "geometry_type": "LineString",
+      "children": [
+        {
+          "type": "plot",
+          "name": "A_MD-7"
+        }
+      ]
+    },
+    {
+      "name": "B_T1",
+      "geometry_type": "LineString",
+      "children": []
+    },
+    {
+      "name": "B_T2",
+      "geometry_type": "LineString",
+      "children": []
+    },
+    {
+      "name": "B_T3",
+      "geometry_type": "LineString",
+      "children": []
+    },
+    {
+      "name": "B_T4",
+      "geometry_type": "LineString",
+      "children": []
+    },
+    {
+      "name": "B_T5",
+      "geometry_type": "LineString",
+      "children": []
+    }
+  ],
+  "plots": [
+    {
+      "name": "A_HD-4",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-1",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHD-5",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-2",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_HD-3",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHD-6",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-3",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-4",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-5",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_HD-1",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHD-2",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHD-3",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_LD-1",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-6",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_LD-2",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-7",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_LD-3",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_MD-8",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHd-4",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_VHD_1",
+      "geometry_type": "Polygon",
+      "children": []
+    },
+    {
+      "name": "A_HD_2",
+      "geometry_type": "Polygon",
+      "children": []
+    }
+  ],
+  "orphans": []
+}

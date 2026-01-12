@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Setup Wizard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        .wizard-container { display: flex; width: 100%; height: 100%; }
+        .sidebar { width: 40%; padding: 20px; box-sizing: border-box; overflow-y: auto; border-right: 1px solid #ccc; background: #f9f9f9; display: flex; flex-direction: column; }
+        .map-container { width: 60%; height: 100%; background: #e5e3df; }
+        #map { width: 100%; height: 100%; }
+        
+        .card { background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: none; }
+        .card.active { display: block; }
+        
+        .btn-group { margin-top: auto; display: flex; justify-content: space-between; }
+        button { padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:disabled { background: #ccc; }
+        
+        h2 { margin-top: 0; }
+        .variable-tag { background: #e2e6ea; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; margin-right: 4px; display: inline-block; margin-bottom: 4px; }
+        
+        .hierarchy-tree { display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+        .tree-node { padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9em; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .tree-node.root { background: #e67e22; color: white; }
+        .tree-node.level-1 { background: #3498db; color: white; }
+        .tree-node.level-2 { background: #2ecc71; color: white; }
+        .tree-node.level-2 { background: #2ecc71; color: white; }
+        .tree-arrow { font-size: 1.2em; color: #999; margin: 5px 0; }
+        
+        .feature-label {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #666;
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wizard-container">
+    <div class="sidebar">
+        <div id="card-container">
+            <!-- Cards injected here -->
+        </div>
+        
+        <div class="btn-group">
+            <button id="prevBtn" onclick="prevCard()" disabled>Previous</button>
+            <span id="step-indicator">1 / 1</span>
+            <button id="nextBtn" onclick="nextCard()">Next</button>
+        </div>
+    </div>
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script>
+    const experimentData = {"$schema": "http://json-schema.org/draft-07/schema#", "title": "Ecological Experiment Schema", "description": "Standard schema for describing an ecological experiment's spatial validity and hierarchy.", "type": "object", "properties": {"experiment_title": {"type": "string", "description": "The title of the experiment derived from the protocol or KML."}, "hierarchy": {"type": "object", "description": "The nested structure of the design (Blocks -> Transects -> Plots).", "properties": {"block": {"type": "object", "description": "Top-level spatial unit (e.g., Block, Patch, Site).", "properties": {"exists": {"type": "boolean", "description": "True if the experiment uses blocks."}, "name_in_protocol": {"type": "string", "description": "The term used in the protocol (e.g., 'Shola Patch', 'Block')."}, "description": {"type": "string", "description": "Description of what a block represents in this context."}, "datasheet_description": {"type": "string", "description": "Prompt for the user to upload a datasheet for this level."}, "features": {"type": "array", "items": {"type": "string"}, "description": "List of feature names found in the KML identified as blocks."}, "children": {"type": "object", "description": "Map of Block Name -> List of Child Feature Names (Transects or Plots).", "additionalProperties": {"type": "array", "items": {"type": "string"}}}}}, "transect": {"type": "object", "description": "Linear spatial unit containing plots.", "properties": {"exists": {"type": "boolean", "description": "True if the experiment uses transects."}, "name_in_protocol": {"type": "string", "description": "The term used (e.g., 'Transect', 'Line')."}, "description": {"type": "string", "description": "Description of the transect setup."}, "datasheet_description": {"type": "string", "description": "Prompt for the user to upload a datasheet for this level."}, "features": {"type": "array", "description": "List of feature names found in the KML identified as transects."}, "children": {"type": "object", "description": "Map of Transect Name -> List of Child Feature Names (Plots).", "additionalProperties": {"type": "array", "items": {"type": "string"}}}}}, "plot": {"type": "object", "description": "Primary unit of observation.", "properties": {"exists": {"type": "boolean", "description": "True if the experiment uses plots."}, "name_in_protocol": {"type": "string", "description": "The term used (e.g., 'Plot', 'Quadrat')."}, "dimensions": {"type": "string", "description": "Size of the plot (e.g., '10m x 10m')."}, "variables": {"type": "array", "items": {"type": "string"}, "description": "List of variables measured at this level."}, "datasheet_description": {"type": "string", "description": "Prompt for the user to upload a datasheet for this level."}, "features": {"type": "array", "description": "List of feature names found in the KML identified as plots."}}}, "subplot": {"type": "object", "description": "Sub-unit within a plot.", "properties": {"exists": {"type": "boolean", "description": "True if the experiment uses subplots."}, "name_in_protocol": {"type": "string", "description": "The term used (e.g., 'Subplot', 'Corner point')."}, "dimensions": {"type": "string", "description": "Size/Nature of the subplot."}, "variables": {"type": "array", "items": {"type": "string"}, "description": "List of variables measured at this level."}}}}}}, "metadata": {"title": "Bikkapathy Mund Cestrum Invasion Study", "aim": "To investigate the invasion of Cestrum aurantiacum in shola forests by assessing its abundance and impact across different distances from the forest edge."}, "hierarchy": {"block": {"exists": true, "name_in_protocol": "Shola Patch", "description": "Patches of shola forest where transects are established to study Cestrum invasion.", "datasheet_description": "Please upload the datasheet containing Shola Patch details.", "features": ["Bikkapathimund_Shola_A", "Biikkapathimund_Shola_B"], "children": {"Bikkapathimund_Shola_A": ["A_T1", "A_T3", "A_T2", "A_T7", "A_T5", "A_T6", "A_T4", "A_VHD-5", "A_VHd-4"], "Biikkapathimund_Shola_B": ["B_T1", "B_T2", "B_T3"]}}, "transect": {"exists": true, "name_in_protocol": "Transect", "description": "Line segments radiating from the shola edge into the interior, spaced ~50m apart.", "datasheet_description": "Please upload the datasheet containing Transect details.", "features": ["A_T1", "A_T3", "A_T2", "A_T7", "A_T5", "A_T6", "A_T4", "B_T1", "B_T2", "B_T3", "B_T4", "B_T5"], "children": {"A_T1": ["A_HD-1", "A_LD-1", "A_VHD_1"], "A_T3": ["A_VHD-2", "A_VHD-3", "A_HD_2"], "A_T2": ["A_MD-5", "A_MD-6", "A_LD-2"], "A_T7": ["A_HD-3", "A_VHD-6", "A_MD-3", "A_MD-4"], "A_T5": ["A_LD-3", "A_MD-8"], "A_T6": ["A_HD-4", "A_MD-1", "A_MD-2"], "A_T4": ["A_MD-7"], "B_T1": [], "B_T2": [], "B_T3": [], "B_T4": [], "B_T5": []}}, "plot": {"exists": true, "name_in_protocol": "10 x 10 m plot", "dimensions": "10m x 10m", "variables": ["DBH (woody individuals >= 1cm)", "Canopy Openness", "Soil Moisture", "Other features (dung, lopping)"], "datasheet_description": "Please upload the datasheet containing plot-level measurements (DBH, canopy, etc.).", "features": ["A_HD-4", "A_MD-1", "A_VHD-5", "A_MD-2", "A_HD-3", "A_VHD-6", "A_MD-3", "A_MD-4", "A_MD-5", "A_HD-1", "A_VHD-2", "A_VHD-3", "A_LD-1", "A_MD-6", "A_LD-2", "A_MD-7", "A_LD-3", "A_MD-8", "A_VHd-4", "A_VHD_1", "A_HD_2"]}, "subplot": {"exists": true, "name_in_protocol": "Subplot", "dimensions": "2m x 2m", "variables": ["Seedling count", "Sapling count", "Grass cover", "Bare ground cover", "Soil Moisture"]}}};
+    const geoJsonData = {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"name": "A_T1", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79558590728783, 11.48511271120464], [76.79477191252872, 11.48425387156503]]}}, {"type": "Feature", "properties": {"name": "A_T3", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79474384520175, 11.48506382161429], [76.79405670415828, 11.48433236844715]]}}, {"type": "Feature", "properties": {"name": "A_T2", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79605604764012, 11.48485613586609], [76.79523725523197, 11.48400155352496]]}}, {"type": "Feature", "properties": {"name": "A_T7", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.7910912586111, 11.48302167740528], [76.79109896230824, 11.48401926853131]]}}, {"type": "Feature", "properties": {"name": "A_T5", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.793227778768, 11.48373402870689], [76.79379667673294, 11.48291287345809]]}}, {"type": "Feature", "properties": {"name": "A_T6", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79002521838727, 11.48419771466363], [76.79069402705436, 11.48344693982928]]}}, {"type": "Feature", "properties": {"name": "A_T4", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79491039595545, 11.48358592397377], [76.79391939005018, 11.4837135417076]]}}, {"type": "Feature", "properties": {"name": "T1", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79558447866825, 11.48514547658195]}}, {"type": "Feature", "properties": {"name": "T2", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.7959494715582, 11.48473659231413]}}, {"type": "Feature", "properties": {"name": "T3", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79474603797296, 11.48506461409018]}}, {"type": "Feature", "properties": {"name": "T4", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79491121165933, 11.4835777870955]}}, {"type": "Feature", "properties": {"name": "T5", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79378021322665, 11.4829093880925]}}, {"type": "Feature", "properties": {"name": "T6", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79003636169337, 11.48418121558417]}}, {"type": "Feature", "properties": {"name": "T7", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79107873812883, 11.48303647421956]}}, {"type": "Feature", "properties": {"name": "B_T1", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79449320234578, 11.48787348198027], [76.79359715435625, 11.48741753001356]]}}, {"type": "Feature", "properties": {"name": "B_T2", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79305647062465, 11.48742926434324], [76.79220534633907, 11.48689048521222]]}}, {"type": "Feature", "properties": {"name": "B_T3", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79185640994118, 11.4872711936729], [76.79261394865198, 11.48793881015362]]}}, {"type": "Feature", "properties": {"name": "B_T4", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79629791080166, 11.48740689695741], [76.79699474524377, 11.48813707891973]]}}, {"type": "Feature", "properties": {"name": "B_T5", "type": "LineString"}, "geometry": {"type": "LineString", "coordinates": [[76.79706158353251, 11.4886707291915], [76.79641588417671, 11.48944512333434]]}}, {"type": "Feature", "properties": {"name": "B_T1", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79447845404611, 11.4878700733895]}}, {"type": "Feature", "properties": {"name": "B_T2", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.7922009568024, 11.48687921958422]}}, {"type": "Feature", "properties": {"name": "B_T3", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79186424667131, 11.4872793169085]}}, {"type": "Feature", "properties": {"name": "B_T4", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79630722873698, 11.487390444345]}}, {"type": "Feature", "properties": {"name": "B_T5", "type": "Point"}, "geometry": {"type": "Point", "coordinates": [76.79639998076298, 11.48941943376436]}}, {"type": "Feature", "properties": {"name": "A_HD-4", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.7902779777792, 11.48391127207332], [76.79024983160181, 11.48381578944299], [76.79029232403175, 11.48373546547726], [76.79036556702847, 11.48371514335513], [76.79042516938517, 11.48374029030804], [76.7904685879768, 11.48379062531725], [76.79042337190378, 11.48384654613148], [76.7903955388749, 11.48388453276027], [76.79038323998262, 11.48390857959514], [76.7902779777792, 11.48391127207332]]]}}, {"type": "Feature", "properties": {"name": "A_MD-1", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79001313876775, 11.48419466889386], [76.78999585681625, 11.48403306477361], [76.79011341662154, 11.48397593077465], [76.79021452283011, 11.48399003070928], [76.7902332322191, 11.48406981082393], [76.79020312005895, 11.48416455355636], [76.79004508777271, 11.4842188226932], [76.79001313876775, 11.48419466889386]]]}}, {"type": "Feature", "properties": {"name": "A_VHD-5", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79040919980721, 11.48427149790816], [76.79047449119247, 11.48427819473924], [76.79059494195803, 11.4842933550501], [76.7906681124199, 11.48441400980443], [76.79064147759155, 11.48457434987764], [76.79054506254411, 11.48466501255398], [76.7905420786708, 11.48466501248516], [76.7903915780126, 11.48466294801945], [76.79029652789347, 11.48464653405909], [76.79020441749974, 11.48449152178405], [76.79019479285186, 11.48430352411535], [76.79040919980721, 11.48427149790816]]]}}, {"type": "Feature", "properties": {"name": "A_MD-2", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79046434169184, 11.48358328198586], [76.79045925278415, 11.48350050602065], [76.79054938161782, 11.4833998371939], [76.79067231659475, 11.48343332957974], [76.79067508802721, 11.48343640327294], [76.7907161984168, 11.4834705403082], [76.79069319244718, 11.4835585804547], [76.7906472297608, 11.48365583840883], [76.79047582563311, 11.4837027492892], [76.79046434169184, 11.48358328198586]]]}}, {"type": "Feature", "properties": {"name": "A_HD-3", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79117398276277, 11.48363090393968], [76.79103034039012, 11.48361505001057], [76.79101291764509, 11.48348450639732], [76.79103760730533, 11.4833762742662], [76.79114195004213, 11.48333954463856], [76.79124585072601, 11.48344719541425], [76.79126502536477, 11.48349272367727], [76.79117398276277, 11.48363090393968]]]}}, {"type": "Feature", "properties": {"name": "A_VHD-6", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79111790467793, 11.484023919985], [76.79097526602872, 11.48393378825517], [76.79107097462881, 11.48383949209185], [76.79117935696837, 11.48381028008078], [76.79122477233054, 11.48391540567791], [76.79123143480928, 11.48397524190938], [76.79122223851122, 11.48401751020432], [76.79111790467793, 11.484023919985]]]}}, {"type": "Feature", "properties": {"name": "A_MD-3", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79109599351064, 11.48329909040591], [76.79101501259268, 11.4831968944627], [76.79097253776862, 11.48308457084487], [76.79107528568883, 11.483038074782], [76.79116221210407, 11.48310831493156], [76.79117769372424, 11.48322509135651], [76.79109599351064, 11.48329909040591]]]}}, {"type": "Feature", "properties": {"name": "A_MD-4", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79105153624661, 11.48383699126947], [76.79097668524994, 11.48377413421263], [76.79100000161147, 11.48367321253803], [76.79109089856622, 11.48362975651941], [76.79117367559996, 11.48370316280838], [76.79116735349228, 11.48379076550904], [76.79105153624661, 11.48383699126947]]]}}, {"type": "Feature", "properties": {"name": "A_MD-5", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79598871884947, 11.4847889463835], [76.79591286411794, 11.48483802677303], [76.7958374135097, 11.4846901284281], [76.79577722216035, 11.48461178547665], [76.79568057665935, 11.48454320761997], [76.7956895810271, 11.4844440573939], [76.79579457934466, 11.48443942490814], [76.79588667709633, 11.48450230194999], [76.79588691567315, 11.48450451570891], [76.79593251971323, 11.48457884530843], [76.79598871884947, 11.4847889463835]]]}}, {"type": "Feature", "properties": {"name": "A_HD-1", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79545300897708, 11.48496850144354], [76.79535612384913, 11.48508106382943], [76.79521425329976, 11.48500993109105], [76.79516187963024, 11.48486479572644], [76.79520806069395, 11.48474360575509], [76.7953771081441, 11.48463193629196], [76.79538165185937, 11.48462445995328], [76.7956245491949, 11.48455012977942], [76.79563993296969, 11.48455007996289], [76.79564506089514, 11.48455006335755], [76.79568030390745, 11.48458144873367], [76.79577747877946, 11.48464303616296], [76.79573052184034, 11.48468120158133], [76.79566573369311, 11.48482246230879], [76.79562258988472, 11.4848708444141], [76.79553513730467, 11.48490716576047], [76.79545300897708, 11.48496850144354]]]}}, {"type": "Feature", "properties": {"name": "A_VHD-2", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79473756587024, 11.48505596070702], [76.79462275488578, 11.48513622663161], [76.79449250348972, 11.48504555059644], [76.79443362148756, 11.48490895284182], [76.79443269451285, 11.48490263645783], [76.79446448554464, 11.4847597977802], [76.79463695857956, 11.48475529149995], [76.79463967421785, 11.4847631889284], [76.7947455946768, 11.4848640673519], [76.79474871681353, 11.48487027500498], [76.7947828842526, 11.48501132174041], [76.79473756587024, 11.48505596070702]]]}}, {"type": "Feature", "properties": {"name": "A_VHD-3", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79445542361194, 11.48476359718507], [76.7942333673315, 11.48480549043001], [76.79415466323623, 11.48465597760437], [76.79415445712829, 11.48457774938892], [76.79416758639536, 11.48449345568003], [76.79423168333797, 11.48438668594424], [76.79428286182512, 11.48435156430441], [76.79432435253926, 11.48433130911605], [76.79443621474724, 11.48448478774505], [76.79448509416204, 11.48457822038392], [76.79445542361194, 11.48476359718507]]]}}, {"type": "Feature", "properties": {"name": "A_LD-1", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79518743773656, 11.4846964574339], [76.7949846555965, 11.48467051184], [76.79475331584499, 11.48460574427348], [76.79464331658963, 11.48444945149141], [76.79462833967594, 11.48430300020538], [76.79462905588382, 11.48429597818554], [76.79473180180057, 11.48422180861476], [76.79486451411321, 11.48422365972148], [76.79501136717953, 11.48432764966286], [76.795131609258, 11.48442824574451], [76.79522106173705, 11.48450977993447], [76.79518743773656, 11.4846964574339]]]}}, {"type": "Feature", "properties": {"name": "A_MD-6", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79541542215847, 11.48419517982453], [76.79524751670954, 11.48420662280729], [76.79521433670598, 11.48408105560952], [76.79524241214145, 11.48400297851112], [76.7953584212375, 11.48399450241737], [76.79545493112273, 11.48407028640659], [76.7954826026848, 11.48416426116263], [76.79541542215847, 11.48419517982453]]]}}, {"type": "Feature", "properties": {"name": "A_LD-2", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79567921200237, 11.48447476995894], [76.79546268619356, 11.4844477777093], [76.79541620598476, 11.48433835706991], [76.79541776161048, 11.48424888255292], [76.79542390991963, 11.48420761551733], [76.79542695004328, 11.48419514251718], [76.7954832440237, 11.48418106477157], [76.79548579367345, 11.48418105652135], [76.79562043977971, 11.48430227309603], [76.79566859333386, 11.48436508917415], [76.79567921200237, 11.48447476995894]]]}}, {"type": "Feature", "properties": {"name": "A_MD-7", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.7949233683726, 11.48360010146397], [76.79478122562651, 11.48375062704874], [76.79437471983071, 11.48387174245595], [76.79404920655215, 11.48384042410112], [76.79398302266146, 11.48376995998933], [76.79393851560334, 11.48373909025963], [76.79390377446597, 11.48372974151025], [76.79394381499554, 11.48360550670996], [76.79409162713557, 11.48347460027988], [76.79409745315182, 11.4834745814243], [76.79411493119754, 11.48347452485863], [76.79464319937281, 11.48340829859897], [76.79474900770533, 11.48339976778929], [76.7949233683726, 11.48360010146397]]]}}, {"type": "Feature", "properties": {"name": "A_LD-3", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79340189428464, 11.48345106923179], [76.7933413588937, 11.48329409603382], [76.7934142043325, 11.48302168026158], [76.79362726603736, 11.48290952912399], [76.79378342978353, 11.48290598221768], [76.79379814844201, 11.48313254055713], [76.7936214318571, 11.48341128024833], [76.79340189428464, 11.48345106923179]]]}}, {"type": "Feature", "properties": {"name": "A_MD-8", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79315964614152, 11.48380058435269], [76.79309914405178, 11.48357565087955], [76.79322828321402, 11.48339141788025], [76.79341004385448, 11.48345819522121], [76.79344118242906, 11.48360799389072], [76.79331874312858, 11.48379220622264], [76.79315964614152, 11.48380058435269]]]}}, {"type": "Feature", "properties": {"name": "A_VHd-4", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79351967437866, 11.4841426192045], [76.79352999131184, 11.483971347521], [76.79360556255271, 11.48385942556572], [76.79376120546037, 11.48383648473965], [76.79380487830593, 11.48388977945873], [76.79383454911216, 11.4839855701858], [76.79383193731844, 11.48405202566638], [76.79383002046197, 11.48405653635123], [76.79381648859392, 11.48408837907344], [76.79379092958433, 11.48414643653129], [76.79375189300383, 11.48417733012925], [76.79351967437866, 11.4841426192045]]]}}, {"type": "Feature", "properties": {"name": "A_VHD_1", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79558475687273, 11.48514753569863], [76.79545678488905, 11.48497267554218], [76.79559675690535, 11.48488646232997], [76.79564024303635, 11.48485242636144], [76.79569287685176, 11.48479175501113], [76.79571446414722, 11.48472114558852], [76.79578544210176, 11.48469121786282], [76.79582189478441, 11.48477065739486], [76.79586391071551, 11.48490829137268], [76.79558475687273, 11.48514753569863]]]}}, {"type": "Feature", "properties": {"name": "A_HD_2", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79416544118686, 11.48448942147868], [76.794027896599, 11.48453490674198], [76.79400580544429, 11.48442833481174], [76.7940449048597, 11.48433414356096], [76.79410371742873, 11.48425408696427], [76.79418870484695, 11.48422243537572], [76.79426257932803, 11.48428525088943], [76.79421930683051, 11.48440396160464], [76.79416544118686, 11.48448942147868]]]}}, {"type": "Feature", "properties": {"name": "Bikkapathimund_Shola_A", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79107318230463, 11.48303465831773], [76.79125755210922, 11.48297469676528], [76.79163973459478, 11.48292275026746], [76.79206597006258, 11.48289328216126], [76.79242964644442, 11.48282754951244], [76.79325240639658, 11.48271259505716], [76.79360699533159, 11.48274111249172], [76.79389076781742, 11.48285667669215], [76.79420818922134, 11.48303466363985], [76.79454476836439, 11.48316424017013], [76.79480917961759, 11.48330472932953], [76.7949523524962, 11.48350569907619], [76.79516599068258, 11.48362968380807], [76.795512567516, 11.48379913576603], [76.79583731749746, 11.48419869205376], [76.7959984353374, 11.48446099088931], [76.79606914628074, 11.48471466800612], [76.79602683262192, 11.48489631366561], [76.79586542109047, 11.4851042135712], [76.79570053804407, 11.48526451280773], [76.79541837323838, 11.48531879550335], [76.79531439728395, 11.48552916539892], [76.7950766801852, 11.48561970195834], [76.79487341053886, 11.48545088427414], [76.79463182274453, 11.48538449912344], [76.79449915567733, 11.48564250331426], [76.79422741376669, 11.48558557717819], [76.79395661339112, 11.48505155172924], [76.79360059513007, 11.48462563701369], [76.79329569353561, 11.48446091233951], [76.79301528302156, 11.48421699671209], [76.79267806847903, 11.48431903473285], [76.79193557236788, 11.48442276378342], [76.7912943940057, 11.48457674778848], [76.79080560287598, 11.48474452042549], [76.79047008038133, 11.48467492018031], [76.79007468095598, 11.48491676134606], [76.78965817780892, 11.4848554733768], [76.78939942816311, 11.48450897782755], [76.7891965327044, 11.48419868751747], [76.7892731009656, 11.48380774008689], [76.78948435619581, 11.48336830255055], [76.7896885791906, 11.48328108636608], [76.79107318230463, 11.48303465831773]]]}}, {"type": "Feature", "properties": {"name": "Biikkapathimund_Shola_B", "type": "Polygon"}, "geometry": {"type": "Polygon", "coordinates": [[[76.79135925641474, 11.48682886336329], [76.79179239051858, 11.48672143300154], [76.79205594030616, 11.48667387939551], [76.7924707443164, 11.48677011550148], [76.79272353662867, 11.48675496976856], [76.79275784277728, 11.48675413914686], [76.7931212593458, 11.48680752258247], [76.79333024834499, 11.48653291169767], [76.79344901500336, 11.48640305875812], [76.79398279801208, 11.48647246293747], [76.7940164270161, 11.4858100433285], [76.79422286306945, 11.48624760586668], [76.79478645373186, 11.48684964916042], [76.7951500302854, 11.48697920043914], [76.79509204030494, 11.48751946084404], [76.79503631111268, 11.48769184516703], [76.79490630753665, 11.48789418890103], [76.79462727499006, 11.48811949809], [76.7945817067686, 11.48839569489562], [76.79449854042937, 11.48874178725464], [76.79440461288989, 11.4890492654246], [76.79440497935116, 11.48943180649972], [76.79438720382139, 11.48824726495726], [76.79425908617017, 11.48845583545117], [76.7938731515204, 11.48877473822693], [76.7937327855351, 11.48880165691275], [76.79363999150468, 11.48858785860801], [76.79341702021773, 11.48877477831208], [76.7932999001055, 11.48864103331514], [76.79296088476465, 11.48877482309869], [76.792532780826, 11.48896431036326], [76.79229187858382, 11.48877489729047], [76.79199458650861, 11.48842981205995], [76.79140266940512, 11.48866790240506], [76.79098755583531, 11.48869466163007], [76.79079791840826, 11.4888559762445], [76.790721671336, 11.48885598797868], [76.79070410077438, 11.4888020213526], [76.79069534142599, 11.4887751152077], [76.79046681116439, 11.48947219044063], [76.79043602441033, 11.48920872981381], [76.79051831156139, 11.48896618198545], [76.7909733240726, 11.48861617789807], [76.79114600524355, 11.4885132973018], [76.79141405402603, 11.48838800276207], [76.79180555346323, 11.48805338591436], [76.79162259842111, 11.48763102774471], [76.79110370045919, 11.48734857163508], [76.79135925641474, 11.48682886336329]]]}}]};
+    
+    let currentStep = 0;
+    let cards = [];
+    let map;
+    let geoJsonLayer;
+
+    function initMap() {
+        map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        
+        geoJsonLayer = L.geoJSON(geoJsonData, {
+            pointToLayer: function (feature, latlng) {
+                // Convert Points to CircleMarkers for better styling
+                return L.circleMarker(latlng, {
+                    radius: 4,
+                    fillColor: "#000",
+                    color: "#fff",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            },
+            style: function(feature) {
+                // Initial static style, though highlightFeatures will override immediately
+                switch (feature.properties.type) {
+                    case 'Polygon': return {color: "#ff7800", weight: 2};
+                    case 'LineString': return {color: "#3388ff", weight: 3};
+                    default: return {color: "#000"};
+                }
+            },
+            onEachFeature: function (feature, layer) {
+                // layer.bindPopup(feature.properties.name); 
+                // We use tooltips controlled by highlightFeatures now
+            }
+        }).addTo(map);
+        
+        if (geoJsonLayer.getLayers().length > 0) {
+            map.fitBounds(geoJsonLayer.getBounds());
+        }
+    }
+
+    function createCards() {
+        // Handle potential nesting: verify if 'hierarchy' exists at root or inside properties
+        let data = experimentData;
+        
+        // If root doesn't have hierarchy but properties does (and it's not just schema defs), switch.
+        // But in our case, schema defs are in 'properties', so we prefer root if it has data.
+        if (!data.hierarchy && data.properties && data.properties.hierarchy) {
+             // This path is likely for pure schema validation output, but our file has data at root.
+             data = data.properties;
+        }
+        
+        // 1. Overview Card
+        // Generate Tree Diagram
+        let treeHTML = '<div class="hierarchy-tree">';
+        if (data.hierarchy.block && data.hierarchy.block.features) {
+            const blockCount = data.hierarchy.block.features.length;
+            treeHTML += `<div class="tree-node root">Blocks (${blockCount})</div>`;
+            
+            // Assume homogeneous structure, take first block to show depth
+            if (blockCount > 0 && data.hierarchy.block.children) {
+                 const firstBlock = data.hierarchy.block.features[0];
+                 const children = data.hierarchy.block.children[firstBlock] || [];
+                 
+                 if (children.length > 0) {
+                     // Check if children are Transects or Plots
+                     // Heuristic: Check if first child is in Transect list
+                     let childType = "Children";
+                     let grandChildType = null;
+                     
+                     if (data.hierarchy.transect && data.hierarchy.transect.features && data.hierarchy.transect.features.includes(children[0])) {
+                         childType = "Transects";
+                         // Check for plots under this transect
+                         if (data.hierarchy.transect.children && data.hierarchy.transect.children[children[0]]) {
+                             grandChildType = "Plots";
+                         }
+                     } else if (data.hierarchy.plot && data.hierarchy.plot.features && data.hierarchy.plot.features.includes(children[0])) {
+                         childType = "Plots";
+                     }
+                     
+                     
+                     treeHTML += `<div class="tree-arrow">↓</div><div class="tree-node level-1">Approx. ${children.length} ${childType} per Block</div>`;
+                     
+                     if (grandChildType) {
+                          // Try to get count from first transect
+                          const grandChildren = data.hierarchy.transect.children[children[0]] || [];
+                          treeHTML += `<div class="tree-arrow">↓</div><div class="tree-node level-2">Approx. ${grandChildren.length} ${grandChildType} per Transect</div>`;
+                     }
+                 }
+            }
+        }
+        treeHTML += '</div>';
+
+        // FORCE CORRECT BLOCK NAMES FOR DEBUGGING - The GeoJSON has them, the experiment.json has them.
+        // If map doesn't show them, it's likely a mismatch in explicit string value or spaces.
+        // Let's ensure the features list in block card uses the exact names from hierarchy.
+        
+        cards.push({
+            id: 'overview',
+            title: data.metadata ? data.metadata.title : "Experiment Setup",
+            content: `
+                <h3>Aim</h3>
+                <p>${data.metadata ? data.metadata.aim : "No aim defined."}</p>
+                <h3>Hierarchy</h3>
+                ${treeHTML}
+            `,
+            features: null // null implies "Show All"
+        });
+        
+        // 2. Block Level
+        if (data.hierarchy.block && data.hierarchy.block.exists) {
+             cards.push({
+                id: 'blocks',
+                title: data.hierarchy.block.name_in_protocol || "Blocks",
+                content: `<p>${data.hierarchy.block.datasheet_description || "Upload datasheet for blocks."}</p>
+                          <h4>Identified Blocks:</h4>
+                          <ul>${(data.hierarchy.block.features || []).map(f => `<li>${f}</li>`).join('')}</ul>`,
+                features: data.hierarchy.block.features,
+                role: 'block'
+             });
+        }
+        
+        // 3. Transect Level
+        if (data.hierarchy.transect && data.hierarchy.transect.exists) {
+             cards.push({
+                id: 'transects',
+                title: data.hierarchy.transect.name_in_protocol || "Transects",
+                content: `<p>${data.hierarchy.transect.datasheet_description || "Upload datasheet for transects."}</p>
+                          <h4>Identified Transects:</h4>
+                          <ul>${(data.hierarchy.transect.features || []).map(f => `<li>${f}</li>`).join('')}</ul>`,
+                features: data.hierarchy.transect.features,
+                role: 'transect'
+             });
+        }
+        
+         // 4. Plot Level
+        if (data.hierarchy.plot && data.hierarchy.plot.exists) {
+             cards.push({
+                id: 'plots',
+                title: data.hierarchy.plot.name_in_protocol || "Plots",
+                content: `<p><strong>Dimensions:</strong> ${data.hierarchy.plot.dimensions}</p>
+                          <p>${data.hierarchy.plot.datasheet_description || "Upload datasheet for plots."}</p>
+                          <h4>Identified Plots:</h4>
+                          <ul>${(data.hierarchy.plot.features || []).map(f => `<li>${f}</li>`).join('')}</ul>
+                          <h4>Variables:</h4>
+                          <div>${(data.hierarchy.plot.variables || []).map(v => `<span class="variable-tag">${v}</span>`).join('')}</div>`,
+                features: data.hierarchy.plot.features,
+                role: 'plot'
+             });
+        }
+        
+        renderCards();
+        updateUI(); // Trigger initial map state
+    }
+
+    function renderCards() {
+        const container = document.getElementById('card-container');
+        container.innerHTML = '';
+        cards.forEach((card, index) => {
+            const div = document.createElement('div');
+            div.className = `card ${index === 0 ? 'active' : ''}`;
+            div.innerHTML = `<h2>${card.title}</h2><div class="card-content">${card.content}</div>`;
+            container.appendChild(div);
+        });
+    }
+    
+    // Styles
+    const styles = {
+        'default': { color: '#999', weight: 1, fillOpacity: 0.1, opacity: 0.4 },
+        'block': { color: '#e67e22', weight: 3, fillOpacity: 0.2, opacity: 1 },
+        'transect': { color: '#3498db', weight: 4, opacity: 1 },
+        'plot': { color: '#2ecc71', weight: 2, fillOpacity: 0.6, opacity: 1 }
+    };
+
+    function highlightFeatures(featureNames, role) {
+        let bounds = L.latLngBounds();
+        let found = false;
+        
+        // If featureNames is null (Overview), show everything with specific logic
+        const isOverview = (featureNames === null);
+
+        geoJsonLayer.eachLayer(layer => {
+            const name = layer.feature.properties.name;
+            const geomType = layer.feature.geometry.type;
+            
+            // Determine if this feature is "active" based on the current card
+            let isActive = isOverview; 
+            if (!isOverview && featureNames && featureNames.includes(name)) {
+                isActive = true;
+            }
+            
+            // Cleanup previous tooltips
+            layer.unbindTooltip();
+            
+            if (isActive) {
+                // Determine style
+                let style = styles['default'];
+                
+                if (isOverview) {
+                    // In overview, match the colors used in the tree
+                    // Blocks (Polygons that seem to be parents) -> Orange
+                    // Transects -> Blue
+                    // Plots -> Green
+                    // Since we don't strictly know 'role' per feature here without lookup, we use heuristics or just geom
+                    if (geomType === 'Polygon') {
+                         // Heuristic: Larger polygons are blocks, smaller are plots.
+                         // But better: use the experimentData lists to check role
+                         if (experimentData.hierarchy.block.features.includes(name)) style = styles['block'];
+                         else if (experimentData.hierarchy.plot.features.includes(name)) style = styles['plot'];
+                         else style = { color: '#e67e22', weight: 2, fillOpacity: 0.1 }; // fallback to orange-ish
+                    }
+                    if (geomType === 'LineString') style = styles['transect'];
+                } else {
+                    // Active card with specific role
+                    if (role) {
+                         // Force the style for the current role
+                         style = styles[role];
+                    } else {
+                        // Fallback if role is missing but feature is active
+                         style = { color: 'red', weight: 3 }; 
+                    }
+                }
+                
+                layer.setStyle(style);
+                
+                // Add Label
+                layer.bindTooltip(name, {
+                    permanent: !isOverview, // Permanent labels only when drilling down
+                    direction: 'top',
+                    className: 'feature-label',
+                    offset: [0, -10]
+                });
+                
+                // Calculate bounds
+                if (layer.getBounds) bounds.extend(layer.getBounds());
+                else if (layer.getLatLng) bounds.extend(layer.getLatLng());
+                found = true;
+                
+                // Ensure active features are on top of dimmed ones
+                if (!isOverview && layer.bringToFront) {
+                    layer.bringToFront();
+                }
+                
+            } else {
+                // Dimmed (Grey)
+                layer.setStyle({
+                    color: '#ccc',
+                    weight: 1,
+                    fillOpacity: 0.1,
+                    opacity: 0.2
+                });
+            }
+        });
+        
+        if (found) {
+            map.fitBounds(bounds, {padding: [50, 50]});
+        } else if (isOverview) {
+             // Fit to whole layer
+             if (geoJsonLayer.getBounds().isValid()) {
+                 map.fitBounds(geoJsonLayer.getBounds());
+             }
+        }
+    }
+
+    function updateUI() {
+        document.getElementById('prevBtn').disabled = currentStep === 0;
+        document.getElementById('nextBtn').disabled = currentStep === cards.length - 1;
+        document.getElementById('step-indicator').innerText = `${currentStep + 1} / ${cards.length}`;
+        
+        // Hide all cards, show current
+        document.querySelectorAll('.card').forEach((el, idx) => {
+            el.classList.toggle('active', idx === currentStep);
+        });
+        
+        // Update Map
+        const card = cards[currentStep];
+        highlightFeatures(card.features, card.role);
+    }
+
+    window.nextCard = function() {
+        if (currentStep < cards.length - 1) {
+            currentStep++;
+            updateUI();
+        }
+    };
+    
+    window.prevCard = function() {
+        if (currentStep > 0) {
+            currentStep--;
+            updateUI();
+        }
+    };
+
+    // Initialize
+    initMap();
+    createCards();
+
+</script>
+</body>
+</html>
+

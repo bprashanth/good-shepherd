@@ -66,4 +66,9 @@ How to do it
 # Expected: Interactive HTML with maps, variables, indicators, mismatches
 ```
 
+## Status
 
+* Feature hierarchy seems useless when run as 
+```
+$ ./good_shepherd setup-experiment --name "test" --protocol ./experiments/keystone/bkm/field_protocol_bkm.pdf --maps ./experiments/keystone/bkm/sites/assets/sites.kml --stage features -f 
+```

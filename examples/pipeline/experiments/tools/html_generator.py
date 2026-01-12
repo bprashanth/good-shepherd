@@ -18,7 +18,7 @@ def get_bounds_from_geojson(geojson_data):
         elif geom.get('type') == 'Polygon':
             for ring in geom['coordinates']:
                 coords.extend([c[:2] for c in ring])
-    
+
     if coords:
         lats = [c[1] for c in coords]
         lons = [c[0] for c in coords]
@@ -31,57 +31,57 @@ def get_bounds_from_geojson(geojson_data):
 def generate_verification_html(experiment_id):
     """
     Generate verification HTML interface for experiment.
-    
+
     Args:
         experiment_id: Experiment ID
-        
+
     Returns:
         Path to generated HTML file
     """
     experiment_dir = get_experiment_dir(experiment_id)
-    
+
     # Load all JSON files
     features_file = experiment_dir / "features" / "features.json"
     variables_file = experiment_dir / "variables" / "variables.json"
     indicators_file = experiment_dir / "indicators" / "indicators.json"
     mismatches_file = experiment_dir / "analysis" / "mismatches.json"
     experiment_file = experiment_dir / "experiment.json"
-    
+
     # Load data
     with open(experiment_file, 'r') as f:
         experiment_data = json.load(f)
-    
+
     features_data = {}
     if features_file.exists():
         with open(features_file, 'r') as f:
             features_data = json.load(f)
-    
+
     variables_data = {}
     if variables_file.exists():
         with open(variables_file, 'r') as f:
             variables_data = json.load(f)
-    
+
     indicators_data = {}
     if indicators_file.exists():
         with open(indicators_file, 'r') as f:
             indicators_data = json.load(f)
-    
+
     mismatches_data = {}
     if mismatches_file.exists():
         with open(mismatches_file, 'r') as f:
             mismatches_data = json.load(f)
-    
+
     # Get map files for bounds
     map_files = experiment_data.get("map_files", [])
     kml_path = None
     if map_files:
         kml_path = experiment_dir / map_files[0]
-    
+
     # Generate GeoJSON if needed
     geojson_path = experiment_dir / "maps" / "sites.geojson"
     if kml_path and kml_path.exists() and not geojson_path.exists():
         kml_to_geojson(kml_path, geojson_path)
-    
+
     # Get bounds
     if geojson_path.exists():
         with open(geojson_path, 'r') as f:
@@ -89,7 +89,7 @@ def generate_verification_html(experiment_id):
         center_lat, center_lon = get_bounds_from_geojson(geojson_data)
     else:
         center_lat, center_lon = 11.48, 76.79
-    
+
     # Group features by type
     features_by_type = {}
     if features_data.get("features"):
@@ -110,7 +110,7 @@ def generate_verification_html(experiment_id):
                 "geometry_type": "unknown",
                 "coordinates": []
             })
-    
+
     # Group variables by feature type
     variables_by_type = {}
     if variables_data.get("variables"):
@@ -119,7 +119,7 @@ def generate_verification_html(experiment_id):
             if var_type not in variables_by_type:
                 variables_by_type[var_type] = []
             variables_by_type[var_type].append(var)
-    
+
     # Group indicators by feature type
     indicators_by_type = {}
     if indicators_data.get("indicators"):
@@ -128,15 +128,16 @@ def generate_verification_html(experiment_id):
             if ind_type not in indicators_by_type:
                 indicators_by_type[ind_type] = []
             indicators_by_type[ind_type].append(ind)
-    
+
     # Generate HTML sections
     sections_html = ""
-    
+
     # Mismatches section (at top)
     if mismatches_data.get("mismatches"):
-        mismatches_html = generate_mismatches_section(mismatches_data["mismatches"])
+        mismatches_html = generate_mismatches_section(
+            mismatches_data["mismatches"])
         sections_html += mismatches_html
-    
+
     # Feature type sections
     for feat_type in sorted(features_by_type.keys()):
         section_html = generate_feature_type_section(
@@ -148,7 +149,7 @@ def generate_verification_html(experiment_id):
             center_lon
         )
         sections_html += section_html
-    
+
     # Generate full HTML
     full_html = f"""
 <!DOCTYPE html>
@@ -302,12 +303,12 @@ def generate_verification_html(experiment_id):
 </body>
 </html>
 """
-    
+
     # Save HTML
     output_path = experiment_dir / "verification.html"
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(full_html)
-    
+
     return output_path
 
 
@@ -323,7 +324,7 @@ def generate_mismatches_section(mismatches):
             <p><em>Recommendation:</em> {mismatch.get('recommendation', '')}</p>
         </div>
         """
-    
+
     return f"""
     <section class="mismatches-section">
         <h2>⚠️ Mismatches and Issues</h2>
@@ -335,8 +336,9 @@ def generate_mismatches_section(mismatches):
 def generate_feature_type_section(feat_type, features, variables, indicators, center_lat, center_lon):
     """Generate HTML section for a feature type."""
     # Create map
-    feat_map = folium.Map(location=[center_lat, center_lon], zoom_start=15, tiles='OpenStreetMap')
-    
+    feat_map = folium.Map(
+        location=[center_lat, center_lon], zoom_start=15, tiles='OpenStreetMap')
+
     # Add features to map
     for feature in features:
         # Features can have geometry directly or coordinates
@@ -345,17 +347,17 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
             geom = feature.get("geometry")
             if geom:
                 coords = geom.get("coordinates")
-        
+
         if not coords:
             continue
-        
+
         name = feature.get("name", "Unnamed")
         geom_type = feature.get("geometry_type")
         if not geom_type:
             geom = feature.get("geometry")
             if geom:
                 geom_type = geom.get("type")
-        
+
         if not geom_type:
             # Infer from coordinates structure
             if isinstance(coords[0], (int, float)):
@@ -364,7 +366,7 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
                 geom_type = "LineString"
             elif isinstance(coords[0], list) and isinstance(coords[0][0], list):
                 geom_type = "Polygon"
-        
+
         if geom_type == "Point":
             folium.Marker(
                 [coords[1], coords[0]],
@@ -382,7 +384,8 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
         elif geom_type == "Polygon":
             if len(coords) > 0:
                 # Handle both [coords] and coords formats
-                polygon_coords = coords[0] if isinstance(coords[0], list) and isinstance(coords[0][0], list) else coords
+                polygon_coords = coords[0] if isinstance(
+                    coords[0], list) and isinstance(coords[0][0], list) else coords
                 folium.Polygon(
                     [[c[1], c[0]] for c in polygon_coords],
                     popup=name,
@@ -391,9 +394,9 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
                     fillColor='green',
                     fillOpacity=0.4
                 ).add_to(feat_map)
-    
+
     map_html = feat_map._repr_html_()
-    
+
     # Variables HTML
     variables_html = ""
     for var in variables:
@@ -404,7 +407,7 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
             <small>Type: {var.get('data_type', 'unknown')}, Unit: {var.get('unit', 'N/A')}</small>
         </div>
         """
-    
+
     # Indicators HTML
     indicators_html = ""
     for ind in indicators:
@@ -415,7 +418,7 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
             <small>{'Suggested' if ind.get('suggested') else 'From Protocol'}</small>
         </div>
         """
-    
+
     return f"""
     <section class="feature-section" id="feature-{feat_type}">
         <h2>Feature Type: {feat_type.title()}</h2>
@@ -439,4 +442,3 @@ def generate_feature_type_section(feat_type, features, variables, indicators, ce
         </div>
     </section>
     """
-

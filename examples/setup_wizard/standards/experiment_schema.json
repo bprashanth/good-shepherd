@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ecological Experiment Schema",
+  "description": "Standard schema for describing an ecological experiment's spatial validity and hierarchy.",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "General information about the experiment.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the experiment."
+        },
+        "aim": {
+          "type": "string",
+          "description": "The main goal or objective of the experiment."
+        }
+      }
+    },
+    "hierarchy": {
+      "type": "object",
+      "description": "The nested structure of the design (Blocks -> Transects -> Plots).",
+      "properties": {
+        "block": {
+          "type": "object",
+          "description": "Top-level spatial unit (e.g., Block, Patch, Site).",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses blocks."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used in the protocol (e.g., 'Shola Patch', 'Block')."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of what a block represents in this context."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of feature names found in the KML identified as blocks."
+            },
+            "children": {
+              "type": "object",
+              "description": "Map of Block Name -> List of Child Feature Names (Transects or Plots).",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "transect": {
+          "type": "object",
+          "description": "Linear spatial unit containing plots.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses transects."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Transect', 'Line')."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the transect setup."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "description": "List of feature names found in the KML identified as transects."
+            },
+            "children": {
+              "type": "object",
+              "description": "Map of Transect Name -> List of Child Feature Names (Plots).",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "plot": {
+          "type": "object",
+          "description": "Primary unit of observation.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses plots."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Plot', 'Quadrat')."
+            },
+            "dimensions": {
+              "type": "string",
+              "description": "Size of the plot (e.g., '10m x 10m')."
+            },
+            "variables": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of variables measured at this level."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "description": "List of feature names found in the KML identified as plots."
+            }
+          }
+        },
+        "subplot": {
+          "type": "object",
+          "description": "Sub-unit within a plot.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses subplots."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Subplot', 'Corner point')."
+            },
+            "dimensions": {
+              "type": "string",
+              "description": "Size/Nature of the subplot."
+            },
+            "variables": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of variables measured at this level."
+            }
+          }
+        }
+      }
+    }
+  }
+}

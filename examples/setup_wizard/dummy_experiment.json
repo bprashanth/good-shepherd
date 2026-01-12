@@ -1,0 +1,41 @@
+{
+    "experiment_title": "Cestrum Study Bikkapathimund",
+    "hierarchy": {
+        "block": {
+            "exists": true,
+            "name_in_protocol": "Shola Patch",
+            "description": "Each Shola patch represents a block.",
+            "datasheet_description": "Upload the Shola Patch datasheet.",
+            "features": [
+                "Bikkapathimund_Shola_A",
+                "Biikkapathimund_Shola_B",
+                "A_MD-7"
+            ]
+        },
+        "transect": {
+            "exists": true,
+            "name_in_protocol": "Vegetation Transect",
+            "description": "Line transect of 60m.",
+            "datasheet_description": "Upload the transect datasheet.",
+            "features": [
+                "A_T1",
+                "A_T2",
+                "60m 1"
+            ]
+        },
+        "plot": {
+            "exists": true,
+            "name_in_protocol": "Quadrat",
+            "dimensions": "10m x 10m",
+            "datasheet_description": "Upload the quadrat data.",
+            "variables": [
+                "Species Count",
+                "Cover %"
+            ],
+            "features": [
+                "A_HD-4",
+                "A_MD-1"
+            ]
+        }
+    }
+}
