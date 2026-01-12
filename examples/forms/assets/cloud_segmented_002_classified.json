@@ -1,0 +1,5123 @@
+{
+  "universal_fields": {
+    "soil_moisture": {
+      "value": "Dry+ =1, Dry- =2, Nor =3, Wet- =4, Wet+ =5",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_1",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "canopy_openness": {
+      "value": "Number of dots out of 96 imaginary dots that are not covered by the canopy; Taken only at the centre of the plot",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_2",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "1710": {
+      "value": "10.1230 >30",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_3",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.07797769341617823,
+        "Top": 0.04972367525100708,
+        "Width": 0.6568064479902387,
+        "Height": 0.10773339027538897
+      },
+      "group_id": "universal_fields",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "header_map": {
+    "block_code": {
+      "field_name": "Block Code",
+      "system": {
+        "merged": false,
+        "group_id": "col_1",
+        "column_index": 1,
+        "row_index": -1
+      },
+      "description": "The code of the block in the study",
+      "alt_names": []
+    },
+    "transect_number": {
+      "field_name": "Transect #",
+      "system": {
+        "merged": false,
+        "group_id": "col_2",
+        "column_index": 2,
+        "row_index": -1
+      },
+      "description": "The transect number within the block",
+      "alt_names": []
+    },
+    "plot_number": {
+      "field_name": "Plot #",
+      "system": {
+        "merged": false,
+        "group_id": "col_3",
+        "column_index": 3,
+        "row_index": -1
+      },
+      "description": "The plot number within the transect",
+      "alt_names": []
+    },
+    "subplot_number": {
+      "field_name": "Subplot #",
+      "system": {
+        "merged": false,
+        "group_id": "col_4",
+        "column_index": 4,
+        "row_index": -1
+      },
+      "description": "The subplot number within the plot",
+      "alt_names": []
+    },
+    "canopy_openness_north": {
+      "field_name": "Canopy Openness North",
+      "system": {
+        "merged": true,
+        "group_id": "col_5",
+        "column_index": 5,
+        "row_index": -1
+      },
+      "description": "Canopy openness measurement in the north direction",
+      "alt_names": []
+    },
+    "canopy_openness_east": {
+      "field_name": "Canopy Openness East",
+      "system": {
+        "merged": true,
+        "group_id": "col_6",
+        "column_index": 6,
+        "row_index": -1
+      },
+      "description": "Canopy openness measurement in the east direction",
+      "alt_names": []
+    },
+    "canopy_openness_west": {
+      "field_name": "Canopy Openness West",
+      "system": {
+        "merged": true,
+        "group_id": "col_7",
+        "column_index": 7,
+        "row_index": -1
+      },
+      "description": "Canopy openness measurement in the west direction",
+      "alt_names": []
+    },
+    "canopy_openness_south": {
+      "field_name": "Canopy Openness South",
+      "system": {
+        "merged": true,
+        "group_id": "col_8",
+        "column_index": 8,
+        "row_index": -1
+      },
+      "description": "Canopy openness measurement in the south direction",
+      "alt_names": []
+    },
+    "soil_moisture": {
+      "field_name": "Soil Moisture",
+      "system": {
+        "merged": false,
+        "group_id": "col_9",
+        "column_index": 9,
+        "row_index": -1
+      },
+      "description": "Soil moisture level measurement",
+      "alt_names": []
+    },
+    "soil_temper_ature_in_2": {
+      "field_name": "Soil Temper ature in 2.",
+      "system": {
+        "merged": false,
+        "group_id": "col_10",
+        "column_index": 10,
+        "row_index": -1
+      },
+      "description": "Soil temperature measurement at 2cm depth",
+      "alt_names": []
+    },
+    "soil_ph": {
+      "field_name": "Soil pH",
+      "system": {
+        "merged": false,
+        "group_id": "col_11",
+        "column_index": 11,
+        "row_index": -1
+      },
+      "description": "Soil pH level measurement",
+      "alt_names": []
+    },
+    "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": {
+      "field_name": "Notes on Plot characteristics - Disturbance, Physical features, Forest structure",
+      "system": {
+        "merged": false,
+        "group_id": "col_12",
+        "column_index": 12,
+        "row_index": -1
+      },
+      "description": "Notes on plot characteristics including disturbance, physical features, and forest structure",
+      "alt_names": []
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.0812775555625558,
+        "Top": 0.16029422242194413,
+        "Width": 0.7020442443713546,
+        "Height": 0.10760642632842066
+      },
+      "group_id": "header_map",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "rows": [
+    {
+      "block_code": "I",
+      "transect_number": "1",
+      "plot_number": "1",
+      "subplot_number": "0",
+      "canopy_openness_north": "09",
+      "canopy_openness_east": "#11",
+      "canopy_openness_west": "35",
+      "canopy_openness_south": "04",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "",
+      "soil_ph": "",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "Litter is high; Dry; her cestrum; few >C.A; undustory, regin Shurs, (aropy present: South in open company to North. No dury present",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194880396127701,
+          "Top": 0.2672218978404999,
+          "Width": 0.7490993347018957,
+          "Height": 0.5725290775299072
+        },
+        "group_id": "row_3",
+        "row_index": 3,
+        "column_index": -1,
+        "cells": {
+          "row_3_col_1": {
+            "bbox": {
+              "Width": 0.06258578598499298,
+              "Height": 0.023753542453050613,
+              "Left": 0.07194880396127701,
+              "Top": 0.2672218978404999
+            },
+            "confidence": 83.88671875,
+            "text": "I",
+            "header": "block_code",
+            "row_index": 3,
+            "column_index": 1
+          },
+          "row_3_col_2": {
+            "bbox": {
+              "Width": 0.05660335347056389,
+              "Height": 0.023753508925437927,
+              "Left": 0.1345345377922058,
+              "Top": 0.2672223448753357
+            },
+            "confidence": 81.34765625,
+            "text": "1",
+            "header": "transect_number",
+            "row_index": 3,
+            "column_index": 2
+          },
+          "row_3_col_3": {
+            "bbox": {
+              "Width": 0.03773563727736473,
+              "Height": 0.02375337854027748,
+              "Left": 0.19113782048225403,
+              "Top": 0.26722273230552673
+            },
+            "confidence": 78.125,
+            "text": "1",
+            "header": "plot_number",
+            "row_index": 3,
+            "column_index": 3
+          },
+          "row_3_col_4": {
+            "bbox": {
+              "Width": 0.05414245277643204,
+              "Height": 0.02375350520014763,
+              "Left": 0.2288733571767807,
+              "Top": 0.2672230303287506
+            },
+            "confidence": 84.619140625,
+            "text": "0",
+            "header": "subplot_number",
+            "row_index": 3,
+            "column_index": 4
+          },
+          "row_3_col_5": {
+            "bbox": {
+              "Width": 0.03609504923224449,
+              "Height": 0.02375338040292263,
+              "Left": 0.2830156683921814,
+              "Top": 0.26722341775894165
+            },
+            "confidence": 78.173828125,
+            "text": "09",
+            "header": "canopy_openness_north",
+            "row_index": 3,
+            "column_index": 5
+          },
+          "row_3_col_6": {
+            "bbox": {
+              "Width": 0.036095086485147476,
+              "Height": 0.023753385990858078,
+              "Left": 0.31911057233810425,
+              "Top": 0.26722365617752075
+            },
+            "confidence": 81.982421875,
+            "text": "#11",
+            "header": "canopy_openness_east",
+            "row_index": 3,
+            "column_index": 6
+          },
+          "row_3_col_7": {
+            "bbox": {
+              "Width": 0.03609512001276016,
+              "Height": 0.023753391578793526,
+              "Left": 0.3552055060863495,
+              "Top": 0.26722392439842224
+            },
+            "confidence": 83.251953125,
+            "text": "35",
+            "header": "canopy_openness_west",
+            "row_index": 3,
+            "column_index": 7
+          },
+          "row_3_col_8": {
+            "bbox": {
+              "Width": 0.03609515726566315,
+              "Height": 0.023753397166728973,
+              "Left": 0.3913004398345947,
+              "Top": 0.26722419261932373
+            },
+            "confidence": 80.76171875,
+            "text": "04",
+            "header": "canopy_openness_south",
+            "row_index": 3,
+            "column_index": 8
+          },
+          "row_3_col_9": {
+            "bbox": {
+              "Width": 0.07711225003004074,
+              "Height": 0.023753702640533447,
+              "Left": 0.42739540338516235,
+              "Top": 0.2672244608402252
+            },
+            "confidence": 86.9140625,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 3,
+            "column_index": 9
+          },
+          "row_3_col_10": {
+            "bbox": {
+              "Width": 0.0459393672645092,
+              "Height": 0.023753486573696136,
+              "Left": 0.5045074224472046,
+              "Top": 0.2672249972820282
+            },
+            "confidence": 83.69140625,
+            "text": "",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 3,
+            "column_index": 10
+          },
+          "row_3_col_11": {
+            "bbox": {
+              "Width": 0.04347839206457138,
+              "Height": 0.02375347539782524,
+              "Left": 0.5504465103149414,
+              "Top": 0.26722532510757446
+            },
+            "confidence": 81.494140625,
+            "text": "",
+            "header": "soil_ph",
+            "row_index": 3,
+            "column_index": 11
+          },
+          "row_3_col_12": {
+            "bbox": {
+              "Width": 0.21247586607933044,
+              "Height": 0.5725253224372864,
+              "Left": 0.593917965888977,
+              "Top": 0.2672256529331207
+            },
+            "confidence": 47.94921875,
+            "text": "Litter is high; Dry; her cestrum; few >C.A; undustory, regin Shurs, (aropy present: South in open company to North. No dury present",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 3,
+            "column_index": 12
+          },
+          "row_3_col_13": {
+            "bbox": {
+              "Width": 0.014654694125056267,
+              "Height": 0.023753302171826363,
+              "Left": 0.8063934445381165,
+              "Top": 0.2672271728515625
+            },
+            "confidence": 68.017578125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 3,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "1",
+      "canopy_openness_north": "Aug=",
+      "canopy_openness_east": "7.25",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "3 3",
+      "soil_temper_ature_in_2": "",
+      "soil_ph": "",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194878906011581,
+          "Top": 0.2909749746322632,
+          "Width": 0.7490989044308662,
+          "Height": 0.02257101610302925
+        },
+        "group_id": "row_4",
+        "row_index": 4,
+        "column_index": -1,
+        "cells": {
+          "row_4_col_1": {
+            "bbox": {
+              "Width": 0.0625857561826706,
+              "Height": 0.022565875202417374,
+              "Left": 0.07194878906011581,
+              "Top": 0.2909749746322632
+            },
+            "confidence": 88.671875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 4,
+            "column_index": 1
+          },
+          "row_4_col_2": {
+            "bbox": {
+              "Width": 0.0566033199429512,
+              "Height": 0.02256583981215954,
+              "Left": 0.13453449308872223,
+              "Top": 0.290975421667099
+            },
+            "confidence": 85.986328125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 4,
+            "column_index": 2
+          },
+          "row_4_col_3": {
+            "bbox": {
+              "Width": 0.03773561492562294,
+              "Height": 0.022565705701708794,
+              "Left": 0.19113774597644806,
+              "Top": 0.2909758388996124
+            },
+            "confidence": 82.6171875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 4,
+            "column_index": 3
+          },
+          "row_4_col_4": {
+            "bbox": {
+              "Width": 0.05414241924881935,
+              "Height": 0.02256583422422409,
+              "Left": 0.22887326776981354,
+              "Top": 0.2909761369228363
+            },
+            "confidence": 89.453125,
+            "text": "1",
+            "header": "subplot_number",
+            "row_index": 4,
+            "column_index": 4
+          },
+          "row_4_col_5": {
+            "bbox": {
+              "Width": 0.0360950268805027,
+              "Height": 0.022565705701708794,
+              "Left": 0.28301554918289185,
+              "Top": 0.29097652435302734
+            },
+            "confidence": 82.666015625,
+            "text": "Aug=",
+            "header": "canopy_openness_north",
+            "row_index": 4,
+            "column_index": 5
+          },
+          "row_4_col_6": {
+            "bbox": {
+              "Width": 0.03609506040811539,
+              "Height": 0.02256571128964424,
+              "Left": 0.3191104531288147,
+              "Top": 0.29097679257392883
+            },
+            "confidence": 86.669921875,
+            "text": "7.25",
+            "header": "canopy_openness_east",
+            "row_index": 4,
+            "column_index": 6
+          },
+          "row_4_col_7": {
+            "bbox": {
+              "Width": 0.03609509393572807,
+              "Height": 0.02256571687757969,
+              "Left": 0.35520535707473755,
+              "Top": 0.2909770607948303
+            },
+            "confidence": 87.98828125,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 4,
+            "column_index": 7
+          },
+          "row_4_col_8": {
+            "bbox": {
+              "Width": 0.03609512746334076,
+              "Height": 0.022565722465515137,
+              "Left": 0.3913002610206604,
+              "Top": 0.2909773290157318
+            },
+            "confidence": 85.3515625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 4,
+            "column_index": 8
+          },
+          "row_4_col_9": {
+            "bbox": {
+              "Width": 0.07711219787597656,
+              "Height": 0.022566035389900208,
+              "Left": 0.427395224571228,
+              "Top": 0.2909775972366333
+            },
+            "confidence": 91.89453125,
+            "text": "3 3",
+            "header": "soil_moisture",
+            "row_index": 4,
+            "column_index": 9
+          },
+          "row_4_col_10": {
+            "bbox": {
+              "Width": 0.045939333736896515,
+              "Height": 0.0225658118724823,
+              "Left": 0.5045071840286255,
+              "Top": 0.29097816348075867
+            },
+            "confidence": 88.427734375,
+            "text": "",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 4,
+            "column_index": 10
+          },
+          "row_4_col_11": {
+            "bbox": {
+              "Width": 0.043478354811668396,
+              "Height": 0.022565800696611404,
+              "Left": 0.5504462718963623,
+              "Top": 0.29097849130630493
+            },
+            "confidence": 86.1328125,
+            "text": "",
+            "header": "soil_ph",
+            "row_index": 4,
+            "column_index": 11
+          },
+          "row_4_col_12": {
+            "bbox": {
+              "Width": 0.21246908605098724,
+              "Height": 0.02256707288324833,
+              "Left": 0.593924343585968,
+              "Top": 0.2909788191318512
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 4,
+            "column_index": 12
+          },
+          "row_4_col_13": {
+            "bbox": {
+              "Width": 0.014654666185379028,
+              "Height": 0.022565621882677078,
+              "Left": 0.806393027305603,
+              "Top": 0.29098036885261536
+            },
+            "confidence": 71.875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 4,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "2",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "92.4",
+      "canopy_openness_west": "0%",
+      "canopy_openness_south": "",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "",
+      "soil_ph": "",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "Total No.",
+      "system": {
+        "bbox": {
+          "Left": 0.07194877415895462,
+          "Top": 0.31354036927223206,
+          "Width": 0.7490985346958041,
+          "Height": 0.021383456885814667
+        },
+        "group_id": "row_5",
+        "row_index": 5,
+        "column_index": -1,
+        "cells": {
+          "row_5_col_1": {
+            "bbox": {
+              "Width": 0.0625857263803482,
+              "Height": 0.021378209814429283,
+              "Left": 0.07194877415895462,
+              "Top": 0.31354036927223206
+            },
+            "confidence": 87.59765625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 5,
+            "column_index": 1
+          },
+          "row_5_col_2": {
+            "bbox": {
+              "Width": 0.056603290140628815,
+              "Height": 0.0213781725615263,
+              "Left": 0.13453444838523865,
+              "Top": 0.31354084610939026
+            },
+            "confidence": 84.9609375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 5,
+            "column_index": 2
+          },
+          "row_5_col_3": {
+            "bbox": {
+              "Width": 0.03773559257388115,
+              "Height": 0.021378036588430405,
+              "Left": 0.1911376714706421,
+              "Top": 0.3135412633419037
+            },
+            "confidence": 81.640625,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 5,
+            "column_index": 3
+          },
+          "row_5_col_4": {
+            "bbox": {
+              "Width": 0.054142389446496964,
+              "Height": 0.02137816697359085,
+              "Left": 0.22887317836284637,
+              "Top": 0.31354156136512756
+            },
+            "confidence": 88.37890625,
+            "text": "2",
+            "header": "subplot_number",
+            "row_index": 5,
+            "column_index": 4
+          },
+          "row_5_col_5": {
+            "bbox": {
+              "Width": 0.03609500080347061,
+              "Height": 0.021378036588430405,
+              "Left": 0.2830154597759247,
+              "Top": 0.3135419487953186
+            },
+            "confidence": 81.640625,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 5,
+            "column_index": 5
+          },
+          "row_5_col_6": {
+            "bbox": {
+              "Width": 0.0360950343310833,
+              "Height": 0.021378042176365852,
+              "Left": 0.31911030411720276,
+              "Top": 0.3135422170162201
+            },
+            "confidence": 85.595703125,
+            "text": "92.4",
+            "header": "canopy_openness_east",
+            "row_index": 5,
+            "column_index": 6
+          },
+          "row_5_col_7": {
+            "bbox": {
+              "Width": 0.036095067858695984,
+              "Height": 0.02137804590165615,
+              "Left": 0.3552052080631256,
+              "Top": 0.3135424852371216
+            },
+            "confidence": 86.9140625,
+            "text": "0%",
+            "header": "canopy_openness_west",
+            "row_index": 5,
+            "column_index": 7
+          },
+          "row_5_col_8": {
+            "bbox": {
+              "Width": 0.03609510138630867,
+              "Height": 0.0213780514895916,
+              "Left": 0.39130011200904846,
+              "Top": 0.31354278326034546
+            },
+            "confidence": 84.326171875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 5,
+            "column_index": 8
+          },
+          "row_5_col_9": {
+            "bbox": {
+              "Width": 0.07711214572191238,
+              "Height": 0.021378370001912117,
+              "Left": 0.4273950159549713,
+              "Top": 0.31354305148124695
+            },
+            "confidence": 90.771484375,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 5,
+            "column_index": 9
+          },
+          "row_5_col_10": {
+            "bbox": {
+              "Width": 0.04593929648399353,
+              "Height": 0.02137814089655876,
+              "Left": 0.5045069456100464,
+              "Top": 0.3135436177253723
+            },
+            "confidence": 87.40234375,
+            "text": "",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 5,
+            "column_index": 10
+          },
+          "row_5_col_11": {
+            "bbox": {
+              "Width": 0.04347832128405571,
+              "Height": 0.021378129720687866,
+              "Left": 0.5504460334777832,
+              "Top": 0.31354397535324097
+            },
+            "confidence": 85.107421875,
+            "text": "",
+            "header": "soil_ph",
+            "row_index": 5,
+            "column_index": 11
+          },
+          "row_5_col_12": {
+            "bbox": {
+              "Width": 0.2124689668416977,
+              "Height": 0.02137942612171173,
+              "Left": 0.5939241051673889,
+              "Top": 0.31354430317878723
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 5,
+            "column_index": 12
+          },
+          "row_5_col_13": {
+            "bbox": {
+              "Width": 0.014654639177024364,
+              "Height": 0.021377943456172943,
+              "Left": 0.8063926696777344,
+              "Top": 0.3135458827018738
+            },
+            "confidence": 71.044921875,
+            "text": "Total No.",
+            "header": "col_13",
+            "row_index": 5,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "3",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "4",
+      "soil_temper_ature_in_2": "",
+      "soil_ph": "",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194875180721283,
+          "Top": 0.3349181115627289,
+          "Width": 0.7490982124581933,
+          "Height": 0.022571183741092682
+        },
+        "group_id": "row_6",
+        "row_index": 6,
+        "column_index": -1,
+        "cells": {
+          "row_6_col_1": {
+            "bbox": {
+              "Width": 0.06258569657802582,
+              "Height": 0.022565849125385284,
+              "Left": 0.07194875180721283,
+              "Top": 0.3349181115627289
+            },
+            "confidence": 84.228515625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 6,
+            "column_index": 1
+          },
+          "row_6_col_2": {
+            "bbox": {
+              "Width": 0.056603267788887024,
+              "Height": 0.0225658118724823,
+              "Left": 0.13453440368175507,
+              "Top": 0.3349185883998871
+            },
+            "confidence": 81.689453125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 6,
+            "column_index": 2
+          },
+          "row_6_col_3": {
+            "bbox": {
+              "Width": 0.037735577672719955,
+              "Height": 0.022565672174096107,
+              "Left": 0.19113759696483612,
+              "Top": 0.3349190056324005
+            },
+            "confidence": 78.466796875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 6,
+            "column_index": 3
+          },
+          "row_6_col_4": {
+            "bbox": {
+              "Width": 0.05414236709475517,
+              "Height": 0.022565806284546852,
+              "Left": 0.22887307405471802,
+              "Top": 0.3349193036556244
+            },
+            "confidence": 84.9609375,
+            "text": "3",
+            "header": "subplot_number",
+            "row_index": 6,
+            "column_index": 4
+          },
+          "row_6_col_5": {
+            "bbox": {
+              "Width": 0.036094989627599716,
+              "Height": 0.022565674036741257,
+              "Left": 0.28301534056663513,
+              "Top": 0.3349197208881378
+            },
+            "confidence": 78.466796875,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 6,
+            "column_index": 5
+          },
+          "row_6_col_6": {
+            "bbox": {
+              "Width": 0.0360950231552124,
+              "Height": 0.022565677762031555,
+              "Left": 0.3191101849079132,
+              "Top": 0.3349199891090393
+            },
+            "confidence": 82.275390625,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 6,
+            "column_index": 6
+          },
+          "row_6_col_7": {
+            "bbox": {
+              "Width": 0.03609506040811539,
+              "Height": 0.022565683349967003,
+              "Left": 0.35520505905151367,
+              "Top": 0.3349202573299408
+            },
+            "confidence": 83.544921875,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 6,
+            "column_index": 7
+          },
+          "row_6_col_8": {
+            "bbox": {
+              "Width": 0.03609509393572807,
+              "Height": 0.02256568893790245,
+              "Left": 0.39129993319511414,
+              "Top": 0.3349205553531647
+            },
+            "confidence": 81.0546875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 6,
+            "column_index": 8
+          },
+          "row_6_col_9": {
+            "bbox": {
+              "Width": 0.0771121233701706,
+              "Height": 0.022566013038158417,
+              "Left": 0.427394837141037,
+              "Top": 0.33492082357406616
+            },
+            "confidence": 87.255859375,
+            "text": "4",
+            "header": "soil_moisture",
+            "row_index": 6,
+            "column_index": 9
+          },
+          "row_6_col_10": {
+            "bbox": {
+              "Width": 0.04593928903341293,
+              "Height": 0.022565782070159912,
+              "Left": 0.5045067071914673,
+              "Top": 0.3349214196205139
+            },
+            "confidence": 83.984375,
+            "text": "",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 6,
+            "column_index": 10
+          },
+          "row_6_col_11": {
+            "bbox": {
+              "Width": 0.04347831383347511,
+              "Height": 0.022565769031643867,
+              "Left": 0.5504457950592041,
+              "Top": 0.3349217474460602
+            },
+            "confidence": 81.787109375,
+            "text": "",
+            "header": "soil_ph",
+            "row_index": 6,
+            "column_index": 11
+          },
+          "row_6_col_12": {
+            "bbox": {
+              "Width": 0.21246889233589172,
+              "Height": 0.022567089647054672,
+              "Left": 0.593923807144165,
+              "Top": 0.33492210507392883
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 6,
+            "column_index": 12
+          },
+          "row_6_col_13": {
+            "bbox": {
+              "Width": 0.014654652215540409,
+              "Height": 0.022565580904483795,
+              "Left": 0.8063923120498657,
+              "Top": 0.33492371439933777
+            },
+            "confidence": 68.26171875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 6,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "4",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "",
+      "soil_ph": "",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194873690605164,
+          "Top": 0.35748347640037537,
+          "Width": 0.7490978622809052,
+          "Height": 0.022571254521608353
+        },
+        "group_id": "row_7",
+        "row_index": 7,
+        "column_index": -1,
+        "cells": {
+          "row_7_col_1": {
+            "bbox": {
+              "Width": 0.06258566677570343,
+              "Height": 0.02256583608686924,
+              "Left": 0.07194873690605164,
+              "Top": 0.35748347640037537
+            },
+            "confidence": 85.05859375,
+            "text": "",
+            "header": "block_code",
+            "row_index": 7,
+            "column_index": 1
+          },
+          "row_7_col_2": {
+            "bbox": {
+              "Width": 0.056603237986564636,
+              "Height": 0.022565796971321106,
+              "Left": 0.13453435897827148,
+              "Top": 0.35748395323753357
+            },
+            "confidence": 82.470703125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 7,
+            "column_index": 2
+          },
+          "row_7_col_3": {
+            "bbox": {
+              "Width": 0.03773555904626846,
+              "Height": 0.022565655410289764,
+              "Left": 0.19113752245903015,
+              "Top": 0.3574844002723694
+            },
+            "confidence": 79.19921875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 7,
+            "column_index": 3
+          },
+          "row_7_col_4": {
+            "bbox": {
+              "Width": 0.054142341017723083,
+              "Height": 0.022565791383385658,
+              "Left": 0.22887298464775085,
+              "Top": 0.35748469829559326
+            },
+            "confidence": 85.791015625,
+            "text": "4",
+            "header": "subplot_number",
+            "row_index": 7,
+            "column_index": 4
+          },
+          "row_7_col_5": {
+            "bbox": {
+              "Width": 0.036094971001148224,
+              "Height": 0.022565655410289764,
+              "Left": 0.2830152213573456,
+              "Top": 0.3574851155281067
+            },
+            "confidence": 79.248046875,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 7,
+            "column_index": 5
+          },
+          "row_7_col_6": {
+            "bbox": {
+              "Width": 0.03609500825405121,
+              "Height": 0.022565660998225212,
+              "Left": 0.31911003589630127,
+              "Top": 0.3574853837490082
+            },
+            "confidence": 83.10546875,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 7,
+            "column_index": 6
+          },
+          "row_7_col_7": {
+            "bbox": {
+              "Width": 0.036095041781663895,
+              "Height": 0.02256566658616066,
+              "Left": 0.35520488023757935,
+              "Top": 0.35748568177223206
+            },
+            "confidence": 84.375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 7,
+            "column_index": 7
+          },
+          "row_7_col_8": {
+            "bbox": {
+              "Width": 0.03609507530927658,
+              "Height": 0.022565672174096107,
+              "Left": 0.3912997543811798,
+              "Top": 0.35748594999313354
+            },
+            "confidence": 81.884765625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 7,
+            "column_index": 8
+          },
+          "row_7_col_9": {
+            "bbox": {
+              "Width": 0.07711208611726761,
+              "Height": 0.02256600186228752,
+              "Left": 0.42739465832710266,
+              "Top": 0.3574862480163574
+            },
+            "confidence": 88.134765625,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 7,
+            "column_index": 9
+          },
+          "row_7_col_10": {
+            "bbox": {
+              "Width": 0.04593926668167114,
+              "Height": 0.02256576530635357,
+              "Left": 0.504506528377533,
+              "Top": 0.3574868440628052
+            },
+            "confidence": 84.814453125,
+            "text": "",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 7,
+            "column_index": 10
+          },
+          "row_7_col_11": {
+            "bbox": {
+              "Width": 0.04347829148173332,
+              "Height": 0.022565752267837524,
+              "Left": 0.5504454970359802,
+              "Top": 0.35748720169067383
+            },
+            "confidence": 82.6171875,
+            "text": "",
+            "header": "soil_ph",
+            "row_index": 7,
+            "column_index": 11
+          },
+          "row_7_col_12": {
+            "bbox": {
+              "Width": 0.21246878802776337,
+              "Height": 0.02256709896028042,
+              "Left": 0.5939235091209412,
+              "Top": 0.3574875295162201
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 7,
+            "column_index": 12
+          },
+          "row_7_col_13": {
+            "bbox": {
+              "Width": 0.014654644764959812,
+              "Height": 0.022565562278032303,
+              "Left": 0.8063919544219971,
+              "Top": 0.3574891686439514
+            },
+            "confidence": 68.9453125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 7,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "2",
+      "subplot_number": "0",
+      "canopy_openness_north": "B",
+      "canopy_openness_east": "4",
+      "canopy_openness_west": "3",
+      "canopy_openness_south": "4",
+      "soil_moisture": "Day T (1)",
+      "soil_temper_ature_in_2": "19",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194872200489044,
+          "Top": 0.38004881143569946,
+          "Width": 0.749097453430295,
+          "Height": 0.022571353241801262
+        },
+        "group_id": "row_8",
+        "row_index": 8,
+        "column_index": -1,
+        "cells": {
+          "row_8_col_1": {
+            "bbox": {
+              "Width": 0.06258562952280045,
+              "Height": 0.022565823048353195,
+              "Left": 0.07194872200489044,
+              "Top": 0.38004881143569946
+            },
+            "confidence": 85.498046875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 8,
+            "column_index": 1
+          },
+          "row_8_col_2": {
+            "bbox": {
+              "Width": 0.05660321190953255,
+              "Height": 0.02256578393280506,
+              "Left": 0.1345343142747879,
+              "Top": 0.38004931807518005
+            },
+            "confidence": 82.91015625,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 8,
+            "column_index": 2
+          },
+          "row_8_col_3": {
+            "bbox": {
+              "Width": 0.03773554041981697,
+              "Height": 0.02256563864648342,
+              "Left": 0.19113744795322418,
+              "Top": 0.38004976511001587
+            },
+            "confidence": 79.638671875,
+            "text": "2",
+            "header": "plot_number",
+            "row_index": 8,
+            "column_index": 3
+          },
+          "row_8_col_4": {
+            "bbox": {
+              "Width": 0.054142314940690994,
+              "Height": 0.022565776482224464,
+              "Left": 0.2288728952407837,
+              "Top": 0.38005006313323975
+            },
+            "confidence": 86.23046875,
+            "text": "0",
+            "header": "subplot_number",
+            "row_index": 8,
+            "column_index": 4
+          },
+          "row_8_col_5": {
+            "bbox": {
+              "Width": 0.03609495609998703,
+              "Height": 0.02256563864648342,
+              "Left": 0.28301510214805603,
+              "Top": 0.3800504803657532
+            },
+            "confidence": 79.6875,
+            "text": "B",
+            "header": "canopy_openness_north",
+            "row_index": 8,
+            "column_index": 5
+          },
+          "row_8_col_6": {
+            "bbox": {
+              "Width": 0.036094989627599716,
+              "Height": 0.02256564423441887,
+              "Left": 0.3191099166870117,
+              "Top": 0.38005077838897705
+            },
+            "confidence": 83.544921875,
+            "text": "4",
+            "header": "canopy_openness_east",
+            "row_index": 8,
+            "column_index": 6
+          },
+          "row_8_col_7": {
+            "bbox": {
+              "Width": 0.0360950231552124,
+              "Height": 0.022565649822354317,
+              "Left": 0.3552047312259674,
+              "Top": 0.38005104660987854
+            },
+            "confidence": 84.814453125,
+            "text": "3",
+            "header": "canopy_openness_west",
+            "row_index": 8,
+            "column_index": 7
+          },
+          "row_8_col_8": {
+            "bbox": {
+              "Width": 0.03609505668282509,
+              "Height": 0.022565655410289764,
+              "Left": 0.3912995755672455,
+              "Top": 0.3800513446331024
+            },
+            "confidence": 82.32421875,
+            "text": "4",
+            "header": "canopy_openness_south",
+            "row_index": 8,
+            "column_index": 8
+          },
+          "row_8_col_9": {
+            "bbox": {
+              "Width": 0.07711204886436462,
+              "Height": 0.022565990686416626,
+              "Left": 0.42739444971084595,
+              "Top": 0.3800516128540039
+            },
+            "confidence": 88.623046875,
+            "text": "Day T (1)",
+            "header": "soil_moisture",
+            "row_index": 8,
+            "column_index": 9
+          },
+          "row_8_col_10": {
+            "bbox": {
+              "Width": 0.04593924432992935,
+              "Height": 0.022565750405192375,
+              "Left": 0.5045062899589539,
+              "Top": 0.38005223870277405
+            },
+            "confidence": 85.25390625,
+            "text": "19",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 8,
+            "column_index": 10
+          },
+          "row_8_col_11": {
+            "bbox": {
+              "Width": 0.04347827285528183,
+              "Height": 0.02256573736667633,
+              "Left": 0.5504452586174011,
+              "Top": 0.3800525963306427
+            },
+            "confidence": 83.056640625,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 8,
+            "column_index": 11
+          },
+          "row_8_col_12": {
+            "bbox": {
+              "Width": 0.212468683719635,
+              "Height": 0.022567106410861015,
+              "Left": 0.5939232707023621,
+              "Top": 0.38005295395851135
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 8,
+            "column_index": 12
+          },
+          "row_8_col_13": {
+            "bbox": {
+              "Width": 0.01465463824570179,
+              "Height": 0.02256554178893566,
+              "Left": 0.8063915371894836,
+              "Top": 0.38005462288856506
+            },
+            "confidence": 69.3359375,
+            "text": "",
+            "header": "col_13",
+            "row_index": 8,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "1",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "4.25",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "-",
+      "soil_temper_ature_in_2": "19",
+      "soil_ph": "2",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194870710372925,
+          "Top": 0.40261411666870117,
+          "Width": 0.7492090091109276,
+          "Height": 0.04513683170080185
+        },
+        "group_id": "row_9",
+        "row_index": 9,
+        "column_index": -1,
+        "cells": {
+          "row_9_col_1": {
+            "bbox": {
+              "Width": 0.06258559972047806,
+              "Height": 0.022565808147192,
+              "Left": 0.07194870710372925,
+              "Top": 0.40261411666870117
+            },
+            "confidence": 80.17578125,
+            "text": "",
+            "header": "block_code",
+            "row_index": 9,
+            "column_index": 1
+          },
+          "row_9_col_2": {
+            "bbox": {
+              "Width": 0.05660318210721016,
+              "Height": 0.022565769031643867,
+              "Left": 0.13453426957130432,
+              "Top": 0.40261462330818176
+            },
+            "confidence": 77.734375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 9,
+            "column_index": 2
+          },
+          "row_9_col_3": {
+            "bbox": {
+              "Width": 0.03773552179336548,
+              "Height": 0.022565621882677078,
+              "Left": 0.1911373734474182,
+              "Top": 0.40261510014533997
+            },
+            "confidence": 74.658203125,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 9,
+            "column_index": 3
+          },
+          "row_9_col_4": {
+            "bbox": {
+              "Width": 0.054142288863658905,
+              "Height": 0.02256576158106327,
+              "Left": 0.22887280583381653,
+              "Top": 0.40261539816856384
+            },
+            "confidence": 80.859375,
+            "text": "1",
+            "header": "subplot_number",
+            "row_index": 9,
+            "column_index": 4
+          },
+          "row_9_col_5": {
+            "bbox": {
+              "Width": 0.03609493747353554,
+              "Height": 0.022565621882677078,
+              "Left": 0.2830149829387665,
+              "Top": 0.40261581540107727
+            },
+            "confidence": 74.70703125,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 9,
+            "column_index": 5
+          },
+          "row_9_col_6": {
+            "bbox": {
+              "Width": 0.036094971001148224,
+              "Height": 0.022565627470612526,
+              "Left": 0.3191097676753998,
+              "Top": 0.40261611342430115
+            },
+            "confidence": 78.3203125,
+            "text": "4.25",
+            "header": "canopy_openness_east",
+            "row_index": 9,
+            "column_index": 6
+          },
+          "row_9_col_7": {
+            "bbox": {
+              "Width": 0.03609500452876091,
+              "Height": 0.022565633058547974,
+              "Left": 0.35520458221435547,
+              "Top": 0.402616411447525
+            },
+            "confidence": 79.541015625,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 9,
+            "column_index": 7
+          },
+          "row_9_col_8": {
+            "bbox": {
+              "Width": 0.036095041781663895,
+              "Height": 0.022565636783838272,
+              "Left": 0.39129942655563354,
+              "Top": 0.4026167094707489
+            },
+            "confidence": 77.1484375,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 9,
+            "column_index": 8
+          },
+          "row_9_col_9": {
+            "bbox": {
+              "Width": 0.07711200416088104,
+              "Height": 0.02256597951054573,
+              "Left": 0.4273942708969116,
+              "Top": 0.4026170074939728
+            },
+            "confidence": 83.056640625,
+            "text": "-",
+            "header": "soil_moisture",
+            "row_index": 9,
+            "column_index": 9
+          },
+          "row_9_col_10": {
+            "bbox": {
+              "Width": 0.04593921825289726,
+              "Height": 0.02256573550403118,
+              "Left": 0.5045060515403748,
+              "Top": 0.40261760354042053
+            },
+            "confidence": 79.931640625,
+            "text": "19",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 9,
+            "column_index": 10
+          },
+          "row_9_col_11": {
+            "bbox": {
+              "Width": 0.04347825050354004,
+              "Height": 0.022565720602869987,
+              "Left": 0.550445020198822,
+              "Top": 0.4026179909706116
+            },
+            "confidence": 77.880859375,
+            "text": "2",
+            "header": "soil_ph",
+            "row_index": 9,
+            "column_index": 11
+          },
+          "row_9_col_12": {
+            "bbox": {
+              "Width": 0.21246857941150665,
+              "Height": 0.022567113861441612,
+              "Left": 0.5939229726791382,
+              "Top": 0.4026183485984802
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 9,
+            "column_index": 12
+          },
+          "row_9_col_13": {
+            "bbox": {
+              "Width": 0.014655008912086487,
+              "Height": 0.0451309010386467,
+              "Left": 0.8063908219337463,
+              "Top": 0.4026200473308563
+            },
+            "confidence": 38.8671875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 9,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "2",
+      "canopy_openness_north": "Aug",
+      "canopy_openness_east": "95",
+      "canopy_openness_west": "2%",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194869220256805,
+          "Top": 0.4251794219017029,
+          "Width": 0.7492086589336395,
+          "Height": 0.022571522742509842
+        },
+        "group_id": "row_10",
+        "row_index": 10,
+        "column_index": -1,
+        "cells": {
+          "row_10_col_1": {
+            "bbox": {
+              "Width": 0.06258556991815567,
+              "Height": 0.022565795108675957,
+              "Left": 0.07194869220256805,
+              "Top": 0.4251794219017029
+            },
+            "confidence": 82.568359375,
+            "text": "",
+            "header": "block_code",
+            "row_index": 10,
+            "column_index": 1
+          },
+          "row_10_col_2": {
+            "bbox": {
+              "Width": 0.05660315603017807,
+              "Height": 0.022565754130482674,
+              "Left": 0.13453422486782074,
+              "Top": 0.42517992854118347
+            },
+            "confidence": 80.078125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 10,
+            "column_index": 2
+          },
+          "row_10_col_3": {
+            "bbox": {
+              "Width": 0.037735503166913986,
+              "Height": 0.022565605118870735,
+              "Left": 0.19113729894161224,
+              "Top": 0.4251804053783417
+            },
+            "confidence": 76.904296875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 10,
+            "column_index": 3
+          },
+          "row_10_col_4": {
+            "bbox": {
+              "Width": 0.05414225906133652,
+              "Height": 0.022565748542547226,
+              "Left": 0.22887270152568817,
+              "Top": 0.42518070340156555
+            },
+            "confidence": 83.30078125,
+            "text": "2",
+            "header": "subplot_number",
+            "row_index": 10,
+            "column_index": 4
+          },
+          "row_10_col_5": {
+            "bbox": {
+              "Width": 0.036094918847084045,
+              "Height": 0.022565605118870735,
+              "Left": 0.28301483392715454,
+              "Top": 0.42518115043640137
+            },
+            "confidence": 76.953125,
+            "text": "Aug",
+            "header": "canopy_openness_north",
+            "row_index": 10,
+            "column_index": 5
+          },
+          "row_10_col_6": {
+            "bbox": {
+              "Width": 0.03609495237469673,
+              "Height": 0.022565610706806183,
+              "Left": 0.31910961866378784,
+              "Top": 0.42518144845962524
+            },
+            "confidence": 80.6640625,
+            "text": "95",
+            "header": "canopy_openness_east",
+            "row_index": 10,
+            "column_index": 6
+          },
+          "row_10_col_7": {
+            "bbox": {
+              "Width": 0.036094989627599716,
+              "Height": 0.02256561443209648,
+              "Left": 0.35520443320274353,
+              "Top": 0.4251817464828491
+            },
+            "confidence": 81.93359375,
+            "text": "2%",
+            "header": "canopy_openness_west",
+            "row_index": 10,
+            "column_index": 7
+          },
+          "row_10_col_8": {
+            "bbox": {
+              "Width": 0.0360950231552124,
+              "Height": 0.02256562002003193,
+              "Left": 0.3912992477416992,
+              "Top": 0.425182044506073
+            },
+            "confidence": 79.4921875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 10,
+            "column_index": 8
+          },
+          "row_10_col_9": {
+            "bbox": {
+              "Width": 0.07711196690797806,
+              "Height": 0.022565968334674835,
+              "Left": 0.4273940622806549,
+              "Top": 0.4251823425292969
+            },
+            "confidence": 85.546875,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 10,
+            "column_index": 9
+          },
+          "row_10_col_10": {
+            "bbox": {
+              "Width": 0.04593919590115547,
+              "Height": 0.022565718740224838,
+              "Left": 0.5045058131217957,
+              "Top": 0.425182968378067
+            },
+            "confidence": 82.32421875,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 10,
+            "column_index": 10
+          },
+          "row_10_col_11": {
+            "bbox": {
+              "Width": 0.04347822815179825,
+              "Height": 0.022565705701708794,
+              "Left": 0.5504447817802429,
+              "Top": 0.42518335580825806
+            },
+            "confidence": 80.17578125,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 10,
+            "column_index": 11
+          },
+          "row_10_col_12": {
+            "bbox": {
+              "Width": 0.2124684751033783,
+              "Height": 0.02256712317466736,
+              "Left": 0.5939227342605591,
+              "Top": 0.4251837134361267
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 10,
+            "column_index": 12
+          },
+          "row_10_col_13": {
+            "bbox": {
+              "Width": 0.014766529202461243,
+              "Height": 0.022565502673387527,
+              "Left": 0.8063908219337463,
+              "Top": 0.4251854419708252
+            },
+            "confidence": 38.8671875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 10,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "3",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "20 21",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194867730140686,
+          "Top": 0.4477446973323822,
+          "Width": 0.749096343293786,
+          "Height": 0.022571619600057602
+        },
+        "group_id": "row_11",
+        "row_index": 11,
+        "column_index": -1,
+        "cells": {
+          "row_11_col_1": {
+            "bbox": {
+              "Width": 0.06258554011583328,
+              "Height": 0.022565782070159912,
+              "Left": 0.07194867730140686,
+              "Top": 0.4477446973323822
+            },
+            "confidence": 84.423828125,
+            "text": "",
+            "header": "block_code",
+            "row_index": 11,
+            "column_index": 1
+          },
+          "row_11_col_2": {
+            "bbox": {
+              "Width": 0.05660312622785568,
+              "Height": 0.02256574109196663,
+              "Left": 0.13453416526317596,
+              "Top": 0.4477452039718628
+            },
+            "confidence": 81.884765625,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 11,
+            "column_index": 2
+          },
+          "row_11_col_3": {
+            "bbox": {
+              "Width": 0.037735484540462494,
+              "Height": 0.022565588355064392,
+              "Left": 0.19113722443580627,
+              "Top": 0.447745680809021
+            },
+            "confidence": 78.662109375,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 11,
+            "column_index": 3
+          },
+          "row_11_col_4": {
+            "bbox": {
+              "Width": 0.05414223298430443,
+              "Height": 0.022565733641386032,
+              "Left": 0.228872612118721,
+              "Top": 0.44774600863456726
+            },
+            "confidence": 85.205078125,
+            "text": "3",
+            "header": "subplot_number",
+            "row_index": 11,
+            "column_index": 4
+          },
+          "row_11_col_5": {
+            "bbox": {
+              "Width": 0.03609490022063255,
+              "Height": 0.022565588355064392,
+              "Left": 0.283014714717865,
+              "Top": 0.4477464556694031
+            },
+            "confidence": 78.7109375,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 11,
+            "column_index": 5
+          },
+          "row_11_col_6": {
+            "bbox": {
+              "Width": 0.03609493747353554,
+              "Height": 0.02256559208035469,
+              "Left": 0.3191094994544983,
+              "Top": 0.44774675369262695
+            },
+            "confidence": 82.51953125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 11,
+            "column_index": 6
+          },
+          "row_11_col_7": {
+            "bbox": {
+              "Width": 0.036094971001148224,
+              "Height": 0.022565597668290138,
+              "Left": 0.3552042841911316,
+              "Top": 0.44774705171585083
+            },
+            "confidence": 83.7890625,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 11,
+            "column_index": 7
+          },
+          "row_11_col_8": {
+            "bbox": {
+              "Width": 0.03609500452876091,
+              "Height": 0.022565603256225586,
+              "Left": 0.3912990689277649,
+              "Top": 0.4477473497390747
+            },
+            "confidence": 81.298828125,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 11,
+            "column_index": 8
+          },
+          "row_11_col_9": {
+            "bbox": {
+              "Width": 0.07711192965507507,
+              "Height": 0.02256595715880394,
+              "Left": 0.4273938834667206,
+              "Top": 0.44774767756462097
+            },
+            "confidence": 87.5,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 11,
+            "column_index": 9
+          },
+          "row_11_col_10": {
+            "bbox": {
+              "Width": 0.04593917354941368,
+              "Height": 0.022565703839063644,
+              "Left": 0.5045055747032166,
+              "Top": 0.4477483034133911
+            },
+            "confidence": 84.228515625,
+            "text": "20 21",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 11,
+            "column_index": 10
+          },
+          "row_11_col_11": {
+            "bbox": {
+              "Width": 0.04347820580005646,
+              "Height": 0.02256568893790245,
+              "Left": 0.550444483757019,
+              "Top": 0.44774869084358215
+            },
+            "confidence": 82.03125,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 11,
+            "column_index": 11
+          },
+          "row_11_col_12": {
+            "bbox": {
+              "Width": 0.21246835589408875,
+              "Height": 0.022567130625247955,
+              "Left": 0.5939224362373352,
+              "Top": 0.4477490484714508
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 11,
+            "column_index": 12
+          },
+          "row_11_col_13": {
+            "bbox": {
+              "Width": 0.014654615893959999,
+              "Height": 0.022565480321645737,
+              "Left": 0.8063904047012329,
+              "Top": 0.44775083661079407
+            },
+            "confidence": 68.45703125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 11,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "4",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194866240024567,
+          "Top": 0.47030994296073914,
+          "Width": 0.7490959940478206,
+          "Height": 0.02257171832025051
+        },
+        "group_id": "row_12",
+        "row_index": 12,
+        "column_index": -1,
+        "cells": {
+          "row_12_col_1": {
+            "bbox": {
+              "Width": 0.0625855103135109,
+              "Height": 0.022565769031643867,
+              "Left": 0.07194866240024567,
+              "Top": 0.47030994296073914
+            },
+            "confidence": 81.787109375,
+            "text": "",
+            "header": "block_code",
+            "row_index": 12,
+            "column_index": 1
+          },
+          "row_12_col_2": {
+            "bbox": {
+              "Width": 0.05660310015082359,
+              "Height": 0.022565726190805435,
+              "Left": 0.13453412055969238,
+              "Top": 0.4703104794025421
+            },
+            "confidence": 79.296875,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 12,
+            "column_index": 2
+          },
+          "row_12_col_3": {
+            "bbox": {
+              "Width": 0.037735465914011,
+              "Height": 0.02256557159125805,
+              "Left": 0.1911371499300003,
+              "Top": 0.4703109562397003
+            },
+            "confidence": 76.171875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 12,
+            "column_index": 3
+          },
+          "row_12_col_4": {
+            "bbox": {
+              "Width": 0.05414220690727234,
+              "Height": 0.022565718740224838,
+              "Left": 0.22887252271175385,
+              "Top": 0.4703112840652466
+            },
+            "confidence": 82.470703125,
+            "text": "4",
+            "header": "subplot_number",
+            "row_index": 12,
+            "column_index": 4
+          },
+          "row_12_col_5": {
+            "bbox": {
+              "Width": 0.03609488159418106,
+              "Height": 0.0225655697286129,
+              "Left": 0.28301459550857544,
+              "Top": 0.4703117311000824
+            },
+            "confidence": 76.220703125,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 12,
+            "column_index": 5
+          },
+          "row_12_col_6": {
+            "bbox": {
+              "Width": 0.036094918847084045,
+              "Height": 0.022565575316548347,
+              "Left": 0.31910935044288635,
+              "Top": 0.47031205892562866
+            },
+            "confidence": 79.8828125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 12,
+            "column_index": 6
+          },
+          "row_12_col_7": {
+            "bbox": {
+              "Width": 0.03609495237469673,
+              "Height": 0.022565580904483795,
+              "Left": 0.35520410537719727,
+              "Top": 0.47031235694885254
+            },
+            "confidence": 81.15234375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 12,
+            "column_index": 7
+          },
+          "row_12_col_8": {
+            "bbox": {
+              "Width": 0.03609498590230942,
+              "Height": 0.022565586492419243,
+              "Left": 0.39129889011383057,
+              "Top": 0.4703126549720764
+            },
+            "confidence": 78.7109375,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 12,
+            "column_index": 8
+          },
+          "row_12_col_9": {
+            "bbox": {
+              "Width": 0.07711189240217209,
+              "Height": 0.022565945982933044,
+              "Left": 0.42739370465278625,
+              "Top": 0.4703129529953003
+            },
+            "confidence": 84.716796875,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 12,
+            "column_index": 9
+          },
+          "row_12_col_10": {
+            "bbox": {
+              "Width": 0.04593915119767189,
+              "Height": 0.0225656870752573,
+              "Left": 0.5045053362846375,
+              "Top": 0.4703136086463928
+            },
+            "confidence": 81.54296875,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 12,
+            "column_index": 10
+          },
+          "row_12_col_11": {
+            "bbox": {
+              "Width": 0.043478187173604965,
+              "Height": 0.022565672174096107,
+              "Left": 0.5504442453384399,
+              "Top": 0.47031402587890625
+            },
+            "confidence": 79.443359375,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 12,
+            "column_index": 11
+          },
+          "row_12_col_12": {
+            "bbox": {
+              "Width": 0.2124682515859604,
+              "Height": 0.0225671399384737,
+              "Left": 0.5939221382141113,
+              "Top": 0.4703143835067749
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 12,
+            "column_index": 12
+          },
+          "row_12_col_13": {
+            "bbox": {
+              "Width": 0.014654609374701977,
+              "Height": 0.022565459832549095,
+              "Left": 0.8063900470733643,
+              "Top": 0.47031620144844055
+            },
+            "confidence": 66.30859375,
+            "text": "",
+            "header": "col_13",
+            "row_index": 12,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "3",
+      "subplot_number": "O",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "Dry + (1)",
+      "soil_temper_ature_in_2": "22",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194864749908447,
+          "Top": 0.49287518858909607,
+          "Width": 0.7490956438705325,
+          "Height": 0.022571759298443794
+        },
+        "group_id": "row_13",
+        "row_index": 13,
+        "column_index": -1,
+        "cells": {
+          "row_13_col_1": {
+            "bbox": {
+              "Width": 0.06258548051118851,
+              "Height": 0.022565755993127823,
+              "Left": 0.07194864749908447,
+              "Top": 0.49287518858909607
+            },
+            "confidence": 83.837890625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 13,
+            "column_index": 1
+          },
+          "row_13_col_2": {
+            "bbox": {
+              "Width": 0.056603070348501205,
+              "Height": 0.02256571315228939,
+              "Left": 0.1345340758562088,
+              "Top": 0.49287572503089905
+            },
+            "confidence": 81.298828125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 13,
+            "column_index": 2
+          },
+          "row_13_col_3": {
+            "bbox": {
+              "Width": 0.03773544728755951,
+              "Height": 0.022565554827451706,
+              "Left": 0.19113707542419434,
+              "Top": 0.49287620186805725
+            },
+            "confidence": 78.125,
+            "text": "3",
+            "header": "plot_number",
+            "row_index": 13,
+            "column_index": 3
+          },
+          "row_13_col_4": {
+            "bbox": {
+              "Width": 0.05414218083024025,
+              "Height": 0.022565703839063644,
+              "Left": 0.22887243330478668,
+              "Top": 0.4928765296936035
+            },
+            "confidence": 84.5703125,
+            "text": "O",
+            "header": "subplot_number",
+            "row_index": 13,
+            "column_index": 4
+          },
+          "row_13_col_5": {
+            "bbox": {
+              "Width": 0.03609486669301987,
+              "Height": 0.022565552964806557,
+              "Left": 0.2830144762992859,
+              "Top": 0.4928770065307617
+            },
+            "confidence": 78.125,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 13,
+            "column_index": 5
+          },
+          "row_13_col_6": {
+            "bbox": {
+              "Width": 0.03609490022063255,
+              "Height": 0.022565558552742004,
+              "Left": 0.3191092312335968,
+              "Top": 0.4928773045539856
+            },
+            "confidence": 81.93359375,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 13,
+            "column_index": 6
+          },
+          "row_13_col_7": {
+            "bbox": {
+              "Width": 0.03609493374824524,
+              "Height": 0.022565564140677452,
+              "Left": 0.3552039563655853,
+              "Top": 0.49287763237953186
+            },
+            "confidence": 83.203125,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 13,
+            "column_index": 7
+          },
+          "row_13_col_8": {
+            "bbox": {
+              "Width": 0.036094967275857925,
+              "Height": 0.0225655697286129,
+              "Left": 0.39129871129989624,
+              "Top": 0.49287793040275574
+            },
+            "confidence": 80.712890625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 13,
+            "column_index": 8
+          },
+          "row_13_col_9": {
+            "bbox": {
+              "Width": 0.0771118551492691,
+              "Height": 0.02256593480706215,
+              "Left": 0.42739349603652954,
+              "Top": 0.492878258228302
+            },
+            "confidence": 86.865234375,
+            "text": "Dry + (1)",
+            "header": "soil_moisture",
+            "row_index": 13,
+            "column_index": 9
+          },
+          "row_13_col_10": {
+            "bbox": {
+              "Width": 0.0459391288459301,
+              "Height": 0.022565672174096107,
+              "Left": 0.5045050978660583,
+              "Top": 0.49287891387939453
+            },
+            "confidence": 83.642578125,
+            "text": "22",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 13,
+            "column_index": 10
+          },
+          "row_13_col_11": {
+            "bbox": {
+              "Width": 0.043478164821863174,
+              "Height": 0.022565657272934914,
+              "Left": 0.5504440069198608,
+              "Top": 0.49287930130958557
+            },
+            "confidence": 81.4453125,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 13,
+            "column_index": 11
+          },
+          "row_13_col_12": {
+            "bbox": {
+              "Width": 0.21246814727783203,
+              "Height": 0.0225671473890543,
+              "Left": 0.5939218997955322,
+              "Top": 0.4928796887397766
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 13,
+            "column_index": 12
+          },
+          "row_13_col_13": {
+            "bbox": {
+              "Width": 0.01465460192412138,
+              "Height": 0.022565441206097603,
+              "Left": 0.8063896894454956,
+              "Top": 0.49288150668144226
+            },
+            "confidence": 67.96875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 13,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "1",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "Noi(3)",
+      "soil_temper_ature_in_2": "19",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194863259792328,
+          "Top": 0.5154404044151306,
+          "Width": 0.7490952340885997,
+          "Height": 0.022571858018636703
+        },
+        "group_id": "row_14",
+        "row_index": 14,
+        "column_index": -1,
+        "cells": {
+          "row_14_col_1": {
+            "bbox": {
+              "Width": 0.06258545070886612,
+              "Height": 0.022565742954611778,
+              "Left": 0.07194863259792328,
+              "Top": 0.5154404044151306
+            },
+            "confidence": 83.984375,
+            "text": "",
+            "header": "block_code",
+            "row_index": 14,
+            "column_index": 1
+          },
+          "row_14_col_2": {
+            "bbox": {
+              "Width": 0.056603044271469116,
+              "Height": 0.022565698251128197,
+              "Left": 0.13453403115272522,
+              "Top": 0.5154409408569336
+            },
+            "confidence": 81.4453125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 14,
+            "column_index": 2
+          },
+          "row_14_col_3": {
+            "bbox": {
+              "Width": 0.03773542866110802,
+              "Height": 0.022565538063645363,
+              "Left": 0.19113700091838837,
+              "Top": 0.5154414176940918
+            },
+            "confidence": 78.22265625,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 14,
+            "column_index": 3
+          },
+          "row_14_col_4": {
+            "bbox": {
+              "Width": 0.05414215475320816,
+              "Height": 0.02256568893790245,
+              "Left": 0.22887232899665833,
+              "Top": 0.5154417753219604
+            },
+            "confidence": 84.716796875,
+            "text": "1",
+            "header": "subplot_number",
+            "row_index": 14,
+            "column_index": 4
+          },
+          "row_14_col_5": {
+            "bbox": {
+              "Width": 0.036094848066568375,
+              "Height": 0.022565536201000214,
+              "Left": 0.28301435708999634,
+              "Top": 0.5154422521591187
+            },
+            "confidence": 78.271484375,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 14,
+            "column_index": 5
+          },
+          "row_14_col_6": {
+            "bbox": {
+              "Width": 0.03609488159418106,
+              "Height": 0.02256554178893566,
+              "Left": 0.31910908222198486,
+              "Top": 0.5154425501823425
+            },
+            "confidence": 82.080078125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 14,
+            "column_index": 6
+          },
+          "row_14_col_7": {
+            "bbox": {
+              "Width": 0.03609491512179375,
+              "Height": 0.02256554737687111,
+              "Left": 0.3552038073539734,
+              "Top": 0.5154428482055664
+            },
+            "confidence": 83.349609375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 14,
+            "column_index": 7
+          },
+          "row_14_col_8": {
+            "bbox": {
+              "Width": 0.03609495237469673,
+              "Height": 0.022565551102161407,
+              "Left": 0.3912985622882843,
+              "Top": 0.5154432058334351
+            },
+            "confidence": 80.859375,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 14,
+            "column_index": 8
+          },
+          "row_14_col_9": {
+            "bbox": {
+              "Width": 0.07711181789636612,
+              "Height": 0.022565923631191254,
+              "Left": 0.4273933172225952,
+              "Top": 0.5154435038566589
+            },
+            "confidence": 87.01171875,
+            "text": "Noi(3)",
+            "header": "soil_moisture",
+            "row_index": 14,
+            "column_index": 9
+          },
+          "row_14_col_10": {
+            "bbox": {
+              "Width": 0.04593910649418831,
+              "Height": 0.022565655410289764,
+              "Left": 0.504504919052124,
+              "Top": 0.5154441595077515
+            },
+            "confidence": 83.740234375,
+            "text": "19",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 14,
+            "column_index": 10
+          },
+          "row_14_col_11": {
+            "bbox": {
+              "Width": 0.043478142470121384,
+              "Height": 0.02256564050912857,
+              "Left": 0.5504437685012817,
+              "Top": 0.5154445767402649
+            },
+            "confidence": 81.591796875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 14,
+            "column_index": 11
+          },
+          "row_14_col_12": {
+            "bbox": {
+              "Width": 0.21246804296970367,
+              "Height": 0.022567156702280045,
+              "Left": 0.5939216017723083,
+              "Top": 0.5154449939727783
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 14,
+            "column_index": 12
+          },
+          "row_14_col_13": {
+            "bbox": {
+              "Width": 0.014654594473540783,
+              "Height": 0.02256542071700096,
+              "Left": 0.8063892722129822,
+              "Top": 0.5154468417167664
+            },
+            "confidence": 68.06640625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 14,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "2",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194861769676208,
+          "Top": 0.5380055904388428,
+          "Width": 0.7490948839113116,
+          "Height": 0.022571956738829613
+        },
+        "group_id": "row_15",
+        "row_index": 15,
+        "column_index": -1,
+        "cells": {
+          "row_15_col_1": {
+            "bbox": {
+              "Width": 0.06258541345596313,
+              "Height": 0.022565729916095734,
+              "Left": 0.07194861769676208,
+              "Top": 0.5380055904388428
+            },
+            "confidence": 81.640625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 15,
+            "column_index": 1
+          },
+          "row_15_col_2": {
+            "bbox": {
+              "Width": 0.05660301446914673,
+              "Height": 0.022565683349967003,
+              "Left": 0.13453398644924164,
+              "Top": 0.5380061268806458
+            },
+            "confidence": 79.19921875,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 15,
+            "column_index": 2
+          },
+          "row_15_col_3": {
+            "bbox": {
+              "Width": 0.037735410034656525,
+              "Height": 0.02256552129983902,
+              "Left": 0.1911369264125824,
+              "Top": 0.538006603717804
+            },
+            "confidence": 76.025390625,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 15,
+            "column_index": 3
+          },
+          "row_15_col_4": {
+            "bbox": {
+              "Width": 0.05414212867617607,
+              "Height": 0.022565675899386406,
+              "Left": 0.22887223958969116,
+              "Top": 0.5380069613456726
+            },
+            "confidence": 82.373046875,
+            "text": "2",
+            "header": "subplot_number",
+            "row_index": 15,
+            "column_index": 4
+          },
+          "row_15_col_5": {
+            "bbox": {
+              "Width": 0.03609482944011688,
+              "Height": 0.02256551943719387,
+              "Left": 0.2830142378807068,
+              "Top": 0.5380074381828308
+            },
+            "confidence": 76.07421875,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 15,
+            "column_index": 5
+          },
+          "row_15_col_6": {
+            "bbox": {
+              "Width": 0.03609486296772957,
+              "Height": 0.022565525025129318,
+              "Left": 0.3191089332103729,
+              "Top": 0.5380077958106995
+            },
+            "confidence": 79.78515625,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 15,
+            "column_index": 6
+          },
+          "row_15_col_7": {
+            "bbox": {
+              "Width": 0.03609490022063255,
+              "Height": 0.022565528750419617,
+              "Left": 0.35520365834236145,
+              "Top": 0.5380080938339233
+            },
+            "confidence": 81.005859375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 15,
+            "column_index": 7
+          },
+          "row_15_col_8": {
+            "bbox": {
+              "Width": 0.03609493374824524,
+              "Height": 0.022565534338355064,
+              "Left": 0.39129838347435,
+              "Top": 0.5380083918571472
+            },
+            "confidence": 78.564453125,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 15,
+            "column_index": 8
+          },
+          "row_15_col_9": {
+            "bbox": {
+              "Width": 0.07711178064346313,
+              "Height": 0.02256591245532036,
+              "Left": 0.4273931086063385,
+              "Top": 0.5380087494850159
+            },
+            "confidence": 84.619140625,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 15,
+            "column_index": 9
+          },
+          "row_15_col_10": {
+            "bbox": {
+              "Width": 0.04593908414244652,
+              "Height": 0.02256564050912857,
+              "Left": 0.5045046806335449,
+              "Top": 0.5380094051361084
+            },
+            "confidence": 81.4453125,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 15,
+            "column_index": 10
+          },
+          "row_15_col_11": {
+            "bbox": {
+              "Width": 0.04347812011837959,
+              "Height": 0.022565625607967377,
+              "Left": 0.5504434704780579,
+              "Top": 0.5380098223686218
+            },
+            "confidence": 79.296875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 15,
+            "column_index": 11
+          },
+          "row_15_col_12": {
+            "bbox": {
+              "Width": 0.21246793866157532,
+              "Height": 0.02256716415286064,
+              "Left": 0.5939213633537292,
+              "Top": 0.5380102396011353
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 15,
+            "column_index": 12
+          },
+          "row_15_col_13": {
+            "bbox": {
+              "Width": 0.014654587022960186,
+              "Height": 0.02256540022790432,
+              "Left": 0.8063889145851135,
+              "Top": 0.5380121469497681
+            },
+            "confidence": 66.2109375,
+            "text": "",
+            "header": "col_13",
+            "row_index": 15,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "3",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "N 1",
+      "soil_temper_ature_in_2": "21",
+      "soil_ph": "41 2",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194860279560089,
+          "Top": 0.5605707168579102,
+          "Width": 0.7490945337340236,
+          "Height": 0.022572055459022522
+        },
+        "group_id": "row_16",
+        "row_index": 16,
+        "column_index": -1,
+        "cells": {
+          "row_16_col_1": {
+            "bbox": {
+              "Width": 0.06258538365364075,
+              "Height": 0.02256571501493454,
+              "Left": 0.07194860279560089,
+              "Top": 0.5605707168579102
+            },
+            "confidence": 84.423828125,
+            "text": "",
+            "header": "block_code",
+            "row_index": 16,
+            "column_index": 1
+          },
+          "row_16_col_2": {
+            "bbox": {
+              "Width": 0.05660298839211464,
+              "Height": 0.022565670311450958,
+              "Left": 0.13453394174575806,
+              "Top": 0.5605713129043579
+            },
+            "confidence": 81.884765625,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 16,
+            "column_index": 2
+          },
+          "row_16_col_3": {
+            "bbox": {
+              "Width": 0.03773539140820503,
+              "Height": 0.022565504536032677,
+              "Left": 0.19113685190677643,
+              "Top": 0.5605717897415161
+            },
+            "confidence": 78.662109375,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 16,
+            "column_index": 3
+          },
+          "row_16_col_4": {
+            "bbox": {
+              "Width": 0.054142098873853683,
+              "Height": 0.022565660998225212,
+              "Left": 0.228872150182724,
+              "Top": 0.5605721473693848
+            },
+            "confidence": 85.205078125,
+            "text": "3",
+            "header": "subplot_number",
+            "row_index": 16,
+            "column_index": 4
+          },
+          "row_16_col_5": {
+            "bbox": {
+              "Width": 0.03609481081366539,
+              "Height": 0.022565502673387527,
+              "Left": 0.28301411867141724,
+              "Top": 0.560572624206543
+            },
+            "confidence": 78.7109375,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 16,
+            "column_index": 5
+          },
+          "row_16_col_6": {
+            "bbox": {
+              "Width": 0.036094848066568375,
+              "Height": 0.022565508261322975,
+              "Left": 0.3191088140010834,
+              "Top": 0.5605729818344116
+            },
+            "confidence": 82.51953125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 16,
+            "column_index": 6
+          },
+          "row_16_col_7": {
+            "bbox": {
+              "Width": 0.03609488159418106,
+              "Height": 0.022565511986613274,
+              "Left": 0.3552035093307495,
+              "Top": 0.5605732798576355
+            },
+            "confidence": 83.7890625,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 16,
+            "column_index": 7
+          },
+          "row_16_col_8": {
+            "bbox": {
+              "Width": 0.03609491512179375,
+              "Height": 0.02256551757454872,
+              "Left": 0.39129820466041565,
+              "Top": 0.5605736374855042
+            },
+            "confidence": 81.298828125,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 16,
+            "column_index": 8
+          },
+          "row_16_col_9": {
+            "bbox": {
+              "Width": 0.07711174339056015,
+              "Height": 0.022565901279449463,
+              "Left": 0.4273929297924042,
+              "Top": 0.560573935508728
+            },
+            "confidence": 87.5,
+            "text": "N 1",
+            "header": "soil_moisture",
+            "row_index": 16,
+            "column_index": 9
+          },
+          "row_16_col_10": {
+            "bbox": {
+              "Width": 0.04593906179070473,
+              "Height": 0.022565625607967377,
+              "Left": 0.5045044422149658,
+              "Top": 0.5605746507644653
+            },
+            "confidence": 84.228515625,
+            "text": "21",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 16,
+            "column_index": 10
+          },
+          "row_16_col_11": {
+            "bbox": {
+              "Width": 0.0434781014919281,
+              "Height": 0.022565608844161034,
+              "Left": 0.5504432320594788,
+              "Top": 0.5605750679969788
+            },
+            "confidence": 82.03125,
+            "text": "41 2",
+            "header": "soil_ph",
+            "row_index": 16,
+            "column_index": 11
+          },
+          "row_16_col_12": {
+            "bbox": {
+              "Width": 0.21246783435344696,
+              "Height": 0.02256717160344124,
+              "Left": 0.5939210653305054,
+              "Top": 0.5605754852294922
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 16,
+            "column_index": 12
+          },
+          "row_16_col_13": {
+            "bbox": {
+              "Width": 0.014654579572379589,
+              "Height": 0.022565379738807678,
+              "Left": 0.8063885569572449,
+              "Top": 0.560577392578125
+            },
+            "confidence": 68.45703125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 16,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "4",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "21",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0719485878944397,
+          "Top": 0.5831358432769775,
+          "Width": 0.7490941248834133,
+          "Height": 0.02257215417921543
+        },
+        "group_id": "row_17",
+        "row_index": 17,
+        "column_index": -1,
+        "cells": {
+          "row_17_col_1": {
+            "bbox": {
+              "Width": 0.06258535385131836,
+              "Height": 0.022565701976418495,
+              "Left": 0.0719485878944397,
+              "Top": 0.5831358432769775
+            },
+            "confidence": 83.935546875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 17,
+            "column_index": 1
+          },
+          "row_17_col_2": {
+            "bbox": {
+              "Width": 0.05660295858979225,
+              "Height": 0.022565655410289764,
+              "Left": 0.13453389704227448,
+              "Top": 0.5831364393234253
+            },
+            "confidence": 81.396484375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 17,
+            "column_index": 2
+          },
+          "row_17_col_3": {
+            "bbox": {
+              "Width": 0.03773537278175354,
+              "Height": 0.022565487772226334,
+              "Left": 0.19113677740097046,
+              "Top": 0.5831369757652283
+            },
+            "confidence": 78.173828125,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 17,
+            "column_index": 3
+          },
+          "row_17_col_4": {
+            "bbox": {
+              "Width": 0.054142072796821594,
+              "Height": 0.022565646097064018,
+              "Left": 0.22887206077575684,
+              "Top": 0.5831373333930969
+            },
+            "confidence": 84.66796875,
+            "text": "4",
+            "header": "subplot_number",
+            "row_index": 17,
+            "column_index": 4
+          },
+          "row_17_col_5": {
+            "bbox": {
+              "Width": 0.036094795912504196,
+              "Height": 0.022565485909581184,
+              "Left": 0.2830139994621277,
+              "Top": 0.5831378102302551
+            },
+            "confidence": 78.22265625,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 17,
+            "column_index": 5
+          },
+          "row_17_col_6": {
+            "bbox": {
+              "Width": 0.03609482944011688,
+              "Height": 0.022565489634871483,
+              "Left": 0.31910866498947144,
+              "Top": 0.5831381678581238
+            },
+            "confidence": 82.03125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 17,
+            "column_index": 6
+          },
+          "row_17_col_7": {
+            "bbox": {
+              "Width": 0.03609486296772957,
+              "Height": 0.02256549522280693,
+              "Left": 0.3552033305168152,
+              "Top": 0.5831384658813477
+            },
+            "confidence": 83.30078125,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 17,
+            "column_index": 7
+          },
+          "row_17_col_8": {
+            "bbox": {
+              "Width": 0.036094896495342255,
+              "Height": 0.022565500810742378,
+              "Left": 0.3912980258464813,
+              "Top": 0.5831388235092163
+            },
+            "confidence": 80.810546875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 17,
+            "column_index": 8
+          },
+          "row_17_col_9": {
+            "bbox": {
+              "Width": 0.07711170613765717,
+              "Height": 0.022565890103578568,
+              "Left": 0.42739272117614746,
+              "Top": 0.5831391215324402
+            },
+            "confidence": 86.962890625,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 17,
+            "column_index": 9
+          },
+          "row_17_col_10": {
+            "bbox": {
+              "Width": 0.045939039438962936,
+              "Height": 0.022565608844161034,
+              "Left": 0.5045042037963867,
+              "Top": 0.5831398367881775
+            },
+            "confidence": 83.740234375,
+            "text": "21",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 17,
+            "column_index": 10
+          },
+          "row_17_col_11": {
+            "bbox": {
+              "Width": 0.04347807914018631,
+              "Height": 0.02256559208035469,
+              "Left": 0.5504429936408997,
+              "Top": 0.5831402540206909
+            },
+            "confidence": 81.54296875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 17,
+            "column_index": 11
+          },
+          "row_17_col_12": {
+            "bbox": {
+              "Width": 0.2124677300453186,
+              "Height": 0.022567180916666985,
+              "Left": 0.5939208269119263,
+              "Top": 0.5831406712532043
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 17,
+            "column_index": 12
+          },
+          "row_17_col_13": {
+            "bbox": {
+              "Width": 0.014654573053121567,
+              "Height": 0.022565359249711037,
+              "Left": 0.8063881397247314,
+              "Top": 0.5831426382064819
+            },
+            "confidence": 68.06640625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 17,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "4",
+      "subplot_number": "a",
+      "canopy_openness_north": "15",
+      "canopy_openness_east": "4",
+      "canopy_openness_west": "13",
+      "canopy_openness_south": "7",
+      "soil_moisture": "$1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": ",",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0719485655426979,
+          "Top": 0.6057009696960449,
+          "Width": 0.7492056870833039,
+          "Height": 0.11402047425508499
+        },
+        "group_id": "row_18",
+        "row_index": 18,
+        "column_index": -1,
+        "cells": {
+          "row_18_col_1": {
+            "bbox": {
+              "Width": 0.06258532404899597,
+              "Height": 0.02256568893790245,
+              "Left": 0.0719485655426979,
+              "Top": 0.6057009696960449
+            },
+            "confidence": 85.15625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 18,
+            "column_index": 1
+          },
+          "row_18_col_2": {
+            "bbox": {
+              "Width": 0.05660293251276016,
+              "Height": 0.02256564237177372,
+              "Left": 0.1345338523387909,
+              "Top": 0.6057015657424927
+            },
+            "confidence": 82.6171875,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 18,
+            "column_index": 2
+          },
+          "row_18_col_3": {
+            "bbox": {
+              "Width": 0.03773535415530205,
+              "Height": 0.02256547100841999,
+              "Left": 0.1911367028951645,
+              "Top": 0.6057021021842957
+            },
+            "confidence": 79.345703125,
+            "text": "4",
+            "header": "plot_number",
+            "row_index": 18,
+            "column_index": 3
+          },
+          "row_18_col_4": {
+            "bbox": {
+              "Width": 0.054142046719789505,
+              "Height": 0.022565631195902824,
+              "Left": 0.22887195646762848,
+              "Top": 0.6057024598121643
+            },
+            "confidence": 85.9375,
+            "text": "a",
+            "header": "subplot_number",
+            "row_index": 18,
+            "column_index": 4
+          },
+          "row_18_col_5": {
+            "bbox": {
+              "Width": 0.036094777286052704,
+              "Height": 0.022565467283129692,
+              "Left": 0.28301388025283813,
+              "Top": 0.6057029366493225
+            },
+            "confidence": 79.39453125,
+            "text": "15",
+            "header": "canopy_openness_north",
+            "row_index": 18,
+            "column_index": 5
+          },
+          "row_18_col_6": {
+            "bbox": {
+              "Width": 0.03609481081366539,
+              "Height": 0.02256547287106514,
+              "Left": 0.3191085159778595,
+              "Top": 0.6057032942771912
+            },
+            "confidence": 83.251953125,
+            "text": "4",
+            "header": "canopy_openness_east",
+            "row_index": 18,
+            "column_index": 6
+          },
+          "row_18_col_7": {
+            "bbox": {
+              "Width": 0.036094844341278076,
+              "Height": 0.022565478459000587,
+              "Left": 0.35520318150520325,
+              "Top": 0.6057036519050598
+            },
+            "confidence": 84.521484375,
+            "text": "13",
+            "header": "canopy_openness_west",
+            "row_index": 18,
+            "column_index": 7
+          },
+          "row_18_col_8": {
+            "bbox": {
+              "Width": 0.03609487786889076,
+              "Height": 0.022565484046936035,
+              "Left": 0.391297847032547,
+              "Top": 0.6057039499282837
+            },
+            "confidence": 81.982421875,
+            "text": "7",
+            "header": "canopy_openness_south",
+            "row_index": 18,
+            "column_index": 8
+          },
+          "row_18_col_9": {
+            "bbox": {
+              "Width": 0.07711166143417358,
+              "Height": 0.022565878927707672,
+              "Left": 0.42739254236221313,
+              "Top": 0.6057043075561523
+            },
+            "confidence": 88.28125,
+            "text": "$1",
+            "header": "soil_moisture",
+            "row_index": 18,
+            "column_index": 9
+          },
+          "row_18_col_10": {
+            "bbox": {
+              "Width": 0.045939017087221146,
+              "Height": 0.02256559394299984,
+              "Left": 0.5045039653778076,
+              "Top": 0.6057050228118896
+            },
+            "confidence": 84.9609375,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 18,
+            "column_index": 10
+          },
+          "row_18_col_11": {
+            "bbox": {
+              "Width": 0.04347805678844452,
+              "Height": 0.022565577179193497,
+              "Left": 0.5504427552223206,
+              "Top": 0.6057054400444031
+            },
+            "confidence": 82.763671875,
+            "text": ",",
+            "header": "soil_ph",
+            "row_index": 18,
+            "column_index": 11
+          },
+          "row_18_col_12": {
+            "bbox": {
+              "Width": 0.21246762573719025,
+              "Height": 0.02256718836724758,
+              "Left": 0.5939205288887024,
+              "Top": 0.6057058572769165
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 18,
+            "column_index": 12
+          },
+          "row_18_col_13": {
+            "bbox": {
+              "Width": 0.014656099490821362,
+              "Height": 0.11401356011629105,
+              "Left": 0.8063862323760986,
+              "Top": 0.6057078838348389
+            },
+            "confidence": 36.572265625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 18,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "1",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "9.75",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "3",
+      "soil_temper_ature_in_2": "20",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194855064153671,
+          "Top": 0.6282660961151123,
+          "Width": 0.7492053369060159,
+          "Height": 0.022572293877601624
+        },
+        "group_id": "row_19",
+        "row_index": 19,
+        "column_index": -1,
+        "cells": {
+          "row_19_col_1": {
+            "bbox": {
+              "Width": 0.06258529424667358,
+              "Height": 0.022565675899386406,
+              "Left": 0.07194855064153671,
+              "Top": 0.6282660961151123
+            },
+            "confidence": 82.2265625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 19,
+            "column_index": 1
+          },
+          "row_19_col_2": {
+            "bbox": {
+              "Width": 0.056602902710437775,
+              "Height": 0.022565627470612526,
+              "Left": 0.13453379273414612,
+              "Top": 0.6282666921615601
+            },
+            "confidence": 79.736328125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 19,
+            "column_index": 2
+          },
+          "row_19_col_3": {
+            "bbox": {
+              "Width": 0.037735335528850555,
+              "Height": 0.022565454244613647,
+              "Left": 0.19113662838935852,
+              "Top": 0.628267228603363
+            },
+            "confidence": 76.611328125,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 19,
+            "column_index": 3
+          },
+          "row_19_col_4": {
+            "bbox": {
+              "Width": 0.054142020642757416,
+              "Height": 0.02256561629474163,
+              "Left": 0.22887186706066132,
+              "Top": 0.6282675862312317
+            },
+            "confidence": 82.958984375,
+            "text": "1",
+            "header": "subplot_number",
+            "row_index": 19,
+            "column_index": 4
+          },
+          "row_19_col_5": {
+            "bbox": {
+              "Width": 0.03609475865960121,
+              "Height": 0.02256545051932335,
+              "Left": 0.2830137610435486,
+              "Top": 0.6282680630683899
+            },
+            "confidence": 76.66015625,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 19,
+            "column_index": 5
+          },
+          "row_19_col_6": {
+            "bbox": {
+              "Width": 0.0360947921872139,
+              "Height": 0.022565456107258797,
+              "Left": 0.31910839676856995,
+              "Top": 0.6282684206962585
+            },
+            "confidence": 80.37109375,
+            "text": "9.75",
+            "header": "canopy_openness_east",
+            "row_index": 19,
+            "column_index": 6
+          },
+          "row_19_col_7": {
+            "bbox": {
+              "Width": 0.036094825714826584,
+              "Height": 0.022565461695194244,
+              "Left": 0.3552030324935913,
+              "Top": 0.6282687783241272
+            },
+            "confidence": 81.591796875,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 19,
+            "column_index": 7
+          },
+          "row_19_col_8": {
+            "bbox": {
+              "Width": 0.03609486296772957,
+              "Height": 0.022565467283129692,
+              "Left": 0.39129766821861267,
+              "Top": 0.6282691359519958
+            },
+            "confidence": 79.150390625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 19,
+            "column_index": 8
+          },
+          "row_19_col_9": {
+            "bbox": {
+              "Width": 0.0771116241812706,
+              "Height": 0.022565867751836777,
+              "Left": 0.4273923635482788,
+              "Top": 0.6282694339752197
+            },
+            "confidence": 85.205078125,
+            "text": "3",
+            "header": "soil_moisture",
+            "row_index": 19,
+            "column_index": 9
+          },
+          "row_19_col_10": {
+            "bbox": {
+              "Width": 0.045938994735479355,
+              "Height": 0.022565577179193497,
+              "Left": 0.5045037269592285,
+              "Top": 0.6282702088356018
+            },
+            "confidence": 82.03125,
+            "text": "20",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 19,
+            "column_index": 10
+          },
+          "row_19_col_11": {
+            "bbox": {
+              "Width": 0.04347803443670273,
+              "Height": 0.022565560415387154,
+              "Left": 0.5504425168037415,
+              "Top": 0.6282706260681152
+            },
+            "confidence": 79.8828125,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 19,
+            "column_index": 11
+          },
+          "row_19_col_12": {
+            "bbox": {
+              "Width": 0.2124675214290619,
+              "Height": 0.022567197680473328,
+              "Left": 0.5939202308654785,
+              "Top": 0.6282710433006287
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 19,
+            "column_index": 12
+          },
+          "row_19_col_13": {
+            "bbox": {
+              "Width": 0.014766463078558445,
+              "Height": 0.022565320134162903,
+              "Left": 0.8063874244689941,
+              "Top": 0.628273069858551
+            },
+            "confidence": 36.572265625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 19,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "2",
+      "canopy_openness_north": "Aug",
+      "canopy_openness_east": "89.86",
+      "canopy_openness_west": "%",
+      "canopy_openness_south": "",
+      "soil_moisture": "1 /",
+      "soil_temper_ature_in_2": "22",
+      "soil_ph": "32",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194853574037552,
+          "Top": 0.6508311629295349,
+          "Width": 0.7492049476131797,
+          "Height": 0.023760031908750534
+        },
+        "group_id": "row_20",
+        "row_index": 20,
+        "column_index": -1,
+        "cells": {
+          "row_20_col_1": {
+            "bbox": {
+              "Width": 0.0625852644443512,
+              "Height": 0.023753296583890915,
+              "Left": 0.07194853574037552,
+              "Top": 0.6508311629295349
+            },
+            "confidence": 79.638671875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 20,
+            "column_index": 1
+          },
+          "row_20_col_2": {
+            "bbox": {
+              "Width": 0.056602876633405685,
+              "Height": 0.023753248155117035,
+              "Left": 0.13453374803066254,
+              "Top": 0.6508317589759827
+            },
+            "confidence": 77.24609375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 20,
+            "column_index": 2
+          },
+          "row_20_col_3": {
+            "bbox": {
+              "Width": 0.03773532062768936,
+              "Height": 0.023753071203827858,
+              "Left": 0.19113655388355255,
+              "Top": 0.6508322954177856
+            },
+            "confidence": 74.21875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 20,
+            "column_index": 3
+          },
+          "row_20_col_4": {
+            "bbox": {
+              "Width": 0.054141998291015625,
+              "Height": 0.02375323697924614,
+              "Left": 0.22887177765369415,
+              "Top": 0.6508326530456543
+            },
+            "confidence": 80.37109375,
+            "text": "2",
+            "header": "subplot_number",
+            "row_index": 20,
+            "column_index": 4
+          },
+          "row_20_col_5": {
+            "bbox": {
+              "Width": 0.036094747483730316,
+              "Height": 0.02375306934118271,
+              "Left": 0.28301364183425903,
+              "Top": 0.6508331894874573
+            },
+            "confidence": 74.267578125,
+            "text": "Aug",
+            "header": "canopy_openness_north",
+            "row_index": 20,
+            "column_index": 5
+          },
+          "row_20_col_6": {
+            "bbox": {
+              "Width": 0.036094781011343,
+              "Height": 0.023753074929118156,
+              "Left": 0.319108247756958,
+              "Top": 0.6508335471153259
+            },
+            "confidence": 77.83203125,
+            "text": "89.86",
+            "header": "canopy_openness_east",
+            "row_index": 20,
+            "column_index": 6
+          },
+          "row_20_col_7": {
+            "bbox": {
+              "Width": 0.03609481826424599,
+              "Height": 0.023753080517053604,
+              "Left": 0.355202853679657,
+              "Top": 0.6508339047431946
+            },
+            "confidence": 79.052734375,
+            "text": "%",
+            "header": "canopy_openness_west",
+            "row_index": 20,
+            "column_index": 7
+          },
+          "row_20_col_8": {
+            "bbox": {
+              "Width": 0.03609485179185867,
+              "Height": 0.023753086104989052,
+              "Left": 0.39129748940467834,
+              "Top": 0.6508342027664185
+            },
+            "confidence": 76.66015625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 20,
+            "column_index": 8
+          },
+          "row_20_col_9": {
+            "bbox": {
+              "Width": 0.07711160182952881,
+              "Height": 0.023753492161631584,
+              "Left": 0.4273921549320221,
+              "Top": 0.6508345603942871
+            },
+            "confidence": 82.568359375,
+            "text": "1 /",
+            "header": "soil_moisture",
+            "row_index": 20,
+            "column_index": 9
+          },
+          "row_20_col_10": {
+            "bbox": {
+              "Width": 0.04593898355960846,
+              "Height": 0.023753199726343155,
+              "Left": 0.5045034885406494,
+              "Top": 0.6508353352546692
+            },
+            "confidence": 79.443359375,
+            "text": "22",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 20,
+            "column_index": 10
+          },
+          "row_20_col_11": {
+            "bbox": {
+              "Width": 0.04347802698612213,
+              "Height": 0.023753181099891663,
+              "Left": 0.5504422187805176,
+              "Top": 0.6508357524871826
+            },
+            "confidence": 77.392578125,
+            "text": "32",
+            "header": "soil_ph",
+            "row_index": 20,
+            "column_index": 11
+          },
+          "row_20_col_12": {
+            "bbox": {
+              "Width": 0.21246743202209473,
+              "Height": 0.023754844442009926,
+              "Left": 0.5939199924468994,
+              "Top": 0.650836169719696
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 20,
+            "column_index": 12
+          },
+          "row_20_col_13": {
+            "bbox": {
+              "Width": 0.01476647611707449,
+              "Height": 0.023752938956022263,
+              "Left": 0.8063870072364807,
+              "Top": 0.6508382558822632
+            },
+            "confidence": 36.572265625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 20,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "3",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194852083921432,
+          "Top": 0.6745838522911072,
+          "Width": 0.749204576946795,
+          "Height": 0.022572431713342667
+        },
+        "group_id": "row_21",
+        "row_index": 21,
+        "column_index": -1,
+        "cells": {
+          "row_21_col_1": {
+            "bbox": {
+              "Width": 0.06258522719144821,
+              "Height": 0.022565647959709167,
+              "Left": 0.07194852083921432,
+              "Top": 0.6745838522911072
+            },
+            "confidence": 82.470703125,
+            "text": "",
+            "header": "block_code",
+            "row_index": 21,
+            "column_index": 1
+          },
+          "row_21_col_2": {
+            "bbox": {
+              "Width": 0.0566028468310833,
+              "Height": 0.022565597668290138,
+              "Left": 0.13453370332717896,
+              "Top": 0.6745844483375549
+            },
+            "confidence": 79.98046875,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 21,
+            "column_index": 2
+          },
+          "row_21_col_3": {
+            "bbox": {
+              "Width": 0.03773529455065727,
+              "Height": 0.022565418854355812,
+              "Left": 0.19113647937774658,
+              "Top": 0.6745849847793579
+            },
+            "confidence": 76.806640625,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 21,
+            "column_index": 3
+          },
+          "row_21_col_4": {
+            "bbox": {
+              "Width": 0.05414196476340294,
+              "Height": 0.022565586492419243,
+              "Left": 0.2288716733455658,
+              "Top": 0.6745853424072266
+            },
+            "confidence": 83.203125,
+            "text": "3",
+            "header": "subplot_number",
+            "row_index": 21,
+            "column_index": 4
+          },
+          "row_21_col_5": {
+            "bbox": {
+              "Width": 0.03609472140669823,
+              "Height": 0.022565415129065514,
+              "Left": 0.2830135226249695,
+              "Top": 0.6745858788490295
+            },
+            "confidence": 76.85546875,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 21,
+            "column_index": 5
+          },
+          "row_21_col_6": {
+            "bbox": {
+              "Width": 0.03609475493431091,
+              "Height": 0.02256542071700096,
+              "Left": 0.31910809874534607,
+              "Top": 0.6745862364768982
+            },
+            "confidence": 80.56640625,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 21,
+            "column_index": 6
+          },
+          "row_21_col_7": {
+            "bbox": {
+              "Width": 0.0360947921872139,
+              "Height": 0.02256542630493641,
+              "Left": 0.35520270466804504,
+              "Top": 0.6745865941047668
+            },
+            "confidence": 81.8359375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 21,
+            "column_index": 7
+          },
+          "row_21_col_8": {
+            "bbox": {
+              "Width": 0.036094825714826584,
+              "Height": 0.022565431892871857,
+              "Left": 0.3912973403930664,
+              "Top": 0.6745869517326355
+            },
+            "confidence": 79.39453125,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 21,
+            "column_index": 8
+          },
+          "row_21_col_9": {
+            "bbox": {
+              "Width": 0.07711154967546463,
+              "Height": 0.022565843537449837,
+              "Left": 0.4273919463157654,
+              "Top": 0.6745873093605042
+            },
+            "confidence": 85.44921875,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 21,
+            "column_index": 9
+          },
+          "row_21_col_10": {
+            "bbox": {
+              "Width": 0.045938946306705475,
+              "Height": 0.02256554551422596,
+              "Left": 0.5045032501220703,
+              "Top": 0.6745880842208862
+            },
+            "confidence": 82.2265625,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 21,
+            "column_index": 10
+          },
+          "row_21_col_11": {
+            "bbox": {
+              "Width": 0.04347798973321915,
+              "Height": 0.022565526887774467,
+              "Left": 0.5504419803619385,
+              "Top": 0.6745885014533997
+            },
+            "confidence": 80.126953125,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 21,
+            "column_index": 11
+          },
+          "row_21_col_12": {
+            "bbox": {
+              "Width": 0.21246731281280518,
+              "Height": 0.02256721444427967,
+              "Left": 0.5939196944236755,
+              "Top": 0.6745889186859131
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 21,
+            "column_index": 12
+          },
+          "row_21_col_13": {
+            "bbox": {
+              "Width": 0.014766448177397251,
+              "Height": 0.02256527915596962,
+              "Left": 0.8063866496086121,
+              "Top": 0.6745910048484802
+            },
+            "confidence": 36.572265625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 21,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "I",
+      "soil_temper_ature_in_2": "25",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194850593805313,
+          "Top": 0.697148859500885,
+          "Width": 0.7492041680961847,
+          "Height": 0.022572530433535576
+        },
+        "group_id": "row_22",
+        "row_index": 22,
+        "column_index": -1,
+        "cells": {
+          "row_22_col_1": {
+            "bbox": {
+              "Width": 0.06258519738912582,
+              "Height": 0.022565634921193123,
+              "Left": 0.07194850593805313,
+              "Top": 0.697148859500885
+            },
+            "confidence": 81.103515625,
+            "text": "",
+            "header": "block_code",
+            "row_index": 22,
+            "column_index": 1
+          },
+          "row_22_col_2": {
+            "bbox": {
+              "Width": 0.05660281702876091,
+              "Height": 0.022565584629774094,
+              "Left": 0.13453365862369537,
+              "Top": 0.6971494555473328
+            },
+            "confidence": 78.662109375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 22,
+            "column_index": 2
+          },
+          "row_22_col_3": {
+            "bbox": {
+              "Width": 0.03773527592420578,
+              "Height": 0.02256540209054947,
+              "Left": 0.1911364048719406,
+              "Top": 0.6971500515937805
+            },
+            "confidence": 75.537109375,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 22,
+            "column_index": 3
+          },
+          "row_22_col_4": {
+            "bbox": {
+              "Width": 0.05414193868637085,
+              "Height": 0.022565573453903198,
+              "Left": 0.22887158393859863,
+              "Top": 0.6971504092216492
+            },
+            "confidence": 81.787109375,
+            "text": "",
+            "header": "subplot_number",
+            "row_index": 22,
+            "column_index": 4
+          },
+          "row_22_col_5": {
+            "bbox": {
+              "Width": 0.036094702780246735,
+              "Height": 0.02256539836525917,
+              "Left": 0.28301340341567993,
+              "Top": 0.6971509456634521
+            },
+            "confidence": 75.5859375,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 22,
+            "column_index": 5
+          },
+          "row_22_col_6": {
+            "bbox": {
+              "Width": 0.03609474003314972,
+              "Height": 0.022565403953194618,
+              "Left": 0.3191079795360565,
+              "Top": 0.6971513032913208
+            },
+            "confidence": 79.248046875,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 22,
+            "column_index": 6
+          },
+          "row_22_col_7": {
+            "bbox": {
+              "Width": 0.036094773560762405,
+              "Height": 0.022565409541130066,
+              "Left": 0.3552025556564331,
+              "Top": 0.6971516609191895
+            },
+            "confidence": 80.46875,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 22,
+            "column_index": 7
+          },
+          "row_22_col_8": {
+            "bbox": {
+              "Width": 0.03609480708837509,
+              "Height": 0.022565413266420364,
+              "Left": 0.3912971615791321,
+              "Top": 0.6971520185470581
+            },
+            "confidence": 78.076171875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 22,
+            "column_index": 8
+          },
+          "row_22_col_9": {
+            "bbox": {
+              "Width": 0.07711151242256165,
+              "Height": 0.02256583236157894,
+              "Left": 0.42739176750183105,
+              "Top": 0.6971523761749268
+            },
+            "confidence": 84.033203125,
+            "text": "I",
+            "header": "soil_moisture",
+            "row_index": 22,
+            "column_index": 9
+          },
+          "row_22_col_10": {
+            "bbox": {
+              "Width": 0.045938923954963684,
+              "Height": 0.022565530613064766,
+              "Left": 0.504503071308136,
+              "Top": 0.6971531510353088
+            },
+            "confidence": 80.859375,
+            "text": "25",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 22,
+            "column_index": 10
+          },
+          "row_22_col_11": {
+            "bbox": {
+              "Width": 0.043477971106767654,
+              "Height": 0.022565511986613274,
+              "Left": 0.5504417419433594,
+              "Top": 0.697153627872467
+            },
+            "confidence": 78.759765625,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 22,
+            "column_index": 11
+          },
+          "row_22_col_12": {
+            "bbox": {
+              "Width": 0.21246720850467682,
+              "Height": 0.022567221894860268,
+              "Left": 0.5939193964004517,
+              "Top": 0.6971540451049805
+            },
+            "confidence": 47.94921875,
+            "text": "",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 22,
+            "column_index": 12
+          },
+          "row_22_col_13": {
+            "bbox": {
+              "Width": 0.014766441658139229,
+              "Height": 0.022565258666872978,
+              "Left": 0.8063862323760986,
+              "Top": 0.6971561312675476
+            },
+            "confidence": 36.572265625,
+            "text": "",
+            "header": "col_13",
+            "row_index": 22,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "1",
+      "transect_number": "I",
+      "plot_number": "5",
+      "subplot_number": "4 0",
+      "canopy_openness_north": "04",
+      "canopy_openness_east": "03",
+      "canopy_openness_west": "01",
+      "canopy_openness_south": "03",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "Litter is high; Dry; her cestrum;",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194849103689194,
+          "Top": 0.7197138667106628,
+          "Width": 0.7490918729454279,
+          "Height": 0.023760264739394188
+        },
+        "group_id": "row_23",
+        "row_index": 23,
+        "column_index": -1,
+        "cells": {
+          "row_23_col_1": {
+            "bbox": {
+              "Width": 0.06258516758680344,
+              "Height": 0.023753251880407333,
+              "Left": 0.07194849103689194,
+              "Top": 0.7197138667106628
+            },
+            "confidence": 85.3515625,
+            "text": "1",
+            "header": "block_code",
+            "row_index": 23,
+            "column_index": 1
+          },
+          "row_23_col_2": {
+            "bbox": {
+              "Width": 0.05660279095172882,
+              "Height": 0.023753201588988304,
+              "Left": 0.1345336139202118,
+              "Top": 0.7197145223617554
+            },
+            "confidence": 82.8125,
+            "text": "I",
+            "header": "transect_number",
+            "row_index": 23,
+            "column_index": 2
+          },
+          "row_23_col_3": {
+            "bbox": {
+              "Width": 0.037735264748334885,
+              "Height": 0.02375301532447338,
+              "Left": 0.19113631546497345,
+              "Top": 0.7197150588035583
+            },
+            "confidence": 79.541015625,
+            "text": "5",
+            "header": "plot_number",
+            "row_index": 23,
+            "column_index": 3
+          },
+          "row_23_col_4": {
+            "bbox": {
+              "Width": 0.05414191633462906,
+              "Height": 0.02375319041311741,
+              "Left": 0.22887149453163147,
+              "Top": 0.719715416431427
+            },
+            "confidence": 86.1328125,
+            "text": "4 0",
+            "header": "subplot_number",
+            "row_index": 23,
+            "column_index": 4
+          },
+          "row_23_col_5": {
+            "bbox": {
+              "Width": 0.03609469160437584,
+              "Height": 0.023753013461828232,
+              "Left": 0.2830132842063904,
+              "Top": 0.7197160124778748
+            },
+            "confidence": 79.541015625,
+            "text": "04",
+            "header": "canopy_openness_north",
+            "row_index": 23,
+            "column_index": 5
+          },
+          "row_23_col_6": {
+            "bbox": {
+              "Width": 0.036094728857278824,
+              "Height": 0.02375301904976368,
+              "Left": 0.3191078305244446,
+              "Top": 0.7197163701057434
+            },
+            "confidence": 83.3984375,
+            "text": "03",
+            "header": "canopy_openness_east",
+            "row_index": 23,
+            "column_index": 6
+          },
+          "row_23_col_7": {
+            "bbox": {
+              "Width": 0.03609476238489151,
+              "Height": 0.023753024637699127,
+              "Left": 0.3552023768424988,
+              "Top": 0.7197167277336121
+            },
+            "confidence": 84.716796875,
+            "text": "01",
+            "header": "canopy_openness_west",
+            "row_index": 23,
+            "column_index": 7
+          },
+          "row_23_col_8": {
+            "bbox": {
+              "Width": 0.036094799637794495,
+              "Height": 0.023753030225634575,
+              "Left": 0.39129698276519775,
+              "Top": 0.7197170853614807
+            },
+            "confidence": 82.177734375,
+            "text": "03",
+            "header": "canopy_openness_south",
+            "row_index": 23,
+            "column_index": 8
+          },
+          "row_23_col_9": {
+            "bbox": {
+              "Width": 0.07711148262023926,
+              "Height": 0.0237534549087286,
+              "Left": 0.42739155888557434,
+              "Top": 0.7197174429893494
+            },
+            "confidence": 88.4765625,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 23,
+            "column_index": 9
+          },
+          "row_23_col_10": {
+            "bbox": {
+              "Width": 0.04593891277909279,
+              "Height": 0.023753147572278976,
+              "Left": 0.5045028328895569,
+              "Top": 0.7197182178497314
+            },
+            "confidence": 85.15625,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 23,
+            "column_index": 10
+          },
+          "row_23_col_11": {
+            "bbox": {
+              "Width": 0.04347795993089676,
+              "Height": 0.023753128945827484,
+              "Left": 0.5504414439201355,
+              "Top": 0.7197186946868896
+            },
+            "confidence": 82.91015625,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 23,
+            "column_index": 11
+          },
+          "row_23_col_12": {
+            "bbox": {
+              "Width": 0.21246711909770966,
+              "Height": 0.023754866793751717,
+              "Left": 0.5939191579818726,
+              "Top": 0.7197191119194031
+            },
+            "confidence": 47.94921875,
+            "text": "Litter is high; Dry; her cestrum;",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 23,
+            "column_index": 12
+          },
+          "row_23_col_13": {
+            "bbox": {
+              "Width": 0.014654548838734627,
+              "Height": 0.02375287376344204,
+              "Left": 0.8063858151435852,
+              "Top": 0.719721257686615
+            },
+            "confidence": 69.189453125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 23,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "I",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "2.75",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "Dayt (1)",
+      "soil_temper_ature_in_2": "22",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "few >C.A; undustory,",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194847613573074,
+          "Top": 0.7434664964675903,
+          "Width": 0.7490915227681398,
+          "Height": 0.023760361596941948
+        },
+        "group_id": "row_24",
+        "row_index": 24,
+        "column_index": -1,
+        "cells": {
+          "row_24_col_1": {
+            "bbox": {
+              "Width": 0.06258513778448105,
+              "Height": 0.02375323697924614,
+              "Left": 0.07194847613573074,
+              "Top": 0.7434664964675903
+            },
+            "confidence": 86.669921875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 24,
+            "column_index": 1
+          },
+          "row_24_col_2": {
+            "bbox": {
+              "Width": 0.05660276114940643,
+              "Height": 0.02375318482518196,
+              "Left": 0.13453355431556702,
+              "Top": 0.7434670925140381
+            },
+            "confidence": 84.08203125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 24,
+            "column_index": 2
+          },
+          "row_24_col_3": {
+            "bbox": {
+              "Width": 0.037735242396593094,
+              "Height": 0.02375299669802189,
+              "Left": 0.19113624095916748,
+              "Top": 0.7434676885604858
+            },
+            "confidence": 80.76171875,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 24,
+            "column_index": 3
+          },
+          "row_24_col_4": {
+            "bbox": {
+              "Width": 0.05414188653230667,
+              "Height": 0.023753173649311066,
+              "Left": 0.2288713902235031,
+              "Top": 0.7434681057929993
+            },
+            "confidence": 87.451171875,
+            "text": "I",
+            "header": "subplot_number",
+            "row_index": 24,
+            "column_index": 4
+          },
+          "row_24_col_5": {
+            "bbox": {
+              "Width": 0.03609467297792435,
+              "Height": 0.02375299483537674,
+              "Left": 0.28301316499710083,
+              "Top": 0.7434686422348022
+            },
+            "confidence": 80.810546875,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 24,
+            "column_index": 5
+          },
+          "row_24_col_6": {
+            "bbox": {
+              "Width": 0.03609471023082733,
+              "Height": 0.023753000423312187,
+              "Left": 0.31910768151283264,
+              "Top": 0.7434689998626709
+            },
+            "confidence": 84.716796875,
+            "text": "2.75",
+            "header": "canopy_openness_east",
+            "row_index": 24,
+            "column_index": 6
+          },
+          "row_24_col_7": {
+            "bbox": {
+              "Width": 0.03609474375844002,
+              "Height": 0.023753004148602486,
+              "Left": 0.35520222783088684,
+              "Top": 0.7434693574905396
+            },
+            "confidence": 86.03515625,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 24,
+            "column_index": 7
+          },
+          "row_24_col_8": {
+            "bbox": {
+              "Width": 0.036094781011343,
+              "Height": 0.023753009736537933,
+              "Left": 0.39129677414894104,
+              "Top": 0.7434697151184082
+            },
+            "confidence": 83.447265625,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 24,
+            "column_index": 8
+          },
+          "row_24_col_9": {
+            "bbox": {
+              "Width": 0.07711144536733627,
+              "Height": 0.023753441870212555,
+              "Left": 0.42739138007164,
+              "Top": 0.7434701323509216
+            },
+            "confidence": 89.84375,
+            "text": "Dayt (1)",
+            "header": "soil_moisture",
+            "row_index": 24,
+            "column_index": 9
+          },
+          "row_24_col_10": {
+            "bbox": {
+              "Width": 0.045938890427351,
+              "Height": 0.023753130808472633,
+              "Left": 0.5045025944709778,
+              "Top": 0.7434709072113037
+            },
+            "confidence": 86.474609375,
+            "text": "22",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 24,
+            "column_index": 10
+          },
+          "row_24_col_11": {
+            "bbox": {
+              "Width": 0.04347793757915497,
+              "Height": 0.02375311218202114,
+              "Left": 0.5504412055015564,
+              "Top": 0.7434713840484619
+            },
+            "confidence": 84.228515625,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 24,
+            "column_index": 11
+          },
+          "row_24_col_12": {
+            "bbox": {
+              "Width": 0.2124669998884201,
+              "Height": 0.023754874244332314,
+              "Left": 0.5939188599586487,
+              "Top": 0.7434718012809753
+            },
+            "confidence": 47.94921875,
+            "text": "few >C.A; undustory,",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 24,
+            "column_index": 12
+          },
+          "row_24_col_13": {
+            "bbox": {
+              "Width": 0.01465454138815403,
+              "Height": 0.02375285141170025,
+              "Left": 0.8063854575157166,
+              "Top": 0.743474006652832
+            },
+            "confidence": 70.3125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 24,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "2",
+      "canopy_openness_north": "Aug",
+      "canopy_openness_east": "97.14%",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1 1",
+      "soil_temper_ature_in_2": "21",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "regin Shurs,",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194846123456955,
+          "Top": 0.767219066619873,
+          "Width": 0.7490910924971104,
+          "Height": 0.022572824731469154
+        },
+        "group_id": "row_25",
+        "row_index": 25,
+        "column_index": -1,
+        "cells": {
+          "row_25_col_1": {
+            "bbox": {
+              "Width": 0.06258510053157806,
+              "Height": 0.02256559394299984,
+              "Left": 0.07194846123456955,
+              "Top": 0.767219066619873
+            },
+            "confidence": 81.591796875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 25,
+            "column_index": 1
+          },
+          "row_25_col_2": {
+            "bbox": {
+              "Width": 0.056602731347084045,
+              "Height": 0.022565539926290512,
+              "Left": 0.13453350961208344,
+              "Top": 0.7672197222709656
+            },
+            "confidence": 79.150390625,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 25,
+            "column_index": 2
+          },
+          "row_25_col_3": {
+            "bbox": {
+              "Width": 0.0377352200448513,
+              "Height": 0.02256534993648529,
+              "Left": 0.1911361664533615,
+              "Top": 0.7672203183174133
+            },
+            "confidence": 76.025390625,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 25,
+            "column_index": 3
+          },
+          "row_25_col_4": {
+            "bbox": {
+              "Width": 0.05414185672998428,
+              "Height": 0.022565526887774467,
+              "Left": 0.22887130081653595,
+              "Top": 0.767220675945282
+            },
+            "confidence": 82.32421875,
+            "text": "2",
+            "header": "subplot_number",
+            "row_index": 25,
+            "column_index": 4
+          },
+          "row_25_col_5": {
+            "bbox": {
+              "Width": 0.03609464690089226,
+              "Height": 0.022565346211194992,
+              "Left": 0.2830130457878113,
+              "Top": 0.7672212719917297
+            },
+            "confidence": 76.025390625,
+            "text": "Aug",
+            "header": "canopy_openness_north",
+            "row_index": 25,
+            "column_index": 5
+          },
+          "row_25_col_6": {
+            "bbox": {
+              "Width": 0.03609468415379524,
+              "Height": 0.02256534993648529,
+              "Left": 0.3191075325012207,
+              "Top": 0.7672216296195984
+            },
+            "confidence": 79.736328125,
+            "text": "97.14%",
+            "header": "canopy_openness_east",
+            "row_index": 25,
+            "column_index": 6
+          },
+          "row_25_col_7": {
+            "bbox": {
+              "Width": 0.03609471768140793,
+              "Height": 0.022565355524420738,
+              "Left": 0.3552020788192749,
+              "Top": 0.767221987247467
+            },
+            "confidence": 80.95703125,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 25,
+            "column_index": 7
+          },
+          "row_25_col_8": {
+            "bbox": {
+              "Width": 0.036094751209020615,
+              "Height": 0.022565361112356186,
+              "Left": 0.3912966251373291,
+              "Top": 0.7672224044799805
+            },
+            "confidence": 78.564453125,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 25,
+            "column_index": 8
+          },
+          "row_25_col_9": {
+            "bbox": {
+              "Width": 0.0771113932132721,
+              "Height": 0.022565798833966255,
+              "Left": 0.4273911714553833,
+              "Top": 0.7672227621078491
+            },
+            "confidence": 84.5703125,
+            "text": "1 1",
+            "header": "soil_moisture",
+            "row_index": 25,
+            "column_index": 9
+          },
+          "row_25_col_10": {
+            "bbox": {
+              "Width": 0.04593885317444801,
+              "Height": 0.022565480321645737,
+              "Left": 0.5045023560523987,
+              "Top": 0.7672235369682312
+            },
+            "confidence": 81.396484375,
+            "text": "21",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 25,
+            "column_index": 10
+          },
+          "row_25_col_11": {
+            "bbox": {
+              "Width": 0.04347790405154228,
+              "Height": 0.022565461695194244,
+              "Left": 0.5504409670829773,
+              "Top": 0.7672240138053894
+            },
+            "confidence": 79.248046875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 25,
+            "column_index": 11
+          },
+          "row_25_col_12": {
+            "bbox": {
+              "Width": 0.21246688067913055,
+              "Height": 0.022567247971892357,
+              "Left": 0.5939185619354248,
+              "Top": 0.7672244906425476
+            },
+            "confidence": 47.94921875,
+            "text": "regin Shurs,",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 25,
+            "column_index": 12
+          },
+          "row_25_col_13": {
+            "bbox": {
+              "Width": 0.014654513448476791,
+              "Height": 0.022565195336937904,
+              "Left": 0.8063850402832031,
+              "Top": 0.7672266960144043
+            },
+            "confidence": 66.162109375,
+            "text": "",
+            "header": "col_13",
+            "row_index": 25,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "3",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "22",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "(aropy present: South in open company",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194843888282776,
+          "Top": 0.7897840142250061,
+          "Width": 0.7490907702594995,
+          "Height": 0.023760495707392693
+        },
+        "group_id": "row_26",
+        "row_index": 26,
+        "column_index": -1,
+        "cells": {
+          "row_26_col_1": {
+            "bbox": {
+              "Width": 0.06258507072925568,
+              "Height": 0.023753207176923752,
+              "Left": 0.07194843888282776,
+              "Top": 0.7897840142250061
+            },
+            "confidence": 82.32421875,
+            "text": "",
+            "header": "block_code",
+            "row_index": 26,
+            "column_index": 1
+          },
+          "row_26_col_2": {
+            "bbox": {
+              "Width": 0.056602705270051956,
+              "Height": 0.023753153160214424,
+              "Left": 0.13453346490859985,
+              "Top": 0.7897846698760986
+            },
+            "confidence": 79.833984375,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 26,
+            "column_index": 2
+          },
+          "row_26_col_3": {
+            "bbox": {
+              "Width": 0.03773520514369011,
+              "Height": 0.023752959445118904,
+              "Left": 0.19113609194755554,
+              "Top": 0.7897852659225464
+            },
+            "confidence": 76.708984375,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 26,
+            "column_index": 3
+          },
+          "row_26_col_4": {
+            "bbox": {
+              "Width": 0.05414183437824249,
+              "Height": 0.02375314198434353,
+              "Left": 0.2288711965084076,
+              "Top": 0.789785623550415
+            },
+            "confidence": 83.056640625,
+            "text": "3",
+            "header": "subplot_number",
+            "row_index": 26,
+            "column_index": 4
+          },
+          "row_26_col_5": {
+            "bbox": {
+              "Width": 0.03609463572502136,
+              "Height": 0.023752955719828606,
+              "Left": 0.28301289677619934,
+              "Top": 0.7897862195968628
+            },
+            "confidence": 76.708984375,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 26,
+            "column_index": 5
+          },
+          "row_26_col_6": {
+            "bbox": {
+              "Width": 0.03609467297792435,
+              "Height": 0.023752961307764053,
+              "Left": 0.31910738348960876,
+              "Top": 0.7897865772247314
+            },
+            "confidence": 80.46875,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 26,
+            "column_index": 6
+          },
+          "row_26_col_7": {
+            "bbox": {
+              "Width": 0.03609470650553703,
+              "Height": 0.0237529668956995,
+              "Left": 0.3552019000053406,
+              "Top": 0.7897869944572449
+            },
+            "confidence": 81.689453125,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 26,
+            "column_index": 7
+          },
+          "row_26_col_8": {
+            "bbox": {
+              "Width": 0.03609474375844002,
+              "Height": 0.02375297248363495,
+              "Left": 0.3912964463233948,
+              "Top": 0.7897873520851135
+            },
+            "confidence": 79.248046875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 26,
+            "column_index": 8
+          },
+          "row_26_col_9": {
+            "bbox": {
+              "Width": 0.07711136341094971,
+              "Height": 0.023753415793180466,
+              "Left": 0.4273909628391266,
+              "Top": 0.789787769317627
+            },
+            "confidence": 85.302734375,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 26,
+            "column_index": 9
+          },
+          "row_26_col_10": {
+            "bbox": {
+              "Width": 0.04593884199857712,
+              "Height": 0.023753095418214798,
+              "Left": 0.5045021176338196,
+              "Top": 0.789788544178009
+            },
+            "confidence": 82.12890625,
+            "text": "22",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 26,
+            "column_index": 10
+          },
+          "row_26_col_11": {
+            "bbox": {
+              "Width": 0.04347789287567139,
+              "Height": 0.023753076791763306,
+              "Left": 0.5504406690597534,
+              "Top": 0.7897890210151672
+            },
+            "confidence": 79.98046875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 26,
+            "column_index": 11
+          },
+          "row_26_col_12": {
+            "bbox": {
+              "Width": 0.2124667912721634,
+              "Height": 0.023754889145493507,
+              "Left": 0.5939182639122009,
+              "Top": 0.7897894978523254
+            },
+            "confidence": 47.94921875,
+            "text": "(aropy present: South in open company",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 26,
+            "column_index": 12
+          },
+          "row_26_col_13": {
+            "bbox": {
+              "Width": 0.014654526486992836,
+              "Height": 0.023752806708216667,
+              "Left": 0.8063846826553345,
+              "Top": 0.7897917032241821
+            },
+            "confidence": 66.748046875,
+            "text": "",
+            "header": "col_13",
+            "row_index": 26,
+            "column_index": 13
+          }
+        }
+      }
+    },
+    {
+      "block_code": "",
+      "transect_number": "",
+      "plot_number": "",
+      "subplot_number": "4",
+      "canopy_openness_north": "",
+      "canopy_openness_east": "",
+      "canopy_openness_west": "",
+      "canopy_openness_south": "",
+      "soil_moisture": "1",
+      "soil_temper_ature_in_2": "23",
+      "soil_ph": "7",
+      "notes_on_plot_characteristics_disturbance_physical_features_forest_structure": "to North. No dury present",
+      "col_13": "",
+      "system": {
+        "bbox": {
+          "Left": 0.07194842398166656,
+          "Top": 0.813536524772644,
+          "Width": 0.7490903418511152,
+          "Height": 0.026214634999632835
+        },
+        "group_id": "row_27",
+        "row_index": 27,
+        "column_index": -1,
+        "cells": {
+          "row_27_col_1": {
+            "bbox": {
+              "Width": 0.06258504092693329,
+              "Height": 0.02620716392993927,
+              "Left": 0.07194842398166656,
+              "Top": 0.813536524772644
+            },
+            "confidence": 87.20703125,
+            "text": "",
+            "header": "block_code",
+            "row_index": 27,
+            "column_index": 1
+          },
+          "row_27_col_2": {
+            "bbox": {
+              "Width": 0.05660267919301987,
+              "Height": 0.026207109913229942,
+              "Left": 0.13453340530395508,
+              "Top": 0.8135371804237366
+            },
+            "confidence": 84.5703125,
+            "text": "",
+            "header": "transect_number",
+            "row_index": 27,
+            "column_index": 2
+          },
+          "row_27_col_3": {
+            "bbox": {
+              "Width": 0.037735193967819214,
+              "Height": 0.026206914335489273,
+              "Left": 0.19113600254058838,
+              "Top": 0.8135378360748291
+            },
+            "confidence": 81.25,
+            "text": "",
+            "header": "plot_number",
+            "row_index": 27,
+            "column_index": 3
+          },
+          "row_27_col_4": {
+            "bbox": {
+              "Width": 0.054141815751791,
+              "Height": 0.026207098737359047,
+              "Left": 0.22887109220027924,
+              "Top": 0.8135381937026978
+            },
+            "confidence": 87.98828125,
+            "text": "4",
+            "header": "subplot_number",
+            "row_index": 27,
+            "column_index": 4
+          },
+          "row_27_col_5": {
+            "bbox": {
+              "Width": 0.036094631999731064,
+              "Height": 0.026206912472844124,
+              "Left": 0.2830127775669098,
+              "Top": 0.8135387897491455
+            },
+            "confidence": 81.298828125,
+            "text": "",
+            "header": "canopy_openness_north",
+            "row_index": 27,
+            "column_index": 5
+          },
+          "row_27_col_6": {
+            "bbox": {
+              "Width": 0.03609466925263405,
+              "Height": 0.02620691806077957,
+              "Left": 0.3191072344779968,
+              "Top": 0.8135391473770142
+            },
+            "confidence": 85.205078125,
+            "text": "",
+            "header": "canopy_openness_east",
+            "row_index": 27,
+            "column_index": 6
+          },
+          "row_27_col_7": {
+            "bbox": {
+              "Width": 0.03609470650553703,
+              "Height": 0.02620692364871502,
+              "Left": 0.35520172119140625,
+              "Top": 0.8135395646095276
+            },
+            "confidence": 86.5234375,
+            "text": "",
+            "header": "canopy_openness_west",
+            "row_index": 27,
+            "column_index": 7
+          },
+          "row_27_col_8": {
+            "bbox": {
+              "Width": 0.03609474375844002,
+              "Height": 0.026206929236650467,
+              "Left": 0.39129623770713806,
+              "Top": 0.8135399222373962
+            },
+            "confidence": 83.935546875,
+            "text": "",
+            "header": "canopy_openness_south",
+            "row_index": 27,
+            "column_index": 8
+          },
+          "row_27_col_9": {
+            "bbox": {
+              "Width": 0.07711134105920792,
+              "Height": 0.02620738185942173,
+              "Left": 0.4273907542228699,
+              "Top": 0.8135403394699097
+            },
+            "confidence": 90.380859375,
+            "text": "1",
+            "header": "soil_moisture",
+            "row_index": 27,
+            "column_index": 9
+          },
+          "row_27_col_10": {
+            "bbox": {
+              "Width": 0.04593884199857712,
+              "Height": 0.026207055896520615,
+              "Left": 0.5045018196105957,
+              "Top": 0.8135411739349365
+            },
+            "confidence": 86.962890625,
+            "text": "23",
+            "header": "soil_temper_ature_in_2",
+            "row_index": 27,
+            "column_index": 10
+          },
+          "row_27_col_11": {
+            "bbox": {
+              "Width": 0.043477900326251984,
+              "Height": 0.026207037270069122,
+              "Left": 0.5504403710365295,
+              "Top": 0.8135416507720947
+            },
+            "confidence": 84.716796875,
+            "text": "7",
+            "header": "soil_ph",
+            "row_index": 27,
+            "column_index": 11
+          },
+          "row_27_col_12": {
+            "bbox": {
+              "Width": 0.21246670186519623,
+              "Height": 0.026130156591534615,
+              "Left": 0.593917965888977,
+              "Top": 0.8135421276092529
+            },
+            "confidence": 47.94921875,
+            "text": "to North. No dury present",
+            "header": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+            "row_index": 27,
+            "column_index": 12
+          },
+          "row_27_col_13": {
+            "bbox": {
+              "Width": 0.014654560014605522,
+              "Height": 0.026206767186522484,
+              "Left": 0.8063842058181763,
+              "Top": 0.8135443925857544
+            },
+            "confidence": 70.703125,
+            "text": "",
+            "header": "col_13",
+            "row_index": 27,
+            "column_index": 13
+          }
+        }
+      }
+    }
+  ]
+}
