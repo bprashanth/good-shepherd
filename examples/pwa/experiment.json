@@ -1,0 +1,292 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ecological Experiment Schema",
+  "description": "Standard schema for describing an ecological experiment's spatial validity and hierarchy.",
+  "type": "object",
+  "properties": {
+    "experiment_title": {
+      "type": "string",
+      "description": "The title of the experiment derived from the protocol or KML."
+    },
+    "hierarchy": {
+      "type": "object",
+      "description": "The nested structure of the design (Blocks -> Transects -> Plots).",
+      "properties": {
+        "block": {
+          "type": "object",
+          "description": "Top-level spatial unit (e.g., Block, Patch, Site).",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses blocks."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used in the protocol (e.g., 'Shola Patch', 'Block')."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of what a block represents in this context."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of feature names found in the KML identified as blocks."
+            },
+            "children": {
+              "type": "object",
+              "description": "Map of Block Name -> List of Child Feature Names (Transects or Plots).",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "transect": {
+          "type": "object",
+          "description": "Linear spatial unit containing plots.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses transects."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Transect', 'Line')."
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the transect setup."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "description": "List of feature names found in the KML identified as transects."
+            },
+            "children": {
+              "type": "object",
+              "description": "Map of Transect Name -> List of Child Feature Names (Plots).",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "plot": {
+          "type": "object",
+          "description": "Primary unit of observation.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses plots."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Plot', 'Quadrat')."
+            },
+            "dimensions": {
+              "type": "string",
+              "description": "Size of the plot (e.g., '10m x 10m')."
+            },
+            "variables": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of variables measured at this level."
+            },
+            "datasheet_description": {
+              "type": "string",
+              "description": "Prompt for the user to upload a datasheet for this level."
+            },
+            "features": {
+              "type": "array",
+              "description": "List of feature names found in the KML identified as plots."
+            }
+          }
+        },
+        "subplot": {
+          "type": "object",
+          "description": "Sub-unit within a plot.",
+          "properties": {
+            "exists": {
+              "type": "boolean",
+              "description": "True if the experiment uses subplots."
+            },
+            "name_in_protocol": {
+              "type": "string",
+              "description": "The term used (e.g., 'Subplot', 'Corner point')."
+            },
+            "dimensions": {
+              "type": "string",
+              "description": "Size/Nature of the subplot."
+            },
+            "variables": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of variables measured at this level."
+            }
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "title": "Bikkapathy Mund Cestrum Invasion Study",
+    "aim": "To investigate the invasion of Cestrum aurantiacum in shola forests by assessing its abundance and impact across different distances from the forest edge."
+  },
+  "hierarchy": {
+    "block": {
+      "exists": true,
+      "name_in_protocol": "Shola Patch",
+      "description": "Patches of shola forest where transects are established to study Cestrum invasion.",
+      "datasheet_description": "Please upload the datasheet containing Shola Patch details.",
+      "features": [
+        "Bikkapathimund_Shola_A",
+        "Biikkapathimund_Shola_B"
+      ],
+      "children": {
+        "Bikkapathimund_Shola_A": [
+          "A_T1",
+          "A_T3",
+          "A_T2",
+          "A_T7",
+          "A_T5",
+          "A_T6",
+          "A_T4",
+          "A_VHD-5",
+          "A_VHd-4"
+        ],
+        "Biikkapathimund_Shola_B": [
+          "B_T1",
+          "B_T2",
+          "B_T3"
+        ]
+      }
+    },
+    "transect": {
+      "exists": true,
+      "name_in_protocol": "Transect",
+      "description": "Line segments radiating from the shola edge into the interior, spaced ~50m apart.",
+      "datasheet_description": "Please upload the datasheet containing Transect details.",
+      "features": [
+        "A_T1",
+        "A_T3",
+        "A_T2",
+        "A_T7",
+        "A_T5",
+        "A_T6",
+        "A_T4",
+        "B_T1",
+        "B_T2",
+        "B_T3",
+        "B_T4",
+        "B_T5"
+      ],
+      "children": {
+        "A_T1": [
+          "A_HD-1",
+          "A_LD-1",
+          "A_VHD_1"
+        ],
+        "A_T3": [
+          "A_VHD-2",
+          "A_VHD-3",
+          "A_HD_2"
+        ],
+        "A_T2": [
+          "A_MD-5",
+          "A_MD-6",
+          "A_LD-2"
+        ],
+        "A_T7": [
+          "A_HD-3",
+          "A_VHD-6",
+          "A_MD-3",
+          "A_MD-4"
+        ],
+        "A_T5": [
+          "A_LD-3",
+          "A_MD-8"
+        ],
+        "A_T6": [
+          "A_HD-4",
+          "A_MD-1",
+          "A_MD-2"
+        ],
+        "A_T4": [
+          "A_MD-7"
+        ],
+        "B_T1": [],
+        "B_T2": [],
+        "B_T3": [],
+        "B_T4": [],
+        "B_T5": []
+      }
+    },
+    "plot": {
+      "exists": true,
+      "name_in_protocol": "10 x 10 m plot",
+      "dimensions": "10m x 10m",
+      "variables": [
+        "DBH (woody individuals >= 1cm)",
+        "Canopy Openness",
+        "Soil Moisture",
+        "Other features (dung, lopping)"
+      ],
+      "datasheet_description": "Please upload the datasheet containing plot-level measurements (DBH, canopy, etc.).",
+      "features": [
+        "A_HD-4",
+        "A_MD-1",
+        "A_VHD-5",
+        "A_MD-2",
+        "A_HD-3",
+        "A_VHD-6",
+        "A_MD-3",
+        "A_MD-4",
+        "A_MD-5",
+        "A_HD-1",
+        "A_VHD-2",
+        "A_VHD-3",
+        "A_LD-1",
+        "A_MD-6",
+        "A_LD-2",
+        "A_MD-7",
+        "A_LD-3",
+        "A_MD-8",
+        "A_VHd-4",
+        "A_VHD_1",
+        "A_HD_2"
+      ]
+    },
+    "subplot": {
+      "exists": true,
+      "name_in_protocol": "Subplot",
+      "dimensions": "2m x 2m",
+      "variables": [
+        "Seedling count",
+        "Sapling count",
+        "Grass cover",
+        "Bare ground cover",
+        "Soil Moisture"
+      ]
+    }
+  }
+}
