@@ -1,0 +1,267 @@
+:root {
+    --bg-color: #0d1117;
+    /* Very dark blue/black */
+    --card-bg: #161b22;
+    --text-primary: #ffffff;
+    --text-secondary: #8b949e;
+    --accent-red: #da3633;
+    --accent-green: #238636;
+    --accent-blue: #2f81f7;
+    --highlight_glow: 0 0 15px rgba(255, 255, 255, 0.5);
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow: hidden;
+    /* Prevent scrolling, app-like feel */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Map Section */
+.map-wrapper {
+    position: relative;
+    width: 90vw;
+    height: 90vw;
+    /* Circle */
+    max-width: 400px;
+    max-height: 400px;
+    margin-top: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #2d333b;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+/* Digital Ring Overlay Effect */
+.map-overlay-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    width: 90%;
+    height: 80px;
+    background: var(--card-bg);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+
+.selector-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    position: relative;
+}
+
+.selector-group .label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.selector-group .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.up-indicator {
+    position: absolute;
+    right: 15px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Actually, let's make the Whole Selector Area clickable to cycle, and show a visual indicator that implies "Next" */
+.selector-group {
+    cursor: pointer;
+    user-select: none;
+}
+
+.selector-group:active {
+    opacity: 0.7;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.divider {
+    width: 1px;
+    height: 40px;
+    background: #30363d;
+    margin: 0 10px;
+}
+
+.plus-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--accent-green);
+    /* Green Outline/Text style from screenshot? */
+    border: 2px solid var(--accent-green);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(35, 134, 54, 0.1);
+}
+
+.plus-btn:active {
+    background: var(--accent-green);
+    color: white;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #30363d;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+#imagePreviewContainer img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 2px solid #30363d;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #30363d;
+    color: var(--text-primary);
+}
+
+.btn-submit {
+    background: var(--accent-green);
+    color: white;
+}
+
+/* Leaflet Customizations for Dark Mode */
+.leaflet-container {
+    background: #000;
+}
+
+.leaflet-control-attribution {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #aaa !important;
+}
+
+.leaflet-control-attribution a {
+    color: #ccc !important;
+}
+
+/* Popup/Label Styles */
+.custom-tooltip {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: none;
+    text-shadow: 0 0 4px black;
+}
