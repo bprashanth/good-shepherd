@@ -103,10 +103,21 @@ body {
 .selector-group {
     flex: 1;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 5px;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+}
+
+.selector-info {
+    flex: 1;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px;
-    position: relative;
+    cursor: pointer;
 }
 
 .selector-group .label {
@@ -123,27 +134,33 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 120px;
+    max-width: 100px;
 }
 
-.up-indicator {
-    position: absolute;
-    right: 15px;
-    font-size: 0.8rem;
+.selector-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.nav-btn {
+    font-size: 0.6rem;
     color: var(--text-secondary);
-    opacity: 0.5;
-}
-
-/* Actually, let's make the Whole Selector Area clickable to cycle, and show a visual indicator that implies "Next" */
-.selector-group {
     cursor: pointer;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    margin: 2px 0;
     user-select: none;
 }
 
-.selector-group:active {
-    opacity: 0.7;
-    background: rgba(255, 255, 255, 0.05);
+.nav-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
+
 
 .divider {
     width: 1px;

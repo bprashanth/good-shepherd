@@ -118,6 +118,34 @@ async function loadData() {
 
         if (transects.length > 0) {
             map.fitBounds(geoJsonLayer.getBounds());
+
+            // Mock User Location (Near A_T1 start)
+            if (transactionFeatures['A_T1']) {
+                const geom = transactionFeatures['A_T1'].geometry;
+                let startPoint = null;
+                // Assuming LineString
+                if (geom.type === 'LineString') {
+                    startPoint = geom.coordinates[0]; // [Lng, Lat] usually in GeoJSON
+                }
+
+                if (startPoint) {
+                    // GeoJSON is Lng,Lat. Leaflet wants Lat,Lng
+                    const userLatLng = [startPoint[1], startPoint[0]];
+
+                    // Add User Marker (Use a high z-index pane or bring to front)
+                    const userMarker = L.circleMarker(userLatLng, {
+                        radius: 8, // Larger
+                        fillColor: "#ffd700", // Gold
+                        color: "#000000", // Black stroke for contrast
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 1,
+                        pane: 'markerPane' // Ensure on top of vectors
+                    }).addTo(map).bindPopup("Current Location").openPopup();
+
+                    // console.log("Added user marker at", userLatLng);
+                }
+            }
         }
 
     } catch (e) {
@@ -201,10 +229,11 @@ function updateMapStyles() {
 }
 
 // Interaction Logic
-function cycleTransect() {
+function cycleTransect(direction = 1, event) {
+    if (event) event.stopPropagation();
     if (transects.length === 0) return;
 
-    currentTransectIndex = (currentTransectIndex + 1) % transects.length;
+    currentTransectIndex = (currentTransectIndex + direction + transects.length) % transects.length;
     currentTransectName = transects[currentTransectIndex];
 
     // Update Display
@@ -221,10 +250,11 @@ function cycleTransect() {
     zoomToFeature(currentTransectName);
 }
 
-function cyclePlot() {
+function cyclePlot(direction = 1, event) {
+    if (event) event.stopPropagation();
     if (!currentTransectName) {
         // If no transect selected, maybe select first?
-        cycleTransect();
+        cycleTransect(1);
         return;
     }
 
@@ -234,7 +264,7 @@ function cyclePlot() {
         return;
     }
 
-    currentPlotIndex = (currentPlotIndex + 1) % plotList.length;
+    currentPlotIndex = (currentPlotIndex + direction + plotList.length) % plotList.length;
     const currentPlotName = plotList[currentPlotIndex];
 
     document.getElementById('plot-display').innerText = currentPlotName;

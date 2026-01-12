@@ -34,19 +34,29 @@
         <!-- Controls -->
         <div class="controls">
             <!-- Transect Selector -->
-            <div class="selector-group" id="transect-selector" onclick="cycleTransect()">
-                <div class="label">Transect</div>
-                <div class="value" id="transect-display">Select</div>
-                <div class="up-indicator">▲</div>
+            <div class="selector-group" id="transect-selector">
+                <div class="selector-info" onclick="cycleTransect(1)">
+                    <div class="label">Transect</div>
+                    <div class="value" id="transect-display">Select</div>
+                </div>
+                <div class="selector-controls">
+                    <div class="nav-btn" onclick="cycleTransect(1, event)">▲</div>
+                    <div class="nav-btn" onclick="cycleTransect(-1, event)">▼</div>
+                </div>
             </div>
 
             <div class="divider"></div>
 
             <!-- Plot Selector -->
-            <div class="selector-group" id="plot-selector" onclick="cyclePlot()">
-                <div class="label">Plot</div>
-                <div class="value" id="plot-display">-</div>
-                <div class="up-indicator">▲</div>
+            <div class="selector-group" id="plot-selector">
+                <div class="selector-info" onclick="cyclePlot(1)">
+                    <div class="label">Plot</div>
+                    <div class="value" id="plot-display">-</div>
+                </div>
+                <div class="selector-controls">
+                    <div class="nav-btn" onclick="cyclePlot(1, event)">▲</div>
+                    <div class="nav-btn" onclick="cyclePlot(-1, event)">▼</div>
+                </div>
             </div>
 
             <!-- Plus Button -->
