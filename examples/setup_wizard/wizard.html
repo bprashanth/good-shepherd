@@ -213,10 +213,22 @@
                           <h4>Identified Plots:</h4>
                           <ul>${(data.hierarchy.plot.features || []).map(f => `<li>${f}</li>`).join('')}</ul>
                           <h4>Variables:</h4>
-                          <div>${(data.hierarchy.plot.variables || []).map(v => `<span class="variable-tag">${v}</span>`).join('')}</div>`,
+                          <div>${(data.hierarchy.plot.variables || []).map(v => `<span class="variable-tag">${v}</span>`).join('')}</div>
+                          <div style="margin-top: 15px;">
+                               <input type="file" id="variable-datasheet-upload" style="display:none" onchange="alert('Datasheet attached!')">
+                               <button onclick="document.getElementById('variable-datasheet-upload').click()" style="background: #17a2b8;">+ Add Datasheet</button>
+                          </div>`,
                 features: data.hierarchy.plot.features,
                 role: 'plot'
              });
+        }
+        
+        // SUBMIT BUTTON ON LAST CARD
+        if (cards.length > 0) {
+             const last = cards[cards.length - 1];
+             last.content += `<div style="margin-top: 20px; text-align: right; border-top: 1px solid #eee; padding-top: 20px;">
+                                  <button onclick="window.location.href='file:///home/desinotorious/src/github.com/bprashanth/good-shepherd/examples/web/index.html'" style="background-color: #28a745; font-weight: bold;">Submit</button>
+                              </div>`;
         }
         
         renderCards();
