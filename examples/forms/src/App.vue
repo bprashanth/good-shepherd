@@ -268,7 +268,9 @@ function saveJson() {
   }
 
   try {
-    const cloned = structuredClone(formData.value)
+    // Use JSON.parse(JSON.stringify()) instead of structuredClone to handle non-serializable data
+    // This will automatically strip out any non-serializable objects
+    const cloned = JSON.parse(JSON.stringify(formData.value))
 
     const validUniversals = Object.fromEntries(
       Object.entries(cloned.universal_fields || {}).filter(([, v]) => v?.system?.valid !== false),
@@ -279,12 +281,23 @@ function saveJson() {
       flatUniversals[k] = v?.value ?? null
     }
 
-    cloned.rows = (cloned.rows || []).map((row) => ({
-      ...flatUniversals,
-      ...row,
-    }))
+    cloned.rows = (cloned.rows || []).map((row) => {
+      // Remove system field and any non-serializable data, then merge universal fields
+      // eslint-disable-next-line no-unused-vars
+      const { system, ...rowData } = row
+      return {
+        ...flatUniversals,
+        ...rowData,
+      }
+    })
 
-    const blob = new Blob([JSON.stringify(cloned, null, 2)], {
+    // Log the forms array to console
+    console.log('Forms array (rows):', cloned.rows)
+    console.log('Forms array length:', cloned.rows.length)
+    console.log('Forms array (JSON):', JSON.stringify(cloned.rows, null, 2))
+
+    const jsonString = JSON.stringify(cloned, null, 2)
+    const blob = new Blob([jsonString], {
       type: 'application/json',
     })
     const url = URL.createObjectURL(blob)
@@ -295,22 +308,27 @@ function saveJson() {
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
+
+    console.log('JSON file downloaded successfully')
   } catch (error) {
     console.error('Error saving JSON:', error)
+    alert('Failed to save JSON. Check console for details.')
+    return // Don't navigate away if save failed
   }
 
   // Always return to landing page after saving - reset all state
-  // Set showLanding first to ensure landing page shows
+  // Set showLanding first to ensure landing page shows and FormViewer unmounts
   showLanding.value = true
 
-  // Then clear all other state
-  formData.value = null
-  imageUrl.value = null
-  mode.value = null
-  selectedRow.value = null
-  selectedHeaderKey.value = null
-  zoom.value = 1
-
-  console.log('Save completed, returning to landing page. showLanding:', showLanding.value)
+  // Use setTimeout to ensure FormViewer is unmounted before clearing data
+  setTimeout(() => {
+    formData.value = null
+    imageUrl.value = null
+    mode.value = null
+    selectedRow.value = null
+    selectedHeaderKey.value = null
+    zoom.value = 1
+    console.log('Save completed, returning to landing page. showLanding:', showLanding.value)
+  }, 0)
 }
 </script>
