@@ -133,6 +133,10 @@ h1 {
     background: var(--grad-alien);
 }
 
+.card-indicators .card-bg {
+    background: var(--grad-orange);
+}
+
 .card-placeholder-1 .card-bg {
     background: var(--grad-blue);
 }
