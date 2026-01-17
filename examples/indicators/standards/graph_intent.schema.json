@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Graph Intent",
+  "type": "object",
+  "description": "Visualization intent metadata for later chart generation.",
+  "properties": {
+    "chart_type": {
+      "type": "string",
+      "description": "Suggested chart type, e.g., line, heatmap, histogram."
+    },
+    "x_axis": {
+      "type": "string",
+      "description": "Field name for the x-axis."
+    },
+    "y_axis": {
+      "type": "string",
+      "description": "Field name for the y-axis."
+    },
+    "group_by": {
+      "type": "string",
+      "description": "Optional grouping field (e.g., plot, transect)."
+    },
+    "aggregation": {
+      "type": "string",
+      "description": "Aggregation method, e.g., mean, sum, count."
+    }
+  },
+  "additionalProperties": true
+}

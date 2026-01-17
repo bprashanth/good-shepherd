@@ -1,0 +1,4751 @@
+{
+  "universal_fields": {
+    "transect_no": {
+      "value": "I",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_1",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "block_name": {
+      "value": "1",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_2",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "plot_no": {
+      "value": "2",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_3",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "area_name": {
+      "value": "BKM",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_4",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "name_of_researcher": {
+      "value": "Caropy Cover",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_5",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "date": {
+      "value": "19/02/2025",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_6",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "name_of_research_team": {
+      "value": "Ak, HA, Kk, MK, PK",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_7",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "sub_plot_no": {
+      "value": "1",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_8",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "notes": {
+      "value": "12",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_9",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "seedlings": {
+      "value": "Subplor:",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_10",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "dirt": {
+      "value": "#:1",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_11",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.11974846083670855,
+        "Top": 0.01864434942603111,
+        "Width": 0.7249771649762988,
+        "Height": 0.22262029813602568
+      },
+      "group_id": "universal_fields",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "header_map": {
+    "sub_plot_no": {
+      "field_name": "Sub plot no.",
+      "system": {
+        "merged": false,
+        "group_id": "col_2",
+        "column_index": 2,
+        "row_index": -1
+      },
+      "description": "Field: Sub plot no.",
+      "alt_names": []
+    },
+    "s_no": {
+      "field_name": "S.No",
+      "system": {
+        "merged": false,
+        "group_id": "col_3",
+        "column_index": 3,
+        "row_index": -1
+      },
+      "description": "Field: S.No",
+      "alt_names": []
+    },
+    "spp_name_local_name": {
+      "field_name": "SPP Name/Local Name",
+      "system": {
+        "merged": false,
+        "group_id": "col_4",
+        "column_index": 4,
+        "row_index": -1
+      },
+      "description": "Field: SPP Name/Local Name",
+      "alt_names": []
+    },
+    "habit": {
+      "field_name": "Habit",
+      "system": {
+        "merged": false,
+        "group_id": "col_5",
+        "column_index": 5,
+        "row_index": -1
+      },
+      "description": "Field: Habit",
+      "alt_names": []
+    },
+    "number_seedlings": {
+      "field_name": "#Seedlings",
+      "system": {
+        "merged": false,
+        "group_id": "col_6",
+        "column_index": 6,
+        "row_index": -1
+      },
+      "description": "Field: #Seedlings",
+      "alt_names": []
+    },
+    "number_saplings": {
+      "field_name": "#Saplings",
+      "system": {
+        "merged": false,
+        "group_id": "col_7",
+        "column_index": 7,
+        "row_index": -1
+      },
+      "description": "Field: #Saplings",
+      "alt_names": []
+    },
+    "notes": {
+      "field_name": "Notes",
+      "system": {
+        "merged": false,
+        "group_id": "col_8",
+        "column_index": 8,
+        "row_index": -1
+      },
+      "description": "Field: Notes",
+      "alt_names": []
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.11974846083670855,
+        "Top": 0.2061420159973204,
+        "Width": 0.7478063399717212,
+        "Height": 0.02887219700962307
+      },
+      "group_id": "header_map",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "rows": [
+    {
+      "col_1": "",
+      "sub_plot_no": "1",
+      "s_no": "1.",
+      "spp_name_local_name": "cadelei",
+      "habit": "T",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505785882472992,
+          "Top": 0.22766658663749695,
+          "Width": 0.8946985676884651,
+          "Height": 0.01191127672791481
+        },
+        "group_id": "row_2",
+        "row_index": 2,
+        "column_index": -1,
+        "cells": {
+          "row_2_col_1": {
+            "bbox": {
+              "Width": 0.04060161113739014,
+              "Height": 0.011883026920258999,
+              "Left": 0.06505785882472992,
+              "Top": 0.22766658663749695
+            },
+            "confidence": 25.634765625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 2,
+            "column_index": 1
+          },
+          "row_2_col_2": {
+            "bbox": {
+              "Width": 0.11234880238771439,
+              "Height": 0.01188542228192091,
+              "Left": 0.10565854609012604,
+              "Top": 0.2276679128408432
+            },
+            "confidence": 45.7763671875,
+            "text": "1",
+            "header": "sub_plot_no",
+            "row_index": 2,
+            "column_index": 2
+          },
+          "row_2_col_3": {
+            "bbox": {
+              "Width": 0.07230459898710251,
+              "Height": 0.01188416313380003,
+              "Left": 0.21800647675991058,
+              "Top": 0.2276715636253357
+            },
+            "confidence": 41.50390625,
+            "text": "1.",
+            "header": "s_no",
+            "row_index": 2,
+            "column_index": 3
+          },
+          "row_2_col_4": {
+            "bbox": {
+              "Width": 0.19800439476966858,
+              "Height": 0.011888360604643822,
+              "Left": 0.290310263633728,
+              "Top": 0.22767390310764313
+            },
+            "confidence": 52.587890625,
+            "text": "cadelei",
+            "header": "spp_name_local_name",
+            "row_index": 2,
+            "column_index": 4
+          },
+          "row_2_col_5": {
+            "bbox": {
+              "Width": 0.0867675170302391,
+              "Height": 0.011884796433150768,
+              "Left": 0.4883139431476593,
+              "Top": 0.22768034040927887
+            },
+            "confidence": 49.70703125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 2,
+            "column_index": 5
+          },
+          "row_2_col_6": {
+            "bbox": {
+              "Width": 0.11124121397733688,
+              "Height": 0.011885655112564564,
+              "Left": 0.5750808119773865,
+              "Top": 0.2276831567287445
+            },
+            "confidence": 49.462890625,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 2,
+            "column_index": 6
+          },
+          "row_2_col_7": {
+            "bbox": {
+              "Width": 0.1479523926973343,
+              "Height": 0.011886932887136936,
+              "Left": 0.6863214373588562,
+              "Top": 0.2276867777109146
+            },
+            "confidence": 50.78125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 2,
+            "column_index": 7
+          },
+          "row_2_col_8": {
+            "bbox": {
+              "Width": 0.08677021414041519,
+              "Height": 0.011884994804859161,
+              "Left": 0.8342732787132263,
+              "Top": 0.22769159078598022
+            },
+            "confidence": 20.83740234375,
+            "text": "",
+            "header": "notes",
+            "row_index": 2,
+            "column_index": 8
+          },
+          "row_2_col_9": {
+            "bbox": {
+              "Width": 0.03871338814496994,
+              "Height": 0.011883456259965897,
+              "Left": 0.9210430383682251,
+              "Top": 0.22769440710544586
+            },
+            "confidence": 31.73828125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 2,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "2.",
+      "spp_name_local_name": "Perthin",
+      "habit": "T",
+      "number_seedlings": "\"",
+      "number_saplings": "",
+      "notes": "was",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505665928125381,
+          "Top": 0.23954828083515167,
+          "Width": 0.8946993127465248,
+          "Height": 0.015038689598441124
+        },
+        "group_id": "row_3",
+        "row_index": 3,
+        "column_index": -1,
+        "cells": {
+          "row_3_col_1": {
+            "bbox": {
+              "Width": 0.04060188680887222,
+              "Height": 0.015009835362434387,
+              "Left": 0.06505665928125381,
+              "Top": 0.23954828083515167
+            },
+            "confidence": 28.173828125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 3,
+            "column_index": 1
+          },
+          "row_3_col_2": {
+            "bbox": {
+              "Width": 0.11234910786151886,
+              "Height": 0.015012288466095924,
+              "Left": 0.10565736889839172,
+              "Top": 0.23954962193965912
+            },
+            "confidence": 50.341796875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 3,
+            "column_index": 2
+          },
+          "row_3_col_3": {
+            "bbox": {
+              "Width": 0.072304867208004,
+              "Height": 0.015011017210781574,
+              "Left": 0.21800538897514343,
+              "Top": 0.2395533323287964
+            },
+            "confidence": 45.6298828125,
+            "text": "2.",
+            "header": "s_no",
+            "row_index": 3,
+            "column_index": 3
+          },
+          "row_3_col_4": {
+            "bbox": {
+              "Width": 0.19800472259521484,
+              "Height": 0.015015317127108574,
+              "Left": 0.29030922055244446,
+              "Top": 0.2395557314157486
+            },
+            "confidence": 57.861328125,
+            "text": "Perthin",
+            "header": "spp_name_local_name",
+            "row_index": 3,
+            "column_index": 4
+          },
+          "row_3_col_5": {
+            "bbox": {
+              "Width": 0.08676774799823761,
+              "Height": 0.015011701732873917,
+              "Left": 0.48831304907798767,
+              "Top": 0.2395622730255127
+            },
+            "confidence": 54.638671875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 3,
+            "column_index": 5
+          },
+          "row_3_col_6": {
+            "bbox": {
+              "Width": 0.11124145239591599,
+              "Height": 0.015012591145932674,
+              "Left": 0.5750799775123596,
+              "Top": 0.23956513404846191
+            },
+            "confidence": 54.39453125,
+            "text": "\"",
+            "header": "number_seedlings",
+            "row_index": 3,
+            "column_index": 6
+          },
+          "row_3_col_7": {
+            "bbox": {
+              "Width": 0.1479526311159134,
+              "Height": 0.015013912692666054,
+              "Left": 0.6863206624984741,
+              "Top": 0.2395688146352768
+            },
+            "confidence": 55.859375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 3,
+            "column_index": 7
+          },
+          "row_3_col_8": {
+            "bbox": {
+              "Width": 0.08677040040493011,
+              "Height": 0.015011952258646488,
+              "Left": 0.8342726230621338,
+              "Top": 0.23957371711730957
+            },
+            "confidence": 22.900390625,
+            "text": "was",
+            "header": "notes",
+            "row_index": 3,
+            "column_index": 8
+          },
+          "row_3_col_9": {
+            "bbox": {
+              "Width": 0.03871352970600128,
+              "Height": 0.015010392293334007,
+              "Left": 0.9210424423217773,
+              "Top": 0.2395765781402588
+            },
+            "confidence": 34.912109375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 3,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "3",
+      "spp_name_local_name": "1carm",
+      "habit": "7",
+      "number_seedlings": "11",
+      "number_saplings": "",
+      "notes": "5% Kare",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505554914474487,
+          "Top": 0.2545567452907562,
+          "Width": 0.8946998678147793,
+          "Height": 0.013788588345050812
+        },
+        "group_id": "row_4",
+        "row_index": 4,
+        "column_index": -1,
+        "cells": {
+          "row_4_col_1": {
+            "bbox": {
+              "Width": 0.04060181602835655,
+              "Height": 0.01375917624682188,
+              "Left": 0.06505554914474487,
+              "Top": 0.2545567452907562
+            },
+            "confidence": 24.0966796875,
+            "text": "",
+            "header": "col_1",
+            "row_index": 4,
+            "column_index": 1
+          },
+          "row_4_col_2": {
+            "bbox": {
+              "Width": 0.11234909296035767,
+              "Height": 0.013761674985289574,
+              "Left": 0.10565628856420517,
+              "Top": 0.25455811619758606
+            },
+            "confidence": 43.0419921875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 4,
+            "column_index": 2
+          },
+          "row_4_col_3": {
+            "bbox": {
+              "Width": 0.07230482995510101,
+              "Height": 0.013760370202362537,
+              "Left": 0.21800439059734344,
+              "Top": 0.2545619010925293
+            },
+            "confidence": 39.0380859375,
+            "text": "3",
+            "header": "s_no",
+            "row_index": 4,
+            "column_index": 3
+          },
+          "row_4_col_4": {
+            "bbox": {
+              "Width": 0.19800478219985962,
+              "Height": 0.013764748349785805,
+              "Left": 0.29030826687812805,
+              "Top": 0.2545643448829651
+            },
+            "confidence": 49.462890625,
+            "text": "1carm",
+            "header": "spp_name_local_name",
+            "row_index": 4,
+            "column_index": 4
+          },
+          "row_4_col_5": {
+            "bbox": {
+              "Width": 0.08676774054765701,
+              "Height": 0.013761047273874283,
+              "Left": 0.4883122146129608,
+              "Top": 0.2545710504055023
+            },
+            "confidence": 46.728515625,
+            "text": "7",
+            "header": "habit",
+            "row_index": 4,
+            "column_index": 5
+          },
+          "row_4_col_6": {
+            "bbox": {
+              "Width": 0.11124146729707718,
+              "Height": 0.01376194879412651,
+              "Left": 0.5750792026519775,
+              "Top": 0.2545739710330963
+            },
+            "confidence": 46.5087890625,
+            "text": "11",
+            "header": "number_seedlings",
+            "row_index": 4,
+            "column_index": 6
+          },
+          "row_4_col_7": {
+            "bbox": {
+              "Width": 0.14795267581939697,
+              "Height": 0.013763287104666233,
+              "Left": 0.6863199472427368,
+              "Top": 0.25457772612571716
+            },
+            "confidence": 47.75390625,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 4,
+            "column_index": 7
+          },
+          "row_4_col_8": {
+            "bbox": {
+              "Width": 0.08677040785551071,
+              "Height": 0.013761278241872787,
+              "Left": 0.834272027015686,
+              "Top": 0.2545827329158783
+            },
+            "confidence": 19.59228515625,
+            "text": "5% Kare",
+            "header": "notes",
+            "row_index": 4,
+            "column_index": 8
+          },
+          "row_4_col_9": {
+            "bbox": {
+              "Width": 0.03871351107954979,
+              "Height": 0.013759680092334747,
+              "Left": 0.9210419058799744,
+              "Top": 0.2545856535434723
+            },
+            "confidence": 29.8583984375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 4,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "4",
+      "spp_name_local_name": "Kage kisloar",
+      "habit": "T",
+      "number_seedlings": "11",
+      "number_saplings": "",
+      "notes": "10%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505444645881653,
+          "Top": 0.26831451058387756,
+          "Width": 0.8947004601359367,
+          "Height": 0.023160230368375778
+        },
+        "group_id": "row_5",
+        "row_index": 5,
+        "column_index": -1,
+        "cells": {
+          "row_5_col_1": {
+            "bbox": {
+              "Width": 0.04060184210538864,
+              "Height": 0.013759220950305462,
+              "Left": 0.06505444645881653,
+              "Top": 0.26831451058387756
+            },
+            "confidence": 22.802734375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 5,
+            "column_index": 1
+          },
+          "row_5_col_2": {
+            "bbox": {
+              "Width": 0.11234990507364273,
+              "Height": 0.023142162710428238,
+              "Left": 0.10565447807312012,
+              "Top": 0.2683159112930298
+            },
+            "confidence": 42.724609375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 5,
+            "column_index": 2
+          },
+          "row_5_col_3": {
+            "bbox": {
+              "Width": 0.0723048746585846,
+              "Height": 0.013760436326265335,
+              "Left": 0.21800337731838226,
+              "Top": 0.2683197855949402
+            },
+            "confidence": 36.9384765625,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 5,
+            "column_index": 3
+          },
+          "row_5_col_4": {
+            "bbox": {
+              "Width": 0.1980055719614029,
+              "Height": 0.023145416751503944,
+              "Left": 0.2903066575527191,
+              "Top": 0.26832228899002075
+            },
+            "confidence": 51.7578125,
+            "text": "Kage kisloar",
+            "header": "spp_name_local_name",
+            "row_index": 5,
+            "column_index": 4
+          },
+          "row_5_col_5": {
+            "bbox": {
+              "Width": 0.08676780015230179,
+              "Height": 0.013761123642325401,
+              "Left": 0.48831140995025635,
+              "Top": 0.26832911372184753
+            },
+            "confidence": 44.2138671875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 5,
+            "column_index": 5
+          },
+          "row_5_col_6": {
+            "bbox": {
+              "Width": 0.11124206334352493,
+              "Height": 0.023142646998167038,
+              "Left": 0.5750778913497925,
+              "Top": 0.2683320939540863
+            },
+            "confidence": 43.115234375,
+            "text": "11",
+            "header": "number_seedlings",
+            "row_index": 5,
+            "column_index": 6
+          },
+          "row_5_col_7": {
+            "bbox": {
+              "Width": 0.14795278012752533,
+              "Height": 0.013763404451310635,
+              "Left": 0.6863192915916443,
+              "Top": 0.26833590865135193
+            },
+            "confidence": 45.1904296875,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 5,
+            "column_index": 7
+          },
+          "row_5_col_8": {
+            "bbox": {
+              "Width": 0.08677046746015549,
+              "Height": 0.013761353679001331,
+              "Left": 0.8342714309692383,
+              "Top": 0.2683410048484802
+            },
+            "confidence": 18.5302734375,
+            "text": "10%",
+            "header": "notes",
+            "row_index": 5,
+            "column_index": 8
+          },
+          "row_5_col_9": {
+            "bbox": {
+              "Width": 0.03871353715658188,
+              "Height": 0.013759723864495754,
+              "Left": 0.9210413694381714,
+              "Top": 0.2683440148830414
+            },
+            "confidence": 28.2470703125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 5,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "5.",
+      "spp_name_local_name": "kisloar",
+      "habit": "I",
+      "number_seedlings": "",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505369395017624,
+          "Top": 0.2820723056793213,
+          "Width": 0.8947007097303867,
+          "Height": 0.009412161074578762
+        },
+        "group_id": "row_6",
+        "row_index": 6,
+        "column_index": -1,
+        "cells": {
+          "row_6_col_1": {
+            "bbox": {
+              "Width": 0.040601518005132675,
+              "Height": 0.009381769225001335,
+              "Left": 0.06505369395017624,
+              "Top": 0.2820723056793213
+            },
+            "confidence": 18.61572265625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 6,
+            "column_index": 1
+          },
+          "row_6_col_2": {
+            "bbox": {
+              "Width": 0.11234889924526215,
+              "Height": 0.009384340606629848,
+              "Left": 0.10565447807312012,
+              "Top": 0.2820737361907959
+            },
+            "confidence": 42.724609375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 6,
+            "column_index": 2
+          },
+          "row_6_col_3": {
+            "bbox": {
+              "Width": 0.0723046064376831,
+              "Height": 0.00938296690583229,
+              "Left": 0.21800270676612854,
+              "Top": 0.2820776700973511
+            },
+            "confidence": 30.1513671875,
+            "text": "5.",
+            "header": "s_no",
+            "row_index": 6,
+            "column_index": 3
+          },
+          "row_6_col_4": {
+            "bbox": {
+              "Width": 0.19800473749637604,
+              "Height": 0.009387470781803131,
+              "Left": 0.2903066575527191,
+              "Top": 0.2820802330970764
+            },
+            "confidence": 51.7578125,
+            "text": "kisloar",
+            "header": "spp_name_local_name",
+            "row_index": 6,
+            "column_index": 4
+          },
+          "row_6_col_5": {
+            "bbox": {
+              "Width": 0.08676759153604507,
+              "Height": 0.009383603930473328,
+              "Left": 0.488310843706131,
+              "Top": 0.28208717703819275
+            },
+            "confidence": 36.1083984375,
+            "text": "I",
+            "header": "habit",
+            "row_index": 6,
+            "column_index": 5
+          },
+          "row_6_col_6": {
+            "bbox": {
+              "Width": 0.11124137043952942,
+              "Height": 0.009384513832628727,
+              "Left": 0.5750778913497925,
+              "Top": 0.2820902168750763
+            },
+            "confidence": 43.115234375,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 6,
+            "column_index": 6
+          },
+          "row_6_col_7": {
+            "bbox": {
+              "Width": 0.14795264601707458,
+              "Height": 0.009385869838297367,
+              "Left": 0.6863188147544861,
+              "Top": 0.2820941209793091
+            },
+            "confidence": 36.8896484375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 6,
+            "column_index": 7
+          },
+          "row_6_col_8": {
+            "bbox": {
+              "Width": 0.08677033334970474,
+              "Height": 0.009383760392665863,
+              "Left": 0.8342710733413696,
+              "Top": 0.28209933638572693
+            },
+            "confidence": 15.13671875,
+            "text": "",
+            "header": "notes",
+            "row_index": 6,
+            "column_index": 8
+          },
+          "row_6_col_9": {
+            "bbox": {
+              "Width": 0.03871339187026024,
+              "Height": 0.009382090531289577,
+              "Left": 0.9210410118103027,
+              "Top": 0.2821023762226105
+            },
+            "confidence": 23.05908203125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 6,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "6.",
+      "spp_name_local_name": "Masthini",
+      "habit": "I",
+      "number_seedlings": "1",
+      "number_saplings": "E",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505253911018372,
+          "Top": 0.29145264625549316,
+          "Width": 0.8947015404701233,
+          "Height": 0.014415609650313854
+        },
+        "group_id": "row_7",
+        "row_index": 7,
+        "column_index": -1,
+        "cells": {
+          "row_7_col_1": {
+            "bbox": {
+              "Width": 0.0406019389629364,
+              "Height": 0.014384654350578785,
+              "Left": 0.06505253911018372,
+              "Top": 0.29145264625549316
+            },
+            "confidence": 27.3193359375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 7,
+            "column_index": 1
+          },
+          "row_7_col_2": {
+            "bbox": {
+              "Width": 0.11234934628009796,
+              "Height": 0.014387285336852074,
+              "Left": 0.10565335303544998,
+              "Top": 0.2914540767669678
+            },
+            "confidence": 48.8037109375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 7,
+            "column_index": 2
+          },
+          "row_7_col_3": {
+            "bbox": {
+              "Width": 0.07230500131845474,
+              "Height": 0.014385910704731941,
+              "Left": 0.21800164878368378,
+              "Top": 0.2914580702781677
+            },
+            "confidence": 44.23828125,
+            "text": "6.",
+            "header": "s_no",
+            "row_index": 7,
+            "column_index": 3
+          },
+          "row_7_col_4": {
+            "bbox": {
+              "Width": 0.19800518453121185,
+              "Height": 0.014390519820153713,
+              "Left": 0.29030564427375793,
+              "Top": 0.29146066308021545
+            },
+            "confidence": 56.0546875,
+            "text": "Masthini",
+            "header": "spp_name_local_name",
+            "row_index": 7,
+            "column_index": 4
+          },
+          "row_7_col_5": {
+            "bbox": {
+              "Width": 0.08676793426275253,
+              "Height": 0.014386623166501522,
+              "Left": 0.48830997943878174,
+              "Top": 0.29146769642829895
+            },
+            "confidence": 52.978515625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 7,
+            "column_index": 5
+          },
+          "row_7_col_6": {
+            "bbox": {
+              "Width": 0.11124169826507568,
+              "Height": 0.01438757125288248,
+              "Left": 0.5750771164894104,
+              "Top": 0.2914707660675049
+            },
+            "confidence": 52.734375,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 7,
+            "column_index": 6
+          },
+          "row_7_col_7": {
+            "bbox": {
+              "Width": 0.14795297384262085,
+              "Height": 0.0143889794126153,
+              "Left": 0.6863180994987488,
+              "Top": 0.29147472977638245
+            },
+            "confidence": 54.150390625,
+            "text": "E",
+            "header": "number_saplings",
+            "row_index": 7,
+            "column_index": 7
+          },
+          "row_7_col_8": {
+            "bbox": {
+              "Width": 0.08677059412002563,
+              "Height": 0.014386863447725773,
+              "Left": 0.8342704176902771,
+              "Top": 0.29148000478744507
+            },
+            "confidence": 22.20458984375,
+            "text": "",
+            "header": "notes",
+            "row_index": 7,
+            "column_index": 8
+          },
+          "row_7_col_9": {
+            "bbox": {
+              "Width": 0.03871360421180725,
+              "Height": 0.014385181479156017,
+              "Left": 0.9210404753684998,
+              "Top": 0.291483074426651
+            },
+            "confidence": 33.837890625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 7,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "7.",
+      "spp_name_local_name": "Rongon",
+      "habit": "1",
+      "number_seedlings": "/",
+      "number_saplings": "I",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06505148857831955,
+          "Top": 0.3058358132839203,
+          "Width": 0.8947020322084427,
+          "Height": 0.01316551398485899
+        },
+        "group_id": "row_8",
+        "row_index": 8,
+        "column_index": -1,
+        "cells": {
+          "row_8_col_1": {
+            "bbox": {
+              "Width": 0.04060186818242073,
+              "Height": 0.013133986853063107,
+              "Left": 0.06505148857831955,
+              "Top": 0.3058358132839203
+            },
+            "confidence": 28.271484375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 8,
+            "column_index": 1
+          },
+          "row_8_col_2": {
+            "bbox": {
+              "Width": 0.11234932392835617,
+              "Height": 0.013136659748852253,
+              "Left": 0.1056523248553276,
+              "Top": 0.3058373034000397
+            },
+            "confidence": 50.48828125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 8,
+            "column_index": 2
+          },
+          "row_8_col_3": {
+            "bbox": {
+              "Width": 0.07230496406555176,
+              "Height": 0.013135253451764584,
+              "Left": 0.21800069510936737,
+              "Top": 0.3058413565158844
+            },
+            "confidence": 45.7763671875,
+            "text": "7.",
+            "header": "s_no",
+            "row_index": 8,
+            "column_index": 3
+          },
+          "row_8_col_4": {
+            "bbox": {
+              "Width": 0.19800522923469543,
+              "Height": 0.0131399380043149,
+              "Left": 0.2903047502040863,
+              "Top": 0.3058439791202545
+            },
+            "confidence": 58.0078125,
+            "text": "Rongon",
+            "header": "spp_name_local_name",
+            "row_index": 8,
+            "column_index": 4
+          },
+          "row_8_col_5": {
+            "bbox": {
+              "Width": 0.08676791936159134,
+              "Height": 0.013135958462953568,
+              "Left": 0.48830920457839966,
+              "Top": 0.30585116147994995
+            },
+            "confidence": 54.833984375,
+            "text": "1",
+            "header": "habit",
+            "row_index": 8,
+            "column_index": 5
+          },
+          "row_8_col_6": {
+            "bbox": {
+              "Width": 0.11124170571565628,
+              "Height": 0.013136916793882847,
+              "Left": 0.5750764012336731,
+              "Top": 0.30585432052612305
+            },
+            "confidence": 54.58984375,
+            "text": "/",
+            "header": "number_seedlings",
+            "row_index": 8,
+            "column_index": 6
+          },
+          "row_8_col_7": {
+            "bbox": {
+              "Width": 0.14795300364494324,
+              "Height": 0.013138341717422009,
+              "Left": 0.6863174438476562,
+              "Top": 0.3058583438396454
+            },
+            "confidence": 56.005859375,
+            "text": "I",
+            "header": "number_saplings",
+            "row_index": 8,
+            "column_index": 7
+          },
+          "row_8_col_8": {
+            "bbox": {
+              "Width": 0.08677059412002563,
+              "Height": 0.013136178255081177,
+              "Left": 0.8342698812484741,
+              "Top": 0.30586370825767517
+            },
+            "confidence": 22.9736328125,
+            "text": "",
+            "header": "notes",
+            "row_index": 8,
+            "column_index": 8
+          },
+          "row_8_col_9": {
+            "bbox": {
+              "Width": 0.03871358186006546,
+              "Height": 0.013134459964931011,
+              "Left": 0.9210399389266968,
+              "Top": 0.30586686730384827
+            },
+            "confidence": 35.009765625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 8,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "8.",
+      "spp_name_local_name": "C.A",
+      "habit": "S",
+      "number_seedlings": "&",
+      "number_saplings": "H",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0650503858923912,
+          "Top": 0.3189682960510254,
+          "Width": 0.8947026468813419,
+          "Height": 0.013791476376354694
+        },
+        "group_id": "row_9",
+        "row_index": 9,
+        "column_index": -1,
+        "cells": {
+          "row_9_col_1": {
+            "bbox": {
+              "Width": 0.0406019426882267,
+              "Height": 0.013759387657046318,
+              "Left": 0.0650503858923912,
+              "Top": 0.3189682960510254
+            },
+            "confidence": 36.0595703125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 9,
+            "column_index": 1
+          },
+          "row_9_col_2": {
+            "bbox": {
+              "Width": 0.11234944313764572,
+              "Height": 0.013762109912931919,
+              "Left": 0.10565125197172165,
+              "Top": 0.31896981596946716
+            },
+            "confidence": 64.404296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 9,
+            "column_index": 2
+          },
+          "row_9_col_3": {
+            "bbox": {
+              "Width": 0.07230505347251892,
+              "Height": 0.013760680332779884,
+              "Left": 0.21799969673156738,
+              "Top": 0.31897395849227905
+            },
+            "confidence": 58.3984375,
+            "text": "8.",
+            "header": "s_no",
+            "row_index": 9,
+            "column_index": 3
+          },
+          "row_9_col_4": {
+            "bbox": {
+              "Width": 0.19800539314746857,
+              "Height": 0.013765450567007065,
+              "Left": 0.2903037965297699,
+              "Top": 0.31897661089897156
+            },
+            "confidence": 74.0234375,
+            "text": "C.A",
+            "header": "spp_name_local_name",
+            "row_index": 9,
+            "column_index": 4
+          },
+          "row_9_col_5": {
+            "bbox": {
+              "Width": 0.0867680087685585,
+              "Height": 0.013761403039097786,
+              "Left": 0.4883083701133728,
+              "Top": 0.31898391246795654
+            },
+            "confidence": 69.921875,
+            "text": "S",
+            "header": "habit",
+            "row_index": 9,
+            "column_index": 5
+          },
+          "row_9_col_6": {
+            "bbox": {
+              "Width": 0.11124181002378464,
+              "Height": 0.013762380927801132,
+              "Left": 0.575075626373291,
+              "Top": 0.3189871311187744
+            },
+            "confidence": 69.580078125,
+            "text": "&",
+            "header": "number_seedlings",
+            "row_index": 9,
+            "column_index": 6
+          },
+          "row_9_col_7": {
+            "bbox": {
+              "Width": 0.14795313775539398,
+              "Height": 0.013763833791017532,
+              "Left": 0.686316728591919,
+              "Top": 0.3189912438392639
+            },
+            "confidence": 71.435546875,
+            "text": "H",
+            "header": "number_saplings",
+            "row_index": 9,
+            "column_index": 7
+          },
+          "row_9_col_8": {
+            "bbox": {
+              "Width": 0.0867706760764122,
+              "Height": 0.01376163400709629,
+              "Left": 0.8342692852020264,
+              "Top": 0.31899669766426086
+            },
+            "confidence": 29.296875,
+            "text": "",
+            "header": "notes",
+            "row_index": 9,
+            "column_index": 8
+          },
+          "row_9_col_9": {
+            "bbox": {
+              "Width": 0.03871363028883934,
+              "Height": 0.013759885914623737,
+              "Left": 0.9210394024848938,
+              "Top": 0.31899988651275635
+            },
+            "confidence": 44.677734375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 9,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "2",
+      "s_no": "1",
+      "spp_name_local_name": "C.A",
+      "habit": "S",
+      "number_seedlings": "E",
+      "number_saplings": "",
+      "notes": "usess",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0650491788983345,
+          "Top": 0.3327261805534363,
+          "Width": 0.8947033919394016,
+          "Height": 0.015042858198285103
+        },
+        "group_id": "row_10",
+        "row_index": 10,
+        "column_index": -1,
+        "cells": {
+          "row_10_col_1": {
+            "bbox": {
+              "Width": 0.04060206934809685,
+              "Height": 0.015010152943432331,
+              "Left": 0.0650491788983345,
+              "Top": 0.3327261805534363
+            },
+            "confidence": 40.8447265625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 10,
+            "column_index": 1
+          },
+          "row_10_col_2": {
+            "bbox": {
+              "Width": 0.11234961450099945,
+              "Height": 0.015012930147349834,
+              "Left": 0.10565007477998734,
+              "Top": 0.33272770047187805
+            },
+            "confidence": 72.94921875,
+            "text": "2",
+            "header": "sub_plot_no",
+            "row_index": 10,
+            "column_index": 2
+          },
+          "row_10_col_3": {
+            "bbox": {
+              "Width": 0.07230518758296967,
+              "Height": 0.015011478215456009,
+              "Left": 0.21799859404563904,
+              "Top": 0.3327319025993347
+            },
+            "confidence": 66.11328125,
+            "text": "1",
+            "header": "s_no",
+            "row_index": 10,
+            "column_index": 3
+          },
+          "row_10_col_4": {
+            "bbox": {
+              "Width": 0.19800561666488647,
+              "Height": 0.0150163434445858,
+              "Left": 0.29030275344848633,
+              "Top": 0.3327346444129944
+            },
+            "confidence": 83.7890625,
+            "text": "C.A",
+            "header": "spp_name_local_name",
+            "row_index": 10,
+            "column_index": 4
+          },
+          "row_10_col_5": {
+            "bbox": {
+              "Width": 0.08676814287900925,
+              "Height": 0.015012227930128574,
+              "Left": 0.48830747604370117,
+              "Top": 0.3327420651912689
+            },
+            "confidence": 79.19921875,
+            "text": "S",
+            "header": "habit",
+            "row_index": 10,
+            "column_index": 5
+          },
+          "row_10_col_6": {
+            "bbox": {
+              "Width": 0.11124195158481598,
+              "Height": 0.015013227239251137,
+              "Left": 0.5750747919082642,
+              "Top": 0.33274534344673157
+            },
+            "confidence": 78.80859375,
+            "text": "E",
+            "header": "number_seedlings",
+            "row_index": 10,
+            "column_index": 6
+          },
+          "row_10_col_7": {
+            "bbox": {
+              "Width": 0.14795330166816711,
+              "Height": 0.015014713630080223,
+              "Left": 0.6863160133361816,
+              "Top": 0.33274951577186584
+            },
+            "confidence": 80.908203125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 10,
+            "column_index": 7
+          },
+          "row_10_col_8": {
+            "bbox": {
+              "Width": 0.08677078783512115,
+              "Height": 0.015012478455901146,
+              "Left": 0.8342686295509338,
+              "Top": 0.33275505900382996
+            },
+            "confidence": 33.1787109375,
+            "text": "usess",
+            "header": "notes",
+            "row_index": 10,
+            "column_index": 8
+          },
+          "row_10_col_9": {
+            "bbox": {
+              "Width": 0.03871370479464531,
+              "Height": 0.01501070149242878,
+              "Left": 0.9210388660430908,
+              "Top": 0.3327583372592926
+            },
+            "confidence": 50.5859375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 10,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "2",
+      "spp_name_local_name": "Lciskar",
+      "habit": "T",
+      "number_seedlings": "11",
+      "number_saplings": "",
+      "notes": "10%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0650482252240181,
+          "Top": 0.3477347791194916,
+          "Width": 0.8947037756443024,
+          "Height": 0.0119165712967515
+        },
+        "group_id": "row_11",
+        "row_index": 11,
+        "column_index": -1,
+        "cells": {
+          "row_11_col_1": {
+            "bbox": {
+              "Width": 0.04060184955596924,
+              "Height": 0.01188340038061142,
+              "Left": 0.0650482252240181,
+              "Top": 0.3477347791194916
+            },
+            "confidence": 30.2001953125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 11,
+            "column_index": 1
+          },
+          "row_11_col_2": {
+            "bbox": {
+              "Width": 0.11234945058822632,
+              "Height": 0.011886212043464184,
+              "Left": 0.10564914345741272,
+              "Top": 0.34773632884025574
+            },
+            "confidence": 53.90625,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 11,
+            "column_index": 2
+          },
+          "row_11_col_3": {
+            "bbox": {
+              "Width": 0.07230501621961594,
+              "Height": 0.01188472006469965,
+              "Left": 0.2179977297782898,
+              "Top": 0.34774062037467957
+            },
+            "confidence": 48.9013671875,
+            "text": "2",
+            "header": "s_no",
+            "row_index": 11,
+            "column_index": 3
+          },
+          "row_11_col_4": {
+            "bbox": {
+              "Width": 0.1980055421590805,
+              "Height": 0.011889646761119366,
+              "Left": 0.2903019189834595,
+              "Top": 0.3477433919906616
+            },
+            "confidence": 61.962890625,
+            "text": "Lciskar",
+            "header": "spp_name_local_name",
+            "row_index": 11,
+            "column_index": 4
+          },
+          "row_11_col_5": {
+            "bbox": {
+              "Width": 0.0867680162191391,
+              "Height": 0.011885438114404678,
+              "Left": 0.48830676078796387,
+              "Top": 0.3477509617805481
+            },
+            "confidence": 58.544921875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 11,
+            "column_index": 5
+          },
+          "row_11_col_6": {
+            "bbox": {
+              "Width": 0.11124186217784882,
+              "Height": 0.011886438354849815,
+              "Left": 0.5750741362571716,
+              "Top": 0.3477542996406555
+            },
+            "confidence": 58.30078125,
+            "text": "11",
+            "header": "number_seedlings",
+            "row_index": 11,
+            "column_index": 6
+          },
+          "row_11_col_7": {
+            "bbox": {
+              "Width": 0.14795324206352234,
+              "Height": 0.011887929402291775,
+              "Left": 0.6863154172897339,
+              "Top": 0.34775856137275696
+            },
+            "confidence": 59.814453125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 11,
+            "column_index": 7
+          },
+          "row_11_col_8": {
+            "bbox": {
+              "Width": 0.08677072077989578,
+              "Height": 0.011885636486113071,
+              "Left": 0.8342681527137756,
+              "Top": 0.3477642238140106
+            },
+            "confidence": 24.5361328125,
+            "text": "10%",
+            "header": "notes",
+            "row_index": 11,
+            "column_index": 8
+          },
+          "row_11_col_9": {
+            "bbox": {
+              "Width": 0.03871361166238785,
+              "Height": 0.011883818544447422,
+              "Left": 0.9210383892059326,
+              "Top": 0.34776753187179565
+            },
+            "confidence": 37.40234375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 11,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "2",
+      "spp_name_local_name": "Longon",
+      "habit": "T",
+      "number_seedlings": "",
+      "number_saplings": "1 ,",
+      "notes": "Ban",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06504712253808975,
+          "Top": 0.35961657762527466,
+          "Width": 0.8947044387459755,
+          "Height": 0.01379330549389124
+        },
+        "group_id": "row_12",
+        "row_index": 12,
+        "column_index": -1,
+        "cells": {
+          "row_12_col_1": {
+            "bbox": {
+              "Width": 0.04060202091932297,
+              "Height": 0.013759521767497063,
+              "Left": 0.06504712253808975,
+              "Top": 0.35961657762527466
+            },
+            "confidence": 30.5419921875,
+            "text": "",
+            "header": "col_1",
+            "row_index": 12,
+            "column_index": 1
+          },
+          "row_12_col_2": {
+            "bbox": {
+              "Width": 0.11234966665506363,
+              "Height": 0.01376238465309143,
+              "Left": 0.10564807057380676,
+              "Top": 0.3596181571483612
+            },
+            "confidence": 54.541015625,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 12,
+            "column_index": 2
+          },
+          "row_12_col_3": {
+            "bbox": {
+              "Width": 0.07230519503355026,
+              "Height": 0.013760876841843128,
+              "Left": 0.2179967314004898,
+              "Top": 0.3596225380897522
+            },
+            "confidence": 49.462890625,
+            "text": "2",
+            "header": "s_no",
+            "row_index": 12,
+            "column_index": 3
+          },
+          "row_12_col_4": {
+            "bbox": {
+              "Width": 0.1980057954788208,
+              "Height": 0.013765893876552582,
+              "Left": 0.29030096530914307,
+              "Top": 0.35962533950805664
+            },
+            "confidence": 62.6953125,
+            "text": "Longon",
+            "header": "spp_name_local_name",
+            "row_index": 12,
+            "column_index": 4
+          },
+          "row_12_col_5": {
+            "bbox": {
+              "Width": 0.08676818013191223,
+              "Height": 0.013761628419160843,
+              "Left": 0.4883059561252594,
+              "Top": 0.35963302850723267
+            },
+            "confidence": 59.228515625,
+            "text": "T",
+            "header": "habit",
+            "row_index": 12,
+            "column_index": 5
+          },
+          "row_12_col_6": {
+            "bbox": {
+              "Width": 0.11124203354120255,
+              "Height": 0.01376265287399292,
+              "Left": 0.5750733613967896,
+              "Top": 0.35963642597198486
+            },
+            "confidence": 58.935546875,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 12,
+            "column_index": 6
+          },
+          "row_12_col_7": {
+            "bbox": {
+              "Width": 0.14795342087745667,
+              "Height": 0.01376417838037014,
+              "Left": 0.6863147020339966,
+              "Top": 0.3596407473087311
+            },
+            "confidence": 60.498046875,
+            "text": "1 ,",
+            "header": "number_saplings",
+            "row_index": 12,
+            "column_index": 7
+          },
+          "row_12_col_8": {
+            "bbox": {
+              "Width": 0.08677084743976593,
+              "Height": 0.013761858455836773,
+              "Left": 0.8342675566673279,
+              "Top": 0.3596464991569519
+            },
+            "confidence": 24.8291015625,
+            "text": "Ban",
+            "header": "notes",
+            "row_index": 12,
+            "column_index": 8
+          },
+          "row_12_col_9": {
+            "bbox": {
+              "Width": 0.03871370851993561,
+              "Height": 0.013760016299784184,
+              "Left": 0.9210378527641296,
+              "Top": 0.3596498668193817
+            },
+            "confidence": 37.841796875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 12,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "4",
+      "spp_name_local_name": "corum",
+      "habit": "T",
+      "number_seedlings": "",
+      "number_saplings": "11",
+      "notes": "10%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06504607200622559,
+          "Top": 0.3733745217323303,
+          "Width": 0.8947049528360367,
+          "Height": 0.013168497942388058
+        },
+        "group_id": "row_13",
+        "row_index": 13,
+        "column_index": -1,
+        "cells": {
+          "row_13_col_1": {
+            "bbox": {
+              "Width": 0.04060199856758118,
+              "Height": 0.013134204782545567,
+              "Left": 0.06504607200622559,
+              "Top": 0.3733745217323303
+            },
+            "confidence": 29.638671875,
+            "text": "",
+            "header": "col_1",
+            "row_index": 13,
+            "column_index": 1
+          },
+          "row_13_col_2": {
+            "bbox": {
+              "Width": 0.11234968900680542,
+              "Height": 0.013137112371623516,
+              "Left": 0.10564704239368439,
+              "Top": 0.37337610125541687
+            },
+            "confidence": 52.9296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 13,
+            "column_index": 2
+          },
+          "row_13_col_3": {
+            "bbox": {
+              "Width": 0.07230519503355026,
+              "Height": 0.013135574758052826,
+              "Left": 0.2179957777261734,
+              "Top": 0.37338054180145264
+            },
+            "confidence": 47.998046875,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 13,
+            "column_index": 3
+          },
+          "row_13_col_4": {
+            "bbox": {
+              "Width": 0.19800588488578796,
+              "Height": 0.013140670023858547,
+              "Left": 0.29030007123947144,
+              "Top": 0.37338340282440186
+            },
+            "confidence": 60.83984375,
+            "text": "corum",
+            "header": "spp_name_local_name",
+            "row_index": 13,
+            "column_index": 4
+          },
+          "row_13_col_5": {
+            "bbox": {
+              "Width": 0.08676820248365402,
+              "Height": 0.013136327266693115,
+              "Left": 0.48830515146255493,
+              "Top": 0.3733912408351898
+            },
+            "confidence": 57.470703125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 13,
+            "column_index": 5
+          },
+          "row_13_col_6": {
+            "bbox": {
+              "Width": 0.11124207079410553,
+              "Height": 0.013137365691363811,
+              "Left": 0.5750726461410522,
+              "Top": 0.3733946681022644
+            },
+            "confidence": 57.2265625,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 13,
+            "column_index": 6
+          },
+          "row_13_col_7": {
+            "bbox": {
+              "Width": 0.14795349538326263,
+              "Height": 0.013138910755515099,
+              "Left": 0.686314046382904,
+              "Top": 0.3733990788459778
+            },
+            "confidence": 58.740234375,
+            "text": "11",
+            "header": "number_saplings",
+            "row_index": 13,
+            "column_index": 7
+          },
+          "row_13_col_8": {
+            "bbox": {
+              "Width": 0.08677087724208832,
+              "Height": 0.013136547058820724,
+              "Left": 0.8342669606208801,
+              "Top": 0.37340492010116577
+            },
+            "confidence": 24.08447265625,
+            "text": "10%",
+            "header": "notes",
+            "row_index": 13,
+            "column_index": 8
+          },
+          "row_13_col_9": {
+            "bbox": {
+              "Width": 0.03871370851993561,
+              "Height": 0.013134672306478024,
+              "Left": 0.9210373163223267,
+              "Top": 0.37340834736824036
+            },
+            "confidence": 36.71875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 13,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "5",
+      "spp_name_local_name": "Thomg/Mase leage",
+      "habit": "S",
+      "number_seedlings": "",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.065045066177845,
+          "Top": 0.3865070939064026,
+          "Width": 0.8947054818272591,
+          "Height": 0.026282718405127525
+        },
+        "group_id": "row_14",
+        "row_index": 14,
+        "column_index": -1,
+        "cells": {
+          "row_14_col_1": {
+            "bbox": {
+              "Width": 0.040601976215839386,
+              "Height": 0.012508884072303772,
+              "Left": 0.065045066177845,
+              "Top": 0.3865070939064026
+            },
+            "confidence": 25.3173828125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 14,
+            "column_index": 1
+          },
+          "row_14_col_2": {
+            "bbox": {
+              "Width": 0.11234971135854721,
+              "Height": 0.01251183357089758,
+              "Left": 0.10564606636762619,
+              "Top": 0.3865087032318115
+            },
+            "confidence": 45.1904296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 14,
+            "column_index": 2
+          },
+          "row_14_col_3": {
+            "bbox": {
+              "Width": 0.07230519503355026,
+              "Height": 0.012510268948972225,
+              "Left": 0.21799486875534058,
+              "Top": 0.38651323318481445
+            },
+            "confidence": 40.9912109375,
+            "text": "5",
+            "header": "s_no",
+            "row_index": 14,
+            "column_index": 3
+          },
+          "row_14_col_4": {
+            "bbox": {
+              "Width": 0.19800691306591034,
+              "Height": 0.026273688301444054,
+              "Left": 0.2902982532978058,
+              "Top": 0.38651612401008606
+            },
+            "confidence": 36.7919921875,
+            "text": "Thomg/Mase leage",
+            "header": "spp_name_local_name",
+            "row_index": 14,
+            "column_index": 4
+          },
+          "row_14_col_5": {
+            "bbox": {
+              "Width": 0.08676821738481522,
+              "Height": 0.012511022388935089,
+              "Left": 0.48830440640449524,
+              "Top": 0.3865240812301636
+            },
+            "confidence": 49.072265625,
+            "text": "S",
+            "header": "habit",
+            "row_index": 14,
+            "column_index": 5
+          },
+          "row_14_col_6": {
+            "bbox": {
+              "Width": 0.11124210804700851,
+              "Height": 0.01251207198947668,
+              "Left": 0.5750719308853149,
+              "Top": 0.38652756810188293
+            },
+            "confidence": 48.8525390625,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 14,
+            "column_index": 6
+          },
+          "row_14_col_7": {
+            "bbox": {
+              "Width": 0.1479535549879074,
+              "Height": 0.01251363568007946,
+              "Left": 0.6863133907318115,
+              "Top": 0.3865320384502411
+            },
+            "confidence": 50.146484375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 14,
+            "column_index": 7
+          },
+          "row_14_col_8": {
+            "bbox": {
+              "Width": 0.0867709070444107,
+              "Height": 0.012511231005191803,
+              "Left": 0.8342664241790771,
+              "Top": 0.38653796911239624
+            },
+            "confidence": 20.56884765625,
+            "text": "",
+            "header": "notes",
+            "row_index": 14,
+            "column_index": 8
+          },
+          "row_14_col_9": {
+            "bbox": {
+              "Width": 0.03871370851993561,
+              "Height": 0.012509324587881565,
+              "Left": 0.9210368394851685,
+              "Top": 0.3865414559841156
+            },
+            "confidence": 31.34765625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 14,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "6",
+      "spp_name_local_name": "leage",
+      "habit": "I",
+      "number_seedlings": "1 1",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06504396349191666,
+          "Top": 0.39901432394981384,
+          "Width": 0.8947061225771904,
+          "Height": 0.013795040547847748
+        },
+        "group_id": "row_15",
+        "row_index": 15,
+        "column_index": -1,
+        "cells": {
+          "row_15_col_1": {
+            "bbox": {
+              "Width": 0.040602099150419235,
+              "Height": 0.013759651221334934,
+              "Left": 0.06504396349191666,
+              "Top": 0.39901432394981384
+            },
+            "confidence": 28.125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 15,
+            "column_index": 1
+          },
+          "row_15_col_2": {
+            "bbox": {
+              "Width": 0.11234988272190094,
+              "Height": 0.01376265101134777,
+              "Left": 0.10564498603343964,
+              "Top": 0.39901596307754517
+            },
+            "confidence": 50.244140625,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 15,
+            "column_index": 2
+          },
+          "row_15_col_3": {
+            "bbox": {
+              "Width": 0.07230532914400101,
+              "Height": 0.01376106683164835,
+              "Left": 0.2179938703775406,
+              "Top": 0.39902055263519287
+            },
+            "confidence": 45.556640625,
+            "text": "6",
+            "header": "s_no",
+            "row_index": 15,
+            "column_index": 3
+          },
+          "row_15_col_4": {
+            "bbox": {
+              "Width": 0.19800616800785065,
+              "Height": 0.01376632321625948,
+              "Left": 0.2902982532978058,
+              "Top": 0.39902350306510925
+            },
+            "confidence": 36.7919921875,
+            "text": "leage",
+            "header": "spp_name_local_name",
+            "row_index": 15,
+            "column_index": 4
+          },
+          "row_15_col_5": {
+            "bbox": {
+              "Width": 0.08676834404468536,
+              "Height": 0.013761845417320728,
+              "Left": 0.48830360174179077,
+              "Top": 0.3990315794944763
+            },
+            "confidence": 54.541015625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 15,
+            "column_index": 5
+          },
+          "row_15_col_6": {
+            "bbox": {
+              "Width": 0.11124224215745926,
+              "Height": 0.01376291736960411,
+              "Left": 0.5750711560249329,
+              "Top": 0.39903509616851807
+            },
+            "confidence": 54.296875,
+            "text": "1 1",
+            "header": "number_seedlings",
+            "row_index": 15,
+            "column_index": 6
+          },
+          "row_15_col_7": {
+            "bbox": {
+              "Width": 0.14795370399951935,
+              "Height": 0.013764512725174427,
+              "Left": 0.686312735080719,
+              "Top": 0.399039626121521
+            },
+            "confidence": 55.76171875,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 15,
+            "column_index": 7
+          },
+          "row_15_col_8": {
+            "bbox": {
+              "Width": 0.08677101880311966,
+              "Height": 0.013762075453996658,
+              "Left": 0.8342658281326294,
+              "Top": 0.3990456759929657
+            },
+            "confidence": 22.86376953125,
+            "text": "",
+            "header": "notes",
+            "row_index": 15,
+            "column_index": 8
+          },
+          "row_15_col_9": {
+            "bbox": {
+              "Width": 0.03871378302574158,
+              "Height": 0.013760142028331757,
+              "Left": 0.9210363030433655,
+              "Top": 0.39904922246932983
+            },
+            "confidence": 34.8388671875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 15,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "3",
+      "s_no": "1",
+      "spp_name_local_name": "100ml",
+      "habit": "T",
+      "number_seedlings": "E",
+      "number_saplings": "",
+      "notes": "Grey",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06504280865192413,
+          "Top": 0.4127722680568695,
+          "Width": 0.8947067894041538,
+          "Height": 0.014421041123569012
+        },
+        "group_id": "row_16",
+        "row_index": 16,
+        "column_index": -1,
+        "cells": {
+          "row_16_col_1": {
+            "bbox": {
+              "Width": 0.0406021773815155,
+              "Height": 0.014385061338543892,
+              "Left": 0.06504280865192413,
+              "Top": 0.4127722680568695
+            },
+            "confidence": 36.0595703125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 16,
+            "column_index": 1
+          },
+          "row_16_col_2": {
+            "bbox": {
+              "Width": 0.11235000193119049,
+              "Height": 0.014388112351298332,
+              "Left": 0.1056438609957695,
+              "Top": 0.4127739667892456
+            },
+            "confidence": 64.404296875,
+            "text": "3",
+            "header": "sub_plot_no",
+            "row_index": 16,
+            "column_index": 2
+          },
+          "row_16_col_3": {
+            "bbox": {
+              "Width": 0.07230542600154877,
+              "Height": 0.014386503025889397,
+              "Left": 0.21799281239509583,
+              "Top": 0.4127786159515381
+            },
+            "confidence": 58.3984375,
+            "text": "1",
+            "header": "s_no",
+            "row_index": 16,
+            "column_index": 3
+          },
+          "row_16_col_4": {
+            "bbox": {
+              "Width": 0.19800634682178497,
+              "Height": 0.01439184881746769,
+              "Left": 0.2902972400188446,
+              "Top": 0.41278162598609924
+            },
+            "confidence": 74.0234375,
+            "text": "100ml",
+            "header": "spp_name_local_name",
+            "row_index": 16,
+            "column_index": 4
+          },
+          "row_16_col_5": {
+            "bbox": {
+              "Width": 0.08676844090223312,
+              "Height": 0.014387300238013268,
+              "Left": 0.48830273747444153,
+              "Top": 0.41278982162475586
+            },
+            "confidence": 69.921875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 16,
+            "column_index": 5
+          },
+          "row_16_col_6": {
+            "bbox": {
+              "Width": 0.11124235391616821,
+              "Height": 0.014388391748070717,
+              "Left": 0.5750703811645508,
+              "Top": 0.4127933979034424
+            },
+            "confidence": 69.580078125,
+            "text": "E",
+            "header": "number_seedlings",
+            "row_index": 16,
+            "column_index": 6
+          },
+          "row_16_col_7": {
+            "bbox": {
+              "Width": 0.1479538381099701,
+              "Height": 0.014390015974640846,
+              "Left": 0.6863120198249817,
+              "Top": 0.4127980172634125
+            },
+            "confidence": 71.435546875,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 16,
+            "column_index": 7
+          },
+          "row_16_col_8": {
+            "bbox": {
+              "Width": 0.08677110075950623,
+              "Height": 0.014387541450560093,
+              "Left": 0.8342652320861816,
+              "Top": 0.41280415654182434
+            },
+            "confidence": 29.296875,
+            "text": "Grey",
+            "header": "notes",
+            "row_index": 16,
+            "column_index": 8
+          },
+          "row_16_col_9": {
+            "bbox": {
+              "Width": 0.03871383145451546,
+              "Height": 0.014385576359927654,
+              "Left": 0.9210357666015625,
+              "Top": 0.41280773282051086
+            },
+            "confidence": 44.677734375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 16,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "2",
+      "spp_name_local_name": "(cadelai",
+      "habit": "T",
+      "number_seedlings": "11)",
+      "number_saplings": "",
+      "notes": "5%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06504175812005997,
+          "Top": 0.42715564370155334,
+          "Width": 0.8947072811424732,
+          "Height": 0.01317090168595314
+        },
+        "group_id": "row_17",
+        "row_index": 17,
+        "column_index": -1,
+        "cells": {
+          "row_17_col_1": {
+            "bbox": {
+              "Width": 0.040602102875709534,
+              "Height": 0.01313437893986702,
+              "Left": 0.06504175812005997,
+              "Top": 0.42715564370155334
+            },
+            "confidence": 36.1328125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 17,
+            "column_index": 1
+          },
+          "row_17_col_2": {
+            "bbox": {
+              "Width": 0.1123499870300293,
+              "Height": 0.013137472793459892,
+              "Left": 0.10564283281564713,
+              "Top": 0.42715734243392944
+            },
+            "confidence": 64.501953125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 17,
+            "column_index": 2
+          },
+          "row_17_col_3": {
+            "bbox": {
+              "Width": 0.07230538129806519,
+              "Height": 0.013135830871760845,
+              "Left": 0.21799185872077942,
+              "Top": 0.4271620810031891
+            },
+            "confidence": 58.49609375,
+            "text": "2",
+            "header": "s_no",
+            "row_index": 17,
+            "column_index": 3
+          },
+          "row_17_col_4": {
+            "bbox": {
+              "Width": 0.19800639152526855,
+              "Height": 0.013141252100467682,
+              "Left": 0.290296345949173,
+              "Top": 0.42716512084007263
+            },
+            "confidence": 74.169921875,
+            "text": "(cadelai",
+            "header": "spp_name_local_name",
+            "row_index": 17,
+            "column_index": 4
+          },
+          "row_17_col_5": {
+            "bbox": {
+              "Width": 0.08676842600107193,
+              "Height": 0.013136621564626694,
+              "Left": 0.48830193281173706,
+              "Top": 0.4271734654903412
+            },
+            "confidence": 70.068359375,
+            "text": "T",
+            "header": "habit",
+            "row_index": 17,
+            "column_index": 5
+          },
+          "row_17_col_6": {
+            "bbox": {
+              "Width": 0.11124236136674881,
+              "Height": 0.013137723319232464,
+              "Left": 0.5750696659088135,
+              "Top": 0.4271771311759949
+            },
+            "confidence": 69.7265625,
+            "text": "11)",
+            "header": "number_seedlings",
+            "row_index": 17,
+            "column_index": 6
+          },
+          "row_17_col_7": {
+            "bbox": {
+              "Width": 0.14795388281345367,
+              "Height": 0.013139363378286362,
+              "Left": 0.6863113641738892,
+              "Top": 0.42718181014060974
+            },
+            "confidence": 71.58203125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 17,
+            "column_index": 7
+          },
+          "row_17_col_8": {
+            "bbox": {
+              "Width": 0.08677110821008682,
+              "Height": 0.013136841356754303,
+              "Left": 0.8342646360397339,
+              "Top": 0.42718803882598877
+            },
+            "confidence": 29.3701171875,
+            "text": "5%",
+            "header": "notes",
+            "row_index": 17,
+            "column_index": 8
+          },
+          "row_17_col_9": {
+            "bbox": {
+              "Width": 0.038713809102773666,
+              "Height": 0.013134840875864029,
+              "Left": 0.9210352301597595,
+              "Top": 0.42719170451164246
+            },
+            "confidence": 44.7509765625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 17,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "3",
+      "spp_name_local_name": "Cumini",
+      "habit": "I",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "Bare",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0650407001376152,
+          "Top": 0.4402882754802704,
+          "Width": 0.8947078883647919,
+          "Height": 0.013171479105949402
+        },
+        "group_id": "row_18",
+        "row_index": 18,
+        "column_index": -1,
+        "cells": {
+          "row_18_col_1": {
+            "bbox": {
+              "Width": 0.04060212895274162,
+              "Height": 0.013134420849382877,
+              "Left": 0.0650407001376152,
+              "Top": 0.4402882754802704
+            },
+            "confidence": 38.6474609375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 18,
+            "column_index": 1
+          },
+          "row_18_col_2": {
+            "bbox": {
+              "Width": 0.11235005408525467,
+              "Height": 0.013137560337781906,
+              "Left": 0.10564180463552475,
+              "Top": 0.44029000401496887
+            },
+            "confidence": 69.04296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 18,
+            "column_index": 2
+          },
+          "row_18_col_3": {
+            "bbox": {
+              "Width": 0.07230543345212936,
+              "Height": 0.013135894201695919,
+              "Left": 0.217990905046463,
+              "Top": 0.4402948021888733
+            },
+            "confidence": 62.59765625,
+            "text": "3",
+            "header": "s_no",
+            "row_index": 18,
+            "column_index": 3
+          },
+          "row_18_col_4": {
+            "bbox": {
+              "Width": 0.1980065256357193,
+              "Height": 0.013141394592821598,
+              "Left": 0.29029542207717896,
+              "Top": 0.4402979016304016
+            },
+            "confidence": 79.345703125,
+            "text": "Cumini",
+            "header": "spp_name_local_name",
+            "row_index": 18,
+            "column_index": 4
+          },
+          "row_18_col_5": {
+            "bbox": {
+              "Width": 0.08676847815513611,
+              "Height": 0.013136693276464939,
+              "Left": 0.488301157951355,
+              "Top": 0.4403063654899597
+            },
+            "confidence": 74.951171875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 18,
+            "column_index": 5
+          },
+          "row_18_col_6": {
+            "bbox": {
+              "Width": 0.11124242842197418,
+              "Height": 0.013137809932231903,
+              "Left": 0.5750688910484314,
+              "Top": 0.4403100907802582
+            },
+            "confidence": 74.609375,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 18,
+            "column_index": 6
+          },
+          "row_18_col_7": {
+            "bbox": {
+              "Width": 0.14795397222042084,
+              "Height": 0.013139474205672741,
+              "Left": 0.6863107085227966,
+              "Top": 0.4403148293495178
+            },
+            "confidence": 76.611328125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 18,
+            "column_index": 7
+          },
+          "row_18_col_8": {
+            "bbox": {
+              "Width": 0.086771160364151,
+              "Height": 0.013136913068592548,
+              "Left": 0.8342640995979309,
+              "Top": 0.4403211772441864
+            },
+            "confidence": 31.4208984375,
+            "text": "Bare",
+            "header": "notes",
+            "row_index": 18,
+            "column_index": 8
+          },
+          "row_18_col_9": {
+            "bbox": {
+              "Width": 0.038713835179805756,
+              "Height": 0.013134881854057312,
+              "Left": 0.9210347533226013,
+              "Top": 0.4403248727321625
+            },
+            "confidence": 47.8759765625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 18,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "4",
+      "spp_name_local_name": "koregu",
+      "habit": "T",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "20%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503959745168686,
+          "Top": 0.4534209370613098,
+          "Width": 0.8947085030376911,
+          "Height": 0.013797449879348278
+        },
+        "group_id": "row_19",
+        "row_index": 19,
+        "column_index": -1,
+        "cells": {
+          "row_19_col_1": {
+            "bbox": {
+              "Width": 0.04060220718383789,
+              "Height": 0.013759830966591835,
+              "Left": 0.06503959745168686,
+              "Top": 0.4534209370613098
+            },
+            "confidence": 40.283203125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 19,
+            "column_index": 1
+          },
+          "row_19_col_2": {
+            "bbox": {
+              "Width": 0.11235017329454422,
+              "Height": 0.013763018883764744,
+              "Left": 0.10564073175191879,
+              "Top": 0.4534226953983307
+            },
+            "confidence": 71.923828125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 19,
+            "column_index": 2
+          },
+          "row_19_col_3": {
+            "bbox": {
+              "Width": 0.07230552285909653,
+              "Height": 0.013761329464614391,
+              "Left": 0.21798990666866302,
+              "Top": 0.45342758297920227
+            },
+            "confidence": 65.234375,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 19,
+            "column_index": 3
+          },
+          "row_19_col_4": {
+            "bbox": {
+              "Width": 0.19800668954849243,
+              "Height": 0.013766915537416935,
+              "Left": 0.29029446840286255,
+              "Top": 0.453430712223053
+            },
+            "confidence": 82.666015625,
+            "text": "koregu",
+            "header": "spp_name_local_name",
+            "row_index": 19,
+            "column_index": 4
+          },
+          "row_19_col_5": {
+            "bbox": {
+              "Width": 0.08676857501268387,
+              "Height": 0.013762146234512329,
+              "Left": 0.4883003234863281,
+              "Top": 0.45343929529190063
+            },
+            "confidence": 78.125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 19,
+            "column_index": 5
+          },
+          "row_19_col_6": {
+            "bbox": {
+              "Width": 0.11124253273010254,
+              "Height": 0.01376328244805336,
+              "Left": 0.5750681757926941,
+              "Top": 0.45344308018684387
+            },
+            "confidence": 77.734375,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 19,
+            "column_index": 6
+          },
+          "row_19_col_7": {
+            "bbox": {
+              "Width": 0.1479540914297104,
+              "Height": 0.013764973729848862,
+              "Left": 0.6863099932670593,
+              "Top": 0.4534479081630707
+            },
+            "confidence": 79.78515625,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 19,
+            "column_index": 7
+          },
+          "row_19_col_8": {
+            "bbox": {
+              "Width": 0.08677124232053757,
+              "Height": 0.013762376271188259,
+              "Left": 0.8342635035514832,
+              "Top": 0.45345431566238403
+            },
+            "confidence": 32.7392578125,
+            "text": "20%",
+            "header": "notes",
+            "row_index": 19,
+            "column_index": 8
+          },
+          "row_19_col_9": {
+            "bbox": {
+              "Width": 0.038713883608579636,
+              "Height": 0.01376031618565321,
+              "Left": 0.9210342168807983,
+              "Top": 0.4534580707550049
+            },
+            "confidence": 49.90234375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 19,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "5",
+      "spp_name_local_name": "Unknown",
+      "habit": "c",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503854691982269,
+          "Top": 0.46717897057533264,
+          "Width": 0.8947090171277523,
+          "Height": 0.013172696344554424
+        },
+        "group_id": "row_20",
+        "row_index": 20,
+        "column_index": -1,
+        "cells": {
+          "row_20_col_1": {
+            "bbox": {
+              "Width": 0.0406021848320961,
+              "Height": 0.013134507462382317,
+              "Left": 0.06503854691982269,
+              "Top": 0.46717897057533264
+            },
+            "confidence": 37.79296875,
+            "text": "",
+            "header": "col_1",
+            "row_index": 20,
+            "column_index": 1
+          },
+          "row_20_col_2": {
+            "bbox": {
+              "Width": 0.11235020309686661,
+              "Height": 0.013137740083038807,
+              "Left": 0.10563970357179642,
+              "Top": 0.4671807587146759
+            },
+            "confidence": 67.529296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 20,
+            "column_index": 2
+          },
+          "row_20_col_3": {
+            "bbox": {
+              "Width": 0.07230552285909653,
+              "Height": 0.013136021792888641,
+              "Left": 0.21798895299434662,
+              "Top": 0.46718570590019226
+            },
+            "confidence": 61.23046875,
+            "text": "5",
+            "header": "s_no",
+            "row_index": 20,
+            "column_index": 3
+          },
+          "row_20_col_4": {
+            "bbox": {
+              "Width": 0.1980067789554596,
+              "Height": 0.013141686096787453,
+              "Left": 0.2902935743331909,
+              "Top": 0.46718889474868774
+            },
+            "confidence": 77.587890625,
+            "text": "Unknown",
+            "header": "spp_name_local_name",
+            "row_index": 20,
+            "column_index": 4
+          },
+          "row_20_col_5": {
+            "bbox": {
+              "Width": 0.08676859736442566,
+              "Height": 0.013136839494109154,
+              "Left": 0.48829954862594604,
+              "Top": 0.46719762682914734
+            },
+            "confidence": 73.291015625,
+            "text": "c",
+            "header": "habit",
+            "row_index": 20,
+            "column_index": 5
+          },
+          "row_20_col_6": {
+            "bbox": {
+              "Width": 0.11124257743358612,
+              "Height": 0.01313798874616623,
+              "Left": 0.575067400932312,
+              "Top": 0.46720144152641296
+            },
+            "confidence": 72.94921875,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 20,
+            "column_index": 6
+          },
+          "row_20_col_7": {
+            "bbox": {
+              "Width": 0.14795416593551636,
+              "Height": 0.013139700517058372,
+              "Left": 0.6863093376159668,
+              "Top": 0.46720635890960693
+            },
+            "confidence": 74.90234375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 20,
+            "column_index": 7
+          },
+          "row_20_col_8": {
+            "bbox": {
+              "Width": 0.08677127212285995,
+              "Height": 0.013137059286236763,
+              "Left": 0.8342629075050354,
+              "Top": 0.46721285581588745
+            },
+            "confidence": 30.712890625,
+            "text": "",
+            "header": "notes",
+            "row_index": 20,
+            "column_index": 8
+          },
+          "row_20_col_9": {
+            "bbox": {
+              "Width": 0.038713883608579636,
+              "Height": 0.013134966604411602,
+              "Left": 0.9210336804389954,
+              "Top": 0.46721670031547546
+            },
+            "confidence": 46.826171875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 20,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "6",
+      "spp_name_local_name": "Botthekeni",
+      "habit": "J",
+      "number_seedlings": "",
+      "number_saplings": "11",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503739207983017,
+          "Top": 0.48031166195869446,
+          "Width": 0.8947097100317478,
+          "Height": 0.014424063265323639
+        },
+        "group_id": "row_21",
+        "row_index": 21,
+        "column_index": -1,
+        "cells": {
+          "row_21_col_1": {
+            "bbox": {
+              "Width": 0.04060230776667595,
+              "Height": 0.014385287649929523,
+              "Left": 0.06503739207983017,
+              "Top": 0.48031166195869446
+            },
+            "confidence": 42.7001953125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 21,
+            "column_index": 1
+          },
+          "row_21_col_2": {
+            "bbox": {
+              "Width": 0.11235036700963974,
+              "Height": 0.014388572424650192,
+              "Left": 0.10563857853412628,
+              "Top": 0.4803134799003601
+            },
+            "confidence": 76.26953125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 21,
+            "column_index": 2
+          },
+          "row_21_col_3": {
+            "bbox": {
+              "Width": 0.07230566442012787,
+              "Height": 0.014386833645403385,
+              "Left": 0.21798789501190186,
+              "Top": 0.48031851649284363
+            },
+            "confidence": 69.140625,
+            "text": "6",
+            "header": "s_no",
+            "row_index": 21,
+            "column_index": 3
+          },
+          "row_21_col_4": {
+            "bbox": {
+              "Width": 0.1980069875717163,
+              "Height": 0.014392589218914509,
+              "Left": 0.29029256105422974,
+              "Top": 0.4803217351436615
+            },
+            "confidence": 87.646484375,
+            "text": "Botthekeni",
+            "header": "spp_name_local_name",
+            "row_index": 21,
+            "column_index": 4
+          },
+          "row_21_col_5": {
+            "bbox": {
+              "Width": 0.0867687240242958,
+              "Height": 0.014387677423655987,
+              "Left": 0.4882986843585968,
+              "Top": 0.48033058643341064
+            },
+            "confidence": 82.8125,
+            "text": "J",
+            "header": "habit",
+            "row_index": 21,
+            "column_index": 5
+          },
+          "row_21_col_6": {
+            "bbox": {
+              "Width": 0.11124271154403687,
+              "Height": 0.014388849027454853,
+              "Left": 0.5750666260719299,
+              "Top": 0.48033446073532104
+            },
+            "confidence": 82.421875,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 21,
+            "column_index": 6
+          },
+          "row_21_col_7": {
+            "bbox": {
+              "Width": 0.1479543149471283,
+              "Height": 0.014390592463314533,
+              "Left": 0.6863086223602295,
+              "Top": 0.4803394377231598
+            },
+            "confidence": 84.619140625,
+            "text": "11",
+            "header": "number_saplings",
+            "row_index": 21,
+            "column_index": 7
+          },
+          "row_21_col_8": {
+            "bbox": {
+              "Width": 0.08677138388156891,
+              "Height": 0.014387918636202812,
+              "Left": 0.8342623114585876,
+              "Top": 0.48034605383872986
+            },
+            "confidence": 34.716796875,
+            "text": "",
+            "header": "notes",
+            "row_index": 21,
+            "column_index": 8
+          },
+          "row_21_col_9": {
+            "bbox": {
+              "Width": 0.038713958114385605,
+              "Height": 0.014385797083377838,
+              "Left": 0.9210331439971924,
+              "Top": 0.48034992814064026
+            },
+            "confidence": 52.880859375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 21,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "7",
+      "spp_name_local_name": "assthini",
+      "habit": "T",
+      "number_seedlings": "",
+      "number_saplings": "1",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503628939390182,
+          "Top": 0.49469512701034546,
+          "Width": 0.8947102800011635,
+          "Height": 0.013799280859529972
+        },
+        "group_id": "row_22",
+        "row_index": 22,
+        "column_index": -1,
+        "cells": {
+          "row_22_col_1": {
+            "bbox": {
+              "Width": 0.04060228914022446,
+              "Height": 0.013759966939687729,
+              "Left": 0.06503628939390182,
+              "Top": 0.49469512701034546
+            },
+            "confidence": 40.3564453125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 22,
+            "column_index": 1
+          },
+          "row_22_col_2": {
+            "bbox": {
+              "Width": 0.11235039681196213,
+              "Height": 0.013763298280537128,
+              "Left": 0.10563749819993973,
+              "Top": 0.4946969449520111
+            },
+            "confidence": 72.0703125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 22,
+            "column_index": 2
+          },
+          "row_22_col_3": {
+            "bbox": {
+              "Width": 0.07230566442012787,
+              "Height": 0.013761527836322784,
+              "Left": 0.21798689663410187,
+              "Top": 0.4947020411491394
+            },
+            "confidence": 65.33203125,
+            "text": "7",
+            "header": "s_no",
+            "row_index": 22,
+            "column_index": 3
+          },
+          "row_22_col_4": {
+            "bbox": {
+              "Width": 0.19800707697868347,
+              "Height": 0.013767365366220474,
+              "Left": 0.29029160737991333,
+              "Top": 0.49470534920692444
+            },
+            "confidence": 82.8125,
+            "text": "assthini",
+            "header": "spp_name_local_name",
+            "row_index": 22,
+            "column_index": 4
+          },
+          "row_22_col_5": {
+            "bbox": {
+              "Width": 0.0867687463760376,
+              "Height": 0.01376237440854311,
+              "Left": 0.48829787969589233,
+              "Top": 0.49471431970596313
+            },
+            "confidence": 78.22265625,
+            "text": "T",
+            "header": "habit",
+            "row_index": 22,
+            "column_index": 5
+          },
+          "row_22_col_6": {
+            "bbox": {
+              "Width": 0.11124275624752045,
+              "Height": 0.01376355905085802,
+              "Left": 0.5750658512115479,
+              "Top": 0.4947182536125183
+            },
+            "confidence": 77.880859375,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 22,
+            "column_index": 6
+          },
+          "row_22_col_7": {
+            "bbox": {
+              "Width": 0.14795438945293427,
+              "Height": 0.013765323907136917,
+              "Left": 0.6863079071044922,
+              "Top": 0.4947233200073242
+            },
+            "confidence": 79.931640625,
+            "text": "1",
+            "header": "number_saplings",
+            "row_index": 22,
+            "column_index": 7
+          },
+          "row_22_col_8": {
+            "bbox": {
+              "Width": 0.0867714136838913,
+              "Height": 0.01376260444521904,
+              "Left": 0.8342617154121399,
+              "Top": 0.49473002552986145
+            },
+            "confidence": 32.7880859375,
+            "text": "",
+            "header": "notes",
+            "row_index": 22,
+            "column_index": 8
+          },
+          "row_22_col_9": {
+            "bbox": {
+              "Width": 0.0387139618396759,
+              "Height": 0.013760448433458805,
+              "Left": 0.9210326075553894,
+              "Top": 0.4947339594364166
+            },
+            "confidence": 49.9755859375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 22,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "8",
+      "spp_name_local_name": "Rongon",
+      "habit": "I",
+      "number_seedlings": "",
+      "number_saplings": "I",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503523141145706,
+          "Top": 0.5084531903266907,
+          "Width": 0.8947108015418053,
+          "Height": 0.013174554333090782
+        },
+        "group_id": "row_23",
+        "row_index": 23,
+        "column_index": -1,
+        "cells": {
+          "row_23_col_1": {
+            "bbox": {
+              "Width": 0.04060226306319237,
+              "Height": 0.013134641572833061,
+              "Left": 0.06503523141145706,
+              "Top": 0.5084531903266907
+            },
+            "confidence": 39.9658203125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 23,
+            "column_index": 1
+          },
+          "row_23_col_2": {
+            "bbox": {
+              "Width": 0.11235042661428452,
+              "Height": 0.013138016685843468,
+              "Left": 0.10563647001981735,
+              "Top": 0.5084550976753235
+            },
+            "confidence": 71.38671875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 23,
+            "column_index": 2
+          },
+          "row_23_col_3": {
+            "bbox": {
+              "Width": 0.07230567187070847,
+              "Height": 0.013136218301951885,
+              "Left": 0.21798594295978546,
+              "Top": 0.5084602236747742
+            },
+            "confidence": 64.74609375,
+            "text": "8",
+            "header": "s_no",
+            "row_index": 23,
+            "column_index": 3
+          },
+          "row_23_col_4": {
+            "bbox": {
+              "Width": 0.19800716638565063,
+              "Height": 0.013142133131623268,
+              "Left": 0.2902907133102417,
+              "Top": 0.5084635615348816
+            },
+            "confidence": 82.03125,
+            "text": "Rongon",
+            "header": "spp_name_local_name",
+            "row_index": 23,
+            "column_index": 4
+          },
+          "row_23_col_5": {
+            "bbox": {
+              "Width": 0.08676876872777939,
+              "Height": 0.013137065805494785,
+              "Left": 0.48829707503318787,
+              "Top": 0.5084726810455322
+            },
+            "confidence": 77.5390625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 23,
+            "column_index": 5
+          },
+          "row_23_col_6": {
+            "bbox": {
+              "Width": 0.11124279350042343,
+              "Height": 0.01313826348632574,
+              "Left": 0.5750651359558105,
+              "Top": 0.5084766745567322
+            },
+            "confidence": 77.1484375,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 23,
+            "column_index": 6
+          },
+          "row_23_col_7": {
+            "bbox": {
+              "Width": 0.14795446395874023,
+              "Height": 0.013140047900378704,
+              "Left": 0.6863072514533997,
+              "Top": 0.5084818005561829
+            },
+            "confidence": 79.19921875,
+            "text": "I",
+            "header": "number_saplings",
+            "row_index": 23,
+            "column_index": 7
+          },
+          "row_23_col_8": {
+            "bbox": {
+              "Width": 0.08677145093679428,
+              "Height": 0.01313728466629982,
+              "Left": 0.8342611789703369,
+              "Top": 0.508488655090332
+            },
+            "confidence": 32.4951171875,
+            "text": "",
+            "header": "notes",
+            "row_index": 23,
+            "column_index": 8
+          },
+          "row_23_col_9": {
+            "bbox": {
+              "Width": 0.0387139618396759,
+              "Height": 0.013135096058249474,
+              "Left": 0.9210320711135864,
+              "Top": 0.508492648601532
+            },
+            "confidence": 49.51171875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 23,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "9",
+      "spp_name_local_name": "Mine",
+      "habit": "T",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503408402204514,
+          "Top": 0.5215859413146973,
+          "Width": 0.8947114869952202,
+          "Height": 0.014425926841795444
+        },
+        "group_id": "row_24",
+        "row_index": 24,
+        "column_index": -1,
+        "cells": {
+          "row_24_col_1": {
+            "bbox": {
+              "Width": 0.040602389723062515,
+              "Height": 0.014385426416993141,
+              "Left": 0.06503408402204514,
+              "Top": 0.5215859413146973
+            },
+            "confidence": 41.650390625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 24,
+            "column_index": 1
+          },
+          "row_24_col_2": {
+            "bbox": {
+              "Width": 0.11235059797763824,
+              "Height": 0.0143888546153903,
+              "Left": 0.10563534498214722,
+              "Top": 0.5215878486633301
+            },
+            "confidence": 74.365234375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 24,
+            "column_index": 2
+          },
+          "row_24_col_3": {
+            "bbox": {
+              "Width": 0.07230580598115921,
+              "Height": 0.014387034811079502,
+              "Left": 0.2179848998785019,
+              "Top": 0.5215930938720703
+            },
+            "confidence": 67.431640625,
+            "text": "9",
+            "header": "s_no",
+            "row_index": 24,
+            "column_index": 3
+          },
+          "row_24_col_4": {
+            "bbox": {
+              "Width": 0.19800738990306854,
+              "Height": 0.014393041841685772,
+              "Left": 0.2902897000312805,
+              "Top": 0.5215964913368225
+            },
+            "confidence": 85.44921875,
+            "text": "Mine",
+            "header": "spp_name_local_name",
+            "row_index": 24,
+            "column_index": 4
+          },
+          "row_24_col_5": {
+            "bbox": {
+              "Width": 0.08676889538764954,
+              "Height": 0.014387908391654491,
+              "Left": 0.488296240568161,
+              "Top": 0.5216057300567627
+            },
+            "confidence": 80.76171875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 24,
+            "column_index": 5
+          },
+          "row_24_col_6": {
+            "bbox": {
+              "Width": 0.11124293506145477,
+              "Height": 0.014389128424227238,
+              "Left": 0.5750643014907837,
+              "Top": 0.5216097831726074
+            },
+            "confidence": 80.37109375,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 24,
+            "column_index": 6
+          },
+          "row_24_col_7": {
+            "bbox": {
+              "Width": 0.14795461297035217,
+              "Height": 0.014390945434570312,
+              "Left": 0.6863065361976624,
+              "Top": 0.5216149687767029
+            },
+            "confidence": 82.51953125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 24,
+            "column_index": 7
+          },
+          "row_24_col_8": {
+            "bbox": {
+              "Width": 0.08677155524492264,
+              "Height": 0.014388148672878742,
+              "Left": 0.8342605233192444,
+              "Top": 0.5216218829154968
+            },
+            "confidence": 33.837890625,
+            "text": "",
+            "header": "notes",
+            "row_index": 24,
+            "column_index": 8
+          },
+          "row_24_col_9": {
+            "bbox": {
+              "Width": 0.03871403634548187,
+              "Height": 0.014385932125151157,
+              "Left": 0.9210315346717834,
+              "Top": 0.5216259360313416
+            },
+            "confidence": 51.5625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 24,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "10",
+      "spp_name_local_name": "/ceves",
+      "habit": "I",
+      "number_seedlings": "1",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503292918205261,
+          "Top": 0.5359694361686707,
+          "Width": 0.8947121314704418,
+          "Height": 0.01442656945437193
+        },
+        "group_id": "row_25",
+        "row_index": 25,
+        "column_index": -1,
+        "cells": {
+          "row_25_col_1": {
+            "bbox": {
+              "Width": 0.0406024195253849,
+              "Height": 0.014385474845767021,
+              "Left": 0.06503292918205261,
+              "Top": 0.5359694361686707
+            },
+            "confidence": 35.8642578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 25,
+            "column_index": 1
+          },
+          "row_25_col_2": {
+            "bbox": {
+              "Width": 0.11235067248344421,
+              "Height": 0.014388952404260635,
+              "Left": 0.10563421994447708,
+              "Top": 0.5359714031219482
+            },
+            "confidence": 64.0625,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 25,
+            "column_index": 2
+          },
+          "row_25_col_3": {
+            "bbox": {
+              "Width": 0.07230585813522339,
+              "Height": 0.014387105591595173,
+              "Left": 0.21798384189605713,
+              "Top": 0.5359767079353333
+            },
+            "confidence": 58.10546875,
+            "text": "10",
+            "header": "s_no",
+            "row_index": 25,
+            "column_index": 3
+          },
+          "row_25_col_4": {
+            "bbox": {
+              "Width": 0.1980075240135193,
+              "Height": 0.014393199235200882,
+              "Left": 0.2902887165546417,
+              "Top": 0.5359801054000854
+            },
+            "confidence": 73.6328125,
+            "text": "/ceves",
+            "header": "spp_name_local_name",
+            "row_index": 25,
+            "column_index": 4
+          },
+          "row_25_col_5": {
+            "bbox": {
+              "Width": 0.08676895499229431,
+              "Height": 0.014387988485395908,
+              "Left": 0.48829537630081177,
+              "Top": 0.53598952293396
+            },
+            "confidence": 69.580078125,
+            "text": "I",
+            "header": "habit",
+            "row_index": 25,
+            "column_index": 5
+          },
+          "row_25_col_6": {
+            "bbox": {
+              "Width": 0.11124301701784134,
+              "Height": 0.014389225281774998,
+              "Left": 0.5750635266304016,
+              "Top": 0.5359936356544495
+            },
+            "confidence": 69.23828125,
+            "text": "1",
+            "header": "number_seedlings",
+            "row_index": 25,
+            "column_index": 6
+          },
+          "row_25_col_7": {
+            "bbox": {
+              "Width": 0.14795471727848053,
+              "Height": 0.014391067437827587,
+              "Left": 0.686305820941925,
+              "Top": 0.5359988808631897
+            },
+            "confidence": 71.09375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 25,
+            "column_index": 7
+          },
+          "row_25_col_8": {
+            "bbox": {
+              "Width": 0.08677161484956741,
+              "Height": 0.01438822876662016,
+              "Left": 0.8342599272727966,
+              "Top": 0.5360059142112732
+            },
+            "confidence": 29.150390625,
+            "text": "",
+            "header": "notes",
+            "row_index": 25,
+            "column_index": 8
+          },
+          "row_25_col_9": {
+            "bbox": {
+              "Width": 0.03871406242251396,
+              "Height": 0.014385978691279888,
+              "Left": 0.9210309982299805,
+              "Top": 0.5360100269317627
+            },
+            "confidence": 44.43359375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 25,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "11",
+      "spp_name_local_name": "C.A.",
+      "habit": "S",
+      "number_seedlings": "111",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503172218799591,
+          "Top": 0.5503529906272888,
+          "Width": 0.8947127945721149,
+          "Height": 0.0150525514036417
+        },
+        "group_id": "row_26",
+        "row_index": 26,
+        "column_index": -1,
+        "cells": {
+          "row_26_col_1": {
+            "bbox": {
+              "Width": 0.04060249775648117,
+              "Height": 0.015010896138846874,
+              "Left": 0.06503172218799591,
+              "Top": 0.5503529906272888
+            },
+            "confidence": 40.7958984375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 26,
+            "column_index": 1
+          },
+          "row_26_col_2": {
+            "bbox": {
+              "Width": 0.11235079914331436,
+              "Height": 0.015014426782727242,
+              "Left": 0.10563304275274277,
+              "Top": 0.5503549575805664
+            },
+            "confidence": 72.8515625,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 26,
+            "column_index": 2
+          },
+          "row_26_col_3": {
+            "bbox": {
+              "Width": 0.07230595499277115,
+              "Height": 0.01501255389302969,
+              "Left": 0.21798275411128998,
+              "Top": 0.5503603219985962
+            },
+            "confidence": 66.064453125,
+            "text": "11",
+            "header": "s_no",
+            "row_index": 26,
+            "column_index": 3
+          },
+          "row_26_col_4": {
+            "bbox": {
+              "Width": 0.1980077028274536,
+              "Height": 0.015018741600215435,
+              "Left": 0.29028767347335815,
+              "Top": 0.5503638386726379
+            },
+            "confidence": 83.69140625,
+            "text": "C.A.",
+            "header": "spp_name_local_name",
+            "row_index": 26,
+            "column_index": 4
+          },
+          "row_26_col_5": {
+            "bbox": {
+              "Width": 0.08676905184984207,
+              "Height": 0.015013456344604492,
+              "Left": 0.48829448223114014,
+              "Top": 0.5503733158111572
+            },
+            "confidence": 79.1015625,
+            "text": "S",
+            "header": "habit",
+            "row_index": 26,
+            "column_index": 5
+          },
+          "row_26_col_6": {
+            "bbox": {
+              "Width": 0.11124312877655029,
+              "Height": 0.015014713630080223,
+              "Left": 0.5750626921653748,
+              "Top": 0.5503774881362915
+            },
+            "confidence": 78.7109375,
+            "text": "111",
+            "header": "number_seedlings",
+            "row_index": 26,
+            "column_index": 6
+          },
+          "row_26_col_7": {
+            "bbox": {
+              "Width": 0.14795485138893127,
+              "Height": 0.0150165855884552,
+              "Left": 0.686305046081543,
+              "Top": 0.5503828525543213
+            },
+            "confidence": 80.810546875,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 26,
+            "column_index": 7
+          },
+          "row_26_col_8": {
+            "bbox": {
+              "Width": 0.08677170425653458,
+              "Height": 0.015013706870377064,
+              "Left": 0.8342592716217041,
+              "Top": 0.5503899455070496
+            },
+            "confidence": 33.154296875,
+            "text": "",
+            "header": "notes",
+            "row_index": 26,
+            "column_index": 8
+          },
+          "row_26_col_9": {
+            "bbox": {
+              "Width": 0.03871411457657814,
+              "Height": 0.015011424198746681,
+              "Left": 0.9210304021835327,
+              "Top": 0.5503941178321838
+            },
+            "confidence": 50.537109375,
+            "text": "",
+            "header": "col_9",
+            "row_index": 26,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "4.",
+      "s_no": "1",
+      "spp_name_local_name": "Thanks / Meesa",
+      "habit": "S",
+      "number_seedlings": "",
+      "number_saplings": "11",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06503061950206757,
+          "Top": 0.5653619170188904,
+          "Width": 0.8947133384644985,
+          "Height": 0.013802457600831985
+        },
+        "group_id": "row_27",
+        "row_index": 27,
+        "column_index": -1,
+        "cells": {
+          "row_27_col_1": {
+            "bbox": {
+              "Width": 0.0406024269759655,
+              "Height": 0.013760198839008808,
+              "Left": 0.06503061950206757,
+              "Top": 0.5653619170188904
+            },
+            "confidence": 40.771484375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 27,
+            "column_index": 1
+          },
+          "row_27_col_2": {
+            "bbox": {
+              "Width": 0.11235078424215317,
+              "Height": 0.013763775117695332,
+              "Left": 0.10563196986913681,
+              "Top": 0.565363883972168
+            },
+            "confidence": 72.802734375,
+            "text": "4.",
+            "header": "sub_plot_no",
+            "row_index": 27,
+            "column_index": 2
+          },
+          "row_27_col_3": {
+            "bbox": {
+              "Width": 0.07230591028928757,
+              "Height": 0.013761869631707668,
+              "Left": 0.21798175573349,
+              "Top": 0.5653693675994873
+            },
+            "confidence": 66.015625,
+            "text": "1",
+            "header": "s_no",
+            "row_index": 27,
+            "column_index": 3
+          },
+          "row_27_col_4": {
+            "bbox": {
+              "Width": 0.1980077624320984,
+              "Height": 0.013768135569989681,
+              "Left": 0.29028671979904175,
+              "Top": 0.565372884273529
+            },
+            "confidence": 83.642578125,
+            "text": "Thanks / Meesa",
+            "header": "spp_name_local_name",
+            "row_index": 27,
+            "column_index": 4
+          },
+          "row_27_col_5": {
+            "bbox": {
+              "Width": 0.08676904439926147,
+              "Height": 0.013762764632701874,
+              "Left": 0.4882936477661133,
+              "Top": 0.5653825402259827
+            },
+            "confidence": 79.052734375,
+            "text": "S",
+            "header": "habit",
+            "row_index": 27,
+            "column_index": 5
+          },
+          "row_27_col_6": {
+            "bbox": {
+              "Width": 0.11124313622713089,
+              "Height": 0.0137640330940485,
+              "Left": 0.5750619173049927,
+              "Top": 0.5653867721557617
+            },
+            "confidence": 78.662109375,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 27,
+            "column_index": 6
+          },
+          "row_27_col_7": {
+            "bbox": {
+              "Width": 0.14795489609241486,
+              "Height": 0.013765922747552395,
+              "Left": 0.6863043904304504,
+              "Top": 0.5653921961784363
+            },
+            "confidence": 80.76171875,
+            "text": "11",
+            "header": "number_saplings",
+            "row_index": 27,
+            "column_index": 7
+          },
+          "row_27_col_8": {
+            "bbox": {
+              "Width": 0.08677171170711517,
+              "Height": 0.013762994669377804,
+              "Left": 0.8342586755752563,
+              "Top": 0.5653994083404541
+            },
+            "confidence": 33.1298828125,
+            "text": "",
+            "header": "notes",
+            "row_index": 27,
+            "column_index": 8
+          },
+          "row_27_col_9": {
+            "bbox": {
+              "Width": 0.03871409222483635,
+              "Height": 0.013760674744844437,
+              "Left": 0.9210298657417297,
+              "Top": 0.5654036998748779
+            },
+            "confidence": 50.48828125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 27,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "2",
+      "spp_name_local_name": "Korun",
+      "habit": "I",
+      "number_seedlings": "4",
+      "number_saplings": "",
+      "notes": "Grey",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06502951681613922,
+          "Top": 0.5791200995445251,
+          "Width": 0.894713930785656,
+          "Height": 0.013803037814795971
+        },
+        "group_id": "row_28",
+        "row_index": 28,
+        "column_index": -1,
+        "cells": {
+          "row_28_col_1": {
+            "bbox": {
+              "Width": 0.04060245305299759,
+              "Height": 0.013760244473814964,
+              "Left": 0.06502951681613922,
+              "Top": 0.5791200995445251
+            },
+            "confidence": 39.2578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 28,
+            "column_index": 1
+          },
+          "row_28_col_2": {
+            "bbox": {
+              "Width": 0.11235085874795914,
+              "Height": 0.013763868249952793,
+              "Left": 0.10563088953495026,
+              "Top": 0.5791220664978027
+            },
+            "confidence": 70.1171875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 28,
+            "column_index": 2
+          },
+          "row_28_col_3": {
+            "bbox": {
+              "Width": 0.07230596244335175,
+              "Height": 0.013761935755610466,
+              "Left": 0.2179807424545288,
+              "Top": 0.5791276693344116
+            },
+            "confidence": 63.57421875,
+            "text": "2",
+            "header": "s_no",
+            "row_index": 28,
+            "column_index": 3
+          },
+          "row_28_col_4": {
+            "bbox": {
+              "Width": 0.19800789654254913,
+              "Height": 0.013768285512924194,
+              "Left": 0.29028576612472534,
+              "Top": 0.5791312456130981
+            },
+            "confidence": 80.56640625,
+            "text": "Korun",
+            "header": "spp_name_local_name",
+            "row_index": 28,
+            "column_index": 4
+          },
+          "row_28_col_5": {
+            "bbox": {
+              "Width": 0.08676910400390625,
+              "Height": 0.013762840069830418,
+              "Left": 0.4882928133010864,
+              "Top": 0.5791410207748413
+            },
+            "confidence": 76.123046875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 28,
+            "column_index": 5
+          },
+          "row_28_col_6": {
+            "bbox": {
+              "Width": 0.11124321073293686,
+              "Height": 0.013764125294983387,
+              "Left": 0.5750611424446106,
+              "Top": 0.5791453123092651
+            },
+            "confidence": 75.78125,
+            "text": "4",
+            "header": "number_seedlings",
+            "row_index": 28,
+            "column_index": 6
+          },
+          "row_28_col_7": {
+            "bbox": {
+              "Width": 0.1479550004005432,
+              "Height": 0.013766039162874222,
+              "Left": 0.6863036751747131,
+              "Top": 0.5791507959365845
+            },
+            "confidence": 77.783203125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 28,
+            "column_index": 7
+          },
+          "row_28_col_8": {
+            "bbox": {
+              "Width": 0.08677177131175995,
+              "Height": 0.013763070106506348,
+              "Left": 0.8342580795288086,
+              "Top": 0.5791581273078918
+            },
+            "confidence": 31.9091796875,
+            "text": "Grey",
+            "header": "notes",
+            "row_index": 28,
+            "column_index": 8
+          },
+          "row_28_col_9": {
+            "bbox": {
+              "Width": 0.03871411830186844,
+              "Height": 0.013760718517005444,
+              "Left": 0.9210293292999268,
+              "Top": 0.5791624188423157
+            },
+            "confidence": 48.6328125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 28,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "w",
+      "spp_name_local_name": "leage",
+      "habit": "I",
+      "number_seedlings": "",
+      "number_saplings": "/",
+      "notes": "5%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0650283619761467,
+          "Top": 0.5928782820701599,
+          "Width": 0.8947145976126194,
+          "Height": 0.014429079368710518
+        },
+        "group_id": "row_29",
+        "row_index": 29,
+        "column_index": -1,
+        "cells": {
+          "row_29_col_1": {
+            "bbox": {
+              "Width": 0.04060253128409386,
+              "Height": 0.014385665766894817,
+              "Left": 0.0650283619761467,
+              "Top": 0.5928782820701599
+            },
+            "confidence": 39.453125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 29,
+            "column_index": 1
+          },
+          "row_29_col_2": {
+            "bbox": {
+              "Width": 0.11235098540782928,
+              "Height": 0.01438934076577425,
+              "Left": 0.10562976449728012,
+              "Top": 0.5928803086280823
+            },
+            "confidence": 70.458984375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 29,
+            "column_index": 2
+          },
+          "row_29_col_3": {
+            "bbox": {
+              "Width": 0.0723060593008995,
+              "Height": 0.014387383125722408,
+              "Left": 0.21797969937324524,
+              "Top": 0.5928859710693359
+            },
+            "confidence": 63.8671875,
+            "text": "w",
+            "header": "s_no",
+            "row_index": 29,
+            "column_index": 3
+          },
+          "row_29_col_4": {
+            "bbox": {
+              "Width": 0.19800806045532227,
+              "Height": 0.0143938222900033,
+              "Left": 0.29028475284576416,
+              "Top": 0.5928896069526672
+            },
+            "confidence": 80.95703125,
+            "text": "leage",
+            "header": "spp_name_local_name",
+            "row_index": 29,
+            "column_index": 4
+          },
+          "row_29_col_5": {
+            "bbox": {
+              "Width": 0.08676919341087341,
+              "Height": 0.014388306066393852,
+              "Left": 0.48829197883605957,
+              "Top": 0.5928995013237
+            },
+            "confidence": 76.513671875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 29,
+            "column_index": 5
+          },
+          "row_29_col_6": {
+            "bbox": {
+              "Width": 0.11124332249164581,
+              "Height": 0.014389610849320889,
+              "Left": 0.5750603675842285,
+              "Top": 0.5929038524627686
+            },
+            "confidence": 76.123046875,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 29,
+            "column_index": 6
+          },
+          "row_29_col_7": {
+            "bbox": {
+              "Width": 0.14795513451099396,
+              "Height": 0.014391553588211536,
+              "Left": 0.6863029599189758,
+              "Top": 0.5929094552993774
+            },
+            "confidence": 78.173828125,
+            "text": "/",
+            "header": "number_saplings",
+            "row_index": 29,
+            "column_index": 7
+          },
+          "row_29_col_8": {
+            "bbox": {
+              "Width": 0.08677185326814651,
+              "Height": 0.014388546347618103,
+              "Left": 0.8342574834823608,
+              "Top": 0.5929168462753296
+            },
+            "confidence": 32.0556640625,
+            "text": "5%",
+            "header": "notes",
+            "row_index": 29,
+            "column_index": 8
+          },
+          "row_29_col_9": {
+            "bbox": {
+              "Width": 0.03871416673064232,
+              "Height": 0.014386164024472237,
+              "Left": 0.9210287928581238,
+              "Top": 0.5929211974143982
+            },
+            "confidence": 48.8525390625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 29,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "4",
+      "spp_name_local_name": "Mine",
+      "habit": "+",
+      "number_seedlings": "/",
+      "number_saplings": "1",
+      "notes": "Base",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06502720713615417,
+          "Top": 0.6072618961334229,
+          "Width": 0.8947151862084866,
+          "Height": 0.014429722912609577
+        },
+        "group_id": "row_30",
+        "row_index": 30,
+        "column_index": -1,
+        "cells": {
+          "row_30_col_1": {
+            "bbox": {
+              "Width": 0.040602557361125946,
+              "Height": 0.014385713264346123,
+              "Left": 0.06502720713615417,
+              "Top": 0.6072618961334229
+            },
+            "confidence": 41.30859375,
+            "text": "",
+            "header": "col_1",
+            "row_index": 30,
+            "column_index": 1
+          },
+          "row_30_col_2": {
+            "bbox": {
+              "Width": 0.11235105991363525,
+              "Height": 0.014389438554644585,
+              "Left": 0.10562863945960999,
+              "Top": 0.60726398229599
+            },
+            "confidence": 73.779296875,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 30,
+            "column_index": 2
+          },
+          "row_30_col_3": {
+            "bbox": {
+              "Width": 0.07230610400438309,
+              "Height": 0.014387453906238079,
+              "Left": 0.21797865629196167,
+              "Top": 0.6072696447372437
+            },
+            "confidence": 66.89453125,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 30,
+            "column_index": 3
+          },
+          "row_30_col_4": {
+            "bbox": {
+              "Width": 0.1980082094669342,
+              "Height": 0.014393980614840984,
+              "Left": 0.29028376936912537,
+              "Top": 0.6072733402252197
+            },
+            "confidence": 84.765625,
+            "text": "Mine",
+            "header": "spp_name_local_name",
+            "row_index": 30,
+            "column_index": 4
+          },
+          "row_30_col_5": {
+            "bbox": {
+              "Width": 0.08676925301551819,
+              "Height": 0.01438838616013527,
+              "Left": 0.4882911145687103,
+              "Top": 0.6072834134101868
+            },
+            "confidence": 80.078125,
+            "text": "+",
+            "header": "habit",
+            "row_index": 30,
+            "column_index": 5
+          },
+          "row_30_col_6": {
+            "bbox": {
+              "Width": 0.11124339699745178,
+              "Height": 0.014389707706868649,
+              "Left": 0.5750595927238464,
+              "Top": 0.6072878241539001
+            },
+            "confidence": 79.6875,
+            "text": "/",
+            "header": "number_seedlings",
+            "row_index": 30,
+            "column_index": 6
+          },
+          "row_30_col_7": {
+            "bbox": {
+              "Width": 0.14795522391796112,
+              "Height": 0.014391676522791386,
+              "Left": 0.6863022446632385,
+              "Top": 0.6072934865951538
+            },
+            "confidence": 81.8359375,
+            "text": "1",
+            "header": "number_saplings",
+            "row_index": 30,
+            "column_index": 7
+          },
+          "row_30_col_8": {
+            "bbox": {
+              "Width": 0.08677191287279129,
+              "Height": 0.014388627372682095,
+              "Left": 0.8342568278312683,
+              "Top": 0.6073009967803955
+            },
+            "confidence": 33.5693359375,
+            "text": "Base",
+            "header": "notes",
+            "row_index": 30,
+            "column_index": 8
+          },
+          "row_30_col_9": {
+            "bbox": {
+              "Width": 0.038714196532964706,
+              "Height": 0.014386211521923542,
+              "Left": 0.921028196811676,
+              "Top": 0.6073054075241089
+            },
+            "confidence": 51.171875,
+            "text": "",
+            "header": "col_9",
+            "row_index": 30,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "5",
+      "spp_name_local_name": "Cumini",
+      "habit": "T",
+      "number_seedlings": "",
+      "number_saplings": "",
+      "notes": "20%",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06502600759267807,
+          "Top": 0.6216455101966858,
+          "Width": 0.8947158381342888,
+          "Height": 0.015055769123136997
+        },
+        "group_id": "row_31",
+        "row_index": 31,
+        "column_index": -1,
+        "cells": {
+          "row_31_col_1": {
+            "bbox": {
+              "Width": 0.040602635592222214,
+              "Height": 0.015011139214038849,
+              "Left": 0.06502600759267807,
+              "Top": 0.6216455101966858
+            },
+            "confidence": 40.5517578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 31,
+            "column_index": 1
+          },
+          "row_31_col_2": {
+            "bbox": {
+              "Width": 0.1123511865735054,
+              "Height": 0.015014917589724064,
+              "Left": 0.10562746971845627,
+              "Top": 0.6216475963592529
+            },
+            "confidence": 72.412109375,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 31,
+            "column_index": 2
+          },
+          "row_31_col_3": {
+            "bbox": {
+              "Width": 0.07230620086193085,
+              "Height": 0.015012906864285469,
+              "Left": 0.21797755360603333,
+              "Top": 0.6216533780097961
+            },
+            "confidence": 65.673828125,
+            "text": "5",
+            "header": "s_no",
+            "row_index": 31,
+            "column_index": 3
+          },
+          "row_31_col_4": {
+            "bbox": {
+              "Width": 0.19800838828086853,
+              "Height": 0.015019526705145836,
+              "Left": 0.2902827262878418,
+              "Top": 0.621657133102417
+            },
+            "confidence": 83.251953125,
+            "text": "Cumini",
+            "header": "spp_name_local_name",
+            "row_index": 31,
+            "column_index": 4
+          },
+          "row_31_col_5": {
+            "bbox": {
+              "Width": 0.08676935732364655,
+              "Height": 0.015013858675956726,
+              "Left": 0.4882902204990387,
+              "Top": 0.6216673254966736
+            },
+            "confidence": 78.662109375,
+            "text": "T",
+            "header": "habit",
+            "row_index": 31,
+            "column_index": 5
+          },
+          "row_31_col_6": {
+            "bbox": {
+              "Width": 0.11124350875616074,
+              "Height": 0.015015199780464172,
+              "Left": 0.5750587582588196,
+              "Top": 0.6216717958450317
+            },
+            "confidence": 78.271484375,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 31,
+            "column_index": 6
+          },
+          "row_31_col_7": {
+            "bbox": {
+              "Width": 0.14795535802841187,
+              "Height": 0.015017199330031872,
+              "Left": 0.6863014698028564,
+              "Top": 0.6216775178909302
+            },
+            "confidence": 80.37109375,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 31,
+            "column_index": 7
+          },
+          "row_31_col_8": {
+            "bbox": {
+              "Width": 0.08677200227975845,
+              "Height": 0.015014109201729298,
+              "Left": 0.8342562317848206,
+              "Top": 0.6216851472854614
+            },
+            "confidence": 32.958984375,
+            "text": "20%",
+            "header": "notes",
+            "row_index": 31,
+            "column_index": 8
+          },
+          "row_31_col_9": {
+            "bbox": {
+              "Width": 0.038714244961738586,
+              "Height": 0.015011661686003208,
+              "Left": 0.9210276007652283,
+              "Top": 0.6216896176338196
+            },
+            "confidence": 50.244140625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 31,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "L",
+      "spp_name_local_name": "C.A A",
+      "habit": "S",
+      "number_seedlings": "1111",
+      "number_saplings": "",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06502480059862137,
+          "Top": 0.6366545557975769,
+          "Width": 0.8947165384888649,
+          "Height": 0.015056414529681206
+        },
+        "group_id": "row_32",
+        "row_index": 32,
+        "column_index": -1,
+        "cells": {
+          "row_32_col_1": {
+            "bbox": {
+              "Width": 0.0406026653945446,
+              "Height": 0.015011190436780453,
+              "Left": 0.06502480059862137,
+              "Top": 0.6366545557975769
+            },
+            "confidence": 41.8212890625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 32,
+            "column_index": 1
+          },
+          "row_32_col_2": {
+            "bbox": {
+              "Width": 0.11235126852989197,
+              "Height": 0.015015020966529846,
+              "Left": 0.10562629252672195,
+              "Top": 0.636656641960144
+            },
+            "confidence": 74.70703125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 32,
+            "column_index": 2
+          },
+          "row_32_col_3": {
+            "bbox": {
+              "Width": 0.07230625301599503,
+              "Height": 0.015012981370091438,
+              "Left": 0.21797646582126617,
+              "Top": 0.6366625428199768
+            },
+            "confidence": 67.724609375,
+            "text": "L",
+            "header": "s_no",
+            "row_index": 32,
+            "column_index": 3
+          },
+          "row_32_col_4": {
+            "bbox": {
+              "Width": 0.19800852239131927,
+              "Height": 0.015019692480564117,
+              "Left": 0.2902816832065582,
+              "Top": 0.6366662979125977
+            },
+            "confidence": 85.83984375,
+            "text": "C.A A",
+            "header": "spp_name_local_name",
+            "row_index": 32,
+            "column_index": 4
+          },
+          "row_32_col_5": {
+            "bbox": {
+              "Width": 0.08676941692829132,
+              "Height": 0.015013943426311016,
+              "Left": 0.48828932642936707,
+              "Top": 0.6366766691207886
+            },
+            "confidence": 81.103515625,
+            "text": "S",
+            "header": "habit",
+            "row_index": 32,
+            "column_index": 5
+          },
+          "row_32_col_6": {
+            "bbox": {
+              "Width": 0.1112435907125473,
+              "Height": 0.01501530222594738,
+              "Left": 0.5750579237937927,
+              "Top": 0.6366811990737915
+            },
+            "confidence": 80.712890625,
+            "text": "1111",
+            "header": "number_seedlings",
+            "row_index": 32,
+            "column_index": 6
+          },
+          "row_32_col_7": {
+            "bbox": {
+              "Width": 0.14795547723770142,
+              "Height": 0.015017327852547169,
+              "Left": 0.6863007545471191,
+              "Top": 0.6366869807243347
+            },
+            "confidence": 82.861328125,
+            "text": "",
+            "header": "number_saplings",
+            "row_index": 32,
+            "column_index": 7
+          },
+          "row_32_col_8": {
+            "bbox": {
+              "Width": 0.08677206933498383,
+              "Height": 0.015014193952083588,
+              "Left": 0.834255576133728,
+              "Top": 0.6366947293281555
+            },
+            "confidence": 34.0087890625,
+            "text": "",
+            "header": "notes",
+            "row_index": 32,
+            "column_index": 8
+          },
+          "row_32_col_9": {
+            "bbox": {
+              "Width": 0.038714274764060974,
+              "Height": 0.015011711046099663,
+              "Left": 0.9210270643234253,
+              "Top": 0.6366992592811584
+            },
+            "confidence": 51.806640625,
+            "text": "",
+            "header": "col_9",
+            "row_index": 32,
+            "column_index": 9
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "sub_plot_no": "",
+      "s_no": "",
+      "spp_name_local_name": "",
+      "habit": "",
+      "number_seedlings": "",
+      "number_saplings": "111",
+      "notes": "",
+      "col_9": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06502364575862885,
+          "Top": 0.651663601398468,
+          "Width": 0.8947171010077,
+          "Height": 0.014431655406951904
+        },
+        "group_id": "row_33",
+        "row_index": 33,
+        "column_index": -1,
+        "cells": {
+          "row_33_col_1": {
+            "bbox": {
+              "Width": 0.04060264676809311,
+              "Height": 0.014385862275958061,
+              "Left": 0.06502364575862885,
+              "Top": 0.651663601398468
+            },
+            "confidence": 37.890625,
+            "text": "",
+            "header": "col_1",
+            "row_index": 33,
+            "column_index": 1
+          },
+          "row_33_col_2": {
+            "bbox": {
+              "Width": 0.11235129833221436,
+              "Height": 0.014389741234481335,
+              "Left": 0.10562516748905182,
+              "Top": 0.6516657471656799
+            },
+            "confidence": 67.67578125,
+            "text": "",
+            "header": "sub_plot_no",
+            "row_index": 33,
+            "column_index": 2
+          },
+          "row_33_col_3": {
+            "bbox": {
+              "Width": 0.07230626046657562,
+              "Height": 0.01438766997307539,
+              "Left": 0.2179754227399826,
+              "Top": 0.6516716480255127
+            },
+            "confidence": 61.376953125,
+            "text": "",
+            "header": "s_no",
+            "row_index": 33,
+            "column_index": 3
+          },
+          "row_33_col_4": {
+            "bbox": {
+              "Width": 0.19800862669944763,
+              "Height": 0.014394466765224934,
+              "Left": 0.29028066992759705,
+              "Top": 0.6516755223274231
+            },
+            "confidence": 77.783203125,
+            "text": "",
+            "header": "spp_name_local_name",
+            "row_index": 33,
+            "column_index": 4
+          },
+          "row_33_col_5": {
+            "bbox": {
+              "Width": 0.08676943928003311,
+              "Height": 0.014388634823262691,
+              "Left": 0.4882884621620178,
+              "Top": 0.6516860127449036
+            },
+            "confidence": 73.486328125,
+            "text": "",
+            "header": "habit",
+            "row_index": 33,
+            "column_index": 5
+          },
+          "row_33_col_6": {
+            "bbox": {
+              "Width": 0.11124363541603088,
+              "Height": 0.01439000852406025,
+              "Left": 0.5750570893287659,
+              "Top": 0.6516906023025513
+            },
+            "confidence": 73.14453125,
+            "text": "",
+            "header": "number_seedlings",
+            "row_index": 33,
+            "column_index": 6
+          },
+          "row_33_col_7": {
+            "bbox": {
+              "Width": 0.14795555174350739,
+              "Height": 0.014392055571079254,
+              "Left": 0.6863000392913818,
+              "Top": 0.651696503162384
+            },
+            "confidence": 75.09765625,
+            "text": "111",
+            "header": "number_saplings",
+            "row_index": 33,
+            "column_index": 7
+          },
+          "row_33_col_8": {
+            "bbox": {
+              "Width": 0.08677209913730621,
+              "Height": 0.014388875104486942,
+              "Left": 0.8342549204826355,
+              "Top": 0.6517043113708496
+            },
+            "confidence": 30.7861328125,
+            "text": "",
+            "header": "notes",
+            "row_index": 33,
+            "column_index": 8
+          },
+          "row_33_col_9": {
+            "bbox": {
+              "Width": 0.03871427848935127,
+              "Height": 0.014386355876922607,
+              "Left": 0.9210264682769775,
+              "Top": 0.6517089009284973
+            },
+            "confidence": 46.923828125,
+            "text": "",
+            "header": "col_9",
+            "row_index": 33,
+            "column_index": 9
+          }
+        }
+      }
+    }
+  ]
+}

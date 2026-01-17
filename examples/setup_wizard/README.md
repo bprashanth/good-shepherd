@@ -2,6 +2,23 @@
 
 This tool automates the creation of an interactive Setup Wizard (`wizard.html`) for ecological experiments. It processes an experiment's KML map data and Protocol PDF to extract a structured hierarchy (Blocks -> Transects -> Plots) and generates a visualization.
 
+```mermaid
+flowchart TD
+    A[User Input] -->|Protocol PDFs| B[good_shepherd]
+    A -->|KML Files| B
+    B -->|Uses| C[Agent: ai + code]
+    C --> D[Structure]
+    C --> E[Variables]
+    C --> F[Indicators]
+    C --> G[Problems]
+    D --> I
+    E --> I
+    F --> I
+    G --> I
+    I[Experiment Schema] --> J[User Verification Interface]
+    J --> K[Mobile Pipeline]
+```
+
 ## Quick Start
 
 ### 1. Run the Entire Pipeline

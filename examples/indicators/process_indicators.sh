@@ -1,0 +1,99 @@
+#!/bin/bash
+set -e
+
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPTS_DIR="$BASE_DIR/scripts"
+STANDARDS_DIR="$BASE_DIR/standards"
+OUT_DIR="$BASE_DIR/output"
+
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 <indicators_pdf> <forms_dir> [optional_xlsx]"
+    exit 1
+fi
+
+INDICATORS_PDF="$1"
+FORMS_DIR="$2"
+OPTIONAL_XLSX="$3"
+
+VENV_DIR="$BASE_DIR/../../.venv"
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Error: .venv not found at $VENV_DIR" >&2
+    exit 1
+fi
+
+mkdir -p "$OUT_DIR"
+
+echo "--- Step 1: Build Variable Catalog ---"
+source "$VENV_DIR/bin/activate"
+python3 "$SCRIPTS_DIR/build_variable_catalog.py" \
+  --forms-dir "$FORMS_DIR" \
+  --out "$OUT_DIR/variable_catalog.json"
+
+echo "Variable catalog saved to $OUT_DIR/variable_catalog.json"
+
+echo "--- Step 2: Construct Prompt ---"
+PROMPT_OUT="$OUT_DIR/constructed_prompt.md"
+
+cat > "$PROMPT_OUT" <<'PROMPT'
+# Role
+You are an ecological data assistant. You extract computed variables and indicator mappings from indicator documents and raw variable catalogs.
+
+# Instructions
+- Use the provided indicator PDF and the raw variable catalog to propose computed variables and indicators.
+- Prefer JSONLogic expressions for compiled rules. Use JS only when JSONLogic is insufficient.
+- Include evidence references (PDF page/snippet, Excel row/cell, or form field name).
+- Output a single JSON object that matches the schema sections below.
+- The JSON must be valid and must not include any extra text.
+
+## Output Shape (Root)
+The output must be a JSON object with exactly two top-level keys:
+- "computed_variables": object matching computed_variables.schema.json
+- "indicator_config": object matching indicator_config.schema.json
+
+## computed_variables.schema.json
+PROMPT
+cat "$STANDARDS_DIR/computed_variables.schema.json" >> "$PROMPT_OUT"
+cat >> "$PROMPT_OUT" <<'PROMPT'
+
+## indicator_config.schema.json
+PROMPT
+cat "$STANDARDS_DIR/indicator_config.schema.json" >> "$PROMPT_OUT"
+cat >> "$PROMPT_OUT" <<'PROMPT'
+
+## graph_intent.schema.json
+PROMPT
+cat "$STANDARDS_DIR/graph_intent.schema.json" >> "$PROMPT_OUT"
+cat >> "$PROMPT_OUT" <<'PROMPT'
+
+## evidence.schema.json
+PROMPT
+cat "$STANDARDS_DIR/evidence.schema.json" >> "$PROMPT_OUT"
+cat >> "$PROMPT_OUT" <<'PROMPT'
+
+# Raw Variable Catalog
+Below is the extracted raw variable catalog. Use these names as inputs to computed variables.
+PROMPT
+cat "$OUT_DIR/variable_catalog.json" >> "$PROMPT_OUT"
+
+echo "Prompt saved to $PROMPT_OUT"
+
+echo "--- Step 3: Run Agent ---"
+AGENT_ARGS=("$PROMPT_OUT" "$INDICATORS_PDF")
+if [ -n "$OPTIONAL_XLSX" ]; then
+    AGENT_ARGS+=("$OPTIONAL_XLSX")
+fi
+
+"$SCRIPTS_DIR/run_agent.sh" "${AGENT_ARGS[@]}" > "$OUT_DIR/indicator_codex.json"
+
+echo "Codex saved to $OUT_DIR/indicator_codex.json"
+
+echo "--- Step 4: Build Wizard HTML ---"
+source "$VENV_DIR/bin/activate"
+python3 "$SCRIPTS_DIR/build_indicator_wizard.py" \
+  --variable-catalog "$OUT_DIR/variable_catalog.json" \
+  --codex "$OUT_DIR/indicator_codex.json" \
+  --out-html "$OUT_DIR/indicator_wizard.html" \
+  --out-computed "$OUT_DIR/computed_variables.json" \
+  --out-indicators "$OUT_DIR/indicator_config.json"
+
+echo "Wizard generated at $OUT_DIR/indicator_wizard.html"

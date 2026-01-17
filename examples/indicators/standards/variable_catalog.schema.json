@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Variable Catalog",
+  "type": "object",
+  "description": "Flat catalog of raw variables extracted from form JSON.",
+  "properties": {
+    "variables": {
+      "type": "array",
+      "description": "List of raw variables with provenance and example values.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Canonical variable name used in the onboarding workflow."
+          },
+          "source_form": {
+            "type": "string",
+            "description": "Identifier for the originating form or file."
+          },
+          "field_name": {
+            "type": "string",
+            "description": "Original field name from the extracted JSON or header map."
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit of measurement if known (e.g., cm, percent)."
+          },
+          "example_values": {
+            "type": "array",
+            "description": "Sample values observed during extraction.",
+            "items": {"type": "string"}
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Extraction confidence in the variable mapping (0-1 or 0-100)."
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
