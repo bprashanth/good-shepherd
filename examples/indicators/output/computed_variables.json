@@ -1,0 +1,128 @@
+{
+  "computed_variables": [
+    {
+      "name": "mature_cestrum_count",
+      "description": "The total number of mature Cestrum aurantiacum individuals observed in a plot, defined as those having a DBH measurement.",
+      "inputs": [
+        "spp_name_local_name",
+        "dbh_in_cms"
+      ],
+      "english_intent": "Count the number of plants per plot that are identified as Cestrum aurantiacum and are considered mature (have a DBH measurement greater than 0).",
+      "compiled": {
+        "language": "js",
+        "code": "return records.filter(r => (['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)) && r.dbh_in_cms && parseFloat(r.dbh_in_cms) > 0).length;"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 1",
+          "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "invasion_intensity",
+      "description": "Categorizes a plot's C. aurantiacum infestation level based on the count of mature individuals.",
+      "inputs": [
+        "mature_cestrum_count"
+      ],
+      "english_intent": "Based on the count of mature Cestrum individuals, classify the plot as 'Low', 'Medium', 'High', or 'Very High'.",
+      "compiled": {
+        "language": "jsonlogic",
+        "code": "{\"if\":[{\"==\":[{\"var\":\"mature_cestrum_count\"},0]},\"Low\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},10]},\"Medium\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},30]},\"High\",\"Very High\"]}]}]}"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 1",
+          "snippet": "Low: 0 mature individuals\nMedium: 1-10 individuals\nHigh: 11-30 individuals\nVery High: >30 individuals"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "cestrum_individual_count",
+      "description": "The total number of Cestrum aurantiacum individuals (of any size) observed in a plot.",
+      "inputs": [
+        "spp_name_local_name"
+      ],
+      "english_intent": "Sum the total number of individuals per plot where the species is identified as a variant of 'Cestrum aurantiacum'.",
+      "compiled": {
+        "language": "js",
+        "code": "return records.filter(r => ['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)).length;"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 3",
+          "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "species_richness",
+      "description": "The number of unique species present in a plot.",
+      "inputs": [
+        "spp_name_local_name"
+      ],
+      "english_intent": "Count the number of unique species names found within a plot.",
+      "compiled": {
+        "language": "js",
+        "code": "return new Set(records.map(r => r.spp_name_local_name)).size;"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 3",
+          "snippet": "Biodiversity Gains Increase in species richness"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "average_canopy_openness",
+      "description": "The average canopy openness of the plot, from four directional readings (0-96 scale).",
+      "inputs": [
+        "canopy_openness_north",
+        "canopy_openness_east",
+        "canopy_openness_south",
+        "canopy_openness_west"
+      ],
+      "english_intent": "Average the four canopy openness readings (North, East, South, West).",
+      "compiled": {
+        "language": "jsonlogic",
+        "code": "{\"/\" : [{\"+\":[{\"var\":\"canopy_openness_north\"}, {\"var\":\"canopy_openness_east\"}, {\"var\":\"canopy_openness_south\"}, {\"var\":\"canopy_openness_west\"}]}, 4]}"
+      },
+      "aggregation": {
+        "level": "subplot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "form",
+          "source_ref": "cloud_segmented_002_classified.json",
+          "snippet": "canopy_openness: Number of dots out of 96 imaginary dots that are not covered by the canopy"
+        }
+      ],
+      "status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "indicators": [
+    {
+      "name": "Invasive Recovery",
+      "definition": "The percentage of regrowth of Cestrum aurantiacum individuals over time, indicating the effectiveness of removal efforts.",
+      "required_computed_variables": [
+        "cestrum_individual_count"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "line",
+          "x_axis": "date",
+          "y_axis": "cestrum_individual_count",
+          "group_by": "plot_no",
+          "aggregation": "sum"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 3",
+          "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
+        }
+      ]
+    },
+    {
+      "name": "Biodiversity Gains",
+      "definition": "The change in species richness over time, indicating an increase in biodiversity.",
+      "required_computed_variables": [
+        "species_richness"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "line",
+          "x_axis": "date",
+          "y_axis": "species_richness",
+          "group_by": "plot_no",
+          "aggregation": "none"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 3",
+          "snippet": "Biodiversity Gains Increase in species richness"
+        }
+      ]
+    },
+    {
+      "name": "Plot Invasion Level",
+      "definition": "The initial baseline categorization of a plot based on the density of mature C. aurantiacum.",
+      "required_computed_variables": [
+        "invasion_intensity"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "invasion_intensity",
+          "y_axis": "plot_no",
+          "group_by": "invasion_intensity",
+          "aggregation": "count"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 1",
+          "snippet": "Plot Categorization"
+        }
+      ]
+    }
+  ]
+}

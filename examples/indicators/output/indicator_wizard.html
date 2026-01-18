@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indicator Wizard</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    header { padding: 16px 24px; background: #1f2937; color: #fff; }
+    main { display: flex; gap: 16px; padding: 16px; }
+    .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; flex: 1; min-width: 0; }
+    h2 { margin: 0 0 8px 0; font-size: 18px; }
+    h3 { margin: 12px 0 6px 0; font-size: 14px; color: #374151; }
+    .item { border-top: 1px solid #f0f0f0; padding: 8px 0; }
+    .label { font-weight: 600; }
+    .muted { color: #6b7280; font-size: 12px; }
+    pre { white-space: pre-wrap; background: #f9fafb; padding: 8px; border-radius: 6px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Indicator Wizard</h1>
+  </header>
+  <main>
+    <section class="panel" id="raw-panel">
+      <h2>Raw Variables</h2>
+      <div id="raw-variables"></div>
+    </section>
+    <section class="panel" id="computed-panel">
+      <h2>Computed Variables</h2>
+      <div id="computed-variables"></div>
+    </section>
+    <section class="panel" id="indicator-panel">
+      <h2>Indicators</h2>
+      <div id="indicators"></div>
+    </section>
+  </main>
+
+  <script>
+    const variableCatalog = {"variables": [{"name": "transect_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "transect_no", "unit": "", "example_values": ["I"], "confidence": null}, {"name": "block_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "block_name", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "plot_no", "unit": "", "example_values": ["2"], "confidence": null}, {"name": "area_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "area_name", "unit": "", "example_values": ["BKM"], "confidence": null}, {"name": "name_of_researcher", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "name_of_researcher", "unit": "", "example_values": ["Caropy Cover"], "confidence": null}, {"name": "date", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "date", "unit": "", "example_values": ["19/02/2025"], "confidence": null}, {"name": "name_of_research_team", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "name_of_research_team", "unit": "", "example_values": ["Ak, HA, Kk, MK, PK"], "confidence": null}, {"name": "sub_plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "sub_plot_no", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "notes", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "notes", "unit": "", "example_values": ["12"], "confidence": null}, {"name": "seedlings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "seedlings", "unit": "", "example_values": ["Subplor:"], "confidence": null}, {"name": "dirt", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "dirt", "unit": "", "example_values": ["#:1"], "confidence": null}, {"name": "sub_plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Sub plot no.", "unit": "", "example_values": ["1", "2", "3", "4."], "confidence": null}, {"name": "s_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "S.No", "unit": "", "example_values": ["1.", "2.", "3", "4", "5."], "confidence": null}, {"name": "spp_name_local_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "SPP Name/Local Name", "unit": "", "example_values": ["cadelei", "Perthin", "1carm", "Kage kisloar", "kisloar"], "confidence": null}, {"name": "habit", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Habit", "unit": "", "example_values": ["T", "T", "7", "T", "I"], "confidence": null}, {"name": "number_seedlings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "#Seedlings", "unit": "", "example_values": ["1", "\"", "11", "11", "1"], "confidence": null}, {"name": "number_saplings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "#Saplings", "unit": "", "example_values": ["E", "I", "H", "1 ,", "11"], "confidence": null}, {"name": "notes", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Notes", "unit": "", "example_values": ["was", "5% Kare", "10%", "usess", "10%"], "confidence": null}, {"name": "names_of_research_team", "source_form": "cloud_segmented_000_classified.json", "field_name": "names_of_research_team", "unit": "", "example_values": ["AK,HA ,Kk, MIC, PK"], "confidence": null}, {"name": "date", "source_form": "cloud_segmented_000_classified.json", "field_name": "date", "unit": "", "example_values": ["19/02/2025"], "confidence": null}, {"name": "plot_number", "source_form": "cloud_segmented_000_classified.json", "field_name": "plot_number", "unit": "", "example_values": ["2"], "confidence": null}, {"name": "area_name", "source_form": "cloud_segmented_000_classified.json", "field_name": "area_name", "unit": "", "example_values": ["BKM"], "confidence": null}, {"name": "transect_number", "source_form": "cloud_segmented_000_classified.json", "field_name": "transect_number", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "block_code", "source_form": "cloud_segmented_000_classified.json", "field_name": "block_code", "unit": "", "example_values": ["I"], "confidence": null}, {"name": "s_no", "source_form": "cloud_segmented_000_classified.json", "field_name": "S.No", "unit": "", "example_values": ["1.", "2.", "3.", "4", "5"], "confidence": null}, {"name": "spp_name_local_name", "source_form": "cloud_segmented_000_classified.json", "field_name": "SPP Name/Local Name", "unit": "", "example_values": ["Kobumn", "lage", "come", "Kinker", "kisler"], "confidence": null}, {"name": "habit", "source_form": "cloud_segmented_000_classified.json", "field_name": "Habit", "unit": "", "example_values": ["1", "I", "T", "T", "I"], "confidence": null}, {"name": "dbh_in_cms", "source_form": "cloud_segmented_000_classified.json", "field_name": "DBH in cms", "unit": "", "example_values": ["23", "4.2+ 3.4+2.5", "3", "3.6+1.8", "2"], "confidence": null}, {"name": "phenological_condition", "source_form": "cloud_segmented_000_classified.json", "field_name": "Phenological condition", "unit": "", "example_values": ["Fruiting"], "confidence": null}, {"name": "soil_moisture", "source_form": "cloud_segmented_002_classified.json", "field_name": "soil_moisture", "unit": "", "example_values": ["Dry+ =1, Dry- =2, Nor =3, Wet- =4, Wet+ =5"], "confidence": null}, {"name": "canopy_openness", "source_form": "cloud_segmented_002_classified.json", "field_name": "canopy_openness", "unit": "", "example_values": ["Number of dots out of 96 imaginary dots that are not covered by the canopy; Taken only at the centre of the plot"], "confidence": null}, {"name": "1710", "source_form": "cloud_segmented_002_classified.json", "field_name": "1710", "unit": "", "example_values": ["10.1230 >30"], "confidence": null}, {"name": "block_code", "source_form": "cloud_segmented_002_classified.json", "field_name": "Block Code", "unit": "", "example_values": ["I", "1"], "confidence": null}, {"name": "transect_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Transect #", "unit": "", "example_values": ["1", "I"], "confidence": null}, {"name": "plot_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Plot #", "unit": "", "example_values": ["1", "2", "3", "4", "5"], "confidence": null}, {"name": "subplot_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Subplot #", "unit": "", "example_values": ["0", "1", "2", "3", "4"], "confidence": null}, {"name": "canopy_openness_north", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness North", "unit": "", "example_values": ["09", "Aug=", "B", "Aug", "15"], "confidence": null}, {"name": "canopy_openness_east", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness East", "unit": "", "example_values": ["#11", "7.25", "92.4", "4", "4.25"], "confidence": null}, {"name": "canopy_openness_west", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness West", "unit": "", "example_values": ["35", "0%", "3", "2%", "13"], "confidence": null}, {"name": "canopy_openness_south", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness South", "unit": "", "example_values": ["04", "4", "7", "03"], "confidence": null}, {"name": "soil_moisture", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil Moisture", "unit": "", "example_values": ["3", "3 3", "3", "4", "3"], "confidence": null}, {"name": "soil_temper_ature_in_2", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil Temper ature in 2.", "unit": "", "example_values": ["19", "19", "23", "20 21", "23"], "confidence": null}, {"name": "soil_ph", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil pH", "unit": "", "example_values": ["7", "2", "7", "7", "7"], "confidence": null}, {"name": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure", "source_form": "cloud_segmented_002_classified.json", "field_name": "Notes on Plot characteristics - Disturbance, Physical features, Forest structure", "unit": "", "example_values": ["Litter is high; Dry; her cestrum; few >C.A; undustory, regin Shurs, (aropy present: South in open company to North. No dury present", "Litter is high; Dry; her cestrum;", "few >C.A; undustory,", "regin Shurs,", "(aropy present: South in open company"], "confidence": null}]};
+    const indicatorCodex = {"computed_variables": {"computed_variables": [{"name": "mature_cestrum_count", "description": "The total number of mature Cestrum aurantiacum individuals observed in a plot, defined as those having a DBH measurement.", "inputs": ["spp_name_local_name", "dbh_in_cms"], "english_intent": "Count the number of plants per plot that are identified as Cestrum aurantiacum and are considered mature (have a DBH measurement greater than 0).", "compiled": {"language": "js", "code": "return records.filter(r => (['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)) && r.dbh_in_cms && parseFloat(r.dbh_in_cms) > 0).length;"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "Page 1", "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"}], "status": "draft"}, {"name": "invasion_intensity", "description": "Categorizes a plot's C. aurantiacum infestation level based on the count of mature individuals.", "inputs": ["mature_cestrum_count"], "english_intent": "Based on the count of mature Cestrum individuals, classify the plot as 'Low', 'Medium', 'High', or 'Very High'.", "compiled": {"language": "jsonlogic", "code": "{\"if\":[{\"==\":[{\"var\":\"mature_cestrum_count\"},0]},\"Low\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},10]},\"Medium\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},30]},\"High\",\"Very High\"]}]}]}"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "Page 1", "snippet": "Low: 0 mature individuals\nMedium: 1-10 individuals\nHigh: 11-30 individuals\nVery High: >30 individuals"}], "status": "draft"}, {"name": "cestrum_individual_count", "description": "The total number of Cestrum aurantiacum individuals (of any size) observed in a plot.", "inputs": ["spp_name_local_name"], "english_intent": "Sum the total number of individuals per plot where the species is identified as a variant of 'Cestrum aurantiacum'.", "compiled": {"language": "js", "code": "return records.filter(r => ['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)).length;"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "Page 3", "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"}], "status": "draft"}, {"name": "species_richness", "description": "The number of unique species present in a plot.", "inputs": ["spp_name_local_name"], "english_intent": "Count the number of unique species names found within a plot.", "compiled": {"language": "js", "code": "return new Set(records.map(r => r.spp_name_local_name)).size;"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "Page 3", "snippet": "Biodiversity Gains Increase in species richness"}], "status": "draft"}, {"name": "average_canopy_openness", "description": "The average canopy openness of the plot, from four directional readings (0-96 scale).", "inputs": ["canopy_openness_north", "canopy_openness_east", "canopy_openness_south", "canopy_openness_west"], "english_intent": "Average the four canopy openness readings (North, East, South, West).", "compiled": {"language": "jsonlogic", "code": "{\"/\" : [{\"+\":[{\"var\":\"canopy_openness_north\"}, {\"var\":\"canopy_openness_east\"}, {\"var\":\"canopy_openness_south\"}, {\"var\":\"canopy_openness_west\"}]}, 4]}"}, "aggregation": {"level": "subplot", "time": "per_survey_event"}, "evidence": [{"source_type": "form", "source_ref": "cloud_segmented_002_classified.json", "snippet": "canopy_openness: Number of dots out of 96 imaginary dots that are not covered by the canopy"}], "status": "draft"}]}, "indicator_config": {"indicators": [{"name": "Invasive Recovery", "definition": "The percentage of regrowth of Cestrum aurantiacum individuals over time, indicating the effectiveness of removal efforts.", "required_computed_variables": ["cestrum_individual_count"], "graph_intents": [{"chart_type": "line", "x_axis": "date", "y_axis": "cestrum_individual_count", "group_by": "plot_no", "aggregation": "sum"}], "evidence": [{"source_type": "pdf", "source_ref": "Page 3", "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"}]}, {"name": "Biodiversity Gains", "definition": "The change in species richness over time, indicating an increase in biodiversity.", "required_computed_variables": ["species_richness"], "graph_intents": [{"chart_type": "line", "x_axis": "date", "y_axis": "species_richness", "group_by": "plot_no", "aggregation": "none"}], "evidence": [{"source_type": "pdf", "source_ref": "Page 3", "snippet": "Biodiversity Gains Increase in species richness"}]}, {"name": "Plot Invasion Level", "definition": "The initial baseline categorization of a plot based on the density of mature C. aurantiacum.", "required_computed_variables": ["invasion_intensity"], "graph_intents": [{"chart_type": "bar", "x_axis": "invasion_intensity", "y_axis": "plot_no", "group_by": "invasion_intensity", "aggregation": "count"}], "evidence": [{"source_type": "pdf", "source_ref": "Page 1", "snippet": "Plot Categorization"}]}]}};
+
+    function renderRawVariables() {
+      const el = document.getElementById("raw-variables");
+      const vars = (variableCatalog && variableCatalog.variables) || [];
+      if (!vars.length) {
+        el.innerHTML = "<p class='muted'>No variables detected.</p>";
+        return;
+      }
+      el.innerHTML = vars.map(v => `
+        <div class="item">
+          <div class="label">${escapeHtml(v.name)}</div>
+          <div class="muted">${escapeHtml(v.field_name || "")}</div>
+          <div class="muted">Source: ${escapeHtml(v.source_form || "")}</div>
+          ${v.example_values && v.example_values.length ? `<pre>${escapeHtml(v.example_values.join(", "))}</pre>` : ""}
+        </div>
+      `).join("");
+    }
+
+    function renderComputedVariables() {
+      const el = document.getElementById("computed-variables");
+      const list = indicatorCodex && indicatorCodex.computed_variables && indicatorCodex.computed_variables.computed_variables;
+      if (!list || !list.length) {
+        el.innerHTML = "<p class='muted'>No computed variables.</p>";
+        return;
+      }
+      el.innerHTML = list.map(c => `
+        <div class="item">
+          <div class="label">${escapeHtml(c.name || "")}</div>
+          <div class="muted">${escapeHtml(c.description || "")}</div>
+          <div class="muted">Intent: ${escapeHtml(c.english_intent || "")}</div>
+          ${c.compiled && c.compiled.code ? `<pre>${escapeHtml(c.compiled.language || "")}: ${escapeHtml(c.compiled.code)}</pre>` : ""}
+        </div>
+      `).join("");
+    }
+
+    function renderIndicators() {
+      const el = document.getElementById("indicators");
+      const list = indicatorCodex && indicatorCodex.indicator_config && indicatorCodex.indicator_config.indicators;
+      if (!list || !list.length) {
+        el.innerHTML = "<p class='muted'>No indicators.</p>";
+        return;
+      }
+      el.innerHTML = list.map(i => `
+        <div class="item">
+          <div class="label">${escapeHtml(i.name || "")}</div>
+          <div class="muted">${escapeHtml(i.definition || "")}</div>
+          ${i.graph_intents && i.graph_intents.length ? `<pre>${escapeHtml(JSON.stringify(i.graph_intents, null, 2))}</pre>` : ""}
+        </div>
+      `).join("");
+    }
+
+    function escapeHtml(value) {
+      const div = document.createElement("div");
+      div.textContent = value == null ? "" : String(value);
+      return div.innerHTML;
+    }
+
+    renderRawVariables();
+    renderComputedVariables();
+    renderIndicators();
+  </script>
+</body>
+</html>

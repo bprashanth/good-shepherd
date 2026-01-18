@@ -45,6 +45,15 @@ You are an ecological data assistant. You extract computed variables and indicat
 - Output a single JSON object that matches the schema sections below.
 - The JSON must be valid and must not include any extra text.
 
+# Strict Output Rules
+1. Return ONLY valid, raw JSON.
+2. NO markdown code blocks.
+3. NO conversational filler.
+4. Output must start with '{' and end with '}'.
+
+# Error Handling
+If the files are incompatible or missing, output: {"error": "detailed reason"}
+
 ## Output Shape (Root)
 The output must be a JSON object with exactly two top-level keys:
 - "computed_variables": object matching computed_variables.schema.json
@@ -83,15 +92,41 @@ if [ -n "$OPTIONAL_XLSX" ]; then
     AGENT_ARGS+=("$OPTIONAL_XLSX")
 fi
 
-"$SCRIPTS_DIR/run_agent.sh" "${AGENT_ARGS[@]}" > "$OUT_DIR/indicator_codex.json"
+"$SCRIPTS_DIR/run_agent.sh" "${AGENT_ARGS[@]}" > "$OUT_DIR/indicator_codebook_raw.json"
 
-echo "Codex saved to $OUT_DIR/indicator_codex.json"
+echo "Raw codebook saved to $OUT_DIR/indicator_codebook_raw.json"
+
+echo "--- Step 3b: Sanitize Agent Output ---"
+source "$VENV_DIR/bin/activate"
+RAW_CODEBOOK="$OUT_DIR/indicator_codebook_raw.json"
+FINAL_CODEBOOK="$OUT_DIR/indicator_codebook.json"
+RAW_CODEBOOK="$RAW_CODEBOOK" FINAL_CODEBOOK="$FINAL_CODEBOOK" python3 - <<'PY'
+import json
+import os
+from pathlib import Path
+
+raw_path = Path(os.environ["RAW_CODEBOOK"])
+out_path = Path(os.environ["FINAL_CODEBOOK"])
+
+text = raw_path.read_text(encoding="utf-8").strip()
+if text.startswith("```"):
+    lines = text.splitlines()
+    if lines:
+        lines = lines[1:]
+    if lines and lines[-1].strip().startswith("```"):
+        lines = lines[:-1]
+    text = "\n".join(lines).strip()
+
+data = json.loads(text)
+out_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+print(f"Sanitized codebook saved to {out_path}")
+PY
 
 echo "--- Step 4: Build Wizard HTML ---"
 source "$VENV_DIR/bin/activate"
 python3 "$SCRIPTS_DIR/build_indicator_wizard.py" \
   --variable-catalog "$OUT_DIR/variable_catalog.json" \
-  --codex "$OUT_DIR/indicator_codex.json" \
+  --codex "$OUT_DIR/indicator_codebook.json" \
   --out-html "$OUT_DIR/indicator_wizard.html" \
   --out-computed "$OUT_DIR/computed_variables.json" \
   --out-indicators "$OUT_DIR/indicator_config.json"
