@@ -1,16 +1,16 @@
 {
   "computed_variables": [
     {
-      "name": "cestrum_aurantiacum_mature_count",
-      "description": "Counts the number of mature Cestrum aurantiacum individuals, identified by having a DBH measurement. Assumes 'kisloar' and 'Kage kisloar' are local names for Cestrum aurantiacum.",
+      "name": "cestrum_mature_count",
+      "description": "Count of mature Cestrum aurantiacum individuals per observation, based on presence of a DBH measurement.",
       "inputs": [
         "spp_name_local_name",
         "dbh_in_cms"
       ],
-      "english_intent": "Count of mature Cestrum aurantiacum individuals in the plot.",
+      "english_intent": "If the species name indicates it is Cestrum aurantiacum (using common or local names like 'kisloar') and it has a DBH measurement, count the number of individuals. Multiple DBH entries for a single record (e.g., '4.2+3.4') are counted as multiple individuals. Otherwise, the count is 0.",
       "compiled": {
-        "language": "jsonlogic",
-        "code": "{\"reduce\":[{\"filter\":[{\"var\":\"\"},{\"and\":[{\"in\":[{\"var\":\"spp_name_local_name\"},[\"Kage kisloar\",\"kisloar\"]]},{\">\":[{\"var\":\"dbh_in_cms\"},0]}]}]},{\"+ \":[1,{\"var\":\"accumulator\"}]},0]}"
+        "language": "js",
+        "code": "const name = data.spp_name_local_name || ''; const lowerName = name.toLowerCase(); const is_cestrum = lowerName.includes('cestrum') || lowerName.includes('kage kisloar') || lowerName.includes('kisloar'); if (is_cestrum) { const dbh = data.dbh_in_cms; if (dbh && typeof dbh === 'string' && dbh.trim() !== '') { return dbh.split('+').length; } } return 0;"
       },
       "aggregation": {
         "level": "plot",
@@ -19,24 +19,23 @@
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "1",
-          "snippet": "Low: 0 mature individuals... Medium: 1-10 individuals High: 11-30 individuals Very High: >30 individuals"
+          "source_ref": "Page 1",
+          "snippet": "Plot Categorization. Based on field observations, plots are categorized by the density of C. aurantiacum individuals as follows: Low: 0 mature individuals..."
         }
       ],
       "status": "approved"
     },
     {
-      "name": "cestrum_aurantiacum_seedling_sapling_presence",
-      "description": "Checks for the presence of Cestrum aurantiacum seedlings or saplings. Assumes 'kisloar' and 'Kage kisloar' are local names for Cestrum aurantiacum.",
+      "name": "cestrum_seedling_count",
+      "description": "Count of Cestrum aurantiacum seedlings per observation.",
       "inputs": [
         "spp_name_local_name",
-        "number_seedlings",
-        "number_saplings"
+        "number_seedlings"
       ],
-      "english_intent": "Check for the presence of Cestrum aurantiacum seedlings or saplings in the plot.",
+      "english_intent": "If the species is Cestrum aurantiacum (using common or local names like 'kisloar'), return the number of seedlings. Otherwise return 0.",
       "compiled": {
         "language": "jsonlogic",
-        "code": "{ \">\" : [{\"reduce\": [{\"filter\": [{\"var\": \"\"}, {\"and\": [{\"in\": [{\"var\": \"spp_name_local_name\"}, [\"Kage kisloar\", \"kisloar\"]]}, {\"or\": [{ \">\": [{\"var\": \"number_seedlings\"}, 0] }, { \">\": [{\"var\": \"number_saplings\"}, 0] }]}]}]}, {\"+\": [1, {\"var\": \"accumulator\"}]}, 0]}, 0]}"
+        "code": "{\"if\": [{\"or\": [{\"in\": [\"cestrum\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}, {\"in\": [\"kage kisloar\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}, {\"in\": [\"kisloar\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}]}, {\"+\": [{\"var\": \"number_seedlings\"}]}, 0]}"
       },
       "aggregation": {
         "level": "plot",
@@ -45,138 +44,47 @@
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "1",
+          "source_ref": "Page 1",
           "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"
         }
       ],
       "status": "approved"
     },
     {
-      "name": "plot_infestation_category",
-      "description": "Categorizes the plot's Cestrum aurantiacum infestation level based on the count of mature individuals and presence of seedlings/saplings.",
-      "inputs": [
-        "cestrum_aurantiacum_mature_count",
-        "cestrum_aurantiacum_seedling_sapling_presence"
-      ],
-      "english_intent": "Categorize plot infestation level based on mature Cestrum aurantiacum count.",
-      "compiled": {
-        "language": "jsonlogic",
-        "code": "{\"if\":[{ \">\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},30]},\"Very High\",{ \">=\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},11]},\"High\",{ \">=\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},1]},\"Medium\",{\"and\":[{\"==\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},0]},{\"==\":[{\"var\":\"cestrum_aurantiacum_seedling_sapling_presence\"},true]}]},\"Low\",\"None\"]}"
-      },
-      "aggregation": {
-        "level": "plot",
-        "time": "per_survey_event"
-      },
-      "evidence": [
-        {
-          "source_type": "pdf",
-          "source_ref": "1",
-          "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings; Medium: 1-10 individuals; High: 11-30 individuals; Very High: >30 individuals"
-        }
-      ],
-      "status": "approved"
-    },
-    {
-      "name": "species_richness",
-      "description": "Counts the number of unique woody-stemmed species. Assumes 'T' in 'habit' field indicates a woody-stemmed species.",
+      "name": "cestrum_sapling_count",
+      "description": "Count of Cestrum aurantiacum saplings per observation.",
       "inputs": [
         "spp_name_local_name",
-        "habit"
-      ],
-      "english_intent": "Count the number of unique woody-stemmed species per plot.",
-      "compiled": {
-        "language": "js",
-        "code": "const woody_species = data.filter(row => row.habit === 'T').map(row => row.spp_name_local_name); return new Set(woody_species).size;"
-      },
-      "aggregation": {
-        "level": "plot",
-        "time": "per_survey_event"
-      },
-      "evidence": [
-        {
-          "source_type": "pdf",
-          "source_ref": "3",
-          "snippet": "Vegetation Surveys: Species richness, abundance, and composition (woody-stemmed species)"
-        }
-      ],
-      "status": "approved"
-    },
-    {
-      "name": "cestrum_aurantiacum_total_count",
-      "description": "Calculates the total number of Cestrum aurantiacum individuals, including mature plants, seedlings, and saplings.",
-      "inputs": [
-        "spp_name_local_name",
-        "dbh_in_cms",
-        "number_seedlings",
         "number_saplings"
       ],
-      "english_intent": "Total count of Cestrum aurantiacum individuals (mature, seedlings, saplings).",
+      "english_intent": "If the species is Cestrum aurantiacum (using common or local names like 'kisloar'), return the number of saplings. Otherwise return 0.",
       "compiled": {
-        "language": "js",
-        "code": "const cestrum_rows = data.filter(row => [\"Kage kisloar\", \"kisloar\"].includes(row.spp_name_local_name)); let total = 0; cestrum_rows.forEach(row => { total += parseInt(row.number_seedlings || 0, 10) || 0; total += parseInt(row.number_saplings || 0, 10) || 0; if (parseFloat(row.dbh_in_cms) > 0) { total += 1; } }); return total;"
+        "language": "jsonlogic",
+        "code": "{\"if\": [{\"or\": [{\"in\": [\"cestrum\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}, {\"in\": [\"kage kisloar\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}, {\"in\": [\"kisloar\", {\"lowercase\": {\"var\": \"spp_name_local_name\"}}]}]}, {\"+\": [{\"var\": \"number_saplings\"}]}, 0]}"
       },
       "aggregation": {
         "level": "plot",
         "time": "per_survey_event"
       },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "Page 1",
+          "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"
+        }
+      ],
       "status": "approved"
     },
     {
-      "name": "cestrum_regrowth_percentage",
-      "description": "Percentage regrowth of C. auranticum individuals. Calculation requires comparing total counts between a baseline and a monitoring survey.",
+      "name": "species_name",
+      "description": "Provides the species name for richness calculations.",
       "inputs": [
-        "cestrum_aurantiacum_total_count"
+        "spp_name_local_name"
       ],
-      "english_intent": "% regrowth of C. auranticum individuals.",
+      "english_intent": "Return the species name.",
       "compiled": {
-        "language": "js",
-        "code": "// (current_count / baseline_count) * 100"
-      },
-      "aggregation": {
-        "level": "plot",
-        "time": "rolling"
-      },
-      "evidence": [
-        {
-          "source_type": "pdf",
-          "source_ref": "3",
-          "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
-        }
-      ],
-      "status": "draft",
-      "notes": "Calculation requires comparing `cestrum_aurantiacum_total_count` between two survey events (e.g., baseline and current). The rule is a placeholder for `(current_count / baseline_count) * 100`."
-    },
-    {
-      "name": "planted_native_survival_rate",
-      "description": "Survival and growth rate of planted native species. Cannot be computed with available data.",
-      "inputs": [],
-      "english_intent": "Survival and growth rate of planted native species.",
-      "compiled": {
-        "language": "none",
-        "code": ""
-      },
-      "aggregation": {
-        "level": "plot",
-        "time": "rolling"
-      },
-      "evidence": [
-        {
-          "source_type": "pdf",
-          "source_ref": "3",
-          "snippet": "Resilience Survival and growth rate of planted native species"
-        }
-      ],
-      "status": "draft",
-      "notes": "Requires a way to identify 'planted native species' and their status (alive/dead) across survey events. Raw data lacks a 'planted' flag or species list."
-    },
-    {
-      "name": "grass_cover_percentage",
-      "description": "% cover of grasses. Cannot be computed with available data.",
-      "inputs": [],
-      "english_intent": "% cover of grasses.",
-      "compiled": {
-        "language": "none",
-        "code": ""
+        "language": "jsonlogic",
+        "code": "{\"var\": \"spp_name_local_name\"}"
       },
       "aggregation": {
         "level": "plot",
@@ -185,35 +93,11 @@
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "3",
-          "snippet": "Ground Cover % cover of grasses"
+          "source_ref": "Page 3",
+          "snippet": "Biodiversity Gains Increase in species richness"
         }
       ],
-      "status": "draft",
-      "notes": "No direct variable for grass cover in raw data. May need to be derived from image analysis, a different form, or direct observation field not present in catalog."
-    },
-    {
-      "name": "native_species_recruitment_count",
-      "description": "Regeneration or recruitment of planted native species. Cannot be computed with available data.",
-      "inputs": [],
-      "english_intent": "Regeneration or recruitment of planted native species.",
-      "compiled": {
-        "language": "none",
-        "code": ""
-      },
-      "aggregation": {
-        "level": "plot",
-        "time": "rolling"
-      },
-      "evidence": [
-        {
-          "source_type": "pdf",
-          "source_ref": "3",
-          "snippet": "Recruitment Regeneration or recruitment of planted native species"
-        }
-      ],
-      "status": "draft",
-      "notes": "Requires identification of 'planted native species' and tracking new individuals over time. Raw data is insufficient."
+      "status": "approved"
     }
   ]
 }

@@ -10,7 +10,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <title>Indicator Wizard</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
-    header { padding: 16px 24px; background: #1f2937; color: #fff; }
+    header { padding: 16px 24px; background: #1f2937; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     main { display: flex; gap: 16px; padding: 16px; }
     .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; flex: 1; min-width: 0; }
     h2 { margin: 0 0 8px 0; font-size: 18px; }
@@ -32,11 +32,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     .modal button { padding: 6px 10px; font-size: 12px; border: none; border-radius: 4px; cursor: pointer; }
     .btn-secondary { background: #e5e7eb; }
     .btn-primary { background: #111827; color: #fff; }
+    .header-btn { margin-left: 0; background: #111827; color: #fff; border: 1px solid #374151; }
   </style>
 </head>
 <body>
   <header>
     <h1>Indicator Wizard</h1>
+    <button id="download-codebook" class="inline-btn header-btn">Download codebook</button>
   </header>
   <main id="wizard-main">
     <section class="panel" id="raw-panel">
@@ -317,6 +319,22 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     renderIndicators();
     wireAddForms();
     wireIndicatorModal();
+
+    document.getElementById("download-codebook").addEventListener("click", () => {
+      const codebook = {
+        version: "v1",
+        generated_at: new Date().toISOString(),
+        variable_catalog: variableCatalog,
+        computed_variables: { computed_variables: computedList },
+        indicator_config: { indicators: indicatorList }
+      };
+      const blob = new Blob([JSON.stringify(codebook, null, 2)], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "indicator_codebook.json";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
   </script>
 </body>
 </html>
