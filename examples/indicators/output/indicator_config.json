@@ -2,72 +2,126 @@
   "indicators": [
     {
       "name": "Invasive Recovery",
-      "definition": "The percentage of regrowth of Cestrum aurantiacum individuals over time, indicating the effectiveness of removal efforts.",
+      "definition": "% regrowth of C. auranticum individuals.",
       "required_computed_variables": [
-        "cestrum_individual_count"
+        "cestrum_regrowth_percentage"
       ],
       "graph_intents": [
         {
           "chart_type": "line",
-          "x_axis": "date",
-          "y_axis": "cestrum_individual_count",
-          "group_by": "plot_no",
-          "aggregation": "sum"
+          "x_axis": "survey_date",
+          "y_axis": "cestrum_regrowth_percentage",
+          "group_by": "plot_number",
+          "aggregation": "mean"
         }
       ],
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
         }
-      ]
+      ],
+      "status": "draft",
+      "notes": "Depends on a draft computed variable that requires time-series analysis."
+    },
+    {
+      "name": "Resilience",
+      "definition": "Survival and growth rate of planted native species.",
+      "required_computed_variables": [
+        "planted_native_survival_rate"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "line",
+          "x_axis": "survey_date",
+          "y_axis": "planted_native_survival_rate",
+          "group_by": "plot_number",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "3",
+          "snippet": "Resilience Survival and growth rate of planted native species"
+        }
+      ],
+      "status": "draft",
+      "notes": "Data to compute 'planted_native_survival_rate' is not available in the provided variable catalog."
     },
     {
       "name": "Biodiversity Gains",
-      "definition": "The change in species richness over time, indicating an increase in biodiversity.",
+      "definition": "Increase in species richness.",
       "required_computed_variables": [
         "species_richness"
       ],
       "graph_intents": [
         {
           "chart_type": "line",
-          "x_axis": "date",
+          "x_axis": "survey_date",
           "y_axis": "species_richness",
-          "group_by": "plot_no",
-          "aggregation": "none"
+          "group_by": "plot_number",
+          "aggregation": "mean"
         }
       ],
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Biodiversity Gains Increase in species richness"
         }
       ]
     },
     {
-      "name": "Plot Invasion Level",
-      "definition": "The initial baseline categorization of a plot based on the density of mature C. aurantiacum.",
+      "name": "Ground Cover",
+      "definition": "% cover of grasses.",
       "required_computed_variables": [
-        "invasion_intensity"
+        "grass_cover_percentage"
       ],
       "graph_intents": [
         {
-          "chart_type": "bar",
-          "x_axis": "invasion_intensity",
-          "y_axis": "plot_no",
-          "group_by": "invasion_intensity",
-          "aggregation": "count"
+          "chart_type": "line",
+          "x_axis": "survey_date",
+          "y_axis": "grass_cover_percentage",
+          "group_by": "plot_number",
+          "aggregation": "mean"
         }
       ],
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 1",
-          "snippet": "Plot Categorization"
+          "source_ref": "3",
+          "snippet": "Ground Cover % cover of grasses"
         }
-      ]
+      ],
+      "status": "draft",
+      "notes": "Data to compute 'grass_cover_percentage' is not available in the provided variable catalog."
+    },
+    {
+      "name": "Recruitment",
+      "definition": "Regeneration or recruitment of planted native species.",
+      "required_computed_variables": [
+        "native_species_recruitment_count"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "survey_date",
+          "y_axis": "native_species_recruitment_count",
+          "group_by": "plot_number",
+          "aggregation": "sum"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "3",
+          "snippet": "Recruitment Regeneration or recruitment of planted native species"
+        }
+      ],
+      "status": "draft",
+      "notes": "Data to compute 'native_species_recruitment_count' is not available in the provided variable catalog."
     }
   ]
 }

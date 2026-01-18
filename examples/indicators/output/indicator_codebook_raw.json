@@ -3,16 +3,16 @@
   "computed_variables": {
     "computed_variables": [
       {
-        "name": "mature_cestrum_count",
-        "description": "The total number of mature Cestrum aurantiacum individuals observed in a plot, defined as those having a DBH measurement.",
+        "name": "cestrum_aurantiacum_mature_count",
+        "description": "Counts the number of mature Cestrum aurantiacum individuals, identified by having a DBH measurement. Assumes 'kisloar' and 'Kage kisloar' are local names for Cestrum aurantiacum.",
         "inputs": [
           "spp_name_local_name",
           "dbh_in_cms"
         ],
-        "english_intent": "Count the number of plants per plot that are identified as Cestrum aurantiacum and are considered mature (have a DBH measurement greater than 0).",
+        "english_intent": "Count of mature Cestrum aurantiacum individuals in the plot.",
         "compiled": {
-          "language": "js",
-          "code": "return records.filter(r => (['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)) && r.dbh_in_cms && parseFloat(r.dbh_in_cms) > 0).length;"
+          "language": "jsonlogic",
+          "code": "{\"reduce\":[{\"filter\":[{\"var\":\"\"},{\"and\":[{\"in\":[{\"var\":\"spp_name_local_name\"},[\"Kage kisloar\",\"kisloar\"]]},{\">\":[{\"var\":\"dbh_in_cms\"},0]}]}]},{\"+ \":[1,{\"var\":\"accumulator\"}]},0]}"
         },
         "aggregation": {
           "level": "plot",
@@ -21,22 +21,49 @@
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 1",
+            "source_ref": "1",
+            "snippet": "Low: 0 mature individuals... Medium: 1-10 individuals High: 11-30 individuals Very High: >30 individuals"
+          }
+        ],
+        "status": "approved"
+      },
+      {
+        "name": "cestrum_aurantiacum_seedling_sapling_presence",
+        "description": "Checks for the presence of Cestrum aurantiacum seedlings or saplings. Assumes 'kisloar' and 'Kage kisloar' are local names for Cestrum aurantiacum.",
+        "inputs": [
+          "spp_name_local_name",
+          "number_seedlings",
+          "number_saplings"
+        ],
+        "english_intent": "Check for the presence of Cestrum aurantiacum seedlings or saplings in the plot.",
+        "compiled": {
+          "language": "jsonlogic",
+          "code": "{ \">\" : [{\"reduce\": [{\"filter\": [{\"var\": \"\"}, {\"and\": [{\"in\": [{\"var\": \"spp_name_local_name\"}, [\"Kage kisloar\", \"kisloar\"]]}, {\"or\": [{ \">\": [{\"var\": \"number_seedlings\"}, 0] }, { \">\": [{\"var\": \"number_saplings\"}, 0] }]}]}]}, {\"+\": [1, {\"var\": \"accumulator\"}]}, 0]}, 0]}"
+        },
+        "aggregation": {
+          "level": "plot",
+          "time": "per_survey_event"
+        },
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "1",
             "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"
           }
         ],
-        "status": "draft"
+        "status": "approved"
       },
       {
-        "name": "invasion_intensity",
-        "description": "Categorizes a plot's C. aurantiacum infestation level based on the count of mature individuals.",
+        "name": "plot_infestation_category",
+        "description": "Categorizes the plot's Cestrum aurantiacum infestation level based on the count of mature individuals and presence of seedlings/saplings.",
         "inputs": [
-          "mature_cestrum_count"
+          "cestrum_aurantiacum_mature_count",
+          "cestrum_aurantiacum_seedling_sapling_presence"
         ],
-        "english_intent": "Based on the count of mature Cestrum individuals, classify the plot as 'Low', 'Medium', 'High', or 'Very High'.",
+        "english_intent": "Categorize plot infestation level based on mature Cestrum aurantiacum count.",
         "compiled": {
           "language": "jsonlogic",
-          "code": "{\"if\":[{\"==\":[{\"var\":\"mature_cestrum_count\"},0]},\"Low\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},10]},\"Medium\",{\"if\":[{\"<=\":[{\"var\":\"mature_cestrum_count\"},30]},\"High\",\"Very High\"]}]}]}"
+          "code": "{\"if\":[{ \">\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},30]},\"Very High\",{ \">=\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},11]},\"High\",{ \">=\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},1]},\"Medium\",{\"and\":[{\"==\":[{\"var\":\"cestrum_aurantiacum_mature_count\"},0]},{\"==\":[{\"var\":\"cestrum_aurantiacum_seedling_sapling_presence\"},true]}]},\"Low\",\"None\"]}"
         },
         "aggregation": {
           "level": "plot",
@@ -45,46 +72,23 @@
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 1",
-            "snippet": "Low: 0 mature individuals\nMedium: 1-10 individuals\nHigh: 11-30 individuals\nVery High: >30 individuals"
+            "source_ref": "1",
+            "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings; Medium: 1-10 individuals; High: 11-30 individuals; Very High: >30 individuals"
           }
         ],
-        "status": "draft"
-      },
-      {
-        "name": "cestrum_individual_count",
-        "description": "The total number of Cestrum aurantiacum individuals (of any size) observed in a plot.",
-        "inputs": [
-          "spp_name_local_name"
-        ],
-        "english_intent": "Sum the total number of individuals per plot where the species is identified as a variant of 'Cestrum aurantiacum'.",
-        "compiled": {
-          "language": "js",
-          "code": "return records.filter(r => ['Cestrum aurantiacum', 'cadelei', 'kisloar', 'Kage kisloar', 'Kobumn'].includes(r.spp_name_local_name)).length;"
-        },
-        "aggregation": {
-          "level": "plot",
-          "time": "per_survey_event"
-        },
-        "evidence": [
-          {
-            "source_type": "pdf",
-            "source_ref": "Page 3",
-            "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
-          }
-        ],
-        "status": "draft"
+        "status": "approved"
       },
       {
         "name": "species_richness",
-        "description": "The number of unique species present in a plot.",
+        "description": "Counts the number of unique woody-stemmed species. Assumes 'T' in 'habit' field indicates a woody-stemmed species.",
         "inputs": [
-          "spp_name_local_name"
+          "spp_name_local_name",
+          "habit"
         ],
-        "english_intent": "Count the number of unique species names found within a plot.",
+        "english_intent": "Count the number of unique woody-stemmed species per plot.",
         "compiled": {
           "language": "js",
-          "code": "return new Set(records.map(r => r.spp_name_local_name)).size;"
+          "code": "const woody_species = data.filter(row => row.habit === 'T').map(row => row.spp_name_local_name); return new Set(woody_species).size;"
         },
         "aggregation": {
           "level": "plot",
@@ -93,38 +97,125 @@
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 3",
-            "snippet": "Biodiversity Gains Increase in species richness"
+            "source_ref": "3",
+            "snippet": "Vegetation Surveys: Species richness, abundance, and composition (woody-stemmed species)"
           }
         ],
-        "status": "draft"
+        "status": "approved"
       },
       {
-        "name": "average_canopy_openness",
-        "description": "The average canopy openness of the plot, from four directional readings (0-96 scale).",
+        "name": "cestrum_aurantiacum_total_count",
+        "description": "Calculates the total number of Cestrum aurantiacum individuals, including mature plants, seedlings, and saplings.",
         "inputs": [
-          "canopy_openness_north",
-          "canopy_openness_east",
-          "canopy_openness_south",
-          "canopy_openness_west"
+          "spp_name_local_name",
+          "dbh_in_cms",
+          "number_seedlings",
+          "number_saplings"
         ],
-        "english_intent": "Average the four canopy openness readings (North, East, South, West).",
+        "english_intent": "Total count of Cestrum aurantiacum individuals (mature, seedlings, saplings).",
         "compiled": {
-          "language": "jsonlogic",
-          "code": "{\"/\" : [{\"+\":[{\"var\":\"canopy_openness_north\"}, {\"var\":\"canopy_openness_east\"}, {\"var\":\"canopy_openness_south\"}, {\"var\":\"canopy_openness_west\"}]}, 4]}"
+          "language": "js",
+          "code": "const cestrum_rows = data.filter(row => [\"Kage kisloar\", \"kisloar\"].includes(row.spp_name_local_name)); let total = 0; cestrum_rows.forEach(row => { total += parseInt(row.number_seedlings || 0, 10) || 0; total += parseInt(row.number_saplings || 0, 10) || 0; if (parseFloat(row.dbh_in_cms) > 0) { total += 1; } }); return total;"
         },
         "aggregation": {
-          "level": "subplot",
+          "level": "plot",
+          "time": "per_survey_event"
+        },
+        "status": "approved"
+      },
+      {
+        "name": "cestrum_regrowth_percentage",
+        "description": "Percentage regrowth of C. auranticum individuals. Calculation requires comparing total counts between a baseline and a monitoring survey.",
+        "inputs": [
+          "cestrum_aurantiacum_total_count"
+        ],
+        "english_intent": "% regrowth of C. auranticum individuals.",
+        "compiled": {
+          "language": "js",
+          "code": "// (current_count / baseline_count) * 100"
+        },
+        "aggregation": {
+          "level": "plot",
+          "time": "rolling"
+        },
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
+          }
+        ],
+        "status": "draft",
+        "notes": "Calculation requires comparing `cestrum_aurantiacum_total_count` between two survey events (e.g., baseline and current). The rule is a placeholder for `(current_count / baseline_count) * 100`."
+      },
+      {
+        "name": "planted_native_survival_rate",
+        "description": "Survival and growth rate of planted native species. Cannot be computed with available data.",
+        "inputs": [],
+        "english_intent": "Survival and growth rate of planted native species.",
+        "compiled": {
+          "language": "none",
+          "code": ""
+        },
+        "aggregation": {
+          "level": "plot",
+          "time": "rolling"
+        },
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Resilience Survival and growth rate of planted native species"
+          }
+        ],
+        "status": "draft",
+        "notes": "Requires a way to identify 'planted native species' and their status (alive/dead) across survey events. Raw data lacks a 'planted' flag or species list."
+      },
+      {
+        "name": "grass_cover_percentage",
+        "description": "% cover of grasses. Cannot be computed with available data.",
+        "inputs": [],
+        "english_intent": "% cover of grasses.",
+        "compiled": {
+          "language": "none",
+          "code": ""
+        },
+        "aggregation": {
+          "level": "plot",
           "time": "per_survey_event"
         },
         "evidence": [
           {
-            "source_type": "form",
-            "source_ref": "cloud_segmented_002_classified.json",
-            "snippet": "canopy_openness: Number of dots out of 96 imaginary dots that are not covered by the canopy"
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Ground Cover % cover of grasses"
           }
         ],
-        "status": "draft"
+        "status": "draft",
+        "notes": "No direct variable for grass cover in raw data. May need to be derived from image analysis, a different form, or direct observation field not present in catalog."
+      },
+      {
+        "name": "native_species_recruitment_count",
+        "description": "Regeneration or recruitment of planted native species. Cannot be computed with available data.",
+        "inputs": [],
+        "english_intent": "Regeneration or recruitment of planted native species.",
+        "compiled": {
+          "language": "none",
+          "code": ""
+        },
+        "aggregation": {
+          "level": "plot",
+          "time": "rolling"
+        },
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Recruitment Regeneration or recruitment of planted native species"
+          }
+        ],
+        "status": "draft",
+        "notes": "Requires identification of 'planted native species' and tracking new individuals over time. Raw data is insufficient."
       }
     ]
   },
@@ -132,72 +223,126 @@
     "indicators": [
       {
         "name": "Invasive Recovery",
-        "definition": "The percentage of regrowth of Cestrum aurantiacum individuals over time, indicating the effectiveness of removal efforts.",
+        "definition": "% regrowth of C. auranticum individuals.",
         "required_computed_variables": [
-          "cestrum_individual_count"
+          "cestrum_regrowth_percentage"
         ],
         "graph_intents": [
           {
             "chart_type": "line",
-            "x_axis": "date",
-            "y_axis": "cestrum_individual_count",
-            "group_by": "plot_no",
-            "aggregation": "sum"
+            "x_axis": "survey_date",
+            "y_axis": "cestrum_regrowth_percentage",
+            "group_by": "plot_number",
+            "aggregation": "mean"
           }
         ],
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 3",
+            "source_ref": "3",
             "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
           }
-        ]
+        ],
+        "status": "draft",
+        "notes": "Depends on a draft computed variable that requires time-series analysis."
+      },
+      {
+        "name": "Resilience",
+        "definition": "Survival and growth rate of planted native species.",
+        "required_computed_variables": [
+          "planted_native_survival_rate"
+        ],
+        "graph_intents": [
+          {
+            "chart_type": "line",
+            "x_axis": "survey_date",
+            "y_axis": "planted_native_survival_rate",
+            "group_by": "plot_number",
+            "aggregation": "mean"
+          }
+        ],
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Resilience Survival and growth rate of planted native species"
+          }
+        ],
+        "status": "draft",
+        "notes": "Data to compute 'planted_native_survival_rate' is not available in the provided variable catalog."
       },
       {
         "name": "Biodiversity Gains",
-        "definition": "The change in species richness over time, indicating an increase in biodiversity.",
+        "definition": "Increase in species richness.",
         "required_computed_variables": [
           "species_richness"
         ],
         "graph_intents": [
           {
             "chart_type": "line",
-            "x_axis": "date",
+            "x_axis": "survey_date",
             "y_axis": "species_richness",
-            "group_by": "plot_no",
-            "aggregation": "none"
+            "group_by": "plot_number",
+            "aggregation": "mean"
           }
         ],
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 3",
+            "source_ref": "3",
             "snippet": "Biodiversity Gains Increase in species richness"
           }
         ]
       },
       {
-        "name": "Plot Invasion Level",
-        "definition": "The initial baseline categorization of a plot based on the density of mature C. aurantiacum.",
+        "name": "Ground Cover",
+        "definition": "% cover of grasses.",
         "required_computed_variables": [
-          "invasion_intensity"
+          "grass_cover_percentage"
         ],
         "graph_intents": [
           {
-            "chart_type": "bar",
-            "x_axis": "invasion_intensity",
-            "y_axis": "plot_no",
-            "group_by": "invasion_intensity",
-            "aggregation": "count"
+            "chart_type": "line",
+            "x_axis": "survey_date",
+            "y_axis": "grass_cover_percentage",
+            "group_by": "plot_number",
+            "aggregation": "mean"
           }
         ],
         "evidence": [
           {
             "source_type": "pdf",
-            "source_ref": "Page 1",
-            "snippet": "Plot Categorization"
+            "source_ref": "3",
+            "snippet": "Ground Cover % cover of grasses"
           }
-        ]
+        ],
+        "status": "draft",
+        "notes": "Data to compute 'grass_cover_percentage' is not available in the provided variable catalog."
+      },
+      {
+        "name": "Recruitment",
+        "definition": "Regeneration or recruitment of planted native species.",
+        "required_computed_variables": [
+          "native_species_recruitment_count"
+        ],
+        "graph_intents": [
+          {
+            "chart_type": "bar",
+            "x_axis": "survey_date",
+            "y_axis": "native_species_recruitment_count",
+            "group_by": "plot_number",
+            "aggregation": "sum"
+          }
+        ],
+        "evidence": [
+          {
+            "source_type": "pdf",
+            "source_ref": "3",
+            "snippet": "Recruitment Regeneration or recruitment of planted native species"
+          }
+        ],
+        "status": "draft",
+        "notes": "Data to compute 'native_species_recruitment_count' is not available in the provided variable catalog."
       }
     ]
   }

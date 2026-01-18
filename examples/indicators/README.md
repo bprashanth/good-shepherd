@@ -21,6 +21,12 @@ It produces a reusable "codex" that can be applied whenever new form data arrive
 - `variable_catalog.json`
 - `indicator_wizard.html`
 
+### 1b) Start the compute server (optional)
+This enables the \"Generate formula\" button in the wizard UI.
+```bash
+source .venv/bin/activate && python3 examples/indicators/scripts/compute_server.py
+```
+
 ### 2) Recompute the dataset
 ```bash
 python3 scripts/build_dataset.py \
@@ -64,6 +70,8 @@ graph TD
 ## Notes
 - JSONLogic is preferred for compiled expressions; JS fallback is allowed.
 - Evidence snippets are optional but recommended for traceability.
+- Computed variables are evaluated per record in a single long table; missing inputs should yield null/empty.
+- Records from different form types will have different subsets of fields populated; others remain empty.
 
 ```
   ./examples/indicators/process_indicators.sh examples/inputs/indicators.pdf examples/inputs/

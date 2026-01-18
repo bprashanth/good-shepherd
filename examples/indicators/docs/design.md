@@ -25,6 +25,25 @@ This design intentionally avoids hardcoding any single experiment into the platf
 ### Stage 2 (Dataset Builder)
 - `indicator_dataset.json` (flat dataset including raw + computed variables)
 
+## Dataset Shape (Long Table)
+The dataset builder normalizes all form rows into a single long table. Each record has the same set of fields, but many fields will be empty depending on the form type.
+
+### Example record from a 10x10 DBH form
+| date | area_name | block_code | transect_number | plot_number | subplot_number | spp_name_local_name | dbh_in_cms | number_seedlings | soil_moisture | canopy_openness_north | form_source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-02-19 | BKM | I | 1 | 2 |  | kisloar | 23 |  |  |  | cloud_segmented_000_classified.json |
+
+### Example record from a subplot regeneration form
+| date | area_name | block_code | transect_number | plot_number | subplot_number | spp_name_local_name | dbh_in_cms | number_seedlings | soil_moisture | canopy_openness_north | form_source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-02-19 | BKM | I | 1 | 2 | 1 | cadelei |  | 1 | 3 |  | cloud_IMG-20250924-WA0001_classified.json |
+
+### Combined fields (two rows in the same long table)
+| date | area_name | block_code | transect_number | plot_number | subplot_number | spp_name_local_name | dbh_in_cms | number_seedlings | soil_moisture | canopy_openness_north | form_source |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025-02-19 | BKM | I | 1 | 2 |  | kisloar | 23 |  |  |  | cloud_segmented_000_classified.json |
+| 2025-02-19 | BKM | I | 1 | 2 | 1 | cadelei |  | 1 | 3 |  | cloud_IMG-20250924-WA0001_classified.json |
+
 ## General Pipeline
 1. Ingest inputs.
 2. Build a raw variable catalog from form JSON.
@@ -138,4 +157,3 @@ Each computed variable or indicator can store an evidence entry:
 ## Open questions (defer)
 - Final visualization library and Vega embedding strategy.
 - Whether to persist baseline vs monitoring rounds explicitly.
-

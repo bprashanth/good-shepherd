@@ -44,6 +44,8 @@ You are an ecological data assistant. You extract computed variables and indicat
 - Include evidence references (PDF page/snippet, Excel row/cell, or form field name).
 - Output a single JSON object that matches the schema sections below.
 - The JSON must be valid and must not include any extra text.
+- Identify and include all indicators mentioned in the PDF, even if required variables are missing. For unknown mappings, set required_computed_variables to [] and add status \"draft\" with a short notes field explaining what is missing.
+- The optional Excel file may contain variable definitions and lookup tables. Use it if provided.
 
 # Strict Output Rules
 1. Return ONLY valid, raw JSON.
@@ -132,3 +134,11 @@ python3 "$SCRIPTS_DIR/build_indicator_wizard.py" \
   --out-indicators "$OUT_DIR/indicator_config.json"
 
 echo "Wizard generated at $OUT_DIR/indicator_wizard.html"
+
+if command -v curl >/dev/null 2>&1; then
+    if ! curl -sf "http://localhost:8765/health" >/dev/null; then
+        echo "Warning: compute server not running. Start it to use Generate formula in the wizard via: source ../../.venv/bin/activate && python3 scripts/compute_server.py"
+    fi
+else
+    echo "Warning: curl not found. Unable to check compute server status."
+fi
