@@ -42,7 +42,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   </header>
   <main id="wizard-main">
     <section class="panel" id="raw-panel">
-      <h2>Raw Variables</h2>
+      <h2>Raw Variables <a class="inline-btn" href="indicator_field_mapping.html">Trace mapping</a></h2>
       <div id="raw-variables"></div>
     </section>
     <section class="panel" id="computed-panel">
@@ -90,6 +90,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <script>
     const variableCatalog = __VARIABLE_CATALOG__;
     const indicatorCodex = __INDICATOR_CODEX__;
+    const variablesCodebook = __VARIABLES_CODEBOOK__;
 
     const rawList = (variableCatalog && variableCatalog.variables) || [];
     const computedList = (indicatorCodex && indicatorCodex.computed_variables && indicatorCodex.computed_variables.computed_variables) || [];
@@ -126,6 +127,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
       `).join("");
     }
+
 
     function renderIndicators() {
       const el = document.getElementById("indicators");
@@ -324,6 +326,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
       const codebook = {
         version: "v1",
         generated_at: new Date().toISOString(),
+        variables_codebook: variablesCodebook,
         variable_catalog: variableCatalog,
         computed_variables: { computed_variables: computedList },
         indicator_config: { indicators: indicatorList }
@@ -340,6 +343,73 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
+MAPPING_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field Mapping</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    header { padding: 16px 24px; background: #1f2937; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    main { padding: 16px; display: grid; gap: 16px; }
+    .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; }
+    .mapping-table { display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 8px; font-weight: 600; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+    .mapping-row { display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .mapping-row--unmatched { border: 1px solid #fca5a5; border-radius: 6px; padding: 8px; }
+    .mapping-cell { font-size: 12px; color: #111827; }
+    h2 { margin: 0 0 8px 0; font-size: 18px; }
+    .item { border-top: 1px solid #f0f0f0; padding: 8px 0; }
+    .label { font-weight: 600; }
+    .muted { color: #6b7280; font-size: 12px; }
+    .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    a { color: #e5e7eb; text-decoration: none; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Field Mapping</h1>
+    <a href="indicator_wizard.html">Back to wizard</a>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Field Mapping</h2>
+      <div class="mapping-table">
+        <div class="mapping-header">Canonical Name</div>
+        <div class="mapping-header">Aliases</div>
+        <div class="mapping-header">Sources</div>
+      </div>
+      <div id="mapping-rows"></div>
+    </section>
+  </main>
+  <script>
+    const variablesCodebook = __VARIABLES_CODEBOOK__;
+    const variables = (variablesCodebook && variablesCodebook.variables) || [];
+
+    const mappingRows = document.getElementById("mapping-rows");
+    mappingRows.innerHTML = variables.map(entry => {
+      const aliases = (entry.aliases || []).map(a => a.name).join(", ");
+      const sources = (entry.aliases || []).map(a => a.source).join(", ");
+      const highlight = entry.unmatched_source ? " mapping-row--unmatched" : "";
+      return `
+        <div class="mapping-row${highlight}">
+          <div class="mapping-cell">${escapeHtml(entry.canonical_name || "")}</div>
+          <div class="mapping-cell">${escapeHtml(aliases)}</div>
+          <div class="mapping-cell">${escapeHtml(sources)}</div>
+        </div>
+      `;
+    }).join("");
+
+    function escapeHtml(value) {
+      const div = document.createElement("div");
+      div.textContent = value == null ? "" : String(value);
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
+"""
+
 
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -350,13 +420,16 @@ def main():
     parser = argparse.ArgumentParser(description="Build indicator wizard HTML")
     parser.add_argument("--variable-catalog", required=True)
     parser.add_argument("--codex", required=True)
+    parser.add_argument("--variables-codebook", required=True)
     parser.add_argument("--out-html", required=True)
     parser.add_argument("--out-computed", required=True)
     parser.add_argument("--out-indicators", required=True)
+    parser.add_argument("--out-mapping", required=True)
     args = parser.parse_args()
 
     variable_catalog = load_json(args.variable_catalog)
     codex = load_json(args.codex)
+    variables_codebook = load_json(args.variables_codebook)
 
     computed = codex.get("computed_variables", {})
     indicators = codex.get("indicator_config", {})
@@ -374,9 +447,18 @@ def main():
     html_out = html_out.replace(
         "__INDICATOR_CODEX__", json.dumps(codex)
     )
+    html_out = html_out.replace(
+        "__VARIABLES_CODEBOOK__", json.dumps(variables_codebook)
+    )
 
     with open(args.out_html, "w", encoding="utf-8") as f:
         f.write(html_out)
+
+    mapping_out = MAPPING_TEMPLATE.replace(
+        "__VARIABLES_CODEBOOK__", json.dumps(variables_codebook)
+    )
+    with open(args.out_mapping, "w", encoding="utf-8") as f:
+        f.write(mapping_out)
 
 
 if __name__ == "__main__":

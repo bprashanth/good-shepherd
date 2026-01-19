@@ -4,23 +4,22 @@
       "name": "Invasive Recovery",
       "definition": "% regrowth of C. auranticum individuals.",
       "required_computed_variables": [
-        "cestrum_mature_count",
-        "cestrum_seedling_count",
-        "cestrum_sapling_count"
+        "c_aurantiacum_mature_count",
+        "c_aurantiacum_recruit_count"
       ],
       "graph_intents": [
         {
           "chart_type": "line",
           "x_axis": "date",
-          "y_axis": "total_cestrum_count",
-          "group_by": "plot_no",
-          "aggregation": "sum"
+          "y_axis": "c_aurantiacum_mature_count",
+          "group_by": "plot_number",
+          "aggregation": "mean"
         }
       ],
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"
         }
       ]
@@ -29,36 +28,35 @@
       "name": "Resilience",
       "definition": "Survival and growth rate of planted native species.",
       "required_computed_variables": [],
-      "graph_intents": [],
+      "status": "draft",
+      "notes": "Requires identification of 'planted native species' and a method for tracking individual plants over time, which are not available in the provided data.",
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Resilience Survival and growth rate of planted native species"
         }
-      ],
-      "status": "draft",
-      "notes": "Requires identification of 'planted' and 'native' species, and a way to track individual plants over time for growth rate (e.g., DBH change). The current raw variables do not support this."
+      ]
     },
     {
       "name": "Biodiversity Gains",
       "definition": "Increase in species richness.",
       "required_computed_variables": [
-        "species_name"
+        "species_richness"
       ],
       "graph_intents": [
         {
-          "chart_type": "bar",
+          "chart_type": "line",
           "x_axis": "date",
           "y_axis": "species_richness",
-          "group_by": "plot_no",
-          "aggregation": "nunique"
+          "group_by": "plot_number",
+          "aggregation": "mean"
         }
       ],
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Biodiversity Gains Increase in species richness"
         }
       ]
@@ -67,31 +65,29 @@
       "name": "Ground Cover",
       "definition": "% cover of grasses.",
       "required_computed_variables": [],
-      "graph_intents": [],
+      "status": "draft",
+      "notes": "Requires a raw variable measuring grass cover, which is not present in the provided variable catalog.",
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Ground Cover % cover of grasses"
         }
-      ],
-      "status": "draft",
-      "notes": "Requires a variable for grass cover percentage or a 'habit' field that reliably identifies grasses. The current raw variables are insufficient."
+      ]
     },
     {
       "name": "Recruitment",
       "definition": "Regeneration or recruitment of planted native species.",
       "required_computed_variables": [],
-      "graph_intents": [],
+      "status": "draft",
+      "notes": "Requires identification of 'planted native species' to track their regeneration, which is not available in the provided data.",
       "evidence": [
         {
           "source_type": "pdf",
-          "source_ref": "Page 3",
+          "source_ref": "3",
           "snippet": "Recruitment Regeneration or recruitment of planted native species"
         }
-      ],
-      "status": "draft",
-      "notes": "Similar to Resilience, this requires identification of 'planted' and 'native' species to track new seedlings/saplings. The current raw variables do not support this."
+      ]
     }
   ]
 }

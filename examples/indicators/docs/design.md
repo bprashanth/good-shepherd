@@ -54,6 +54,11 @@ The dataset builder normalizes all form rows into a single long table. Each reco
 7. Save the "codex" artifacts for reuse.
 8. Dataset builder consumes the codex + new form data to recompute datasets.
 
+## Field aliasing (canonical names)
+To ensure computed variable formulas match dataset fields, the variable catalog is treated as the canonical source of field names. A `field_aliases` mapping is generated with heuristic variants (e.g., `plot_no`, `Plot #`, `plonum` -> `plot_number`).
+
+The dataset builder applies these aliases so the final dataset uses canonical field names that match what users see in the wizard.
+
 ## Stage 1: Indicator Wizard
 
 ### Core goals
@@ -157,3 +162,9 @@ Each computed variable or indicator can store an evidence entry:
 ## Open questions (defer)
 - Final visualization library and Vega embedding strategy.
 - Whether to persist baseline vs monitoring rounds explicitly.
+
+## Related design notes
+See `examples/indicators/docs/dataset_design.md` for the dataset builder plan and append model.
+See `examples/indicators/docs/field_aliasing_design.md` for the field aliasing plan and canonical naming rules.
+See `examples/indicators/docs/tasks.md` for open follow-ups.
+

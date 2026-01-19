@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Field Aliases",
+  "type": "object",
+  "description": "Canonical field names and aliases across forms and Excel.",
+  "properties": {
+    "variables": {
+      "type": "array",
+      "description": "List of canonical variables and their aliases.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "canonical_name": {
+            "type": "string",
+            "description": "Canonical field name used in the dataset and wizard."
+          },
+          "provenance": {
+            "type": "string",
+            "description": "Where the canonical name originated (forms or excel).",
+            "enum": ["forms", "excel"]
+          },
+          "aliases": {
+            "type": "array",
+            "description": "List of alternative names found in source files.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Alias name as seen in a source file."
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Source of the alias, e.g., form:filename or excel:SheetName."
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "unmatched_source": {
+            "type": "string",
+            "description": "Flag for one-sided matches: form_only or excel_only.",
+            "enum": ["", "form_only", "excel_only"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -2,6 +2,8 @@ import argparse
 import json
 from pathlib import Path
 
+from utils import build_alias_map, normalize_field_name
+
 
 def extract_values(rows, field_name, limit=5):
     values = []
@@ -25,7 +27,7 @@ def load_json(path):
         return json.load(f)
 
 
-def build_catalog(forms_dir):
+def build_catalog(forms_dir, alias_map=None):
     variables = []
     for json_path in sorted(Path(forms_dir).glob("*_classified.json")):
         data = load_json(json_path)
@@ -41,9 +43,10 @@ def build_catalog(forms_dir):
                 value = str(value).strip()
                 if value:
                     example_values.append(value)
+            canonical = alias_map.get(normalize_field_name(key), key) if alias_map else key
             variables.append(
                 {
-                    "name": key,
+                    "name": canonical,
                     "source_form": json_path.name,
                     "field_name": key,
                     "unit": "",
@@ -60,9 +63,10 @@ def build_catalog(forms_dir):
             if isinstance(header, dict):
                 field_name = header.get("field_name") or key
             example_values = extract_values(rows, key)
+            canonical = alias_map.get(normalize_field_name(key), key) if alias_map else key
             variables.append(
                 {
-                    "name": key,
+                    "name": canonical,
                     "source_form": json_path.name,
                     "field_name": field_name,
                     "unit": "",
@@ -78,9 +82,14 @@ def main():
     parser = argparse.ArgumentParser(description="Build variable catalog from form JSON")
     parser.add_argument("--forms-dir", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--variables-codebook", default=None)
     args = parser.parse_args()
 
-    catalog = build_catalog(args.forms_dir)
+    alias_map = {}
+    if args.variables_codebook:
+        codebook = load_json(args.variables_codebook)
+        alias_map = build_alias_map(codebook.get("variables", []))
+    catalog = build_catalog(args.forms_dir, alias_map)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(catalog, f, indent=2)
 

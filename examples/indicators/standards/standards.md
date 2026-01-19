@@ -8,6 +8,8 @@ They are intentionally lightweight for the POC and can be expanded later.
 - `computed_variables.schema.json`: User intent + compiled computation rules.
 - `indicator_config.schema.json`: Indicator definitions and graph intents.
 - `graph_intent.schema.json`: Visualization intent metadata.
+- `excel_rules.md`: Heuristics for flattenable vs matrix-style sheets.
+- `field_aliases.schema.json`: Canonical field names + aliases across forms and Excel.
 
 ## Notes
 - Prefer JSONLogic for compiled expressions when possible; allow JS fallback.

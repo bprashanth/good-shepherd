@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field Mapping</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    header { padding: 16px 24px; background: #1f2937; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    main { padding: 16px; display: grid; gap: 16px; }
+    .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; }
+    .mapping-table { display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 8px; font-weight: 600; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+    .mapping-row { display: grid; grid-template-columns: 1fr 2fr 2fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .mapping-row--unmatched { border: 1px solid #fca5a5; border-radius: 6px; padding: 8px; }
+    .mapping-cell { font-size: 12px; color: #111827; }
+    h2 { margin: 0 0 8px 0; font-size: 18px; }
+    .item { border-top: 1px solid #f0f0f0; padding: 8px 0; }
+    .label { font-weight: 600; }
+    .muted { color: #6b7280; font-size: 12px; }
+    .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    a { color: #e5e7eb; text-decoration: none; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Field Mapping</h1>
+    <a href="indicator_wizard.html">Back to wizard</a>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Field Mapping</h2>
+      <div class="mapping-table">
+        <div class="mapping-header">Canonical Name</div>
+        <div class="mapping-header">Aliases</div>
+        <div class="mapping-header">Sources</div>
+      </div>
+      <div id="mapping-rows"></div>
+    </section>
+  </main>
+  <script>
+    const variablesCodebook = {"$schema": "https://json-schema.org/draft/2020-12/schema", "title": "Field Aliases", "description": "Canonical field names and aliases across forms and Excel.", "properties": {"variables": {"type": "array", "description": "List of canonical variables and their aliases.", "items": {"type": "object", "properties": {"canonical_name": {"type": "string", "description": "Canonical field name used in the dataset and wizard."}, "provenance": {"type": "string", "description": "Where the canonical name originated (forms or excel).", "enum": ["forms", "excel"]}, "aliases": {"type": "array", "description": "List of alternative names found in source files.", "items": {"type": "object", "properties": {"name": {"type": "string", "description": "Alias name as seen in a source file."}, "source": {"type": "string", "description": "Source of the alias, e.g., form:filename or excel:SheetName."}}, "additionalProperties": true}}, "unmatched_source": {"type": "string", "description": "Flag for one-sided matches: form_only or excel_only.", "enum": ["", "form_only", "excel_only"]}}, "additionalProperties": true}}}, "additionalProperties": true, "variables": [{"canonical_name": "block_code", "provenance": "forms", "aliases": [{"name": "block_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "block_code", "source": "form:cloud_segmented_000_classified.json"}, {"name": "block_code", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Block code", "source": "excel:Raw 10x10m Data"}, {"name": "blo cod", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "transect_number", "provenance": "forms", "aliases": [{"name": "transect_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "transect_number", "source": "form:cloud_segmented_000_classified.json"}, {"name": "transect_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Transect #", "source": "excel:Raw 10x10m Data"}, {"name": "tranum", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "plot_number", "provenance": "forms", "aliases": [{"name": "plot_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "plot_number", "source": "form:cloud_segmented_000_classified.json"}, {"name": "plot_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Plot #", "source": "excel:Raw 10x10m Data"}, {"name": "plonum", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "sub_plot_no", "provenance": "forms", "aliases": [{"name": "sub_plot_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "subplot_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "subplo", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "spp_name_local_name", "provenance": "forms", "aliases": [{"name": "spp_name_local_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "spp_name_local_name", "source": "form:cloud_segmented_000_classified.json"}, {"name": "sppnam", "source": "excel:Raw 10x10m Data"}, {"name": "locnam", "source": "excel:Raw 10x10m Data"}, {"name": "sppnam", "source": "excel:2x2m Seedlings and saplings"}, {"name": "locnam", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "habit", "provenance": "forms", "aliases": [{"name": "habit", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "habit", "source": "form:cloud_segmented_000_classified.json"}, {"name": "hab", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "number_seedlings", "provenance": "forms", "aliases": [{"name": "number_seedlings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "numsee", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "number_saplings", "provenance": "forms", "aliases": [{"name": "number_saplings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "numsap", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_moisture", "provenance": "forms", "aliases": [{"name": "soil_moisture", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soimoi", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_temper_ature_in_2", "provenance": "forms", "aliases": [{"name": "soil_temper_ature_in_2", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soitem", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_ph", "provenance": "forms", "aliases": [{"name": "soil_ph", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soiph", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "dbh_in_cms", "provenance": "forms", "aliases": [{"name": "dbh_in_cms", "source": "form:cloud_segmented_000_classified.json"}, {"name": "DBH 1", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 2", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 3", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 4", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 5", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 6", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 7", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 8", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 9", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 10", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 11", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 12", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 13", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 14", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 15", "source": "excel:Raw 10x10m Data"}], "unmatched_source": ""}, {"canonical_name": "dirt", "provenance": "forms", "aliases": [{"name": "dirt", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "bargro", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "area_name", "provenance": "forms", "aliases": [{"name": "area_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "area_name", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "names_of_research_team", "provenance": "forms", "aliases": [{"name": "name_of_researcher", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "name_of_research_team", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "names_of_research_team", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "date", "provenance": "forms", "aliases": [{"name": "date", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "date", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "notes", "provenance": "forms", "aliases": [{"name": "notes", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "seedlings", "provenance": "forms", "aliases": [{"name": "seedlings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "s_no", "provenance": "forms", "aliases": [{"name": "s_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "s_no", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "phenological_condition", "provenance": "forms", "aliases": [{"name": "phenological_condition", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "canopy_openness", "provenance": "forms", "aliases": [{"name": "canopy_openness", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_north", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_east", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_west", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_south", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "1710", "provenance": "forms", "aliases": [{"name": "1710", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "unnamed_23", "provenance": "excel", "aliases": [{"name": "Unnamed: 23", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_24", "provenance": "excel", "aliases": [{"name": "Unnamed: 24", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_25", "provenance": "excel", "aliases": [{"name": "Unnamed: 25", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "cestrum_aurantiacum_density_in_each_plot", "provenance": "excel", "aliases": [{"name": "Cestrum aurantiacum density in each plot", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_1", "provenance": "excel", "aliases": [{"name": "Unnamed: 1", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_2", "provenance": "excel", "aliases": [{"name": "Unnamed: 2", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_3", "provenance": "excel", "aliases": [{"name": "Unnamed: 3", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_4", "provenance": "excel", "aliases": [{"name": "Unnamed: 4", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "gracov", "provenance": "excel", "aliases": [{"name": "gracov", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": "excel_only"}]};
+    const variables = (variablesCodebook && variablesCodebook.variables) || [];
+
+    const mappingRows = document.getElementById("mapping-rows");
+    mappingRows.innerHTML = variables.map(entry => {
+      const aliases = (entry.aliases || []).map(a => a.name).join(", ");
+      const sources = (entry.aliases || []).map(a => a.source).join(", ");
+      const highlight = entry.unmatched_source ? " mapping-row--unmatched" : "";
+      return `
+        <div class="mapping-row${highlight}">
+          <div class="mapping-cell">${escapeHtml(entry.canonical_name || "")}</div>
+          <div class="mapping-cell">${escapeHtml(aliases)}</div>
+          <div class="mapping-cell">${escapeHtml(sources)}</div>
+        </div>
+      `;
+    }).join("");
+
+    function escapeHtml(value) {
+      const div = document.createElement("div");
+      div.textContent = value == null ? "" : String(value);
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
