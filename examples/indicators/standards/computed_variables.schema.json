@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Computed Variables",
+  "type": "object",
+  "description": "User intent and compiled computation rules for derived variables.",
+  "properties": {
+    "computed_variables": {
+      "type": "array",
+      "description": "List of derived variables with English intent and compiled rules.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Canonical name for the computed variable."
+          },
+          "description": {
+            "type": "string",
+            "description": "Short human-readable summary of what is computed."
+          },
+          "inputs": {
+            "type": "array",
+            "description": "Names of raw variables required to compute this value.",
+            "items": {"type": "string"}
+          },
+          "english_intent": {
+            "type": "string",
+            "description": "Plain-English instruction provided or edited by the user."
+          },
+          "compiled": {
+            "type": "object",
+            "description": "Machine-readable rule that implements the English intent.",
+            "properties": {
+              "language": {
+                "type": "string",
+                "description": "Execution format, e.g., jsonlogic or js."
+              },
+              "code": {
+                "type": "string",
+                "description": "Expression or program snippet implementing the computation."
+              }
+            },
+            "additionalProperties": true
+          },
+          "aggregation": {
+            "type": "object",
+            "description": "Aggregation level and time handling.",
+            "properties": {
+              "level": {
+                "type": "string",
+                "description": "Aggregation level, e.g., plot, subplot, transect."
+              },
+              "time": {
+                "type": "string",
+                "description": "Time handling, e.g., per_survey_event.",
+                "enum": ["per_survey_event", "rolling", "cumulative", "none"]
+              }
+            },
+            "additionalProperties": true
+          },
+          "evidence": {
+            "type": "array",
+            "description": "Optional evidence links supporting this computation.",
+            "items": {"$ref": "./evidence.schema.json"}
+          },
+          "status": {
+            "type": "string",
+            "description": "Draft or approved state after user review.",
+            "enum": ["draft", "approved"]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

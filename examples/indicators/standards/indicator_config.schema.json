@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Indicator Config",
+  "type": "object",
+  "description": "Indicator definitions and visualization intents.",
+  "properties": {
+    "indicators": {
+      "type": "array",
+      "description": "List of indicators with required computed variables.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Indicator name (e.g., Invasive Recovery)."
+          },
+          "definition": {
+            "type": "string",
+            "description": "Plain-English definition of the indicator."
+          },
+          "required_computed_variables": {
+            "type": "array",
+            "description": "Computed variables needed to calculate the indicator.",
+            "items": {"type": "string"}
+          },
+          "graph_intents": {
+            "type": "array",
+            "description": "Suggested graphs for visual analysis.",
+            "items": {"$ref": "./graph_intent.schema.json"}
+          },
+          "evidence": {
+            "type": "array",
+            "description": "Optional evidence links supporting this indicator.",
+            "items": {"$ref": "./evidence.schema.json"}
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

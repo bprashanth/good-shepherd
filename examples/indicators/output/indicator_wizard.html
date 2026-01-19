@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indicator Wizard</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    header { padding: 16px 24px; background: #1f2937; color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    main { display: flex; gap: 16px; padding: 16px; }
+    .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; flex: 1; min-width: 0; }
+    h2 { margin: 0 0 8px 0; font-size: 18px; }
+    h3 { margin: 12px 0 6px 0; font-size: 14px; color: #374151; }
+    .item { border-top: 1px solid #f0f0f0; padding: 8px 0; }
+    .label { font-weight: 600; }
+    .muted { color: #6b7280; font-size: 12px; }
+    pre { white-space: pre-wrap; background: #f9fafb; padding: 8px; border-radius: 6px; font-size: 12px; }
+    .add-form { border: 1px dashed #d1d5db; padding: 8px; border-radius: 6px; margin-bottom: 8px; }
+    .add-form input { width: 100%; margin: 4px 0; padding: 6px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 12px; }
+    .add-form button { margin-top: 4px; padding: 6px 10px; font-size: 12px; background: #111827; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    .inline-btn { margin-left: 6px; padding: 2px 6px; font-size: 11px; border: 1px solid #d1d5db; border-radius: 999px; background: #f3f4f6; cursor: pointer; }
+    .evidence { display: none; margin-top: 6px; background: #f9fafb; border: 1px solid #e5e7eb; padding: 6px; border-radius: 6px; font-size: 12px; }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(17, 24, 39, 0.55); display: none; align-items: center; justify-content: center; z-index: 10; }
+    .modal { background: #fff; border-radius: 10px; padding: 16px; width: 420px; max-width: 90vw; box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
+    .modal h3 { margin-top: 0; }
+    .modal input { width: 100%; margin: 4px 0 8px 0; padding: 6px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 12px; }
+    .modal .btn-row { display: flex; justify-content: flex-end; gap: 8px; }
+    .modal button { padding: 6px 10px; font-size: 12px; border: none; border-radius: 4px; cursor: pointer; }
+    .btn-secondary { background: #e5e7eb; }
+    .btn-primary { background: #111827; color: #fff; }
+    .header-btn { margin-left: 0; background: #111827; color: #fff; border: 1px solid #374151; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Indicator Wizard</h1>
+    <button id="download-codebook" class="inline-btn header-btn">Download codebook</button>
+  </header>
+  <main id="wizard-main">
+    <section class="panel" id="raw-panel">
+      <h2>Raw Variables <a class="inline-btn" href="indicator_field_mapping.html">Trace mapping</a></h2>
+      <div id="raw-variables"></div>
+    </section>
+    <section class="panel" id="computed-panel">
+      <h2>Computed Variables</h2>
+      <form class="add-form" id="add-computed-form">
+        <input type="text" id="computed-name" placeholder="Name" required />
+        <input type="text" id="computed-desc" placeholder="Description or intent" required />
+        <input type="text" id="computed-inputs" placeholder="Inputs (comma-separated)" />
+        <input type="text" id="computed-formula" placeholder="Formula (optional)" />
+        <button type="submit">Add computed variable</button>
+        <button type="button" class="inline-btn" id="generate-formula">Generate formula</button>
+      </form>
+      <div id="computed-variables"></div>
+    </section>
+    <section class="panel" id="indicator-panel">
+      <h2>Indicators</h2>
+      <form class="add-form" id="add-indicator-form">
+        <input type="text" id="indicator-name" placeholder="Indicator name" required />
+        <input type="text" id="indicator-def" placeholder="Definition" required />
+        <input type="text" id="indicator-reqs" placeholder="Required computed variables (comma-separated)" />
+        <button type="submit">Add indicator</button>
+      </form>
+      <div id="indicators"></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="indicator-modal">
+    <div class="modal">
+      <h3>Edit Indicator</h3>
+      <input type="text" id="edit-indicator-name" placeholder="Indicator name" />
+      <input type="text" id="edit-indicator-def" placeholder="Definition" />
+      <input type="text" id="edit-indicator-reqs" placeholder="Required computed variables (comma-separated)" />
+      <input type="text" id="edit-indicator-chart" placeholder="Chart type" />
+      <input type="text" id="edit-indicator-x" placeholder="X axis" />
+      <input type="text" id="edit-indicator-y" placeholder="Y axis" />
+      <input type="text" id="edit-indicator-group" placeholder="Group by" />
+      <input type="text" id="edit-indicator-agg" placeholder="Aggregation" />
+      <div class="btn-row">
+        <button class="btn-secondary" id="cancel-indicator-edit">Cancel</button>
+        <button class="btn-primary" id="save-indicator-edit">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const variableCatalog = {"variables": [{"name": "transect_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "transect_no", "unit": "", "example_values": ["I"], "confidence": null}, {"name": "block_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "block_name", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "plot_no", "unit": "", "example_values": ["2"], "confidence": null}, {"name": "area_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "area_name", "unit": "", "example_values": ["BKM"], "confidence": null}, {"name": "name_of_researcher", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "name_of_researcher", "unit": "", "example_values": ["Caropy Cover"], "confidence": null}, {"name": "date", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "date", "unit": "", "example_values": ["19/02/2025"], "confidence": null}, {"name": "name_of_research_team", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "name_of_research_team", "unit": "", "example_values": ["Ak, HA, Kk, MK, PK"], "confidence": null}, {"name": "sub_plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "sub_plot_no", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "notes", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "notes", "unit": "", "example_values": ["12"], "confidence": null}, {"name": "seedlings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "seedlings", "unit": "", "example_values": ["Subplor:"], "confidence": null}, {"name": "dirt", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "dirt", "unit": "", "example_values": ["#:1"], "confidence": null}, {"name": "sub_plot_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Sub plot no.", "unit": "", "example_values": ["1", "2", "3", "4."], "confidence": null}, {"name": "s_no", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "S.No", "unit": "", "example_values": ["1.", "2.", "3", "4", "5."], "confidence": null}, {"name": "spp_name_local_name", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "SPP Name/Local Name", "unit": "", "example_values": ["cadelei", "Perthin", "1carm", "Kage kisloar", "kisloar"], "confidence": null}, {"name": "habit", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Habit", "unit": "", "example_values": ["T", "T", "7", "T", "I"], "confidence": null}, {"name": "number_seedlings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "#Seedlings", "unit": "", "example_values": ["1", "\"", "11", "11", "1"], "confidence": null}, {"name": "number_saplings", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "#Saplings", "unit": "", "example_values": ["E", "I", "H", "1 ,", "11"], "confidence": null}, {"name": "notes", "source_form": "cloud_IMG-20250924-WA0001_classified.json", "field_name": "Notes", "unit": "", "example_values": ["was", "5% Kare", "10%", "usess", "10%"], "confidence": null}, {"name": "names_of_research_team", "source_form": "cloud_segmented_000_classified.json", "field_name": "names_of_research_team", "unit": "", "example_values": ["AK,HA ,Kk, MIC, PK"], "confidence": null}, {"name": "date", "source_form": "cloud_segmented_000_classified.json", "field_name": "date", "unit": "", "example_values": ["19/02/2025"], "confidence": null}, {"name": "plot_number", "source_form": "cloud_segmented_000_classified.json", "field_name": "plot_number", "unit": "", "example_values": ["2"], "confidence": null}, {"name": "area_name", "source_form": "cloud_segmented_000_classified.json", "field_name": "area_name", "unit": "", "example_values": ["BKM"], "confidence": null}, {"name": "transect_number", "source_form": "cloud_segmented_000_classified.json", "field_name": "transect_number", "unit": "", "example_values": ["1"], "confidence": null}, {"name": "block_code", "source_form": "cloud_segmented_000_classified.json", "field_name": "block_code", "unit": "", "example_values": ["I"], "confidence": null}, {"name": "s_no", "source_form": "cloud_segmented_000_classified.json", "field_name": "S.No", "unit": "", "example_values": ["1.", "2.", "3.", "4", "5"], "confidence": null}, {"name": "spp_name_local_name", "source_form": "cloud_segmented_000_classified.json", "field_name": "SPP Name/Local Name", "unit": "", "example_values": ["Kobumn", "lage", "come", "Kinker", "kisler"], "confidence": null}, {"name": "habit", "source_form": "cloud_segmented_000_classified.json", "field_name": "Habit", "unit": "", "example_values": ["1", "I", "T", "T", "I"], "confidence": null}, {"name": "dbh_in_cms", "source_form": "cloud_segmented_000_classified.json", "field_name": "DBH in cms", "unit": "", "example_values": ["23", "4.2+ 3.4+2.5", "3", "3.6+1.8", "2"], "confidence": null}, {"name": "phenological_condition", "source_form": "cloud_segmented_000_classified.json", "field_name": "Phenological condition", "unit": "", "example_values": ["Fruiting"], "confidence": null}, {"name": "soil_moisture", "source_form": "cloud_segmented_002_classified.json", "field_name": "soil_moisture", "unit": "", "example_values": ["Dry+ =1, Dry- =2, Nor =3, Wet- =4, Wet+ =5"], "confidence": null}, {"name": "canopy_openness", "source_form": "cloud_segmented_002_classified.json", "field_name": "canopy_openness", "unit": "", "example_values": ["Number of dots out of 96 imaginary dots that are not covered by the canopy; Taken only at the centre of the plot"], "confidence": null}, {"name": "1710", "source_form": "cloud_segmented_002_classified.json", "field_name": "1710", "unit": "", "example_values": ["10.1230 >30"], "confidence": null}, {"name": "block_code", "source_form": "cloud_segmented_002_classified.json", "field_name": "Block Code", "unit": "", "example_values": ["I", "1"], "confidence": null}, {"name": "transect_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Transect #", "unit": "", "example_values": ["1", "I"], "confidence": null}, {"name": "plot_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Plot #", "unit": "", "example_values": ["1", "2", "3", "4", "5"], "confidence": null}, {"name": "subplot_number", "source_form": "cloud_segmented_002_classified.json", "field_name": "Subplot #", "unit": "", "example_values": ["0", "1", "2", "3", "4"], "confidence": null}, {"name": "canopy_openness_north", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness North", "unit": "", "example_values": ["09", "Aug=", "B", "Aug", "15"], "confidence": null}, {"name": "canopy_openness_east", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness East", "unit": "", "example_values": ["#11", "7.25", "92.4", "4", "4.25"], "confidence": null}, {"name": "canopy_openness_west", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness West", "unit": "", "example_values": ["35", "0%", "3", "2%", "13"], "confidence": null}, {"name": "canopy_openness_south", "source_form": "cloud_segmented_002_classified.json", "field_name": "Canopy Openness South", "unit": "", "example_values": ["04", "4", "7", "03"], "confidence": null}, {"name": "soil_moisture", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil Moisture", "unit": "", "example_values": ["3", "3 3", "3", "4", "3"], "confidence": null}, {"name": "soil_temper_ature_in_2", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil Temper ature in 2.", "unit": "", "example_values": ["19", "19", "23", "20 21", "23"], "confidence": null}, {"name": "soil_ph", "source_form": "cloud_segmented_002_classified.json", "field_name": "Soil pH", "unit": "", "example_values": ["7", "2", "7", "7", "7"], "confidence": null}, {"name": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure", "source_form": "cloud_segmented_002_classified.json", "field_name": "Notes on Plot characteristics - Disturbance, Physical features, Forest structure", "unit": "", "example_values": ["Litter is high; Dry; her cestrum; few >C.A; undustory, regin Shurs, (aropy present: South in open company to North. No dury present", "Litter is high; Dry; her cestrum;", "few >C.A; undustory,", "regin Shurs,", "(aropy present: South in open company"], "confidence": null}]};
+    const indicatorCodex = {"computed_variables": {"computed_variables": [{"name": "c_aurantiacum_mature_count", "description": "Count of mature Cestrum aurantiacum individuals in a plot, defined as plants with a recorded DBH.", "inputs": ["spp_name_local_name", "dbh_in_cms"], "english_intent": "Count the number of mature Cestrum aurantiacum trees in each plot. A tree is identified as C. aurantiacum if its local name includes 'kisloar' and is considered mature if it has a DBH measurement.", "compiled": {"language": "js", "code": "records.filter(r => ((r.spp_name_local_name || '').toLowerCase().includes('kisloar')) && parseFloat(r.dbh_in_cms) > 0).length"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "1", "snippet": "Low: 0 mature individuals... Medium: 1\u201310 individuals... High: 11\u201330 individuals... Very High: >30 individuals"}], "status": "draft"}, {"name": "c_aurantiacum_recruit_count", "description": "Count of Cestrum aurantiacum seedlings and saplings in a plot.", "inputs": ["spp_name_local_name", "number_seedlings", "number_saplings"], "english_intent": "Count the total number of Cestrum aurantiacum seedlings and saplings in each plot. A plant is identified as C. aurantiacum if its local name includes 'kisloar'.", "compiled": {"language": "js", "code": "records.filter(r => (r.spp_name_local_name || '').toLowerCase().includes('kisloar')).reduce((sum, r) => sum + (parseInt(r.number_seedlings) || 0) + (parseInt(r.number_saplings) || 0), 0)"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "1", "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"}], "status": "draft"}, {"name": "c_aurantiacum_density_category", "description": "Categorizes plot based on the density of C. aurantiacum individuals.", "inputs": ["c_aurantiacum_mature_count", "c_aurantiacum_recruit_count"], "english_intent": "Categorize the plot's C. aurantiacum density based on mature plant counts: 'Low' for 0 mature but some recruits, 'Medium' for 1-10 mature, 'High' for 11-30 mature, and 'Very High' for over 30 mature plants.", "compiled": {"language": "jsonlogic", "code": "{\"if\":[{\"and\":[{\"==\":[{\"var\":\"c_aurantiacum_mature_count\"},0]},{\">\":[{\"var\":\"c_aurantiacum_recruit_count\"},0]}]},\"Low\",{\"and\":[{\">=\":[{\"var\":\"c_aurantiacum_mature_count\"},1]},{\"<=\":[{\"var\":\"c_aurantiacum_mature_count\"},10]}]},\"Medium\",{\"and\":[{\">=\":[{\"var\":\"c_aurantiacum_mature_count\"},11]},{\"<=\":[{\"var\":\"c_aurantiacum_mature_count\"},30]}]},\"High\",{\">\":[{\"var\":\"c_aurantiacum_mature_count\"},30]},\"Very High\",\"None\"]}"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "1", "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings\n\u2022 Medium: 1\u201310 individuals\n\u2022 High: 11\u201330 individuals\n\u2022 Very High: >30 individuals"}], "status": "approved"}, {"name": "species_richness", "description": "Count of unique species within a plot.", "inputs": ["spp_name_local_name"], "english_intent": "Count the number of unique species names recorded in a plot.", "compiled": {"language": "js", "code": "[...new Set(records.map(r => r.spp_name_local_name).filter(n => n))].length"}, "aggregation": {"level": "plot", "time": "per_survey_event"}, "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Biodiversity Gains: Increase in species richness"}], "status": "approved"}, {"name": "average_canopy_openness", "description": "Average of canopy openness readings from North, East, South, and West.", "inputs": ["canopy_openness_north", "canopy_openness_east", "canopy_openness_south", "canopy_openness_west"], "english_intent": "Calculate the average of the four canopy openness readings (N, E, S, W) for each subplot.", "compiled": {"language": "js", "code": "const values = [r.canopy_openness_north, r.canopy_openness_east, r.canopy_openness_south, r.canopy_openness_west].map(v => parseFloat(v)).filter(v => !isNaN(v)); return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : null;"}, "aggregation": {"level": "subplot", "time": "per_survey_event"}, "evidence": [{"source_type": "form", "source_ref": "cloud_segmented_002_classified.json", "snippet": "Canopy Openness North, Canopy Openness East, Canopy Openness West, Canopy Openness South"}], "status": "approved"}]}, "indicator_config": {"indicators": [{"name": "Invasive Recovery", "definition": "% regrowth of C. auranticum individuals.", "required_computed_variables": ["c_aurantiacum_mature_count", "c_aurantiacum_recruit_count"], "graph_intents": [{"chart_type": "line", "x_axis": "date", "y_axis": "c_aurantiacum_mature_count", "group_by": "plot_no", "aggregation": "mean"}], "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Invasive Recovery % regrowth of C. auranticum individuals"}]}, {"name": "Resilience", "definition": "Survival and growth rate of planted native species.", "required_computed_variables": [], "status": "draft", "notes": "Requires identification of 'planted native species' and a method for tracking individual plants over time, which are not available in the provided data.", "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Resilience Survival and growth rate of planted native species"}]}, {"name": "Biodiversity Gains", "definition": "Increase in species richness.", "required_computed_variables": ["species_richness"], "graph_intents": [{"chart_type": "line", "x_axis": "date", "y_axis": "species_richness", "group_by": "plot_no", "aggregation": "mean"}], "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Biodiversity Gains Increase in species richness"}]}, {"name": "Ground Cover", "definition": "% cover of grasses.", "required_computed_variables": [], "status": "draft", "notes": "Requires a raw variable measuring grass cover, which is not present in the provided variable catalog.", "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Ground Cover % cover of grasses"}]}, {"name": "Recruitment", "definition": "Regeneration or recruitment of planted native species.", "required_computed_variables": [], "status": "draft", "notes": "Requires identification of 'planted native species' to track their regeneration, which is not available in the provided data.", "evidence": [{"source_type": "pdf", "source_ref": "3", "snippet": "Recruitment Regeneration or recruitment of planted native species"}]}]}};
+    const variablesCodebook = {"$schema": "https://json-schema.org/draft/2020-12/schema", "title": "Field Aliases", "description": "Canonical field names and aliases across forms and Excel.", "properties": {"variables": {"type": "array", "description": "List of canonical variables and their aliases.", "items": {"type": "object", "properties": {"canonical_name": {"type": "string", "description": "Canonical field name used in the dataset and wizard."}, "provenance": {"type": "string", "description": "Where the canonical name originated (forms or excel).", "enum": ["forms", "excel"]}, "aliases": {"type": "array", "description": "List of alternative names found in source files.", "items": {"type": "object", "properties": {"name": {"type": "string", "description": "Alias name as seen in a source file."}, "source": {"type": "string", "description": "Source of the alias, e.g., form:filename or excel:SheetName."}}, "additionalProperties": true}}, "unmatched_source": {"type": "string", "description": "Flag for one-sided matches: form_only or excel_only.", "enum": ["", "form_only", "excel_only"]}}, "additionalProperties": true}}}, "additionalProperties": true, "variables": [{"canonical_name": "block_code", "provenance": "forms", "aliases": [{"name": "block_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "block_code", "source": "form:cloud_segmented_000_classified.json"}, {"name": "block_code", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Block code", "source": "excel:Raw 10x10m Data"}, {"name": "blo cod", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "transect_number", "provenance": "forms", "aliases": [{"name": "transect_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "transect_number", "source": "form:cloud_segmented_000_classified.json"}, {"name": "transect_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Transect #", "source": "excel:Raw 10x10m Data"}, {"name": "tranum", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "plot_number", "provenance": "forms", "aliases": [{"name": "plot_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "plot_number", "source": "form:cloud_segmented_000_classified.json"}, {"name": "plot_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "Plot #", "source": "excel:Raw 10x10m Data"}, {"name": "plonum", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "sub_plot_no", "provenance": "forms", "aliases": [{"name": "sub_plot_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "subplot_number", "source": "form:cloud_segmented_002_classified.json"}, {"name": "subplo", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "spp_name_local_name", "provenance": "forms", "aliases": [{"name": "spp_name_local_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "spp_name_local_name", "source": "form:cloud_segmented_000_classified.json"}, {"name": "sppnam", "source": "excel:Raw 10x10m Data"}, {"name": "locnam", "source": "excel:Raw 10x10m Data"}, {"name": "sppnam", "source": "excel:2x2m Seedlings and saplings"}, {"name": "locnam", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "habit", "provenance": "forms", "aliases": [{"name": "habit", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "habit", "source": "form:cloud_segmented_000_classified.json"}, {"name": "hab", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "number_seedlings", "provenance": "forms", "aliases": [{"name": "number_seedlings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "numsee", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "number_saplings", "provenance": "forms", "aliases": [{"name": "number_saplings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "numsap", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_moisture", "provenance": "forms", "aliases": [{"name": "soil_moisture", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soimoi", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_temper_ature_in_2", "provenance": "forms", "aliases": [{"name": "soil_temper_ature_in_2", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soitem", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "soil_ph", "provenance": "forms", "aliases": [{"name": "soil_ph", "source": "form:cloud_segmented_002_classified.json"}, {"name": "soiph", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "dbh_in_cms", "provenance": "forms", "aliases": [{"name": "dbh_in_cms", "source": "form:cloud_segmented_000_classified.json"}, {"name": "DBH 1", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 2", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 3", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 4", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 5", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 6", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 7", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 8", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 9", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 10", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 11", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 12", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 13", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 14", "source": "excel:Raw 10x10m Data"}, {"name": "DBH 15", "source": "excel:Raw 10x10m Data"}], "unmatched_source": ""}, {"canonical_name": "dirt", "provenance": "forms", "aliases": [{"name": "dirt", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "bargro", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": ""}, {"canonical_name": "area_name", "provenance": "forms", "aliases": [{"name": "area_name", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "area_name", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "names_of_research_team", "provenance": "forms", "aliases": [{"name": "name_of_researcher", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "name_of_research_team", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "names_of_research_team", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "date", "provenance": "forms", "aliases": [{"name": "date", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "date", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "notes", "provenance": "forms", "aliases": [{"name": "notes", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "seedlings", "provenance": "forms", "aliases": [{"name": "seedlings", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "s_no", "provenance": "forms", "aliases": [{"name": "s_no", "source": "form:cloud_IMG-20250924-WA0001_classified.json"}, {"name": "s_no", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "phenological_condition", "provenance": "forms", "aliases": [{"name": "phenological_condition", "source": "form:cloud_segmented_000_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "canopy_openness", "provenance": "forms", "aliases": [{"name": "canopy_openness", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_north", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_east", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_west", "source": "form:cloud_segmented_002_classified.json"}, {"name": "canopy_openness_south", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "1710", "provenance": "forms", "aliases": [{"name": "1710", "source": "form:cloud_segmented_002_classified.json"}], "unmatched_source": "form_only"}, {"canonical_name": "unnamed_23", "provenance": "excel", "aliases": [{"name": "Unnamed: 23", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_24", "provenance": "excel", "aliases": [{"name": "Unnamed: 24", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_25", "provenance": "excel", "aliases": [{"name": "Unnamed: 25", "source": "excel:Raw 10x10m Data"}], "unmatched_source": "excel_only"}, {"canonical_name": "cestrum_aurantiacum_density_in_each_plot", "provenance": "excel", "aliases": [{"name": "Cestrum aurantiacum density in each plot", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_1", "provenance": "excel", "aliases": [{"name": "Unnamed: 1", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_2", "provenance": "excel", "aliases": [{"name": "Unnamed: 2", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_3", "provenance": "excel", "aliases": [{"name": "Unnamed: 3", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "unnamed_4", "provenance": "excel", "aliases": [{"name": "Unnamed: 4", "source": "excel:Density"}], "unmatched_source": "excel_only"}, {"canonical_name": "gracov", "provenance": "excel", "aliases": [{"name": "gracov", "source": "excel:2x2m Seedlings and saplings"}], "unmatched_source": "excel_only"}]};
+
+    const rawList = (variableCatalog && variableCatalog.variables) || [];
+    const computedList = (indicatorCodex && indicatorCodex.computed_variables && indicatorCodex.computed_variables.computed_variables) || [];
+    const indicatorList = (indicatorCodex && indicatorCodex.indicator_config && indicatorCodex.indicator_config.indicators) || [];
+
+    function renderRawVariables() {
+      const el = document.getElementById("raw-variables");
+      if (!rawList.length) {
+        el.innerHTML = "<p class='muted'>No variables detected.</p>";
+        return;
+      }
+      el.innerHTML = rawList.map(v => `
+        <div class="item" data-raw-name="${escapeAttr(v.name)}">
+          <div class="label">${escapeHtml(v.name)}</div>
+          <div class="muted">${escapeHtml(v.field_name || "")}</div>
+          <div class="muted">Source: ${escapeHtml(v.source_form || "")}</div>
+          ${v.example_values && v.example_values.length ? `<pre>${escapeHtml(v.example_values.join(", "))}</pre>` : ""}
+        </div>
+      `).join("");
+    }
+
+    function renderComputedVariables() {
+      const el = document.getElementById("computed-variables");
+      if (!computedList.length) {
+        el.innerHTML = "<p class='muted'>No computed variables.</p>";
+        return;
+      }
+      el.innerHTML = computedList.map(c => `
+        <div class="item" data-computed-name="${escapeAttr(c.name || "")}">
+          <div class="label">${escapeHtml(c.name || "")}</div>
+          <div class="muted">${escapeHtml(c.description || "")}</div>
+          <div class="muted">Intent: ${escapeHtml(c.english_intent || "")}</div>
+          ${c.compiled && c.compiled.code ? `<pre>${escapeHtml(c.compiled.language || "")}: ${escapeHtml(formatCode(c.compiled.code))}</pre>` : ""}
+        </div>
+      `).join("");
+    }
+
+
+    function renderIndicators() {
+      const el = document.getElementById("indicators");
+      if (!indicatorList.length) {
+        el.innerHTML = "<p class='muted'>No indicators.</p>";
+        return;
+      }
+      el.innerHTML = indicatorList.map((i, idx) => `
+        <div class="item" data-indicator-name="${escapeAttr(i.name || "")}">
+          <div class="label">
+            ${escapeHtml(i.name || "")}
+            <button class="inline-btn" data-evidence-btn="${idx}">i</button>
+            <button class="inline-btn" data-edit-btn="${idx}">Edit</button>
+          </div>
+          <div class="muted">${escapeHtml(i.definition || "")}</div>
+          ${i.graph_intents && i.graph_intents.length ? `<pre>${escapeHtml(JSON.stringify(i.graph_intents, null, 2))}</pre>` : ""}
+          <div class="evidence" data-evidence="${idx}">
+            ${renderEvidence(i.evidence)}
+          </div>
+        </div>
+      `).join("");
+
+      indicatorList.forEach((_, idx) => {
+        const btn = document.querySelector(`[data-evidence-btn="${idx}"]`);
+        const box = document.querySelector(`[data-evidence="${idx}"]`);
+        if (!btn || !box) return;
+        btn.addEventListener("click", () => {
+          box.style.display = box.style.display === "block" ? "none" : "block";
+        });
+      });
+
+      indicatorList.forEach((indicator, idx) => {
+        const btn = document.querySelector(`[data-edit-btn="${idx}"]`);
+        if (!btn) return;
+        btn.addEventListener("click", () => openIndicatorModal(indicator, idx));
+      });
+    }
+
+    function escapeHtml(value) {
+      const div = document.createElement("div");
+      div.textContent = value == null ? "" : String(value);
+      return div.innerHTML;
+    }
+
+    function escapeAttr(value) {
+      return escapeHtml(value).replace(/"/g, "&quot;");
+    }
+
+    function openIndicatorModal(indicator, idx) {
+      const modal = document.getElementById("indicator-modal");
+      modal.dataset.index = String(idx);
+      document.getElementById("edit-indicator-name").value = indicator.name || "";
+      document.getElementById("edit-indicator-def").value = indicator.definition || "";
+      document.getElementById("edit-indicator-reqs").value = (indicator.required_computed_variables || []).join(", ");
+      const graph = (indicator.graph_intents && indicator.graph_intents[0]) || {};
+      document.getElementById("edit-indicator-chart").value = graph.chart_type || "";
+      document.getElementById("edit-indicator-x").value = graph.x_axis || "";
+      document.getElementById("edit-indicator-y").value = graph.y_axis || "";
+      document.getElementById("edit-indicator-group").value = graph.group_by || "";
+      document.getElementById("edit-indicator-agg").value = graph.aggregation || "";
+      modal.style.display = "flex";
+    }
+
+    function closeIndicatorModal() {
+      const modal = document.getElementById("indicator-modal");
+      modal.style.display = "none";
+    }
+
+    function wireIndicatorModal() {
+      document.getElementById("cancel-indicator-edit").addEventListener("click", closeIndicatorModal);
+      document.getElementById("save-indicator-edit").addEventListener("click", () => {
+        const modal = document.getElementById("indicator-modal");
+        const idx = Number(modal.dataset.index || -1);
+        if (idx < 0) return;
+        const updated = {
+          name: document.getElementById("edit-indicator-name").value.trim(),
+          definition: document.getElementById("edit-indicator-def").value.trim(),
+          required_computed_variables: document.getElementById("edit-indicator-reqs").value
+            .split(",").map(v => v.trim()).filter(Boolean),
+          graph_intents: [{
+            chart_type: document.getElementById("edit-indicator-chart").value.trim(),
+            x_axis: document.getElementById("edit-indicator-x").value.trim(),
+            y_axis: document.getElementById("edit-indicator-y").value.trim(),
+            group_by: document.getElementById("edit-indicator-group").value.trim(),
+            aggregation: document.getElementById("edit-indicator-agg").value.trim()
+          }]
+        };
+        indicatorList[idx] = Object.assign(indicatorList[idx] || {}, updated);
+        closeIndicatorModal();
+        renderIndicators();
+      });
+    }
+
+    function renderEvidence(evidence) {
+      if (!evidence || !evidence.length) {
+        return "<span class='muted'>No evidence provided.</span>";
+      }
+      return evidence.map(ev => `
+        <div>
+          <div><strong>${escapeHtml(ev.source_type || "")}</strong> ${escapeHtml(ev.source_ref || "")}</div>
+          <div class="muted">${escapeHtml(ev.snippet || "")}</div>
+        </div>
+      `).join("");
+    }
+
+    function formatCode(code) {
+      if (code && typeof code === "object") {
+        return JSON.stringify(code, null, 2);
+      }
+      return String(code || "");
+    }
+
+    function wireAddForms() {
+      const computedForm = document.getElementById("add-computed-form");
+      const indicatorForm = document.getElementById("add-indicator-form");
+
+      computedForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("computed-name").value.trim();
+        const desc = document.getElementById("computed-desc").value.trim();
+        const inputs = document.getElementById("computed-inputs").value.trim();
+        const formula = document.getElementById("computed-formula").value.trim();
+        if (!name || !desc) return;
+        computedList.push({
+          name,
+          description: desc,
+          english_intent: desc,
+          inputs: inputs ? inputs.split(",").map(v => v.trim()).filter(Boolean) : [],
+          compiled: formula ? { language: "jsonlogic", code: formula } : {}
+        });
+        computedForm.reset();
+        renderComputedVariables();
+      });
+
+      indicatorForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("indicator-name").value.trim();
+        const definition = document.getElementById("indicator-def").value.trim();
+        const reqs = document.getElementById("indicator-reqs").value.trim();
+        if (!name || !definition) return;
+        const required = reqs ? reqs.split(",").map(v => v.trim()).filter(Boolean) : [];
+        indicatorList.push({
+          name,
+          definition,
+          required_computed_variables: required
+        });
+        indicatorForm.reset();
+        renderIndicators();
+      });
+
+      document.getElementById("generate-formula").addEventListener("click", async () => {
+        const name = document.getElementById("computed-name").value.trim();
+        const intent = document.getElementById("computed-desc").value.trim();
+        const inputs = document.getElementById("computed-inputs").value.trim()
+          .split(",").map(v => v.trim()).filter(Boolean);
+        if (!name || !intent) return;
+        const payload = {
+          computed_variable_name: name,
+          english_intent: intent,
+          inputs,
+          language_preference: "jsonlogic"
+        };
+        const formulaField = document.getElementById("computed-formula");
+        formulaField.value = "Generating...";
+        try {
+          const response = await fetch("http://localhost:8765/compute", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json();
+          console.log("Compute response:", result);
+          if (!response.ok) {
+            formulaField.value = result.error || "Failed to generate formula.";
+            return;
+          }
+          const computed = result.computed_variables && result.computed_variables[0];
+          if (computed && computed.compiled && computed.compiled.code) {
+            formulaField.value = computed.compiled.code;
+          } else {
+            formulaField.value = "";
+          }
+        } catch (err) {
+          formulaField.value = "Compute server unavailable.";
+        }
+      });
+    }
+
+    renderRawVariables();
+    renderComputedVariables();
+    renderIndicators();
+    wireAddForms();
+    wireIndicatorModal();
+
+    document.getElementById("download-codebook").addEventListener("click", () => {
+      const codebook = {
+        version: "v1",
+        generated_at: new Date().toISOString(),
+        variables_codebook: variablesCodebook,
+        variable_catalog: variableCatalog,
+        computed_variables: { computed_variables: computedList },
+        indicator_config: { indicators: indicatorList }
+      };
+      const blob = new Blob([JSON.stringify(codebook, null, 2)], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "indicator_codebook.json";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+  </script>
+</body>
+</html>

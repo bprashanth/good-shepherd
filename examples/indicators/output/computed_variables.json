@@ -1,0 +1,131 @@
+{
+  "computed_variables": [
+    {
+      "name": "c_aurantiacum_mature_count",
+      "description": "Count of mature Cestrum aurantiacum individuals in a plot, defined as plants with a recorded DBH.",
+      "inputs": [
+        "spp_name_local_name",
+        "dbh_in_cms"
+      ],
+      "english_intent": "Count the number of mature Cestrum aurantiacum trees in each plot. A tree is identified as C. aurantiacum if its local name includes 'kisloar' and is considered mature if it has a DBH measurement.",
+      "compiled": {
+        "language": "js",
+        "code": "records.filter(r => ((r.spp_name_local_name || '').toLowerCase().includes('kisloar')) && parseFloat(r.dbh_in_cms) > 0).length"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "1",
+          "snippet": "Low: 0 mature individuals... Medium: 1\u201310 individuals... High: 11\u201330 individuals... Very High: >30 individuals"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "c_aurantiacum_recruit_count",
+      "description": "Count of Cestrum aurantiacum seedlings and saplings in a plot.",
+      "inputs": [
+        "spp_name_local_name",
+        "number_seedlings",
+        "number_saplings"
+      ],
+      "english_intent": "Count the total number of Cestrum aurantiacum seedlings and saplings in each plot. A plant is identified as C. aurantiacum if its local name includes 'kisloar'.",
+      "compiled": {
+        "language": "js",
+        "code": "records.filter(r => (r.spp_name_local_name || '').toLowerCase().includes('kisloar')).reduce((sum, r) => sum + (parseInt(r.number_seedlings) || 0) + (parseInt(r.number_saplings) || 0), 0)"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "1",
+          "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "name": "c_aurantiacum_density_category",
+      "description": "Categorizes plot based on the density of C. aurantiacum individuals.",
+      "inputs": [
+        "c_aurantiacum_mature_count",
+        "c_aurantiacum_recruit_count"
+      ],
+      "english_intent": "Categorize the plot's C. aurantiacum density based on mature plant counts: 'Low' for 0 mature but some recruits, 'Medium' for 1-10 mature, 'High' for 11-30 mature, and 'Very High' for over 30 mature plants.",
+      "compiled": {
+        "language": "jsonlogic",
+        "code": "{\"if\":[{\"and\":[{\"==\":[{\"var\":\"c_aurantiacum_mature_count\"},0]},{\">\":[{\"var\":\"c_aurantiacum_recruit_count\"},0]}]},\"Low\",{\"and\":[{\">=\":[{\"var\":\"c_aurantiacum_mature_count\"},1]},{\"<=\":[{\"var\":\"c_aurantiacum_mature_count\"},10]}]},\"Medium\",{\"and\":[{\">=\":[{\"var\":\"c_aurantiacum_mature_count\"},11]},{\"<=\":[{\"var\":\"c_aurantiacum_mature_count\"},30]}]},\"High\",{\">\":[{\"var\":\"c_aurantiacum_mature_count\"},30]},\"Very High\",\"None\"]}"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "1",
+          "snippet": "Low: 0 mature individuals, but with presence of seedlings/saplings\n\u2022 Medium: 1\u201310 individuals\n\u2022 High: 11\u201330 individuals\n\u2022 Very High: >30 individuals"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "name": "species_richness",
+      "description": "Count of unique species within a plot.",
+      "inputs": [
+        "spp_name_local_name"
+      ],
+      "english_intent": "Count the number of unique species names recorded in a plot.",
+      "compiled": {
+        "language": "js",
+        "code": "[...new Set(records.map(r => r.spp_name_local_name).filter(n => n))].length"
+      },
+      "aggregation": {
+        "level": "plot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "pdf",
+          "source_ref": "3",
+          "snippet": "Biodiversity Gains: Increase in species richness"
+        }
+      ],
+      "status": "approved"
+    },
+    {
+      "name": "average_canopy_openness",
+      "description": "Average of canopy openness readings from North, East, South, and West.",
+      "inputs": [
+        "canopy_openness_north",
+        "canopy_openness_east",
+        "canopy_openness_south",
+        "canopy_openness_west"
+      ],
+      "english_intent": "Calculate the average of the four canopy openness readings (N, E, S, W) for each subplot.",
+      "compiled": {
+        "language": "js",
+        "code": "const values = [r.canopy_openness_north, r.canopy_openness_east, r.canopy_openness_south, r.canopy_openness_west].map(v => parseFloat(v)).filter(v => !isNaN(v)); return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : null;"
+      },
+      "aggregation": {
+        "level": "subplot",
+        "time": "per_survey_event"
+      },
+      "evidence": [
+        {
+          "source_type": "form",
+          "source_ref": "cloud_segmented_002_classified.json",
+          "snippet": "Canopy Openness North, Canopy Openness East, Canopy Openness West, Canopy Openness South"
+        }
+      ],
+      "status": "approved"
+    }
+  ]
+}

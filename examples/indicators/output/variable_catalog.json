@@ -1,0 +1,528 @@
+{
+  "variables": [
+    {
+      "name": "transect_no",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "transect_no",
+      "unit": "",
+      "example_values": [
+        "I"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "block_name",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "block_name",
+      "unit": "",
+      "example_values": [
+        "1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "plot_no",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "plot_no",
+      "unit": "",
+      "example_values": [
+        "2"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "area_name",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "area_name",
+      "unit": "",
+      "example_values": [
+        "BKM"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "name_of_researcher",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "name_of_researcher",
+      "unit": "",
+      "example_values": [
+        "Caropy Cover"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "date",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "date",
+      "unit": "",
+      "example_values": [
+        "19/02/2025"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "name_of_research_team",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "name_of_research_team",
+      "unit": "",
+      "example_values": [
+        "Ak, HA, Kk, MK, PK"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "sub_plot_no",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "sub_plot_no",
+      "unit": "",
+      "example_values": [
+        "1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "notes",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "notes",
+      "unit": "",
+      "example_values": [
+        "12"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "seedlings",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "seedlings",
+      "unit": "",
+      "example_values": [
+        "Subplor:"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "dirt",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "dirt",
+      "unit": "",
+      "example_values": [
+        "#:1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "sub_plot_no",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "Sub plot no.",
+      "unit": "",
+      "example_values": [
+        "1",
+        "2",
+        "3",
+        "4."
+      ],
+      "confidence": null
+    },
+    {
+      "name": "s_no",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "S.No",
+      "unit": "",
+      "example_values": [
+        "1.",
+        "2.",
+        "3",
+        "4",
+        "5."
+      ],
+      "confidence": null
+    },
+    {
+      "name": "spp_name_local_name",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "SPP Name/Local Name",
+      "unit": "",
+      "example_values": [
+        "cadelei",
+        "Perthin",
+        "1carm",
+        "Kage kisloar",
+        "kisloar"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "habit",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "Habit",
+      "unit": "",
+      "example_values": [
+        "T",
+        "T",
+        "7",
+        "T",
+        "I"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "number_seedlings",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "#Seedlings",
+      "unit": "",
+      "example_values": [
+        "1",
+        "\"",
+        "11",
+        "11",
+        "1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "number_saplings",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "#Saplings",
+      "unit": "",
+      "example_values": [
+        "E",
+        "I",
+        "H",
+        "1 ,",
+        "11"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "notes",
+      "source_form": "cloud_IMG-20250924-WA0001_classified.json",
+      "field_name": "Notes",
+      "unit": "",
+      "example_values": [
+        "was",
+        "5% Kare",
+        "10%",
+        "usess",
+        "10%"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "names_of_research_team",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "names_of_research_team",
+      "unit": "",
+      "example_values": [
+        "AK,HA ,Kk, MIC, PK"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "date",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "date",
+      "unit": "",
+      "example_values": [
+        "19/02/2025"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "plot_number",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "plot_number",
+      "unit": "",
+      "example_values": [
+        "2"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "area_name",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "area_name",
+      "unit": "",
+      "example_values": [
+        "BKM"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "transect_number",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "transect_number",
+      "unit": "",
+      "example_values": [
+        "1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "block_code",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "block_code",
+      "unit": "",
+      "example_values": [
+        "I"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "s_no",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "S.No",
+      "unit": "",
+      "example_values": [
+        "1.",
+        "2.",
+        "3.",
+        "4",
+        "5"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "spp_name_local_name",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "SPP Name/Local Name",
+      "unit": "",
+      "example_values": [
+        "Kobumn",
+        "lage",
+        "come",
+        "Kinker",
+        "kisler"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "habit",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "Habit",
+      "unit": "",
+      "example_values": [
+        "1",
+        "I",
+        "T",
+        "T",
+        "I"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "dbh_in_cms",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "DBH in cms",
+      "unit": "",
+      "example_values": [
+        "23",
+        "4.2+ 3.4+2.5",
+        "3",
+        "3.6+1.8",
+        "2"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "phenological_condition",
+      "source_form": "cloud_segmented_000_classified.json",
+      "field_name": "Phenological condition",
+      "unit": "",
+      "example_values": [
+        "Fruiting"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "soil_moisture",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "soil_moisture",
+      "unit": "",
+      "example_values": [
+        "Dry+ =1, Dry- =2, Nor =3, Wet- =4, Wet+ =5"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "canopy_openness",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "canopy_openness",
+      "unit": "",
+      "example_values": [
+        "Number of dots out of 96 imaginary dots that are not covered by the canopy; Taken only at the centre of the plot"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "1710",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "1710",
+      "unit": "",
+      "example_values": [
+        "10.1230 >30"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "block_code",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Block Code",
+      "unit": "",
+      "example_values": [
+        "I",
+        "1"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "transect_number",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Transect #",
+      "unit": "",
+      "example_values": [
+        "1",
+        "I"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "plot_number",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Plot #",
+      "unit": "",
+      "example_values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "subplot_number",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Subplot #",
+      "unit": "",
+      "example_values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "canopy_openness_north",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Canopy Openness North",
+      "unit": "",
+      "example_values": [
+        "09",
+        "Aug=",
+        "B",
+        "Aug",
+        "15"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "canopy_openness_east",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Canopy Openness East",
+      "unit": "",
+      "example_values": [
+        "#11",
+        "7.25",
+        "92.4",
+        "4",
+        "4.25"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "canopy_openness_west",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Canopy Openness West",
+      "unit": "",
+      "example_values": [
+        "35",
+        "0%",
+        "3",
+        "2%",
+        "13"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "canopy_openness_south",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Canopy Openness South",
+      "unit": "",
+      "example_values": [
+        "04",
+        "4",
+        "7",
+        "03"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "soil_moisture",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Soil Moisture",
+      "unit": "",
+      "example_values": [
+        "3",
+        "3 3",
+        "3",
+        "4",
+        "3"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "soil_temper_ature_in_2",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Soil Temper ature in 2.",
+      "unit": "",
+      "example_values": [
+        "19",
+        "19",
+        "23",
+        "20 21",
+        "23"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "soil_ph",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Soil pH",
+      "unit": "",
+      "example_values": [
+        "7",
+        "2",
+        "7",
+        "7",
+        "7"
+      ],
+      "confidence": null
+    },
+    {
+      "name": "notes_on_plot_characteristics_disturbance_physical_features_forest_structure",
+      "source_form": "cloud_segmented_002_classified.json",
+      "field_name": "Notes on Plot characteristics - Disturbance, Physical features, Forest structure",
+      "unit": "",
+      "example_values": [
+        "Litter is high; Dry; her cestrum; few >C.A; undustory, regin Shurs, (aropy present: South in open company to North. No dury present",
+        "Litter is high; Dry; her cestrum;",
+        "few >C.A; undustory,",
+        "regin Shurs,",
+        "(aropy present: South in open company"
+      ],
+      "confidence": null
+    }
+  ]
+}

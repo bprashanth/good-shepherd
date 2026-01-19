@@ -1,0 +1,4414 @@
+{
+  "universal_fields": {
+    "names_of_research_team": {
+      "value": "AK,HA ,Kk, MIC, PK",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_1",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "date": {
+      "value": "19/02/2025",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_2",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "plot_number": {
+      "value": "2",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_3",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "area_name": {
+      "value": "BKM",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_4",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "transect_number": {
+      "value": "1",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_5",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "block_code": {
+      "value": "I",
+      "description": "",
+      "alt_names": [],
+      "merged": false,
+      "system": {
+        "group_id": "universal_field_6",
+        "valid": true,
+        "column_index": -1,
+        "row_index": -1
+      }
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.12240104354918004,
+        "Top": 0.04566460220143199,
+        "Width": 0.7678135284036398,
+        "Height": 0.1046890024840832
+      },
+      "group_id": "universal_fields",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "header_map": {
+    "s_no": {
+      "field_name": "S.No",
+      "system": {
+        "merged": false,
+        "group_id": "col_2",
+        "column_index": 2,
+        "row_index": -1
+      },
+      "description": "Field: S.No",
+      "alt_names": []
+    },
+    "spp_name_local_name": {
+      "field_name": "SPP Name/Local Name",
+      "system": {
+        "merged": false,
+        "group_id": "col_3",
+        "column_index": 3,
+        "row_index": -1
+      },
+      "description": "Field: SPP Name/Local Name",
+      "alt_names": []
+    },
+    "habit": {
+      "field_name": "Habit",
+      "system": {
+        "merged": false,
+        "group_id": "col_4",
+        "column_index": 4,
+        "row_index": -1
+      },
+      "description": "Field: Habit",
+      "alt_names": []
+    },
+    "dbh_in_cms": {
+      "field_name": "DBH in cms",
+      "system": {
+        "merged": false,
+        "group_id": "col_5",
+        "column_index": 5,
+        "row_index": -1
+      },
+      "description": "Field: DBH in cms",
+      "alt_names": []
+    },
+    "phenological_condition": {
+      "field_name": "Phenological condition",
+      "system": {
+        "merged": false,
+        "group_id": "col_6",
+        "column_index": 6,
+        "row_index": -1
+      },
+      "description": "Field: Phenological condition",
+      "alt_names": []
+    },
+    "system": {
+      "bbox": {
+        "Left": 0.12240104354918004,
+        "Top": 0.12745564641430973,
+        "Width": 0.7335041113942862,
+        "Height": 0.022897958271205443
+      },
+      "group_id": "header_map",
+      "row_index": -1,
+      "column_index": -1
+    }
+  },
+  "rows": [
+    {
+      "col_1": "",
+      "s_no": "1.",
+      "spp_name_local_name": "Kobumn",
+      "habit": "1",
+      "dbh_in_cms": "23",
+      "phenological_condition": "Fruiting",
+      "system": {
+        "bbox": {
+          "Left": 0.0684451088309288,
+          "Top": 0.14675098657608032,
+          "Width": 0.8297526463866234,
+          "Height": 0.01697133481502533
+        },
+        "group_id": "row_2",
+        "row_index": 2,
+        "column_index": -1,
+        "cells": {
+          "row_2_col_1": {
+            "bbox": {
+              "Width": 0.038932304829359055,
+              "Height": 0.01690835878252983,
+              "Left": 0.0684451088309288,
+              "Top": 0.14675098657608032
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 2,
+            "column_index": 1
+          },
+          "row_2_col_2": {
+            "bbox": {
+              "Width": 0.07115104049444199,
+              "Height": 0.016910964623093605,
+              "Left": 0.10737543553113937,
+              "Top": 0.14675404131412506
+            },
+            "confidence": 75.244140625,
+            "text": "1.",
+            "header": "s_no",
+            "row_index": 2,
+            "column_index": 2
+          },
+          "row_2_col_3": {
+            "bbox": {
+              "Width": 0.20539799332618713,
+              "Height": 0.016921725124120712,
+              "Left": 0.1785244345664978,
+              "Top": 0.14675964415073395
+            },
+            "confidence": 89.990234375,
+            "text": "Kobumn",
+            "header": "spp_name_local_name",
+            "row_index": 2,
+            "column_index": 3
+          },
+          "row_2_col_4": {
+            "bbox": {
+              "Width": 0.1074007973074913,
+              "Height": 0.01691412925720215,
+              "Left": 0.38392019271850586,
+              "Top": 0.14677578210830688
+            },
+            "confidence": 84.423828125,
+            "text": "1",
+            "header": "habit",
+            "row_index": 2,
+            "column_index": 4
+          },
+          "row_2_col_5": {
+            "bbox": {
+              "Width": 0.20137833058834076,
+              "Height": 0.016921719536185265,
+              "Left": 0.4913186728954315,
+              "Top": 0.1467842310667038
+            },
+            "confidence": 90.4296875,
+            "text": "23",
+            "header": "dbh_in_cms",
+            "row_index": 2,
+            "column_index": 5
+          },
+          "row_2_col_6": {
+            "bbox": {
+              "Width": 0.20550327003002167,
+              "Height": 0.016922250390052795,
+              "Left": 0.6926944851875305,
+              "Top": 0.14680007100105286
+            },
+            "confidence": 89.35546875,
+            "text": "Fruiting",
+            "header": "phenological_condition",
+            "row_index": 2,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "2.",
+      "spp_name_local_name": "lage",
+      "habit": "I",
+      "dbh_in_cms": "4.2+ 3.4+2.5",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06844326853752136,
+          "Top": 0.16365623474121094,
+          "Width": 0.8297518491744995,
+          "Height": 0.016082344576716423
+        },
+        "group_id": "row_3",
+        "row_index": 3,
+        "column_index": -1,
+        "cells": {
+          "row_3_col_1": {
+            "bbox": {
+              "Width": 0.03893216699361801,
+              "Height": 0.016018617898225784,
+              "Left": 0.06844326853752136,
+              "Top": 0.16365623474121094
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 3,
+            "column_index": 1
+          },
+          "row_3_col_2": {
+            "bbox": {
+              "Width": 0.07115086913108826,
+              "Height": 0.016021251678466797,
+              "Left": 0.10737356543540955,
+              "Top": 0.16365933418273926
+            },
+            "confidence": 75.78125,
+            "text": "2.",
+            "header": "s_no",
+            "row_index": 3,
+            "column_index": 2
+          },
+          "row_3_col_3": {
+            "bbox": {
+              "Width": 0.20539769530296326,
+              "Height": 0.016032136976718903,
+              "Left": 0.1785224974155426,
+              "Top": 0.1636650115251541
+            },
+            "confidence": 90.673828125,
+            "text": "lage",
+            "header": "spp_name_local_name",
+            "row_index": 3,
+            "column_index": 3
+          },
+          "row_3_col_4": {
+            "bbox": {
+              "Width": 0.10740058124065399,
+              "Height": 0.016024434939026833,
+              "Left": 0.38391807675361633,
+              "Top": 0.16368135809898376
+            },
+            "confidence": 85.009765625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 3,
+            "column_index": 4
+          },
+          "row_3_col_5": {
+            "bbox": {
+              "Width": 0.20137803256511688,
+              "Height": 0.016032110899686813,
+              "Left": 0.49131646752357483,
+              "Top": 0.16368991136550903
+            },
+            "confidence": 91.11328125,
+            "text": "4.2+ 3.4+2.5",
+            "header": "dbh_in_cms",
+            "row_index": 3,
+            "column_index": 5
+          },
+          "row_3_col_6": {
+            "bbox": {
+              "Width": 0.2055029571056366,
+              "Height": 0.016032634302973747,
+              "Left": 0.6926921606063843,
+              "Top": 0.1637059450149536
+            },
+            "confidence": 89.990234375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 3,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "3.",
+      "spp_name_local_name": "come",
+      "habit": "T",
+      "dbh_in_cms": "3",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06844133138656616,
+          "Top": 0.17967171967029572,
+          "Width": 0.8297512382268906,
+          "Height": 0.016972899436950684
+        },
+        "group_id": "row_4",
+        "row_index": 4,
+        "column_index": -1,
+        "cells": {
+          "row_4_col_1": {
+            "bbox": {
+              "Width": 0.038932234048843384,
+              "Height": 0.016908375546336174,
+              "Left": 0.06844133138656616,
+              "Top": 0.17967171967029572
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 4,
+            "column_index": 1
+          },
+          "row_4_col_2": {
+            "bbox": {
+              "Width": 0.07115091383457184,
+              "Height": 0.016911042854189873,
+              "Left": 0.10737159103155136,
+              "Top": 0.17967486381530762
+            },
+            "confidence": 75.87890625,
+            "text": "3.",
+            "header": "s_no",
+            "row_index": 4,
+            "column_index": 2
+          },
+          "row_4_col_3": {
+            "bbox": {
+              "Width": 0.2053976207971573,
+              "Height": 0.01692206785082817,
+              "Left": 0.17852045595645905,
+              "Top": 0.17968058586120605
+            },
+            "confidence": 90.72265625,
+            "text": "come",
+            "header": "spp_name_local_name",
+            "row_index": 4,
+            "column_index": 3
+          },
+          "row_4_col_4": {
+            "bbox": {
+              "Width": 0.10740060359239578,
+              "Height": 0.016914278268814087,
+              "Left": 0.38391587138175964,
+              "Top": 0.17969714105129242
+            },
+            "confidence": 85.107421875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 4,
+            "column_index": 4
+          },
+          "row_4_col_5": {
+            "bbox": {
+              "Width": 0.2013779878616333,
+              "Height": 0.016922054812312126,
+              "Left": 0.4913141429424286,
+              "Top": 0.17970579862594604
+            },
+            "confidence": 91.2109375,
+            "text": "3",
+            "header": "dbh_in_cms",
+            "row_index": 4,
+            "column_index": 5
+          },
+          "row_4_col_6": {
+            "bbox": {
+              "Width": 0.20550291240215302,
+              "Height": 0.016922593116760254,
+              "Left": 0.6926896572113037,
+              "Top": 0.17972202599048615
+            },
+            "confidence": 90.087890625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 4,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "4",
+      "spp_name_local_name": "Kinker",
+      "habit": "T",
+      "dbh_in_cms": "3.6+1.8",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06843938678503036,
+          "Top": 0.19657692313194275,
+          "Width": 0.8297504857182503,
+          "Height": 0.016973700374364853
+        },
+        "group_id": "row_5",
+        "row_index": 5,
+        "column_index": -1,
+        "cells": {
+          "row_5_col_1": {
+            "bbox": {
+              "Width": 0.0389322005212307,
+              "Height": 0.01690838485956192,
+              "Left": 0.06843938678503036,
+              "Top": 0.19657692313194275
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 5,
+            "column_index": 1
+          },
+          "row_5_col_2": {
+            "bbox": {
+              "Width": 0.07115084677934647,
+              "Height": 0.016911083832383156,
+              "Left": 0.10736961662769318,
+              "Top": 0.19658009707927704
+            },
+            "confidence": 75.5859375,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 5,
+            "column_index": 2
+          },
+          "row_5_col_3": {
+            "bbox": {
+              "Width": 0.20539744198322296,
+              "Height": 0.016922244802117348,
+              "Left": 0.17851842939853668,
+              "Top": 0.19658590853214264
+            },
+            "confidence": 90.4296875,
+            "text": "Kinker",
+            "header": "spp_name_local_name",
+            "row_index": 5,
+            "column_index": 3
+          },
+          "row_5_col_4": {
+            "bbox": {
+              "Width": 0.10740050673484802,
+              "Height": 0.016914356499910355,
+              "Left": 0.38391363620758057,
+              "Top": 0.19660265743732452
+            },
+            "confidence": 84.814453125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 5,
+            "column_index": 4
+          },
+          "row_5_col_5": {
+            "bbox": {
+              "Width": 0.20137779414653778,
+              "Height": 0.016922226175665855,
+              "Left": 0.49131181836128235,
+              "Top": 0.1966114193201065
+            },
+            "confidence": 90.869140625,
+            "text": "3.6+1.8",
+            "header": "dbh_in_cms",
+            "row_index": 5,
+            "column_index": 5
+          },
+          "row_5_col_6": {
+            "bbox": {
+              "Width": 0.2055027186870575,
+              "Height": 0.01692276820540428,
+              "Left": 0.6926871538162231,
+              "Top": 0.19662785530090332
+            },
+            "confidence": 89.794921875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 5,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "5",
+      "spp_name_local_name": "kisler",
+      "habit": "I",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06843755394220352,
+          "Top": 0.2134820967912674,
+          "Width": 0.829749621450901,
+          "Height": 0.016084715723991394
+        },
+        "group_id": "row_6",
+        "row_index": 6,
+        "column_index": -1,
+        "cells": {
+          "row_6_col_1": {
+            "bbox": {
+              "Width": 0.038932062685489655,
+              "Height": 0.016018647700548172,
+              "Left": 0.06843755394220352,
+              "Top": 0.2134820967912674
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 6,
+            "column_index": 1
+          },
+          "row_6_col_2": {
+            "bbox": {
+              "Width": 0.07115068286657333,
+              "Height": 0.016021376475691795,
+              "Left": 0.10736774653196335,
+              "Top": 0.21348530054092407
+            },
+            "confidence": 74.755859375,
+            "text": "5",
+            "header": "s_no",
+            "row_index": 6,
+            "column_index": 2
+          },
+          "row_6_col_3": {
+            "bbox": {
+              "Width": 0.20539714395999908,
+              "Height": 0.016032660380005836,
+              "Left": 0.17851649224758148,
+              "Top": 0.21349118649959564
+            },
+            "confidence": 89.404296875,
+            "text": "kisler",
+            "header": "spp_name_local_name",
+            "row_index": 6,
+            "column_index": 3
+          },
+          "row_6_col_4": {
+            "bbox": {
+              "Width": 0.10740029811859131,
+              "Height": 0.016024667769670486,
+              "Left": 0.38391152024269104,
+              "Top": 0.21350814402103424
+            },
+            "confidence": 83.837890625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 6,
+            "column_index": 4
+          },
+          "row_6_col_5": {
+            "bbox": {
+              "Width": 0.2013774961233139,
+              "Height": 0.016032621264457703,
+              "Left": 0.49130964279174805,
+              "Top": 0.21351701021194458
+            },
+            "confidence": 89.84375,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 6,
+            "column_index": 5
+          },
+          "row_6_col_6": {
+            "bbox": {
+              "Width": 0.20550240576267242,
+              "Height": 0.01603315770626068,
+              "Left": 0.6926847696304321,
+              "Top": 0.2135336548089981
+            },
+            "confidence": 88.76953125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 6,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "6. I",
+      "spp_name_local_name": "/cose",
+      "habit": "r",
+      "dbh_in_cms": "9",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06843560934066772,
+          "Top": 0.229497492313385,
+          "Width": 0.8297490179538727,
+          "Height": 0.016975250095129013
+        },
+        "group_id": "row_7",
+        "row_index": 7,
+        "column_index": -1,
+        "cells": {
+          "row_7_col_1": {
+            "bbox": {
+              "Width": 0.038932133466005325,
+              "Height": 0.016908401623368263,
+              "Left": 0.06843560934066772,
+              "Top": 0.229497492313385
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 7,
+            "column_index": 1
+          },
+          "row_7_col_2": {
+            "bbox": {
+              "Width": 0.07115072011947632,
+              "Height": 0.016911163926124573,
+              "Left": 0.10736576467752457,
+              "Top": 0.22950074076652527
+            },
+            "confidence": 74.853515625,
+            "text": "6. I",
+            "header": "s_no",
+            "row_index": 7,
+            "column_index": 2
+          },
+          "row_7_col_3": {
+            "bbox": {
+              "Width": 0.2053970843553543,
+              "Height": 0.016922585666179657,
+              "Left": 0.17851445078849792,
+              "Top": 0.2295066863298416
+            },
+            "confidence": 89.55078125,
+            "text": "/cose",
+            "header": "spp_name_local_name",
+            "row_index": 7,
+            "column_index": 3
+          },
+          "row_7_col_4": {
+            "bbox": {
+              "Width": 0.1074003204703331,
+              "Height": 0.016914507374167442,
+              "Left": 0.38390931487083435,
+              "Top": 0.22952383756637573
+            },
+            "confidence": 83.984375,
+            "text": "r",
+            "header": "habit",
+            "row_index": 7,
+            "column_index": 4
+          },
+          "row_7_col_5": {
+            "bbox": {
+              "Width": 0.20137745141983032,
+              "Height": 0.016922561451792717,
+              "Left": 0.4913073182106018,
+              "Top": 0.22953280806541443
+            },
+            "confidence": 89.990234375,
+            "text": "9",
+            "header": "dbh_in_cms",
+            "row_index": 7,
+            "column_index": 5
+          },
+          "row_7_col_6": {
+            "bbox": {
+              "Width": 0.20550236105918884,
+              "Height": 0.01692311093211174,
+              "Left": 0.6926822662353516,
+              "Top": 0.22954963147640228
+            },
+            "confidence": 88.8671875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 7,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "7",
+      "spp_name_local_name": "loags",
+      "habit": "7",
+      "dbh_in_cms": "3.6",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06843377649784088,
+          "Top": 0.2464025914669037,
+          "Width": 0.8297481536865234,
+          "Height": 0.016086284071207047
+        },
+        "group_id": "row_8",
+        "row_index": 8,
+        "column_index": -1,
+        "cells": {
+          "row_8_col_1": {
+            "bbox": {
+              "Width": 0.03893199563026428,
+              "Height": 0.016018668189644814,
+              "Left": 0.06843377649784088,
+              "Top": 0.2464025914669037
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 8,
+            "column_index": 1
+          },
+          "row_8_col_2": {
+            "bbox": {
+              "Width": 0.07115055620670319,
+              "Height": 0.01602145843207836,
+              "Left": 0.10736389458179474,
+              "Top": 0.24640588462352753
+            },
+            "confidence": 73.6328125,
+            "text": "7",
+            "header": "s_no",
+            "row_index": 8,
+            "column_index": 2
+          },
+          "row_8_col_3": {
+            "bbox": {
+              "Width": 0.20539678633213043,
+              "Height": 0.016033004969358444,
+              "Left": 0.17851251363754272,
+              "Top": 0.24641190469264984
+            },
+            "confidence": 88.0859375,
+            "text": "loags",
+            "header": "spp_name_local_name",
+            "row_index": 8,
+            "column_index": 3
+          },
+          "row_8_col_4": {
+            "bbox": {
+              "Width": 0.10740010440349579,
+              "Height": 0.016024822369217873,
+              "Left": 0.3839071989059448,
+              "Top": 0.24642926454544067
+            },
+            "confidence": 82.6171875,
+            "text": "7",
+            "header": "habit",
+            "row_index": 8,
+            "column_index": 4
+          },
+          "row_8_col_5": {
+            "bbox": {
+              "Width": 0.20137713849544525,
+              "Height": 0.016032958403229713,
+              "Left": 0.4913051128387451,
+              "Top": 0.24643835425376892
+            },
+            "confidence": 88.525390625,
+            "text": "3.6",
+            "header": "dbh_in_cms",
+            "row_index": 8,
+            "column_index": 5
+          },
+          "row_8_col_6": {
+            "bbox": {
+              "Width": 0.20550204813480377,
+              "Height": 0.016033504158258438,
+              "Left": 0.6926798820495605,
+              "Top": 0.2464553713798523
+            },
+            "confidence": 87.451171875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 8,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "8",
+      "spp_name_local_name": "Boothe kam ham",
+      "habit": "7",
+      "dbh_in_cms": "9.5 +L",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06843183189630508,
+          "Top": 0.2624179422855377,
+          "Width": 0.8297475501894951,
+          "Height": 0.01697682961821556
+        },
+        "group_id": "row_9",
+        "row_index": 9,
+        "column_index": -1,
+        "cells": {
+          "row_9_col_1": {
+            "bbox": {
+              "Width": 0.038932062685489655,
+              "Height": 0.016908418387174606,
+              "Left": 0.06843183189630508,
+              "Top": 0.2624179422855377
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 9,
+            "column_index": 1
+          },
+          "row_9_col_2": {
+            "bbox": {
+              "Width": 0.07115060091018677,
+              "Height": 0.01691124401986599,
+              "Left": 0.10736192017793655,
+              "Top": 0.26242125034332275
+            },
+            "confidence": 74.853515625,
+            "text": "8",
+            "header": "s_no",
+            "row_index": 9,
+            "column_index": 2
+          },
+          "row_9_col_3": {
+            "bbox": {
+              "Width": 0.20539672672748566,
+              "Height": 0.016922928392887115,
+              "Left": 0.17851047217845917,
+              "Top": 0.26242735981941223
+            },
+            "confidence": 89.55078125,
+            "text": "Boothe kam ham",
+            "header": "spp_name_local_name",
+            "row_index": 9,
+            "column_index": 3
+          },
+          "row_9_col_4": {
+            "bbox": {
+              "Width": 0.10740013420581818,
+              "Height": 0.01691465824842453,
+              "Left": 0.38390496373176575,
+              "Top": 0.2624449133872986
+            },
+            "confidence": 83.984375,
+            "text": "7",
+            "header": "habit",
+            "row_index": 9,
+            "column_index": 4
+          },
+          "row_9_col_5": {
+            "bbox": {
+              "Width": 0.20137709379196167,
+              "Height": 0.01692289486527443,
+              "Left": 0.4913027882575989,
+              "Top": 0.262454092502594
+            },
+            "confidence": 89.990234375,
+            "text": "9.5 +L",
+            "header": "dbh_in_cms",
+            "row_index": 9,
+            "column_index": 5
+          },
+          "row_9_col_6": {
+            "bbox": {
+              "Width": 0.2055020034313202,
+              "Height": 0.0169234536588192,
+              "Left": 0.69267737865448,
+              "Top": 0.2624713182449341
+            },
+            "confidence": 88.8671875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 9,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "9",
+      "spp_name_local_name": "C.A",
+      "habit": "S",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06842999160289764,
+          "Top": 0.2793229818344116,
+          "Width": 0.8297466933727264,
+          "Height": 0.01608785055577755
+        },
+        "group_id": "row_10",
+        "row_index": 10,
+        "column_index": -1,
+        "cells": {
+          "row_10_col_1": {
+            "bbox": {
+              "Width": 0.03893192484974861,
+              "Height": 0.016018686816096306,
+              "Left": 0.06842999160289764,
+              "Top": 0.2793229818344116
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 10,
+            "column_index": 1
+          },
+          "row_10_col_2": {
+            "bbox": {
+              "Width": 0.07115042954683304,
+              "Height": 0.016021542251110077,
+              "Left": 0.10736005008220673,
+              "Top": 0.27932634949684143
+            },
+            "confidence": 73.4375,
+            "text": "9",
+            "header": "s_no",
+            "row_index": 10,
+            "column_index": 2
+          },
+          "row_10_col_3": {
+            "bbox": {
+              "Width": 0.20539642870426178,
+              "Height": 0.0160333514213562,
+              "Left": 0.17850854992866516,
+              "Top": 0.2793325185775757
+            },
+            "confidence": 87.841796875,
+            "text": "C.A",
+            "header": "spp_name_local_name",
+            "row_index": 10,
+            "column_index": 3
+          },
+          "row_10_col_4": {
+            "bbox": {
+              "Width": 0.10739991813898087,
+              "Height": 0.01602497510612011,
+              "Left": 0.3839028775691986,
+              "Top": 0.27935028076171875
+            },
+            "confidence": 82.373046875,
+            "text": "S",
+            "header": "habit",
+            "row_index": 10,
+            "column_index": 4
+          },
+          "row_10_col_5": {
+            "bbox": {
+              "Width": 0.2013767957687378,
+              "Height": 0.016033297404646873,
+              "Left": 0.4913005828857422,
+              "Top": 0.2793595790863037
+            },
+            "confidence": 88.28125,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 10,
+            "column_index": 5
+          },
+          "row_10_col_6": {
+            "bbox": {
+              "Width": 0.20550169050693512,
+              "Height": 0.016033848747611046,
+              "Left": 0.692674994468689,
+              "Top": 0.2793769836425781
+            },
+            "confidence": 87.20703125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 10,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "10",
+      "spp_name_local_name": "Mine",
+      "habit": "T",
+      "dbh_in_cms": "3.4",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06842805445194244,
+          "Top": 0.2953382730484009,
+          "Width": 0.8297460824251175,
+          "Height": 0.016978394240140915
+        },
+        "group_id": "row_11",
+        "row_index": 11,
+        "column_index": -1,
+        "cells": {
+          "row_11_col_1": {
+            "bbox": {
+              "Width": 0.03893199563026428,
+              "Height": 0.01690843515098095,
+              "Left": 0.06842805445194244,
+              "Top": 0.2953382730484009
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 11,
+            "column_index": 1
+          },
+          "row_11_col_2": {
+            "bbox": {
+              "Width": 0.07115047425031662,
+              "Height": 0.016911324113607407,
+              "Left": 0.10735807567834854,
+              "Top": 0.2953416705131531
+            },
+            "confidence": 72.998046875,
+            "text": "10",
+            "header": "s_no",
+            "row_index": 11,
+            "column_index": 2
+          },
+          "row_11_col_3": {
+            "bbox": {
+              "Width": 0.2053963541984558,
+              "Height": 0.016923271119594574,
+              "Left": 0.1785065084695816,
+              "Top": 0.2953478991985321
+            },
+            "confidence": 87.3046875,
+            "text": "Mine",
+            "header": "spp_name_local_name",
+            "row_index": 11,
+            "column_index": 3
+          },
+          "row_11_col_4": {
+            "bbox": {
+              "Width": 0.10739994049072266,
+              "Height": 0.016914809122681618,
+              "Left": 0.38390064239501953,
+              "Top": 0.2953658699989319
+            },
+            "confidence": 81.884765625,
+            "text": "T",
+            "header": "habit",
+            "row_index": 11,
+            "column_index": 4
+          },
+          "row_11_col_5": {
+            "bbox": {
+              "Width": 0.20137673616409302,
+              "Height": 0.01692323014140129,
+              "Left": 0.49129825830459595,
+              "Top": 0.295375257730484
+            },
+            "confidence": 87.79296875,
+            "text": "3.4",
+            "header": "dbh_in_cms",
+            "row_index": 11,
+            "column_index": 5
+          },
+          "row_11_col_6": {
+            "bbox": {
+              "Width": 0.20550164580345154,
+              "Height": 0.016923796385526657,
+              "Left": 0.6926724910736084,
+              "Top": 0.29539287090301514
+            },
+            "confidence": 86.71875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 11,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "4",
+      "spp_name_local_name": "Densiflown",
+      "habit": "I",
+      "dbh_in_cms": "21",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.068426214158535,
+          "Top": 0.31224325299263,
+          "Width": 0.8297452107071877,
+          "Height": 0.016089418902993202
+        },
+        "group_id": "row_12",
+        "row_index": 12,
+        "column_index": -1,
+        "cells": {
+          "row_12_col_1": {
+            "bbox": {
+              "Width": 0.03893185779452324,
+              "Height": 0.016018707305192947,
+              "Left": 0.068426214158535,
+              "Top": 0.31224325299263
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 12,
+            "column_index": 1
+          },
+          "row_12_col_2": {
+            "bbox": {
+              "Width": 0.07115030288696289,
+              "Height": 0.016021624207496643,
+              "Left": 0.10735620558261871,
+              "Top": 0.312246710062027
+            },
+            "confidence": 70.41015625,
+            "text": "4",
+            "header": "s_no",
+            "row_index": 12,
+            "column_index": 2
+          },
+          "row_12_col_3": {
+            "bbox": {
+              "Width": 0.20539607107639313,
+              "Height": 0.01603369601070881,
+              "Left": 0.1785045713186264,
+              "Top": 0.3122529983520508
+            },
+            "confidence": 84.1796875,
+            "text": "Densiflown",
+            "header": "spp_name_local_name",
+            "row_index": 12,
+            "column_index": 3
+          },
+          "row_12_col_4": {
+            "bbox": {
+              "Width": 0.10739973187446594,
+              "Height": 0.016025129705667496,
+              "Left": 0.38389852643013,
+              "Top": 0.3122711777687073
+            },
+            "confidence": 78.955078125,
+            "text": "I",
+            "header": "habit",
+            "row_index": 12,
+            "column_index": 4
+          },
+          "row_12_col_5": {
+            "bbox": {
+              "Width": 0.20137643814086914,
+              "Height": 0.016033634543418884,
+              "Left": 0.49129605293273926,
+              "Top": 0.31228065490722656
+            },
+            "confidence": 84.619140625,
+            "text": "21",
+            "header": "dbh_in_cms",
+            "row_index": 12,
+            "column_index": 5
+          },
+          "row_12_col_6": {
+            "bbox": {
+              "Width": 0.20550131797790527,
+              "Height": 0.016034195199608803,
+              "Left": 0.6926701068878174,
+              "Top": 0.3122984766960144
+            },
+            "confidence": 83.59375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 12,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "12",
+      "spp_name_local_name": "Boothekam",
+      "habit": "L",
+      "dbh_in_cms": "3.6",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0684242770075798,
+          "Top": 0.3282584846019745,
+          "Width": 0.8297445997595787,
+          "Height": 0.01697995886206627
+        },
+        "group_id": "row_13",
+        "row_index": 13,
+        "column_index": -1,
+        "cells": {
+          "row_13_col_1": {
+            "bbox": {
+              "Width": 0.03893192857503891,
+              "Height": 0.016908451914787292,
+              "Left": 0.0684242770075798,
+              "Top": 0.3282584846019745
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 13,
+            "column_index": 1
+          },
+          "row_13_col_2": {
+            "bbox": {
+              "Width": 0.07115034759044647,
+              "Height": 0.016911404207348824,
+              "Left": 0.10735423117876053,
+              "Top": 0.32826197147369385
+            },
+            "confidence": 72.998046875,
+            "text": "12",
+            "header": "s_no",
+            "row_index": 13,
+            "column_index": 2
+          },
+          "row_13_col_3": {
+            "bbox": {
+              "Width": 0.20539599657058716,
+              "Height": 0.016923613846302032,
+              "Left": 0.17850252985954285,
+              "Top": 0.3282683193683624
+            },
+            "confidence": 87.255859375,
+            "text": "Boothekam",
+            "header": "spp_name_local_name",
+            "row_index": 13,
+            "column_index": 3
+          },
+          "row_13_col_4": {
+            "bbox": {
+              "Width": 0.10739975422620773,
+              "Height": 0.016914958134293556,
+              "Left": 0.3838963210582733,
+              "Top": 0.32828667759895325
+            },
+            "confidence": 81.884765625,
+            "text": "L",
+            "header": "habit",
+            "row_index": 13,
+            "column_index": 4
+          },
+          "row_13_col_5": {
+            "bbox": {
+              "Width": 0.20137637853622437,
+              "Height": 0.016923563554883003,
+              "Left": 0.491293728351593,
+              "Top": 0.3282963037490845
+            },
+            "confidence": 87.744140625,
+            "text": "3.6",
+            "header": "dbh_in_cms",
+            "row_index": 13,
+            "column_index": 5
+          },
+          "row_13_col_6": {
+            "bbox": {
+              "Width": 0.2055012732744217,
+              "Height": 0.016924139112234116,
+              "Left": 0.6926676034927368,
+              "Top": 0.32831430435180664
+            },
+            "confidence": 86.669921875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 13,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "is",
+      "spp_name_local_name": "Boothehen",
+      "habit": "5",
+      "dbh_in_cms": "7",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0684223398566246,
+          "Top": 0.34516340494155884,
+          "Width": 0.829743854701519,
+          "Height": 0.016980759799480438
+        },
+        "group_id": "row_14",
+        "row_index": 14,
+        "column_index": -1,
+        "cells": {
+          "row_14_col_1": {
+            "bbox": {
+              "Width": 0.038931891322135925,
+              "Height": 0.01690845936536789,
+              "Left": 0.0684223398566246,
+              "Top": 0.34516340494155884
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 14,
+            "column_index": 1
+          },
+          "row_14_col_2": {
+            "bbox": {
+              "Width": 0.0711502805352211,
+              "Height": 0.016911445185542107,
+              "Left": 0.10735224932432175,
+              "Top": 0.3451669216156006
+            },
+            "confidence": 67.333984375,
+            "text": "is",
+            "header": "s_no",
+            "row_index": 14,
+            "column_index": 2
+          },
+          "row_14_col_3": {
+            "bbox": {
+              "Width": 0.20539581775665283,
+              "Height": 0.01692378893494606,
+              "Left": 0.17850050330162048,
+              "Top": 0.34517335891723633
+            },
+            "confidence": 80.517578125,
+            "text": "Boothehen",
+            "header": "spp_name_local_name",
+            "row_index": 14,
+            "column_index": 3
+          },
+          "row_14_col_4": {
+            "bbox": {
+              "Width": 0.10739965736865997,
+              "Height": 0.016915036365389824,
+              "Left": 0.38389408588409424,
+              "Top": 0.34519192576408386
+            },
+            "confidence": 75.537109375,
+            "text": "5",
+            "header": "habit",
+            "row_index": 14,
+            "column_index": 4
+          },
+          "row_14_col_5": {
+            "bbox": {
+              "Width": 0.20137619972229004,
+              "Height": 0.016923734918236732,
+              "Left": 0.49129143357276917,
+              "Top": 0.34520164132118225
+            },
+            "confidence": 80.95703125,
+            "text": "7",
+            "header": "dbh_in_cms",
+            "row_index": 14,
+            "column_index": 5
+          },
+          "row_14_col_6": {
+            "bbox": {
+              "Width": 0.20550109446048737,
+              "Height": 0.016924314200878143,
+              "Left": 0.6926651000976562,
+              "Top": 0.34521985054016113
+            },
+            "confidence": 79.931640625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 14,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "14",
+      "spp_name_local_name": "Pongon",
+      "habit": "T",
+      "dbh_in_cms": "3.5",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.0684203952550888,
+          "Top": 0.3620683252811432,
+          "Width": 0.8297431170940399,
+          "Height": 0.016981562599539757
+        },
+        "group_id": "row_15",
+        "row_index": 15,
+        "column_index": -1,
+        "cells": {
+          "row_15_col_1": {
+            "bbox": {
+              "Width": 0.03893185779452324,
+              "Height": 0.016908468678593636,
+              "Left": 0.0684203952550888,
+              "Top": 0.3620683252811432
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 15,
+            "column_index": 1
+          },
+          "row_15_col_2": {
+            "bbox": {
+              "Width": 0.07115022093057632,
+              "Height": 0.01691148616373539,
+              "Left": 0.10735027492046356,
+              "Top": 0.3620718717575073
+            },
+            "confidence": 72.265625,
+            "text": "14",
+            "header": "s_no",
+            "row_index": 15,
+            "column_index": 2
+          },
+          "row_15_col_3": {
+            "bbox": {
+              "Width": 0.2053956240415573,
+              "Height": 0.016923964023590088,
+              "Left": 0.17849846184253693,
+              "Top": 0.36207836866378784
+            },
+            "confidence": 86.42578125,
+            "text": "Pongon",
+            "header": "spp_name_local_name",
+            "row_index": 15,
+            "column_index": 3
+          },
+          "row_15_col_4": {
+            "bbox": {
+              "Width": 0.10739956051111221,
+              "Height": 0.016915112733840942,
+              "Left": 0.38389185070991516,
+              "Top": 0.3620971441268921
+            },
+            "confidence": 81.0546875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 15,
+            "column_index": 4
+          },
+          "row_15_col_5": {
+            "bbox": {
+              "Width": 0.2013760209083557,
+              "Height": 0.01692390814423561,
+              "Left": 0.4912891089916229,
+              "Top": 0.36210697889328003
+            },
+            "confidence": 86.865234375,
+            "text": "3.5",
+            "header": "dbh_in_cms",
+            "row_index": 15,
+            "column_index": 5
+          },
+          "row_15_col_6": {
+            "bbox": {
+              "Width": 0.20550091564655304,
+              "Height": 0.01692449115216732,
+              "Left": 0.6926625967025757,
+              "Top": 0.3621253967285156
+            },
+            "confidence": 85.83984375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 15,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "15",
+      "spp_name_local_name": "Boothahani",
+      "habit": "- TI",
+      "dbh_in_cms": "13",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06841835379600525,
+          "Top": 0.37897318601608276,
+          "Width": 0.8297424763441086,
+          "Height": 0.01787213608622551
+        },
+        "group_id": "row_16",
+        "row_index": 16,
+        "column_index": -1,
+        "cells": {
+          "row_16_col_1": {
+            "bbox": {
+              "Width": 0.03893192484974861,
+              "Height": 0.017798205837607384,
+              "Left": 0.06841835379600525,
+              "Top": 0.37897318601608276
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 16,
+            "column_index": 1
+          },
+          "row_16_col_2": {
+            "bbox": {
+              "Width": 0.07115025818347931,
+              "Height": 0.017801260575652122,
+              "Left": 0.10734819620847702,
+              "Top": 0.3789767920970917
+            },
+            "confidence": 72.4609375,
+            "text": "15",
+            "header": "s_no",
+            "row_index": 16,
+            "column_index": 2
+          },
+          "row_16_col_3": {
+            "bbox": {
+              "Width": 0.20539554953575134,
+              "Height": 0.01781388558447361,
+              "Left": 0.178496316075325,
+              "Top": 0.37898334860801697
+            },
+            "confidence": 86.669921875,
+            "text": "Boothahani",
+            "header": "spp_name_local_name",
+            "row_index": 16,
+            "column_index": 3
+          },
+          "row_16_col_4": {
+            "bbox": {
+              "Width": 0.107399582862854,
+              "Height": 0.017804941162467003,
+              "Left": 0.3838895261287689,
+              "Top": 0.37900233268737793
+            },
+            "confidence": 81.298828125,
+            "text": "- TI",
+            "header": "habit",
+            "row_index": 16,
+            "column_index": 4
+          },
+          "row_16_col_5": {
+            "bbox": {
+              "Width": 0.20137596130371094,
+              "Height": 0.01781383901834488,
+              "Left": 0.49128666520118713,
+              "Top": 0.37901225686073303
+            },
+            "confidence": 87.109375,
+            "text": "13",
+            "header": "dbh_in_cms",
+            "row_index": 16,
+            "column_index": 5
+          },
+          "row_16_col_6": {
+            "bbox": {
+              "Width": 0.20550085604190826,
+              "Height": 0.01781443879008293,
+              "Left": 0.6926599740982056,
+              "Top": 0.37903088331222534
+            },
+            "confidence": 86.03515625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 16,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "16",
+      "spp_name_local_name": "Pongon",
+      "habit": "5",
+      "dbh_in_cms": "1",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06841651350259781,
+          "Top": 0.3967677652835846,
+          "Width": 0.829741470515728,
+          "Height": 0.016093434765934944
+        },
+        "group_id": "row_17",
+        "row_index": 17,
+        "column_index": -1,
+        "cells": {
+          "row_17_col_1": {
+            "bbox": {
+              "Width": 0.03893168270587921,
+              "Height": 0.016018757596611977,
+              "Left": 0.06841651350259781,
+              "Top": 0.3967677652835846
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 17,
+            "column_index": 1
+          },
+          "row_17_col_2": {
+            "bbox": {
+              "Width": 0.07114998251199722,
+              "Height": 0.016021838411688805,
+              "Left": 0.10734632611274719,
+              "Top": 0.3967714011669159
+            },
+            "confidence": 72.802734375,
+            "text": "16",
+            "header": "s_no",
+            "row_index": 17,
+            "column_index": 2
+          },
+          "row_17_col_3": {
+            "bbox": {
+              "Width": 0.20539513230323792,
+              "Height": 0.016034582629799843,
+              "Left": 0.1784943789243698,
+              "Top": 0.39677804708480835
+            },
+            "confidence": 87.109375,
+            "text": "Pongon",
+            "header": "spp_name_local_name",
+            "row_index": 17,
+            "column_index": 3
+          },
+          "row_17_col_4": {
+            "bbox": {
+              "Width": 0.10739924758672714,
+              "Height": 0.016025524586439133,
+              "Left": 0.3838874101638794,
+              "Top": 0.396797239780426
+            },
+            "confidence": 81.689453125,
+            "text": "5",
+            "header": "habit",
+            "row_index": 17,
+            "column_index": 4
+          },
+          "row_17_col_5": {
+            "bbox": {
+              "Width": 0.20137552917003632,
+              "Height": 0.016034500673413277,
+              "Left": 0.49128445982933044,
+              "Top": 0.3968072831630707
+            },
+            "confidence": 87.548828125,
+            "text": "1",
+            "header": "dbh_in_cms",
+            "row_index": 17,
+            "column_index": 5
+          },
+          "row_17_col_6": {
+            "bbox": {
+              "Width": 0.20550039410591125,
+              "Height": 0.016035081818699837,
+              "Left": 0.6926575899124146,
+              "Top": 0.3968261182308197
+            },
+            "confidence": 86.474609375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 17,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "17",
+      "spp_name_local_name": "/Casi",
+      "habit": "T",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06841457635164261,
+          "Top": 0.41278284788131714,
+          "Width": 0.829740859568119,
+          "Height": 0.016983967274427414
+        },
+        "group_id": "row_18",
+        "row_index": 18,
+        "column_index": -1,
+        "cells": {
+          "row_18_col_1": {
+            "bbox": {
+              "Width": 0.038931749761104584,
+              "Height": 0.016908494755625725,
+              "Left": 0.06841457635164261,
+              "Top": 0.41278284788131714
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 18,
+            "column_index": 1
+          },
+          "row_18_col_2": {
+            "bbox": {
+              "Width": 0.0711500272154808,
+              "Height": 0.01691160909831524,
+              "Left": 0.10734435170888901,
+              "Top": 0.4127865135669708
+            },
+            "confidence": 69.970703125,
+            "text": "17",
+            "header": "s_no",
+            "row_index": 18,
+            "column_index": 2
+          },
+          "row_18_col_3": {
+            "bbox": {
+              "Width": 0.20539507269859314,
+              "Height": 0.01692449115216732,
+              "Left": 0.17849233746528625,
+              "Top": 0.41279321908950806
+            },
+            "confidence": 83.69140625,
+            "text": "/Casi",
+            "header": "spp_name_local_name",
+            "row_index": 18,
+            "column_index": 3
+          },
+          "row_18_col_4": {
+            "bbox": {
+              "Width": 0.10739926993846893,
+              "Height": 0.016915345564484596,
+              "Left": 0.3838851749897003,
+              "Top": 0.41281262040138245
+            },
+            "confidence": 78.466796875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 18,
+            "column_index": 4
+          },
+          "row_18_col_5": {
+            "bbox": {
+              "Width": 0.20137546956539154,
+              "Height": 0.0169244222342968,
+              "Left": 0.4912821352481842,
+              "Top": 0.41282278299331665
+            },
+            "confidence": 84.08203125,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 18,
+            "column_index": 5
+          },
+          "row_18_col_6": {
+            "bbox": {
+              "Width": 0.20550034940242767,
+              "Height": 0.016925018280744553,
+              "Left": 0.692655086517334,
+              "Top": 0.412841796875
+            },
+            "confidence": 83.056640625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 18,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "18",
+      "spp_name_local_name": "100ml",
+      "habit": "I",
+      "dbh_in_cms": "4",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06841273605823517,
+          "Top": 0.42968761920928955,
+          "Width": 0.8297400623559952,
+          "Height": 0.016095003113150597
+        },
+        "group_id": "row_19",
+        "row_index": 19,
+        "column_index": -1,
+        "cells": {
+          "row_19_col_1": {
+            "bbox": {
+              "Width": 0.03893161565065384,
+              "Height": 0.016018778085708618,
+              "Left": 0.06841273605823517,
+              "Top": 0.42968761920928955
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 19,
+            "column_index": 1
+          },
+          "row_19_col_2": {
+            "bbox": {
+              "Width": 0.07114985585212708,
+              "Height": 0.01602192036807537,
+              "Left": 0.10734248161315918,
+              "Top": 0.429691344499588
+            },
+            "confidence": 67.578125,
+            "text": "18",
+            "header": "s_no",
+            "row_index": 19,
+            "column_index": 2
+          },
+          "row_19_col_3": {
+            "bbox": {
+              "Width": 0.20539477467536926,
+              "Height": 0.0160349290817976,
+              "Left": 0.17849040031433105,
+              "Top": 0.42969810962677
+            },
+            "confidence": 80.810546875,
+            "text": "100ml",
+            "header": "spp_name_local_name",
+            "row_index": 19,
+            "column_index": 3
+          },
+          "row_19_col_4": {
+            "bbox": {
+              "Width": 0.10739905387163162,
+              "Height": 0.01602567732334137,
+              "Left": 0.3838830888271332,
+              "Top": 0.4297177195549011
+            },
+            "confidence": 75.78125,
+            "text": "I",
+            "header": "habit",
+            "row_index": 19,
+            "column_index": 4
+          },
+          "row_19_col_5": {
+            "bbox": {
+              "Width": 0.20137517154216766,
+              "Height": 0.016034837812185287,
+              "Left": 0.4912799298763275,
+              "Top": 0.4297279715538025
+            },
+            "confidence": 81.201171875,
+            "text": "4",
+            "header": "dbh_in_cms",
+            "row_index": 19,
+            "column_index": 5
+          },
+          "row_19_col_6": {
+            "bbox": {
+              "Width": 0.2055000364780426,
+              "Height": 0.016035428270697594,
+              "Left": 0.6926527619361877,
+              "Top": 0.42974719405174255
+            },
+            "confidence": 80.224609375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 19,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "19",
+      "spp_name_local_name": "Boothdiam",
+      "habit": "I",
+      "dbh_in_cms": "3.5f 23",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06841079890727997,
+          "Top": 0.4457026422023773,
+          "Width": 0.8297393918037415,
+          "Height": 0.016985531896352768
+        },
+        "group_id": "row_20",
+        "row_index": 20,
+        "column_index": -1,
+        "cells": {
+          "row_20_col_1": {
+            "bbox": {
+              "Width": 0.03893168270587921,
+              "Height": 0.016908511519432068,
+              "Left": 0.06841079890727997,
+              "Top": 0.4457026422023773
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 20,
+            "column_index": 1
+          },
+          "row_20_col_2": {
+            "bbox": {
+              "Width": 0.07114990055561066,
+              "Height": 0.016911687329411507,
+              "Left": 0.107340507209301,
+              "Top": 0.44570639729499817
+            },
+            "confidence": 67.67578125,
+            "text": "19",
+            "header": "s_no",
+            "row_index": 20,
+            "column_index": 2
+          },
+          "row_20_col_3": {
+            "bbox": {
+              "Width": 0.2053947150707245,
+              "Height": 0.01692483387887478,
+              "Left": 0.1784883737564087,
+              "Top": 0.44571325182914734
+            },
+            "confidence": 80.95703125,
+            "text": "Boothdiam",
+            "header": "spp_name_local_name",
+            "row_index": 20,
+            "column_index": 3
+          },
+          "row_20_col_4": {
+            "bbox": {
+              "Width": 0.10739908367395401,
+              "Height": 0.016915496438741684,
+              "Left": 0.3838808536529541,
+              "Top": 0.44573304057121277
+            },
+            "confidence": 75.927734375,
+            "text": "I",
+            "header": "habit",
+            "row_index": 20,
+            "column_index": 4
+          },
+          "row_20_col_5": {
+            "bbox": {
+              "Width": 0.20137512683868408,
+              "Height": 0.01692475751042366,
+              "Left": 0.4912776052951813,
+              "Top": 0.4457434117794037
+            },
+            "confidence": 81.34765625,
+            "text": "3.5f 23",
+            "header": "dbh_in_cms",
+            "row_index": 20,
+            "column_index": 5
+          },
+          "row_20_col_6": {
+            "bbox": {
+              "Width": 0.20549999177455902,
+              "Height": 0.01692536100745201,
+              "Left": 0.6926501989364624,
+              "Top": 0.4457628130912781
+            },
+            "confidence": 80.37109375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 20,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "20",
+      "spp_name_local_name": "Corre",
+      "habit": "1",
+      "dbh_in_cms": "3",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06840885430574417,
+          "Top": 0.46260735392570496,
+          "Width": 0.8297386392951012,
+          "Height": 0.016986332833766937
+        },
+        "group_id": "row_21",
+        "row_index": 21,
+        "column_index": -1,
+        "cells": {
+          "row_21_col_1": {
+            "bbox": {
+              "Width": 0.038931649178266525,
+              "Height": 0.016908518970012665,
+              "Left": 0.06840885430574417,
+              "Top": 0.46260735392570496
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 21,
+            "column_index": 1
+          },
+          "row_21_col_2": {
+            "bbox": {
+              "Width": 0.07114983350038528,
+              "Height": 0.01691172830760479,
+              "Left": 0.10733853280544281,
+              "Top": 0.4626111388206482
+            },
+            "confidence": 69.677734375,
+            "text": "20",
+            "header": "s_no",
+            "row_index": 21,
+            "column_index": 2
+          },
+          "row_21_col_3": {
+            "bbox": {
+              "Width": 0.20539452135562897,
+              "Height": 0.016925010830163956,
+              "Left": 0.17848633229732513,
+              "Top": 0.4626180827617645
+            },
+            "confidence": 83.349609375,
+            "text": "Corre",
+            "header": "spp_name_local_name",
+            "row_index": 21,
+            "column_index": 3
+          },
+          "row_21_col_4": {
+            "bbox": {
+              "Width": 0.10739898681640625,
+              "Height": 0.016915572807192802,
+              "Left": 0.383878618478775,
+              "Top": 0.46263808012008667
+            },
+            "confidence": 78.173828125,
+            "text": "1",
+            "header": "habit",
+            "row_index": 21,
+            "column_index": 4
+          },
+          "row_21_col_5": {
+            "bbox": {
+              "Width": 0.20137493312358856,
+              "Height": 0.01692492887377739,
+              "Left": 0.49127528071403503,
+              "Top": 0.46264854073524475
+            },
+            "confidence": 83.740234375,
+            "text": "3",
+            "header": "dbh_in_cms",
+            "row_index": 21,
+            "column_index": 5
+          },
+          "row_21_col_6": {
+            "bbox": {
+              "Width": 0.2054997980594635,
+              "Height": 0.01692553609609604,
+              "Left": 0.6926476955413818,
+              "Top": 0.46266815066337585
+            },
+            "confidence": 82.763671875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 21,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "21",
+      "spp_name_local_name": "Kage",
+      "habit": "I",
+      "dbh_in_cms": "14",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06840702146291733,
+          "Top": 0.4795120358467102,
+          "Width": 0.8297378346323967,
+          "Height": 0.016097404062747955
+        },
+        "group_id": "row_22",
+        "row_index": 22,
+        "column_index": -1,
+        "cells": {
+          "row_22_col_1": {
+            "bbox": {
+              "Width": 0.03893151134252548,
+              "Height": 0.016018807888031006,
+              "Left": 0.06840702146291733,
+              "Top": 0.4795120358467102
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 22,
+            "column_index": 1
+          },
+          "row_22_col_2": {
+            "bbox": {
+              "Width": 0.07114966958761215,
+              "Height": 0.01602204516530037,
+              "Left": 0.10733665525913239,
+              "Top": 0.4795158803462982
+            },
+            "confidence": 66.650390625,
+            "text": "21",
+            "header": "s_no",
+            "row_index": 22,
+            "column_index": 2
+          },
+          "row_22_col_3": {
+            "bbox": {
+              "Width": 0.20539423823356628,
+              "Height": 0.016035450622439384,
+              "Left": 0.17848439514636993,
+              "Top": 0.4795228838920593
+            },
+            "confidence": 79.6875,
+            "text": "Kage",
+            "header": "spp_name_local_name",
+            "row_index": 22,
+            "column_index": 3
+          },
+          "row_22_col_4": {
+            "bbox": {
+              "Width": 0.10739877074956894,
+              "Height": 0.016025910153985023,
+              "Left": 0.3838765323162079,
+              "Top": 0.4795430898666382
+            },
+            "confidence": 74.755859375,
+            "text": "I",
+            "header": "habit",
+            "row_index": 22,
+            "column_index": 4
+          },
+          "row_22_col_5": {
+            "bbox": {
+              "Width": 0.20137463510036469,
+              "Height": 0.016035350039601326,
+              "Left": 0.49127307534217834,
+              "Top": 0.4795536696910858
+            },
+            "confidence": 80.078125,
+            "text": "14",
+            "header": "dbh_in_cms",
+            "row_index": 22,
+            "column_index": 5
+          },
+          "row_22_col_6": {
+            "bbox": {
+              "Width": 0.20549948513507843,
+              "Height": 0.016035951673984528,
+              "Left": 0.6926453709602356,
+              "Top": 0.47957348823547363
+            },
+            "confidence": 79.1015625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 22,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "22",
+      "spp_name_local_name": "100ml",
+      "habit": "T",
+      "dbh_in_cms": "7",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06840507686138153,
+          "Top": 0.4955269992351532,
+          "Width": 0.8297372311353683,
+          "Height": 0.01698789745569229
+        },
+        "group_id": "row_23",
+        "row_index": 23,
+        "column_index": -1,
+        "cells": {
+          "row_23_col_1": {
+            "bbox": {
+              "Width": 0.038931578397750854,
+              "Height": 0.016908535733819008,
+              "Left": 0.06840507686138153,
+              "Top": 0.4955269992351532
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 23,
+            "column_index": 1
+          },
+          "row_23_col_2": {
+            "bbox": {
+              "Width": 0.07114971429109573,
+              "Height": 0.016911808401346207,
+              "Left": 0.1073346808552742,
+              "Top": 0.4955308437347412
+            },
+            "confidence": 70.80078125,
+            "text": "22",
+            "header": "s_no",
+            "row_index": 23,
+            "column_index": 2
+          },
+          "row_23_col_3": {
+            "bbox": {
+              "Width": 0.20539416372776031,
+              "Height": 0.016925351694226265,
+              "Left": 0.17848235368728638,
+              "Top": 0.4955379366874695
+            },
+            "confidence": 84.66796875,
+            "text": "100ml",
+            "header": "spp_name_local_name",
+            "row_index": 23,
+            "column_index": 3
+          },
+          "row_23_col_4": {
+            "bbox": {
+              "Width": 0.10739879310131073,
+              "Height": 0.01691572368144989,
+              "Left": 0.3838742971420288,
+              "Top": 0.49555832147598267
+            },
+            "confidence": 79.39453125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 23,
+            "column_index": 4
+          },
+          "row_23_col_5": {
+            "bbox": {
+              "Width": 0.2013745903968811,
+              "Height": 0.016925262287259102,
+              "Left": 0.4912707805633545,
+              "Top": 0.49556899070739746
+            },
+            "confidence": 85.107421875,
+            "text": "7",
+            "header": "dbh_in_cms",
+            "row_index": 23,
+            "column_index": 5
+          },
+          "row_23_col_6": {
+            "bbox": {
+              "Width": 0.20549944043159485,
+              "Height": 0.016925878822803497,
+              "Left": 0.692642867565155,
+              "Top": 0.495589017868042
+            },
+            "confidence": 84.033203125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 23,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "23",
+      "spp_name_local_name": "kinker",
+      "habit": "I",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06840324401855469,
+          "Top": 0.5124316215515137,
+          "Width": 0.8297363668680191,
+          "Height": 0.01609894074499607
+        },
+        "group_id": "row_24",
+        "row_index": 24,
+        "column_index": -1,
+        "cells": {
+          "row_24_col_1": {
+            "bbox": {
+              "Width": 0.03893144056200981,
+              "Height": 0.016018828377127647,
+              "Left": 0.06840324401855469,
+              "Top": 0.5124316215515137
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 24,
+            "column_index": 1
+          },
+          "row_24_col_2": {
+            "bbox": {
+              "Width": 0.071149542927742,
+              "Height": 0.016022128984332085,
+              "Left": 0.10733281075954437,
+              "Top": 0.5124355554580688
+            },
+            "confidence": 70.60546875,
+            "text": "23",
+            "header": "s_no",
+            "row_index": 24,
+            "column_index": 2
+          },
+          "row_24_col_3": {
+            "bbox": {
+              "Width": 0.20539386570453644,
+              "Height": 0.01603579707443714,
+              "Left": 0.17848041653633118,
+              "Top": 0.5124426484107971
+            },
+            "confidence": 84.423828125,
+            "text": "kinker",
+            "header": "spp_name_local_name",
+            "row_index": 24,
+            "column_index": 3
+          },
+          "row_24_col_4": {
+            "bbox": {
+              "Width": 0.10739858448505402,
+              "Height": 0.01602606475353241,
+              "Left": 0.3838721811771393,
+              "Top": 0.5124632716178894
+            },
+            "confidence": 79.19921875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 24,
+            "column_index": 4
+          },
+          "row_24_col_5": {
+            "bbox": {
+              "Width": 0.20137427747249603,
+              "Height": 0.016035687178373337,
+              "Left": 0.4912685751914978,
+              "Top": 0.5124740600585938
+            },
+            "confidence": 84.86328125,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 24,
+            "column_index": 5
+          },
+          "row_24_col_6": {
+            "bbox": {
+              "Width": 0.20549912750720978,
+              "Height": 0.016036296263337135,
+              "Left": 0.692640483379364,
+              "Top": 0.5124942660331726
+            },
+            "confidence": 83.837890625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 24,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "24",
+      "spp_name_local_name": "Kage",
+      "habit": "H",
+      "dbh_in_cms": "3",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06840140372514725,
+          "Top": 0.5284464955329895,
+          "Width": 0.8297356441617012,
+          "Height": 0.016099704429507256
+        },
+        "group_id": "row_25",
+        "row_index": 25,
+        "column_index": -1,
+        "cells": {
+          "row_25_col_1": {
+            "bbox": {
+              "Width": 0.038931407034397125,
+              "Height": 0.016018837690353394,
+              "Left": 0.06840140372514725,
+              "Top": 0.5284464955329895
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 25,
+            "column_index": 1
+          },
+          "row_25_col_2": {
+            "bbox": {
+              "Width": 0.07114948332309723,
+              "Height": 0.016022169962525368,
+              "Left": 0.10733094066381454,
+              "Top": 0.5284504294395447
+            },
+            "confidence": 66.650390625,
+            "text": "24",
+            "header": "s_no",
+            "row_index": 25,
+            "column_index": 2
+          },
+          "row_25_col_3": {
+            "bbox": {
+              "Width": 0.2053937017917633,
+              "Height": 0.016035964712500572,
+              "Left": 0.17847849428653717,
+              "Top": 0.5284576416015625
+            },
+            "confidence": 79.736328125,
+            "text": "Kage",
+            "header": "spp_name_local_name",
+            "row_index": 25,
+            "column_index": 3
+          },
+          "row_25_col_4": {
+            "bbox": {
+              "Width": 0.10739848762750626,
+              "Height": 0.01602613925933838,
+              "Left": 0.38387006521224976,
+              "Top": 0.5284784436225891
+            },
+            "confidence": 74.8046875,
+            "text": "H",
+            "header": "habit",
+            "row_index": 25,
+            "column_index": 4
+          },
+          "row_25_col_5": {
+            "bbox": {
+              "Width": 0.2013741135597229,
+              "Height": 0.01603585109114647,
+              "Left": 0.4912663698196411,
+              "Top": 0.528489351272583
+            },
+            "confidence": 80.126953125,
+            "text": "3",
+            "header": "dbh_in_cms",
+            "row_index": 25,
+            "column_index": 5
+          },
+          "row_25_col_6": {
+            "bbox": {
+              "Width": 0.20549894869327545,
+              "Height": 0.016036463901400566,
+              "Left": 0.692638099193573,
+              "Top": 0.5285097360610962
+            },
+            "confidence": 79.150390625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 25,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "25",
+      "spp_name_local_name": "Boodhetral",
+      "habit": "T",
+      "dbh_in_cms": "N",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06839945912361145,
+          "Top": 0.5444613695144653,
+          "Width": 0.8297350406646729,
+          "Height": 0.01699022576212883
+        },
+        "group_id": "row_26",
+        "row_index": 26,
+        "column_index": -1,
+        "cells": {
+          "row_26_col_1": {
+            "bbox": {
+              "Width": 0.038931477814912796,
+              "Height": 0.016908561810851097,
+              "Left": 0.06839945912361145,
+              "Top": 0.5444613695144653
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 26,
+            "column_index": 1
+          },
+          "row_26_col_2": {
+            "bbox": {
+              "Width": 0.07114952802658081,
+              "Height": 0.016911927610635757,
+              "Left": 0.10732896625995636,
+              "Top": 0.5444653630256653
+            },
+            "confidence": 69.970703125,
+            "text": "25",
+            "header": "s_no",
+            "row_index": 26,
+            "column_index": 2
+          },
+          "row_26_col_3": {
+            "bbox": {
+              "Width": 0.20539362728595734,
+              "Height": 0.016925862058997154,
+              "Left": 0.1784764528274536,
+              "Top": 0.5444726347923279
+            },
+            "confidence": 83.69140625,
+            "text": "Boodhetral",
+            "header": "spp_name_local_name",
+            "row_index": 26,
+            "column_index": 3
+          },
+          "row_26_col_4": {
+            "bbox": {
+              "Width": 0.10739851742982864,
+              "Height": 0.016915947198867798,
+              "Left": 0.38386785984039307,
+              "Top": 0.5444936156272888
+            },
+            "confidence": 78.466796875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 26,
+            "column_index": 4
+          },
+          "row_26_col_5": {
+            "bbox": {
+              "Width": 0.20137405395507812,
+              "Height": 0.016925759613513947,
+              "Left": 0.4912640452384949,
+              "Top": 0.5445045828819275
+            },
+            "confidence": 84.08203125,
+            "text": "N",
+            "header": "dbh_in_cms",
+            "row_index": 26,
+            "column_index": 5
+          },
+          "row_26_col_6": {
+            "bbox": {
+              "Width": 0.20549890398979187,
+              "Height": 0.016926389187574387,
+              "Left": 0.6926355957984924,
+              "Top": 0.5445252060890198
+            },
+            "confidence": 83.056640625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 26,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "26",
+      "spp_name_local_name": "Boothakani",
+      "habit": "H",
+      "dbh_in_cms": "15",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06839752197265625,
+          "Top": 0.5613659024238586,
+          "Width": 0.8297342956066132,
+          "Height": 0.01699099689722061
+        },
+        "group_id": "row_27",
+        "row_index": 27,
+        "column_index": -1,
+        "cells": {
+          "row_27_col_1": {
+            "bbox": {
+              "Width": 0.03893144056200981,
+              "Height": 0.016908569261431694,
+              "Left": 0.06839752197265625,
+              "Top": 0.5613659024238586
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 27,
+            "column_index": 1
+          },
+          "row_27_col_2": {
+            "bbox": {
+              "Width": 0.07114946097135544,
+              "Height": 0.01691196858882904,
+              "Left": 0.10732699185609818,
+              "Top": 0.5613698959350586
+            },
+            "confidence": 71.58203125,
+            "text": "26",
+            "header": "s_no",
+            "row_index": 27,
+            "column_index": 2
+          },
+          "row_27_col_3": {
+            "bbox": {
+              "Width": 0.205393448472023,
+              "Height": 0.016926037147641182,
+              "Left": 0.17847441136837006,
+              "Top": 0.5613772869110107
+            },
+            "confidence": 85.595703125,
+            "text": "Boothakani",
+            "header": "spp_name_local_name",
+            "row_index": 27,
+            "column_index": 3
+          },
+          "row_27_col_4": {
+            "bbox": {
+              "Width": 0.10739842057228088,
+              "Height": 0.016916025429964066,
+              "Left": 0.383865624666214,
+              "Top": 0.5613985061645508
+            },
+            "confidence": 80.2734375,
+            "text": "H",
+            "header": "habit",
+            "row_index": 27,
+            "column_index": 4
+          },
+          "row_27_col_5": {
+            "bbox": {
+              "Width": 0.2013738751411438,
+              "Height": 0.016925932839512825,
+              "Left": 0.49126172065734863,
+              "Top": 0.561409592628479
+            },
+            "confidence": 86.03515625,
+            "text": "15",
+            "header": "dbh_in_cms",
+            "row_index": 27,
+            "column_index": 5
+          },
+          "row_27_col_6": {
+            "bbox": {
+              "Width": 0.20549872517585754,
+              "Height": 0.016926564276218414,
+              "Left": 0.6926330924034119,
+              "Top": 0.5614303350448608
+            },
+            "confidence": 84.9609375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 27,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "27",
+      "spp_name_local_name": "Koge",
+      "habit": "F",
+      "dbh_in_cms": "7",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06839578598737717,
+          "Top": 0.578270435333252,
+          "Width": 0.8297333791851997,
+          "Height": 0.015212323516607285
+        },
+        "group_id": "row_28",
+        "row_index": 28,
+        "column_index": -1,
+        "cells": {
+          "row_28_col_1": {
+            "bbox": {
+              "Width": 0.03893120214343071,
+              "Height": 0.015129156410694122,
+              "Left": 0.06839578598737717,
+              "Top": 0.578270435333252
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 28,
+            "column_index": 1
+          },
+          "row_28_col_2": {
+            "bbox": {
+              "Width": 0.07114919275045395,
+              "Height": 0.015132579952478409,
+              "Left": 0.10732521861791611,
+              "Top": 0.5782744884490967
+            },
+            "confidence": 61.376953125,
+            "text": "27",
+            "header": "s_no",
+            "row_index": 28,
+            "column_index": 2
+          },
+          "row_28_col_3": {
+            "bbox": {
+              "Width": 0.20539304614067078,
+              "Height": 0.015146762132644653,
+              "Left": 0.1784725934267044,
+              "Top": 0.5782818794250488
+            },
+            "confidence": 73.388671875,
+            "text": "Koge",
+            "header": "spp_name_local_name",
+            "row_index": 28,
+            "column_index": 3
+          },
+          "row_28_col_4": {
+            "bbox": {
+              "Width": 0.10739808529615402,
+              "Height": 0.015136640518903732,
+              "Left": 0.383863627910614,
+              "Top": 0.5783032774925232
+            },
+            "confidence": 68.84765625,
+            "text": "F",
+            "header": "habit",
+            "row_index": 28,
+            "column_index": 4
+          },
+          "row_28_col_5": {
+            "bbox": {
+              "Width": 0.20137345790863037,
+              "Height": 0.015146620571613312,
+              "Left": 0.4912596344947815,
+              "Top": 0.578314483165741
+            },
+            "confidence": 73.779296875,
+            "text": "7",
+            "header": "dbh_in_cms",
+            "row_index": 28,
+            "column_index": 5
+          },
+          "row_28_col_6": {
+            "bbox": {
+              "Width": 0.20549827814102173,
+              "Height": 0.015147235244512558,
+              "Left": 0.6926308870315552,
+              "Top": 0.5783355236053467
+            },
+            "confidence": 72.900390625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 28,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "28",
+      "spp_name_local_name": "100mm",
+      "habit": "1",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06839374452829361,
+          "Top": 0.593395471572876,
+          "Width": 0.8297329619526863,
+          "Height": 0.017882272601127625
+        },
+        "group_id": "row_29",
+        "row_index": 29,
+        "column_index": -1,
+        "cells": {
+          "row_29_col_1": {
+            "bbox": {
+              "Width": 0.038931477814912796,
+              "Height": 0.017798295244574547,
+              "Left": 0.06839374452829361,
+              "Top": 0.593395471572876
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 29,
+            "column_index": 1
+          },
+          "row_29_col_2": {
+            "bbox": {
+              "Width": 0.07114944607019424,
+              "Height": 0.017801757901906967,
+              "Left": 0.10732313990592957,
+              "Top": 0.5933995842933655
+            },
+            "confidence": 74.267578125,
+            "text": "28",
+            "header": "s_no",
+            "row_index": 29,
+            "column_index": 2
+          },
+          "row_29_col_3": {
+            "bbox": {
+              "Width": 0.20539319515228271,
+              "Height": 0.017816094681620598,
+              "Left": 0.1784704327583313,
+              "Top": 0.5934070348739624
+            },
+            "confidence": 88.818359375,
+            "text": "100mm",
+            "header": "spp_name_local_name",
+            "row_index": 29,
+            "column_index": 3
+          },
+          "row_29_col_4": {
+            "bbox": {
+              "Width": 0.10739835351705551,
+              "Height": 0.017805902287364006,
+              "Left": 0.3838613033294678,
+              "Top": 0.5934286713600159
+            },
+            "confidence": 83.30078125,
+            "text": "1",
+            "header": "habit",
+            "row_index": 29,
+            "column_index": 4
+          },
+          "row_29_col_5": {
+            "bbox": {
+              "Width": 0.2013736516237259,
+              "Height": 0.017815997824072838,
+              "Left": 0.4912571907043457,
+              "Top": 0.5934399366378784
+            },
+            "confidence": 89.2578125,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 29,
+            "column_index": 5
+          },
+          "row_29_col_6": {
+            "bbox": {
+              "Width": 0.20549850165843964,
+              "Height": 0.01781664788722992,
+              "Left": 0.6926282048225403,
+              "Top": 0.5934610962867737
+            },
+            "confidence": 88.18359375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 29,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "29",
+      "spp_name_local_name": "Karuse",
+      "habit": "T",
+      "dbh_in_cms": "3",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06839200854301453,
+          "Top": 0.6111896634101868,
+          "Width": 0.829731896519661,
+          "Height": 0.015213863924145699
+        },
+        "group_id": "row_30",
+        "row_index": 30,
+        "column_index": -1,
+        "cells": {
+          "row_30_col_1": {
+            "bbox": {
+              "Width": 0.03893113508820534,
+              "Height": 0.015129179693758488,
+              "Left": 0.06839200854301453,
+              "Top": 0.6111896634101868
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 30,
+            "column_index": 1
+          },
+          "row_30_col_2": {
+            "bbox": {
+              "Width": 0.0711490660905838,
+              "Height": 0.015132665634155273,
+              "Left": 0.1073213741183281,
+              "Top": 0.6111937761306763
+            },
+            "confidence": 65.52734375,
+            "text": "29",
+            "header": "s_no",
+            "row_index": 30,
+            "column_index": 2
+          },
+          "row_30_col_3": {
+            "bbox": {
+              "Width": 0.20539267361164093,
+              "Height": 0.01514711044728756,
+              "Left": 0.17846861481666565,
+              "Top": 0.6112013459205627
+            },
+            "confidence": 78.369140625,
+            "text": "Karuse",
+            "header": "spp_name_local_name",
+            "row_index": 30,
+            "column_index": 3
+          },
+          "row_30_col_4": {
+            "bbox": {
+              "Width": 0.1073978990316391,
+              "Height": 0.015136797912418842,
+              "Left": 0.3838593065738678,
+              "Top": 0.6112231612205505
+            },
+            "confidence": 73.486328125,
+            "text": "T",
+            "header": "habit",
+            "row_index": 30,
+            "column_index": 4
+          },
+          "row_30_col_5": {
+            "bbox": {
+              "Width": 0.20137310028076172,
+              "Height": 0.015146960504353046,
+              "Left": 0.49125513434410095,
+              "Top": 0.6112345457077026
+            },
+            "confidence": 78.759765625,
+            "text": "3",
+            "header": "dbh_in_cms",
+            "row_index": 30,
+            "column_index": 5
+          },
+          "row_30_col_6": {
+            "bbox": {
+              "Width": 0.20549790561199188,
+              "Height": 0.015147583559155464,
+              "Left": 0.6926259994506836,
+              "Top": 0.611255943775177
+            },
+            "confidence": 77.83203125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 30,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "30",
+      "spp_name_local_name": "Kege",
+      "habit": "I",
+      "dbh_in_cms": "12",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838996708393097,
+          "Top": 0.626314640045166,
+          "Width": 0.8297314941883087,
+          "Height": 0.017883865162730217
+        },
+        "group_id": "row_31",
+        "row_index": 31,
+        "column_index": -1,
+        "cells": {
+          "row_31_col_1": {
+            "bbox": {
+              "Width": 0.038931410759687424,
+              "Height": 0.01779830828309059,
+              "Left": 0.06838996708393097,
+              "Top": 0.626314640045166
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 31,
+            "column_index": 1
+          },
+          "row_31_col_2": {
+            "bbox": {
+              "Width": 0.0711493194103241,
+              "Height": 0.017801836133003235,
+              "Left": 0.10731929540634155,
+              "Top": 0.6263188123703003
+            },
+            "confidence": 70.3125,
+            "text": "30",
+            "header": "s_no",
+            "row_index": 31,
+            "column_index": 2
+          },
+          "row_31_col_3": {
+            "bbox": {
+              "Width": 0.20539283752441406,
+              "Height": 0.017816433683037758,
+              "Left": 0.17846646904945374,
+              "Top": 0.6263264417648315
+            },
+            "confidence": 84.08203125,
+            "text": "Kege",
+            "header": "spp_name_local_name",
+            "row_index": 31,
+            "column_index": 3
+          },
+          "row_31_col_4": {
+            "bbox": {
+              "Width": 0.10739815980195999,
+              "Height": 0.017806049436330795,
+              "Left": 0.38385695219039917,
+              "Top": 0.6263484358787537
+            },
+            "confidence": 78.857421875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 31,
+            "column_index": 4
+          },
+          "row_31_col_5": {
+            "bbox": {
+              "Width": 0.20137330889701843,
+              "Height": 0.0178163293749094,
+              "Left": 0.49125269055366516,
+              "Top": 0.6263599395751953
+            },
+            "confidence": 84.521484375,
+            "text": "12",
+            "header": "dbh_in_cms",
+            "row_index": 31,
+            "column_index": 5
+          },
+          "row_31_col_6": {
+            "bbox": {
+              "Width": 0.20549814403057098,
+              "Height": 0.01781698875129223,
+              "Left": 0.6926233172416687,
+              "Top": 0.626381516456604
+            },
+            "confidence": 83.49609375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 31,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "31",
+      "spp_name_local_name": "Bootheham",
+      "habit": "F",
+      "dbh_in_cms": "2+3.1 3.1",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838812679052353,
+          "Top": 0.6441087126731873,
+          "Width": 0.8297305479645729,
+          "Height": 0.016105210408568382
+        },
+        "group_id": "row_32",
+        "row_index": 32,
+        "column_index": -1,
+        "cells": {
+          "row_32_col_1": {
+            "bbox": {
+              "Width": 0.038931168615818024,
+              "Height": 0.016018906608223915,
+              "Left": 0.06838812679052353,
+              "Top": 0.6441087126731873
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 32,
+            "column_index": 1
+          },
+          "row_32_col_2": {
+            "bbox": {
+              "Width": 0.07114904373884201,
+              "Height": 0.016022460535168648,
+              "Left": 0.10731742531061172,
+              "Top": 0.6441129446029663
+            },
+            "confidence": 68.017578125,
+            "text": "31",
+            "header": "s_no",
+            "row_index": 32,
+            "column_index": 2
+          },
+          "row_32_col_3": {
+            "bbox": {
+              "Width": 0.20539242029190063,
+              "Height": 0.01603717729449272,
+              "Left": 0.17846453189849854,
+              "Top": 0.6441206336021423
+            },
+            "confidence": 81.34765625,
+            "text": "Bootheham",
+            "header": "spp_name_local_name",
+            "row_index": 32,
+            "column_index": 3
+          },
+          "row_32_col_4": {
+            "bbox": {
+              "Width": 0.10739782452583313,
+              "Height": 0.016026679426431656,
+              "Left": 0.38385486602783203,
+              "Top": 0.6441428661346436
+            },
+            "confidence": 76.26953125,
+            "text": "F",
+            "header": "habit",
+            "row_index": 32,
+            "column_index": 4
+          },
+          "row_32_col_5": {
+            "bbox": {
+              "Width": 0.20137286186218262,
+              "Height": 0.01603703759610653,
+              "Left": 0.49125048518180847,
+              "Top": 0.6441544890403748
+            },
+            "confidence": 81.73828125,
+            "text": "2+3.1 3.1",
+            "header": "dbh_in_cms",
+            "row_index": 32,
+            "column_index": 5
+          },
+          "row_32_col_6": {
+            "bbox": {
+              "Width": 0.20549768209457397,
+              "Height": 0.016037678346037865,
+              "Left": 0.6926209926605225,
+              "Top": 0.6441762447357178
+            },
+            "confidence": 80.76171875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 32,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "32",
+      "spp_name_local_name": "Kage",
+      "habit": "I",
+      "dbh_in_cms": "6",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838629394769669,
+          "Top": 0.6601234078407288,
+          "Width": 0.8297298178076744,
+          "Height": 0.016105975955724716
+        },
+        "group_id": "row_33",
+        "row_index": 33,
+        "column_index": -1,
+        "cells": {
+          "row_33_col_1": {
+            "bbox": {
+              "Width": 0.03893113508820534,
+              "Height": 0.01601891778409481,
+              "Left": 0.06838629394769669,
+              "Top": 0.6601234078407288
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 33,
+            "column_index": 1
+          },
+          "row_33_col_2": {
+            "bbox": {
+              "Width": 0.07114898413419724,
+              "Height": 0.01602249965071678,
+              "Left": 0.1073155552148819,
+              "Top": 0.6601276397705078
+            },
+            "confidence": 69.43359375,
+            "text": "32",
+            "header": "s_no",
+            "row_index": 33,
+            "column_index": 2
+          },
+          "row_33_col_3": {
+            "bbox": {
+              "Width": 0.2053922563791275,
+              "Height": 0.0160373467952013,
+              "Left": 0.17846260964870453,
+              "Top": 0.6601353883743286
+            },
+            "confidence": 83.056640625,
+            "text": "Kage",
+            "header": "spp_name_local_name",
+            "row_index": 33,
+            "column_index": 3
+          },
+          "row_33_col_4": {
+            "bbox": {
+              "Width": 0.10739773511886597,
+              "Height": 0.016026753932237625,
+              "Left": 0.3838527500629425,
+              "Top": 0.6601577997207642
+            },
+            "confidence": 77.880859375,
+            "text": "I",
+            "header": "habit",
+            "row_index": 33,
+            "column_index": 4
+          },
+          "row_33_col_5": {
+            "bbox": {
+              "Width": 0.20137269794940948,
+              "Height": 0.01603720150887966,
+              "Left": 0.4912482798099518,
+              "Top": 0.6601695418357849
+            },
+            "confidence": 83.49609375,
+            "text": "6",
+            "header": "dbh_in_cms",
+            "row_index": 33,
+            "column_index": 5
+          },
+          "row_33_col_6": {
+            "bbox": {
+              "Width": 0.20549750328063965,
+              "Height": 0.016037847846746445,
+              "Left": 0.6926186084747314,
+              "Top": 0.660191535949707
+            },
+            "confidence": 82.470703125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 33,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "33",
+      "spp_name_local_name": "keep",
+      "habit": "H",
+      "dbh_in_cms": "8.4",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838434934616089,
+          "Top": 0.6761380434036255,
+          "Width": 0.8297292143106461,
+          "Height": 0.016996482387185097
+        },
+        "group_id": "row_34",
+        "row_index": 34,
+        "column_index": -1,
+        "cells": {
+          "row_34_col_1": {
+            "bbox": {
+              "Width": 0.03893120214343071,
+              "Height": 0.01690862886607647,
+              "Left": 0.06838434934616089,
+              "Top": 0.6761380434036255
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 34,
+            "column_index": 1
+          },
+          "row_34_col_2": {
+            "bbox": {
+              "Width": 0.07114902883768082,
+              "Height": 0.016912246122956276,
+              "Left": 0.10731358081102371,
+              "Top": 0.6761423349380493
+            },
+            "confidence": 70.01953125,
+            "text": "33",
+            "header": "s_no",
+            "row_index": 34,
+            "column_index": 2
+          },
+          "row_34_col_3": {
+            "bbox": {
+              "Width": 0.20539218187332153,
+              "Height": 0.01692723110318184,
+              "Left": 0.17846056818962097,
+              "Top": 0.6761501431465149
+            },
+            "confidence": 83.740234375,
+            "text": "keep",
+            "header": "spp_name_local_name",
+            "row_index": 34,
+            "column_index": 3
+          },
+          "row_34_col_4": {
+            "bbox": {
+              "Width": 0.10739775747060776,
+              "Height": 0.01691655069589615,
+              "Left": 0.3838505148887634,
+              "Top": 0.6761727333068848
+            },
+            "confidence": 78.564453125,
+            "text": "H",
+            "header": "habit",
+            "row_index": 34,
+            "column_index": 4
+          },
+          "row_34_col_5": {
+            "bbox": {
+              "Width": 0.2013726383447647,
+              "Height": 0.016927096992731094,
+              "Left": 0.49124595522880554,
+              "Top": 0.6761845946311951
+            },
+            "confidence": 84.1796875,
+            "text": "8.4",
+            "header": "dbh_in_cms",
+            "row_index": 34,
+            "column_index": 5
+          },
+          "row_34_col_6": {
+            "bbox": {
+              "Width": 0.20549745857715607,
+              "Height": 0.01692775823175907,
+              "Left": 0.6926161050796509,
+              "Top": 0.6762067675590515
+            },
+            "confidence": 83.154296875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 34,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "34",
+      "spp_name_local_name": "Kuthem",
+      "habit": "T",
+      "dbh_in_cms": "6",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838241219520569,
+          "Top": 0.6930423378944397,
+          "Width": 0.8297284692525864,
+          "Height": 0.01699725352227688
+        },
+        "group_id": "row_35",
+        "row_index": 35,
+        "column_index": -1,
+        "cells": {
+          "row_35_col_1": {
+            "bbox": {
+              "Width": 0.038931168615818024,
+              "Height": 0.016908636316657066,
+              "Left": 0.06838241219520569,
+              "Top": 0.6930423378944397
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 35,
+            "column_index": 1
+          },
+          "row_35_col_2": {
+            "bbox": {
+              "Width": 0.07114896178245544,
+              "Height": 0.01691228710114956,
+              "Left": 0.10731160640716553,
+              "Top": 0.6930466294288635
+            },
+            "confidence": 69.189453125,
+            "text": "34",
+            "header": "s_no",
+            "row_index": 35,
+            "column_index": 2
+          },
+          "row_35_col_3": {
+            "bbox": {
+              "Width": 0.2053920030593872,
+              "Height": 0.016927406191825867,
+              "Left": 0.17845852673053741,
+              "Top": 0.6930545568466187
+            },
+            "confidence": 82.71484375,
+            "text": "Kuthem",
+            "header": "spp_name_local_name",
+            "row_index": 35,
+            "column_index": 3
+          },
+          "row_35_col_4": {
+            "bbox": {
+              "Width": 0.10739766061306,
+              "Height": 0.016916627064347267,
+              "Left": 0.38384830951690674,
+              "Top": 0.6930773854255676
+            },
+            "confidence": 77.587890625,
+            "text": "T",
+            "header": "habit",
+            "row_index": 35,
+            "column_index": 4
+          },
+          "row_35_col_5": {
+            "bbox": {
+              "Width": 0.20137245953083038,
+              "Height": 0.016927270218729973,
+              "Left": 0.4912436306476593,
+              "Top": 0.6930893063545227
+            },
+            "confidence": 83.154296875,
+            "text": "6",
+            "header": "dbh_in_cms",
+            "row_index": 35,
+            "column_index": 5
+          },
+          "row_35_col_6": {
+            "bbox": {
+              "Width": 0.20549727976322174,
+              "Height": 0.0169279333204031,
+              "Left": 0.6926136016845703,
+              "Top": 0.6931116580963135
+            },
+            "confidence": 82.12890625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 35,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "35",
+      "spp_name_local_name": "leage",
+      "habit": "T",
+      "dbh_in_cms": "8",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06838046759366989,
+          "Top": 0.7099466323852539,
+          "Width": 0.8297277167439461,
+          "Height": 0.016998086124658585
+        },
+        "group_id": "row_36",
+        "row_index": 36,
+        "column_index": -1,
+        "cells": {
+          "row_36_col_1": {
+            "bbox": {
+              "Width": 0.03893113508820534,
+              "Height": 0.016908645629882812,
+              "Left": 0.06838046759366989,
+              "Top": 0.7099466323852539
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 36,
+            "column_index": 1
+          },
+          "row_36_col_2": {
+            "bbox": {
+              "Width": 0.07114889472723007,
+              "Height": 0.016912328079342842,
+              "Left": 0.10730962455272675,
+              "Top": 0.7099509835243225
+            },
+            "confidence": 72.412109375,
+            "text": "35",
+            "header": "s_no",
+            "row_index": 36,
+            "column_index": 2
+          },
+          "row_36_col_3": {
+            "bbox": {
+              "Width": 0.2053918093442917,
+              "Height": 0.016927581280469894,
+              "Left": 0.17845648527145386,
+              "Top": 0.7099589705467224
+            },
+            "confidence": 86.62109375,
+            "text": "leage",
+            "header": "spp_name_local_name",
+            "row_index": 36,
+            "column_index": 3
+          },
+          "row_36_col_4": {
+            "bbox": {
+              "Width": 0.10739756375551224,
+              "Height": 0.016916705295443535,
+              "Left": 0.38384607434272766,
+              "Top": 0.7099819779396057
+            },
+            "confidence": 81.25,
+            "text": "T",
+            "header": "habit",
+            "row_index": 36,
+            "column_index": 4
+          },
+          "row_36_col_5": {
+            "bbox": {
+              "Width": 0.20137228071689606,
+              "Height": 0.016927441582083702,
+              "Left": 0.49124130606651306,
+              "Top": 0.7099940180778503
+            },
+            "confidence": 87.060546875,
+            "text": "8",
+            "header": "dbh_in_cms",
+            "row_index": 36,
+            "column_index": 5
+          },
+          "row_36_col_6": {
+            "bbox": {
+              "Width": 0.20549708604812622,
+              "Height": 0.016928110271692276,
+              "Left": 0.6926110982894897,
+              "Top": 0.7100166082382202
+            },
+            "confidence": 85.986328125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 36,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "36",
+      "spp_name_local_name": "kage",
+      "habit": "I",
+      "dbh_in_cms": "2.5",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06837863475084305,
+          "Top": 0.7268508672714233,
+          "Width": 0.8297268524765968,
+          "Height": 0.016109120100736618
+        },
+        "group_id": "row_37",
+        "row_index": 37,
+        "column_index": -1,
+        "cells": {
+          "row_37_col_1": {
+            "bbox": {
+              "Width": 0.038930997252464294,
+              "Height": 0.016018956899642944,
+              "Left": 0.06837863475084305,
+              "Top": 0.7268508672714233
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 37,
+            "column_index": 1
+          },
+          "row_37_col_2": {
+            "bbox": {
+              "Width": 0.07114873081445694,
+              "Height": 0.01602266915142536,
+              "Left": 0.10730775445699692,
+              "Top": 0.7268552780151367
+            },
+            "confidence": 62.548828125,
+            "text": "36",
+            "header": "s_no",
+            "row_index": 37,
+            "column_index": 2
+          },
+          "row_37_col_3": {
+            "bbox": {
+              "Width": 0.2053915113210678,
+              "Height": 0.016038047149777412,
+              "Left": 0.17845454812049866,
+              "Top": 0.7268633246421814
+            },
+            "confidence": 74.8046875,
+            "text": "kage",
+            "header": "spp_name_local_name",
+            "row_index": 37,
+            "column_index": 3
+          },
+          "row_37_col_4": {
+            "bbox": {
+              "Width": 0.10739735513925552,
+              "Height": 0.016027064993977547,
+              "Left": 0.38384395837783813,
+              "Top": 0.726886510848999
+            },
+            "confidence": 70.166015625,
+            "text": "I",
+            "header": "habit",
+            "row_index": 37,
+            "column_index": 4
+          },
+          "row_37_col_5": {
+            "bbox": {
+              "Width": 0.20137198269367218,
+              "Height": 0.01603788509964943,
+              "Left": 0.49123913049697876,
+              "Top": 0.7268986701965332
+            },
+            "confidence": 75.1953125,
+            "text": "2.5",
+            "header": "dbh_in_cms",
+            "row_index": 37,
+            "column_index": 5
+          },
+          "row_37_col_6": {
+            "bbox": {
+              "Width": 0.20549677312374115,
+              "Height": 0.016038548201322556,
+              "Left": 0.6926087141036987,
+              "Top": 0.7269214391708374
+            },
+            "confidence": 74.267578125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 37,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "37",
+      "spp_name_local_name": "Kisbar",
+      "habit": "T",
+      "dbh_in_cms": "2",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06837679445743561,
+          "Top": 0.7428653836250305,
+          "Width": 0.8297261297702789,
+          "Height": 0.016109883785247803
+        },
+        "group_id": "row_38",
+        "row_index": 38,
+        "column_index": -1,
+        "cells": {
+          "row_38_col_1": {
+            "bbox": {
+              "Width": 0.03893096372485161,
+              "Height": 0.01601896621286869,
+              "Left": 0.06837679445743561,
+              "Top": 0.7428653836250305
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 38,
+            "column_index": 1
+          },
+          "row_38_col_2": {
+            "bbox": {
+              "Width": 0.07114867120981216,
+              "Height": 0.016022708266973495,
+              "Left": 0.10730588436126709,
+              "Top": 0.7428697943687439
+            },
+            "confidence": 69.091796875,
+            "text": "37",
+            "header": "s_no",
+            "row_index": 38,
+            "column_index": 2
+          },
+          "row_38_col_3": {
+            "bbox": {
+              "Width": 0.20539134740829468,
+              "Height": 0.016038214787840843,
+              "Left": 0.17845262587070465,
+              "Top": 0.7428779006004333
+            },
+            "confidence": 82.6171875,
+            "text": "Kisbar",
+            "header": "spp_name_local_name",
+            "row_index": 38,
+            "column_index": 3
+          },
+          "row_38_col_4": {
+            "bbox": {
+              "Width": 0.10739725828170776,
+              "Height": 0.016027141362428665,
+              "Left": 0.3838418424129486,
+              "Top": 0.7429013252258301
+            },
+            "confidence": 77.490234375,
+            "text": "T",
+            "header": "habit",
+            "row_index": 38,
+            "column_index": 4
+          },
+          "row_38_col_5": {
+            "bbox": {
+              "Width": 0.20137180387973785,
+              "Height": 0.01603804901242256,
+              "Left": 0.49123692512512207,
+              "Top": 0.7429136037826538
+            },
+            "confidence": 83.056640625,
+            "text": "2",
+            "header": "dbh_in_cms",
+            "row_index": 38,
+            "column_index": 5
+          },
+          "row_38_col_6": {
+            "bbox": {
+              "Width": 0.20549659430980682,
+              "Height": 0.016038715839385986,
+              "Left": 0.6926063299179077,
+              "Top": 0.7429365515708923
+            },
+            "confidence": 82.03125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 38,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "38",
+      "spp_name_local_name": "Kege",
+      "habit": "T",
+      "dbh_in_cms": "10",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06837485730648041,
+          "Top": 0.7588798403739929,
+          "Width": 0.82972551882267,
+          "Height": 0.017000442370772362
+        },
+        "group_id": "row_39",
+        "row_index": 39,
+        "column_index": -1,
+        "cells": {
+          "row_39_col_1": {
+            "bbox": {
+              "Width": 0.03893103078007698,
+              "Height": 0.016908669844269753,
+              "Left": 0.06837485730648041,
+              "Top": 0.7588798403739929
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 39,
+            "column_index": 1
+          },
+          "row_39_col_2": {
+            "bbox": {
+              "Width": 0.07114870846271515,
+              "Height": 0.016912447288632393,
+              "Left": 0.1073039099574089,
+              "Top": 0.7588843107223511
+            },
+            "confidence": 71.875,
+            "text": "38",
+            "header": "s_no",
+            "row_index": 39,
+            "column_index": 2
+          },
+          "row_39_col_3": {
+            "bbox": {
+              "Width": 0.2053912729024887,
+              "Height": 0.016928089782595634,
+              "Left": 0.1784505844116211,
+              "Top": 0.7588925361633301
+            },
+            "confidence": 85.986328125,
+            "text": "Kege",
+            "header": "spp_name_local_name",
+            "row_index": 39,
+            "column_index": 3
+          },
+          "row_39_col_4": {
+            "bbox": {
+              "Width": 0.10739728808403015,
+              "Height": 0.016916928812861443,
+              "Left": 0.3838396370410919,
+              "Top": 0.7589161396026611
+            },
+            "confidence": 80.615234375,
+            "text": "T",
+            "header": "habit",
+            "row_index": 39,
+            "column_index": 4
+          },
+          "row_39_col_5": {
+            "bbox": {
+              "Width": 0.20137175917625427,
+              "Height": 0.016927938908338547,
+              "Left": 0.49123460054397583,
+              "Top": 0.7589284777641296
+            },
+            "confidence": 86.42578125,
+            "text": "10",
+            "header": "dbh_in_cms",
+            "row_index": 39,
+            "column_index": 5
+          },
+          "row_39_col_6": {
+            "bbox": {
+              "Width": 0.20549654960632324,
+              "Height": 0.016928618773818016,
+              "Left": 0.6926038265228271,
+              "Top": 0.7589516639709473
+            },
+            "confidence": 85.3515625,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 39,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "",
+      "s_no": "39",
+      "spp_name_local_name": "Kage",
+      "habit": "T",
+      "dbh_in_cms": "11",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06837301701307297,
+          "Top": 0.7757840156555176,
+          "Width": 0.8297247216105461,
+          "Height": 0.016111480072140694
+        },
+        "group_id": "row_40",
+        "row_index": 40,
+        "column_index": -1,
+        "cells": {
+          "row_40_col_1": {
+            "bbox": {
+              "Width": 0.03893089294433594,
+              "Height": 0.016018986701965332,
+              "Left": 0.06837301701307297,
+              "Top": 0.7757840156555176
+            },
+            "confidence": 39.892578125,
+            "text": "",
+            "header": "col_1",
+            "row_index": 40,
+            "column_index": 1
+          },
+          "row_40_col_2": {
+            "bbox": {
+              "Width": 0.07114854454994202,
+              "Height": 0.01602279208600521,
+              "Left": 0.10730203986167908,
+              "Top": 0.7757885456085205
+            },
+            "confidence": 65.087890625,
+            "text": "39",
+            "header": "s_no",
+            "row_index": 40,
+            "column_index": 2
+          },
+          "row_40_col_3": {
+            "bbox": {
+              "Width": 0.20539097487926483,
+              "Height": 0.01603855937719345,
+              "Left": 0.1784486472606659,
+              "Top": 0.7757967710494995
+            },
+            "confidence": 77.83203125,
+            "text": "Kage",
+            "header": "spp_name_local_name",
+            "row_index": 40,
+            "column_index": 3
+          },
+          "row_40_col_4": {
+            "bbox": {
+              "Width": 0.10739707201719284,
+              "Height": 0.016027294099330902,
+              "Left": 0.3838375210762024,
+              "Top": 0.7758206129074097
+            },
+            "confidence": 73.046875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 40,
+            "column_index": 4
+          },
+          "row_40_col_5": {
+            "bbox": {
+              "Width": 0.2013714462518692,
+              "Height": 0.01603838801383972,
+              "Left": 0.49123239517211914,
+              "Top": 0.7758330702781677
+            },
+            "confidence": 78.271484375,
+            "text": "11",
+            "header": "dbh_in_cms",
+            "row_index": 40,
+            "column_index": 5
+          },
+          "row_40_col_6": {
+            "bbox": {
+              "Width": 0.20549623668193817,
+              "Height": 0.016039060428738594,
+              "Left": 0.6926015019416809,
+              "Top": 0.7758564352989197
+            },
+            "confidence": 77.294921875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 40,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "40",
+      "s_no": "",
+      "spp_name_local_name": "koregn",
+      "habit": "T",
+      "dbh_in_cms": "3+13+8",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06837117671966553,
+          "Top": 0.79179847240448,
+          "Width": 0.8297239989042282,
+          "Height": 0.016112186014652252
+        },
+        "group_id": "row_41",
+        "row_index": 41,
+        "column_index": -1,
+        "cells": {
+          "row_41_col_1": {
+            "bbox": {
+              "Width": 0.03893085941672325,
+              "Height": 0.016018996015191078,
+              "Left": 0.06837117671966553,
+              "Top": 0.79179847240448
+            },
+            "confidence": 39.892578125,
+            "text": "40",
+            "header": "col_1",
+            "row_index": 41,
+            "column_index": 1
+          },
+          "row_41_col_2": {
+            "bbox": {
+              "Width": 0.07114848494529724,
+              "Height": 0.016022831201553345,
+              "Left": 0.10730016976594925,
+              "Top": 0.7918030023574829
+            },
+            "confidence": 61.083984375,
+            "text": "",
+            "header": "s_no",
+            "row_index": 41,
+            "column_index": 2
+          },
+          "row_41_col_3": {
+            "bbox": {
+              "Width": 0.2053908109664917,
+              "Height": 0.01603872701525688,
+              "Left": 0.1784467250108719,
+              "Top": 0.7918113470077515
+            },
+            "confidence": 73.095703125,
+            "text": "koregn",
+            "header": "spp_name_local_name",
+            "row_index": 41,
+            "column_index": 3
+          },
+          "row_41_col_4": {
+            "bbox": {
+              "Width": 0.10739698261022568,
+              "Height": 0.01602736860513687,
+              "Left": 0.38383540511131287,
+              "Top": 0.791835367679596
+            },
+            "confidence": 68.5546875,
+            "text": "T",
+            "header": "habit",
+            "row_index": 41,
+            "column_index": 4
+          },
+          "row_41_col_5": {
+            "bbox": {
+              "Width": 0.20137128233909607,
+              "Height": 0.016038551926612854,
+              "Left": 0.49123018980026245,
+              "Top": 0.7918478846549988
+            },
+            "confidence": 73.4375,
+            "text": "3+13+8",
+            "header": "dbh_in_cms",
+            "row_index": 41,
+            "column_index": 5
+          },
+          "row_41_col_6": {
+            "bbox": {
+              "Width": 0.20549605786800385,
+              "Height": 0.016039229929447174,
+              "Left": 0.6925991177558899,
+              "Top": 0.7918714284896851
+            },
+            "confidence": 72.55859375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 41,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "3",
+      "s_no": "",
+      "spp_name_local_name": "Mine",
+      "habit": "7",
+      "dbh_in_cms": "+1.8",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06836923956871033,
+          "Top": 0.8078128695487976,
+          "Width": 0.8297233879566193,
+          "Height": 0.017002740874886513
+        },
+        "group_id": "row_42",
+        "row_index": 42,
+        "column_index": -1,
+        "cells": {
+          "row_42_col_1": {
+            "bbox": {
+              "Width": 0.03893093019723892,
+              "Height": 0.016908694058656693,
+              "Left": 0.06836923956871033,
+              "Top": 0.8078128695487976
+            },
+            "confidence": 39.892578125,
+            "text": "3",
+            "header": "col_1",
+            "row_index": 42,
+            "column_index": 1
+          },
+          "row_42_col_2": {
+            "bbox": {
+              "Width": 0.07114852219820023,
+              "Height": 0.016912564635276794,
+              "Left": 0.10729819536209106,
+              "Top": 0.8078174591064453
+            },
+            "confidence": 63.28125,
+            "text": "",
+            "header": "s_no",
+            "row_index": 42,
+            "column_index": 2
+          },
+          "row_42_col_3": {
+            "bbox": {
+              "Width": 0.20539073646068573,
+              "Height": 0.016928600147366524,
+              "Left": 0.17844468355178833,
+              "Top": 0.8078258037567139
+            },
+            "confidence": 75.68359375,
+            "text": "Mine",
+            "header": "spp_name_local_name",
+            "row_index": 42,
+            "column_index": 3
+          },
+          "row_42_col_4": {
+            "bbox": {
+              "Width": 0.10739700496196747,
+              "Height": 0.01691715233027935,
+              "Left": 0.3838331997394562,
+              "Top": 0.8078500628471375
+            },
+            "confidence": 70.99609375,
+            "text": "7",
+            "header": "habit",
+            "row_index": 42,
+            "column_index": 4
+          },
+          "row_42_col_5": {
+            "bbox": {
+              "Width": 0.2013712227344513,
+              "Height": 0.01692843623459339,
+              "Left": 0.4912278652191162,
+              "Top": 0.8078626990318298
+            },
+            "confidence": 76.07421875,
+            "text": "+1.8",
+            "header": "dbh_in_cms",
+            "row_index": 42,
+            "column_index": 5
+          },
+          "row_42_col_6": {
+            "bbox": {
+              "Width": 0.20549601316452026,
+              "Height": 0.016929129138588905,
+              "Left": 0.6925966143608093,
+              "Top": 0.8078864812850952
+            },
+            "confidence": 75.146484375,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 42,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "42",
+      "s_no": "",
+      "spp_name_local_name": "the",
+      "habit": "I",
+      "dbh_in_cms": "4 /",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06836719810962677,
+          "Top": 0.8247169256210327,
+          "Width": 0.8297227621078491,
+          "Height": 0.017893241718411446
+        },
+        "group_id": "row_43",
+        "row_index": 43,
+        "column_index": -1,
+        "cells": {
+          "row_43_col_1": {
+            "bbox": {
+              "Width": 0.038930997252464294,
+              "Height": 0.017798390239477158,
+              "Left": 0.06836719810962677,
+              "Top": 0.8247169256210327
+            },
+            "confidence": 39.892578125,
+            "text": "42",
+            "header": "col_1",
+            "row_index": 43,
+            "column_index": 1
+          },
+          "row_43_col_2": {
+            "bbox": {
+              "Width": 0.07114856690168381,
+              "Height": 0.017802296206355095,
+              "Left": 0.10729611665010452,
+              "Top": 0.8247215747833252
+            },
+            "confidence": 61.62109375,
+            "text": "",
+            "header": "s_no",
+            "row_index": 43,
+            "column_index": 2
+          },
+          "row_43_col_3": {
+            "bbox": {
+              "Width": 0.20539066195487976,
+              "Height": 0.017818477004766464,
+              "Left": 0.17844253778457642,
+              "Top": 0.8247299790382385
+            },
+            "confidence": 73.681640625,
+            "text": "the",
+            "header": "spp_name_local_name",
+            "row_index": 43,
+            "column_index": 3
+          },
+          "row_43_col_4": {
+            "bbox": {
+              "Width": 0.10739702731370926,
+              "Height": 0.01780693791806698,
+              "Left": 0.38383084535598755,
+              "Top": 0.8247544169425964
+            },
+            "confidence": 69.091796875,
+            "text": "I",
+            "header": "habit",
+            "row_index": 43,
+            "column_index": 4
+          },
+          "row_43_col_5": {
+            "bbox": {
+              "Width": 0.20137116312980652,
+              "Height": 0.017818326130509377,
+              "Left": 0.4912254214286804,
+              "Top": 0.8247671723365784
+            },
+            "confidence": 74.072265625,
+            "text": "4 /",
+            "header": "dbh_in_cms",
+            "row_index": 43,
+            "column_index": 5
+          },
+          "row_43_col_6": {
+            "bbox": {
+              "Width": 0.20549596846103668,
+              "Height": 0.017819033935666084,
+              "Left": 0.6925939917564392,
+              "Top": 0.8247911334037781
+            },
+            "confidence": 73.14453125,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 43,
+            "column_index": 6
+          }
+        }
+      }
+    },
+    {
+      "col_1": "43",
+      "s_no": "",
+      "spp_name_local_name": "Mine",
+      "habit": "T",
+      "dbh_in_cms": "4.5",
+      "phenological_condition": "",
+      "system": {
+        "bbox": {
+          "Left": 0.06836515665054321,
+          "Top": 0.8425106406211853,
+          "Width": 0.8297219127416611,
+          "Height": 0.0178940799087286
+        },
+        "group_id": "row_44",
+        "row_index": 44,
+        "column_index": -1,
+        "cells": {
+          "row_44_col_1": {
+            "bbox": {
+              "Width": 0.03893095999956131,
+              "Height": 0.017798397690057755,
+              "Left": 0.06836515665054321,
+              "Top": 0.8425106406211853
+            },
+            "confidence": 39.892578125,
+            "text": "43",
+            "header": "col_1",
+            "row_index": 44,
+            "column_index": 1
+          },
+          "row_44_col_2": {
+            "bbox": {
+              "Width": 0.07114849984645844,
+              "Height": 0.017802339047193527,
+              "Left": 0.10729403048753738,
+              "Top": 0.8425152897834778
+            },
+            "confidence": 54.248046875,
+            "text": "",
+            "header": "s_no",
+            "row_index": 44,
+            "column_index": 2
+          },
+          "row_44_col_3": {
+            "bbox": {
+              "Width": 0.20539046823978424,
+              "Height": 0.01781865954399109,
+              "Left": 0.1784403920173645,
+              "Top": 0.8425238132476807
+            },
+            "confidence": 64.892578125,
+            "text": "Mine",
+            "header": "spp_name_local_name",
+            "row_index": 44,
+            "column_index": 3
+          },
+          "row_44_col_4": {
+            "bbox": {
+              "Width": 0.1073969230055809,
+              "Height": 0.017807018011808395,
+              "Left": 0.3838285207748413,
+              "Top": 0.8425484895706177
+            },
+            "confidence": 60.83984375,
+            "text": "T",
+            "header": "habit",
+            "row_index": 44,
+            "column_index": 4
+          },
+          "row_44_col_5": {
+            "bbox": {
+              "Width": 0.201370969414711,
+              "Height": 0.017818504944443703,
+              "Left": 0.49122297763824463,
+              "Top": 0.8425613641738892
+            },
+            "confidence": 65.185546875,
+            "text": "4.5",
+            "header": "dbh_in_cms",
+            "row_index": 44,
+            "column_index": 5
+          },
+          "row_44_col_6": {
+            "bbox": {
+              "Width": 0.20549575984477997,
+              "Height": 0.01781921647489071,
+              "Left": 0.6925913095474243,
+              "Top": 0.8425855040550232
+            },
+            "confidence": 64.404296875,
+            "text": "",
+            "header": "phenological_condition",
+            "row_index": 44,
+            "column_index": 6
+          }
+        }
+      }
+    }
+  ]
+}

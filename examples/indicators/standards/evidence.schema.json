@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence",
+  "type": "object",
+  "description": "Optional evidence link for traceability.",
+  "properties": {
+    "source_type": {
+      "type": "string",
+      "description": "Origin of evidence, e.g., pdf, excel, form."
+    },
+    "source_ref": {
+      "type": "string",
+      "description": "Page number, sheet/row, or filename reference."
+    },
+    "snippet": {
+      "type": "string",
+      "description": "Short excerpt supporting the computation or indicator."
+    }
+  },
+  "additionalProperties": true
+}
