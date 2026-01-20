@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alienwise TIF Viewer</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header h1 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 0.95rem;
+            border: 2px solid #bdc3c7;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: #3498db;
+        }
+
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #bdc3c7;
+            border-top: none;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .autocomplete-dropdown.show {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 0.6rem 0.75rem;
+            cursor: pointer;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 0.9rem;
+        }
+
+        .autocomplete-item:hover {
+            background: #ecf0f1;
+        }
+
+        .autocomplete-item.highlight {
+            background: #3498db;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .selected-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .selected-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .selected-item-name {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .selected-item-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            margin-right: 0.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .selected-item .remove {
+            cursor: pointer;
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        .selected-item .remove:hover {
+            opacity: 1;
+        }
+
+        .threshold-control {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .threshold-control label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+
+        .threshold-slider-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .threshold-slider-container input[type="range"] {
+            flex: 1;
+        }
+
+        .threshold-value {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 600;
+            color: #3498db;
+            font-size: 0.95rem;
+        }
+
+        .threshold-help {
+            font-size: 0.75rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        button {
+            padding: 0.75rem;
+            font-size: 0.95rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background: #3498db;
+            color: white;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        button.clear {
+            background: #e74c3c;
+        }
+
+        button.clear:hover {
+            background: #c0392b;
+        }
+
+        .map-container {
+            flex: 1;
+            position: relative;
+            height: 100vh;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #3498db;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .instructions code {
+            background: #f8f9fa;
+            padding: 0.15rem 0.3rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1>👾Alienwise TIF Viewer</h1>
+            <p>Species Distribution Visualization</p>
+        </div>
+
+        <div class="sidebar-content">
+            <div class="instructions">
+                <strong>Setup:</strong> Run <code>python3 -m http.server 8000</code> from the alienwise directory, then
+                open <code>http://localhost:8000/alienwise_viewer.html</code>
+            </div>
+
+            <div class="section">
+                <div class="search-container">
+                    <input type="text" id="searchBox" class="search-box"
+                        placeholder="Search species (e.g., 'm' for Magnolia)..." autocomplete="off">
+                    <div id="autocomplete" class="autocomplete-dropdown"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Selected Species</div>
+                <div class="selected-items" id="selectedItems">
+                    <div style="color: #6c757d; font-size: 0.85rem; padding: 0.5rem;">No species selected</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Probability Threshold</div>
+                <div class="threshold-control">
+                    <label for="thresholdSlider">Hide areas below:</label>
+                    <div class="threshold-slider-container">
+                        <input type="range" id="thresholdSlider" min="0" max="100" value="0"
+                            oninput="updateThreshold(this.value)">
+                        <span class="threshold-value" id="thresholdValue">0.00</span>
+                    </div>
+                    <div class="threshold-help">Adjust to filter low-probability areas</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="actions">
+                    <button id="loadBtn" onclick="loadSelectedTIFs()" disabled>Load Selected TIFs</button>
+                    <button class="clear" onclick="clearSelection()">Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="status" id="status">Ready</div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- GeoTIFF.js -->
+    <script src="https://unpkg.com/geotiff@2.0.7/dist-browser/geotiff.js"></script>
+
+    <script>
+        // Global state
+        let allTIFs = [];
+        let selectedTIFs = [];
+        let map = null;
+        let overlays = [];
+        let autocompleteIndex = -1;
+        let probabilityThreshold = 0.0; // Filter out values below this
+        let userHasZoomed = false; // Track if user has manually zoomed
+        let initialZoom = 6; // Store initial zoom level
+
+        // Color palette for different species
+        const colors = [
+            '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+            '#1abc9c', '#e67e22', '#34495e', '#d35400', '#16a085',
+            '#c0392b', '#2980b9', '#27ae60', '#d68910', '#8e44ad',
+            '#138d75', '#ba4a00', '#2c3e50', '#a93226', '#2874a6'
+        ];
+
+        // Initialize map
+        function initMap() {
+            // Default view centered on India (where the TIFs are located)
+            map = L.map('map').setView([12.5, 75.5], initialZoom);
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Track user zoom/pan interactions
+            map.on('zoomend', function () {
+                if (map.getZoom() !== initialZoom) {
+                    userHasZoomed = true;
+                }
+            });
+
+            map.on('moveend', function () {
+                // If user has panned significantly, consider it manual interaction
+                userHasZoomed = true;
+            });
+        }
+
+        // Load TIF index
+        async function loadTIFIndex() {
+            try {
+                updateStatus('Loading TIF index...');
+                const response = await fetch('tif_index.json');
+                const data = await response.json();
+                allTIFs = data.files;
+                updateStatus(`Loaded ${allTIFs.length} TIF files`);
+                console.log(`Loaded ${allTIFs.length} TIF files`);
+            } catch (error) {
+                updateStatus('Error loading TIF index. Make sure tif_index.json exists.');
+                console.error('Error loading index:', error);
+            }
+        }
+
+        // Autocomplete functionality
+        const searchBox = document.getElementById('searchBox');
+        const autocomplete = document.getElementById('autocomplete');
+
+        searchBox.addEventListener('input', handleSearch);
+        searchBox.addEventListener('keydown', handleKeydown);
+
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length === 0) {
+                autocomplete.classList.remove('show');
+                return;
+            }
+
+            // Filter TIFs that match query
+            const matches = allTIFs.filter(tif =>
+                tif.name.toLowerCase().includes(query)
+            ).slice(0, 10); // Limit to 10 results
+
+            if (matches.length === 0) {
+                autocomplete.classList.remove('show');
+                return;
+            }
+
+            // Render autocomplete dropdown
+            autocomplete.innerHTML = matches.map((tif, index) =>
+                `<div class="autocomplete-item" data-index="${index}" data-name="${tif.name}" data-path="${tif.path}">
+                    ${highlightMatch(tif.name, query)}
+                </div>`
+            ).join('');
+
+            autocomplete.classList.add('show');
+            autocompleteIndex = -1;
+        }
+
+        function highlightMatch(text, query) {
+            const lowerText = text.toLowerCase();
+            const lowerQuery = query.toLowerCase();
+            const index = lowerText.indexOf(lowerQuery);
+
+            if (index === -1) return text;
+
+            const before = text.substring(0, index);
+            const match = text.substring(index, index + query.length);
+            const after = text.substring(index + query.length);
+
+            return `${before}<strong>${match}</strong>${after}`;
+        }
+
+        function handleKeydown(e) {
+            const items = autocomplete.querySelectorAll('.autocomplete-item');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                autocompleteIndex = Math.min(autocompleteIndex + 1, items.length - 1);
+                updateHighlight(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                autocompleteIndex = Math.max(autocompleteIndex - 1, -1);
+                updateHighlight(items);
+            } else if (e.key === 'Enter' && autocompleteIndex >= 0) {
+                e.preventDefault();
+                const item = items[autocompleteIndex];
+                selectTIF(item.dataset.name, item.dataset.path);
+            } else if (e.key === 'Escape') {
+                autocomplete.classList.remove('show');
+            }
+        }
+
+        function updateHighlight(items) {
+            items.forEach((item, index) => {
+                item.classList.toggle('highlight', index === autocompleteIndex);
+            });
+        }
+
+        // Handle clicks on autocomplete items
+        autocomplete.addEventListener('click', (e) => {
+            const item = e.target.closest('.autocomplete-item');
+            if (item) {
+                selectTIF(item.dataset.name, item.dataset.path);
+            }
+        });
+
+        // Select a TIF
+        function selectTIF(name, path) {
+            // Check if already selected
+            if (selectedTIFs.some(t => t.path === path)) {
+                return;
+            }
+
+            selectedTIFs.push({ name, path });
+            updateSelectedDisplay();
+            searchBox.value = '';
+            autocomplete.classList.remove('show');
+            searchBox.focus();
+        }
+
+        // Update selected items display
+        function updateSelectedDisplay() {
+            const container = document.getElementById('selectedItems');
+            if (selectedTIFs.length === 0) {
+                container.innerHTML = '<div style="color: #6c757d; font-size: 0.85rem; padding: 0.5rem;">No species selected</div>';
+            } else {
+                container.innerHTML = selectedTIFs.map((tif, index) =>
+                    `<div class="selected-item">
+                        <div class="selected-item-color" style="background: ${colors[index % colors.length]}"></div>
+                        <div class="selected-item-name">${tif.name}</div>
+                        <span class="remove" onclick="removeTIF(${index})">×</span>
+                    </div>`
+                ).join('');
+            }
+
+            document.getElementById('loadBtn').disabled = selectedTIFs.length === 0;
+        }
+
+        // Remove a TIF from selection
+        function removeTIF(index) {
+            selectedTIFs.splice(index, 1);
+            updateSelectedDisplay();
+        }
+
+        // Clear all selections
+        function clearSelection() {
+            selectedTIFs = [];
+            updateSelectedDisplay();
+            clearMap();
+        }
+
+        // Clear map overlays
+        function clearMap() {
+            overlays.forEach(overlay => {
+                if (overlay && map.hasLayer(overlay)) {
+                    map.removeLayer(overlay);
+                }
+            });
+            overlays = [];
+        }
+
+        // Load and render selected TIFs
+        async function loadSelectedTIFs() {
+            if (selectedTIFs.length === 0) return;
+
+            clearMap();
+            updateStatus(`Loading ${selectedTIFs.length} TIF file(s)...`);
+
+            const bounds = [];
+
+            try {
+                // Load all TIFs in parallel
+                const loadPromises = selectedTIFs.map((tif, index) =>
+                    loadTIF(tif.path, colors[index % colors.length])
+                );
+
+                const results = await Promise.all(loadPromises);
+
+                // Collect bounds
+                results.forEach(result => {
+                    if (result && result.bounds) {
+                        bounds.push(result.bounds);
+                    }
+                });
+
+                // Fit map to bounds only if user hasn't manually zoomed
+                if (bounds.length > 0 && !userHasZoomed) {
+                    const allBounds = bounds.reduce((acc, b) => {
+                        return [
+                            Math.min(acc[0], b[0]), // minLng
+                            Math.min(acc[1], b[1]), // minLat
+                            Math.max(acc[2], b[2]), // maxLng
+                            Math.max(acc[3], b[3])  // maxLat
+                        ];
+                    }, [bounds[0][0], bounds[0][1], bounds[0][2], bounds[0][3]]);
+
+                    map.fitBounds([
+                        [allBounds[1], allBounds[0]], // [lat, lng] for SW corner
+                        [allBounds[3], allBounds[2]]  // [lat, lng] for NE corner
+                    ]);
+                }
+
+                updateStatus(`Loaded ${results.filter(r => r !== null).length} TIF file(s)`);
+            } catch (error) {
+                updateStatus('Error loading TIF files');
+                console.error('Error:', error);
+            }
+        }
+
+        // Load a single TIF file
+        async function loadTIF(path, color) {
+            try {
+                updateStatus(`Loading ${path}...`);
+
+                // Fetch TIF file
+                const response = await fetch(path);
+                const arrayBuffer = await response.arrayBuffer();
+
+                // Parse GeoTIFF
+                const tiff = await GeoTIFF.fromArrayBuffer(arrayBuffer);
+                const image = await tiff.getImage();
+
+                // Get image data
+                const rasters = await image.readRasters();
+                const bbox = image.getBoundingBox();
+
+                // Get dimensions
+                const width = image.getWidth();
+                const height = image.getHeight();
+
+                // Create canvas for rendering
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+
+                // Get data array (assuming single band)
+                const data = rasters[0];
+
+                // Filter out NoData values (-9999 is commonly used)
+                // Find valid data range (exclude -9999 and similar sentinel values)
+                let min = Infinity;
+                let max = -Infinity;
+                const nodataThreshold = -1000; // Values below this are considered NoData
+
+                for (let i = 0; i < data.length; i++) {
+                    const val = data[i];
+                    if (!isNaN(val) && isFinite(val) && val > nodataThreshold) {
+                        min = Math.min(min, val);
+                        max = Math.max(max, val);
+                    }
+                }
+
+                // If no valid data found, use fallback
+                if (min === Infinity || max === -Infinity) {
+                    min = 0;
+                    max = 1;
+                }
+
+                const range = max - min || 1;
+
+                // Log for debugging
+                console.log(`Loaded ${path}: valid range ${min.toFixed(4)} to ${max.toFixed(4)}, color ${color}`);
+
+                // Create image data
+                const imageData = ctx.createImageData(width, height);
+
+                // Convert to color overlay
+                const rgb = hexToRgb(color);
+                for (let i = 0; i < data.length; i++) {
+                    const val = data[i];
+                    const idx = i * 4;
+
+                    // Check if this is a NoData pixel or below threshold
+                    if (isNaN(val) || !isFinite(val) || val <= nodataThreshold || val < probabilityThreshold) {
+                        // NoData or below threshold - fully transparent
+                        imageData.data[idx] = 0;
+                        imageData.data[idx + 1] = 0;
+                        imageData.data[idx + 2] = 0;
+                        imageData.data[idx + 3] = 0;
+                    } else {
+                        // Valid data - normalize and apply color
+                        const normalized = Math.max(0, Math.min(1, (val - min) / range));
+                        // Use stronger opacity for better visibility, scale by normalized value
+                        // Minimum opacity of 0.3 for low values, up to 0.9 for high values
+                        const alpha = 0.3 + (0.6 * normalized); // Darker, more visible
+
+                        // Darken the base colors slightly for better contrast
+                        const darkenFactor = 0.85;
+                        imageData.data[idx] = Math.floor(rgb.r * darkenFactor);     // R
+                        imageData.data[idx + 1] = Math.floor(rgb.g * darkenFactor); // G
+                        imageData.data[idx + 2] = Math.floor(rgb.b * darkenFactor); // B
+                        imageData.data[idx + 3] = alpha * 255; // A
+                    }
+                }
+
+                ctx.putImageData(imageData, 0, 0);
+
+                // Convert canvas to image
+                const dataUrl = canvas.toDataURL();
+                const img = new Image();
+
+                return new Promise((resolve) => {
+                    img.onload = () => {
+                        // Create image overlay
+                        const overlay = L.imageOverlay(dataUrl, [
+                            [bbox[1], bbox[0]], // SW corner [lat, lng]
+                            [bbox[3], bbox[2]]  // NE corner [lat, lng]
+                        ], {
+                            opacity: 0.85,
+                            interactive: false
+                        });
+
+                        overlay.addTo(map);
+                        overlays.push(overlay);
+
+                        resolve({
+                            bounds: [bbox[0], bbox[1], bbox[2], bbox[3]], // [minLng, minLat, maxLng, maxLat]
+                            overlay
+                        });
+                    };
+                    img.src = dataUrl;
+                });
+            } catch (error) {
+                console.error(`Error loading ${path}:`, error);
+                return null;
+            }
+        }
+
+        // Convert hex color to RGB
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : { r: 0, g: 0, b: 0 };
+        }
+
+        // Update threshold and reload
+        function updateThreshold(value) {
+            probabilityThreshold = parseFloat(value) / 100;
+            document.getElementById('thresholdValue').textContent = probabilityThreshold.toFixed(2);
+
+            // Reload all TIFs if any are loaded
+            if (selectedTIFs.length > 0 && overlays.length > 0) {
+                loadSelectedTIFs();
+            }
+        }
+
+        // Update status message
+        function updateStatus(message) {
+            const statusEl = document.getElementById('status');
+            if (message.includes('Loading')) {
+                statusEl.innerHTML = `<span class="loading"></span>${message}`;
+            } else {
+                statusEl.textContent = message;
+            }
+        }
+
+        // Close autocomplete when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchBox.contains(e.target) && !autocomplete.contains(e.target)) {
+                autocomplete.classList.remove('show');
+            }
+        });
+
+        // Initialize
+        initMap();
+        loadTIFIndex();
+    </script>
+</body>
+
+</html>

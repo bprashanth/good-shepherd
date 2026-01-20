@@ -1,0 +1,1752 @@
+{
+  "files": [
+    {
+      "name": "Acrocarpus_fraxinifolius",
+      "path": "tifs/Acrocarpus_fraxinifolius.tif"
+    },
+    {
+      "name": "Acronychia_pedunculata",
+      "path": "tifs/Acronychia_pedunculata.tif"
+    },
+    {
+      "name": "Actephila_excelsa",
+      "path": "tifs/Actephila_excelsa.tif"
+    },
+    {
+      "name": "Actinodaphne_bourdillonii",
+      "path": "tifs/Actinodaphne_bourdillonii.tif"
+    },
+    {
+      "name": "Actinodaphne_gullavara",
+      "path": "tifs/Actinodaphne_gullavara.tif"
+    },
+    {
+      "name": "Actinodaphne_lanceolata",
+      "path": "tifs/Actinodaphne_lanceolata.tif"
+    },
+    {
+      "name": "Actinodaphne_salicina",
+      "path": "tifs/Actinodaphne_salicina.tif"
+    },
+    {
+      "name": "Actinodaphne_tadulingamii",
+      "path": "tifs/Actinodaphne_tadulingamii.tif"
+    },
+    {
+      "name": "Actinodaphne_wightiana",
+      "path": "tifs/Actinodaphne_wightiana.tif"
+    },
+    {
+      "name": "Agasthiyamalai_pauciflora",
+      "path": "tifs/Agasthiyamalai_pauciflora.tif"
+    },
+    {
+      "name": "Aglaia_bourdillonii",
+      "path": "tifs/Aglaia_bourdillonii.tif"
+    },
+    {
+      "name": "Aglaia_canarana",
+      "path": "tifs/Aglaia_canarana.tif"
+    },
+    {
+      "name": "Aglaia_edulis",
+      "path": "tifs/Aglaia_edulis.tif"
+    },
+    {
+      "name": "Aglaia_elaeagnoidea",
+      "path": "tifs/Aglaia_elaeagnoidea.tif"
+    },
+    {
+      "name": "Aglaia_lawii",
+      "path": "tifs/Aglaia_lawii.tif"
+    },
+    {
+      "name": "Aglaia_perviridis",
+      "path": "tifs/Aglaia_perviridis.tif"
+    },
+    {
+      "name": "Aglaia_simplicifolia",
+      "path": "tifs/Aglaia_simplicifolia.tif"
+    },
+    {
+      "name": "Aglaia_tomentosa",
+      "path": "tifs/Aglaia_tomentosa.tif"
+    },
+    {
+      "name": "Agrostistachys_borneensis",
+      "path": "tifs/Agrostistachys_borneensis.tif"
+    },
+    {
+      "name": "Agrostistachys_indica",
+      "path": "tifs/Agrostistachys_indica.tif"
+    },
+    {
+      "name": "Aidia_densiflora",
+      "path": "tifs/Aidia_densiflora.tif"
+    },
+    {
+      "name": "Ailanthus_triphysa",
+      "path": "tifs/Ailanthus_triphysa.tif"
+    },
+    {
+      "name": "Allophylus_cobbe",
+      "path": "tifs/Allophylus_cobbe.tif"
+    },
+    {
+      "name": "Alseodaphne_semecarpifolia",
+      "path": "tifs/Alseodaphne_semecarpifolia.tif"
+    },
+    {
+      "name": "Alstonia_scholaris",
+      "path": "tifs/Alstonia_scholaris.tif"
+    },
+    {
+      "name": "Anacolosa_densiflora",
+      "path": "tifs/Anacolosa_densiflora.tif"
+    },
+    {
+      "name": "Ancistrocladus_heyneanus",
+      "path": "tifs/Ancistrocladus_heyneanus.tif"
+    },
+    {
+      "name": "Antiaris_toxicaria",
+      "path": "tifs/Antiaris_toxicaria.tif"
+    },
+    {
+      "name": "Antidesma_montanum",
+      "path": "tifs/Antidesma_montanum.tif"
+    },
+    {
+      "name": "Aphanamixis_polystachya",
+      "path": "tifs/Aphanamixis_polystachya.tif"
+    },
+    {
+      "name": "Aphananthe_cuspidata",
+      "path": "tifs/Aphananthe_cuspidata.tif"
+    },
+    {
+      "name": "Apodytes_dimidiata",
+      "path": "tifs/Apodytes_dimidiata.tif"
+    },
+    {
+      "name": "Aporosa_acuminata",
+      "path": "tifs/Aporosa_acuminata.tif"
+    },
+    {
+      "name": "Aporosa_bourdillonii",
+      "path": "tifs/Aporosa_bourdillonii.tif"
+    },
+    {
+      "name": "Aporosa_cardiosperma",
+      "path": "tifs/Aporosa_cardiosperma.tif"
+    },
+    {
+      "name": "Archidendron_bigeminum",
+      "path": "tifs/Archidendron_bigeminum.tif"
+    },
+    {
+      "name": "Ardisia_missionis",
+      "path": "tifs/Ardisia_missionis.tif"
+    },
+    {
+      "name": "Ardisia_pauciflora",
+      "path": "tifs/Ardisia_pauciflora.tif"
+    },
+    {
+      "name": "Ardisia_rhomboidea",
+      "path": "tifs/Ardisia_rhomboidea.tif"
+    },
+    {
+      "name": "Ardisia_solanacea",
+      "path": "tifs/Ardisia_solanacea.tif"
+    },
+    {
+      "name": "Ardisia_stonei",
+      "path": "tifs/Ardisia_stonei.tif"
+    },
+    {
+      "name": "Arenga_wightii",
+      "path": "tifs/Arenga_wightii.tif"
+    },
+    {
+      "name": "Artocarpus_gomezianus",
+      "path": "tifs/Artocarpus_gomezianus.tif"
+    },
+    {
+      "name": "Artocarpus_heterophyllus",
+      "path": "tifs/Artocarpus_heterophyllus.tif"
+    },
+    {
+      "name": "Artocarpus_hirsutus",
+      "path": "tifs/Artocarpus_hirsutus.tif"
+    },
+    {
+      "name": "Atalantia_racemosa",
+      "path": "tifs/Atalantia_racemosa.tif"
+    },
+    {
+      "name": "Atalantia_wightii",
+      "path": "tifs/Atalantia_wightii.tif"
+    },
+    {
+      "name": "Atuna_indica",
+      "path": "tifs/Atuna_indica.tif"
+    },
+    {
+      "name": "Atuna_travancorica",
+      "path": "tifs/Atuna_travancorica.tif"
+    },
+    {
+      "name": "Baccaurea_courtallensis",
+      "path": "tifs/Baccaurea_courtallensis.tif"
+    },
+    {
+      "name": "Beddomea_indica",
+      "path": "tifs/Beddomea_indica.tif"
+    },
+    {
+      "name": "Beilschmiedia_dalzellii",
+      "path": "tifs/Beilschmiedia_dalzellii.tif"
+    },
+    {
+      "name": "Beilschmiedia_wightii",
+      "path": "tifs/Beilschmiedia_wightii.tif"
+    },
+    {
+      "name": "Bhesa_indica",
+      "path": "tifs/Bhesa_indica.tif"
+    },
+    {
+      "name": "Bischofia_javanica",
+      "path": "tifs/Bischofia_javanica.tif"
+    },
+    {
+      "name": "Blachia_calycina",
+      "path": "tifs/Blachia_calycina.tif"
+    },
+    {
+      "name": "Blachia_denudata",
+      "path": "tifs/Blachia_denudata.tif"
+    },
+    {
+      "name": "Blepharistemma_serratum",
+      "path": "tifs/Blepharistemma_serratum.tif"
+    },
+    {
+      "name": "Bombax_ceiba",
+      "path": "tifs/Bombax_ceiba.tif"
+    },
+    {
+      "name": "Bridelia_stipularis",
+      "path": "tifs/Bridelia_stipularis.tif"
+    },
+    {
+      "name": "Callicarpa_tomentosa",
+      "path": "tifs/Callicarpa_tomentosa.tif"
+    },
+    {
+      "name": "Calophyllum_apetalum",
+      "path": "tifs/Calophyllum_apetalum.tif"
+    },
+    {
+      "name": "Calophyllum_austroindicum",
+      "path": "tifs/Calophyllum_austroindicum.tif"
+    },
+    {
+      "name": "Calophyllum_tomentosum",
+      "path": "tifs/Calophyllum_tomentosum.tif"
+    },
+    {
+      "name": "Canarium_strictum",
+      "path": "tifs/Canarium_strictum.tif"
+    },
+    {
+      "name": "Canthium_rheedei",
+      "path": "tifs/Canthium_rheedei.tif"
+    },
+    {
+      "name": "Capparis_baducca",
+      "path": "tifs/Capparis_baducca.tif"
+    },
+    {
+      "name": "Capparis_rotundifolia",
+      "path": "tifs/Capparis_rotundifolia.tif"
+    },
+    {
+      "name": "Carallia_brachiata",
+      "path": "tifs/Carallia_brachiata.tif"
+    },
+    {
+      "name": "Carissa_carandas",
+      "path": "tifs/Carissa_carandas.tif"
+    },
+    {
+      "name": "Carissa_spinarum",
+      "path": "tifs/Carissa_spinarum.tif"
+    },
+    {
+      "name": "Caryota_urens",
+      "path": "tifs/Caryota_urens.tif"
+    },
+    {
+      "name": "Casearia_ovata",
+      "path": "tifs/Casearia_ovata.tif"
+    },
+    {
+      "name": "Casearia_rubescens",
+      "path": "tifs/Casearia_rubescens.tif"
+    },
+    {
+      "name": "Casearia_wynadensis",
+      "path": "tifs/Casearia_wynadensis.tif"
+    },
+    {
+      "name": "Cassine_paniculata",
+      "path": "tifs/Cassine_paniculata.tif"
+    },
+    {
+      "name": "Celtis_philippensis",
+      "path": "tifs/Celtis_philippensis.tif"
+    },
+    {
+      "name": "Celtis_timorensis",
+      "path": "tifs/Celtis_timorensis.tif"
+    },
+    {
+      "name": "Cestrum_aurantiacum",
+      "path": "tifs/Cestrum_aurantiacum.tif"
+    },
+    {
+      "name": "Chassalia_curviflora",
+      "path": "tifs/Chassalia_curviflora.tif"
+    },
+    {
+      "name": "Chionanthus_courtallensis",
+      "path": "tifs/Chionanthus_courtallensis.tif"
+    },
+    {
+      "name": "Chionanthus_mala-elengi",
+      "path": "tifs/Chionanthus_mala-elengi.tif"
+    },
+    {
+      "name": "Chionanthus_ramiflorus",
+      "path": "tifs/Chionanthus_ramiflorus.tif"
+    },
+    {
+      "name": "Chromolaena_odorata",
+      "path": "tifs/Chromolaena_odorata.tif"
+    },
+    {
+      "name": "Chrysophyllum_flexuosum",
+      "path": "tifs/Chrysophyllum_flexuosum.tif"
+    },
+    {
+      "name": "Chukrasia_tabularis",
+      "path": "tifs/Chukrasia_tabularis.tif"
+    },
+    {
+      "name": "Cinnamomum_cassia",
+      "path": "tifs/Cinnamomum_cassia.tif"
+    },
+    {
+      "name": "Cinnamomum_filipedicellatum",
+      "path": "tifs/Cinnamomum_filipedicellatum.tif"
+    },
+    {
+      "name": "Cinnamomum_keralaense",
+      "path": "tifs/Cinnamomum_keralaense.tif"
+    },
+    {
+      "name": "Cinnamomum_macrocarpum",
+      "path": "tifs/Cinnamomum_macrocarpum.tif"
+    },
+    {
+      "name": "Cinnamomum_malabatrum",
+      "path": "tifs/Cinnamomum_malabatrum.tif"
+    },
+    {
+      "name": "Cinnamomum_sulphuratum",
+      "path": "tifs/Cinnamomum_sulphuratum.tif"
+    },
+    {
+      "name": "Cinnamomum_verum",
+      "path": "tifs/Cinnamomum_verum.tif"
+    },
+    {
+      "name": "Clausena_anisata",
+      "path": "tifs/Clausena_anisata.tif"
+    },
+    {
+      "name": "Clausena_austroindica",
+      "path": "tifs/Clausena_austroindica.tif"
+    },
+    {
+      "name": "Clausena_indica",
+      "path": "tifs/Clausena_indica.tif"
+    },
+    {
+      "name": "Cleidion_javanicum",
+      "path": "tifs/Cleidion_javanicum.tif"
+    },
+    {
+      "name": "Cleistanthus_malabaricus",
+      "path": "tifs/Cleistanthus_malabaricus.tif"
+    },
+    {
+      "name": "Cleistanthus_travancorensis",
+      "path": "tifs/Cleistanthus_travancorensis.tif"
+    },
+    {
+      "name": "Clerodendrum_infortunatum",
+      "path": "tifs/Clerodendrum_infortunatum.tif"
+    },
+    {
+      "name": "Coffea_wightiana",
+      "path": "tifs/Coffea_wightiana.tif"
+    },
+    {
+      "name": "Connarus_wightii",
+      "path": "tifs/Connarus_wightii.tif"
+    },
+    {
+      "name": "Croton_gibsonianus",
+      "path": "tifs/Croton_gibsonianus.tif"
+    },
+    {
+      "name": "Croton_laccifer",
+      "path": "tifs/Croton_laccifer.tif"
+    },
+    {
+      "name": "Croton_malabaricus",
+      "path": "tifs/Croton_malabaricus.tif"
+    },
+    {
+      "name": "Croton_zeylanicus",
+      "path": "tifs/Croton_zeylanicus.tif"
+    },
+    {
+      "name": "Cryptocarya_anamalayana",
+      "path": "tifs/Cryptocarya_anamalayana.tif"
+    },
+    {
+      "name": "Cryptocarya_beddomei",
+      "path": "tifs/Cryptocarya_beddomei.tif"
+    },
+    {
+      "name": "Cryptocarya_lawsonii",
+      "path": "tifs/Cryptocarya_lawsonii.tif"
+    },
+    {
+      "name": "Cryptocarya_stocksii",
+      "path": "tifs/Cryptocarya_stocksii.tif"
+    },
+    {
+      "name": "Cryptocarya_wightiana",
+      "path": "tifs/Cryptocarya_wightiana.tif"
+    },
+    {
+      "name": "Cyathocalyx_zeylanicus",
+      "path": "tifs/Cyathocalyx_zeylanicus.tif"
+    },
+    {
+      "name": "Cynometra_travancorica",
+      "path": "tifs/Cynometra_travancorica.tif"
+    },
+    {
+      "name": "Daphniphyllum_neilgherrense",
+      "path": "tifs/Daphniphyllum_neilgherrense.tif"
+    },
+    {
+      "name": "Dendrocnide_sinuata",
+      "path": "tifs/Dendrocnide_sinuata.tif"
+    },
+    {
+      "name": "Dichapetalum_gelonioides",
+      "path": "tifs/Dichapetalum_gelonioides.tif"
+    },
+    {
+      "name": "Dillenia_bracteata",
+      "path": "tifs/Dillenia_bracteata.tif"
+    },
+    {
+      "name": "Dimocarpus_longan",
+      "path": "tifs/Dimocarpus_longan.tif"
+    },
+    {
+      "name": "Dimorphocalyx_beddomei",
+      "path": "tifs/Dimorphocalyx_beddomei.tif"
+    },
+    {
+      "name": "Dimorphocalyx_glabellus",
+      "path": "tifs/Dimorphocalyx_glabellus.tif"
+    },
+    {
+      "name": "Diospyros_barberi",
+      "path": "tifs/Diospyros_barberi.tif"
+    },
+    {
+      "name": "Diospyros_bourdillonii",
+      "path": "tifs/Diospyros_bourdillonii.tif"
+    },
+    {
+      "name": "Diospyros_buxifolia",
+      "path": "tifs/Diospyros_buxifolia.tif"
+    },
+    {
+      "name": "Diospyros_candolleana",
+      "path": "tifs/Diospyros_candolleana.tif"
+    },
+    {
+      "name": "Diospyros_crumenata",
+      "path": "tifs/Diospyros_crumenata.tif"
+    },
+    {
+      "name": "Diospyros_ebenum",
+      "path": "tifs/Diospyros_ebenum.tif"
+    },
+    {
+      "name": "Diospyros_ferrea",
+      "path": "tifs/Diospyros_ferrea.tif"
+    },
+    {
+      "name": "Diospyros_ghatensis",
+      "path": "tifs/Diospyros_ghatensis.tif"
+    },
+    {
+      "name": "Diospyros_insignis",
+      "path": "tifs/Diospyros_insignis.tif"
+    },
+    {
+      "name": "Diospyros_kedam",
+      "path": "tifs/Diospyros_kedam.tif"
+    },
+    {
+      "name": "Diospyros_malabarica",
+      "path": "tifs/Diospyros_malabarica.tif"
+    },
+    {
+      "name": "Diospyros_montana",
+      "path": "tifs/Diospyros_montana.tif"
+    },
+    {
+      "name": "Diospyros_nilagirica",
+      "path": "tifs/Diospyros_nilagirica.tif"
+    },
+    {
+      "name": "Diospyros_oocarpa",
+      "path": "tifs/Diospyros_oocarpa.tif"
+    },
+    {
+      "name": "Diospyros_paniculata",
+      "path": "tifs/Diospyros_paniculata.tif"
+    },
+    {
+      "name": "Diospyros_pruriens",
+      "path": "tifs/Diospyros_pruriens.tif"
+    },
+    {
+      "name": "Diospyros_ridleyi",
+      "path": "tifs/Diospyros_ridleyi.tif"
+    },
+    {
+      "name": "Diospyros_saldanhae",
+      "path": "tifs/Diospyros_saldanhae.tif"
+    },
+    {
+      "name": "Diospyros_sylvatica",
+      "path": "tifs/Diospyros_sylvatica.tif"
+    },
+    {
+      "name": "Diploclisia_glaucescens",
+      "path": "tifs/Diploclisia_glaucescens.tif"
+    },
+    {
+      "name": "Dipterocarpus_bourdillonii",
+      "path": "tifs/Dipterocarpus_bourdillonii.tif"
+    },
+    {
+      "name": "Dipterocarpus_indicus",
+      "path": "tifs/Dipterocarpus_indicus.tif"
+    },
+    {
+      "name": "Discospermum_apiocarpum",
+      "path": "tifs/Discospermum_apiocarpum.tif"
+    },
+    {
+      "name": "Discospermum_sphaerocarpum",
+      "path": "tifs/Discospermum_sphaerocarpum.tif"
+    },
+    {
+      "name": "Donella_lanceolata",
+      "path": "tifs/Donella_lanceolata.tif"
+    },
+    {
+      "name": "Dracaena_elliptica",
+      "path": "tifs/Dracaena_elliptica.tif"
+    },
+    {
+      "name": "Drypetes_confertiflora",
+      "path": "tifs/Drypetes_confertiflora.tif"
+    },
+    {
+      "name": "Drypetes_malabarica",
+      "path": "tifs/Drypetes_malabarica.tif"
+    },
+    {
+      "name": "Drypetes_oblongifolia",
+      "path": "tifs/Drypetes_oblongifolia.tif"
+    },
+    {
+      "name": "Drypetes_venusta",
+      "path": "tifs/Drypetes_venusta.tif"
+    },
+    {
+      "name": "Drypetes_wightii",
+      "path": "tifs/Drypetes_wightii.tif"
+    },
+    {
+      "name": "Durio_exarillatus",
+      "path": "tifs/Durio_exarillatus.tif"
+    },
+    {
+      "name": "Dysoxylum_gotadhora",
+      "path": "tifs/Dysoxylum_gotadhora.tif"
+    },
+    {
+      "name": "Dysoxylum_malabaricum",
+      "path": "tifs/Dysoxylum_malabaricum.tif"
+    },
+    {
+      "name": "Ehretia_aspera",
+      "path": "tifs/Ehretia_aspera.tif"
+    },
+    {
+      "name": "Elaeagnus_conferta",
+      "path": "tifs/Elaeagnus_conferta.tif"
+    },
+    {
+      "name": "Elaeocarpus_munroii",
+      "path": "tifs/Elaeocarpus_munroii.tif"
+    },
+    {
+      "name": "Elaeocarpus_serratus",
+      "path": "tifs/Elaeocarpus_serratus.tif"
+    },
+    {
+      "name": "Elaeocarpus_tuberculatus",
+      "path": "tifs/Elaeocarpus_tuberculatus.tif"
+    },
+    {
+      "name": "Elaeocarpus_variabilis",
+      "path": "tifs/Elaeocarpus_variabilis.tif"
+    },
+    {
+      "name": "Elaeocarpus_venustus",
+      "path": "tifs/Elaeocarpus_venustus.tif"
+    },
+    {
+      "name": "Elaeodendron_paniculatum",
+      "path": "tifs/Elaeodendron_paniculatum.tif"
+    },
+    {
+      "name": "Embelia_drupacea",
+      "path": "tifs/Embelia_drupacea.tif"
+    },
+    {
+      "name": "Entada_rheedei",
+      "path": "tifs/Entada_rheedei.tif"
+    },
+    {
+      "name": "Epiprinus_mallotiformis",
+      "path": "tifs/Epiprinus_mallotiformis.tif"
+    },
+    {
+      "name": "Erythroxylum_moonii",
+      "path": "tifs/Erythroxylum_moonii.tif"
+    },
+    {
+      "name": "Eugenia_codyensis",
+      "path": "tifs/Eugenia_codyensis.tif"
+    },
+    {
+      "name": "Eugenia_kalamii",
+      "path": "tifs/Eugenia_kalamii.tif"
+    },
+    {
+      "name": "Eugenia_macrocalyx",
+      "path": "tifs/Eugenia_macrocalyx.tif"
+    },
+    {
+      "name": "Eugenia_mooniana",
+      "path": "tifs/Eugenia_mooniana.tif"
+    },
+    {
+      "name": "Eugenia_singampattiana",
+      "path": "tifs/Eugenia_singampattiana.tif"
+    },
+    {
+      "name": "Euonymus_angulatus",
+      "path": "tifs/Euonymus_angulatus.tif"
+    },
+    {
+      "name": "Euonymus_dichotomus",
+      "path": "tifs/Euonymus_dichotomus.tif"
+    },
+    {
+      "name": "Euonymus_indicus",
+      "path": "tifs/Euonymus_indicus.tif"
+    },
+    {
+      "name": "Eurya_nitida",
+      "path": "tifs/Eurya_nitida.tif"
+    },
+    {
+      "name": "Excoecaria_oppositifolia",
+      "path": "tifs/Excoecaria_oppositifolia.tif"
+    },
+    {
+      "name": "Falconeria_insignis",
+      "path": "tifs/Falconeria_insignis.tif"
+    },
+    {
+      "name": "Ficus_beddomei",
+      "path": "tifs/Ficus_beddomei.tif"
+    },
+    {
+      "name": "Ficus_callosa",
+      "path": "tifs/Ficus_callosa.tif"
+    },
+    {
+      "name": "Ficus_exasperata",
+      "path": "tifs/Ficus_exasperata.tif"
+    },
+    {
+      "name": "Ficus_hispida",
+      "path": "tifs/Ficus_hispida.tif"
+    },
+    {
+      "name": "Ficus_microcarpa",
+      "path": "tifs/Ficus_microcarpa.tif"
+    },
+    {
+      "name": "Ficus_nervosa",
+      "path": "tifs/Ficus_nervosa.tif"
+    },
+    {
+      "name": "Ficus_racemosa",
+      "path": "tifs/Ficus_racemosa.tif"
+    },
+    {
+      "name": "Ficus_talbotii",
+      "path": "tifs/Ficus_talbotii.tif"
+    },
+    {
+      "name": "Ficus_tsjakela",
+      "path": "tifs/Ficus_tsjakela.tif"
+    },
+    {
+      "name": "Ficus_virens",
+      "path": "tifs/Ficus_virens.tif"
+    },
+    {
+      "name": "Filicium_decipiens",
+      "path": "tifs/Filicium_decipiens.tif"
+    },
+    {
+      "name": "Flacourtia_montana",
+      "path": "tifs/Flacourtia_montana.tif"
+    },
+    {
+      "name": "Garcinia_gummi-gutta",
+      "path": "tifs/Garcinia_gummi-gutta.tif"
+    },
+    {
+      "name": "Garcinia_indica",
+      "path": "tifs/Garcinia_indica.tif"
+    },
+    {
+      "name": "Garcinia_morella",
+      "path": "tifs/Garcinia_morella.tif"
+    },
+    {
+      "name": "Garcinia_rubroechinata",
+      "path": "tifs/Garcinia_rubroechinata.tif"
+    },
+    {
+      "name": "Garcinia_spicata",
+      "path": "tifs/Garcinia_spicata.tif"
+    },
+    {
+      "name": "Garcinia_talbotii",
+      "path": "tifs/Garcinia_talbotii.tif"
+    },
+    {
+      "name": "Glochidion_UM",
+      "path": "tifs/Glochidion_UM.tif"
+    },
+    {
+      "name": "Glochidion_ellipticum",
+      "path": "tifs/Glochidion_ellipticum.tif"
+    },
+    {
+      "name": "Glochidion_heyneanum",
+      "path": "tifs/Glochidion_heyneanum.tif"
+    },
+    {
+      "name": "Glochidion_hohenackeri",
+      "path": "tifs/Glochidion_hohenackeri.tif"
+    },
+    {
+      "name": "Glochidion_zeylanicum",
+      "path": "tifs/Glochidion_zeylanicum.tif"
+    },
+    {
+      "name": "Gluta_travancorica",
+      "path": "tifs/Gluta_travancorica.tif"
+    },
+    {
+      "name": "Glycosmis_macrocarpa",
+      "path": "tifs/Glycosmis_macrocarpa.tif"
+    },
+    {
+      "name": "Glycosmis_pentaphylla",
+      "path": "tifs/Glycosmis_pentaphylla.tif"
+    },
+    {
+      "name": "Gnetum_edule",
+      "path": "tifs/Gnetum_edule.tif"
+    },
+    {
+      "name": "Gomphandra_coriacea",
+      "path": "tifs/Gomphandra_coriacea.tif"
+    },
+    {
+      "name": "Gomphandra_tetrandra",
+      "path": "tifs/Gomphandra_tetrandra.tif"
+    },
+    {
+      "name": "Goniothalamus_cardiopetalus",
+      "path": "tifs/Goniothalamus_cardiopetalus.tif"
+    },
+    {
+      "name": "Goniothalamus_rhynchantherus",
+      "path": "tifs/Goniothalamus_rhynchantherus.tif"
+    },
+    {
+      "name": "Goniothalamus_thwaitesii",
+      "path": "tifs/Goniothalamus_thwaitesii.tif"
+    },
+    {
+      "name": "Goniothalamus_wightii",
+      "path": "tifs/Goniothalamus_wightii.tif"
+    },
+    {
+      "name": "Gordonia_obtusa",
+      "path": "tifs/Gordonia_obtusa.tif"
+    },
+    {
+      "name": "Grewia_serrulata",
+      "path": "tifs/Grewia_serrulata.tif"
+    },
+    {
+      "name": "Gymnacranthera_canarica",
+      "path": "tifs/Gymnacranthera_canarica.tif"
+    },
+    {
+      "name": "Harpullia_arborea",
+      "path": "tifs/Harpullia_arborea.tif"
+    },
+    {
+      "name": "Helicia_nilagirica",
+      "path": "tifs/Helicia_nilagirica.tif"
+    },
+    {
+      "name": "Heptapleurum_ellipticum",
+      "path": "tifs/Heptapleurum_ellipticum.tif"
+    },
+    {
+      "name": "Heritiera_papilio",
+      "path": "tifs/Heritiera_papilio.tif"
+    },
+    {
+      "name": "Heynea_trijuga",
+      "path": "tifs/Heynea_trijuga.tif"
+    },
+    {
+      "name": "Holigarna_arnottiana",
+      "path": "tifs/Holigarna_arnottiana.tif"
+    },
+    {
+      "name": "Holigarna_beddomei",
+      "path": "tifs/Holigarna_beddomei.tif"
+    },
+    {
+      "name": "Holigarna_ferruginea",
+      "path": "tifs/Holigarna_ferruginea.tif"
+    },
+    {
+      "name": "Holigarna_grahamii",
+      "path": "tifs/Holigarna_grahamii.tif"
+    },
+    {
+      "name": "Holigarna_nigra",
+      "path": "tifs/Holigarna_nigra.tif"
+    },
+    {
+      "name": "Homalium_ceylanicum",
+      "path": "tifs/Homalium_ceylanicum.tif"
+    },
+    {
+      "name": "Hopea_canarensis",
+      "path": "tifs/Hopea_canarensis.tif"
+    },
+    {
+      "name": "Hopea_erosa",
+      "path": "tifs/Hopea_erosa.tif"
+    },
+    {
+      "name": "Hopea_glabra",
+      "path": "tifs/Hopea_glabra.tif"
+    },
+    {
+      "name": "Hopea_parviflora",
+      "path": "tifs/Hopea_parviflora.tif"
+    },
+    {
+      "name": "Hopea_ponga",
+      "path": "tifs/Hopea_ponga.tif"
+    },
+    {
+      "name": "Hopea_racophloea",
+      "path": "tifs/Hopea_racophloea.tif"
+    },
+    {
+      "name": "Humboldtia_brunonis",
+      "path": "tifs/Humboldtia_brunonis.tif"
+    },
+    {
+      "name": "Humboldtia_decurrens",
+      "path": "tifs/Humboldtia_decurrens.tif"
+    },
+    {
+      "name": "Humboldtia_vahliana",
+      "path": "tifs/Humboldtia_vahliana.tif"
+    },
+    {
+      "name": "Hunteria_zeylanica",
+      "path": "tifs/Hunteria_zeylanica.tif"
+    },
+    {
+      "name": "Hydnocarpus_alpina",
+      "path": "tifs/Hydnocarpus_alpina.tif"
+    },
+    {
+      "name": "Hydnocarpus_macrocarpa",
+      "path": "tifs/Hydnocarpus_macrocarpa.tif"
+    },
+    {
+      "name": "Hydnocarpus_pentandrus",
+      "path": "tifs/Hydnocarpus_pentandrus.tif"
+    },
+    {
+      "name": "Isonandra_lanceolata",
+      "path": "tifs/Isonandra_lanceolata.tif"
+    },
+    {
+      "name": "Ixora_alba",
+      "path": "tifs/Ixora_alba.tif"
+    },
+    {
+      "name": "Ixora_brachiata",
+      "path": "tifs/Ixora_brachiata.tif"
+    },
+    {
+      "name": "Ixora_elongata",
+      "path": "tifs/Ixora_elongata.tif"
+    },
+    {
+      "name": "Ixora_lanceolaria",
+      "path": "tifs/Ixora_lanceolaria.tif"
+    },
+    {
+      "name": "Ixora_nigricans",
+      "path": "tifs/Ixora_nigricans.tif"
+    },
+    {
+      "name": "Ixora_pavetta",
+      "path": "tifs/Ixora_pavetta.tif"
+    },
+    {
+      "name": "Jasminum_malabaricum",
+      "path": "tifs/Jasminum_malabaricum.tif"
+    },
+    {
+      "name": "Kingiodendron_pinnatum",
+      "path": "tifs/Kingiodendron_pinnatum.tif"
+    },
+    {
+      "name": "Knema_attenuata",
+      "path": "tifs/Knema_attenuata.tif"
+    },
+    {
+      "name": "Lagerstroemia_microcarpa",
+      "path": "tifs/Lagerstroemia_microcarpa.tif"
+    },
+    {
+      "name": "Lantana_camara",
+      "path": "tifs/Lantana_camara.tif"
+    },
+    {
+      "name": "Lasianthus_acuminatus",
+      "path": "tifs/Lasianthus_acuminatus.tif"
+    },
+    {
+      "name": "Lasianthus_jackianus",
+      "path": "tifs/Lasianthus_jackianus.tif"
+    },
+    {
+      "name": "Lasianthus_oblongifolius",
+      "path": "tifs/Lasianthus_oblongifolius.tif"
+    },
+    {
+      "name": "Lasianthus_parvifolius",
+      "path": "tifs/Lasianthus_parvifolius.tif"
+    },
+    {
+      "name": "Lasianthus_rostratus",
+      "path": "tifs/Lasianthus_rostratus.tif"
+    },
+    {
+      "name": "Lasiosiphon_glaucus",
+      "path": "tifs/Lasiosiphon_glaucus.tif"
+    },
+    {
+      "name": "Leea_indica",
+      "path": "tifs/Leea_indica.tif"
+    },
+    {
+      "name": "Lepisanthes_erecta",
+      "path": "tifs/Lepisanthes_erecta.tif"
+    },
+    {
+      "name": "Lepisanthes_tetraphylla",
+      "path": "tifs/Lepisanthes_tetraphylla.tif"
+    },
+    {
+      "name": "Leptonychia_caudata",
+      "path": "tifs/Leptonychia_caudata.tif"
+    },
+    {
+      "name": "Ligustrum_robustum",
+      "path": "tifs/Ligustrum_robustum.tif"
+    },
+    {
+      "name": "Litsea_UM",
+      "path": "tifs/Litsea_UM.tif"
+    },
+    {
+      "name": "Litsea_floribunda",
+      "path": "tifs/Litsea_floribunda.tif"
+    },
+    {
+      "name": "Litsea_ghatica",
+      "path": "tifs/Litsea_ghatica.tif"
+    },
+    {
+      "name": "Litsea_glabrata",
+      "path": "tifs/Litsea_glabrata.tif"
+    },
+    {
+      "name": "Litsea_keralana",
+      "path": "tifs/Litsea_keralana.tif"
+    },
+    {
+      "name": "Litsea_laevigata",
+      "path": "tifs/Litsea_laevigata.tif"
+    },
+    {
+      "name": "Litsea_mysorensis",
+      "path": "tifs/Litsea_mysorensis.tif"
+    },
+    {
+      "name": "Litsea_oleoides",
+      "path": "tifs/Litsea_oleoides.tif"
+    },
+    {
+      "name": "Litsea_stocksii",
+      "path": "tifs/Litsea_stocksii.tif"
+    },
+    {
+      "name": "Litsea_travancorica",
+      "path": "tifs/Litsea_travancorica.tif"
+    },
+    {
+      "name": "Litsea_udayanii",
+      "path": "tifs/Litsea_udayanii.tif"
+    },
+    {
+      "name": "Litsea_venulosa",
+      "path": "tifs/Litsea_venulosa.tif"
+    },
+    {
+      "name": "Litsea_wightiana",
+      "path": "tifs/Litsea_wightiana.tif"
+    },
+    {
+      "name": "Lophopetalum_wightianum",
+      "path": "tifs/Lophopetalum_wightianum.tif"
+    },
+    {
+      "name": "Luvunga_sarmentosa",
+      "path": "tifs/Luvunga_sarmentosa.tif"
+    },
+    {
+      "name": "Macaranga_indica",
+      "path": "tifs/Macaranga_indica.tif"
+    },
+    {
+      "name": "Macaranga_peltata",
+      "path": "tifs/Macaranga_peltata.tif"
+    },
+    {
+      "name": "Machilus_glaucescens",
+      "path": "tifs/Machilus_glaucescens.tif"
+    },
+    {
+      "name": "Madhuca_bourdillonii",
+      "path": "tifs/Madhuca_bourdillonii.tif"
+    },
+    {
+      "name": "Madhuca_neriifolia",
+      "path": "tifs/Madhuca_neriifolia.tif"
+    },
+    {
+      "name": "Maesa_indica",
+      "path": "tifs/Maesa_indica.tif"
+    },
+    {
+      "name": "Magnolia_nilagirica",
+      "path": "tifs/Magnolia_nilagirica.tif"
+    },
+    {
+      "name": "Mallotus_distans",
+      "path": "tifs/Mallotus_distans.tif"
+    },
+    {
+      "name": "Mallotus_nudiflorus",
+      "path": "tifs/Mallotus_nudiflorus.tif"
+    },
+    {
+      "name": "Mallotus_philippensis",
+      "path": "tifs/Mallotus_philippensis.tif"
+    },
+    {
+      "name": "Mallotus_resinosus",
+      "path": "tifs/Mallotus_resinosus.tif"
+    },
+    {
+      "name": "Mallotus_rhamnifolius",
+      "path": "tifs/Mallotus_rhamnifolius.tif"
+    },
+    {
+      "name": "Mallotus_tetracoccus",
+      "path": "tifs/Mallotus_tetracoccus.tif"
+    },
+    {
+      "name": "Mammea_suriga",
+      "path": "tifs/Mammea_suriga.tif"
+    },
+    {
+      "name": "Mangifera_indica",
+      "path": "tifs/Mangifera_indica.tif"
+    },
+    {
+      "name": "Mappia_nimmoniana",
+      "path": "tifs/Mappia_nimmoniana.tif"
+    },
+    {
+      "name": "Margaritaria_indica",
+      "path": "tifs/Margaritaria_indica.tif"
+    },
+    {
+      "name": "Mastixia_arborea",
+      "path": "tifs/Mastixia_arborea.tif"
+    },
+    {
+      "name": "Maytenus_rothiana",
+      "path": "tifs/Maytenus_rothiana.tif"
+    },
+    {
+      "name": "Meiogyne_pannosa",
+      "path": "tifs/Meiogyne_pannosa.tif"
+    },
+    {
+      "name": "Meiogyne_ramarowii",
+      "path": "tifs/Meiogyne_ramarowii.tif"
+    },
+    {
+      "name": "Melicope_lunu-ankenda",
+      "path": "tifs/Melicope_lunu-ankenda.tif"
+    },
+    {
+      "name": "Meliosma_pinnata",
+      "path": "tifs/Meliosma_pinnata.tif"
+    },
+    {
+      "name": "Memecylon_gracile",
+      "path": "tifs/Memecylon_gracile.tif"
+    },
+    {
+      "name": "Memecylon_heyneanum",
+      "path": "tifs/Memecylon_heyneanum.tif"
+    },
+    {
+      "name": "Memecylon_malabaricum",
+      "path": "tifs/Memecylon_malabaricum.tif"
+    },
+    {
+      "name": "Memecylon_pseudogracile",
+      "path": "tifs/Memecylon_pseudogracile.tif"
+    },
+    {
+      "name": "Memecylon_randerianum",
+      "path": "tifs/Memecylon_randerianum.tif"
+    },
+    {
+      "name": "Memecylon_subsessile",
+      "path": "tifs/Memecylon_subsessile.tif"
+    },
+    {
+      "name": "Memecylon_talbotianum",
+      "path": "tifs/Memecylon_talbotianum.tif"
+    },
+    {
+      "name": "Memecylon_terminale",
+      "path": "tifs/Memecylon_terminale.tif"
+    },
+    {
+      "name": "Memecylon_umbellatum",
+      "path": "tifs/Memecylon_umbellatum.tif"
+    },
+    {
+      "name": "Memecylon_wightii",
+      "path": "tifs/Memecylon_wightii.tif"
+    },
+    {
+      "name": "Mesua_ferrea",
+      "path": "tifs/Mesua_ferrea.tif"
+    },
+    {
+      "name": "Meteoromyrtus_wynaadensis",
+      "path": "tifs/Meteoromyrtus_wynaadensis.tif"
+    },
+    {
+      "name": "Meyna_laxiflora",
+      "path": "tifs/Meyna_laxiflora.tif"
+    },
+    {
+      "name": "Microcos_paniculata",
+      "path": "tifs/Microcos_paniculata.tif"
+    },
+    {
+      "name": "Microtropis_latifolia",
+      "path": "tifs/Microtropis_latifolia.tif"
+    },
+    {
+      "name": "Miliusa_gokhalaei",
+      "path": "tifs/Miliusa_gokhalaei.tif"
+    },
+    {
+      "name": "Miliusa_nilagirica",
+      "path": "tifs/Miliusa_nilagirica.tif"
+    },
+    {
+      "name": "Mimusops_elengi",
+      "path": "tifs/Mimusops_elengi.tif"
+    },
+    {
+      "name": "Mitragyna_parvifolia",
+      "path": "tifs/Mitragyna_parvifolia.tif"
+    },
+    {
+      "name": "Mitragyna_tubulosa",
+      "path": "tifs/Mitragyna_tubulosa.tif"
+    },
+    {
+      "name": "Mitrephora_grandiflora",
+      "path": "tifs/Mitrephora_grandiflora.tif"
+    },
+    {
+      "name": "Moullava_spicata",
+      "path": "tifs/Moullava_spicata.tif"
+    },
+    {
+      "name": "Murraya_koenigii",
+      "path": "tifs/Murraya_koenigii.tif"
+    },
+    {
+      "name": "Murraya_paniculata",
+      "path": "tifs/Murraya_paniculata.tif"
+    },
+    {
+      "name": "Myristica_beddomei",
+      "path": "tifs/Myristica_beddomei.tif"
+    },
+    {
+      "name": "Myristica_dactyloides",
+      "path": "tifs/Myristica_dactyloides.tif"
+    },
+    {
+      "name": "Myristica_malabarica",
+      "path": "tifs/Myristica_malabarica.tif"
+    },
+    {
+      "name": "Neolitsea_fischeri",
+      "path": "tifs/Neolitsea_fischeri.tif"
+    },
+    {
+      "name": "Neolitsea_scrobiculata",
+      "path": "tifs/Neolitsea_scrobiculata.tif"
+    },
+    {
+      "name": "Neolitsea_zeylanica",
+      "path": "tifs/Neolitsea_zeylanica.tif"
+    },
+    {
+      "name": "Nothapodytes_nimmoniana",
+      "path": "tifs/Nothapodytes_nimmoniana.tif"
+    },
+    {
+      "name": "Nothopegia_aureofulva",
+      "path": "tifs/Nothopegia_aureofulva.tif"
+    },
+    {
+      "name": "Nothopegia_beddomei",
+      "path": "tifs/Nothopegia_beddomei.tif"
+    },
+    {
+      "name": "Nothopegia_castaneifolia",
+      "path": "tifs/Nothopegia_castaneifolia.tif"
+    },
+    {
+      "name": "Nothopegia_racemosa",
+      "path": "tifs/Nothopegia_racemosa.tif"
+    },
+    {
+      "name": "Nothopegia_travancorica",
+      "path": "tifs/Nothopegia_travancorica.tif"
+    },
+    {
+      "name": "Ocotea_lancifolia",
+      "path": "tifs/Ocotea_lancifolia.tif"
+    },
+    {
+      "name": "Octotropis_travancorica",
+      "path": "tifs/Octotropis_travancorica.tif"
+    },
+    {
+      "name": "Olea_dioica",
+      "path": "tifs/Olea_dioica.tif"
+    },
+    {
+      "name": "Oreocnide_integrifolia",
+      "path": "tifs/Oreocnide_integrifolia.tif"
+    },
+    {
+      "name": "Ormosia_travancorica",
+      "path": "tifs/Ormosia_travancorica.tif"
+    },
+    {
+      "name": "Orophea_erythrocarpa",
+      "path": "tifs/Orophea_erythrocarpa.tif"
+    },
+    {
+      "name": "Orophea_sivarajanii",
+      "path": "tifs/Orophea_sivarajanii.tif"
+    },
+    {
+      "name": "Orophea_thomsonii",
+      "path": "tifs/Orophea_thomsonii.tif"
+    },
+    {
+      "name": "Orophea_zeylanica",
+      "path": "tifs/Orophea_zeylanica.tif"
+    },
+    {
+      "name": "Otonephelium_stipulaceum",
+      "path": "tifs/Otonephelium_stipulaceum.tif"
+    },
+    {
+      "name": "Oxyceros_rugulosus",
+      "path": "tifs/Oxyceros_rugulosus.tif"
+    },
+    {
+      "name": "Pajanelia_longifolia",
+      "path": "tifs/Pajanelia_longifolia.tif"
+    },
+    {
+      "name": "Palaquium_bourdillonii",
+      "path": "tifs/Palaquium_bourdillonii.tif"
+    },
+    {
+      "name": "Palaquium_ellipticum",
+      "path": "tifs/Palaquium_ellipticum.tif"
+    },
+    {
+      "name": "Pandanus_furcatus",
+      "path": "tifs/Pandanus_furcatus.tif"
+    },
+    {
+      "name": "Paracroton_pendulus_subsp._zeylanicus",
+      "path": "tifs/Paracroton_pendulus_subsp._zeylanicus.tif"
+    },
+    {
+      "name": "Paramignya_monophylla",
+      "path": "tifs/Paramignya_monophylla.tif"
+    },
+    {
+      "name": "Pavetta_indica",
+      "path": "tifs/Pavetta_indica.tif"
+    },
+    {
+      "name": "Pavetta_sp",
+      "path": "tifs/Pavetta_sp.tif"
+    },
+    {
+      "name": "Persea_macrantha",
+      "path": "tifs/Persea_macrantha.tif"
+    },
+    {
+      "name": "Pinanga_dicksonii",
+      "path": "tifs/Pinanga_dicksonii.tif"
+    },
+    {
+      "name": "Poeciloneuron_indicum",
+      "path": "tifs/Poeciloneuron_indicum.tif"
+    },
+    {
+      "name": "Polyalthia_coffeoides",
+      "path": "tifs/Polyalthia_coffeoides.tif"
+    },
+    {
+      "name": "Polyalthia_fragrans",
+      "path": "tifs/Polyalthia_fragrans.tif"
+    },
+    {
+      "name": "Polyalthia_malabarica",
+      "path": "tifs/Polyalthia_malabarica.tif"
+    },
+    {
+      "name": "Prismatomeris_tetrandra",
+      "path": "tifs/Prismatomeris_tetrandra.tif"
+    },
+    {
+      "name": "Prunus_ceylanica",
+      "path": "tifs/Prunus_ceylanica.tif"
+    },
+    {
+      "name": "Psychotria_anamallayana",
+      "path": "tifs/Psychotria_anamallayana.tif"
+    },
+    {
+      "name": "Psychotria_dalzellii",
+      "path": "tifs/Psychotria_dalzellii.tif"
+    },
+    {
+      "name": "Psychotria_flavida",
+      "path": "tifs/Psychotria_flavida.tif"
+    },
+    {
+      "name": "Psychotria_nigra",
+      "path": "tifs/Psychotria_nigra.tif"
+    },
+    {
+      "name": "Psychotria_truncata",
+      "path": "tifs/Psychotria_truncata.tif"
+    },
+    {
+      "name": "Psydrax_dicoccos",
+      "path": "tifs/Psydrax_dicoccos.tif"
+    },
+    {
+      "name": "Pterospermum_diversifolium",
+      "path": "tifs/Pterospermum_diversifolium.tif"
+    },
+    {
+      "name": "Pterospermum_reticulatum",
+      "path": "tifs/Pterospermum_reticulatum.tif"
+    },
+    {
+      "name": "Pterospermum_rubiginosum",
+      "path": "tifs/Pterospermum_rubiginosum.tif"
+    },
+    {
+      "name": "Pterygota_alata",
+      "path": "tifs/Pterygota_alata.tif"
+    },
+    {
+      "name": "Putranjiva_roxburghii",
+      "path": "tifs/Putranjiva_roxburghii.tif"
+    },
+    {
+      "name": "Rapanea_wightiana",
+      "path": "tifs/Rapanea_wightiana.tif"
+    },
+    {
+      "name": "Reinwardtiodendron_anamalaiense",
+      "path": "tifs/Reinwardtiodendron_anamalaiense.tif"
+    },
+    {
+      "name": "Rinorea_bengalensis",
+      "path": "tifs/Rinorea_bengalensis.tif"
+    },
+    {
+      "name": "Rourea_minor",
+      "path": "tifs/Rourea_minor.tif"
+    },
+    {
+      "name": "Sageraea_laurina",
+      "path": "tifs/Sageraea_laurina.tif"
+    },
+    {
+      "name": "Sageraea_thwaitesii",
+      "path": "tifs/Sageraea_thwaitesii.tif"
+    },
+    {
+      "name": "Saprosma_corymbosum",
+      "path": "tifs/Saprosma_corymbosum.tif"
+    },
+    {
+      "name": "Saprosma_glomerata",
+      "path": "tifs/Saprosma_glomerata.tif"
+    },
+    {
+      "name": "Saraca_asoca",
+      "path": "tifs/Saraca_asoca.tif"
+    },
+    {
+      "name": "Sarcococca_pruniformis",
+      "path": "tifs/Sarcococca_pruniformis.tif"
+    },
+    {
+      "name": "Schefflera_micrantha",
+      "path": "tifs/Schefflera_micrantha.tif"
+    },
+    {
+      "name": "Schefflera_venulosa",
+      "path": "tifs/Schefflera_venulosa.tif"
+    },
+    {
+      "name": "Scleropyrum_pentandrum",
+      "path": "tifs/Scleropyrum_pentandrum.tif"
+    },
+    {
+      "name": "Scolopia_crenata",
+      "path": "tifs/Scolopia_crenata.tif"
+    },
+    {
+      "name": "Scutia_myrtina",
+      "path": "tifs/Scutia_myrtina.tif"
+    },
+    {
+      "name": "Semecarpus_auriculata",
+      "path": "tifs/Semecarpus_auriculata.tif"
+    },
+    {
+      "name": "Semecarpus_travancorica",
+      "path": "tifs/Semecarpus_travancorica.tif"
+    },
+    {
+      "name": "Senna_spectabilis",
+      "path": "tifs/Senna_spectabilis.tif"
+    },
+    {
+      "name": "Smythea_bombaiensis",
+      "path": "tifs/Smythea_bombaiensis.tif"
+    },
+    {
+      "name": "Spondias_pinnata",
+      "path": "tifs/Spondias_pinnata.tif"
+    },
+    {
+      "name": "Sterculia_guttata",
+      "path": "tifs/Sterculia_guttata.tif"
+    },
+    {
+      "name": "Stereospermum_tetragonum",
+      "path": "tifs/Stereospermum_tetragonum.tif"
+    },
+    {
+      "name": "Strombosia_ceylanica",
+      "path": "tifs/Strombosia_ceylanica.tif"
+    },
+    {
+      "name": "Symplocos_cochinchinensis",
+      "path": "tifs/Symplocos_cochinchinensis.tif"
+    },
+    {
+      "name": "Symplocos_macrophylla",
+      "path": "tifs/Symplocos_macrophylla.tif"
+    },
+    {
+      "name": "Symplocos_racemosa",
+      "path": "tifs/Symplocos_racemosa.tif"
+    },
+    {
+      "name": "Symplocos_rosea",
+      "path": "tifs/Symplocos_rosea.tif"
+    },
+    {
+      "name": "Syzygium_benthamianum",
+      "path": "tifs/Syzygium_benthamianum.tif"
+    },
+    {
+      "name": "Syzygium_calophyllifolium",
+      "path": "tifs/Syzygium_calophyllifolium.tif"
+    },
+    {
+      "name": "Syzygium_caryophyllatum",
+      "path": "tifs/Syzygium_caryophyllatum.tif"
+    },
+    {
+      "name": "Syzygium_cumini",
+      "path": "tifs/Syzygium_cumini.tif"
+    },
+    {
+      "name": "Syzygium_densiflorum",
+      "path": "tifs/Syzygium_densiflorum.tif"
+    },
+    {
+      "name": "Syzygium_gardneri",
+      "path": "tifs/Syzygium_gardneri.tif"
+    },
+    {
+      "name": "Syzygium_grande",
+      "path": "tifs/Syzygium_grande.tif"
+    },
+    {
+      "name": "Syzygium_hemisphericum",
+      "path": "tifs/Syzygium_hemisphericum.tif"
+    },
+    {
+      "name": "Syzygium_laetum",
+      "path": "tifs/Syzygium_laetum.tif"
+    },
+    {
+      "name": "Syzygium_lanceolatum",
+      "path": "tifs/Syzygium_lanceolatum.tif"
+    },
+    {
+      "name": "Syzygium_mundagam",
+      "path": "tifs/Syzygium_mundagam.tif"
+    },
+    {
+      "name": "Syzygium_munronii",
+      "path": "tifs/Syzygium_munronii.tif"
+    },
+    {
+      "name": "Syzygium_rubicundum",
+      "path": "tifs/Syzygium_rubicundum.tif"
+    },
+    {
+      "name": "Syzygium_zeylanicum",
+      "path": "tifs/Syzygium_zeylanicum.tif"
+    },
+    {
+      "name": "Tabernaemontana_alternifolia",
+      "path": "tifs/Tabernaemontana_alternifolia.tif"
+    },
+    {
+      "name": "Tabernaemontana_gamblei",
+      "path": "tifs/Tabernaemontana_gamblei.tif"
+    },
+    {
+      "name": "Tarenna_asiatica",
+      "path": "tifs/Tarenna_asiatica.tif"
+    },
+    {
+      "name": "Tarenna_nilagirica",
+      "path": "tifs/Tarenna_nilagirica.tif"
+    },
+    {
+      "name": "Terminalia_bellirica",
+      "path": "tifs/Terminalia_bellirica.tif"
+    },
+    {
+      "name": "Terminalia_chebula",
+      "path": "tifs/Terminalia_chebula.tif"
+    },
+    {
+      "name": "Terminalia_paniculata",
+      "path": "tifs/Terminalia_paniculata.tif"
+    },
+    {
+      "name": "Terminalia_travancorensis",
+      "path": "tifs/Terminalia_travancorensis.tif"
+    },
+    {
+      "name": "Tetrameles_nudiflora",
+      "path": "tifs/Tetrameles_nudiflora.tif"
+    },
+    {
+      "name": "Tetrapilus_dioicus",
+      "path": "tifs/Tetrapilus_dioicus.tif"
+    },
+    {
+      "name": "Toona_ciliata",
+      "path": "tifs/Toona_ciliata.tif"
+    },
+    {
+      "name": "Tritaxis_glabella",
+      "path": "tifs/Tritaxis_glabella.tif"
+    },
+    {
+      "name": "Turpinia_cochinchinensis",
+      "path": "tifs/Turpinia_cochinchinensis.tif"
+    },
+    {
+      "name": "Turpinia_malabarica",
+      "path": "tifs/Turpinia_malabarica.tif"
+    },
+    {
+      "name": "Turraea_pubescens",
+      "path": "tifs/Turraea_pubescens.tif"
+    },
+    {
+      "name": "Vateria_indica",
+      "path": "tifs/Vateria_indica.tif"
+    },
+    {
+      "name": "Vepris_bilocularis",
+      "path": "tifs/Vepris_bilocularis.tif"
+    },
+    {
+      "name": "Vitex_altissima",
+      "path": "tifs/Vitex_altissima.tif"
+    },
+    {
+      "name": "Walsura_trifoliolata",
+      "path": "tifs/Walsura_trifoliolata.tif"
+    },
+    {
+      "name": "Wendlandia_thyrsoidea",
+      "path": "tifs/Wendlandia_thyrsoidea.tif"
+    },
+    {
+      "name": "Xanthophyllum_arnottianum",
+      "path": "tifs/Xanthophyllum_arnottianum.tif"
+    },
+    {
+      "name": "Xantolis_tomentosa",
+      "path": "tifs/Xantolis_tomentosa.tif"
+    },
+    {
+      "name": "Xylopia_patoniae",
+      "path": "tifs/Xylopia_patoniae.tif"
+    },
+    {
+      "name": "Zanthoxylum_rhetsa",
+      "path": "tifs/Zanthoxylum_rhetsa.tif"
+    }
+  ]
+}
