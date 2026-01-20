@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const phoneCard = document.querySelector('.card-phone');
     const dataCard = document.querySelector('.card-data');
     const indicatorsCard = document.querySelector('.card-indicators');
+    const alienCard = document.querySelector('.card-alien');
 
     // Modal Elements - Experiment
     const expModalOverlay = document.getElementById('experiment-modal');
@@ -43,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Data Card -> Localhost:5173
     dataCard.addEventListener('click', () => {
         window.location.href = 'http://localhost:5173';
+    });
+
+    // Alien Card -> Localhost:8080
+    alienCard.addEventListener('click', () => {
+        window.location.href = 'http://localhost:8080/alienwise_viewer.html';
     });
 
     // --- Modal Logic ---
