@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.defaultFormatter": "Vue.volar",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "volar.format.initialIndent": {
+    "html": true
+  },
+  "prettier.useEditorConfig": true
+}
