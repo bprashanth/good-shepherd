@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nursery Metadata",
+  "type": "object",
+  "properties": {
+    "stages": {
+      "type": "array",
+      "description": "Default stage labels used to initialize sections.",
+      "items": {
+        "type": "string",
+        "enum": ["collection", "sowing", "germination", "growing", "planting"]
+      }
+    },
+    "categories": {
+      "type": "object",
+      "description": "Controlled vocabularies for dropdown fields.",
+      "properties": {
+        "item_type": {
+          "type": "array",
+          "description": "Type of collected material.",
+          "items": {"type": "string"},
+          "default": ["seeds", "fruits", "seedlings"]
+        },
+        "condition": {
+          "type": "array",
+          "description": "Condition of collected material.",
+          "items": {"type": "string"},
+          "default": ["fresh", "slightly old", "old"]
+        },
+        "seed_site": {
+          "type": "array",
+          "description": "Collection source types.",
+          "items": {"type": "string"},
+          "default": [
+            "parent tree",
+            "bear scat",
+            "civet scat",
+            "jackal scat",
+            "hornbill midden",
+            "bat midden",
+            "deer midden",
+            "other dropping"
+          ]
+        },
+        "bed_type": {
+          "type": "array",
+          "description": "Bed or substrate types.",
+          "items": {"type": "string"},
+          "default": [
+            "grow bag",
+            "tray",
+            "soil bed",
+            "small covers",
+            "large covers",
+            "root trainers"
+          ]
+        }
+      },
+      "required": ["item_type", "condition", "seed_site", "bed_type"]
+    },
+    "indicators": {
+      "type": "array",
+      "description": "Suggested indicators for reporting and dashboards.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Indicator identifier."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-friendly indicator name."
+          },
+          "description": {
+            "type": "string",
+            "description": "What the indicator measures and how it is interpreted."
+          },
+          "calculation": {
+            "type": ["string", "null"],
+            "description": "High-level calculation or logic for the indicator."
+          }
+        },
+        "required": ["id", "name", "description"]
+      },
+      "default": [
+        {
+          "id": "germination_rate",
+          "name": "Germination Rate",
+          "description": "Percent of seeds in a batch that have germinated by a given date.",
+          "calculation": "germinated_count / total_seeds"
+        },
+        {
+          "id": "earliest_germination_date",
+          "name": "Earliest Germination Date",
+          "description": "First observed germination date for a batch or species.",
+          "calculation": "min(germination_event_date)"
+        },
+        {
+          "id": "latest_germination_date",
+          "name": "Latest Germination Date",
+          "description": "Most recent germination observation date for a batch or species.",
+          "calculation": "max(germination_event_date)"
+        },
+        {
+          "id": "germination_spread",
+          "name": "Germination Spread",
+          "description": "Time window between earliest and latest germination for a batch or species.",
+          "calculation": "latest_germination_date - earliest_germination_date"
+        },
+        {
+          "id": "failure_rate",
+          "name": "Failure Rate",
+          "description": "Percent of seeds that failed to germinate at cutoff.",
+          "calculation": "failed_count / total_seeds"
+        },
+        {
+          "id": "stock_by_stage",
+          "name": "Stock by Stage",
+          "description": "Current inventory counts by stage/section.",
+          "calculation": "sum(counts grouped by section stage)"
+        },
+        {
+          "id": "height_distribution",
+          "name": "Height Distribution",
+          "description": "Min/avg/max height observations by species or batch.",
+          "calculation": "min/avg/max(height_cm) grouped by species or batch"
+        }
+      ]
+    }
+  },
+  "required": ["stages", "categories", "indicators"]
+}

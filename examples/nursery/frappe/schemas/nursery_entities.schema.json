@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nursery Entities",
+  "type": "object",
+  "properties": {
+    "species": {
+      "type": "array",
+      "description": "Master list of species used across the system.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "accepted_name": {
+            "type": "string",
+            "description": "Accepted scientific name for the species."
+          },
+          "era_species_url": {
+            "type": ["string", "null"],
+            "description": "ERA-India reference URL for the species, if available."
+          },
+          "name_source": {
+            "type": ["string", "null"],
+            "description": "Source for the accepted name (e.g., POWO, local taxonomy)."
+          },
+          "iucn_status": {
+            "type": ["string", "null"],
+            "description": "IUCN conservation status if known."
+          },
+          "habit": {
+            "type": ["string", "null"],
+            "description": "Growth habit (tree, shrub, climber, herb, etc.)."
+          },
+          "fruit_size": {
+            "type": ["string", "null"],
+            "description": "Fruit size category (large, medium, small, tiny)."
+          },
+          "seed_size": {
+            "type": ["string", "null"],
+            "description": "Seed size category (large, medium, small, tiny)."
+          },
+          "seed_no": {
+            "type": ["integer", "null"],
+            "description": "Average number of seeds per fruit, if applicable."
+          }
+        },
+        "required": ["accepted_name"]
+      }
+    },
+    "nurseries": {
+      "type": "array",
+      "description": "Nursery locations or sites (single for POC).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nursery_id": {
+            "type": "string",
+            "description": "Unique identifier for the nursery."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-friendly name of the nursery."
+          },
+          "region": {
+            "type": ["string", "null"],
+            "description": "Region or locality for the nursery."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Optional notes about the nursery."
+          }
+        },
+        "required": ["nursery_id", "name"]
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Conceptual stages or areas within a nursery (e.g., germination).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section_id": {
+            "type": "string",
+            "description": "Unique identifier for the section."
+          },
+          "nursery_id": {
+            "type": "string",
+            "description": "Nursery where this section exists."
+          },
+          "name": {
+            "type": "string",
+            "description": "Section name (e.g., germination, growing)."
+          },
+          "stage": {
+            "type": "string",
+            "description": "Stage this section maps to (collection, sowing, germination, growing, planting)."
+          }
+        },
+        "required": ["section_id", "nursery_id", "name", "stage"]
+      }
+    },
+    "beds": {
+      "type": "array",
+      "description": "Physical locations within sections (beds, trays, covers, etc.).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "bed_id": {
+            "type": "string",
+            "description": "Unique identifier for the bed."
+          },
+          "section_id": {
+            "type": "string",
+            "description": "Section that contains this bed."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-friendly bed label (e.g., A1, C2)."
+          },
+          "bed_type": {
+            "type": "string",
+            "description": "Type of bed (tray, soil bed, covers, etc.)."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Optional notes about the bed."
+          }
+        },
+        "required": ["bed_id", "section_id", "name", "bed_type"]
+      }
+    },
+    "collections": {
+      "type": "array",
+      "description": "Field collections of seeds or wildlings from a source location.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "Unique identifier for the collection."
+          },
+          "date_collected": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of collection."
+          },
+          "species": {
+            "type": "string",
+            "description": "Species name, from the master list."
+          },
+          "item_type": {
+            "type": "string",
+            "description": "Type of material collected (seeds, fruits, seedlings, etc.)."
+          },
+          "condition": {
+            "type": "string",
+            "description": "Condition of collected material (fresh, old, etc.)."
+          },
+          "seed_site": {
+            "type": "string",
+            "description": "Source site descriptor (parent tree, scat, etc.)."
+          },
+          "gps_latitude": {
+            "type": ["number", "null"],
+            "description": "Latitude (EPSG:4326)."
+          },
+          "gps_longitude": {
+            "type": ["number", "null"],
+            "description": "Longitude (EPSG:4326)."
+          },
+          "gps_elevation": {
+            "type": ["number", "null"],
+            "description": "Elevation (meters), if available."
+          },
+          "locality": {
+            "type": ["string", "null"],
+            "description": "Locality or site code for collection."
+          },
+          "collected_by": {
+            "type": ["string", "null"],
+            "description": "Name of collector or team."
+          },
+          "remarks": {
+            "type": ["string", "null"],
+            "description": "Optional notes or observations."
+          },
+          "delivery_date": {
+            "type": ["string", "null"],
+            "format": "date",
+            "description": "Date when material was delivered to the nursery."
+          }
+        },
+        "required": ["collection_id", "date_collected", "species"]
+      }
+    },
+    "batches": {
+      "type": "array",
+      "description": "Nursery batches; batch creation implies sowing in the POC.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "batch_id": {
+            "type": "string",
+            "description": "Unique identifier for the batch (auto-generated in Frappe)."
+          },
+          "species": {
+            "type": "string",
+            "description": "Species name, from the master list."
+          },
+          "total_seeds": {
+            "type": "integer",
+            "description": "Total number of seeds or seedlings in the batch at sowing."
+          },
+          "date_sown": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the batch was sown (batch creation date)."
+          },
+          "bed_id": {
+            "type": "string",
+            "description": "Bed where the batch is initially placed."
+          },
+          "section_id": {
+            "type": "string",
+            "description": "Section where the batch is initially placed."
+          },
+          "planted_by": {
+            "type": ["string", "null"],
+            "description": "Person who sowed or set up the batch."
+          },
+          "remarks": {
+            "type": ["string", "null"],
+            "description": "Optional notes for the batch."
+          }
+        },
+        "required": ["batch_id", "species", "total_seeds", "date_sown", "bed_id", "section_id"]
+      }
+    },
+    "allocations": {
+      "type": "array",
+      "description": "Explicit link between collections and batches with quantities.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "allocation_id": {
+            "type": "string",
+            "description": "Unique identifier for the allocation record."
+          },
+          "collection_id": {
+            "type": "string",
+            "description": "Collection contributing to the batch."
+          },
+          "batch_id": {
+            "type": "string",
+            "description": "Batch receiving the collection material."
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity moved from the collection into the batch."
+          },
+          "allocation_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of allocation into the batch."
+          }
+        },
+        "required": ["allocation_id", "collection_id", "batch_id", "quantity", "allocation_date"]
+      }
+    }
+  },
+  "required": ["species", "nurseries", "sections", "beds", "collections", "batches", "allocations"]
+}

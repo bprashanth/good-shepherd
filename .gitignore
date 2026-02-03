@@ -108,3 +108,31 @@ logs/
 *.bat
 *test_res
 *res/
+
+
+# ============================================================
+# Frappe / Bench boilerplate (ANYWHERE under examples/)
+# ============================================================
+
+# Ignore all bench internals
+examples/**/frappe/bench/
+examples/**/frappe/sites/
+examples/**/frappe/env/
+examples/**/frappe/.venv/
+examples/**/frappe/node_modules/
+examples/**/frappe/logs/
+examples/**/frappe/config/
+examples/**/frappe/redis-*
+examples/**/frappe/pids/
+
+# Ignore ALL frappe apps by default
+examples/**/frappe/apps/*
+
+# But keep custom apps (must NOT be named frappe or erpnext)
+!examples/**/frappe/apps/*/
+
+# Explicitly re-ignore upstream apps (belt + suspenders)
+examples/**/frappe/apps/frappe/
+examples/**/frappe/apps/erpnext/
+examples/**/frappe/apps/payments/
+examples/**/frappe/apps/hrms/
