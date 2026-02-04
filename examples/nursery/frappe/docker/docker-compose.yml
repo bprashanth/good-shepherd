@@ -20,6 +20,8 @@ services:
     image: frappe/bench:v5.24.1
     container_name: nursery_frappe
     tty: true
+    working_dir: /home/frappe
+    command: bash /home/frappe/project/entrypoint.sh
     depends_on:
       - mariadb
       - redis

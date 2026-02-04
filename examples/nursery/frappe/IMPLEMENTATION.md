@@ -1,77 +1,130 @@
-# Nursery Frappe POC — Implementation Guide
+# Development setup
 
-This doc outlines how to get a working Frappe instance via Docker, where the app lives, how DocTypes and seed data are managed, and how to iterate safely.
+The environment is initialized using a "init" container that writes directly to your host machine's filesystem.
 
----
+## Iteration loop
 
-## 1) Goal and Scope
+### On a new machine (i.e. first run) 
 
-**Working** means:
-- `docker compose up` starts Frappe + DB successfully.
-- A Frappe site exists and is reachable in the browser.
-- The Nursery app is installed on the site.
-- Core DocTypes (records + events) are present.
-- Default metadata (stages, categories) is loaded.
+Run the following from the project root:
 
----
+```bash
+./docker/init.sh
 
-## 2) Repo Layout (proposed)
+```
 
-Within `examples/nursery/frappe`:
+### On a reboot (i.e. post first run)
 
-- `docker/` — Docker Compose and supporting files.
-- `apps/` — local Frappe app code (nursery app).
-- `sites/` — Frappe sites (mounted volume for persistence).
-- `logs/` — Frappe logs (mounted volume).
-- `schemas/` — design schemas (already present).
-- `DESIGN.md` — design reference.
-- `IMPLEMENTATION.md` — this file.
-- `run.sh` — start/stop/logs helper for the stack.
+All init files already exist, just run 
+```
+docker compose -f docker/step0_docker-compose.yml up -d
+```
 
-**Note**: The Docker setup should mount `apps/` and `sites/` for persistence.
+### Verification 
 
----
+If this succeedes, then 
+* To apply code changes: `docker exec ... bench migrate`
+```bash
+docker exec -it -w /home/frappe/project/frappe-bench nursery_frappe bench --site nursery.localhost migrate
+```
+* To save UI changes to code: `docker exec ... bench export-fixtures`
+```bash
+docker exec -it -w /home/frappe/project/frappe-bench nursery_frappe bench --site nursery.localhost export-fixtures
+```
+* To test logic: `docker exec ... bench console`
+```bash
+# Check if a DocType is loaded and accessible
+docker exec -it -w /home/frappe/project/frappe-bench nursery_frappe bench --site nursery.localhost console
 
-## 3) Docker Setup Steps (high-level)
+```
 
-1) Create a Docker Compose file that runs:
-   - Frappe stack (backend, frontend, queue, scheduler, websocket)
-   - `mariadb` (db)
-   - `redis-cache`, `redis-queue`
-2) Mount bind volumes for `sites/`, `apps/`, and `logs/` under `examples/nursery/frappe`.
-3) Start the stack with the helper script:
-   - `examples/nursery/frappe/run.sh start`
-4) The default site name is **frontend** (used by the nginx front proxy).
-   - First start will create the site automatically.
-   - The script also fetches **erpnext** into `apps/` if it is missing.
+```python
+# Inside the console:
+frappe.get_meta("Species") # Should return the metadata object for your DocType
 
----
+```
 
-## 4) App Creation & Location
+#### What the init command does:
 
-The custom app should live at:
-- `examples/nursery/frappe/apps/nursery`
+You _must_ run init at least once before you begin to code. Here's what it does: 
 
-Frappe will generate the app with:
-- `nursery/nursery/doctype/` (DocType definitions)
-- `nursery/nursery/fixtures/` (seed data)
-- `nursery/nursery/patches/` (migrations, optional)
-
-Create the app (one-time):
-- `docker compose -f examples/nursery/frappe/docker/docker-compose.yml exec backend bench new-app nursery`
-- `docker compose -f examples/nursery/frappe/docker/docker-compose.yml exec backend bench --site frontend install-app nursery`
+1. **Purges** any stale containers and volumes.
+2. **Clears** the local `frappe-bench/` directory to ensure a clean landing zone.
+3. **Mounts** your host project directory into the container.
+4. **Runs `bench init**`, creating a Python virtual environment and the Frappe framework.
+5. **Configures** MariaDB and Redis links.
+6. **Scaffolds** the custom app: `nursery`.
 
 ---
 
-## 5) DocTypes: Where the Code Goes
+## Starting to code 
 
-Each DocType is created under:
-- `apps/nursery/nursery/doctype/<doctype_name>/`
+Before coding, verify that the app has successfully synchronized with your host.
 
-This generates:
-- `<doctype_name>.json` (fields, metadata)
-- `<doctype_name>.py` (logic, hooks)
-- `<doctype_name>_test.py` (optional)
+### File System Check (Host Side)
+
+Ensure these paths exist in your local repository:
+
+* `frappe-bench/apps/nursery/`: The heart of your custom logic.
+* `frappe-bench/sites/nursery.localhost/`: Your site data and config.
+
+### Registry Check
+
+Verify that the app is registered in the site manifest:
+
+```bash
+cat frappe-bench/sites/apps.txt
+# Expected: 
+# frappe
+# nursery
+
+```
+
+### Connectivity Check
+
+Visit **[http://nursery.localhost:8000](https://www.google.com/search?q=http://nursery.localhost:8000)**.
+
+* **User:** `Administrator`
+* **Pass:** `admin`
+
+---
+
+## The Code: Project Layout
+
+Eg engineering goal is to modify DocTypes and logic that live within the `apps/nursery` directory.
+
+### Repository Structure
+
+```text
+.
+ docker/               # Docker Compose and entrypoint scripts
+ frappe-bench/         # [GIT IGNORED] parts of this are ignored (see below)
+   apps/
+     frappe/           # [GIT IGNORED] Core framework
+     nursery/          # <--- APP CODE LIVES HERE
+   sites/
+ .gitignore            
+...
+
+```
+Checked into git
+* docker/ (Everything: compose files, entrypoints, init.sh).
+* frappe-bench/apps/nursery/ (entire custom app logic).
+* frappe-bench/sites/common_site_config.json (Database and Redis links).
+* frappe-bench/sites/apps.txt (The list that tells Frappe to load the app).
+
+NOT checked in (generated by `init.sh`)
+* frappe-bench/env/
+* frappe-bench/apps/frappe/
+* frappe-bench/sites/assets/
+
+### DocType Locations
+
+Each DocType is a directory under `frappe-bench/apps/nursery/nursery/nursery/doctype/<doctype_name>/`:
+
+* **`.json`**: Schema, fields, and permissions.
+* **`.py`**: Controller logic, hooks (Python).
+* **`.js`**: Client-side UI logic.
 
 For the POC, focus on JSON definitions with minimal Python logic.
 
@@ -82,12 +135,10 @@ DocTypes to implement (POC):
 - Bed
 - Collection
 - Batch
-- Allocation
+- Batch Allocation (child table on Batch)
 - Nursery Event
 
----
-
-## 6) Seed Data (Defaults)
+### Fixtures location 
 
 Recommended approach: **fixtures** for stable defaults.
 
@@ -97,51 +148,64 @@ Recommended approach: **fixtures** for stable defaults.
 
 Alternate approach: **patches** if defaults need logic.
 
----
+### Smoke tests 
 
-## 7) Verification Checklist
+* Create a Species record.
+* Create a Collection record.
+* Create a Batch record and Allocation record.
+* Add a Nursery Event (germination) with absolute count.
 
-After setup and install:
-- **Docker up**: `examples/nursery/frappe/run.sh start`
-  - Expect services to start and site `frontend` to be created (first run).
-- **Site reachable**: open `http://localhost:8000` in browser.
-  - Expect Frappe login page.
-  - Login: user `Administrator`, password `admin`.
-- **App installed**: `docker compose -f examples/nursery/frappe/docker/docker-compose.yml exec backend bench --site frontend list-apps`
-  - Expect `nursery` in the list.
-- **DocTypes present**: check DocType list in Desk.
-- **Data entry smoke test**:
-  - Create a Species record.
-  - Create a Collection record.
-  - Create a Batch record and Allocation record.
-  - Add a Nursery Event (germination) with absolute count.
-- **Indicators (once reports exist)**:
-  - Run Script Reports filtered by species/batch/date and confirm expected totals.
+**Indicators (Script Reports)**:
+- Germination rate (quantity vs total seeds) by species/batch/date.
+- Earliest / latest germination date by species/batch.
+- Germination spread (latest - earliest).
+- Stock by stage (derived from events + batch totals).
+- Height distribution (min/max) by species/batch/date.
+- Exit totals by species/batch/date.
+
+Run Script Reports filtered by species/batch/date and confirm expected totals.
 
 ---
 
-## 8) Iteration Loop
+## Typical Journey (Collection → Exit)
 
-Typical refinement cycle:
-1) Modify DocType JSON or fixtures.
-2) Run `bench migrate` to apply changes.
-3) Refresh the site (Desk reload).
-4) Verify using sample records.
+1) **Collection**
+   - Field team creates a Collection record with GPS/species/etc.
 
-If using Docker:
-- Run bench commands via `docker exec` or `docker compose exec`.
+2) **Batch Creation (Sowing)**
+   - Nursery team creates a Batch (sowing implied).
+   - Add Collections in the Batch “Collections” table with quantities.
 
-Verification after each stage (expected outcomes):
-- **Stage A (Docker)**: containers running; Frappe login at `http://localhost:8000`.
-- **Stage B (App + Site)**: nursery app listed in `bench --site <site> list-apps`.
-- **Stage C (DocTypes + Fixtures)**: DocTypes visible in Desk; defaults loaded; basic CRUD works.
-- **Stage D (Indicators + Ingest)**: Script Reports return data; sample data from XLSX appears.
+3) **Germination**
+   - Create a Nursery Event with `event_type = germination` and quantity.
 
----
+4) **Growing**
+   - Create a Nursery Event with `event_type = growth` and min/max height.
 
-## 9) Troubleshooting Tips
+5) **Transplant (Germination → Growing)**
+   - Create a Nursery Event with `event_type = transplant` and from/to section+bed.
 
-- If site is not reachable, check container logs (`docker compose logs`).
-- If DocTypes do not appear, ensure the app is installed on the site.
-- If fixtures do not load, confirm they are listed in `hooks.py`.
-- If DB errors occur, confirm MariaDB is healthy and the site config uses correct credentials.
+6) **Exit (Growing → Out of Nursery)**
+   - Create a Nursery Event with `event_type = exit` and quantity (no destination).
+   - Plantation is downstream of Exit and out of scope for the POC.
+
+## User Actions (POC)
+
+**Add a new Species**
+- Enter Scientific Name; Species Code auto-generates (editable).
+- Add optional Local Names with language/dialect.
+
+**Add a new Collection**
+- Record field details, GPS, and delivery date.
+
+**Create a new Batch**
+- Select Species, enter totals, optionally date_sown.
+- Add one or more Collections and quantities.
+
+**Add an Event**
+- Germination: absolute count only.
+- Move: from/to section+bed + quantity.
+- Transplant: from/to section+bed + quantity (germination → growing).
+- Growth: min/max height only.
+- Failure: notes (optional).
+- Exit: from section+bed + quantity (growing → out of nursery).

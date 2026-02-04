@@ -29,7 +29,7 @@ It is organized into three sections:
 - No custom workflows required for Stage 1.
 
 (Implementation details to be added in the setup steps; e.g., compose file, volumes, and a basic bench site.)
-
+See [IMPLEMENTATION.md](IMPLEMENTATION.md) for details. 
 ---
 
 ## 2) POC (Option A): Frappe Desk Only
@@ -94,7 +94,7 @@ For the POC, initialize as **1:1 Section:Bed**, but allow more beds later.
     `total seeds - germinated count` for that batch at the cutoff date.
   - An explicit failure event can also be recorded when deaths are observed in germination or growing.
 
-### 2.5 Typical Journey (Collection → Planting)
+### 2.5 Typical Journey (Collection -> Planting)
 
 1) **Collection**
    - Field team creates a Collection record with GPS/species/etc.
