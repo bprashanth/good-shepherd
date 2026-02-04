@@ -41,7 +41,7 @@ See [IMPLEMENTATION.md](IMPLEMENTATION.md) for details.
 - A record is created once and persists over time.
 
 **Events (transactions)**
-- *Germination*, *Move*, *Transplant*, *Treatment*, *Growth Observation* (height), and *Failure*.
+- *Germination*, *Move*, *Transplant*, *Growth* (height), *Failure*, and *Exit*.
 - Events describe changes to a batch over time.
 - **State is derived from events** (you never edit inventory directly).
 
@@ -108,11 +108,11 @@ For the POC, initialize as **1:1 Section:Bed**, but allow more beds later.
    - The system derives change and tracks earliest/last germination dates.
 
 4) **Movement / Transplant**
-   - Movement event captures from-bed and to-bed.
-   - Transplant event is used when moving to a new container or growth stage.
+   - Move event captures from-bed and to-bed for operational moves.
+   - Transplant event is the stage change from germination → growing.
 
-5) **Planting**
-   - Final status is recorded as a transplant/movement into planting section.
+5) **Exit**
+   - Exit event is recorded when saplings leave the nursery (no destination).
    - No deletion — records are retained for audit.
 
 ### 2.6 User Actions (POC)
@@ -134,66 +134,75 @@ For the POC, initialize as **1:1 Section:Bed**, but allow more beds later.
 **Add an Event**
 - Germination: record absolute count.
 - Movement: record from-bed → to-bed and quantity.
-- Transplant: similar to movement but marks stage change.
-- Treatment: record treatment type (e.g., soaking) and notes.
-- Growth Observation: record height for the batch (e.g., in cm).
+- Transplant: stage change from germination → growing.
+- Growth: record min/max height for the batch (cm).
 - Failure: record explicit deaths (germination or growing).
+- Exit: record saplings leaving the nursery (no destination).
 
 ### 2.7 Indicators (examples)
 
 Proposed indicators (also captured in metadata schema defaults):
-- **Germination Rate**: germinated_count / total_seeds.
+- **Germination Rate (%)**: germinated_count / total_seeds.
 - **Earliest Germination Date**: min(germination_event_date).
 - **Latest Germination Date**: max(germination_event_date).
-- **Germination Spread**: latest_germination_date - earliest_germination_date.
+- **Germination Spread (days)**: latest_germination_date - earliest_germination_date.
+- **Avg Days to Germinate**: avg(earliest_germination_date - date_sown) by species.
 - **Failure Rate**: failed_count / total_seeds (auto-derived at cutoff).
-- **Stock by Stage**: summed counts grouped by section stage.
-- **Height Distribution**: min/avg/max height by species or batch.
+- **Stock by Stage (seeds)**: summed counts grouped by section stage (excludes exit).
+- **Height Distribution (cm)**: min/max height by species or batch.
+- **Exit Totals (saplings)**: counts of saplings leaving the nursery.
 
 All indicators should be sliceable by species, batch_id, date range, and nursery.
+In the POC dashboard, filters are defined per chart (via report filters).
+Global dashboard filters require a custom page (Option B).
+
+### Multi-Nursery Note
+
+To support multiple nurseries, keep `Nursery` as the top-level master and link all
+records (Section/Bed/Batch/Event) to a `Nursery` record. Reporting then groups by
+`nursery` and filters by nursery context.
+
+### Protocol Inheritance (Species -> Batch)
+
+When nursery protocols exist (processing, germination time/percent), store them on
+the **Species** master and copy them into **Batch** on selection. This lets field
+teams adjust per-batch values without overwriting the species-level defaults. The
+batch values initialize from the species protocol and can diverge as needed.
+
+This model will extend to other protocol-driven events in the future (e.g., transplant
+or growth practices): define the species master protocol, then sync to the event/batch
+record at creation time so field edits stay local.
+
+### 2.8 Integration Checkpoint (APIs + Next Agents)
+
+**Core API surfaces**
+- **DocType CRUD**: `/api/resource/<DocType>` (GET/POST/PUT/DELETE). Use `fields` and `filters` params for queries.
+- **Reports**: `/api/method/frappe.desk.query_report.run` with `report_name` and `filters` JSON.
+- **Custom methods**: add `nursery/api.py` with `@frappe.whitelist()` endpoints for batch ingestion,
+  Telegram → Collection creation, or external protocol sync.
+
+**Event-driven state**
+- State is derived from `Nursery Event` records.
+- UI/automation should only create events (no direct inventory edits).
+
+**Batch ingestion**
+- POC: use a bench script or whitelisted API to insert Collections → Batches → Events.
+- Later: expose CSV/Excel upload or a background worker that reads from cloud storage.
+
+**Search by local names**
+- Species has `local_names_index`; Batch mirrors that to enable fuzzy search.
+- Allows filtering Batches by local name without typing the scientific name.
+
+**Multi-nursery**
+- Add `nursery` field to report filters and group by `nursery` for rollups.
 
 ---
-
-## 3) Custom UI (Option B): Humanized Workflows
-
-Option B keeps DocTypes as the data layer but adds custom flows for field staff.
-It is a tiered UI: **Frappe Desk = base**, **Custom Pages = easy flow**.
-
-### 3.1 Principles
-
-- **Bed-first** workflow: select the bed, then the batch.
-- **Absolute counts only**: user enters the current value, system derives change.
-- **Minimal fields**: small dialogs, prefilled defaults, no ID typing.
-
-### 3.2 Frappe Tools for Custom UI
-
-- **Quick Entry**: reduces fields for core DocTypes.
-- **Web Forms**: minimal entry flows for field staff.
-- **Custom Page + Dialog**: add “Record Germination” / “Move Batch” actions.
-- **Barcode/QR scan** (optional): select bed/batch by scan.
-
-### 3.3 API Notes (if building custom screens)
-
-- Create event:
-  - `POST /api/resource/Nursery Event`
-- Read batch:
-  - `GET /api/resource/Nursery Batch/<name>`
-- List beds:
-  - `GET /api/resource/Nursery Bed?fields=...`
-- Custom logic:
-  - Use `frappe.client.*` or custom ` /api/method/...`
-
-### 3.4 Why Option B Helps
-
-- Fewer taps and no manual ID lookup.
-- Works better for field users with low bandwidth.
-- Keeps data integrity through shared DocTypes and rules.
-
-## 3.5 GIS Note (Simple Heatmap)
+## GIS Note (Simple Heatmap)
 
 Collection records include GPS coordinates (EPSG:4326). A simple heatmap can be generated by:
 - Aggregating collection points by species or date range.
 - Rendering on a map view (basic map widget or export to GeoJSON for a simple web map).
+In Frappe, this would be a custom page or a dashboard chart with a custom JS renderer (Option B).
 
 ---
 
@@ -230,7 +239,8 @@ This mapping shows how the schemas translate into Frappe DocTypes.
 
 **Event DocType (transactions)**
 - **Nursery Event**
-  - Fields: event_id, batch_id (Link: Batch), event_type, event_date, absolute_count, quantity_moved,
-    from_bed_id (Link: Bed), to_bed_id (Link: Bed), treatment_type, height_cm, notes.
-  - Event types: germination, move, transplant, treatment, growth_observation, failure (auto-derived at cutoff or explicit).
+  - Fields: event_id, batch_id (Link: Batch), event_type, event_date, quantity,
+    from_section (Link: Section), to_section (Link: Section), from_bed (Link: Bed), to_bed (Link: Bed),
+    min_height_cm, max_height_cm, notes.
+  - Event types: germination, move, transplant, growth, failure, exit.
   - Rule: events store absolute observations; state is derived from the event log.

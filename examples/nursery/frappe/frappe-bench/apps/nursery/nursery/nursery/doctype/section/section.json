@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:section_name",
+ "creation": "2026-02-03 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nursery",
+  "section_name",
+  "stage",
+  "source_payload_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "nursery",
+   "fieldtype": "Link",
+   "label": "Nursery",
+   "options": "Nursery",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Section Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "collection\nsowing\ngermination\ngrowing\nplanting",
+   "reqd": 0
+  },
+  {
+   "fieldname": "source_payload_json",
+   "fieldtype": "Text",
+   "label": "Source Payload (JSON)",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-02-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Section",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "section_name",
+ "track_changes": 1
+}

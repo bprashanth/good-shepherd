@@ -11,16 +11,16 @@ You can start a simple local server using Python:
 
 ```bash
 cd examples/pwa
-python3 -m http.server
+python3 -m http.server 8001
 ```
 
-Then open **[http://localhost:8000](http://localhost:8000)** on your device or simulator.
+Then open **[http://localhost:8001](http://localhost:8001)** on your device or simulator.
 
 ### Mobile Testing
 To test on a phone on the same Wi-Fi network:
 1.  Run the server as above on your computer.
 2.  Find your computer's local IP address (e.g., `ifconfig` or `ipconfig`).
-3.  On your phone, visit `http://YOUR_IP_ADDRESS:8000`.
+3.  On your phone, visit `http://YOUR_IP_ADDRESS:8001`.
 
 ---
 

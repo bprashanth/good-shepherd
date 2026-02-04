@@ -1,0 +1,37 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "creation": "2026-02-03 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "local_name",
+  "language_or_dialect"
+ ],
+ "fields": [
+  {
+   "fieldname": "local_name",
+   "fieldtype": "Data",
+   "label": "Local Name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "language_or_dialect",
+   "fieldtype": "Data",
+   "label": "Language / Dialect",
+   "in_list_view": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Species Local Name",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
