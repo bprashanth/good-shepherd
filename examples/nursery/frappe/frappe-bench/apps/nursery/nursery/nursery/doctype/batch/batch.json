@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "autoname",
+ "creation": "2026-02-03 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "species",
+  "processing",
+  "germination_time",
+  "germination_percent",
+  "legacy_batch_id",
+  "total_seeds",
+  "date_sown",
+  "bed",
+  "section",
+  "stage",
+  "allocations",
+  "planted_by",
+  "source_payload_json",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "species",
+   "fieldtype": "Link",
+   "label": "Species",
+   "options": "Species",
+   "reqd": 1
+  },
+  {
+   "fieldname": "processing",
+   "fieldtype": "Data",
+   "label": "Processing"
+  },
+  {
+   "fieldname": "germination_time",
+   "fieldtype": "Data",
+   "label": "Germination Time"
+  },
+  {
+   "fieldname": "germination_percent",
+   "fieldtype": "Float",
+   "label": "Germination %"
+  },
+  {
+   "fieldname": "legacy_batch_id",
+   "fieldtype": "Data",
+   "label": "Legacy Batch ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_seeds",
+   "fieldtype": "Int",
+   "label": "Total Seeds",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_sown",
+   "fieldtype": "Date",
+   "label": "Date Sown"
+  },
+  {
+   "fieldname": "bed",
+   "fieldtype": "Link",
+   "label": "Bed",
+   "options": "Bed"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "sowing\ngermination\ngrowing\nexit"
+  },
+  {
+   "fieldname": "allocations",
+   "fieldtype": "Table",
+   "label": "Collections",
+   "options": "Batch Allocation",
+   "description": "At least one collection is required. Add rows for multiple collections."
+  },
+  {
+   "fieldname": "planted_by",
+   "fieldtype": "Data",
+   "label": "Planted By"
+  },
+  {
+   "fieldname": "source_payload_json",
+   "fieldtype": "Text",
+   "label": "Source Payload (JSON)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "local_names_index",
+   "fieldtype": "Data",
+   "label": "Local Names Index",
+   "read_only": 1,
+   "hidden": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-02-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Batch",
+ "naming_rule": "Prompt",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "search_fields": "name,local_names_index"
+}

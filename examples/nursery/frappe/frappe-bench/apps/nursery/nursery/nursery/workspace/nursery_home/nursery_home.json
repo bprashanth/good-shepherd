@@ -1,0 +1,117 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"nurseryHeader\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h2\\\">Nursery Home</span>\", \"col\": 12}}, {\"id\": \"nurseryIntro\", \"type\": \"paragraph\", \"data\": {\"text\": \"Quick actions for seed flow, observations, and movement.\", \"col\": 12}}, {\"id\": \"spacer1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"obsHeader\", \"type\": \"header\", \"data\": {\"text\": \"<b>Observations</b>\", \"col\": 12}}, {\"id\": \"obsGermination\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Germination\", \"col\": 4}}, {\"id\": \"obsGrowth\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Growth\", \"col\": 4}}, {\"id\": \"spacer2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"actionsHeader\", \"type\": \"header\", \"data\": {\"text\": \"<b>Actions</b>\", \"col\": 12}}, {\"id\": \"actionTransplant\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Transplant\", \"col\": 4}}, {\"id\": \"actionMove\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Move\", \"col\": 4}}, {\"id\": \"actionExit\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Exit\", \"col\": 4}}, {\"id\": \"spacer3\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"speciesHeader\", \"type\": \"header\", \"data\": {\"text\": \"<b>Species</b>\", \"col\": 12}}, {\"id\": \"speciesAdd\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add Species\", \"col\": 4}}, {\"id\": \"speciesList\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Species List\", \"col\": 4}}, {\"id\": \"spacer4\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"facilityHeader\", \"type\": \"header\", \"data\": {\"text\": \"<b>Facility</b>\", \"col\": 12}}, {\"id\": \"facilityBed\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add Bed\", \"col\": 4}}, {\"id\": \"facilitySection\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add Section\", \"col\": 4}}, {\"id\": \"spacer5\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"indicatorsHeader\", \"type\": \"header\", \"data\": {\"text\": \"<b>Indicators</b>\", \"col\": 12}}, {\"id\": \"indicatorsDash\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Dashboard\", \"col\": 4}}]",
+ "creation": "2026-02-06 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "leaf",
+ "idx": 1,
+ "is_hidden": 0,
+ "label": "Nursery Home",
+ "links": [],
+ "modified": "2026-02-07 14:42:20.378916",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Nursery Home",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "green",
+   "doc_view": "New",
+   "format": "",
+   "label": "Add Batch",
+   "link_to": "Batch",
+   "type": "DocType"
+  },
+  {
+   "color": "blue",
+   "doc_view": "New",
+   "format": "",
+   "label": "Germination",
+   "link_to": "Nursery Event",
+   "type": "DocType"
+  },
+  {
+   "color": "blue",
+   "doc_view": "New",
+   "format": "",
+   "label": "Growth",
+   "link_to": "Nursery Event",
+   "type": "DocType"
+  },
+  {
+   "color": "orange",
+   "doc_view": "New",
+   "format": "",
+   "label": "Transplant",
+   "link_to": "Nursery Event",
+   "type": "DocType"
+  },
+  {
+   "color": "orange",
+   "doc_view": "New",
+   "format": "",
+   "label": "Move",
+   "link_to": "Nursery Event",
+   "type": "DocType"
+  },
+  {
+   "color": "orange",
+   "doc_view": "New",
+   "format": "",
+   "label": "Exit",
+   "link_to": "Nursery Event",
+   "type": "DocType"
+  },
+  {
+   "color": "purple",
+   "doc_view": "New",
+   "format": "",
+   "label": "Add Species",
+   "link_to": "Species",
+   "type": "DocType"
+  },
+  {
+   "color": "purple",
+   "doc_view": "List",
+   "format": "",
+   "label": "Species List",
+   "link_to": "Species",
+   "type": "DocType"
+  },
+  {
+   "color": "teal",
+   "doc_view": "New",
+   "format": "",
+   "label": "Add Bed",
+   "link_to": "Bed",
+   "type": "DocType"
+  },
+  {
+   "color": "teal",
+   "doc_view": "New",
+   "format": "",
+   "label": "Add Section",
+   "link_to": "Section",
+   "type": "DocType"
+  },
+  {
+   "color": "cyan",
+   "doc_view": "",
+   "format": "",
+   "label": "Nursery Dashboard",
+   "link_to": "Nursery Indicators",
+   "type": "Dashboard"
+  }
+ ],
+ "title": "Nursery Home"
+}

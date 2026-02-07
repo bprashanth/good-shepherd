@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Nursery Events",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "description": "Event log describing changes to batches over time.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "description": "Unique identifier for the event."
+          },
+          "batch_id": {
+            "type": "string",
+            "description": "Batch associated with the event."
+          },
+          "event_type": {
+            "type": "string",
+            "description": "Type of event (germination, move, transplant, treatment, growth_observation, failure).",
+            "enum": ["germination", "move", "transplant", "treatment", "growth_observation", "failure"]
+          },
+          "event_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of the event."
+          },
+          "absolute_count": {
+            "type": ["integer", "null"],
+            "description": "Absolute observed count for the event (e.g., germinated now = 10)."
+          },
+          "quantity_moved": {
+            "type": ["integer", "null"],
+            "description": "Quantity moved or transplanted, if applicable."
+          },
+          "from_bed_id": {
+            "type": ["string", "null"],
+            "description": "Source bed for move/transplant events."
+          },
+          "to_bed_id": {
+            "type": ["string", "null"],
+            "description": "Destination bed for move/transplant events."
+          },
+          "treatment_type": {
+            "type": ["string", "null"],
+            "description": "Treatment applied (e.g., soaking, scarification)."
+          },
+          "height_cm": {
+            "type": ["number", "null"],
+            "description": "Observed height in centimeters (for growth_observation events)."
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Free-form notes about the event."
+          }
+        },
+        "required": ["event_id", "batch_id", "event_type", "event_date"]
+      }
+    }
+  },
+  "required": ["events"]
+}

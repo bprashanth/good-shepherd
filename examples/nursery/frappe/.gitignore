@@ -1,0 +1,51 @@
+# Logic behind this gitignore
+#
+# apps/nursery: core nursery logic
+# apps.txt: what apps to install
+# common_site_config.json: hostnames for mariadb and redis, important for docker network 
+# env/ & frappe/: these are recreated during the init.sh parts of the script on a new host
+# apps.json: this is just a local runtime cache of installed apps 
+
+
+# 1. Ignore the massive boilerplate
+frappe-bench/env/
+frappe-bench/node_modules/
+frappe-bench/logs/
+frappe-bench/sites/assets/
+
+# Ignore Bench process and lock files
+frappe-bench/Procfile
+frappe-bench/config/
+frappe-bench/patches.txt
+frappe-bench/apps/nursery/nursery/patches.txt
+
+# 2. Block the whole apps folder, then allow ONLY your app
+frappe-bench/apps/*
+!frappe-bench/apps/nursery/
+
+# 3. Block the sites folder, then allow ONLY configuration/registry
+frappe-bench/sites/*
+!frappe-bench/sites/apps.txt
+!frappe-bench/sites/common_site_config.json
+
+# Ignore Site-specific search indexes and temp files
+frappe-bench/sites/*/indexes/
+frappe-bench/sites/*/touched_tables.json
+frappe-bench/sites/*/.test_log
+
+# 4. Handle the specific site folder (Avoid DB backups/logs)
+!frappe-bench/sites/nursery.localhost/
+frappe-bench/sites/nursery.localhost/locks
+frappe-bench/sites/nursery.localhost/private/
+frappe-bench/sites/nursery.localhost/public/files/
+
+# 5. Mariadb
+# Ignore the database contents but keep the folder
+mariadb_data/*
+!mariadb_data/.gitkeep
+
+# 6. Global Python/System junk
+*.pyc
+__pycache__/
+.DS_Store
+frappe-bench/sites/*/site_config.json

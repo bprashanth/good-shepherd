@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:collection_id",
+ "creation": "2026-02-03 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "collection_id",
+  "date_collected",
+  "species",
+  "item_type",
+  "condition",
+  "seed_site",
+  "gps_latitude",
+  "gps_longitude",
+  "gps_elevation",
+  "locality",
+  "collected_by",
+  "source_payload_json",
+  "remarks",
+  "delivery_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "collection_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Collection ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "date_collected",
+   "fieldtype": "Date",
+   "label": "Date Collected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "species",
+   "fieldtype": "Link",
+   "label": "Species",
+   "options": "Species",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "label": "Item Type",
+   "options": "seeds\nfruits\nseedlings"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Select",
+   "label": "Condition",
+   "options": "fresh\nslightly old\nold"
+  },
+  {
+   "fieldname": "seed_site",
+   "fieldtype": "Select",
+   "label": "Seed Site",
+   "options": "parent tree\nbear scat\ncivet scat\njackal scat\nhornbill midden\nbat midden\ndeer midden\nother dropping"
+  },
+  {
+   "fieldname": "gps_latitude",
+   "fieldtype": "Float",
+   "label": "GPS Latitude"
+  },
+  {
+   "fieldname": "gps_longitude",
+   "fieldtype": "Float",
+   "label": "GPS Longitude"
+  },
+  {
+   "fieldname": "gps_elevation",
+   "fieldtype": "Float",
+   "label": "GPS Elevation (m)"
+  },
+  {
+   "fieldname": "locality",
+   "fieldtype": "Data",
+   "label": "Locality"
+  },
+  {
+   "fieldname": "collected_by",
+   "fieldtype": "Data",
+   "label": "Collected By"
+  },
+  {
+   "fieldname": "source_payload_json",
+   "fieldtype": "Text",
+   "label": "Source Payload (JSON)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  }
+ ],
+ "links": [],
+ "modified": "2026-02-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Collection",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "collection_id",
+ "track_changes": 1
+}

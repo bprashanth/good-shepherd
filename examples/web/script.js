@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Phone Card -> Localhost:8000
+    // Phone Card -> Localhost:8001
     phoneCard.addEventListener('click', () => {
-        window.location.href = 'http://localhost:8000';
+        window.location.href = 'http://localhost:8001';
     });
 
     // Data Card -> Localhost:5173

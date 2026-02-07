@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "autoname": "field:accepted_name",
+ "creation": "2026-02-03 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "allow_import": 1,
+ "track_changes": 1,
+ "field_order": [
+  "accepted_name",
+  "era_species_url",
+  "name_source",
+  "processing",
+  "germination_time",
+  "germination_percent",
+  "species_code",
+  "local_names",
+  "local_names_index",
+  "iucn_status",
+  "habit",
+  "fruit_size",
+  "seed_size",
+  "seed_no",
+  "source_payload_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "accepted_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scientific Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "era_species_url",
+   "fieldtype": "Data",
+   "label": "ERA Species URL"
+  },
+  {
+   "fieldname": "name_source",
+   "fieldtype": "Data",
+   "label": "Name Source",
+   "description": "Where the accepted name came from (e.g., POWO, ERA-India, local taxonomy list)."
+  },
+  {
+   "fieldname": "processing",
+   "fieldtype": "Data",
+   "label": "Processing"
+  },
+  {
+   "fieldname": "germination_time",
+   "fieldtype": "Data",
+   "label": "Germination Time"
+  },
+  {
+   "fieldname": "germination_percent",
+   "fieldtype": "Float",
+   "label": "Germination %"
+  },
+  {
+   "fieldname": "species_code",
+   "fieldtype": "Data",
+   "label": "Species Code",
+   "description": "Auto-generated 3+3 code (Genus+species). Editable if needed."
+  },
+  {
+   "fieldname": "local_names",
+   "fieldtype": "Table",
+   "label": "Local Names",
+   "options": "Species Local Name",
+   "description": "Add zero or more local names with language/dialect."
+  },
+  {
+   "fieldname": "local_names_index",
+   "fieldtype": "Data",
+   "label": "Local Names Index",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "iucn_status",
+   "fieldtype": "Data",
+   "label": "IUCN Status"
+  },
+  {
+   "fieldname": "habit",
+   "fieldtype": "Select",
+   "label": "Habit",
+   "options": "Tree\nShrub\nLiana\nClimber\nGrass\nHerb\nAquatic"
+  },
+  {
+   "fieldname": "fruit_size",
+   "fieldtype": "Select",
+   "label": "Fruit Size",
+   "options": "Large\nMedium\nSmall\nTiny"
+  },
+  {
+   "fieldname": "seed_size",
+   "fieldtype": "Select",
+   "label": "Seed Size",
+   "options": "Large\nMedium\nSmall\nTiny"
+  },
+  {
+   "fieldname": "seed_no",
+   "fieldtype": "Int",
+   "label": "Seeds per Fruit"
+  },
+  {
+   "fieldname": "source_payload_json",
+   "fieldtype": "Text",
+   "label": "Source Payload (JSON)",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-02-03 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Nursery",
+ "name": "Species",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "accepted_name",
+ "search_fields": "accepted_name,species_code,local_names_index"
+}

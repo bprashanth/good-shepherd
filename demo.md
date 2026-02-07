@@ -6,8 +6,8 @@ file:///home/desinotorious/src/github.com/bprashanth/good-shepherd/examples/web/
 ```
 PWA demo
 ```
-desinotorious@pop-os:~/src/github.com/bprashanth/good-shepherd/examples/pwa$ python3 -m http.server 
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+desinotorious@pop-os:~/src/github.com/bprashanth/good-shepherd/examples/pwa$ python3 -m http.server 8001
+Serving HTTP on 0.0.0.0 port 8001 (http://0.0.0.0:8001/) ...
 ```
 Forms server 
 ```

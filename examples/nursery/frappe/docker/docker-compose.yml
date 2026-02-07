@@ -1,0 +1,36 @@
+services:
+  mariadb:
+    image: mariadb:10.6
+    container_name: nursery_mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: admin
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:6-alpine
+    container_name: nursery_redis
+    ports:
+      - "6379:6379"
+
+  frappe:
+    image: frappe/bench:v5.24.1
+    container_name: nursery_frappe
+    tty: true
+    working_dir: /home/frappe
+    command: bash /home/frappe/project/entrypoint.sh
+    depends_on:
+      - mariadb
+      - redis
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: "3306"
+      MYSQL_ROOT_PASSWORD: admin
+      REDIS_CACHE: redis:6379
+      REDIS_QUEUE: redis:6379
+      REDIS_SOCKETIO: redis:6379
+    ports:
+      - "8000:8000"
