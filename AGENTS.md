@@ -7,5 +7,6 @@ See @.agent/rules/project-context.md (.agent/rules/project-context.md) to unders
 
 ## Quick Start for Agents
 1. Always work within the `./.venv`, or `./venv` as the case may be.
-2. Propose changes before writing to disk.
-3. Coordinate system is EPSG:4326.
+2. Always check for a local AGENTS.md in the working directory or nearest parent under examples/ and follow it in addition to root.
+3. Propose changes before writing to disk.
+4. Coordinate system is EPSG:4326.
