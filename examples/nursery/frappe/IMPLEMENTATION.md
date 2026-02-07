@@ -26,6 +26,8 @@ If this succeedes, then
 * To apply code changes: `docker exec ... bench migrate`
 ```bash
 docker exec -it -w /home/frappe/project/frappe-bench nursery_frappe bench --site nursery.localhost migrate
+docker exec -it -w /home/frappe/project/frappe-bench nursery_frappe     bench --site nursery.localhost clear-cache
+# Followed by ctrl+shift+r
 ```
 * To save UI changes to code: `docker exec ... bench export-fixtures`
 ```bash
@@ -209,3 +211,4 @@ Run Script Reports filtered by species/batch/date and confirm expected totals.
 - Growth: min/max height only.
 - Failure: notes (optional).
 - Exit: from section+bed + quantity (growing → out of nursery).
+
