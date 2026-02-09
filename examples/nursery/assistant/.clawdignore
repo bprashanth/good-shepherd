@@ -1,0 +1,28 @@
+# API keys and secrets
+.env
+*.key
+*.secret
+config.json
+openclaw.json
+.openclaw/openclaw.json
+.openclaw/credentials/
+.openclaw/*/
+
+# System directories
+~/.ssh
+~/.aws
+~/.config
+
+# Frappe credentials
+../inputs/data/.env
+
+# Git history
+.git/
+
+# Design document (contains plan, not needed for bot context)
+DESIGN.md
+
+# OpenClaw workspace and sessions
+.openclaw/workspace/
+.openclaw/agents/
+.openclaw/devices/

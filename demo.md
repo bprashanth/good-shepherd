@@ -32,6 +32,8 @@ Notebooks
 ```
 desinotorious@pop-os:~/src/github.com/bprashanth/plantwise/PlantWise/alienwise$
 lantana_satellite_analysis.ipynb - presence on roads
+
+(good-shepherd) desinotorious@pop-os:~/rtmp/data/shola/data$ 
 phase2_site_analysis.ipynb - drone vs satellite 
 ```
 
