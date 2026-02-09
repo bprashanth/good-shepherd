@@ -20,6 +20,15 @@ All init files already exist, just run
 docker compose -f docker/step0_docker-compose.yml up -d
 ```
 
+Note: The entrypoint applies a host-agnostic DB grant (`user@'%'`) for the site DB user.
+This is a **development convenience** because container IPs change across Docker networks.
+Do not use this pattern in production; instead lock DB users to a known host/network.
+
+To check the grants on the db run 
+```console 
+$ docker exec -it nursery_mariadb mysql -uroot -padmin -e "SELECT User, Host FROM mysql.user WHERE User LIKE '<site-config user>';SHOW DATABASES LIKE '<site-config user>';"
+```
+
 ### Verification 
 
 If this succeedes, then 
@@ -211,4 +220,3 @@ Run Script Reports filtered by species/batch/date and confirm expected totals.
 - Growth: min/max height only.
 - Failure: notes (optional).
 - Exit: from section+bed + quantity (growing → out of nursery).
-

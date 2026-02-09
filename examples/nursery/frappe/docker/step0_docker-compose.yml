@@ -2,7 +2,7 @@ services:
   mariadb:
     image: mariadb:10.6
     container_name: nursery_mariadb
-    volumes: 
+    volumes:
       - ../mariadb_data:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: admin
@@ -11,12 +11,16 @@ services:
       - --collation-server=utf8mb4_unicode_ci
     ports:
       - "3306:3306"
+    networks:
+      - nursery_network
 
   redis:
     image: redis:6-alpine
     container_name: nursery_redis
     ports:
       - "6379:6379"
+    networks:
+      - nursery_network
 
   frappe:
     image: frappe/bench:v5.24.1
@@ -38,3 +42,13 @@ services:
       REDIS_SOCKETIO: redis:6379
     ports:
       - "8000:8000"
+    networks:
+      nursery_network:
+        aliases:
+          - nursery.localhost
+
+# Create explicit nursery network
+networks:
+  nursery_network:
+    name: nursery_network
+    driver: bridge
