@@ -1,0 +1,1377 @@
+[
+  {
+    "sessionId": "srini_2020-05-01T07:01:30",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2019-11-DSCN8516.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2019-11-DSCN8516.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T07:01:30",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T07:27:48",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2020-05-DSCN9448.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2020-05-DSCN9448.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T07:27:48",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T07:50:52",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2022-09-DSCN7782.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2022-09-DSCN7782.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T07:50:52",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T08:23:07",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2025-03-DSCN2885.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2025-03-DSCN2885.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T08:23:07",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T08:42:22",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2020-12-DSCN0962.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2020-12-DSCN0962.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T08:42:22",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T09:39:03",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1PwGUKZY6X3_Xes12yYfGhg_F0Fgl1m6s.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1PwGUKZY6X3_Xes12yYfGhg_F0Fgl1m6s.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-10T09:39:03",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T10:53:00",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2023-03-DSCN9000.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2023-03-DSCN9000.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T10:53:00",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T11:33:14",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2021-12-DSCN5931.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2021-12-DSCN5931.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T11:33:14",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T12:34:57",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2022-03-DSCN6817.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2022-03-DSCN6817.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T12:34:57",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T13:24:24",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2021-03-DSCN3477.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2021-03-DSCN3477.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T13:24:24",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T13:35:35",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2023-09-DSCN9722.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2023-09-DSCN9722.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T13:35:35",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T13:47:33",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2024-03-DSCN0502.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R1-Reference/2019_P2R1/2024-03-DSCN0502.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2020-05-01T13:47:33",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2020-05-01T17:56:51",
+    "siteId": "2019_SM_R1",
+    "latitude": 10.30991,
+    "longitude": 76.83501,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1X_nlN1ys63B_oFOAHKXRcFX7hXs5LnJv.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1X_nlN1ys63B_oFOAHKXRcFX7hXs5LnJv.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T17:56:51",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T07:55:38",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2024-03-DSCN0506.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2024-03-DSCN0506.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T07:55:38",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T09:44:01",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2023-03-DSCN9007.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2023-03-DSCN9007.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T09:44:01",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T09:46:20",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2021-12-DSCN5930.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2021-12-DSCN5930.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T09:46:20",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T11:00:05",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1I8jCKmn9G2seJQEO14O0dAF_zGTdYa_D.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1I8jCKmn9G2seJQEO14O0dAF_zGTdYa_D.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-10T11:00:05",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T12:40:20",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2025-03-DSCN2869.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2025-03-DSCN2869.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T12:40:20",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T13:07:18",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2020-05-DSCN9444.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2020-05-DSCN9444.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T13:07:18",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T13:14:32",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2022-03-DSCN6814.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2022-03-DSCN6814.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T13:14:32",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T14:22:34",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/10_KhtxOxh9LhYXeR7JWHIeUhCwXVdXai.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/10_KhtxOxh9LhYXeR7JWHIeUhCwXVdXai.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T14:22:34",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T14:40:44",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2019-09-DSCN8514.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2019-09-DSCN8514.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T14:40:44",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T15:58:46",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1zoww0oVjYcunLqcve3nX16dRKha0ocmz.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1zoww0oVjYcunLqcve3nX16dRKha0ocmz.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T15:58:46",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T16:07:10",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2023-09-DSCN9733.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2023-09-DSCN9733.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T16:07:10",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T16:44:03",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2022-09-DSCN7786.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2022-09-DSCN7786.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T16:44:03",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T16:46:31",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2020-12-DSCN0966.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2020-12-DSCN0966.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T16:46:31",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2021-12-01T17:11:44",
+    "siteId": "2019_LA_R1",
+    "latitude": 10.30987,
+    "longitude": 76.83476,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2021-03-DSCN3473.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R1-Reference/2019_P1R1/2021-03-DSCN3473.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2021-12-01T17:11:44",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T07:22:09",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2021-12-DSCN5926.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2021-12-DSCN5926.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T07:22:09",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T07:58:51",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2019-11-DSCN8523.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2019-11-DSCN8523.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T07:58:51",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T08:07:33",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2022-03-DSCN6811.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2022-03-DSCN6811.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T08:07:33",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T08:21:03",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2024-03-DSCN0516.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2024-03-DSCN0516.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T08:21:03",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T08:46:59",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2022-09-DSCN7795.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2022-09-DSCN7795.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T08:46:59",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T10:08:11",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2023-09-DSCN9727.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2023-09-DSCN9727.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T10:08:11",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T11:18:15",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2020-12-DSCN0967.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2020-12-DSCN0967.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T11:18:15",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T11:21:07",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1MGShaZnBohEAAHtPzPf5WTu1XP2Vo9NX.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1MGShaZnBohEAAHtPzPf5WTu1XP2Vo9NX.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-01T11:21:07",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T12:53:39",
+    "siteId": "2019_SM_R2",
+    "latitude": 10.30926,
+    "longitude": 76.83543,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2023-03-DSCN8994.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2023-03-DSCN8994.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T12:53:39",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T13:19:05",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1Zm0K4LBd1ImuAUD-B7dSGQ2lzPghjGcm.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1Zm0K4LBd1ImuAUD-B7dSGQ2lzPghjGcm.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T13:19:05",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T15:23:39",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2025-03-DSCN2879.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2025-03-DSCN2879.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T15:23:39",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T16:12:28",
+    "siteId": "2019_SM_R2",
+    "latitude": 10.30926,
+    "longitude": 76.83543,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2024-03-DSCN0498.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2024-03-DSCN0498.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T16:12:28",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T16:23:33",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2021-03-DSCN3472.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2021-03-DSCN3472.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T16:23:33",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T17:06:59",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2020-05-DSCN9447.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2020-05-DSCN9447.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T17:06:59",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T17:07:57",
+    "siteId": "2019_SM_R2",
+    "latitude": 10.30926,
+    "longitude": 76.83543,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2023-09-DSCN9717.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2023-09-DSCN9717.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T17:07:57",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T17:20:07",
+    "siteId": "2019_SM_R2",
+    "latitude": 10.30926,
+    "longitude": 76.83543,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2025-03-DSCN2893.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2025-03-DSCN2893.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T17:20:07",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T17:31:53",
+    "siteId": "2019_LA_R2",
+    "latitude": 10.31025,
+    "longitude": 76.83468,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2023-03-DSCN9013.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P1R2-Reference/2019_P1R2/2023-03-DSCN9013.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T17:31:53",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2023-09-01T17:49:38",
+    "siteId": "2019_SM_R2",
+    "latitude": 10.30926,
+    "longitude": 76.83543,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2022-09-DSCN7780.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2019/2019-P2R2-Reference/2019_P2R2/2022-09-DSCN7780.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2023-09-01T17:49:38",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T08:17:44",
+    "siteId": "2024_J12_R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1oeNtIJnPVyCDvNSzZ1sxlylAao10ztCR.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1oeNtIJnPVyCDvNSzZ1sxlylAao10ztCR.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T08:17:44",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T09:29:34",
+    "siteId": "2024_H13_R1",
+    "latitude": 10.31329,
+    "longitude": 76.83704,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2024/2024-H13/R1/2025-03-DSCN2990.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2024/2024-H13/R1/2025-03-DSCN2990.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-03-01T09:29:34",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T09:51:57",
+    "siteId": "2024_H13_R1",
+    "latitude": 10.31329,
+    "longitude": 76.83704,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/10xQ082eC8F8aErVr24QRpsPDMpJ6-51a.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/10xQ082eC8F8aErVr24QRpsPDMpJ6-51a.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T09:51:57",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T11:07:15",
+    "siteId": "2024_J12_R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2024/2024-J12/R1/2025-03-DSCN2975.JPG",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/2024/2024-J12/R1/2025-03-DSCN2975.JPG",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-03-01T11:07:15",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T11:44:25",
+    "siteId": "2024_H13_R1",
+    "latitude": 10.31329,
+    "longitude": 76.83704,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1QORuuVnf0JybTNqLqqNvm1VlqCAPjLxA.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1QORuuVnf0JybTNqLqqNvm1VlqCAPjLxA.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "Yes",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T11:44:25",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T11:55:07",
+    "siteId": "2024_J12_R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1eFYAocyfUnpXnI31C1ghRCl8PiUW9UsA.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1eFYAocyfUnpXnI31C1ghRCl8PiUW9UsA.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T11:55:07",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-03-01T15:43:46",
+    "siteId": "2024_J12_R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "",
+    "landscapeImagePath": "",
+    "portraitImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1TG3ZqyfoPWhoNu95U0CecsXd1S4G69hh.jpg",
+    "landscapeImageUrl": "https://forestfomo-images.s3.ap-south-1.amazonaws.com/mobile_uploads/1TG3ZqyfoPWhoNu95U0CecsXd1S4G69hh.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-06-12T15:43:46",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-09-04T12:54:09.865024",
+    "siteId": "J12R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/J12R1/srini_2025-09-04_125330_portrait.jpg",
+    "landscapeImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/J12R1/srini_2025-09-04_125409_landscape.jpg",
+    "portraitImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/J12R1/srini_2025-09-04T12_54_09.865024_portrait.jpg",
+    "landscapeImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/J12R1/srini_2025-09-04T12_54_09.865024_landscape.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "nothing ",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-09-04T12:54:09.865024",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-09-04T12:56:01.149579",
+    "siteId": "J12R1",
+    "latitude": 10.31284,
+    "longitude": 76.83536,
+    "portraitImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/J12R1/srini_2025-09-04_125527_portrait.jpg",
+    "landscapeImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/J12R1/srini_2025-09-04_125601_landscape.jpg",
+    "portraitImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/J12R1/srini_2025-09-04T12_56_01.149579_portrait.jpg",
+    "landscapeImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/J12R1/srini_2025-09-04T12_56_01.149579_landscape.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "nothing ",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-09-04T12:56:01.149579",
+    "isUploaded": false,
+    "userId": "srini"
+  },
+  {
+    "sessionId": "srini_2025-09-04T13:12:28.859762",
+    "siteId": "G14R1-2025",
+    "latitude": 10.313653,
+    "longitude": 76.8372776,
+    "portraitImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/G14R1-2025/srini_2025-09-04_131217_portrait.jpg",
+    "landscapeImagePath": "/data/user/0/com.t4gc.fomomon.dev/app_flutter/images/G14R1-2025/srini_2025-09-04_131228_landscape.jpg",
+    "portraitImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/G14R1-2025/srini_2025-09-04T13_12_28.859762_portrait.jpg",
+    "landscapeImageUrl": "https://fomomonguest.s3.ap-south-1.amazonaws.com/G14R1-2025/srini_2025-09-04T13_12_28.859762_landscape.jpg",
+    "responses": [
+      {
+        "questionId": "q2",
+        "answer": "No",
+        "question": "Was there litter?"
+      },
+      {
+        "questionId": "q1",
+        "answer": "Nilgiri langur",
+        "question": "What animals did you see?"
+      }
+    ],
+    "timestamp": "2025-09-04T13:12:28.859762",
+    "isUploaded": false,
+    "userId": "srini"
+  }
+]

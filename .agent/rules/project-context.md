@@ -4,7 +4,7 @@
 
 The Good Shepherd POC lives within the examples/ directory. 
 
-### Core Architecture
+### POC components 
 * examples/web/: Entry point; index linking to all dashboard components.
 * examples/setup_wizard/: Python + AI pipeline for experiment onboarding. Generates wizard.html.
 * examples/pwa/: Mobile mockup for field data inspection and datasheet uploads.
@@ -48,3 +48,9 @@ Ignore examples/pipeline and examples/site_comparison for now.
 * Write: Propose code changes in chat and wait for approval before modifying source files.
 * Linting: Ignore non-breaking linting or style errors. Prioritize functional POC progress over "clean code" pedantry.
 * Geospatial: Default to EPSG:4326 for all coordinate systems unless the file metadata explicitly states otherwise.
+
+## 5. Backend 
+* The backend server in server/ consolidates the auth/heavy lifting across all Good Shepherd components. Functions will slowly make their way into this backend. 
+* server/README.md has instructios for adding a new API, as well as pointers for new client integration and cross app authentication.
+* This server is the beating heart of good shepherd, and modifications should be made with due architectural considerations in a careful manner. 
+* If this server breaks, good shepherd breaks, so never make changes without testing or discussing alternatives. Always ask questions when confused. 
