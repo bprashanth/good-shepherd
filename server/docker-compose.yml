@@ -1,0 +1,11 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - "8070:8070"
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    environment:
+      - AWS_REGION=ap-south-1
+      - AWS_DEFAULT_REGION=ap-south-1
