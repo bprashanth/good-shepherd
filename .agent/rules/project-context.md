@@ -12,6 +12,7 @@ The Good Shepherd POC lives within the examples/ directory.
 * examples/alienwise/: Placeholder for future SDM/Ecological modeling.
 * examples/input/: Primary reference directory (Protocols, KML sites, sample datasheets, xlsx).
 * examples/dashboard/: vue3 app for analyzing json data that contains links, map points, and quantative datapoints
+* examples/nursery/: has 2 parts, 1 a frappe app tp manage a database for nurseries, and 2 an ai assistant that can modify the frappe doctypes and interact with users to help with nursery management. 
 
 Ignore examples/pipeline and examples/site_comparison for now. 
 

@@ -1,0 +1,20 @@
+# Ignore the OpenClaw system folder if it's nested here
+.openclaw/
+
+# Ignore sensitive environment variables
+.env
+*.env
+auth.json
+credentials.json
+
+# Ignore OpenClaw backups (may contain tokens)
+*.bak
+*.bak.*
+
+# Ignore temporary AI execution files
+*.log
+tmp/
+.sessions/
+
+# Docker Compose backup
+docker-compose.yml.bak

@@ -35,6 +35,34 @@ bench config set-common-config -c redis_cache '"redis://redis:6379"'
 bench config set-common-config -c redis_queue '"redis://redis:6379"'
 bench config set-common-config -c redis_socketio '"redis://redis:6379"'
 
+echo "--- Phase 2.5: Ensuring DB Grants (Host-Agnostic) ---"
+if [ -f "sites/nursery.localhost/site_config.json" ] && [ -x "$BENCH_DIR/env/bin/python" ]; then
+  "$BENCH_DIR/env/bin/python" - <<'PY'
+import json
+import os
+import pymysql
+
+site_cfg = "sites/nursery.localhost/site_config.json"
+with open(site_cfg, "r", encoding="utf-8") as f:
+    cfg = json.load(f)
+
+db_name = cfg.get("db_name")
+db_password = cfg.get("db_password")
+db_host = os.environ.get("DB_HOST", "mariadb")
+root_pw = os.environ.get("MYSQL_ROOT_PASSWORD", "admin")
+
+if db_name and db_password:
+    conn = pymysql.connect(host=db_host, user="root", password=root_pw, port=3306)
+    with conn.cursor() as cur:
+        cur.execute(
+            f"GRANT ALL PRIVILEGES ON `{db_name}`.* TO '{db_name}'@'%' IDENTIFIED BY '{db_password}';"
+        )
+        cur.execute("FLUSH PRIVILEGES;")
+    conn.commit()
+    conn.close()
+PY
+fi
+
 echo "--- Phase 3: Creating Site & App ---"
 if [ ! -d "sites/nursery.localhost" ]; then
     bench new-site nursery.localhost --db-host mariadb --db-root-password admin --admin-password admin --force
@@ -49,6 +77,7 @@ else
     echo "Nursery app found in repository, skipping creation."
 fi
 
+bench config set-common-config -c default_site '"nursery.localhost"'
 bench --site nursery.localhost install-app nursery
 bench --site nursery.localhost set-config developer_mode 1
 

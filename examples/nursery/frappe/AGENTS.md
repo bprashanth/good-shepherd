@@ -23,7 +23,7 @@ Follow the repo root AGENTS.md first, then this file.
 - If testing, the site will be available on `nursery.localhost:8000`. If not, ask user to start docker. 
 - Treat mariadb_data/ and logs/ as runtime artifacts; avoid committing accidental changes there.
 
-### Related POC
-- Voice UX prototype lives at: ../ux/voice/
-- Voice POC may reference this directory’s UX.md, schemas/, and any API/UI contracts.
+### Related UX POCs
+- UX harness + scenarios live at: ../ux/
+- UX POCs may reference this directory’s UX.md, schemas/, and any API/UI contracts.
 
