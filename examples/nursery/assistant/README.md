@@ -1,6 +1,10 @@
 # Openclaude nursery assistant
 
 This directory is the working directory for the openclaw nursery assistant. 
+Running the tui
+```console 
+$ docker compose exec -it openclaw-gateway node dist/index.js tui
+```
 
 1. The brain: how clause code logs in 
 
@@ -16,7 +20,18 @@ This directory is the working directory for the openclaw nursery assistant.
 
 - In the `openclas.json`, set `"confirmation_required": true` for the `terminal` and `frappe_api` tools. The bot will have to ask: "I am about to create 10 batch records, proceed?". 
 
-3. The "Plan for the Day" feature summary
+3. Adding Python packages
+
+If you need to add Python packages (like `requests`, `pandas`, etc.) to the assistant:
+
+**See:** [docs/PACKAGES.md](docs/PACKAGES.md) for complete instructions
+
+Quick summary:
+- Add package name to `OPENCLAW_DOCKER_APT_PACKAGES` in `.env`
+- Rebuild container: `docker compose down && docker compose build && docker compose up -d`
+- Verify: `docker compose exec openclaw-gateway python3 -c "import <module>"`
+
+4. The "Plan for the Day" feature summary
 
 To get a "what is the plan today" response you use the heartbeat and memory systems.
 

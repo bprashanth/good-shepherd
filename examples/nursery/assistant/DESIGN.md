@@ -10,14 +10,44 @@ The nursery POC requires a conversational AI assistant that helps field staff ma
 - Provide proactive "plan for the day" summaries based on nursery protocols
 - Maintain context through SKILL.md, CONVERSATIONS.md, MEMORY.md, and HEARTBEAT.md files
 
-Current state:
-- Frappe containers are running (nursery_frappe, nursery_mariadb, nursery_redis)
-- Frappe API is functional with API keys available in `examples/nursery/inputs/data/.env`
-- Assistant scaffold exists with context files but no openclaw installation yet
-- ETL scripts provide working examples of Frappe API integration patterns
-- Docker patterns are well-established for adding new services
+## Current Status (2026-02-09)
 
-**Problem**: OpenClaw is not installed or configured. We need a secure, containerized setup that protects API keys while allowing the assistant to interact with Frappe.
+**Completed:**
+- ✅ Stage 1: OpenClaw installation and security setup
+  - OpenClaw installed and running (gateway + CLI containers)
+  - Security configured (.gitignore, .clawdignore)
+  - WhatsApp integration working
+  - Web UI accessible at http://localhost:18789/chat
+
+- ✅ Stage 2: Network connectivity and infrastructure
+  - Both containers on nursery_network
+  - Frappe API accessible via http://frappe:8000
+  - Environment variables loaded correctly
+  - Connectivity test passes (ping works)
+  - Workspace mounted at /home/node/.openclaw/workspace (contains assistant/ files)
+
+- ✅ Stage 3: Load nursery domain knowledge
+  - frappe_helpers.sh created with comprehensive bash functions
+  - CONTEXT.md updated with DocType schemas, API docs, batch ID algorithm
+  - SKILL.md updated with workflow rules and bash examples
+  - CONVERSATIONS.md updated with realistic dialogue examples
+  - TOOLS.md created as quick reference for available tools
+  - SCRATCHPAD.md created for agent experimentation
+  - helpers/ directory created for agent-created scripts
+  - AGENTS.md updated with file structure and autonomy permissions
+  - jq binary mounted for JSON parsing (bin/jq)
+  - Clear distinction: Frappe writes require confirmation, helper creation is autonomous
+
+**Current State:**
+- Frappe containers: Running (nursery_frappe, nursery_mariadb, nursery_redis)
+- OpenClaw containers: Running (openclaw-gateway, openclaw-cli)
+- Network: nursery_network (external, created by Frappe)
+- API connectivity: ✅ Verified
+- Context files: ✅ Complete and comprehensive
+- Helper functions: ✅ Tested and working
+- Agent autonomy: ✅ Configured with clear guardrails
+
+**Next Step: Stage 4** - Test the full integration with realistic nursery workflows
 
 ## Architecture Overview
 
@@ -571,9 +601,91 @@ filters=[
 See `frappe_api.py` for helper functions.
 ```
 
-### Stage 3: Enhance Assistant Context Files
+### Stage 3: Load Nursery Domain Knowledge
 
-**Objective**: Expand the context files with concrete examples and API mappings.
+**Objective**: Load nursery context files and create bash/curl helper scripts for Frappe API integration.
+
+**Approach**: Use bash scripts with curl (no Python dependencies needed) since:
+- curl is already available in OpenClaw container
+- Simple and transparent for debugging
+- No need to install requests library
+- Agent can see exactly what's happening
+
+#### 3.0 Create Bash Helper Scripts
+
+**File**: `examples/nursery/assistant/frappe_helpers.sh`
+
+Create reusable bash functions for Frappe API operations:
+
+```bash
+#!/bin/bash
+# Frappe API Helper Functions for OpenClaw Agent
+
+# Get documents from Frappe
+frappe_get() {
+    local doctype=$1
+    local filters=${2:-"[]"}
+    local fields=${3:-"[]"}
+
+    curl -s \
+        -H "Host: nursery.localhost" \
+        -H "Authorization: token ${FRAPPE_API_KEY}:${FRAPPE_API_SECRET}" \
+        -H "Accept: application/json" \
+        "http://frappe:8000/api/resource/${doctype}?filters=${filters}&fields=${fields}" \
+        | jq -r '.data'
+}
+
+# Create document in Frappe
+frappe_create() {
+    local doctype=$1
+    local data=$2
+
+    curl -s -X POST \
+        -H "Host: nursery.localhost" \
+        -H "Authorization: token ${FRAPPE_API_KEY}:${FRAPPE_API_SECRET}" \
+        -H "Content-Type: application/json" \
+        -d "${data}" \
+        "http://frappe:8000/api/resource/${doctype}" \
+        | jq -r '.data'
+}
+
+# Update document in Frappe
+frappe_update() {
+    local doctype=$1
+    local name=$2
+    local data=$3
+
+    curl -s -X PUT \
+        -H "Host: nursery.localhost" \
+        -H "Authorization: token ${FRAPPE_API_KEY}:${FRAPPE_API_SECRET}" \
+        -H "Content-Type: application/json" \
+        -d "${data}" \
+        "http://frappe:8000/api/resource/${doctype}/${name}" \
+        | jq -r '.data'
+}
+
+# Examples of usage in agent commands:
+#
+# Get all species:
+#   source frappe_helpers.sh && frappe_get Species
+#
+# Get batches in germination stage:
+#   source frappe_helpers.sh && frappe_get Batch '[["stage","=","germination"]]'
+#
+# Create a batch:
+#   source frappe_helpers.sh && frappe_create Batch '{"species":"Magnolia champaca","total_seeds":100}'
+```
+
+**Testing the helpers:**
+```bash
+docker compose exec openclaw-gateway bash
+source /home/node/.openclaw/workspace/frappe_helpers.sh
+frappe_get Species '[]' '["name","accepted_name"]' | jq
+```
+
+#### 3.1 Update CONTEXT.md with curl Examples
+
+Expand CONTEXT.md to show agent how to use curl for API calls.
 
 #### 3.1 Expand SKILL.md
 
@@ -1647,10 +1759,37 @@ Add sections:
 
 ## Estimated Timeline
 
-- Stage 1 (Setup & Security): 1 hour
-- Stage 2 (Frappe Integration): 1 hour
-- Stage 3 (Context Enhancement): 1 hour
-- Stage 4 (Testing): 2 hours
-- Stage 5 (Documentation): 30 mins
+- Stage 1 (Setup & Security): ✅ Complete
+- Stage 2 (Frappe Integration): ✅ Complete (connectivity verified)
+- Stage 3 (Context Enhancement): 🔄 In Progress - Next step below
+- Stage 4 (Testing): Not started
+- Stage 5 (Documentation): Not started
 
-Total: ~5.5 hours for complete implementation
+---
+
+## Next Agent: Continue from Here
+
+**Where we are:** Stage 3 Step 0 (connectivity test) is complete. Agent needs to proceed with loading nursery domain knowledge.
+
+**What to do next:**
+
+1. **Create frappe_helpers.sh** - Bash helper functions for Frappe API (see Stage 3.0 above)
+2. **Update CONTEXT.md** - Add curl examples showing how to call Frappe API
+3. **Expand SKILL.md** - Complete API mappings with bash/curl commands
+4. **Expand CONVERSATIONS.md** - Add realistic conversation flows
+5. **Test the integration** - Verify agent can understand nursery workflows
+
+**Key files to work with:**
+- `examples/nursery/assistant/frappe_helpers.sh` (create)
+- `examples/nursery/assistant/CONTEXT.md` (update)
+- `examples/nursery/assistant/SKILL.md` (update)
+- `examples/nursery/assistant/CONVERSATIONS.md` (update)
+
+**Current environment:**
+- OpenClaw running: `docker compose ps`
+- Workspace mounted: `/home/node/.openclaw/workspace` contains assistant files
+- Frappe accessible: `http://frappe:8000`
+- Auth working: Environment variables loaded correctly
+
+**Testing approach:**
+Use bash/curl instead of Python (requests library not installed, not needed)

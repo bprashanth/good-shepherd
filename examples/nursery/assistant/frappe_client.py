@@ -48,6 +48,20 @@ class FrappeClient:
             'Content-Type': 'application/json',
         })
 
+    @property
+    def headers(self):
+        """Get headers dictionary (for compatibility)."""
+        if self._has_requests:
+            return dict(self.session.headers)
+        else:
+            # Return headers dict for curl fallback
+            return {
+                'Host': self.site_name,
+                'Authorization': f'token {self.api_key}:{self.api_secret}',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+
     @classmethod
     def from_env(cls):
         """Create client from environment variables."""
@@ -192,6 +206,29 @@ class FrappeClient:
                 return result.get('message') == 'pong'
         except Exception:
             return False
+
+    def get_doctype_meta(self, doctype: str) -> Dict[str, Any]:
+        """
+        Get DocType metadata (schema) from Frappe.
+
+        This returns the full DocType definition including:
+        - All fields and their types
+        - Child tables
+        - Required fields
+        - Options/choices
+
+        Args:
+            doctype: DocType name (e.g., "Species", "Batch")
+
+        Returns:
+            Dictionary with DocType metadata
+
+        Example:
+            meta = client.get_doctype_meta("Species")
+            for field in meta['fields']:
+                print(f"{field['fieldname']}: {field['fieldtype']} (required: {field.get('reqd', 0)})")
+        """
+        return self.get("DocType", name=doctype)
 
     # Curl fallback methods (if requests library not available)
     def _curl_get(self, url: str, params: Dict) -> Any:

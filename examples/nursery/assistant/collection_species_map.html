@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Collection GPS Map</title>
+  <link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'/>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100vw; }
+    .legend { position:absolute; top:10px; right:10px; background:white; padding:10px; border:1px solid #ccc; z-index:1000; }
+  </style>
+</head>
+<body>
+<div id='map'></div>
+<div class='legend'><b>Species</b><br><div><span style='display:inline-block;width:10px;height:10px;background:#1f77b4;margin-right:6px;'></span>Mesua ferrea</div><div><span style='display:inline-block;width:10px;height:10px;background:#ff7f0e;margin-right:6px;'></span>Heynea trijuga</div><div><span style='display:inline-block;width:10px;height:10px;background:#2ca02c;margin-right:6px;'></span>Canarium strictum</div><div><span style='display:inline-block;width:10px;height:10px;background:#d62728;margin-right:6px;'></span>Bischofia javanica</div></div>
+<script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'></script>
+<script>
+  var map = L.map('map').setView([10.152890749181816, 76.2116527959091], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  L.circleMarker([10.085177297,76.263409254], {radius:8, color:'#1f77b4', fillColor:'#1f77b4', fillOpacity:0.85}).addTo(map).bindPopup("<b>Mesua ferrea</b><br>Collection: 10<br>Date: 2024-01-05<br>Locality: Pudhuthotam<br>GPS: 10.085177297, 76.263409254");L.circleMarker([10.2122065,76.210581074], {radius:8, color:'#1f77b4', fillColor:'#1f77b4', fillOpacity:0.85}).addTo(map).bindPopup("<b>Mesua ferrea</b><br>Collection: 12<br>Date: 2024-01-12<br>Locality: Surulimalai<br>GPS: 10.2122065, 76.210581074");L.circleMarker([10.279086989,76.127847327], {radius:8, color:'#1f77b4', fillColor:'#1f77b4', fillOpacity:0.85}).addTo(map).bindPopup("<b>Mesua ferrea</b><br>Collection: 17<br>Date: 2024-01-19<br>Locality: Sankarankudi<br>GPS: 10.279086989, 76.127847327");L.circleMarker([10.023271943,76.010848358], {radius:8, color:'#1f77b4', fillColor:'#1f77b4', fillOpacity:0.85}).addTo(map).bindPopup("<b>Mesua ferrea</b><br>Collection: 2<br>Date: 2024-01-02<br>Locality: 36 HPB<br>GPS: 10.023271943, 76.010848358");L.circleMarker([10.0095429,76.099676615], {radius:8, color:'#ff7f0e', fillColor:'#ff7f0e', fillOpacity:0.85}).addTo(map).bindPopup("<b>Heynea trijuga</b><br>Collection: 11<br>Date: 2024-01-07<br>Locality: Nadumalai<br>GPS: 10.0095429, 76.099676615");L.circleMarker([10.171390889,76.374129669], {radius:8, color:'#ff7f0e', fillColor:'#ff7f0e', fillOpacity:0.85}).addTo(map).bindPopup("<b>Heynea trijuga</b><br>Collection: 18<br>Date: 2024-01-19<br>Locality: Sankarankudi<br>GPS: 10.171390889, 76.374129669");L.circleMarker([10.150149032,76.364266156], {radius:8, color:'#ff7f0e', fillColor:'#ff7f0e', fillOpacity:0.85}).addTo(map).bindPopup("<b>Heynea trijuga</b><br>Collection: 9<br>Date: 2024-01-05<br>Locality: Pudhuthotam<br>GPS: 10.150149032, 76.364266156");L.circleMarker([10.216866555,76.011660137], {radius:8, color:'#2ca02c', fillColor:'#2ca02c', fillOpacity:0.85}).addTo(map).bindPopup("<b>Canarium strictum</b><br>Collection: 13<br>Date: 2024-01-12<br>Locality: Surulimalai<br>GPS: 10.216866555, 76.011660137");L.circleMarker([10.333527609,76.142365902], {radius:8, color:'#2ca02c', fillColor:'#2ca02c', fillOpacity:0.85}).addTo(map).bindPopup("<b>Canarium strictum</b><br>Collection: 8<br>Date: 2024-01-03<br>Locality: Manamboli<br>GPS: 10.333527609, 76.142365902");L.circleMarker([10.17837988,76.336784949], {radius:8, color:'#d62728', fillColor:'#d62728', fillOpacity:0.85}).addTo(map).bindPopup("<b>Bischofia javanica</b><br>Collection: 16<br>Date: 2024-01-12<br>Locality: Surulimalai<br>GPS: 10.17837988, 76.336784949");L.circleMarker([10.022198647,76.386611314], {radius:8, color:'#d62728', fillColor:'#d62728', fillOpacity:0.85}).addTo(map).bindPopup("<b>Bischofia javanica</b><br>Collection: 7<br>Date: 2024-01-03<br>Locality: Manamboli<br>GPS: 10.022198647, 76.386611314");
+</script>
+</body>
+</html>
