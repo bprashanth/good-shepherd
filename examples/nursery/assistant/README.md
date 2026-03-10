@@ -1,49 +1,100 @@
-# Openclaude nursery assistant
+# OpenClaw Nursery Assistant
 
-This directory is the working directory for the openclaw nursery assistant. 
-Running the tui
-```console 
-$ docker compose exec -it openclaw-gateway node dist/index.js tui
+This directory contains the Nursery Assistant configuration for OpenClaw.
+
+## What Works Right Now
+
+The reliable path is:
+1. Docker setup
+2. Codex provider configuration
+3. Telegram channel enable + pairing
+4. Run the TUI
+
+WhatsApp is currently not working in this setup.
+
+## Docker Setup
+
+From this directory:
+
+```console
+docker compose build
+docker compose up -d
 ```
 
-1. The brain: how clause code logs in 
+Useful commands:
 
-- when you run openclaw onboard, select Anthropic as the provider
-- If you have a claude subscription, run `claude setup-token` in the terminal. This generats a temporary security token you can paste into OpenClaw. 
-- pay as you go: use the `sk-ant-...` API key from the anthroipc console. OpenClaw stores this in a restricted file at ~/.openclaw/openclaw.json
+```console
+docker compose ps
+docker compose logs -f openclaw-gateway
+docker compose restart openclaw-gateway
+```
 
-2. Security: protecting keys 
+## Codex Configuration
 
-- sandboxing: during setup, enable docker sandboxing. It can only see files in `assistant/`. It definitely shouldn't be able to see `~/.ssh` etc. 
+Configure provider credentials in OpenClaw during onboarding.
 
-- However the key should be visible (openclaw.json), BUT it should be added to the `.clawdignore` file, just like `.gitignore`. Add `.env`, `*.key` and `config.json` to it. The AI should be "blind" to these files and unable to read or upload them. 
+Options:
+- Subscription flow: run `setup-token` and paste the temporary token into OpenClaw. 
+- API key flow: use your provider API key and store it via OpenClaw config.
 
-- In the `openclas.json`, set `"confirmation_required": true` for the `terminal` and `frappe_api` tools. The bot will have to ask: "I am about to create 10 batch records, proceed?". 
+From [docs](https://docs.openclaw.ai/install/docker)
+```
+If you pick OpenAI Codex OAuth in the wizard, it opens a browser URL and tries to capture a callback on http://127.0.0.1:1455/auth/callback. In Docker or headless setups that callback can show a browser error. Copy the full redirect URL you land on and paste it back into the wizard to finish auth.
+```
 
-3. Adding Python packages
+## Security Considerations
 
-If you need to add Python packages (like `requests`, `pandas`, etc.) to the assistant:
+- Enable Docker sandboxing during setup so the agent is limited to `assistant/` and cannot access sensitive paths like `~/.ssh`.
+- Keep credentials in `openclaw.json`, but block secret files from agent access via `.clawdignore` (at minimum: `.env`, `*.key`, `config.json`).
+- In `openclaw.json`, set `"confirmation_required": true` for `terminal` and `frappe_api` so write actions always require explicit approval.
 
-**See:** [docs/PACKAGES.md](docs/PACKAGES.md) for complete instructions
+## Telegram Setup (Verified)
 
-Quick summary:
-- Add package name to `OPENCLAW_DOCKER_APT_PACKAGES` in `.env`
-- Rebuild container: `docker compose down && docker compose build && docker compose up -d`
-- Verify: `docker compose exec openclaw-gateway python3 -c "import <module>"`
+Run these commands exactly:
 
-4. The "Plan for the Day" feature summary
+```console
+docker compose run --rm openclaw-cli plugins enable telegram
+```
 
-To get a "what is the plan today" response you use the heartbeat and memory systems.
+Expected result includes: `Enabled plugin "telegram". Restart the gateway to apply.`
 
-- Heartbeat logic: configure a heartbeat in `openclaw.json` to run eg on some schedule that is also testable (in a test this might be every 1m). 
-- The routine: 1. the bot wakes up and runs a "Search" skill across the frappe db (eg `GET /api/resource/Nursery Batch?filters=[["status", "=", "Collected"]]`). 2. It compares those results against the Protocols in your `CONTEXT.md`. 3. IT summarizes the gaps (eg "10 specis from yesterday have no batch IDs"). 4. It sens the messages before the user even asks, as a digest and then breaks it down based on user response/reply. 
+```console
+docker compose run --rm openclaw-cli channels add --channel telegram --token <token>
+```
 
-4. Testing
+Expected result includes: `Added Telegram account "default".`
 
-- Phase 1: Use `openclaw chat` and type "What is the plan today?" and watch it print the api calls its trying to make. Continue via a realisic scenario converstaion. OR start by ingesting a couple of species/collections and then proceeding to the plan. 
+```console
+docker compose run --rm openclaw-cli pairing approve telegram <pairing code from telegram>
+```
 
-- Phase 2: Whatsapp. Once the terminal tests pass, run `openclas channels login --channel whatsapp`. Scane the wr code.
+Then run the TUI:
 
-## Appendix 
+```console
+docker compose exec -it openclaw-gateway node dist/index.js tui
+```
 
-* This assistant uses [openclaw](https://docs.openclaw.ai/install/docker) with a custom cli agent. 
+## Adding Packages
+
+Quick steps:
+- Add package names to `OPENCLAW_DOCKER_APT_PACKAGES` in `.env`.
+- Rebuild and restart: `docker compose down && docker compose build && docker compose up -d`.
+- Verify import: `docker compose exec openclaw-gateway python3 -c "import <module>"`.
+
+See [docs/PACKAGES.md](docs/PACKAGES.md) for full details.
+
+## Heartbeat Plan Routine
+
+- Configure a heartbeat schedule in `openclaw.json` (use a short interval like every 1 minute for testing).
+- On each run, the assistant searches Frappe (for example, collected batches), compares results with protocol rules in `CONTEXT.md`, summarizes gaps, and sends a digest proactively.
+- Follow-up responses should break the digest into actionable next steps based on user replies.
+
+## Notes
+
+- If plugin or channel changes do not appear, restart gateway:
+
+```console
+docker compose restart openclaw-gateway
+```
+
+- Keep assistant behavior and API constraints in `SKILL.md` and `CONTEXT.md`.

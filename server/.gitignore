@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.venv/
+venv/
+
+# Deploy outputs (contain resource IDs and URLs)
+deploy/outputs.env
+
+# Test credentials (contain passwords)
+deploy/test-credentials.env

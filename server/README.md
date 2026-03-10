@@ -113,6 +113,20 @@ TEST_USERNAME=someuser@foo.com
 TEST_PASSWORD='Somepassword'
 ```
 
+The deployment test scripts expect three config sources:
+
+- `server/deploy/config.sh` for shared AWS region and Cognito settings
+- `server/deploy/outputs.env` for the deployed API Gateway URL
+- `server/deploy/test-credentials.env` for the test Cognito username/password
+
+If you want to inspect the resolved values in your current shell first:
+
+```bash
+source server/deploy/config.sh
+source server/deploy/outputs.env
+source server/deploy/test-credentials.env
+```
+
 Then run the end-to-end test:
 
 ```bash
@@ -130,6 +144,19 @@ This script:
 8. Verifies unauthenticated sessions access is blocked
 
 Each test prints the curl command for manual rerun.
+
+To fetch a fresh sessions snapshot for a specific org and save it locally:
+
+```bash
+server/test/get_db.sh --org ncf
+```
+
+By default this writes `server/test/photomon/db.<org>.fresh.json`. You can
+override the path with `--out /path/to/file.json`.
+
+If `server/deploy/config.sh` cannot load Cognito config from S3, set
+`COGNITO_POOL_ID` and `COGNITO_CLIENT_ID` in your shell before running
+`test_deployment.sh` or `get_db.sh`.
 
 ### Add a Cognito user
 
@@ -161,6 +188,7 @@ auth flows, and JWT authorizer issuer/audience. If something is wrong you'll
 see it there, not as a mystery 401 at test time.
 
 For full details see:
+- [`docs/testing.md`](docs/testing.md) - test script prerequisites and workflows
 - [**Client Integration Guide**](docs/manuals/client_integration.md) — how to authenticate and call every endpoint (request/response examples, token handling, migration from static `db.json`)
 - [`docs/cross_app_auth.md`](docs/cross_app_auth.md) — shared Cognito pool architecture across apps
 
@@ -172,6 +200,7 @@ server/
 ├── docs/
 │   ├── design/server_design.md     # Architecture + Docker strategy
 │   ├── design/session_api.md       # Sessions/sites API design
+│   ├── testing.md           # Test prerequisites and deployment verification
 │   ├── manuals/cross_app_auth.md    # Shared Cognito pool design
 │   ├── manuals/client_integration.md    # Integrating a new client
 │   └── checkpoint.md        # Implementation checkpoint
@@ -203,6 +232,7 @@ server/
 └── test/
     ├── test_local.sh        # Dev verification
     ├── test_deployment.sh   # Prod verification
+    ├── get_db.sh            # Fetch /api/sessions/{org} to a local json file
     └── forms/               # Test data (Textract fixtures)
         ├── 000_layout.json
         ├── 001_layout.json

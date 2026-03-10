@@ -136,3 +136,10 @@ examples/**/frappe/apps/frappe/
 examples/**/frappe/apps/erpnext/
 examples/**/frappe/apps/payments/
 examples/**/frappe/apps/hrms/
+
+# ============================================================
+# Misc test files 
+# ============================================================
+
+examples/alienwise/data/
+server/test/photomon/*.json
