@@ -174,7 +174,7 @@ authError           // ref
 
 ### Login screen and routing 
 
-- Username + password fields
+- Username + password + org fields
 - Submit -> login() -> on success redirect to capture
 - Error text for wrong credentials
 - No password reset, no signup - admin manages users
@@ -184,7 +184,7 @@ No `NEW_PASSWORD_REQUIRED` handling - admin sets permanent passwords.
 
 ### API fetches 
 
-The API is exposed to the static frontend via a `VITE_API_BASE_URL` env var, ideally set in the frontend itself or exported via eg netlify (or a `.env` file). 
+The API is exposed to the static frontend via a `VITE_API_BASE_URL` env var, ideally set in the frontend itself or exported via eg netlify (or a `.env` file). Some APIs, like the APIs that aggregate sessions, require `org` in addition to the user credentials. 
 
 ```js
 // VITE_API_BASE_URL=https://<api-id>.execute-api.ap-south-1.amazonaws.com/prod

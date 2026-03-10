@@ -59,7 +59,7 @@ client = get_client()
        bed="B1",
        planted_by="Field Staff"
    )
-   print(f"✓ Batch {batch['name']} created")
+   print(f"- Batch {batch['name']} created")
    ```
 
 3. Collections are automatically linked via create_batch_from_collections()
@@ -102,8 +102,8 @@ Confirm? (yes/no)
 2. After confirmation, create germination event and update stage:
    ```python
    event = log_germination(client, "15-01-24-MAGCHA-01", quantity=50)
-   print(f"✓ Germination event recorded")
-   print(f"✓ Batch stage updated to Germination")
+   print(f"- Germination event recorded")
+   print(f"- Batch stage updated to Germination")
    ```
 
 3. Stage is automatically updated by log_germination()
@@ -151,9 +151,9 @@ Confirm? (yes/no)
        to_bed="D3",
        quantity=40
    )
-   print(f"✓ Transplant event recorded")
-   print(f"✓ Batch location updated to D3")
-   print(f"✓ Batch stage updated to Growing")
+   print(f"- Transplant event recorded")
+   print(f"- Batch location updated to D3")
+   print(f"- Batch stage updated to Growing")
    ```
 
 3. Location and stage are automatically updated by log_transplant()
@@ -198,7 +198,7 @@ Confirm? (yes/no)
        max_height_cm=18.0,
        notes="Growth measurement"
    )
-   print(f"✓ Growth observation recorded")
+   print(f"- Growth observation recorded")
    ```
 
 **Confirmation Template:**
@@ -239,8 +239,8 @@ Confirm? (yes/no)
        quantity=30,
        notes="Sale to customer"
    )
-   print(f"✓ Exit event recorded")
-   print(f"✓ Batch stage updated to Exit")
+   print(f"- Exit event recorded")
+   print(f"- Batch stage updated to Exit")
    ```
 
 3. Stage is automatically updated by log_exit_event()
@@ -271,7 +271,7 @@ event = log_move_event(
     to_bed="D4",
     quantity=20
 )
-print(f"✓ Move event recorded")
+print(f"- Move event recorded")
 ```
 
 ---
@@ -289,7 +289,7 @@ event = log_failure_event(
     quantity=10,
     notes="Seedling mortality"
 )
-print(f"✓ Failure event recorded")
+print(f"- Failure event recorded")
 ```
 
 ---
