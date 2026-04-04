@@ -9,6 +9,7 @@
 
 ```console
 # From repo root
+$ sudo systemctl stop mariadb redis-server 
 $ docker compose -f docker/step0_docker-compose.yml up -d
 $ docker logs nursery_frappe --follow
 ```
