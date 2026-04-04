@@ -12,7 +12,9 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - nursery_network
+      nursery_network:
+        aliases:
+          - mariadb
 
   redis:
     image: redis:6-alpine
@@ -20,7 +22,9 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - nursery_network
+      nursery_network:
+        aliases:
+          - redis
 
   frappe:
     image: frappe/bench:v5.24.1
