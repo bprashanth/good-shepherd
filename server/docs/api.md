@@ -13,24 +13,44 @@ Health check. No auth required.
 
 ### `POST /api/upload`
 
-Upload a form image, process via Textract, return Excel.
+Upload a form image, process via Textract, return JSON with workbook + row bboxes.
 
 **Request**: `multipart/form-data`
 ```
 image: <file>    (JPEG/PNG form image)
 ```
 
-**Response** `200`: `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
-- Body: `.xlsx` file bytes
-- Header `X-Form-Summary`: `{"rowCount": 12, "flaggedCount": 2}`
+**Response** `200`: `application/json`
+```json
+{
+  "xlsx": "<base64-encoded xlsx>",
+  "rows": [
+    {
+      "system_serial": 1,
+      "bbox": { "left": 0.05, "top": 0.12, "width": 0.9, "height": 0.03 }
+    }
+  ],
+  "summary": { "rowCount": 12, "flaggedCount": 2 }
+}
+```
 
 **Example**:
 ```bash
 curl -X POST "${BASE_URL}/api/upload" \
   -H "Authorization: Bearer ${TOKEN}" \
-  -F "image=@form.jpg" \
-  -o output.xlsx
+  -F "image=@form.jpg"
 ```
+
+__Field values__
+
+- **`system_serial`**: Monotonic integer **in sheet row order**, one entry per **table
+  data row** written by `excel_service` (legend and universal-field rows are omitted;
+  each table’s header row is omitted). If multiple Textract tables are written on the
+  same sheet, IDs continue across tables in the same order as rows appear in the
+  workbook (so bbox order matches Excel walk order).
+- **`bbox`**: Axis-aligned union of that row’s table cell boxes; `left` / `top` /
+  `width` / `height` are normalized fractions (same convention as `BoxOverlay`).
+
 
 ---
 
@@ -41,15 +61,14 @@ Useful for testing without incurring Textract costs.
 
 **Request**: `application/json` — a Textract `AnalyzeDocument` response body.
 
-**Response** `200`: `.xlsx` file (same as above).
+**Response** `200`: JSON payload (same shape as `/api/upload`).
 
 **Example**:
 ```bash
 curl -X POST "${BASE_URL}/api/upload/json" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @textract_output.json \
-  -o output.xlsx
+  -d @textract_output.json
 ```
 
 ---

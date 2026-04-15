@@ -65,6 +65,12 @@ and session/sites endpoints (if AWS creds are available). Each test prints
 the curl command so you can rerun it by hand for finer verification (e.g.,
 piping to `jq`). If the server isn't running it prints the command to start it.
 
+You can also test out the bbox logic independently
+```bash
+cd server/test/forms
+python3 render_row_bbox_previews.py --input-image images/segmented_000.jpg --match-word kage
+```
+
 ### Docker Compose (integration test)
 
 ```bash
@@ -191,51 +197,3 @@ For full details see:
 - [`docs/testing.md`](docs/testing.md) - test script prerequisites and workflows
 - [**Client Integration Guide**](docs/manuals/client_integration.md) — how to authenticate and call every endpoint (request/response examples, token handling, migration from static `db.json`)
 - [`docs/cross_app_auth.md`](docs/cross_app_auth.md) — shared Cognito pool architecture across apps
-
-## Documentation and file layout 
-
-```
-server/
-├── main.py                  # FastAPI app, CORS, router registration
-├── docs/
-│   ├── design/server_design.md     # Architecture + Docker strategy
-│   ├── design/session_api.md       # Sessions/sites API design
-│   ├── testing.md           # Test prerequisites and deployment verification
-│   ├── manuals/cross_app_auth.md    # Shared Cognito pool design
-│   ├── manuals/client_integration.md    # Integrating a new client
-│   └── checkpoint.md        # Implementation checkpoint
-├── routers/
-│   ├── upload.py            # /api/upload, /api/upload/json
-│   ├── analyze.py           # /api/analyze, /api/analyze/json
-│   └── sessions.py          # /api/sessions/{org}, /api/sites/{org}
-├── services/
-│   ├── textract_service.py  # AWS Textract wrapper
-│   ├── table_extractor.py   # Textract response → structured data
-│   ├── excel_service.py     # Structured data → .xlsx bytes
-│   ├── s3_service.py        # S3 utilities (list, fetch, presign)
-│   └── sessions_service.py  # Session/sites fetch + transform
-├── Dockerfile               # Python 3.12 + Lambda Web Adapter
-├── docker-compose.yml       # Integration test (mounts ~/.aws)
-├── .gitignore               # Deploy secrets, Python bytecode
-├── requirements.txt
-├── deploy/
-│   ├── config.sh            # Shared constants (region, ECR, Cognito from S3)
-│   ├── setup.sh             # One-time infra (ECR, IAM, API Gateway)
-│   ├── build.sh             # Docker build + smoke test
-│   ├── push.sh              # ECR push + Lambda create/update
-│   ├── deploy.sh            # Orchestrator: build → test → push
-│   ├── add-user.sh          # Idempotent Cognito user creation
-│   ├── trust-policy.json    # Lambda assume-role
-│   ├── lambda-policy.json   # Textract + CloudWatch permissions
-│   ├── outputs.env          # (generated) API Gateway ID, URL, etc.
-│   └── test-credentials.env # (gitignored) TEST_USERNAME, TEST_PASSWORD
-└── test/
-    ├── test_local.sh        # Dev verification
-    ├── test_deployment.sh   # Prod verification
-    ├── get_db.sh            # Fetch /api/sessions/{org} to a local json file
-    └── forms/               # Test data (Textract fixtures)
-        ├── 000_layout.json
-        ├── 001_layout.json
-        ├── 002_layout.json
-        └── handwritten.jpg
-```
