@@ -12,6 +12,35 @@ from textractor.entities.document import Document
 from textractor.data.constants import TextTypes
 
 
+def _cell_bbox(cell) -> dict[str, float] | None:
+    """Return normalized bbox for a table cell if available."""
+    bbox = getattr(cell, "bbox", None)
+    if bbox is None:
+        return None
+    return {
+        "left": float(bbox.x),
+        "top": float(bbox.y),
+        "width": float(bbox.width),
+        "height": float(bbox.height),
+    }
+
+
+def _merge_bboxes(bboxes: list[dict[str, float]]) -> dict[str, float] | None:
+    """Union row cell boxes into one normalized rectangle."""
+    if not bboxes:
+        return None
+    left = min(b["left"] for b in bboxes)
+    top = min(b["top"] for b in bboxes)
+    right = max(b["left"] + b["width"] for b in bboxes)
+    bottom = max(b["top"] + b["height"] for b in bboxes)
+    return {
+        "left": left,
+        "top": top,
+        "width": right - left,
+        "height": bottom - top,
+    }
+
+
 def extract(textract_response: dict) -> dict:
     """
     Parse a raw Textract API response and extract structured table data.
@@ -187,6 +216,7 @@ def _extract_table(table) -> dict:
             continue
         cells = rows_by_index[row_idx]
         row_data = {"_row_index": row_idx, "_cells": []}
+        cell_bboxes = []
         for cell in sorted(cells, key=lambda c: c.col_index):
             header_name = col_to_header.get(cell.col_index, f"col_{cell.col_index}")
             cell_info = {
@@ -197,6 +227,13 @@ def _extract_table(table) -> dict:
             }
             row_data[header_name] = cell.text.strip()
             row_data["_cells"].append(cell_info)
+            cell_bbox = _cell_bbox(cell)
+            if cell_bbox:
+                cell_bboxes.append(cell_bbox)
+
+        merged_row_bbox = _merge_bboxes(cell_bboxes)
+        if merged_row_bbox:
+            row_data["_bbox"] = merged_row_bbox
         data_rows.append(row_data)
 
     # Text type distribution

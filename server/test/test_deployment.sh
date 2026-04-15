@@ -8,6 +8,8 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DEPLOY_DIR="$(cd "$SCRIPT_DIR/../deploy" && pwd)"
 DATA_DIR="$SCRIPT_DIR/forms"
+LAYOUTS_DIR="$SCRIPT_DIR/forms/layouts"
+IMAGES_DIR="$SCRIPT_DIR/forms/images"
 
 echo "Loading config from: $DEPLOY_DIR/config.sh"
 source "$DEPLOY_DIR/config.sh"
@@ -95,11 +97,11 @@ fi
 echo ""
 echo "=== 5. Authenticated JSON upload ==="
 
-echo "  curl -s -X POST '${APIGW_URL}/api/upload/json' -H 'Authorization: Bearer <token>' -H 'Content-Type: application/json' -d @${DATA_DIR}/000_layout.json -o /tmp/lambda_test.xlsx"
+echo "  curl -s -X POST '${APIGW_URL}/api/upload/json' -H 'Authorization: Bearer <token>' -H 'Content-Type: application/json' -d @${LAYOUTS_DIR}/000_layout.json -o /tmp/lambda_test.xlsx"
 STATUS=$(curl -s -X POST "${APIGW_URL}/api/upload/json" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
-  -d @"${DATA_DIR}/000_layout.json" \
+  -d @"${LAYOUTS_DIR}/000_layout.json" \
   -o /tmp/lambda_test.xlsx -w "%{http_code}")
 check "POST /api/upload/json with token → 200" "200" "$STATUS"
 
@@ -107,10 +109,10 @@ check "POST /api/upload/json with token → 200" "200" "$STATUS"
 echo ""
 echo "=== 6. Authenticated image upload (Textract) ==="
 
-echo "  curl -s -X POST '${APIGW_URL}/api/upload' -H 'Authorization: Bearer <token>' -F 'image=@${DATA_DIR}/handwritten.jpg' -o /tmp/lambda_live.xlsx"
+echo "  curl -s -X POST '${APIGW_URL}/api/upload' -H 'Authorization: Bearer <token>' -F 'image=@${IMAGES_DIR}/handwritten.jpg' -o /tmp/lambda_live.xlsx"
 STATUS=$(curl -s -X POST "${APIGW_URL}/api/upload" \
   -H "Authorization: Bearer ${TOKEN}" \
-  -F "image=@${DATA_DIR}/handwritten.jpg" \
+  -F "image=@${IMAGES_DIR}/handwritten.jpg" \
   -o /tmp/lambda_live.xlsx -w "%{http_code}")
 check "POST /api/upload with token → 200" "200" "$STATUS"
 
