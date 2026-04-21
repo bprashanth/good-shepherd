@@ -1,0 +1,96 @@
+{
+  "aoi": {
+    "path": "aoi.geojson",
+    "bounds": [
+      76.97708585384386,
+      10.340507235499812,
+      77.01481509577688,
+      10.378236477432832
+    ]
+  },
+  "benchmark_sites": {
+    "path": "benchmark_sites.geojson",
+    "count": 8
+  },
+  "suggestions": {
+    "path": "suggestions.geojson",
+    "count": 8
+  },
+  "selected_plot": {
+    "path": "selected_plot.geojson",
+    "json_path": "selected_plot.json",
+    "center": [
+      76.97916666650352,
+      10.3541666665775
+    ]
+  },
+  "layers": {
+    "benchmark_similarity": {
+      "path": "ae_similarity.tif",
+      "stats": {
+        "valid_min": 0.5967827439308167,
+        "valid_max": 0.9938600063323975,
+        "benchmark_p10": 0.9195788502693176
+      },
+      "style": {
+        "palette": [
+          "#7f0000",
+          "#d7301f",
+          "#fdae61",
+          "#fee08b",
+          "#66bd63",
+          "#1a9850"
+        ],
+        "display_min": 0.6539364457130432,
+        "display_mid": 0.7672712802886963,
+        "display_max": 0.9195788502693176,
+        "gamma": 0.78,
+        "nodata": -9999.0,
+        "description": "Values near benchmark saturate green."
+      }
+    },
+    "invasive_probability": {
+      "path": "invasive_probability.tif",
+      "species_sources": [
+        "Cestrum_aurantiacum",
+        "Chromolaena_odorata",
+        "Lantana_camara",
+        "Senna_spectabilis"
+      ],
+      "stats": {
+        "valid_min": 0.9329860210418701,
+        "valid_max": 0.9466009736061096,
+        "p90": 0.9462419748306274,
+        "p995": 0.9465899467468262
+      },
+      "style": {
+        "palette": [
+          "#fff5eb",
+          "#fd8d3c",
+          "#f03b20",
+          "#bd0026",
+          "#67000d"
+        ],
+        "display_min": 0.9462419748306274,
+        "display_max": 0.9465899467468262,
+        "gamma": 0.85,
+        "nodata": -9999.0,
+        "transparent_below_min": true,
+        "description": "Combined invasive probability."
+      }
+    }
+  },
+  "assumptions": {
+    "focus_aoi_center": [
+      76.99557,
+      10.35952
+    ],
+    "focus_aoi_radius_m": 2000,
+    "selected_plot_center": [
+      76.97916666650352,
+      10.3541666665775
+    ],
+    "similarity_metric": "cosine similarity to benchmark centroid",
+    "invasive_combination_rule": "pixelwise max across bundled invasive TIFFs"
+  }
+}
