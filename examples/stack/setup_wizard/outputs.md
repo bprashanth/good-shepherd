@@ -130,6 +130,20 @@ Before Stage 2 begins, manually verify in the UI that:
 - the suggestion points are plausible anti-benchmark candidates
 - the red selected plot appears in the southwest hotspot and is the one to use downstream
 
+## Stage 1 Run And Verify
+
+Serve this stage over HTTP from the repo root:
+
+```bash
+cd /home/desinotorious/src/github.com/bprashanth/good-shepherd
+source .venv/bin/activate
+python -m http.server 8031 --directory examples/stack/setup_wizard
+```
+
+Then navigate to:
+
+- `http://localhost:8031/wizard.html`
+
 ## Stage 2 Preview
 
 Stage 2 can now start from the saved `selected_plot.json` handoff rather than requiring another round of plot picking.
