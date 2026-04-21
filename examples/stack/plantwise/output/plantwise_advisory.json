@@ -1,0 +1,40 @@
+{
+  "plot_id": "stack_focus_selected_plot",
+  "plot_name": "Focus suggestion plot",
+  "aoi_center": {
+    "lon": 76.99557,
+    "lat": 10.35952
+  },
+  "aoi_radius_m": 2000,
+  "plot_center": {
+    "lon": 76.97916666650352,
+    "lat": 10.3541666665775
+  },
+  "lantana_detected": true,
+  "message": "Replant with a shade-first native mix led by Macaranga peltata. Invasive: lantana was detected in the plot, so replanting should only happen post removal.",
+  "learn_more": "The theory of shading out Lantana camara with Macaranga peltata is an ecological restoration approach based on utilizing rapid-growing native pioneer species to create a dense canopy that restricts light, thereby suppressing the light-dependent invasive shrub. Lantana is a major weed in the Western Ghats of India, requiring high sunlight for survival. Macaranga peltata is a fast-growing, large-leaved native tree that acts as an early succession species.",
+  "pioneer_shade_species": "Macaranga peltata",
+  "nurseries": [
+    {
+      "name": "oxygen plants",
+      "url": "https://share.google/5eM3hDjhopPucY7ny",
+      "species": [
+        "Macaranga peltata",
+        "Acronychia pedunculata",
+        "Actinodaphne wightiana",
+        "Cinnamomum malabatrum",
+        "Persea macrantha"
+      ]
+    },
+    {
+      "name": "pollachi greens",
+      "url": "https://share.google/h1dnYfglQRn5e2qmP",
+      "species": [
+        "Maesa indica",
+        "Litsea floribunda",
+        "Syzygium densiflorum",
+        "Ardisia pauciflora"
+      ]
+    }
+  ]
+}

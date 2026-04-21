@@ -22,9 +22,13 @@ This input contains:
 
 ## Stage Outputs
 
-This stage is a static frontend, so the primary artifacts are runtime workflow outputs rather than files written directly by the browser into `output/`.
+This stage is a static frontend, so the primary artifacts are runtime workflow outputs plus a documented contract in `output/`.
 
-Conceptual runtime outputs:
+Documented contract artifact:
+
+- `output/pwa_runtime_contract.json`
+
+Runtime outputs described by that contract:
 
 - upload manifest entries keyed by `plot_id` and survey target
 - submission state per target
@@ -49,6 +53,20 @@ Before leaving this stage, manually verify in the UI that:
 - uploads mark the active target as complete
 - a filename containing `lantana` triggers the advisory
 - a non-lantana filename does not trigger the advisory
+
+## Stage Run And Verify
+
+Serve this stage over HTTP from the repo root:
+
+```bash
+cd /home/desinotorious/src/github.com/bprashanth/good-shepherd
+source .venv/bin/activate
+python -m http.server 8032 --directory examples/stack/pwa
+```
+
+Then navigate to:
+
+- `http://localhost:8032/index.html`
 
 ## Next Handoff
 
