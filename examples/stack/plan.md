@@ -2,6 +2,48 @@
 
 This document breaks `examples/stack/` into staged implementation and verification gates.
 
+## Progress Checkpoint
+
+Completed and manually verified so far:
+
+- Stage 0: stack scaffolding and stage contracts
+- Stage 1: site selection foundation in `setup_wizard/`
+- Stage 2: site selection final handoff in `setup_wizard/`
+- Stage 3: site assessment in `pwa/`
+- Stage 4: Plantwise in `plantwise/`
+
+Current checkpoint decisions:
+
+- `examples/stack/pwa/` is the shared app for both site assessment and site monitoring
+- the separate site-monitoring stage is intentionally deferred because it is a `web/` entry/linking concern more than a new implementation concern
+- the next implementation stage is `examples/stack/indicators/`
+- `web/` still remains last
+
+Current stable handoff artifacts:
+
+- site selection handoff: `examples/stack/setup_wizard/output/selected_plot.json`
+- site assessment contract: `examples/stack/pwa/output/pwa_runtime_contract.json`
+- Plantwise contract: `examples/stack/plantwise/output/plantwise_advisory.json`
+
+## Next Agent Handoff
+
+If a new agent takes over from here, start with Stage 6 in `examples/stack/indicators/`.
+
+Use these assumptions without reopening earlier stages unless the user asks:
+
+- the selected downstream plot is fixed and already approved
+- Plantwise is approved with the AOI rendered as a circle from center/radius, not a copied polygon
+- the PWA geometry is approved as one `20 x 20 m` plot with four `2 x 2 m` corner quadrats plus center
+- site monitoring should reuse the same PWA and be handled later when `web/` links are wired
+
+Indicators stage guidance:
+
+- mirror `examples/indicators/` only loosely; the deliverable is a lightweight progression viewer
+- use a fixed curated progression from `examples/stack/indicators/input/`
+- keep the UI to a simple two-panel progression with synchronized image and indicator stepping
+- write exact emitted files into `examples/stack/indicators/output/` and then update `examples/stack/indicators/outputs.md`
+- add the serve command for Indicators to `examples/stack/DEPLOYMENT.md` when that stage is ready for verification
+
 The goal is to cargo-cult the existing `examples/` stack as closely as possible:
 
 - `examples/stack/web/` mirrors `examples/web/`

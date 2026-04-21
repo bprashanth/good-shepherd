@@ -1,0 +1,74 @@
+{
+  "title": "Indicators",
+  "site": {
+    "plot_id": "stack_focus_selected_plot",
+    "plot_label": "Plot 1",
+    "lat": 10.3541666665775,
+    "lon": 76.97916666650352,
+    "aoi_center": {
+      "lat": 10.35952,
+      "lon": 76.99557
+    },
+    "aoi_radius_m": 2000,
+    "invasive": "yes (lantana)",
+    "removal": "yes (cutting)",
+    "nursery": {
+      "name": "pollachi greens",
+      "url": "https://share.google/h1dnYfglQRn5e2qmP"
+    },
+    "replantation_species": [
+      "Maesa indica",
+      "Litsea floribunda",
+      "Syzygium densiflorum",
+      "Ardisia pauciflora"
+    ],
+    "summary_note": "Cycle images to see recovery."
+  },
+  "adult_tree_plot": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          76.97907480909603,
+          10.354076838472833
+        ],
+        [
+          76.97925738990031,
+          10.354075715663546
+        ],
+        [
+          76.97925852396321,
+          10.35425649464576
+        ],
+        [
+          76.9790759430545,
+          10.35425761747507
+        ],
+        [
+          76.97907480909603,
+          10.354076838472833
+        ]
+      ]
+    ]
+  },
+  "timeline": [
+    {
+      "id": "t1",
+      "label": "Baseline",
+      "timestamp": "2019-11-28T14:23:30",
+      "image": "input/images/2019-09-DSCN8514.JPG"
+    },
+    {
+      "id": "t2",
+      "label": "2025-09-04 13:12:24",
+      "timestamp": "2025-09-04T13:12:24",
+      "image": "input/images/srini_2025-09-04T13_12_28.859762_landscape.jpg"
+    },
+    {
+      "id": "t3",
+      "label": "2026-03-13 14:39:13",
+      "timestamp": "2026-03-13T14:39:13",
+      "image": "input/images/srini_2026-03-13T14_39_16.557367_landscape.jpg"
+    }
+  ]
+}

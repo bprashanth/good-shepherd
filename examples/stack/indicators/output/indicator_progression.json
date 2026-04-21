@@ -1,0 +1,97 @@
+{
+  "metric_legend": {
+    "similarity_score": "Community similarity to benchmark rainforest",
+    "canopy_cover": "Canopy cover",
+    "native_sapling_density": "Native sapling density",
+    "late_successional_species": "Late-successional species density"
+  },
+  "steps": [
+    {
+      "id": "t1",
+      "indicators": [
+        {
+          "key": "similarity_score",
+          "metadata_name": "Community similarity to benchmark rainforest",
+          "label": "Similarity Score",
+          "value": 32,
+          "unit": "/ 100",
+          "trend": "low"
+        },
+        {
+          "key": "canopy_cover",
+          "metadata_name": "Canopy cover",
+          "label": "Canopy Cover",
+          "value": 18,
+          "unit": "%",
+          "trend": "low"
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "indicators": [
+        {
+          "key": "similarity_score",
+          "metadata_name": "Community similarity to benchmark rainforest",
+          "label": "Similarity Score",
+          "value": 47,
+          "unit": "/ 100",
+          "trend": "rising"
+        },
+        {
+          "key": "canopy_cover",
+          "metadata_name": "Canopy cover",
+          "label": "Canopy Cover",
+          "value": 31,
+          "unit": "%",
+          "trend": "rising"
+        },
+        {
+          "key": "native_sapling_density",
+          "metadata_name": "Sapling density",
+          "label": "Native Sapling Density",
+          "value": 12,
+          "unit": " / subplot",
+          "trend": "new"
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "indicators": [
+        {
+          "key": "similarity_score",
+          "metadata_name": "Community similarity to benchmark rainforest",
+          "label": "Similarity Score",
+          "value": 74,
+          "unit": "/ 100",
+          "trend": "high"
+        },
+        {
+          "key": "canopy_cover",
+          "metadata_name": "Canopy cover",
+          "label": "Canopy Cover",
+          "value": 57,
+          "unit": "%",
+          "trend": "high"
+        },
+        {
+          "key": "native_sapling_density",
+          "metadata_name": "Sapling density",
+          "label": "Native Sapling Density",
+          "value": 28,
+          "unit": " / subplot",
+          "trend": "high"
+        },
+        {
+          "key": "late_successional_species",
+          "metadata_name": "Adult late-successional species density",
+          "label": "Late-Successional Species",
+          "value": 5,
+          "unit": " spp.",
+          "trend": "high"
+        }
+      ]
+    }
+  ]
+}
