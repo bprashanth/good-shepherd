@@ -1,0 +1,339 @@
+{
+  "variables": [
+    {
+      "canonical_name": "Area",
+      "aliases": [
+        {
+          "name": "Area",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Can_den",
+      "aliases": [
+        {
+          "name": "Can_den",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Can_vis",
+      "aliases": [
+        {
+          "name": "Can_vis",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Chave_E",
+      "aliases": [
+        {
+          "name": "Chave_E",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "DBH",
+      "aliases": [
+        {
+          "name": "DBH",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Forest_name",
+      "aliases": [
+        {
+          "name": "Forest_name",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "HD_include",
+      "aliases": [
+        {
+          "name": "HD_include",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Habt_New",
+      "aliases": [
+        {
+          "name": "Habt_New",
+          "source": "species_traits.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Height",
+      "aliases": [
+        {
+          "name": "Height",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Lat",
+      "aliases": [
+        {
+          "name": "Lat",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Long",
+      "aliases": [
+        {
+          "name": "Long",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Plant_den",
+      "aliases": [
+        {
+          "name": "Plant_den",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Plant_div",
+      "aliases": [
+        {
+          "name": "Plant_div",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Plot_code",
+      "aliases": [
+        {
+          "name": "Plot_code",
+          "source": "Resto_site_info.csv"
+        },
+        {
+          "name": "Plot_code",
+          "source": "tree_data.csv"
+        },
+        {
+          "name": "Plot_code",
+          "source": "regen_data.csv"
+        },
+        {
+          "name": "Plot_code",
+          "source": "cache/gee_data.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Remarks",
+      "aliases": [
+        {
+          "name": "Remarks",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Rest_area",
+      "aliases": [
+        {
+          "name": "Rest_area",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Site_code",
+      "aliases": [
+        {
+          "name": "Site_code",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Site_name",
+      "aliases": [
+        {
+          "name": "Site_name",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Species.name",
+      "aliases": [
+        {
+          "name": "Species.name",
+          "source": "regen_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Treatment",
+      "aliases": [
+        {
+          "name": "Treatment",
+          "source": "tree_data.csv"
+        },
+        {
+          "name": "Treatment",
+          "source": "regen_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Type",
+      "aliases": [
+        {
+          "name": "Type",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Wden_gen",
+      "aliases": [
+        {
+          "name": "Wden_gen",
+          "source": "species_traits.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Wden_sp",
+      "aliases": [
+        {
+          "name": "Wden_sp",
+          "source": "species_traits.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "Year_restored",
+      "aliases": [
+        {
+          "name": "Year_restored",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "acc_name",
+      "aliases": [
+        {
+          "name": "acc_name",
+          "source": "regen_data.csv"
+        },
+        {
+          "name": "acc_name",
+          "source": "species_traits.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "accpt.nam",
+      "aliases": [
+        {
+          "name": "accpt.nam",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "ae_vector",
+      "aliases": [
+        {
+          "name": "ae_vector",
+          "source": "cache/gee_data.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "dist_PA",
+      "aliases": [
+        {
+          "name": "dist_PA",
+          "source": "Resto_site_info.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "latitude",
+      "aliases": [
+        {
+          "name": "latitude",
+          "source": "db.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "longitude",
+      "aliases": [
+        {
+          "name": "longitude",
+          "source": "db.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "meta_height",
+      "aliases": [
+        {
+          "name": "meta_height",
+          "source": "cache/gee_data.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "regen",
+      "aliases": [
+        {
+          "name": "regen",
+          "source": "regen_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "siteId",
+      "aliases": [
+        {
+          "name": "siteId",
+          "source": "db.json"
+        }
+      ]
+    },
+    {
+      "canonical_name": "species",
+      "aliases": [
+        {
+          "name": "species",
+          "source": "tree_data.csv"
+        }
+      ]
+    },
+    {
+      "canonical_name": "timestamp",
+      "aliases": [
+        {
+          "name": "timestamp",
+          "source": "db.json"
+        }
+      ]
+    }
+  ]
+}

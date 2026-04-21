@@ -1,0 +1,502 @@
+{
+  "variables": [
+    {
+      "name": "Forest_name",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Forest_name",
+      "unit": "",
+      "example_values": [
+        "Iyerpadi Top",
+        "Varatuparai",
+        "Selaliparai"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Site_name",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Site_name",
+      "unit": "",
+      "example_values": [
+        "Iyerpadi top 04'",
+        "Iyerpadi top 05'",
+        "Varatuparai 2",
+        "Varatuparai 3",
+        "Selaliparai 2"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Type",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Type",
+      "unit": "",
+      "example_values": [
+        "Active"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Long",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Long",
+      "unit": "",
+      "example_values": [
+        "76.99553",
+        "76.99278",
+        "76.93008",
+        "76.92908",
+        "76.93369"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Lat",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Lat",
+      "unit": "",
+      "example_values": [
+        "10.35293",
+        "10.35174",
+        "10.35545",
+        "10.35278",
+        "10.34262"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Year_restored",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Year_restored",
+      "unit": "",
+      "example_values": [
+        "2004",
+        "2005",
+        "2010",
+        "2007"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Site_code",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Site_code",
+      "unit": "",
+      "example_values": [
+        "IPTO_04",
+        "IPTO_05",
+        "VAR2_10",
+        "VAR3_10",
+        "SEL2_07"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Plot_code",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Plot_code",
+      "unit": "",
+      "example_values": [
+        "IPTO_04R",
+        "IPTO_05R",
+        "VAR2_10R",
+        "VAR3_10R",
+        "SEL2_07R"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Can_vis",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Can_vis",
+      "unit": "",
+      "example_values": [
+        "65",
+        "75",
+        "50"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Can_den",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Can_den",
+      "unit": "",
+      "example_values": [
+        "100"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Plant_den",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Plant_den",
+      "unit": "",
+      "example_values": [
+        "2935",
+        "1300",
+        "300",
+        "320",
+        "486"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Plant_div",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Plant_div",
+      "unit": "",
+      "example_values": [
+        "0.05",
+        "0.14",
+        "0.27",
+        "0.26",
+        "0.13"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Chave_E",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Chave_E",
+      "unit": "",
+      "example_values": [
+        "0.12107",
+        "0.12003"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "dist_PA",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "dist_PA",
+      "unit": "",
+      "example_values": [
+        "757.86",
+        "892.12",
+        "292.23",
+        "304.09",
+        "1097.43"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Rest_area",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Rest_area",
+      "unit": "",
+      "example_values": [
+        "0.4",
+        "0.3",
+        "0.5",
+        "1"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Area",
+      "source_form": "Resto_site_info.csv",
+      "field_name": "Area",
+      "unit": "",
+      "example_values": [
+        "902363.3458",
+        "234252.8621",
+        "7923.13342"
+      ],
+      "confidence": null,
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "name": "Plot_code",
+      "source_form": "tree_data.csv",
+      "field_name": "Plot_code",
+      "unit": "",
+      "example_values": [
+        "IPTO_04R"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "Treatment",
+      "source_form": "tree_data.csv",
+      "field_name": "Treatment",
+      "unit": "",
+      "example_values": [
+        "Active"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "species",
+      "source_form": "tree_data.csv",
+      "field_name": "species",
+      "unit": "",
+      "example_values": [
+        "Maesa indica",
+        "Litsea floribunda"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "accpt.nam",
+      "source_form": "tree_data.csv",
+      "field_name": "accpt.nam",
+      "unit": "",
+      "example_values": [
+        "Maesa indica",
+        "Litsea floribunda"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "DBH",
+      "source_form": "tree_data.csv",
+      "field_name": "DBH",
+      "unit": "",
+      "example_values": [
+        "7.5",
+        "7.2",
+        "3.2",
+        "5.9",
+        "9.5"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "Height",
+      "source_form": "tree_data.csv",
+      "field_name": "Height",
+      "unit": "",
+      "example_values": [
+        "4",
+        "5",
+        "7"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "Remarks",
+      "source_form": "tree_data.csv",
+      "field_name": "Remarks",
+      "unit": "",
+      "example_values": [
+        "NONE"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "HD_include",
+      "source_form": "tree_data.csv",
+      "field_name": "HD_include",
+      "unit": "",
+      "example_values": [
+        "1"
+      ],
+      "confidence": null,
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "name": "Plot_code",
+      "source_form": "regen_data.csv",
+      "field_name": "Plot_code",
+      "unit": "",
+      "example_values": [
+        "STM1_02R"
+      ],
+      "confidence": null,
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "name": "Treatment",
+      "source_form": "regen_data.csv",
+      "field_name": "Treatment",
+      "unit": "",
+      "example_values": [
+        "Restored"
+      ],
+      "confidence": null,
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "name": "Species.name",
+      "source_form": "regen_data.csv",
+      "field_name": "Species.name",
+      "unit": "",
+      "example_values": [
+        "Syzygium cumini",
+        "Dimocarpus longan",
+        "Atalantia racemosa",
+        "Syzygium jambos",
+        "Ligustrum sp."
+      ],
+      "confidence": null,
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "name": "acc_name",
+      "source_form": "regen_data.csv",
+      "field_name": "acc_name",
+      "unit": "",
+      "example_values": [
+        "Syzygium cumini",
+        "Dimocarpus longan",
+        "Atalantia racemosa",
+        "Syzygium jambos",
+        "Ligustrum sp."
+      ],
+      "confidence": null,
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "name": "regen",
+      "source_form": "regen_data.csv",
+      "field_name": "regen",
+      "unit": "",
+      "example_values": [
+        "2",
+        "6",
+        "51",
+        "31",
+        "1"
+      ],
+      "confidence": null,
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "name": "acc_name",
+      "source_form": "species_traits.csv",
+      "field_name": "acc_name",
+      "unit": "",
+      "example_values": [
+        "Claoxylon linostachys",
+        "Acronychia pedunculata",
+        "Actinodaphne gullavara",
+        "Actinodaphne bourdillonii",
+        "Actinodaphne sp."
+      ],
+      "confidence": null,
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "name": "Habt_New",
+      "source_form": "species_traits.csv",
+      "field_name": "Habt_New",
+      "unit": "",
+      "example_values": [
+        "Mature",
+        "Secondary"
+      ],
+      "confidence": null,
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "name": "Wden_sp",
+      "source_form": "species_traits.csv",
+      "field_name": "Wden_sp",
+      "unit": "",
+      "example_values": [
+        "0.493395167"
+      ],
+      "confidence": null,
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "name": "Wden_gen",
+      "source_form": "species_traits.csv",
+      "field_name": "Wden_gen",
+      "unit": "",
+      "example_values": [
+        "0.355",
+        "0.50817563",
+        "0.522162246"
+      ],
+      "confidence": null,
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "name": "Plot_code",
+      "source_form": "cache/gee_data.json",
+      "field_name": "Plot_code",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "name": "meta_height",
+      "source_form": "cache/gee_data.json",
+      "field_name": "meta_height",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "name": "ae_vector",
+      "source_form": "cache/gee_data.json",
+      "field_name": "ae_vector",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "name": "siteId",
+      "source_form": "db.json",
+      "field_name": "siteId",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "name": "latitude",
+      "source_form": "db.json",
+      "field_name": "latitude",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "name": "longitude",
+      "source_form": "db.json",
+      "field_name": "longitude",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "name": "timestamp",
+      "source_form": "db.json",
+      "field_name": "timestamp",
+      "unit": "",
+      "example_values": [],
+      "confidence": null,
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    }
+  ]
+}
