@@ -1,0 +1,66 @@
+{
+  "stage": "site_assessment",
+  "input_artifact": "../input/selected_plot.json",
+  "plot": {
+    "plot_id": "stack_focus_selected_plot",
+    "plot_label": "Plot 1"
+  },
+  "survey_targets": [
+    {
+      "id": "center",
+      "label": "Center",
+      "kind": "center_point",
+      "purpose": "photomonitoring"
+    },
+    {
+      "id": "quadrat_1",
+      "label": "Quadrat 1",
+      "kind": "species_richness",
+      "purpose": "corner_quadrat"
+    },
+    {
+      "id": "quadrat_2",
+      "label": "Quadrat 2",
+      "kind": "species_richness",
+      "purpose": "corner_quadrat"
+    },
+    {
+      "id": "quadrat_3",
+      "label": "Quadrat 3",
+      "kind": "species_richness",
+      "purpose": "corner_quadrat"
+    },
+    {
+      "id": "quadrat_4",
+      "label": "Quadrat 4",
+      "kind": "species_richness",
+      "purpose": "corner_quadrat"
+    }
+  ],
+  "runtime_outputs": {
+    "upload_manifest_entry": {
+      "plot_id": "string",
+      "plot_label": "string",
+      "target_id": "string",
+      "target_label": "string",
+      "filename": "string",
+      "advisory_triggered": "boolean"
+    },
+    "submission_state": {
+      "center": "boolean",
+      "quadrat_1": "boolean",
+      "quadrat_2": "boolean",
+      "quadrat_3": "boolean",
+      "quadrat_4": "boolean"
+    },
+    "advisory_event": {
+      "target_id": "string",
+      "filename": "string",
+      "advisory": "string"
+    }
+  },
+  "advisory_rule": {
+    "trigger": "uploaded filename contains 'lantana' case-insensitively",
+    "message": "This is lantana. Cut at the base, remove flowering material, and revisit the patch after regrowth."
+  }
+}

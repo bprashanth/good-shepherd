@@ -30,7 +30,7 @@ Static frontend contract for the four-panel Indicators dashboard.
   - removal status
   - nursery
   - replantation species
-- chronological image manifest and captions
+- chronological image manifest derived from the current EXIF-ordered image set
 
 ### `output/indicator_progression.json`
 
@@ -39,6 +39,7 @@ Curated recovery indicator payload keyed to the same timeline.
 - `Similarity Score` is the primary indicator
 - additional indicators increase or appear over time
 - all steps are intentionally aligned with the Plantwise replantation story
+- each indicator entry also carries the metadata name used to resolve computation details from `input/anr_metadata.json`
 
 ## Stage Assumptions
 
@@ -50,6 +51,9 @@ Curated recovery indicator payload keyed to the same timeline.
 - the summary uses `pollachi greens` as the displayed nursery
 - the summary species list matches the Plantwise recommendation for `pollachi greens`
 - the recovery indicators are curated static values for narrative clarity, not recomputed from raw source data at runtime
+- only the first timeline card is labeled `Baseline`; later cards use literal timestamps
+- image caption summary text below the photo has been intentionally removed
+- clicking an indicator reveals its explanation and `js_snippet` from `input/anr_metadata.json` when available
 
 ## Stage Run And Verify
 
@@ -75,4 +79,5 @@ Before leaving this stage, manually verify in the UI that:
 - `Next` advances images and indicators together
 - `Similarity Score` trends upward across the sequence
 - additional indicators appear and rise over time
+- clicking an indicator reveals how it was computed
 - the overall four-panel layout feels coherent on desktop
