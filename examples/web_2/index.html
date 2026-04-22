@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Shepherd Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Good Shepherd</h1>
+        </header>
+
+        <div class="grid">
+            <div class="card card-indicators">
+                <div class="card-bg"></div>
+                <div>
+                    <div class="card-title">Analysis</div>
+                </div>
+                <div class="card-value">Indicators</div>
+                <div class="card-status">
+                    Completed Study
+                </div>
+            </div>
+
+            <div class="card card-experiment">
+                <div class="card-bg"></div>
+                <div>
+                    <div class="card-title">Setup</div>
+                </div>
+                <div class="card-value">Experiment</div>
+                <div class="card-status">
+                    <span style="color: #4cd964;">●</span> Ready
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="experiment-modal">
+        <div class="modal">
+            <h2>New Experiment</h2>
+            <div id="modal-form-content">
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Protocol</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload Protocol PDF</span>
+                            <input type="file" accept=".pdf" id="protocol-file">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Map Data</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload KML / GeoJSON</span>
+                            <input type="file" accept=".kml,.geojson,.json" id="map-file">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dataset</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload Dataset</span>
+                            <input type="file" webkitdirectory directory id="dataset-folder">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" id="submit-experiment">Submit</button>
+                    <button type="button" class="btn btn-secondary" id="close-modal">Cancel</button>
+                </form>
+            </div>
+            <div id="loading-spinner" class="spinner"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="indicators-modal">
+        <div class="modal">
+            <h2>New Indicator Analysis</h2>
+            <div id="modal-form-content-indicators">
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Protocol</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload Indicator Protocol PDF</span>
+                            <input type="file" accept=".pdf" id="indicator-protocol-file">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Forms Directory</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload Forms Directory</span>
+                            <input type="file" webkitdirectory directory id="forms-directory">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dataset (Optional)</label>
+                        <div class="file-input-wrapper custom-file-input">
+                            <span>Upload Excel Dataset</span>
+                            <input type="file" accept=".xlsx,.xls,.csv" id="excel-dataset">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" id="submit-indicators">Submit</button>
+                    <button type="button" class="btn btn-secondary" id="close-modal-indicators">Cancel</button>
+                </form>
+            </div>
+            <div id="loading-spinner-indicators" class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
