@@ -9,6 +9,7 @@ The Good Shepherd POC lives within the examples/ directory.
 * examples/setup_wizard/: Python + AI pipeline for experiment onboarding. Generates wizard.html.
 * examples/pwa/: Mobile mockup for field data inspection and datasheet uploads.
 * examples/forms/: Interface for viewing/parsing uploaded datasheets (OCR/Textract).
+* examples/indicators/: Interface for verifying and adding new indicators. 
 * examples/alienwise/: Placeholder for future SDM/Ecological modeling.
 * examples/input/: Primary reference directory (Protocols, KML sites, sample datasheets, xlsx).
 * examples/dashboard/: vue3 app for analyzing json data that contains links, map points, and quantative datapoints
@@ -24,6 +25,11 @@ Ignore examples/pipeline and examples/site_comparison for now.
 ### Reference Data (input/)
 * Experiment Setup: Protocol PDFs and KML site files.
 * Field Data: Images and JSON (AWS Textract) located in input/forms/.
+
+### Output Assets (output/)
+* These are assets typically consumed by the next chain of the pipeline
+* Described in outputs.md 
+* Often one or more html/js/frontends that user can access 
 
 ### Development Constraints
 * Scope: Ignore site_comparison/ and pipeline/ unless explicitly told otherwise.
