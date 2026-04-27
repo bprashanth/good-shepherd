@@ -1,0 +1,326 @@
+{
+  "indicators": [
+    {
+      "name": "Canopy cover",
+      "definition": "Plot-level percent canopy cover from visual estimates, used as one of the main structure indicators.",
+      "required_computed_variables": [
+        "canopy_cover"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "canopy_cover",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "Resto_site_info.csv,R_script.R",
+          "snippet": "mean(Can_vis by Plot_code)"
+        }
+      ]
+    },
+    {
+      "name": "Adult tree density",
+      "definition": "Number of adult tree records per 20 x 20 m plot after excluding cut and dead trees and retaining paper-eligible plots.",
+      "required_computed_variables": [
+        "adult_tree_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "adult_tree_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,R_script.R",
+          "snippet": "count(filtered tree rows per Plot_code)"
+        }
+      ]
+    },
+    {
+      "name": "Tree height:diameter ratio (log:log)",
+      "definition": "Average log-log height-diameter ratio for trees included by the paper's HD filter.",
+      "required_computed_variables": [
+        "tree_heightdiameter_ratio__loglog"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "tree_heightdiameter_ratio__loglog",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,R_script.R",
+          "snippet": "mean(log(Height) / log(DBH)) for rows with HD_include == 1"
+        }
+      ]
+    },
+    {
+      "name": "Adult species density",
+      "definition": "Count of distinct adult tree species in each plot.",
+      "required_computed_variables": [
+        "adult_species_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "adult_species_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,R_script.R",
+          "snippet": "number of unique adult species per Plot_code"
+        }
+      ]
+    },
+    {
+      "name": "Adult late-successional species density",
+      "definition": "Count of distinct mature-forest adult species per plot after joining species traits.",
+      "required_computed_variables": [
+        "adult_late_successional_species_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "adult_late_successional_species_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,species_traits.csv,R_script.R",
+          "snippet": "number of unique adult species per plot where Habt_New == 'Mature'"
+        }
+      ]
+    },
+    {
+      "name": "Community similarity to benchmark rainforest",
+      "definition": "Bray-Curtis similarity of each plot's adult-species composition to benchmark plots, scaled as 100 * (1 - average Bray-Curtis distance to benchmarks).",
+      "required_computed_variables": [
+        "community_similarity_to_benchmark_rainforest"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "community_similarity_to_benchmark_rainforest",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,R_script.R",
+          "snippet": "Bray-Curtis similarity of each plot's adult-species composition to benchmark plots, scaled as 100 * (1 - average Bray-Curtis distance to benchmarks)."
+        }
+      ]
+    },
+    {
+      "name": "Sapling density",
+      "definition": "Total counted seedlings and saplings per 5 x 5 m subplot.",
+      "required_computed_variables": [
+        "sapling_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "sapling_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "regen_data.csv,R_script.R",
+          "snippet": "sum(regen by Plot_code)"
+        }
+      ]
+    },
+    {
+      "name": "Sapling native fraction",
+      "definition": "Fraction of sapling abundance contributed by non-introduced species.",
+      "required_computed_variables": [
+        "sapling_native_fraction"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "sapling_native_fraction",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "regen_data.csv,species_traits.csv,R_script.R",
+          "snippet": "sum(regen where Habt_New != 'Int') / sum(regen)"
+        }
+      ]
+    },
+    {
+      "name": "Sapling species density",
+      "definition": "Count of sapling species entries per plot; in the Osuri table this is effectively sapling species richness.",
+      "required_computed_variables": [
+        "sapling_species_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "sapling_species_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "regen_data.csv,R_script.R",
+          "snippet": "number of recorded sapling species rows per Plot_code"
+        }
+      ]
+    },
+    {
+      "name": "Sapling late-successional species density",
+      "definition": "Count of mature-forest sapling species per plot.",
+      "required_computed_variables": [
+        "sapling_late_successional_species_density"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "sapling_late_successional_species_density",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "regen_data.csv,species_traits.csv,R_script.R",
+          "snippet": "number of sapling species rows where Habt_New == 'Mature'"
+        }
+      ]
+    },
+    {
+      "name": "Aboveground carbon storage",
+      "definition": "Per-tree carbon is estimated from wood density, DBH, and height using the Chave-style allometry implemented in the paper's R script, then summed and scaled to Mg/ha.",
+      "required_computed_variables": [
+        "aboveground_carbon_storage"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "aboveground_carbon_storage",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "tree_data.csv,species_traits.csv,Resto_site_info.csv,R_script.R",
+          "snippet": "Per-tree carbon is estimated from wood density, DBH, and height using the Chave-style allometry implemented in the paper's R script, then summed and scaled to Mg/ha."
+        }
+      ]
+    },
+    {
+      "name": "Distance to contiguous forest",
+      "definition": "Isolation covariate used in the paper's Active-vs-Passive interaction models; not itself one of the 11 response indicators.",
+      "required_computed_variables": [
+        "distance_to_contiguous_forest"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "distance_to_contiguous_forest",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "Resto_site_info.csv",
+          "snippet": "direct site covariate from metadata"
+        }
+      ]
+    },
+    {
+      "name": "Meta canopy height",
+      "definition": "External satellite-derived structural analogue sampled at Osuri plot locations from the Meta canopy asset used in this project.",
+      "required_computed_variables": [
+        "meta_canopy_height"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "meta_canopy_height",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "cache/gee_data.json,projects/meta-forest-monitoring-okw37/assets/CanopyHeight",
+          "snippet": "External satellite-derived structural analogue sampled at Osuri plot locations from the Meta canopy asset used in this project."
+        }
+      ]
+    },
+    {
+      "name": "Alpha Earth embedding similarity to benchmark",
+      "definition": "External embedding-space analogue computed by comparing each plot's Alpha Earth vector to the benchmark centroid.",
+      "required_computed_variables": [
+        "alpha_earth_embedding_similarity_to_benchmark"
+      ],
+      "graph_intents": [
+        {
+          "chart_type": "bar",
+          "x_axis": "treatment",
+          "y_axis": "alpha_earth_embedding_similarity_to_benchmark",
+          "group_by": "treatment",
+          "aggregation": "mean"
+        }
+      ],
+      "evidence": [
+        {
+          "source_type": "metadata",
+          "source_ref": "cache/gee_data.json,GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL",
+          "snippet": "External embedding-space analogue computed by comparing each plot's Alpha Earth vector to the benchmark centroid."
+        }
+      ]
+    }
+  ]
+}

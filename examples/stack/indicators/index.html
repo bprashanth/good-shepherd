@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicators</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f3efe5;
+            --panel: rgba(255, 252, 246, 0.9);
+            --panel-border: rgba(69, 83, 63, 0.12);
+            --text: #1f261e;
+            --muted: #62705d;
+            --accent: #47613a;
+            --accent-soft: rgba(71, 97, 58, 0.1);
+            --warning: #9d4d35;
+            --shadow: 0 18px 36px rgba(76, 93, 66, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(214, 214, 184, 0.52), transparent 26%),
+                linear-gradient(145deg, #f5f0e7 0%, #dce7d5 48%, #f2ede4 100%);
+        }
+
+        .dashboard {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+            border-radius: 24px;
+            border: 1px solid var(--panel-border);
+            background: var(--panel);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 18px 20px 12px;
+        }
+
+        .panel-kicker {
+            margin: 0 0 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .panel-title {
+            margin: 0;
+            font-family: "Instrument Serif", serif;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .panel-body {
+            flex: 1;
+            min-height: 0;
+            padding: 0 20px 20px;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .summary-item {
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: rgba(246, 243, 236, 0.88);
+            border: 1px solid rgba(69, 83, 63, 0.08);
+        }
+
+        .summary-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .summary-value {
+            font-size: 0.98rem;
+            line-height: 1.45;
+        }
+
+        .summary-link {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(71, 97, 58, 0.24);
+        }
+
+        .summary-link:hover {
+            border-bottom-color: rgba(71, 97, 58, 0.5);
+        }
+
+        .chip-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(71, 97, 58, 0.12);
+            font-size: 0.88rem;
+        }
+
+        .summary-note {
+            margin: 0;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(157, 77, 53, 0.08);
+            border: 1px solid rgba(157, 77, 53, 0.14);
+            color: #6b3524;
+            line-height: 1.5;
+        }
+
+        .image-shell {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .timeline-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: rgba(246, 243, 236, 0.88);
+            border: 1px solid rgba(69, 83, 63, 0.08);
+        }
+
+        .timeline-label {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .timeline-time {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .photo-card {
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card img {
+            width: 100%;
+            min-height: 0;
+            flex: 1;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(69, 83, 63, 0.1);
+            background: #d9d6cc;
+        }
+
+        .indicator-shell {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: 14px;
+            height: 100%;
+        }
+
+        .hero-metric {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(71, 97, 58, 0.14), rgba(154, 117, 54, 0.08));
+            border: 1px solid rgba(71, 97, 58, 0.12);
+        }
+
+        .hero-metric .metric-label {
+            font-size: 0.84rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .hero-metric .metric-value {
+            font-size: 2.6rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .indicator-list {
+            display: grid;
+            gap: 12px;
+            align-content: start;
+        }
+
+        .indicator-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(246, 243, 236, 0.88);
+            border: 1px solid rgba(69, 83, 63, 0.08);
+            cursor: pointer;
+        }
+        .indicator-card:hover { border-color: rgba(69, 83, 63, 0.18); }
+
+        .indicator-name {
+            font-weight: 600;
+        }
+
+        .indicator-meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .indicator-value {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .indicator-value strong {
+            display: block;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .trend {
+            display: inline-flex;
+            margin-top: 6px;
+            padding: 5px 8px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(71, 97, 58, 0.1);
+            color: var(--accent);
+        }
+
+        .detail-card {
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(246, 243, 236, 0.88);
+            border: 1px solid rgba(69, 83, 63, 0.08);
+        }
+
+        .detail-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .detail-card p {
+            margin: 0 0 10px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .detail-card pre {
+            margin: 0;
+            overflow: auto;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: #f1ede4;
+            border: 1px solid rgba(69, 83, 63, 0.08);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-pill {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(69, 83, 63, 0.08);
+            color: var(--muted);
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .next-button {
+            border: 1px solid rgba(71, 97, 58, 0.16);
+            background: rgba(71, 97, 58, 0.1);
+            color: var(--accent);
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .next-button:hover {
+            background: rgba(71, 97, 58, 0.16);
+        }
+
+        @media (max-width: 1100px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .panel {
+                min-height: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="panel-kicker">Site</p>
+                    <h1 class="panel-title">Location</h1>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="panel-kicker">Summary</p>
+                    <h1 class="panel-title">Recovery Context</h1>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="summary-grid" id="summaryGrid"></div>
+                <p class="summary-note" id="summaryNote"></p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="panel-kicker">Images</p>
+                    <h1 class="panel-title">Recovery Timeline</h1>
+                </div>
+                <div class="controls">
+                    <span class="step-pill" id="stepPill"></span>
+                    <button class="next-button" id="nextButton" type="button">Next</button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="image-shell">
+                    <div class="timeline-meta">
+                        <div class="timeline-label" id="timelineLabel"></div>
+                        <div class="timeline-time" id="timelineTime"></div>
+                    </div>
+                    <div class="photo-card">
+                        <img id="timelineImage" alt="Recovery timeline image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="panel-kicker">Indicators</p>
+                    <h1 class="panel-title">Recovery Signals</h1>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="indicator-shell">
+                    <div class="hero-metric" id="heroMetric"></div>
+                    <div class="indicator-list" id="indicatorList"></div>
+                    <div class="detail-card" id="detailCard" hidden>
+                        <h3 id="detailTitle"></h3>
+                        <p id="detailExplanation"></p>
+                        <pre id="detailSnippet"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let manifest;
+        let progression;
+        let metadata;
+        let map;
+        let currentIndex = 0;
+
+        async function loadJson(path) {
+            const response = await fetch(path);
+            return response.json();
+        }
+
+        function formatTimestamp(value) {
+            const date = new Date(value);
+            return date.toLocaleString("en-IN", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+        }
+
+        function getIndicatorDetail(indicator) {
+            return metadata.indicators.find((item) => item.name === indicator.metadata_name) || null;
+        }
+
+        function showDetail(indicator) {
+            const detail = getIndicatorDetail(indicator);
+            document.getElementById("detailCard").hidden = false;
+            document.getElementById("detailTitle").textContent = indicator.label;
+            document.getElementById("detailExplanation").textContent = detail?.explanation || "No explanation available.";
+            document.getElementById("detailSnippet").textContent = detail?.js_snippet || "No JS snippet provided for this indicator in anr_metadata.json.";
+        }
+
+        function renderSummary(site) {
+            const grid = document.getElementById("summaryGrid");
+            const entries = [
+                ["Site", `${site.lat.toFixed(5)}, ${site.lon.toFixed(5)}`],
+                ["Invasive", site.invasive],
+                ["Removal", site.removal],
+                ["Nursery", `<a class="summary-link" href="${site.nursery.url}" target="_blank" rel="noreferrer">${site.nursery.name}</a>`],
+                ["Replantation", `<div class="chip-wrap">${site.replantation_species.map((name) => `<span class="chip">${name}</span>`).join("")}</div>`]
+            ];
+
+            grid.innerHTML = entries.map(([label, value]) => `
+                <div class="summary-item">
+                    <span class="summary-label">${label}</span>
+                    <div class="summary-value">${value}</div>
+                </div>
+            `).join("");
+
+            document.getElementById("summaryNote").textContent = site.summary_note;
+        }
+
+        function initMap() {
+            map = L.map("map", {
+                zoomControl: true,
+                attributionControl: false
+            });
+
+            map.setView([manifest.site.aoi_center.lat, manifest.site.aoi_center.lon], 14);
+
+            L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+                attribution: "Tiles © Esri"
+            }).addTo(map);
+
+            const aoiCircle = L.circle([manifest.site.aoi_center.lat, manifest.site.aoi_center.lon], {
+                radius: manifest.site.aoi_radius_m,
+                color: "#6e8a62",
+                weight: 2,
+                opacity: 0.85,
+                fillOpacity: 0
+            }).addTo(map);
+
+            const plotLayer = L.geoJSON(manifest.adult_tree_plot, {
+                style: () => ({
+                    color: "#be4a2f",
+                    weight: 3,
+                    opacity: 1,
+                    fillColor: "#f0bf7a",
+                    fillOpacity: 0.16
+                })
+            }).addTo(map);
+
+            L.circleMarker([manifest.site.lat, manifest.site.lon], {
+                radius: 5,
+                color: "#fff5e8",
+                weight: 2,
+                fillColor: "#a13f2d",
+                fillOpacity: 0.95
+            }).addTo(map);
+
+            const aoiBounds = L.latLngBounds(
+                L.latLng(manifest.site.aoi_center.lat, manifest.site.aoi_center.lon).toBounds(manifest.site.aoi_radius_m * 2)
+            );
+            const bounds = L.latLngBounds(aoiBounds);
+            bounds.extend(plotLayer.getBounds());
+            bounds.extend(aoiCircle.getLatLng());
+            map.fitBounds(bounds, { padding: [28, 28] });
+        }
+
+        function renderStep(index) {
+            currentIndex = index;
+            const step = manifest.timeline[index];
+            const indicatorStep = progression.steps.find((item) => item.id === step.id);
+            const hero = indicatorStep.indicators[0];
+            const secondaryIndicators = indicatorStep.indicators.slice(1);
+
+            document.getElementById("stepPill").textContent = `${index + 1} / ${manifest.timeline.length}`;
+            document.getElementById("timelineLabel").textContent = step.label;
+            document.getElementById("timelineTime").textContent = formatTimestamp(step.timestamp);
+            document.getElementById("timelineImage").src = step.image;
+
+            document.getElementById("heroMetric").innerHTML = `
+                <div>
+                    <div class="metric-label">${hero.label}</div>
+                    <div class="indicator-meta">${progression.metric_legend[hero.key]}</div>
+                </div>
+                <div class="metric-value">${hero.value}<span style="font-size:1.2rem; color: var(--muted); font-weight:600;">${hero.unit}</span></div>
+            `;
+            document.getElementById("heroMetric").onclick = () => showDetail(hero);
+            document.getElementById("heroMetric").style.cursor = "pointer";
+
+            document.getElementById("indicatorList").innerHTML = secondaryIndicators.map((item, idx) => `
+                <div class="indicator-card" data-index="${idx}">
+                    <div>
+                        <div class="indicator-name">${item.label}</div>
+                    </div>
+                    <div class="indicator-value">
+                        <strong>${item.value}${item.unit}</strong>
+                        <span class="trend">${item.trend}</span>
+                    </div>
+                </div>
+            `).join("");
+
+            document.querySelectorAll(".indicator-card").forEach((card) => {
+                const indicator = secondaryIndicators[Number(card.dataset.index)];
+                card.addEventListener("click", () => showDetail(indicator));
+            });
+
+            showDetail(hero);
+        }
+
+        async function init() {
+            [manifest, progression, metadata] = await Promise.all([
+                loadJson("output/progression_manifest.json"),
+                loadJson("output/indicator_progression.json"),
+                loadJson("input/anr_metadata.json")
+            ]);
+
+            renderSummary(manifest.site);
+            initMap();
+            renderStep(0);
+
+            document.getElementById("nextButton").addEventListener("click", () => {
+                const nextIndex = (currentIndex + 1) % manifest.timeline.length;
+                renderStep(nextIndex);
+            });
+        }
+
+        init().catch((error) => {
+            console.error(error);
+            document.body.innerHTML = "<div style='padding:24px;font-family:Inter,sans-serif;'>Failed to load Indicators.</div>";
+        });
+    </script>
+</body>
+</html>

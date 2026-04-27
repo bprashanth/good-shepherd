@@ -1,0 +1,244 @@
+{
+  "entries": [
+    {
+      "variable_name": "Forest_name",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Forest_name",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Site_name",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Site_name",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Type",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Type",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Long",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Long",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Lat",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Lat",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Year_restored",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Year_restored",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Site_code",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Site_code",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Plot_code",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Plot_code",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Can_vis",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Can_vis",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Can_den",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Can_den",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Plant_den",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Plant_den",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Plant_div",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Plant_div",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Chave_E",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Chave_E",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "dist_PA",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "dist_PA",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Rest_area",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Rest_area",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Area",
+      "source_name": "Resto_site_info.csv",
+      "field_name": "Area",
+      "explanation": "Site-level metadata, treatment labels, coordinates, canopy estimates, planting metadata, and the distance-to-forest covariate."
+    },
+    {
+      "variable_name": "Plot_code",
+      "source_name": "tree_data.csv",
+      "field_name": "Plot_code",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "Treatment",
+      "source_name": "tree_data.csv",
+      "field_name": "Treatment",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "species",
+      "source_name": "tree_data.csv",
+      "field_name": "species",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "accpt.nam",
+      "source_name": "tree_data.csv",
+      "field_name": "accpt.nam",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "DBH",
+      "source_name": "tree_data.csv",
+      "field_name": "DBH",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "Height",
+      "source_name": "tree_data.csv",
+      "field_name": "Height",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "Remarks",
+      "source_name": "tree_data.csv",
+      "field_name": "Remarks",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "HD_include",
+      "source_name": "tree_data.csv",
+      "field_name": "HD_include",
+      "explanation": "Adult-tree observations from 20 x 20 m plots."
+    },
+    {
+      "variable_name": "Plot_code",
+      "source_name": "regen_data.csv",
+      "field_name": "Plot_code",
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "variable_name": "Treatment",
+      "source_name": "regen_data.csv",
+      "field_name": "Treatment",
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "variable_name": "Species.name",
+      "source_name": "regen_data.csv",
+      "field_name": "Species.name",
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "variable_name": "acc_name",
+      "source_name": "regen_data.csv",
+      "field_name": "acc_name",
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "variable_name": "regen",
+      "source_name": "regen_data.csv",
+      "field_name": "regen",
+      "explanation": "Seedling and sapling observations from 5 x 5 m subplots."
+    },
+    {
+      "variable_name": "acc_name",
+      "source_name": "species_traits.csv",
+      "field_name": "acc_name",
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "variable_name": "Habt_New",
+      "source_name": "species_traits.csv",
+      "field_name": "Habt_New",
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "variable_name": "Wden_sp",
+      "source_name": "species_traits.csv",
+      "field_name": "Wden_sp",
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "variable_name": "Wden_gen",
+      "source_name": "species_traits.csv",
+      "field_name": "Wden_gen",
+      "explanation": "Trait joins for successional class and wood density."
+    },
+    {
+      "variable_name": "Plot_code",
+      "source_name": "cache/gee_data.json",
+      "field_name": "Plot_code",
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "variable_name": "meta_height",
+      "source_name": "cache/gee_data.json",
+      "field_name": "meta_height",
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "variable_name": "ae_vector",
+      "source_name": "cache/gee_data.json",
+      "field_name": "ae_vector",
+      "explanation": "Project-level satellite validation cache for Meta canopy height and Alpha Earth embeddings."
+    },
+    {
+      "variable_name": "siteId",
+      "source_name": "db.json",
+      "field_name": "siteId",
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "variable_name": "latitude",
+      "source_name": "db.json",
+      "field_name": "latitude",
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "variable_name": "longitude",
+      "source_name": "db.json",
+      "field_name": "longitude",
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    },
+    {
+      "variable_name": "timestamp",
+      "source_name": "db.json",
+      "field_name": "timestamp",
+      "explanation": "Photo-monitoring site locations only; not used to define Osuri indicators."
+    }
+  ]
+}

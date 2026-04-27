@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site selection</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: linear-gradient(145deg, #efe8da 0%, #d9e2cf 100%);
+            color: #1f2a1d;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 340px 1fr;
+        }
+        .sidebar {
+            padding: 24px 20px;
+            background: rgba(248, 244, 235, 0.95);
+            border-right: 1px solid rgba(54, 75, 42, 0.18);
+            overflow-y: auto;
+        }
+        h1 {
+            margin: 0 0 16px;
+            font-size: 1.8rem;
+            line-height: 1.1;
+        }
+        .panel {
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid rgba(54, 75, 42, 0.16);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 10px 24px rgba(48, 64, 34, 0.08);
+        }
+        .panel h2 {
+            margin: 0 0 12px;
+            font-size: 0.84rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #55674c;
+        }
+        .toggle {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(54, 75, 42, 0.08);
+        }
+        .toggle:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+        .toggle label {
+            display: block;
+            font-weight: 600;
+        }
+        .toggle .hint, .status {
+            color: #5b6752;
+            font-size: 0.9rem;
+            line-height: 1.35;
+            margin-top: 3px;
+        }
+        .legend-swatch {
+            display: flex;
+            height: 14px;
+            border-radius: 999px;
+            overflow: hidden;
+            margin-top: 8px;
+            border: 1px solid rgba(54, 75, 42, 0.12);
+        }
+        .legend-swatch span { flex: 1; }
+        #map { width: 100%; height: 100vh; }
+        .map-shell { position: relative; }
+        .map-note {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 1000;
+            background: rgba(255, 250, 243, 0.93);
+            border: 1px solid rgba(54, 75, 42, 0.16);
+            border-radius: 14px;
+            padding: 12px 14px;
+            box-shadow: 0 12px 24px rgba(48, 64, 34, 0.14);
+            max-width: 290px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        @media (max-width: 960px) {
+            body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+            .sidebar { border-right: 0; border-bottom: 1px solid rgba(54, 75, 42, 0.18); }
+            #map { height: 64vh; }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h1>Site selection</h1>
+        <section class="panel">
+            <h2>Layers</h2>
+            <div class="toggle">
+                <input type="checkbox" id="toggleSimilarity">
+                <div><label for="toggleSimilarity">Map: benchmark similarity</label></div>
+            </div>
+            <div class="toggle">
+                <input type="checkbox" id="toggleInvasive">
+                <div>
+                    <label for="toggleInvasive">Map: invasive probability</label>
+                    <div class="hint">Combined invasives: Cestrum aurantiacum, Chromolaena odorata, Lantana camara, Senna spectabilis.</div>
+                </div>
+            </div>
+            <div class="toggle">
+                <input type="checkbox" id="toggleBenchmarks">
+                <div><label for="toggleBenchmarks">Points: known benchmark sites</label></div>
+            </div>
+            <div class="toggle">
+                <input type="checkbox" id="toggleSuggestions">
+                <div><label for="toggleSuggestions">Suggestion: plot scores</label></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Similarity Stretch</h2>
+            <div class="status" id="similarityDescription">Values near benchmark saturate green.</div>
+            <div class="legend-swatch" id="similarityLegend"></div>
+        </section>
+    </aside>
+
+    <main class="map-shell">
+        <div id="map"></div>
+        <div class="map-note">
+            AOI from kml file.<br>
+            Suggestions are those points least like benchmark and highest invasive chances combined.
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/geotiff@2.1.3/dist-browser/geotiff.js"></script>
+    <script>
+        const map = L.map('map', { zoomControl: true });
+        map.setView([10.35952, 76.99557], 13);
+
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri'
+        }).addTo(map);
+
+        let similarityOverlay = null;
+        let invasiveOverlay = null;
+        let benchmarkLayer = null;
+        let suggestionLayer = null;
+        let selectedPlotLayer = null;
+        let aoiLayer = null;
+        let layerConfig = null;
+
+        function hexToRgb(hex) {
+            const clean = hex.replace('#', '');
+            return {
+                r: parseInt(clean.slice(0, 2), 16),
+                g: parseInt(clean.slice(2, 4), 16),
+                b: parseInt(clean.slice(4, 6), 16),
+            };
+        }
+
+        function interpolate(a, b, t) {
+            return Math.round(a + (b - a) * t);
+        }
+
+        function colorForValue(value, style) {
+            if (value <= style.nodata + 1) return null;
+            if (style.transparent_below_min && value < style.display_min) return null;
+
+            const gamma = style.gamma || 1;
+            const min = style.display_min;
+            const mid = style.display_mid ?? ((style.display_min + style.display_max) / 2);
+            const max = style.display_max;
+            const palette = style.palette.map(hexToRgb);
+
+            let t;
+            let c1;
+            let c2;
+            if (value <= mid) {
+                const denom = Math.max(mid - min, 1e-6);
+                t = Math.max(0, Math.min(1, (value - min) / denom));
+                t = Math.pow(t, gamma);
+                c1 = palette[0];
+                c2 = palette[Math.min(2, palette.length - 1)];
+            } else {
+                const denom = Math.max(max - mid, 1e-6);
+                t = Math.max(0, Math.min(1, (value - mid) / denom));
+                t = Math.pow(t, gamma);
+                c1 = palette[Math.min(2, palette.length - 1)];
+                c2 = palette[palette.length - 1];
+            }
+            return {
+                r: interpolate(c1.r, c2.r, t),
+                g: interpolate(c1.g, c2.g, t),
+                b: interpolate(c1.b, c2.b, t),
+            };
+        }
+
+        async function buildRasterOverlay(url, style, opacity) {
+            const response = await fetch(url);
+            const arrayBuffer = await response.arrayBuffer();
+            const tiff = await GeoTIFF.fromArrayBuffer(arrayBuffer);
+            const image = await tiff.getImage();
+            const raster = await image.readRasters();
+            const [minX, minY, maxX, maxY] = image.getBoundingBox();
+            const width = image.getWidth();
+            const height = image.getHeight();
+
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            const imageData = ctx.createImageData(width, height);
+            const data = raster[0];
+
+            for (let i = 0; i < data.length; i++) {
+                const color = colorForValue(data[i], style);
+                const idx = i * 4;
+                if (!color) {
+                    imageData.data[idx + 3] = 0;
+                    continue;
+                }
+                imageData.data[idx] = color.r;
+                imageData.data[idx + 1] = color.g;
+                imageData.data[idx + 2] = color.b;
+                imageData.data[idx + 3] = Math.round(255 * opacity);
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+            return L.imageOverlay(canvas.toDataURL(), [[minY, minX], [maxY, maxX]], { opacity: 1 });
+        }
+
+        function buildLegend(el, palette) {
+            el.innerHTML = '';
+            palette.forEach((color) => {
+                const swatch = document.createElement('span');
+                swatch.style.background = color;
+                el.appendChild(swatch);
+            });
+        }
+
+        async function loadGeoJson(path, style, pointToLayer) {
+            const response = await fetch(`output/${path}`);
+            const data = await response.json();
+            return L.geoJSON(data, { style, pointToLayer });
+        }
+
+        async function refreshLayers() {
+            if (!layerConfig) return;
+
+            const similarityEnabled = document.getElementById('toggleSimilarity').checked;
+            const invasiveEnabled = document.getElementById('toggleInvasive').checked;
+            const benchmarksEnabled = document.getElementById('toggleBenchmarks').checked;
+            const suggestionsEnabled = document.getElementById('toggleSuggestions').checked;
+
+            if (similarityOverlay) map.removeLayer(similarityOverlay);
+            if (invasiveOverlay) map.removeLayer(invasiveOverlay);
+            if (benchmarkLayer) map.removeLayer(benchmarkLayer);
+            if (suggestionLayer) map.removeLayer(suggestionLayer);
+            if (selectedPlotLayer) map.removeLayer(selectedPlotLayer);
+
+            if (similarityEnabled) {
+                similarityOverlay = await buildRasterOverlay(
+                    `output/${layerConfig.layers.benchmark_similarity.path}`,
+                    layerConfig.layers.benchmark_similarity.style,
+                    0.72
+                );
+                similarityOverlay.addTo(map);
+            }
+
+            if (invasiveEnabled) {
+                invasiveOverlay = await buildRasterOverlay(
+                    `output/${layerConfig.layers.invasive_probability.path}`,
+                    layerConfig.layers.invasive_probability.style,
+                    0.85
+                );
+                invasiveOverlay.addTo(map);
+            }
+
+            if (benchmarksEnabled) {
+                benchmarkLayer = await loadGeoJson(
+                    layerConfig.benchmark_sites.path,
+                    null,
+                    (feature, latlng) => L.circleMarker(latlng, {
+                        radius: 6.5,
+                        color: '#1d1d1d',
+                        weight: 1.5,
+                        fillColor: '#f5f3e7',
+                        fillOpacity: 0.95,
+                    }).bindPopup(`<strong>${feature.properties.plot_code}</strong><br>${feature.properties.forest_name}`)
+                );
+                benchmarkLayer.addTo(map);
+            }
+
+            if (suggestionsEnabled) {
+                suggestionLayer = await loadGeoJson(
+                    layerConfig.suggestions.path,
+                    null,
+                    (feature, latlng) => {
+                        const rank = feature.properties.suggestion_score ?? 0;
+                        const fill = rank > 0.8 ? '#8c1d18' : rank > 0.65 ? '#d95f0e' : '#f0a202';
+                        return L.circleMarker(latlng, {
+                            radius: 7,
+                            color: '#2a1306',
+                            weight: 1.5,
+                            fillColor: fill,
+                            fillOpacity: 0.95,
+                        }).bindPopup(
+                            `Plot score: ${feature.properties.ae_cosine_to_benchmark.toFixed(4)}<br>` +
+                            `Invasive probability: ${feature.properties.invasive_probability.toFixed(4)}<br>` +
+                            `Suggestion score: ${feature.properties.suggestion_score.toFixed(4)}`
+                        );
+                    }
+                );
+                suggestionLayer.addTo(map);
+
+                selectedPlotLayer = await loadGeoJson(
+                    layerConfig.selected_plot.path,
+                    (feature) => {
+                        if (feature.properties.role === 'adult_tree_plot') {
+                            return { color: '#a32020', weight: 3, fillOpacity: 0.05 };
+                        }
+                        if (feature.properties.role === 'sapling_subplot') {
+                            return { color: '#d13a2f', weight: 2, fillOpacity: 0.08, dashArray: '4 4' };
+                        }
+                        return null;
+                    },
+                    (feature, latlng) => {
+                        if (feature.properties.role !== 'center') {
+                            return null;
+                        }
+                        return L.circleMarker(latlng, {
+                            radius: 6,
+                            color: '#7a0e0e',
+                            weight: 2,
+                            fillColor: '#d12b2b',
+                            fillOpacity: 0.95,
+                        }).bindPopup(
+                            `Plot score: ${feature.properties.ae_cosine_to_benchmark.toFixed(4)}<br>` +
+                            `Invasive probability: ${feature.properties.invasive_probability.toFixed(4)}<br>` +
+                            `Suggestion score: ${feature.properties.suggestion_score.toFixed(4)}`
+                        );
+                    }
+                );
+                selectedPlotLayer.addTo(map);
+            }
+        }
+
+        async function init() {
+            const response = await fetch('output/layers.json');
+            layerConfig = await response.json();
+            document.getElementById('similarityDescription').textContent = layerConfig.layers.benchmark_similarity.style.description;
+            buildLegend(document.getElementById('similarityLegend'), layerConfig.layers.benchmark_similarity.style.palette);
+
+            aoiLayer = await loadGeoJson(layerConfig.aoi.path, {
+                color: '#87986d',
+                weight: 3,
+                fillOpacity: 0,
+                dashArray: '7 6',
+            });
+            aoiLayer.addTo(map);
+            map.fitBounds(aoiLayer.getBounds(), { padding: [24, 24] });
+
+            await refreshLayers();
+
+            ['toggleSimilarity', 'toggleInvasive', 'toggleBenchmarks', 'toggleSuggestions'].forEach((id) => {
+                document.getElementById(id).addEventListener('change', refreshLayers);
+            });
+        }
+
+        init().catch((err) => {
+            console.error(err);
+            document.getElementById('similarityDescription').textContent = `Failed to load viewer: ${err.message}`;
+        });
+    </script>
+</body>
+
+</html>

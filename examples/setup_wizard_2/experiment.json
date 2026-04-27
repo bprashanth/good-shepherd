@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "title": "Osuri Restoration Study Setup",
+    "aim": "To summarize how the Osuri rainforest restoration experiment is spatially organized, including forest sites, plot locations, adult-tree plots, nested sapling subplots, and the ecological indicators measured at each plot."
+  },
+  "hierarchy": {
+    "block": {
+      "exists": true,
+      "name_in_protocol": "Forest Site",
+      "description": "Named forest locations that contain restored, naturally regenerating, and benchmark plots in the Osuri study.",
+      "datasheet_description": "These site polygons are inferred from the observed plot locations in each named forest because no separate KML exists for the paper.",
+      "features": [
+        "Candura",
+        "HP Bend 36",
+        "HP Bend 37",
+        "HP Bend 40",
+        "Injiparai",
+        "Iyerpadi Colony",
+        "Iyerpadi Top",
+        "Old Cavarakal",
+        "Old Valparai",
+        "Pannimade",
+        "Selaliparai",
+        "Stanmore",
+        "Thenmalai",
+        "Upper Manamboli",
+        "Varatuparai"
+      ],
+      "children": {
+        "Candura": [
+          "CH05_08R",
+          "CH05_08U",
+          "CH06_09R",
+          "CH06_09U",
+          "CI07_15R",
+          "CI07_15U",
+          "CI17_16R",
+          "CI17_16U",
+          "CJ17_16R",
+          "CJ17_16U",
+          "CK17_16R",
+          "CK17_16U"
+        ],
+        "HP Bend 36": [
+          "HP36_P1B",
+          "HP36_P2B",
+          "HP36_P3B",
+          "HP36_P4B"
+        ],
+        "HP Bend 37": [
+          "HP37_P1B",
+          "HP37_P2B",
+          "HP37_P3B",
+          "HP37_P4B"
+        ],
+        "HP Bend 40": [
+          "HP40_05R",
+          "HP40_05U",
+          "HP40_08R",
+          "HP40_08U"
+        ],
+        "Injiparai": [
+          "INBS_04R",
+          "INBS_04U",
+          "INDS_03R",
+          "INDS_03U",
+          "INME_03R",
+          "INME_03U",
+          "INOA_03R",
+          "INOA_03U"
+        ],
+        "Iyerpadi Colony": [
+          "IPCO_07R",
+          "IPCO_07U",
+          "IPCO_08R",
+          "IPCO_08U"
+        ],
+        "Iyerpadi Top": [
+          "IPTO_04R",
+          "IPTO_04U",
+          "IPTO_05R",
+          "IPTO_05U",
+          "IPTO_06R",
+          "IPTO_06U",
+          "IPTO_07R",
+          "IPTO_07U"
+        ],
+        "Old Cavarakal": [
+          "OLCA_P1B",
+          "OLCA_P2B"
+        ],
+        "Old Valparai": [
+          "OLV1_10R",
+          "OLV1_10U",
+          "OLV2_08R",
+          "OLV2_08U"
+        ],
+        "Pannimade": [
+          "PANM_P1B",
+          "PANM_P2B"
+        ],
+        "Selaliparai": [
+          "SEL1_07R",
+          "SEL1_07U",
+          "SEL2_07R",
+          "SEL2_07U"
+        ],
+        "Stanmore": [
+          "STIN_02R",
+          "STIN_02U",
+          "STM1_02R",
+          "STM1_02U",
+          "STM2_04R",
+          "STM2_04U"
+        ],
+        "Thenmalai": [
+          "THEN_10R",
+          "THEN_10U"
+        ],
+        "Upper Manamboli": [
+          "UPMA_P1B",
+          "UPMA_P2B",
+          "UPMA_P3B",
+          "UPMA_P4B",
+          "UPMA_P5B"
+        ],
+        "Varatuparai": [
+          "VAR2_10R",
+          "VAR2_10U",
+          "VAR3_10R",
+          "VAR3_10U",
+          "VAR4_10R",
+          "VAR4_10U"
+        ]
+      }
+    },
+    "transect": {
+      "exists": false,
+      "name_in_protocol": "",
+      "description": "No explicit transect geometry is described in the paper or encoded in the metadata export.",
+      "datasheet_description": "",
+      "features": [],
+      "children": {}
+    },
+    "plot": {
+      "exists": true,
+      "name_in_protocol": "Adult-tree plot",
+      "dimensions": "20m x 20m",
+      "variables": [
+        "Canopy cover",
+        "Adult tree density",
+        "Tree height:diameter ratio (log:log)",
+        "Adult species density",
+        "Adult late-successional species density",
+        "Community similarity to benchmark rainforest",
+        "Sapling density",
+        "Sapling native fraction",
+        "Sapling species density",
+        "Sapling late-successional species density",
+        "Aboveground carbon storage"
+      ],
+      "datasheet_description": "Each plot in the paper is a 20 x 20 m adult-tree plot tied to a known center coordinate and classification.",
+      "features": [
+        "CH05_08R",
+        "CH05_08U",
+        "CH06_09R",
+        "CH06_09U",
+        "CI07_15R",
+        "CI07_15U",
+        "CI17_16R",
+        "CI17_16U",
+        "CJ17_16R",
+        "CJ17_16U",
+        "CK17_16R",
+        "CK17_16U",
+        "HP36_P1B",
+        "HP36_P2B",
+        "HP36_P3B",
+        "HP36_P4B",
+        "HP37_P1B",
+        "HP37_P2B",
+        "HP37_P3B",
+        "HP37_P4B",
+        "HP40_05R",
+        "HP40_05U",
+        "HP40_08R",
+        "HP40_08U",
+        "INBS_04R",
+        "INBS_04U",
+        "INDS_03R",
+        "INDS_03U",
+        "INME_03R",
+        "INME_03U",
+        "INOA_03R",
+        "INOA_03U",
+        "IPCO_07R",
+        "IPCO_07U",
+        "IPCO_08R",
+        "IPCO_08U",
+        "IPTO_04R",
+        "IPTO_04U",
+        "IPTO_05R",
+        "IPTO_05U",
+        "IPTO_06R",
+        "IPTO_06U",
+        "IPTO_07R",
+        "IPTO_07U",
+        "OLCA_P1B",
+        "OLCA_P2B",
+        "OLV1_10R",
+        "OLV1_10U",
+        "OLV2_08R",
+        "OLV2_08U",
+        "PANM_P1B",
+        "PANM_P2B",
+        "SEL1_07R",
+        "SEL1_07U",
+        "SEL2_07R",
+        "SEL2_07U",
+        "STIN_02R",
+        "STIN_02U",
+        "STM1_02R",
+        "STM1_02U",
+        "STM2_04R",
+        "STM2_04U",
+        "THEN_10R",
+        "THEN_10U",
+        "UPMA_P1B",
+        "UPMA_P2B",
+        "UPMA_P3B",
+        "UPMA_P4B",
+        "UPMA_P5B",
+        "VAR2_10R",
+        "VAR2_10U",
+        "VAR3_10R",
+        "VAR3_10U",
+        "VAR4_10R",
+        "VAR4_10U"
+      ]
+    },
+    "subplot": {
+      "exists": true,
+      "name_in_protocol": "Sapling subplot",
+      "dimensions": "5m x 5m nested within each plot",
+      "variables": [
+        "Sapling density",
+        "Sapling native fraction",
+        "Sapling species density",
+        "Sapling late-successional species density"
+      ]
+    }
+  }
+}

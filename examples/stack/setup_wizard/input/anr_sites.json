@@ -1,0 +1,1611 @@
+{
+  "metadata_name": "anr_sites",
+  "buffer_km": 10.0,
+  "study_area": {
+    "crs": "EPSG:4326",
+    "monitoring_convex_hull": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.0037921,
+            10.2888193
+          ],
+          [
+            76.83543,
+            10.309259999999997
+          ],
+          [
+            76.83476,
+            10.309869999999998
+          ],
+          [
+            76.83468,
+            10.31025
+          ],
+          [
+            76.836353,
+            10.3167454
+          ],
+          [
+            76.9834035,
+            10.428345899999997
+          ],
+          [
+            76.984653,
+            10.4280144
+          ],
+          [
+            76.9933422,
+            10.368047500000001
+          ],
+          [
+            77.0037921,
+            10.2888193
+          ]
+        ]
+      ]
+    },
+    "monitoring_convex_hull_buffered": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            77.09429629051152,
+            10.300512694946303
+          ],
+          [
+            77.09500992210133,
+            10.291873034191472
+          ],
+          [
+            77.09488457634302,
+            10.283205403031356
+          ],
+          [
+            77.09392147425021,
+            10.274589512110055
+          ],
+          [
+            77.09212953819905,
+            10.266104590170444
+          ],
+          [
+            77.08952530753311,
+            10.25782865608278
+          ],
+          [
+            77.08613278436196,
+            10.249837802189647
+          ],
+          [
+            77.0819832110456,
+            10.242205495521771
+          ],
+          [
+            77.07711478147297,
+            10.235001903269831
+          ],
+          [
+            77.07157228883734,
+            10.228293248670916
+          ],
+          [
+            77.06540671317846,
+            10.222141203186714
+          ],
+          [
+            77.05867475249867,
+            10.216602320516978
+          ],
+          [
+            77.05143830176225,
+            10.21172751760858
+          ],
+          [
+            77.04376388454877,
+            10.207561607391808
+          ],
+          [
+            77.03572204255164,
+            10.20414288750434
+          ],
+          [
+            77.02738668848549,
+            10.201502788754466
+          ],
+          [
+            77.0188344282905,
+            10.19966558653264
+          ],
+          [
+            77.01014385879357,
+            10.198648177809014
+          ],
+          [
+            77.00139484720465,
+            10.198459925759556
+          ],
+          [
+            76.99266779898875,
+            10.199102573449608
+          ],
+          [
+            76.8243502942589,
+            10.21952916510108
+          ],
+          [
+            76.81504016142677,
+            10.221144915169223
+          ],
+          [
+            76.80594849743072,
+            10.223705622853545
+          ],
+          [
+            76.79717276030338,
+            10.227183854625432
+          ],
+          [
+            76.78880703236898,
+            10.231542339877755
+          ],
+          [
+            76.78094101324797,
+            10.236734369076782
+          ],
+          [
+            76.77365905923476,
+            10.242704293027254
+          ],
+          [
+            76.77298903665596,
+            10.243314163947106
+          ],
+          [
+            76.76636778831843,
+            10.249999594328653
+          ],
+          [
+            76.76048009108379,
+            10.257327551475395
+          ],
+          [
+            76.75538916229824,
+            10.26521943225283
+          ],
+          [
+            76.75114968456221,
+            10.273590576229308
+          ],
+          [
+            76.74780721685862,
+            10.282351172860496
+          ],
+          [
+            76.7453977030015,
+            10.291407224224383
+          ],
+          [
+            76.74531759293995,
+            10.291787219765169
+          ],
+          [
+            76.7439913692962,
+            10.29991035159111
+          ],
+          [
+            76.74341646892634,
+            10.308119256558406
+          ],
+          [
+            76.74359771424453,
+            10.31634591927992
+          ],
+          [
+            76.74453366192711,
+            10.3245221719867
+          ],
+          [
+            76.74621661294124,
+            10.33258025962804
+          ],
+          [
+            76.74788807131429,
+            10.339076395467659
+          ],
+          [
+            76.75043319682925,
+            10.347307439361376
+          ],
+          [
+            76.75375762206798,
+            10.355261415308949
+          ],
+          [
+            76.75783124475073,
+            10.362866174098846
+          ],
+          [
+            76.76261715845074,
+            10.37005273042702
+          ],
+          [
+            76.7680719861425,
+            10.37675588959138
+          ],
+          [
+            76.77414627286471,
+            10.382914839868496
+          ],
+          [
+            76.78078493396268,
+            10.388473705155366
+          ],
+          [
+            76.92785842695156,
+            10.500096835495853
+          ],
+          [
+            76.93550848242297,
+            10.505309674139756
+          ],
+          [
+            76.9436541363392,
+            10.509726433218129
+          ],
+          [
+            76.9522110997685,
+            10.513301414199802
+          ],
+          [
+            76.96109081904179,
+            10.51599763063099
+          ],
+          [
+            76.97020139432726,
+            10.51778719141087
+          ],
+          [
+            76.97944853317753,
+            10.518651589664731
+          ],
+          [
+            76.98873652905135,
+            10.518581894205923
+          ],
+          [
+            76.99796925454478,
+            10.51757884160117
+          ],
+          [
+            77.00705115890885,
+            10.515652827898265
+          ],
+          [
+            77.0083009488572,
+            10.51532117676806
+          ],
+          [
+            77.01675119860751,
+            10.512636857531193
+          ],
+          [
+            77.024898097198,
+            10.509153430575306
+          ],
+          [
+            77.03266468661091,
+            10.504903819540294
+          ],
+          [
+            77.03997761241584,
+            10.499928184062071
+          ],
+          [
+            77.04676781735972,
+            10.494273539170425
+          ],
+          [
+            77.05297119384734,
+            10.487993309936186
+          ],
+          [
+            77.0585291891348,
+            10.481146825630006
+          ],
+          [
+            77.06338935752667,
+            10.473798758224836
+          ],
+          [
+            77.06750585438888,
+            10.466018510595834
+          ],
+          [
+            77.07083986736015,
+            10.457879560240473
+          ],
+          [
+            77.0733599807546,
+            10.449458764753967
+          ],
+          [
+            77.0750424697962,
+            10.440835635646897
+          ],
+          [
+            77.08371379984447,
+            10.380869533532552
+          ],
+          [
+            77.08386985464728,
+            10.379739497257306
+          ],
+          [
+            77.09429629051152,
+            10.300512694946303
+          ]
+        ]
+      ]
+    }
+  },
+  "counts": {
+    "active": 29,
+    "passive": 29,
+    "benchmark": 17,
+    "monitoring": 28
+  },
+  "has_benchmark_sites_within_buffer": true,
+  "monitoring_sites": [
+    {
+      "name": "2019_SM_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.30991,
+      "lon": 76.83501
+    },
+    {
+      "name": "2019_LA_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.30987,
+      "lon": 76.83476
+    },
+    {
+      "name": "2019_LA_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.31025,
+      "lon": 76.83468
+    },
+    {
+      "name": "2019_SM_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.30926,
+      "lon": 76.83543
+    },
+    {
+      "name": "2024_H13_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.31329,
+      "lon": 76.83704
+    },
+    {
+      "name": "2024_J12_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.31284,
+      "lon": 76.83536
+    },
+    {
+      "name": "G14R1-2025",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.313653,
+      "lon": 76.8372776
+    },
+    {
+      "name": "NCFOffice",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.330100351096883,
+      "lon": 76.95995091734363
+    },
+    {
+      "name": "2016_I17_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3167454,
+      "lon": 76.836353
+    },
+    {
+      "name": "2004_IyT_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3522313,
+      "lon": 76.9934198
+    },
+    {
+      "name": "2008_ANIC_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3669085,
+      "lon": 76.9855185
+    },
+    {
+      "name": "2024_RK_C",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3583445,
+      "lon": 76.970264
+    },
+    {
+      "name": "2024_IyH_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3526436,
+      "lon": 76.9720635
+    },
+    {
+      "name": "2023_TANTEA_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.2888193,
+      "lon": 77.0037921
+    },
+    {
+      "name": "2010_VAR3_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3514666,
+      "lon": 76.9252687
+    },
+    {
+      "name": "2010_VAR2_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3555078,
+      "lon": 76.9301219
+    },
+    {
+      "name": "2010_TATAFINLAY_INSIDE_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3467839,
+      "lon": 76.9334326
+    },
+    {
+      "name": "2008_TATAFINLAY_RS",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3489402,
+      "lon": 76.9346112
+    },
+    {
+      "name": "2021_TATAAGO_FRONT_R4",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3497094,
+      "lon": 76.9374781
+    },
+    {
+      "name": "2022_TATAAGO_BACKSIDE_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3484869,
+      "lon": 76.9359248
+    },
+    {
+      "name": "2007_SEL2_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3426383,
+      "lon": 76.9336963
+    },
+    {
+      "name": "2007_SEL2_RS",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3425407,
+      "lon": 76.9333817
+    },
+    {
+      "name": "2020_SEL1_FG_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3380137,
+      "lon": 76.9343539
+    },
+    {
+      "name": "2006_SEL1_RS",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3374759,
+      "lon": 76.9350269
+    },
+    {
+      "name": "2005_40HPB_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3680475,
+      "lon": 76.9933422
+    },
+    {
+      "name": "2005_40HPB_RS",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.3677432,
+      "lon": 76.9928804
+    },
+    {
+      "name": "2025_PN_R1",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.4283459,
+      "lon": 76.9834035
+    },
+    {
+      "name": "2026_PN_R2",
+      "classification": "monitoring",
+      "source": "db.json",
+      "lat": 10.4280144,
+      "lon": 76.984653
+    }
+  ],
+  "osuri_sites_within_buffer": [
+    {
+      "name": "IPTO_04R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 04'",
+      "site_code": "IPTO_04",
+      "plot_code": "IPTO_04R",
+      "lat": 10.35293,
+      "lon": 76.99553,
+      "distance_to_contiguous_forest_m": 757.86
+    },
+    {
+      "name": "IPTO_05R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 05'",
+      "site_code": "IPTO_05",
+      "plot_code": "IPTO_05R",
+      "lat": 10.35174,
+      "lon": 76.99278,
+      "distance_to_contiguous_forest_m": 892.12
+    },
+    {
+      "name": "VAR2_10R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varatuparai 2",
+      "site_code": "VAR2_10",
+      "plot_code": "VAR2_10R",
+      "lat": 10.35545,
+      "lon": 76.93008,
+      "distance_to_contiguous_forest_m": 292.23
+    },
+    {
+      "name": "VAR3_10R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varatuparai 3",
+      "site_code": "VAR3_10",
+      "plot_code": "VAR3_10R",
+      "lat": 10.35278,
+      "lon": 76.92908,
+      "distance_to_contiguous_forest_m": 304.09
+    },
+    {
+      "name": "SEL2_07R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Selaliparai",
+      "site_name": "Selaliparai 2",
+      "site_code": "SEL2_07",
+      "plot_code": "SEL2_07R",
+      "lat": 10.34262,
+      "lon": 76.93369,
+      "distance_to_contiguous_forest_m": 1097.43
+    },
+    {
+      "name": "SEL1_07R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Selaliparai",
+      "site_name": "Selaliparai 1",
+      "site_code": "SEL1_07",
+      "plot_code": "SEL1_07R",
+      "lat": 10.33777,
+      "lon": 76.93587,
+      "distance_to_contiguous_forest_m": 1450.18
+    },
+    {
+      "name": "VAR4_10R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varatuparai 4",
+      "site_code": "VAR4_10",
+      "plot_code": "VAR4_10R",
+      "lat": 10.34515,
+      "lon": 76.92229,
+      "distance_to_contiguous_forest_m": 236.42
+    },
+    {
+      "name": "HP40_05R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "HP Bend 40",
+      "site_name": "40 HPB 05",
+      "site_code": "HP40_05",
+      "plot_code": "HP40_05R",
+      "lat": 10.36807,
+      "lon": 76.9929,
+      "distance_to_contiguous_forest_m": 292.23325
+    },
+    {
+      "name": "HP40_08R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "HP Bend 40",
+      "site_name": "40 HPB 08",
+      "site_code": "HP40_08",
+      "plot_code": "HP40_08R",
+      "lat": 10.3679,
+      "lon": 76.99445,
+      "distance_to_contiguous_forest_m": 219.17
+    },
+    {
+      "name": "OLV1_10R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Old Valparai",
+      "site_name": "Old Valparai 1",
+      "site_code": "OLV1_10",
+      "plot_code": "OLV1_10R",
+      "lat": 10.34658,
+      "lon": 76.93341,
+      "distance_to_contiguous_forest_m": 1092.54
+    },
+    {
+      "name": "OLV2_08R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Old Valparai",
+      "site_name": "Old Valparai 2",
+      "site_code": "OLV2_08",
+      "plot_code": "OLV2_08R",
+      "lat": 10.34881,
+      "lon": 76.93459,
+      "distance_to_contiguous_forest_m": 1217.97
+    },
+    {
+      "name": "IPCO_07R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Colony",
+      "site_name": "Iyerpadi Colony 07",
+      "site_code": "IPCO_07",
+      "plot_code": "IPCO_07R",
+      "lat": 10.35868,
+      "lon": 76.9963,
+      "distance_to_contiguous_forest_m": 249.44
+    },
+    {
+      "name": "IPCO_08R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Colony",
+      "site_name": "Iyerpadi Colony 08",
+      "site_code": "IPCO_08",
+      "plot_code": "IPCO_08R",
+      "lat": 10.35891,
+      "lon": 76.99603,
+      "distance_to_contiguous_forest_m": 249.44
+    },
+    {
+      "name": "IPTO_07R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 07",
+      "site_code": "IPTO_07",
+      "plot_code": "IPTO_07R",
+      "lat": 10.3511,
+      "lon": 76.99231,
+      "distance_to_contiguous_forest_m": 920.26
+    },
+    {
+      "name": "IPTO_06R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 06",
+      "site_code": "IPTO_06",
+      "plot_code": "IPTO_06R",
+      "lat": 10.35164,
+      "lon": 76.99271,
+      "distance_to_contiguous_forest_m": 892.12
+    },
+    {
+      "name": "THEN_10R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Thenmalai",
+      "site_name": "Thenmalai 10",
+      "site_code": "THEN_10",
+      "plot_code": "THEN_10R",
+      "lat": 10.3539,
+      "lon": 76.93882,
+      "distance_to_contiguous_forest_m": 1464.81
+    },
+    {
+      "name": "CH06_09R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura H06",
+      "site_code": "CH06_09",
+      "plot_code": "CH06_09R",
+      "lat": 10.30673062,
+      "lon": 76.8366466,
+      "distance_to_contiguous_forest_m": 309.48
+    },
+    {
+      "name": "CH05_08R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura H05",
+      "site_code": "CH05_08",
+      "plot_code": "CH05_08R",
+      "lat": 10.30582664,
+      "lon": 76.83664136,
+      "distance_to_contiguous_forest_m": 309.48
+    },
+    {
+      "name": "CI07_15R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura I07",
+      "site_code": "CI07_15",
+      "plot_code": "CI07_15R",
+      "lat": 10.30763978,
+      "lon": 76.83573899,
+      "distance_to_contiguous_forest_m": 326.72672
+    },
+    {
+      "name": "INME_03R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ R03",
+      "site_code": "INME_03",
+      "plot_code": "INME_03R",
+      "lat": 10.32031,
+      "lon": 76.93046,
+      "distance_to_contiguous_forest_m": 1791.09
+    },
+    {
+      "name": "INDS_03R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ DS R03",
+      "site_code": "INDS_03",
+      "plot_code": "INDS_03R",
+      "lat": 10.32348,
+      "lon": 76.93007,
+      "distance_to_contiguous_forest_m": 1765.53394
+    },
+    {
+      "name": "INBS_04R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ BS R04",
+      "site_code": "INBS_04",
+      "plot_code": "INBS_04R",
+      "lat": 10.32423,
+      "lon": 76.92737,
+      "distance_to_contiguous_forest_m": 1603.68
+    },
+    {
+      "name": "INOA_03R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ OP R03",
+      "site_code": "INOA_03",
+      "plot_code": "INOA_03R",
+      "lat": 10.2212,
+      "lon": 76.92667,
+      "distance_to_contiguous_forest_m": 1645.52
+    },
+    {
+      "name": "STM1_02R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST MJ R02",
+      "site_code": "STM1_02",
+      "plot_code": "STM1_02R",
+      "lat": 10.32985,
+      "lon": 76.93414,
+      "distance_to_contiguous_forest_m": 1703.99805
+    },
+    {
+      "name": "STM2_04R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST R04",
+      "site_code": "STM2_04",
+      "plot_code": "STM2_04R",
+      "lat": 10.32971,
+      "lon": 76.93294,
+      "distance_to_contiguous_forest_m": 1703.99805
+    },
+    {
+      "name": "STIN_02R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST IN R02",
+      "site_code": "STIN_02",
+      "plot_code": "STIN_02R",
+      "lat": 10.32727,
+      "lon": 76.93225,
+      "distance_to_contiguous_forest_m": 1699.58
+    },
+    {
+      "name": "IPTO_04U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 04'",
+      "site_code": "IPTO_04",
+      "plot_code": "IPTO_04U",
+      "lat": 10.35028,
+      "lon": 76.98968,
+      "distance_to_contiguous_forest_m": 757.86
+    },
+    {
+      "name": "IPTO_05U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 05'",
+      "site_code": "IPTO_05",
+      "plot_code": "IPTO_05U",
+      "lat": 10.3502,
+      "lon": 76.98984,
+      "distance_to_contiguous_forest_m": 892.12
+    },
+    {
+      "name": "SEL1_07U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Selaliparai",
+      "site_name": "Selaliparai 1",
+      "site_code": "SEL1_07",
+      "plot_code": "SEL1_07U",
+      "lat": 10.33783,
+      "lon": 76.93429,
+      "distance_to_contiguous_forest_m": 1450.18
+    },
+    {
+      "name": "HP40_05U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "HP Bend 40",
+      "site_name": "40 HPB 05",
+      "site_code": "HP40_05",
+      "plot_code": "HP40_05U",
+      "lat": 10.36707,
+      "lon": 76.99002,
+      "distance_to_contiguous_forest_m": 292.23325
+    },
+    {
+      "name": "HP40_08U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "HP Bend 40",
+      "site_name": "40 HPB 08",
+      "site_code": "HP40_08",
+      "plot_code": "HP40_08U",
+      "lat": 10.36812,
+      "lon": 76.99062,
+      "distance_to_contiguous_forest_m": 219.17
+    },
+    {
+      "name": "SEL2_07U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Selaliparai",
+      "site_name": "Selaliparai 2",
+      "site_code": "SEL2_07",
+      "plot_code": "SEL2_07U",
+      "lat": 10.34395,
+      "lon": 76.93364,
+      "distance_to_contiguous_forest_m": 1097.43
+    },
+    {
+      "name": "OLV2_08U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Old Valparai",
+      "site_name": "Old Valparai 2",
+      "site_code": "OLV2_08",
+      "plot_code": "OLV2_08U",
+      "lat": 10.3517,
+      "lon": 76.93798,
+      "distance_to_contiguous_forest_m": 1217.97
+    },
+    {
+      "name": "OLV1_10U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Old Valparai",
+      "site_name": "Old Valparai 1",
+      "site_code": "OLV1_10",
+      "plot_code": "OLV1_10U",
+      "lat": 10.35079,
+      "lon": 76.9368,
+      "distance_to_contiguous_forest_m": 1092.54
+    },
+    {
+      "name": "VAR2_10U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varattuparai 2",
+      "site_code": "VAR2_10",
+      "plot_code": "VAR2_10U",
+      "lat": 10.34901,
+      "lon": 76.91976,
+      "distance_to_contiguous_forest_m": 292.23
+    },
+    {
+      "name": "VAR3_10U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varattuparai 3",
+      "site_code": "VAR3_10",
+      "plot_code": "VAR3_10U",
+      "lat": 10.34875,
+      "lon": 76.9193,
+      "distance_to_contiguous_forest_m": 304.09
+    },
+    {
+      "name": "VAR4_10U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Varatuparai",
+      "site_name": "Varattuparai 4",
+      "site_code": "VAR4_10",
+      "plot_code": "VAR4_10U",
+      "lat": 10.3467,
+      "lon": 76.92072,
+      "distance_to_contiguous_forest_m": 146.11662
+    },
+    {
+      "name": "IPCO_07U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Colony",
+      "site_name": "Iyerpadi Colony 07",
+      "site_code": "IPCO_07",
+      "plot_code": "IPCO_07U",
+      "lat": 10.35952,
+      "lon": 76.99557,
+      "distance_to_contiguous_forest_m": 249.44
+    },
+    {
+      "name": "IPCO_08U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Colony",
+      "site_name": "Iyerpadi Colony 08",
+      "site_code": "IPCO_08",
+      "plot_code": "IPCO_08U",
+      "lat": 10.35956,
+      "lon": 76.99491,
+      "distance_to_contiguous_forest_m": 249.44
+    },
+    {
+      "name": "IPTO_06U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 06",
+      "site_code": "IPTO_06",
+      "plot_code": "IPTO_06U",
+      "lat": 10.34976,
+      "lon": 76.98991,
+      "distance_to_contiguous_forest_m": 892.12
+    },
+    {
+      "name": "IPTO_07U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Iyerpadi Top",
+      "site_name": "Iyerpadi top 07",
+      "site_code": "IPTO_07",
+      "plot_code": "IPTO_07U",
+      "lat": 10.34987,
+      "lon": 76.98985,
+      "distance_to_contiguous_forest_m": 920.26
+    },
+    {
+      "name": "THEN_10U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Thenmalai",
+      "site_name": "Thenmalai 10",
+      "site_code": "THEN_10",
+      "plot_code": "THEN_10U",
+      "lat": 10.35466,
+      "lon": 76.93964,
+      "distance_to_contiguous_forest_m": 1464.81
+    },
+    {
+      "name": "CH05_08U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura J06 (control for H06)",
+      "site_code": "CH05_08",
+      "plot_code": "CH05_08U",
+      "lat": 10.30674099,
+      "lon": 76.83482091,
+      "distance_to_contiguous_forest_m": 309.48
+    },
+    {
+      "name": "CI07_15U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura J07 (control for I07)",
+      "site_code": "CI07_15",
+      "plot_code": "CI07_15U",
+      "lat": 10.30764496,
+      "lon": 76.83482614,
+      "distance_to_contiguous_forest_m": 292.23325
+    },
+    {
+      "name": "CH06_09U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura K06  (control for H05)",
+      "site_code": "CH06_09",
+      "plot_code": "CH06_09U",
+      "lat": 10.30674617,
+      "lon": 76.83390807,
+      "distance_to_contiguous_forest_m": 309.48
+    },
+    {
+      "name": "STM2_04U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST U04",
+      "site_code": "STM2_04",
+      "plot_code": "STM2_04U",
+      "lat": 10.32936,
+      "lon": 76.93313,
+      "distance_to_contiguous_forest_m": 1703.99805
+    },
+    {
+      "name": "STM1_02U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST MJ U02",
+      "site_code": "STM1_02",
+      "plot_code": "STM1_02U",
+      "lat": 10.3301,
+      "lon": 76.93306,
+      "distance_to_contiguous_forest_m": 1703.99805
+    },
+    {
+      "name": "STIN_02U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Stanmore",
+      "site_name": "ST IN U02",
+      "site_code": "STIN_02",
+      "plot_code": "STIN_02U",
+      "lat": 10.32914,
+      "lon": 76.93286,
+      "distance_to_contiguous_forest_m": 1699.58
+    },
+    {
+      "name": "INOA_03U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ OS U03",
+      "site_code": "INOA_03",
+      "plot_code": "INOA_03U",
+      "lat": 10.32413,
+      "lon": 76.92426,
+      "distance_to_contiguous_forest_m": 1645.52
+    },
+    {
+      "name": "INBS_04U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ BS U04",
+      "site_code": "INBS_04",
+      "plot_code": "INBS_04U",
+      "lat": 10.32487,
+      "lon": 76.92616,
+      "distance_to_contiguous_forest_m": 1603.68
+    },
+    {
+      "name": "INDS_03U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ DS U03",
+      "site_code": "INDS_03",
+      "plot_code": "INDS_03U",
+      "lat": 10.32414,
+      "lon": 76.92998,
+      "distance_to_contiguous_forest_m": 1765.53394
+    },
+    {
+      "name": "INME_03U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Injiparai",
+      "site_name": "INJ 03 U 2",
+      "site_code": "INME_03",
+      "plot_code": "INME_03U",
+      "lat": 10.32322,
+      "lon": 76.92351,
+      "distance_to_contiguous_forest_m": 1791.09
+    },
+    {
+      "name": "HP37_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 37",
+      "site_name": "HP 37 B1",
+      "site_code": "HP37_P1",
+      "plot_code": "HP37_P1B",
+      "lat": 10.3727,
+      "lon": 76.99353,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP37_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 37",
+      "site_name": "HP 37 B2",
+      "site_code": "HP37_P2",
+      "plot_code": "HP37_P2B",
+      "lat": 10.37457,
+      "lon": 76.99343,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP37_P3B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 37",
+      "site_name": "HP 37 B3",
+      "site_code": "HP37_P3",
+      "plot_code": "HP37_P3B",
+      "lat": 10.37526,
+      "lon": 76.99171,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP37_P4B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 37",
+      "site_name": "HP 37 B4",
+      "site_code": "HP37_P4",
+      "plot_code": "HP37_P4B",
+      "lat": 10.37456,
+      "lon": 76.99097,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP36_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 36",
+      "site_name": "HP 36 B1",
+      "site_code": "HP36_P1",
+      "plot_code": "HP36_P1B",
+      "lat": 10.36442,
+      "lon": 76.99772,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP36_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 36",
+      "site_name": "HP 36 B2",
+      "site_code": "HP36_P2",
+      "plot_code": "HP36_P2B",
+      "lat": 10.3638,
+      "lon": 76.99726,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP36_P3B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 36",
+      "site_name": "HP 36 B3",
+      "site_code": "HP36_P3",
+      "plot_code": "HP36_P3B",
+      "lat": 10.36657,
+      "lon": 76.99734,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "HP36_P4B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "HP Bend 36",
+      "site_name": "HP 36 B4",
+      "site_code": "HP36_P4",
+      "plot_code": "HP36_P4B",
+      "lat": 10.36889,
+      "lon": 76.99519,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "OLCA_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Old Cavarakal",
+      "site_name": "OC B1",
+      "site_code": "OLCA_P1",
+      "plot_code": "OLCA_P1B",
+      "lat": 10.37132,
+      "lon": 76.97489,
+      "distance_to_contiguous_forest_m": 146.11662
+    },
+    {
+      "name": "OLCA_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Old Cavarakal",
+      "site_name": "OC B2",
+      "site_code": "OLCA_P2",
+      "plot_code": "OLCA_P2B",
+      "lat": 10.37068,
+      "lon": 76.97376,
+      "distance_to_contiguous_forest_m": 146.11662
+    },
+    {
+      "name": "UPMA_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B1",
+      "site_code": "UPMA_P1",
+      "plot_code": "UPMA_P1B",
+      "lat": 10.3477,
+      "lon": 76.89621,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "UPMA_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B2",
+      "site_code": "UPMA_P2",
+      "plot_code": "UPMA_P2B",
+      "lat": 10.34762,
+      "lon": 76.89461,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "UPMA_P3B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B3",
+      "site_code": "UPMA_P3",
+      "plot_code": "UPMA_P3B",
+      "lat": 10.34778,
+      "lon": 76.89386,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "UPMA_P4B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B4",
+      "site_code": "UPMA_P4",
+      "plot_code": "UPMA_P4B",
+      "lat": 10.34822,
+      "lon": 76.89232,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "UPMA_P5B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B5",
+      "site_code": "UPMA_P5",
+      "plot_code": "UPMA_P5B",
+      "lat": 10.3486,
+      "lon": 76.89059,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "PANM_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Pannimade",
+      "site_name": "PNMD  1",
+      "site_code": "PANM_P1",
+      "plot_code": "PANM_P1B",
+      "lat": 10.29779,
+      "lon": 76.8932,
+      "distance_to_contiguous_forest_m": 1830.83618
+    },
+    {
+      "name": "PANM_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Pannimade",
+      "site_name": "PNMD 2",
+      "site_code": "PANM_P2",
+      "plot_code": "PANM_P2B",
+      "lat": 10.29697,
+      "lon": 76.89266,
+      "distance_to_contiguous_forest_m": 1633.63354
+    },
+    {
+      "name": "CI17_16R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura I17",
+      "site_code": "CI17_16",
+      "plot_code": "CI17_16R",
+      "lat": 10.31667951,
+      "lon": 76.83579137,
+      "distance_to_contiguous_forest_m": 413.28021
+    },
+    {
+      "name": "CJ17_16R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura J17",
+      "site_code": "CJ17_16",
+      "plot_code": "CJ17_16R",
+      "lat": 10.3166847,
+      "lon": 76.83487849,
+      "distance_to_contiguous_forest_m": 326.72672
+    },
+    {
+      "name": "CK17_16R",
+      "classification": "active",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura K17",
+      "site_code": "CK17_16",
+      "plot_code": "CK17_16R",
+      "lat": 10.31668988,
+      "lon": 76.83396562,
+      "distance_to_contiguous_forest_m": 206.64011
+    },
+    {
+      "name": "CJ17_16U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura M14",
+      "site_code": "CJ17_16",
+      "plot_code": "CJ17_16U",
+      "lat": 10.31398832,
+      "lon": 76.83212419,
+      "distance_to_contiguous_forest_m": 146.11662
+    },
+    {
+      "name": "CI17_16U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura M15",
+      "site_code": "CI17_16",
+      "plot_code": "CI17_16U",
+      "lat": 10.31489229,
+      "lon": 76.83212941,
+      "distance_to_contiguous_forest_m": 146.11662
+    },
+    {
+      "name": "CK17_16U",
+      "classification": "passive",
+      "source": "osuri",
+      "forest_name": "Candura",
+      "site_name": "Candura N15",
+      "site_code": "CK17_16",
+      "plot_code": "CK17_16U",
+      "lat": 10.31489747,
+      "lon": 76.83121655,
+      "distance_to_contiguous_forest_m": 0.0
+    }
+  ],
+  "notes": [
+    "db.json contributes only monitoring-site locations.",
+    "Osuri sites are included when their coordinates fall inside the 10 km buffered convex hull around db.json monitoring sites.",
+    "Benchmark plots missing coordinates cannot be spatially tested and are listed separately."
+  ],
+  "benchmark_sites_missing_coordinates": [
+    {
+      "name": "UPMA_P6B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B6",
+      "site_code": "UPMA_P6",
+      "plot_code": "UPMA_P6B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "UPMA_P7B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Upper Manamboli",
+      "site_name": "UMB B7",
+      "site_code": "UPMA_P7",
+      "plot_code": "UPMA_P7B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P1B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P1",
+      "site_code": "SHEK_P1",
+      "plot_code": "SHEK_P1B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P2B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P2",
+      "site_code": "SHEK_P2",
+      "plot_code": "SHEK_P2B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P3B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P3",
+      "site_code": "SHEK_P3",
+      "plot_code": "SHEK_P3B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P4B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P4",
+      "site_code": "SHEK_P4",
+      "plot_code": "SHEK_P4B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P5B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P5",
+      "site_code": "SHEK_P5",
+      "plot_code": "SHEK_P5B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P6B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P6",
+      "site_code": "SHEK_P6",
+      "plot_code": "SHEK_P6B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P7B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P7",
+      "site_code": "SHEK_P7",
+      "plot_code": "SHEK_P7B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P8B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P8",
+      "site_code": "SHEK_P8",
+      "plot_code": "SHEK_P8B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P9B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P9",
+      "site_code": "SHEK_P9",
+      "plot_code": "SHEK_P9B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    },
+    {
+      "name": "SHEK_P10B",
+      "classification": "benchmark",
+      "source": "osuri",
+      "forest_name": "Shekalmudi",
+      "site_name": "SHEK P10",
+      "site_code": "SHEK_P10",
+      "plot_code": "SHEK_P10B",
+      "lat": null,
+      "lon": null,
+      "distance_to_contiguous_forest_m": 0.0
+    }
+  ]
+}

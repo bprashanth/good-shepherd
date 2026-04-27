@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantwise</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(222, 214, 184, 0.58), transparent 28%),
+                linear-gradient(140deg, #f2ebdb 0%, #d6e0cc 52%, #f1ece3 100%);
+            color: #1f281c;
+            min-height: 100vh;
+        }
+        .layout {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: minmax(300px, 380px) 1fr;
+        }
+        .sidebar {
+            padding: 28px 22px;
+            background: rgba(249, 245, 236, 0.88);
+            border-right: 1px solid rgba(63, 84, 53, 0.14);
+            backdrop-filter: blur(8px);
+            overflow-y: auto;
+        }
+        h1 {
+            margin: 0 0 18px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+        .card {
+            background: rgba(255, 251, 245, 0.84);
+            border: 1px solid rgba(63, 84, 53, 0.12);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 14px 28px rgba(74, 96, 63, 0.08);
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5b6a52;
+        }
+        .advisory {
+            color: #6b241f;
+            background: rgba(187, 83, 70, 0.08);
+            border: 1px solid rgba(187, 83, 70, 0.18);
+        }
+        .advisory p {
+            margin: 0;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+        .learn-more {
+            margin-top: 14px;
+            border: 1px solid rgba(78, 112, 71, 0.18);
+            border-radius: 999px;
+            padding: 9px 14px;
+            font-weight: 600;
+            color: #445640;
+            background: rgba(95, 122, 83, 0.1);
+            cursor: pointer;
+        }
+        .learn-more:hover {
+            background: rgba(95, 122, 83, 0.16);
+        }
+        .learn-more:active {
+            transform: translateY(1px);
+        }
+        .nursery {
+            padding: 12px 0;
+            border-top: 1px solid rgba(63, 84, 53, 0.1);
+        }
+        .nursery:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        .nursery-name {
+            display: inline-flex;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.98rem;
+            color: #31412c;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(49, 65, 44, 0.18);
+        }
+        .nursery-name:hover {
+            border-bottom-color: rgba(49, 65, 44, 0.45);
+        }
+        .species-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .species-chip {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(78, 112, 71, 0.1);
+            border: 1px solid rgba(78, 112, 71, 0.14);
+            font-size: 0.88rem;
+        }
+        .map-shell {
+            position: relative;
+        }
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+        @media (max-width: 960px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid rgba(63, 84, 53, 0.14);
+            }
+            #map {
+                height: 62vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <h1>Plantwise</h1>
+            <section class="card advisory" id="advisoryCard" hidden>
+                <p id="advisoryMessage"></p>
+                <button class="learn-more" id="learnMoreBtn" type="button">Learn more</button>
+                <p id="learnMoreText" hidden style="margin-top: 12px;"></p>
+            </section>
+
+            <section class="card" id="nurseryCard" hidden>
+                <h2>Nurseries</h2>
+                <div id="nurseryList"></div>
+            </section>
+        </aside>
+
+        <main class="map-shell">
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let map;
+        let advisoryData;
+        let selectedPlot;
+
+        async function loadJson(path) {
+            const response = await fetch(path);
+            return response.json();
+        }
+
+        function renderNurseries(nurseries) {
+            const list = document.getElementById('nurseryList');
+            list.innerHTML = '';
+            nurseries.forEach((nursery) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'nursery';
+                wrapper.innerHTML = `
+                    <a class="nursery-name" href="${nursery.url}" target="_blank" rel="noreferrer">${nursery.name}</a>
+                    <div class="species-list">
+                        ${nursery.species.map((species) => `<span class="species-chip">${species}</span>`).join('')}
+                    </div>
+                `;
+                list.appendChild(wrapper);
+            });
+        }
+
+        function showAdvisory() {
+            document.getElementById('advisoryCard').hidden = false;
+            document.getElementById('nurseryCard').hidden = false;
+            document.getElementById('advisoryMessage').innerText = advisoryData.message;
+            renderNurseries(advisoryData.nurseries);
+        }
+
+        function initMap(plotData) {
+            map = L.map('map', {
+                zoomControl: true,
+                attributionControl: false
+            });
+
+            map.setView([advisoryData.aoi_center.lat, advisoryData.aoi_center.lon], 14);
+
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri'
+            }).addTo(map);
+
+            const aoiCircle = L.circle([advisoryData.aoi_center.lat, advisoryData.aoi_center.lon], {
+                radius: advisoryData.aoi_radius_m,
+                color: '#6e8a62',
+                weight: 2,
+                opacity: 0.8,
+                fillOpacity: 0
+            }).addTo(map);
+
+            const plotLayer = L.geoJSON(plotData.adult_tree_plot.geometry, {
+                style: () => ({
+                    color: '#be4a2f',
+                    weight: 3,
+                    opacity: 1,
+                    fillColor: '#f0bf7a',
+                    fillOpacity: 0.16
+                })
+            }).addTo(map);
+
+            plotLayer.on('click', showAdvisory);
+            plotLayer.bindTooltip('Click for replanting advisory', {
+                permanent: false,
+                direction: 'center'
+            });
+
+            L.circleMarker([plotData.center.lat, plotData.center.lon], {
+                radius: 5,
+                color: '#fff5e8',
+                weight: 2,
+                fillColor: '#a13f2d',
+                fillOpacity: 0.95
+            }).addTo(map);
+
+            const aoiBounds = L.latLngBounds(
+                L.latLng(advisoryData.aoi_center.lat, advisoryData.aoi_center.lon).toBounds(advisoryData.aoi_radius_m * 2)
+            );
+            const bounds = L.latLngBounds(aoiBounds);
+            bounds.extend(plotLayer.getBounds());
+            map.fitBounds(bounds, { padding: [32, 32] });
+        }
+
+        async function init() {
+            const [plotData, advisory] = await Promise.all([
+                loadJson('input/selected_plot.json'),
+                loadJson('input/advisory_data.json')
+            ]);
+
+            advisoryData = advisory;
+            selectedPlot = plotData;
+
+            document.getElementById('learnMoreBtn').addEventListener('click', () => {
+                const el = document.getElementById('learnMoreText');
+                el.hidden = false;
+                el.innerText = advisoryData.learn_more;
+            });
+
+            initMap(selectedPlot);
+        }
+
+        init().catch((error) => {
+            console.error(error);
+            document.querySelector('.sidebar').insertAdjacentHTML(
+                'beforeend',
+                '<section class="card advisory"><p>Failed to load Plantwise.</p></section>'
+            );
+        });
+    </script>
+</body>
+
+</html>
