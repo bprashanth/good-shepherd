@@ -1,0 +1,99 @@
+{
+  "paths": {
+    "preferred_data_root": "/media/desinotorious/T7 Shield/good-shepherd/notebooks/data",
+    "fallback_working_dir": ".",
+    "cache_root_when_preferred": "/media/desinotorious/T7 Shield/good-shepherd/notebooks/data/cache",
+    "cache_root_when_fallback": "cache",
+    "db_json": "db.json",
+    "phase1_state_subdir": "phase1_state",
+    "optical_cache_subdir": "optical_explainers"
+  },
+  "data_sources": {
+    "site_observations_db": {
+      "dataset_or_asset_path": "notebooks/db.json",
+      "cache": {
+        "kind": "asset_file",
+        "path": "db.json"
+      }
+    },
+    "phase1_state": {
+      "dataset_or_asset_path": "aoi_sieve.ipynb exported phase-1 arrays",
+      "cache": {
+        "kind": "npy_and_json_files",
+        "base_dir": "{cache_root}/phase1_state",
+        "required_files": [
+          "phase1_unexplained_mask.npy",
+          "phase1_ae_change.npy",
+          "phase1_gpw_delta.npy",
+          "phase1_dw_delta.npy",
+          "phase1_extent.json",
+          "phase1_thresholds.json"
+        ]
+      }
+    },
+    "alphaearth_change_strength": {
+      "dataset_or_asset_path": "GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}",
+        "pattern": "gif_ae_change_{year}.npy"
+      }
+    },
+    "gpw_height_delta": {
+      "dataset_or_asset_path": "projects/sat-io/open-datasets/ORNL/GPWv4/population-density",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}",
+        "pattern": "gif_gpw_delta_{year}.npy"
+      }
+    },
+    "dynamic_world_tree_prob_delta": {
+      "dataset_or_asset_path": "GOOGLE/DYNAMICWORLD/V1",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}",
+        "pattern": "gif_dw_delta_{year}.npy"
+      }
+    },
+    "optical_patchiness_evi_texture": {
+      "dataset_or_asset_path": "COPERNICUS/S2_SR_HARMONIZED (derived: EVI texture)",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}/optical_explainers",
+        "pattern": "gif_evi_texture_{year}.npy"
+      }
+    },
+    "optical_shadow_index": {
+      "dataset_or_asset_path": "COPERNICUS/S2_SR_HARMONIZED (derived: shadow index)",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}/optical_explainers",
+        "pattern": "gif_shadow_{year}.npy"
+      }
+    },
+    "optical_disturbance_nbr": {
+      "dataset_or_asset_path": "COPERNICUS/S2_SR_HARMONIZED (derived: NBR)",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}/optical_explainers",
+        "pattern": "gif_nbr_{year}.npy"
+      }
+    },
+    "optical_moisture_ndmi": {
+      "dataset_or_asset_path": "COPERNICUS/S2_SR_HARMONIZED (derived: NDMI)",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}/optical_explainers",
+        "pattern": "gif_ndmi_{year}.npy"
+      }
+    },
+    "optical_vigor_evi": {
+      "dataset_or_asset_path": "COPERNICUS/S2_SR_HARMONIZED (derived: EVI)",
+      "cache": {
+        "kind": "per_year_npy",
+        "base_dir": "{cache_root}/optical_explainers",
+        "pattern": "gif_evi_{year}.npy"
+      }
+    }
+  }
+}
