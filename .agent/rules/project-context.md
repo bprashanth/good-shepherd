@@ -12,19 +12,14 @@ The Good Shepherd POC example apps live under `examples/`. Three **stacks** (per
 To bring up the default research + rewild static servers, compute server, and npm apps: from repo root, `./.venv/bin/python examples/stacks/run_stacks.py` (Ctrl+C stops; next run clears ports in use). Optional: `--stack research`, `--stack rewild`, `--stack community` (community is validated only; Docker is documented separately).
 
 ### Other `examples/` roots (out of stack layout)
-* `examples/pipeline/`, `examples/site_comparison/` — ignore unless explicitly in scope.  
-* `examples/zenodo/` — separate Zenodo/NC pilot assets.
+* `examples/pipeline/`, `examples/site_comparison/` - ignore unless explicitly in scope.  
+* `examples/zenodo/` - separate Zenodo pilot assets.
 
 ### Key directories and patterns
 * **Standards:** any `standards/` subdirectory under a component (e.g. `setup_wizard/standards/`) defines the expected schema/format.  
 * **Documentation:** check component `README.md` or `docs/` before proposing changes.  
-* **Outputs:** see `outputs.md` in each component for data flow.
-
-### Reference and reference data
+* **Outputs:** Most stages emit assets for the next layer, these live in `outputs/`; see each component’s `outputs.md` and the bootstrap script log for which URLs to open.
 * **Reference data:** experiment setup and field reference files live under the research `inputs/` tree (protocols, KML, sample datasheets, xlsx as applicable).
-
-### Output assets (`output/`)
-* Stages emit assets for the next layer; see each component’s `outputs.md` and the bootstrap script log for which URLs to open.
 
 ## 2. Execution and environment
 * **Python path:** use `./.venv/bin/python` (or project `venv`).  
