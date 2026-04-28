@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nursery Collection Heatmap (Sowing)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    html, body, #map { height: 100%; margin: 0; }
+    .legend { background: white; padding: 8px 10px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,.2); font: 12px/1.2 sans-serif; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+<script>
+const center = [10.169021481937499, 76.19849552993749];
+const heatData = [[10.292391, 76.191846, 0.5], [10.161028, 76.254741, 0.5], [10.022199, 76.386611, 0.5], [10.172366, 76.132341, 0.5], [10.023272, 76.010848, 1.0], [10.257869, 76.296581, 0.5], [10.150149, 76.364266, 0.9000000000000001], [10.259859, 76.358851, 0.5], [10.333528, 76.142366, 0.7], [10.328041, 76.134033, 0.5]];
+const markers = [{"lat": 10.292391, "lon": 76.191846, "count": 1, "species": ["Syzygium rubicundum"], "collections": ["3"], "site": ["parent tree"]}, {"lat": 10.161028, "lon": 76.254741, "count": 1, "species": ["Elaeocarpus tuberculatus"], "collections": ["4"], "site": ["bat midden"]}, {"lat": 10.022199, "lon": 76.386611, "count": 1, "species": ["Bischofia javanica"], "collections": ["7"], "site": ["parent tree"]}, {"lat": 10.172366, "lon": 76.132341, "count": 1, "species": ["Holigarna nigra"], "collections": ["6"], "site": ["civet scat"]}, {"lat": 10.023272, "lon": 76.010848, "count": 4, "species": ["Mesua ferrea"], "collections": ["2"], "site": ["parent tree"]}, {"lat": 10.257869, "lon": 76.296581, "count": 1, "species": ["Ormosia travancorica"], "collections": ["5"], "site": ["parent tree"]}, {"lat": 10.150149, "lon": 76.364266, "count": 3, "species": ["Heynea trijuga"], "collections": ["9"], "site": ["parent tree"]}, {"lat": 10.259859, "lon": 76.358851, "count": 1, "species": ["Elaeocarpus serratus"], "collections": ["14"], "site": ["parent tree"]}, {"lat": 10.333528, "lon": 76.142366, "count": 2, "species": ["Canarium strictum"], "collections": ["8"], "site": ["hornbill midden"]}, {"lat": 10.328041, "lon": 76.134033, "count": 1, "species": ["Diospyros sp."], "collections": ["15"], "site": ["parent tree"]}];
+
+const map = L.map('map').setView(center, 9);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+L.heatLayer(heatData, {
+  radius: 30,
+  blur: 20,
+  maxZoom: 13,
+  gradient: {0.2: '#2c7bb6', 0.4: '#abd9e9', 0.6: '#ffffbf', 0.8: '#fdae61', 1.0: '#d7191c'}
+}).addTo(map);
+
+markers.forEach(m => {
+  const text = `<b>Source(s):</b> ${m.site.join(', ')}<br/>`
+             + `<b>Collections:</b> ${m.collections.join(', ')}<br/>`
+             + `<b>Species:</b> ${m.species.join(', ')}<br/>`
+             + `<b>Point count:</b> ${m.count}`;
+  L.circleMarker([m.lat, m.lon], {radius: 5, color:'#222', weight:1, fillOpacity:0.8})
+    .addTo(map)
+    .bindPopup(text);
+});
+
+const legend = L.control({position: 'bottomright'});
+legend.onAdd = function() {
+  const div = L.DomUtil.create('div', 'legend');
+  div.innerHTML = '<b>Nursery Collection Heatmap</b><br/>Data: current sowing batches';
+  return div;
+};
+legend.addTo(map);
+</script>
+</body>
+</html>

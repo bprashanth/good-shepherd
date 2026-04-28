@@ -141,5 +141,5 @@ examples/**/frappe/apps/hrms/
 # Misc test files 
 # ============================================================
 
-examples/alienwise/data/
+examples/stacks/research/alienwise/data/
 server/test/photomon/*.json
