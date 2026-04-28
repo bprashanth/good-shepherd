@@ -2,61 +2,47 @@
 
 ## 1. Project Map
 
-The Good Shepherd POC lives within the examples/ directory. 
+The Good Shepherd POC example apps live under `examples/`. Three **stacks** (personas) are grouped under `examples/stacks/`:
 
-### POC components 
-* examples/web/: Entry point; index linking to all dashboard components.
-* examples/setup_wizard/: Python + AI pipeline for experiment onboarding. Generates wizard.html.
-* examples/pwa/: Mobile mockup for field data inspection and datasheet uploads.
-* examples/forms/: Interface for viewing/parsing uploaded datasheets (OCR/Textract).
-* examples/indicators/: Interface for verifying and adding new indicators. 
-* examples/alienwise/: Placeholder for future SDM/Ecological modeling.
-* examples/input/: Primary reference directory (Protocols, KML sites, sample datasheets, xlsx).
-* examples/dashboard/: vue3 app for analyzing json data that contains links, map points, and quantative datapoints
-* examples/nursery/: has 2 parts, 1 a frappe app tp manage a database for nurseries, and 2 an ai assistant that can modify the frappe doctypes and interact with users to help with nursery management. 
+### Persona stacks
+* **Research** — `examples/stacks/research/`: new-study flow (`web/`, `pwa/`, `setup_wizard/`, `forms/`, `indicators/`, `alienwise/`, `inputs/`) and ingested-study flow (`web_2/`, `setup_wizard_2/`, `indicators_2/`). Entry hubs: open **`examples/stacks/research/web/index.html`**, **`web_2/index.html`** (ingest), **`examples/stacks/rewild/web/index.html`** (rewild) as **`file://`** URIs—the script prints them. Modals must stay on `file:` (do not serve the hub over `http://localhost` or sibling `file:` links misbehave). Other pieces (PWA, forms dev server, compute server, Alienwise static server) still use localhost URLs from `run_stacks.py`.  
+* **Rewild** (practitioner) — `examples/stacks/rewild/`: `web/`, `setup_wizard/`, `pwa/`, `plantwise/`, `indicators/` (mirrors the research pattern with practitioner-focused content). Port map in `examples/stacks/rewild/DEPLOYMENT.md`.  
+* **Community** — `examples/stacks/community/`: Frappe app under `frappe/`, OpenClaw/assistant under `assistant/`, shared `inputs/`. Run via Docker per component READMEs (not started by the default `run_stacks.py` script).
 
-Ignore examples/pipeline and examples/site_comparison for now. 
+To bring up the default research + rewild static servers, compute server, and npm apps: from repo root, `./.venv/bin/python examples/stacks/run_stacks.py` (Ctrl+C stops; next run clears ports in use). Optional: `--stack research`, `--stack rewild`, `--stack community` (community is validated only; Docker is documented separately).
 
-### Key Directories & Patterns
-* Standards: Any standards/ subdirectory (e.g., setup_wizard/standards/) defines the expected schema/format for that component.
-* Documentation: Always check component-specific README.md or docs/ before proposing changes.
-* Outputs: Refer to outputs.md within component directories to understand the data flow.
+### Other `examples/` roots (out of stack layout)
+* `examples/pipeline/`, `examples/site_comparison/` — ignore unless explicitly in scope.  
+* `examples/zenodo/` — separate Zenodo/NC pilot assets.
 
-### Reference Data (input/)
-* Experiment Setup: Protocol PDFs and KML site files.
-* Field Data: Images and JSON (AWS Textract) located in input/forms/.
+### Key directories and patterns
+* **Standards:** any `standards/` subdirectory under a component (e.g. `setup_wizard/standards/`) defines the expected schema/format.  
+* **Documentation:** check component `README.md` or `docs/` before proposing changes.  
+* **Outputs:** see `outputs.md` in each component for data flow.
 
-### Output Assets (output/)
-* These are assets typically consumed by the next chain of the pipeline
-* Described in outputs.md 
-* Often one or more html/js/frontends that user can access 
+### Reference and reference data
+* **Reference data:** experiment setup and field reference files live under the research `inputs/` tree (protocols, KML, sample datasheets, xlsx as applicable).
 
-### Development Constraints
-* Scope: Ignore site_comparison/ and pipeline/ unless explicitly told otherwise.
-* Runtime: Execute all scripts within the project .venv (or venv, as the case may be).
-* Permissions: Propose changes and explain logic before modifying files. No heavy linting required.
-* Clarification: If the mapping between a stage's inputs and outputs is unclear, ask for clarification before proceeding.
+### Output assets (`output/`)
+* Stages emit assets for the next layer; see each component’s `outputs.md` and the bootstrap script log for which URLs to open.
 
-## 2. Execution & Environment
-* Python Path: Always use ./.venv/bin/python.
-* Shell Commands: Prefix all Python execution with source .venv/bin/activate &&.
-* Tooling: For simple automation, prefer Bash. For complex logic or data processing, use Python.
-* Dependencies: Minimize new packages. Refer to requirements.txt. Do not install new dependencies without explicit approval.
+## 2. Execution and environment
+* **Python path:** use `./.venv/bin/python` (or project `venv`).  
+* **Shell:** prefer `source .venv/bin/activate` before ad hoc Python.  
+* **Tooling:** simple automation: Bash; heavier orchestration: use `examples/stacks/run_stacks.py`.  
+* **Dependencies:** minimize new packages; use `requirements.txt`. Do not add dependencies without explicit approval.
 
-## 3. Tech Stack Preferences
-* Backend: Python.
-* Frontend: Simple HTML/JS templates or Vue 3. Keep it lightweight for the POC.
-* Standards: Prioritize readability over complex abstractions.
+## 3. Tech stack preferences
+* **Backend:** Python.  
+* **Frontend:** simple HTML/JS or Vue 3. Keep the POC light.  
+* **Standards:** prefer readability over unnecessary abstraction.
 
-## 4. Operational Guardrails
-* Permissions: Read-Only: You are encouraged to read any file to gain context.
-* Execution: You may run shell/python commands for discovery or testing.
-* Write: Propose code changes in chat and wait for approval before modifying source files.
-* Linting: Ignore non-breaking linting or style errors. Prioritize functional POC progress over "clean code" pedantry.
-* Geospatial: Default to EPSG:4326 for all coordinate systems unless the file metadata explicitly states otherwise.
+## 4. Operational guardrails
+* **Read and propose:** read the codebase; propose nontrivial changes before applying.  
+* **Execution:** you may run shell/Python for discovery and tests.  
+* **Write:** for substantive edits, explain intent first when the repo asks for it.  
+* **Linting:** do not block on style-only issues.  
+* **Geospatial:** default to EPSG:4326 unless file metadata says otherwise.
 
-## 5. Backend 
-* The backend server in server/ consolidates the auth/heavy lifting across all Good Shepherd components. Functions will slowly make their way into this backend. 
-* server/README.md has instructios for adding a new API, as well as pointers for new client integration and cross app authentication.
-* This server is the beating heart of good shepherd, and modifications should be made with due architectural considerations in a careful manner. 
-* If this server breaks, good shepherd breaks, so never make changes without testing or discussing alternatives. Always ask questions when confused. 
+## 5. Backend
+* The `server/` backend consolidates auth and shared APIs across Good Shepherd. New APIs: see `server/README.md`. Treat server changes with care: if the server is broken, the product is broken. Ask when unclear.
