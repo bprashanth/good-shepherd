@@ -10,6 +10,19 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 STANDARDS_DIR = BASE_DIR / "standards"
 
 
+def _normalize_compiled_code_strings(payload: dict) -> None:
+    """Schema and UI expect compiled.code as a string; the agent sometimes emits JSON objects."""
+    for cv in payload.get("computed_variables") or []:
+        compiled = cv.get("compiled")
+        if not isinstance(compiled, dict):
+            continue
+        code = compiled.get("code")
+        if isinstance(code, (dict, list)):
+            compiled["code"] = json.dumps(
+                code, separators=(",", ":"), ensure_ascii=False
+            )
+
+
 def sanitize_json(text: str) -> str:
     text = text.strip()
     if text.startswith("```"):
@@ -114,6 +127,8 @@ class Handler(BaseHTTPRequestHandler):
         except Exception:
             self._send(500, {"error": "agent returned invalid json", "stdout": result.stdout.strip()})
             return
+
+        _normalize_compiled_code_strings(data)
 
         print("Compute response:", json.dumps(data, indent=2))
         self._send(200, data)

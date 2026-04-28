@@ -306,7 +306,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
           }
           const computed = result.computed_variables && result.computed_variables[0];
           if (computed && computed.compiled && computed.compiled.code) {
-            formulaField.value = computed.compiled.code;
+            formulaField.value = formatCode(computed.compiled.code);
           } else {
             formulaField.value = "";
           }
