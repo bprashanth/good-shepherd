@@ -41,6 +41,21 @@ STYLE_UF_KEY = {
 STYLE_LEGEND = {
     "font": Font(italic=True, color="666666", size=9),
 }
+SYSTEM_SERIAL_HEADER = "(Good Shepherd) Row ID"
+
+_SYSTEM_SIDE = Side(style="dotted", color="AAAAAA")
+STYLE_SYSTEM_HEADER = {
+    "font": Font(bold=True, color="666666"),
+    "fill": PatternFill(start_color="EEEEEE", end_color="EEEEEE", fill_type="solid"),
+    "border": Border(left=_SYSTEM_SIDE, right=_SYSTEM_SIDE, top=_SYSTEM_SIDE, bottom=_SYSTEM_SIDE),
+    "alignment": Alignment(horizontal="center"),
+}
+STYLE_SYSTEM_CELL = {
+    "font": Font(color="666666"),
+    "fill": PatternFill(start_color="F7F7F7", end_color="F7F7F7", fill_type="solid"),
+    "border": Border(left=_SYSTEM_SIDE, right=_SYSTEM_SIDE, top=_SYSTEM_SIDE, bottom=_SYSTEM_SIDE),
+    "alignment": Alignment(horizontal="center"),
+}
 
 
 def _apply_confidence_style(cell, confidence: float):
@@ -69,6 +84,7 @@ def to_xlsx(extracted: dict) -> bytes:
     ws = wb.active
     ws.title = "Form Data"
     current_row = 1
+    system_serial = 1
 
     # --- Legend ---
     ws.cell(row=current_row, column=1, value="Confidence legend:")
@@ -115,6 +131,16 @@ def to_xlsx(extracted: dict) -> bytes:
             hcell = ws.cell(row=current_row, column=col_idx, value=h["text"])
             hcell.font = STYLE_HEADER["font"]
             hcell.fill = STYLE_HEADER["fill"]
+        system_header_col = len(header_list) + 1
+        system_hcell = ws.cell(
+            row=current_row,
+            column=system_header_col,
+            value=SYSTEM_SERIAL_HEADER,
+        )
+        system_hcell.font = STYLE_SYSTEM_HEADER["font"]
+        system_hcell.fill = STYLE_SYSTEM_HEADER["fill"]
+        system_hcell.border = STYLE_SYSTEM_HEADER["border"]
+        system_hcell.alignment = STYLE_SYSTEM_HEADER["alignment"]
         current_row += 1
 
         # Write data rows
@@ -132,6 +158,21 @@ def to_xlsx(extracted: dict) -> bytes:
                     _apply_confidence_style(dcell, cell_info["confidence"])
                 else:
                     ws.cell(row=current_row, column=col_idx, value="")
+
+            row_serial = row_data.get("_system_serial")
+            if row_serial is None:
+                row_serial = system_serial
+                row_data["_system_serial"] = row_serial
+            system_serial += 1
+            system_cell = ws.cell(
+                row=current_row,
+                column=system_header_col,
+                value=row_serial,
+            )
+            system_cell.font = STYLE_SYSTEM_CELL["font"]
+            system_cell.fill = STYLE_SYSTEM_CELL["fill"]
+            system_cell.border = STYLE_SYSTEM_CELL["border"]
+            system_cell.alignment = STYLE_SYSTEM_CELL["alignment"]
             current_row += 1
 
         current_row += 1  # blank row between tables
