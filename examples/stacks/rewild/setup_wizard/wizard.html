@@ -94,32 +94,339 @@
             .sidebar { border-right: 0; border-bottom: 1px solid rgba(54, 75, 42, 0.18); }
             #map { height: 64vh; }
         }
+
+        /* ── Preamble overlay ── */
+        #preamble {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(31, 42, 29, 0.72);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pre-card {
+            background: #f8f4eb;
+            border-radius: 18px;
+            padding: 32px 36px;
+            max-width: 460px;
+            width: 90%;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+        }
+        .pre-card h2 { margin: 0 0 4px; font-size: 1.3rem; color: #1f2a1d; }
+        .pre-sub { margin: 0 0 16px; font-size: 0.88rem; color: #5b6752; }
+
+        .pre-search-wrap { position: relative; margin-bottom: 10px; }
+        #pre-search {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid rgba(54,75,42,0.28);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #fff;
+            outline: none;
+            color: #1f2a1d;
+        }
+        #pre-search:focus { border-color: rgba(54,75,42,0.55); }
+        .pre-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0; right: 0;
+            background: #fff;
+            border: 1px solid rgba(54,75,42,0.18);
+            border-radius: 10px;
+            max-height: 210px;
+            overflow-y: auto;
+            z-index: 200;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.13);
+        }
+        .pre-dropdown.open { display: block; }
+        .pre-dd-item {
+            padding: 8px 14px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(54,75,42,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .pre-dd-item:last-child { border-bottom: 0; }
+        .pre-dd-item:hover { background: rgba(54,75,42,0.05); }
+        .dd-label { font-size: 0.87rem; font-weight: 600; color: #1f2a1d; }
+        .dd-sub   { font-size: 0.75rem; color: #7a8a70; }
+
+        .pre-chips { display: flex; flex-wrap: wrap; gap: 5px; min-height: 0; margin-bottom: 14px; }
+        .pre-chip {
+            display: flex; align-items: center; gap: 5px;
+            background: #ddebd5; color: #2e5a28;
+            padding: 3px 8px 3px 10px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-family: sans-serif;
+        }
+        .pre-chip button {
+            background: none; border: none; cursor: pointer;
+            color: #5b8a4a; font-size: 0.82rem; padding: 0; line-height: 1;
+        }
+
+        .source-pill {
+            font-size: 0.7rem;
+            padding: 2px 7px;
+            border-radius: 999px;
+            white-space: nowrap;
+            font-family: sans-serif;
+            flex-shrink: 0;
+        }
+        .source-pill.system { background: #ddebd5; color: #2e5a28; }
+        .source-pill.open   { background: #dde8f5; color: #1a3a6e; }
+        .source-pill.org    { background: #f5ead5; color: #7a4a00; }
+
+        #pre-continue {
+            width: 100%;
+            padding: 12px;
+            background: #364b2a;
+            color: #f8f4eb;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.97rem;
+            cursor: pointer;
+            font-family: Georgia, "Times New Roman", serif;
+            letter-spacing: 0.03em;
+        }
+        #pre-continue:hover { background: #2b3d21; }
+
+        /* ── Site Intelligence modal ── */
+        #intel-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 8888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .intel-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(20, 30, 16, 0.68);
+        }
+        .intel-dialog {
+            position: relative;
+            background: #efe9db;
+            border-radius: 18px;
+            padding: 28px 28px 24px;
+            max-width: 980px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 28px 56px rgba(0,0,0,0.38);
+        }
+        .intel-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .intel-header h2 { font-size: 1.15rem; font-weight: normal; color: #1f2a1d; margin: 0; }
+        .intel-header .intel-plot { font-size: 0.75rem; font-family: monospace; color: #7a8a70; }
+        .intel-close {
+            position: absolute; top: 18px; right: 20px;
+            background: none; border: none; font-size: 1.1rem;
+            color: #7a8a70; cursor: pointer; line-height: 1; padding: 4px 6px;
+        }
+        .intel-close:hover { color: #1f2a1d; }
+        .intel-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+        @media (max-width: 800px) { .intel-cards { grid-template-columns: 1fr; } }
+        .intel-card {
+            background: rgba(255,255,255,0.78);
+            border: 1px solid rgba(54,75,42,0.14);
+            border-radius: 13px;
+            padding: 18px;
+            box-shadow: 0 6px 16px rgba(48,64,34,0.07);
+        }
+        .intel-card-label {
+            font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+            color: #7a8a70; font-family: sans-serif; margin-bottom: 12px;
+        }
+        .intel-species { font-weight: 600; font-size: 0.95rem; color: #1f2a1d; margin-bottom: 4px; }
+        .intel-local { font-style: italic; font-weight: normal; color: #7a8a70; }
+        .intel-status-tag {
+            display: inline-block; font-size: 0.72rem; font-family: sans-serif;
+            padding: 2px 9px; border-radius: 999px; margin-bottom: 10px;
+        }
+        .tag-pending { background: #fef3cd; color: #7a5800; }
+        .intel-row { font-size: 0.84rem; color: #4a5e3a; padding: 4px 0; line-height: 1.4; }
+        .intel-row .lbl { color: #7a8a70; font-family: sans-serif; font-size: 0.78rem; }
+        .intel-section-head {
+            font-size: 0.7rem; font-family: sans-serif; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            color: #5b6752; margin: 12px 0 6px;
+        }
+        .intel-bullets { margin: 0; padding: 0; list-style: none; }
+        .intel-bullets li {
+            font-size: 0.84rem; color: #4a5e3a; padding: 3px 0;
+            display: flex; gap: 6px;
+        }
+        .intel-bullets li::before { content: '*'; color: #a0b090; flex-shrink: 0; }
+        .intel-ref-label {
+            font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+            color: #7a8a70; font-family: sans-serif; margin: 14px 0 8px;
+        }
+        .intel-refs { display: flex; flex-direction: column; gap: 6px; }
+        .intel-ref {
+            background: rgba(248,244,235,0.9); border: 1px solid rgba(54,75,42,0.13);
+            border-radius: 8px; padding: 8px 10px;
+            text-decoration: none; color: inherit; display: block;
+        }
+        .intel-ref:hover { background: rgba(248,244,235,1); }
+        .intel-ref .ref-type {
+            font-size: 0.65rem; font-family: sans-serif;
+            text-transform: uppercase; letter-spacing: 0.07em; color: #7a8a70; margin-bottom: 2px;
+        }
+        .intel-ref .ref-title { font-size: 0.8rem; font-weight: 600; line-height: 1.25; color: #1f2a1d; }
+        .intel-ref .ref-cov { font-size: 0.73rem; color: #5b6752; margin-top: 2px; font-family: sans-serif; }
+        .plan-section { margin-bottom: 14px; }
+        .plan-section:last-child { margin-bottom: 0; }
+        .plan-section-label {
+            font-size: 0.7rem; font-family: sans-serif; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.07em; color: #5b6752; margin-bottom: 6px;
+        }
+        .plan-text { font-size: 0.84rem; color: #4a5e3a; line-height: 1.45; }
+        .plan-img { margin-top: 8px; max-width: 100%; border-radius: 8px; border: 1px solid rgba(54,75,42,0.12); }
     </style>
 </head>
 
 <body>
+
+<!-- Preamble -->
+<div id="preamble">
+    <div class="pre-card">
+        <h2>Landscape Hints</h2>
+        <p class="pre-sub">Search and add data layers for your area of concern.</p>
+        <div class="pre-search-wrap">
+            <input id="pre-search" type="text" placeholder="Search layers (e.g. tree, invasive, wildfire)..." autocomplete="off">
+            <div id="pre-dropdown" class="pre-dropdown"></div>
+        </div>
+        <div id="pre-chips" class="pre-chips"></div>
+        <button id="pre-continue">Continue →</button>
+    </div>
+</div>
+
+<!-- Site Intelligence modal -->
+<div id="intel-modal" style="display:none">
+    <div class="intel-backdrop" onclick="closeIntelModal()"></div>
+    <div class="intel-dialog">
+        <button class="intel-close" onclick="closeIntelModal()">✕</button>
+        <div class="intel-header">
+            <h2>Site Intelligence</h2>
+            <span class="intel-plot">stack_focus_selected_plot</span>
+        </div>
+        <div class="intel-cards">
+
+            <!-- Card 1: What we know -->
+            <div class="intel-card">
+                <div class="intel-card-label">What we know</div>
+                <div class="intel-species">Lantana camara</div>
+                <span class="intel-status-tag tag-pending">Needs confirmation</span>
+                <div class="intel-row"><span class="lbl">Source</span><br>Invasive probability layer</div>
+                <div class="intel-section-head">Protocol</div>
+                <ul class="intel-bullets">
+                    <li>3 removal cycles</li>
+                    <li>18-month seed bank dormancy</li>
+                    <li>Replant: see Plantwise advisory</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: What we don't know -->
+            <div class="intel-card">
+                <div class="intel-card-label">What we don't know</div>
+                <div class="intel-species">Getonia floribunda <span class="intel-local">· Ukshi / Jhaal</span></div>
+                <div class="intel-row" style="margin-bottom:4px"><span class="lbl">Source</span><br>Community data</div>
+                <div class="intel-section-head">Indicators</div>
+                <ul class="intel-bullets">
+                    <li>Exact match: none found in literature</li>
+                    <li>Classification: lianas</li>
+                    <li>Covariates: soil seed bank, bird assemblage, fire corridors</li>
+                </ul>
+                <div class="intel-ref-label">Research basis</div>
+                <div class="intel-refs">
+                    <a class="intel-ref" href="https://doi.org/10.5281/zenodo.10540410" target="_blank">
+                        <div class="ref-type">Birds</div>
+                        <div class="ref-title">Line transect data on birds, Mudumalai &amp; Upper Nilgiris</div>
+                        <div class="ref-cov">Covariate: liana density ↔ bird assemblage</div>
+                    </a>
+                    <a class="intel-ref" href="https://doi.org/10.5281/zenodo.15519844" target="_blank">
+                        <div class="ref-type">Soil</div>
+                        <div class="ref-title">Soil properties, degraded forests, Western Ghats</div>
+                        <div class="ref-cov">Covariate: litter depth, seed bank density</div>
+                    </a>
+                    <a class="intel-ref" href="https://doi.org/10.5281/zenodo.17048308" target="_blank">
+                        <div class="ref-type">Dispersal</div>
+                        <div class="ref-title">Seed dispersal of native &amp; non-native plants</div>
+                        <div class="ref-cov">Covariate: dispersal vector, spread rate</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Data collection plan -->
+            <div class="intel-card">
+                <div class="intel-card-label">Data collection plan</div>
+                <div class="plan-section">
+                    <div class="plan-section-label">Species: from pictures</div>
+                    <div class="plan-text">Take 10 pictures from the site. Capture all different classes of species. Goal: identify Lantana, Getonia, and coexisting natives. Use the photomonitoring app.</div>
+                </div>
+                <div class="plan-section">
+                    <div class="plan-section-label">Soil: bag sample</div>
+                    <img src="input/soil_label.png" class="plan-img" alt="Soil bag label">
+                </div>
+                <div class="plan-section">
+                    <div class="plan-section-label">Birds: point count (10 min)</div>
+                    <img src="input/bird_list.png" class="plan-img" alt="Bird list form">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
     <aside class="sidebar">
         <h1>Site selection</h1>
         <section class="panel">
             <h2>Layers</h2>
-            <div class="toggle">
-                <input type="checkbox" id="toggleSimilarity">
-                <div><label for="toggleSimilarity">Map: benchmark similarity</label></div>
-            </div>
-            <div class="toggle">
-                <input type="checkbox" id="toggleInvasive">
-                <div>
-                    <label for="toggleInvasive">Map: invasive probability</label>
-                    <div class="hint">Combined invasives: Cestrum aurantiacum, Chromolaena odorata, Lantana camara, Senna spectabilis.</div>
+            <div id="layersPanel">
+                <div class="toggle">
+                    <input type="checkbox" id="toggleSimilarity">
+                    <div><label for="toggleSimilarity">Map: benchmark similarity</label></div>
                 </div>
-            </div>
-            <div class="toggle">
-                <input type="checkbox" id="toggleBenchmarks">
-                <div><label for="toggleBenchmarks">Points: known benchmark sites</label></div>
-            </div>
-            <div class="toggle">
-                <input type="checkbox" id="toggleSuggestions">
-                <div><label for="toggleSuggestions">Suggestion: plot scores</label></div>
+                <div class="toggle">
+                    <input type="checkbox" id="toggleInvasive">
+                    <div>
+                        <label for="toggleInvasive">Map: invasive probability</label>
+                        <div class="hint">Combined invasives: Cestrum aurantiacum, Chromolaena odorata, Lantana camara, Senna spectabilis.</div>
+                    </div>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="toggleBenchmarks">
+                    <div><label for="toggleBenchmarks">Points: known benchmark sites</label></div>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="toggleSuggestions">
+                    <div><label for="toggleSuggestions">Suggestion: plot scores</label></div>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" id="toggleCommunity" checked>
+                    <div>
+                        <label for="toggleCommunity">Community reports</label>
+                        <div class="hint">Clustered field observations</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -149,13 +456,163 @@
         }).addTo(map);
 
         let similarityOverlay = null;
-        let invasiveOverlay = null;
-        let benchmarkLayer = null;
-        let suggestionLayer = null;
+        let invasiveOverlay   = null;
+        let benchmarkLayer    = null;
+        let suggestionLayer   = null;
         let selectedPlotLayer = null;
-        let aoiLayer = null;
-        let layerConfig = null;
+        let aoiLayer          = null;
+        let layerConfig       = null;
+        let communityGroup    = null;
+        const dynamicLayers   = new Map();
 
+        // ── Layer catalog ──────────────────────────────────────────────────────
+        const LAYER_CATALOG = [
+            { id: 'wildfire',      label: 'Wildfire risk',             sub: 'dNBR burn severity',          source: 'open', render: 'wildfire' },
+            { id: 'grazing',       label: 'Grazing pressure',          sub: 'Custom survey polygons',       source: 'org',  render: 'grazing'  },
+            { id: 'biodiversity',  label: 'Biodiversity index',        sub: 'CORE stack (2020)',            source: 'open', render: null },
+            { id: 'canopy_height', label: 'Tree canopy height',        sub: 'Global canopy height model',   source: 'open', render: null },
+            { id: 'tree_health',   label: 'Tree health monitoring',    sub: 'Satellite time series',        source: 'open', render: null },
+            { id: 'canopy_cover',  label: 'Tree canopy cover density', sub: 'ESA WorldCover',               source: 'open', render: null },
+            { id: 'tree_changes',  label: 'Tree health changes',       sub: 'Annual change detection',      source: 'open', render: null },
+            { id: 'ndvi',          label: 'Vegetation index (NDVI)',   sub: 'Sentinel-2',                   source: 'open', render: null },
+            { id: 'soil_moisture', label: 'Soil moisture',             sub: 'Copernicus',                   source: 'open', render: null },
+            { id: 'fire_history',  label: 'Fire history (MODIS)',      sub: 'MODIS burn area product',      source: 'open', render: 'wildfire' },
+            { id: 'road_prox',     label: 'Road proximity',            sub: 'OpenStreetMap',                source: 'open', render: null },
+            { id: 'land_use',      label: 'Land use change',           sub: 'Hansen forest loss',           source: 'open', render: null },
+            { id: 'soil_carbon',   label: 'Soil carbon',               sub: 'SoilGrids (ISRIC)',            source: 'open', render: null },
+            { id: 'rainfall',      label: 'Rainfall anomaly',          sub: 'CHIRPS',                       source: 'open', render: null },
+            { id: 'flood_risk',    label: 'Flood risk',                sub: 'Aqueduct flood hazard',        source: 'open', render: null },
+            { id: 'species_rich',  label: 'Species richness',          sub: 'GBIF density model',           source: 'open', render: null },
+        ];
+
+        const selectedLayers = new Map();
+
+        function srcLabel(src) {
+            return src === 'system' ? 'Good Shepherd' : src === 'org' ? 'Your org' : 'Open data';
+        }
+
+        function setupSearch() {
+            const input    = document.getElementById('pre-search');
+            const dropdown = document.getElementById('pre-dropdown');
+
+            input.addEventListener('input', () => {
+                const q = input.value.trim().toLowerCase();
+                if (!q) { dropdown.classList.remove('open'); return; }
+
+                const matches = LAYER_CATALOG.filter(l =>
+                    !selectedLayers.has(l.id) &&
+                    (l.label.toLowerCase().includes(q) || l.sub.toLowerCase().includes(q))
+                );
+
+                if (!matches.length) { dropdown.classList.remove('open'); return; }
+
+                dropdown.innerHTML = matches.map(l => `
+                    <div class="pre-dd-item" data-id="${l.id}">
+                        <div><div class="dd-label">${l.label}</div><div class="dd-sub">${l.sub}</div></div>
+                        <span class="source-pill ${l.source}">${srcLabel(l.source)}</span>
+                    </div>
+                `).join('');
+                dropdown.classList.add('open');
+
+                dropdown.querySelectorAll('.pre-dd-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const def = LAYER_CATALOG.find(l => l.id === item.dataset.id);
+                        selectedLayers.set(def.id, def);
+                        renderChips();
+                        input.value = '';
+                        dropdown.classList.remove('open');
+                    });
+                });
+            });
+
+            document.addEventListener('click', e => {
+                if (!e.target.closest('.pre-search-wrap')) dropdown.classList.remove('open');
+            });
+        }
+
+        function renderChips() {
+            const chips = document.getElementById('pre-chips');
+            chips.innerHTML = [...selectedLayers.values()].map(l => `
+                <div class="pre-chip">
+                    ${l.label}
+                    <button onclick="removeChip('${l.id}')">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function removeChip(id) {
+            selectedLayers.delete(id);
+            renderChips();
+        }
+
+        // ── Community badges (diamond markers) ───────────────────────────────
+        function buildCommunityGroup() {
+            const reports = [
+                { lat: 10.3555, lon: 76.9820, type: 'invasive', label: 'Getonia floribunda', local: 'Ukshi / Jhaal', count: 4 },
+                { lat: 10.3648, lon: 76.9895, type: 'invasive', label: 'Getonia floribunda', local: 'Ukshi / Jhaal', count: 2 },
+                { lat: 10.3492, lon: 77.0025, type: 'invasive', label: 'Getonia floribunda', local: 'Ukshi / Jhaal', count: 3 },
+                { lat: 10.3718, lon: 77.0052, type: 'soil',     label: 'Dry soil',           local: '',             count: 5 },
+                { lat: 10.3438, lon: 76.9930, type: 'soil',     label: 'Dry soil',           local: '',             count: 2 },
+                { lat: 10.3682, lon: 76.9832, type: 'yield',    label: 'Low yield',           local: '',             count: 3 },
+            ];
+            const colors = { invasive: '#c0392b', soil: '#795548', yield: '#e67e22' };
+            const group = L.layerGroup();
+            reports.forEach(r => {
+                const color = colors[r.type];
+                const icon = L.divIcon({
+                    className: '',
+                    html: `<div style="width:11px;height:11px;background:${color};transform:rotate(45deg);border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.4)"></div>`,
+                    iconSize: [15, 15],
+                    iconAnchor: [7, 7],
+                });
+                const popup = r.local
+                    ? `<strong>${r.label}</strong><br><em>${r.local}</em><br><span style="color:#666">${r.count} community reports</span>`
+                    : `<strong>${r.label}</strong><br><span style="color:#666">${r.count} community reports</span>`;
+                L.marker([r.lat, r.lon], { icon }).bindPopup(popup).addTo(group);
+            });
+            return group;
+        }
+
+        // ── Fake landscape layers ─────────────────────────────────────────────
+        function buildFakeWildfireLayer() {
+            return L.polygon([
+                [10.366, 76.984], [10.377, 76.988], [10.375, 77.009], [10.363, 77.004]
+            ], { color: '#c0392b', weight: 0, fillColor: '#e74c3c', fillOpacity: 0.22 });
+        }
+
+        function buildFakeGrazingLayer() {
+            return L.polygon([
+                [10.342, 76.994], [10.354, 76.996], [10.351, 77.013], [10.339, 77.009]
+            ], { color: '#795548', weight: 0, fillColor: '#a1887f', fillOpacity: 0.25 });
+        }
+
+        function addLayerToSidebar(def) {
+            if (document.getElementById('toggle_' + def.id)) return;
+            const panel = document.getElementById('layersPanel');
+            const div = document.createElement('div');
+            div.className = 'toggle';
+            div.innerHTML = `
+                <input type="checkbox" id="toggle_${def.id}">
+                <div>
+                    <label for="toggle_${def.id}">${def.label}</label>
+                    <div class="hint">${def.sub}</div>
+                </div>
+            `;
+            panel.appendChild(div);
+            document.getElementById('toggle_' + def.id).addEventListener('change', e => {
+                if (e.target.checked) {
+                    let layer = null;
+                    if (def.render === 'wildfire') layer = buildFakeWildfireLayer();
+                    else if (def.render === 'grazing') layer = buildFakeGrazingLayer();
+                    if (layer) { layer.addTo(map); dynamicLayers.set(def.id, layer); }
+                } else {
+                    const layer = dynamicLayers.get(def.id);
+                    if (layer) { map.removeLayer(layer); dynamicLayers.delete(def.id); }
+                }
+            });
+        }
+
+        // ── Raster utilities ──────────────────────────────────────────────────
         function hexToRgb(hex) {
             const clean = hex.replace('#', '');
             return {
@@ -165,9 +622,7 @@
             };
         }
 
-        function interpolate(a, b, t) {
-            return Math.round(a + (b - a) * t);
-        }
+        function interpolate(a, b, t) { return Math.round(a + (b - a) * t); }
 
         function colorForValue(value, style) {
             if (value <= style.nodata + 1) return null;
@@ -179,27 +634,17 @@
             const max = style.display_max;
             const palette = style.palette.map(hexToRgb);
 
-            let t;
-            let c1;
-            let c2;
+            let t, c1, c2;
             if (value <= mid) {
                 const denom = Math.max(mid - min, 1e-6);
-                t = Math.max(0, Math.min(1, (value - min) / denom));
-                t = Math.pow(t, gamma);
-                c1 = palette[0];
-                c2 = palette[Math.min(2, palette.length - 1)];
+                t = Math.pow(Math.max(0, Math.min(1, (value - min) / denom)), gamma);
+                c1 = palette[0]; c2 = palette[Math.min(2, palette.length - 1)];
             } else {
                 const denom = Math.max(max - mid, 1e-6);
-                t = Math.max(0, Math.min(1, (value - mid) / denom));
-                t = Math.pow(t, gamma);
-                c1 = palette[Math.min(2, palette.length - 1)];
-                c2 = palette[palette.length - 1];
+                t = Math.pow(Math.max(0, Math.min(1, (value - mid) / denom)), gamma);
+                c1 = palette[Math.min(2, palette.length - 1)]; c2 = palette[palette.length - 1];
             }
-            return {
-                r: interpolate(c1.r, c2.r, t),
-                g: interpolate(c1.g, c2.g, t),
-                b: interpolate(c1.b, c2.b, t),
-            };
+            return { r: interpolate(c1.r, c2.r, t), g: interpolate(c1.g, c2.g, t), b: interpolate(c1.b, c2.b, t) };
         }
 
         async function buildRasterOverlay(url, style, opacity) {
@@ -213,8 +658,7 @@
             const height = image.getHeight();
 
             const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = width; canvas.height = height;
             const ctx = canvas.getContext('2d');
             const imageData = ctx.createImageData(width, height);
             const data = raster[0];
@@ -222,23 +666,19 @@
             for (let i = 0; i < data.length; i++) {
                 const color = colorForValue(data[i], style);
                 const idx = i * 4;
-                if (!color) {
-                    imageData.data[idx + 3] = 0;
-                    continue;
-                }
-                imageData.data[idx] = color.r;
+                if (!color) { imageData.data[idx + 3] = 0; continue; }
+                imageData.data[idx]     = color.r;
                 imageData.data[idx + 1] = color.g;
                 imageData.data[idx + 2] = color.b;
                 imageData.data[idx + 3] = Math.round(255 * opacity);
             }
-
             ctx.putImageData(imageData, 0, 0);
             return L.imageOverlay(canvas.toDataURL(), [[minY, minX], [maxY, maxX]], { opacity: 1 });
         }
 
         function buildLegend(el, palette) {
             el.innerHTML = '';
-            palette.forEach((color) => {
+            palette.forEach(color => {
                 const swatch = document.createElement('span');
                 swatch.style.background = color;
                 el.appendChild(swatch);
@@ -251,25 +691,37 @@
             return L.geoJSON(data, { style, pointToLayer });
         }
 
+        // ── Site Intelligence ─────────────────────────────────────────────────
+        function openIntelModal()  { document.getElementById('intel-modal').style.display = 'flex'; }
+        function closeIntelModal() { document.getElementById('intel-modal').style.display = 'none'; }
+
+        function suggestionPopupHtml(props) {
+            return `Plot score: ${props.ae_cosine_to_benchmark.toFixed(4)}<br>` +
+                   `Invasive probability: ${props.invasive_probability.toFixed(4)}<br>` +
+                   `Suggestion score: ${props.suggestion_score.toFixed(4)}<br>` +
+                   `<button onclick="openIntelModal()" style="margin-top:8px;width:100%;padding:5px 0;background:#364b2a;color:#f8f4eb;border:none;border-radius:6px;cursor:pointer;font-size:0.78rem;font-family:Georgia,serif;">Site Intelligence</button>`;
+        }
+
+        // ── Layer refresh ─────────────────────────────────────────────────────
         async function refreshLayers() {
             if (!layerConfig) return;
 
-            const similarityEnabled = document.getElementById('toggleSimilarity').checked;
-            const invasiveEnabled = document.getElementById('toggleInvasive').checked;
-            const benchmarksEnabled = document.getElementById('toggleBenchmarks').checked;
+            const similarityEnabled  = document.getElementById('toggleSimilarity').checked;
+            const invasiveEnabled    = document.getElementById('toggleInvasive').checked;
+            const benchmarksEnabled  = document.getElementById('toggleBenchmarks').checked;
             const suggestionsEnabled = document.getElementById('toggleSuggestions').checked;
+            const communityEnabled   = document.getElementById('toggleCommunity').checked;
 
-            if (similarityOverlay) map.removeLayer(similarityOverlay);
-            if (invasiveOverlay) map.removeLayer(invasiveOverlay);
-            if (benchmarkLayer) map.removeLayer(benchmarkLayer);
-            if (suggestionLayer) map.removeLayer(suggestionLayer);
-            if (selectedPlotLayer) map.removeLayer(selectedPlotLayer);
+            if (similarityOverlay)  map.removeLayer(similarityOverlay);
+            if (invasiveOverlay)    map.removeLayer(invasiveOverlay);
+            if (benchmarkLayer)     map.removeLayer(benchmarkLayer);
+            if (suggestionLayer)    map.removeLayer(suggestionLayer);
+            if (selectedPlotLayer)  map.removeLayer(selectedPlotLayer);
 
             if (similarityEnabled) {
                 similarityOverlay = await buildRasterOverlay(
                     `output/${layerConfig.layers.benchmark_similarity.path}`,
-                    layerConfig.layers.benchmark_similarity.style,
-                    0.72
+                    layerConfig.layers.benchmark_similarity.style, 0.72
                 );
                 similarityOverlay.addTo(map);
             }
@@ -277,8 +729,7 @@
             if (invasiveEnabled) {
                 invasiveOverlay = await buildRasterOverlay(
                     `output/${layerConfig.layers.invasive_probability.path}`,
-                    layerConfig.layers.invasive_probability.style,
-                    0.85
+                    layerConfig.layers.invasive_probability.style, 0.85
                 );
                 invasiveOverlay.addTo(map);
             }
@@ -288,11 +739,8 @@
                     layerConfig.benchmark_sites.path,
                     null,
                     (feature, latlng) => L.circleMarker(latlng, {
-                        radius: 6.5,
-                        color: '#1d1d1d',
-                        weight: 1.5,
-                        fillColor: '#f5f3e7',
-                        fillOpacity: 0.95,
+                        radius: 6.5, color: '#1d1d1d', weight: 1.5,
+                        fillColor: '#f5f3e7', fillOpacity: 0.95,
                     }).bindPopup(`<strong>${feature.properties.plot_code}</strong><br>${feature.properties.forest_name}`)
                 );
                 benchmarkLayer.addTo(map);
@@ -306,16 +754,8 @@
                         const rank = feature.properties.suggestion_score ?? 0;
                         const fill = rank > 0.8 ? '#8c1d18' : rank > 0.65 ? '#d95f0e' : '#f0a202';
                         return L.circleMarker(latlng, {
-                            radius: 7,
-                            color: '#2a1306',
-                            weight: 1.5,
-                            fillColor: fill,
-                            fillOpacity: 0.95,
-                        }).bindPopup(
-                            `Plot score: ${feature.properties.ae_cosine_to_benchmark.toFixed(4)}<br>` +
-                            `Invasive probability: ${feature.properties.invasive_probability.toFixed(4)}<br>` +
-                            `Suggestion score: ${feature.properties.suggestion_score.toFixed(4)}`
-                        );
+                            radius: 7, color: '#2a1306', weight: 1.5, fillColor: fill, fillOpacity: 0.95,
+                        }).bindPopup(suggestionPopupHtml(feature.properties));
                     }
                 );
                 suggestionLayer.addTo(map);
@@ -323,60 +763,68 @@
                 selectedPlotLayer = await loadGeoJson(
                     layerConfig.selected_plot.path,
                     (feature) => {
-                        if (feature.properties.role === 'adult_tree_plot') {
+                        if (feature.properties.role === 'adult_tree_plot')
                             return { color: '#a32020', weight: 3, fillOpacity: 0.05 };
-                        }
-                        if (feature.properties.role === 'sapling_subplot') {
+                        if (feature.properties.role === 'sapling_subplot')
                             return { color: '#d13a2f', weight: 2, fillOpacity: 0.08, dashArray: '4 4' };
-                        }
                         return null;
                     },
                     (feature, latlng) => {
-                        if (feature.properties.role !== 'center') {
-                            return null;
-                        }
+                        if (feature.properties.role !== 'center') return null;
                         return L.circleMarker(latlng, {
-                            radius: 6,
-                            color: '#7a0e0e',
-                            weight: 2,
-                            fillColor: '#d12b2b',
-                            fillOpacity: 0.95,
-                        }).bindPopup(
-                            `Plot score: ${feature.properties.ae_cosine_to_benchmark.toFixed(4)}<br>` +
-                            `Invasive probability: ${feature.properties.invasive_probability.toFixed(4)}<br>` +
-                            `Suggestion score: ${feature.properties.suggestion_score.toFixed(4)}`
-                        );
+                            radius: 9, color: '#7a0e0e', weight: 2.5,
+                            fillColor: '#d12b2b', fillOpacity: 0.95,
+                        }).bindPopup(suggestionPopupHtml(feature.properties));
                     }
                 );
                 selectedPlotLayer.addTo(map);
+            }
+
+            // Community layer
+            if (communityEnabled) {
+                if (!communityGroup) communityGroup = buildCommunityGroup();
+                if (!map.hasLayer(communityGroup)) communityGroup.addTo(map);
+            } else {
+                if (communityGroup && map.hasLayer(communityGroup)) map.removeLayer(communityGroup);
             }
         }
 
         async function init() {
             const response = await fetch('output/layers.json');
             layerConfig = await response.json();
-            document.getElementById('similarityDescription').textContent = layerConfig.layers.benchmark_similarity.style.description;
-            buildLegend(document.getElementById('similarityLegend'), layerConfig.layers.benchmark_similarity.style.palette);
+            document.getElementById('similarityDescription').textContent =
+                layerConfig.layers.benchmark_similarity.style.description;
+            buildLegend(document.getElementById('similarityLegend'),
+                layerConfig.layers.benchmark_similarity.style.palette);
 
             aoiLayer = await loadGeoJson(layerConfig.aoi.path, {
-                color: '#87986d',
-                weight: 3,
-                fillOpacity: 0,
-                dashArray: '7 6',
+                color: '#87986d', weight: 3, fillOpacity: 0, dashArray: '7 6',
             });
             aoiLayer.addTo(map);
             map.fitBounds(aoiLayer.getBounds(), { padding: [24, 24] });
 
             await refreshLayers();
 
-            ['toggleSimilarity', 'toggleInvasive', 'toggleBenchmarks', 'toggleSuggestions'].forEach((id) => {
+            ['toggleSimilarity', 'toggleInvasive', 'toggleBenchmarks', 'toggleSuggestions', 'toggleCommunity'].forEach(id => {
                 document.getElementById(id).addEventListener('change', refreshLayers);
             });
         }
 
-        init().catch((err) => {
-            console.error(err);
-            document.getElementById('similarityDescription').textContent = `Failed to load viewer: ${err.message}`;
+        // ── Preamble Continue ─────────────────────────────────────────────────
+        setupSearch();
+
+        document.getElementById('pre-continue').addEventListener('click', async () => {
+            document.getElementById('preamble').style.display = 'none';
+
+            for (const def of selectedLayers.values()) {
+                addLayerToSidebar(def);
+            }
+
+            await init().catch(err => {
+                console.error(err);
+                document.getElementById('similarityDescription').textContent =
+                    `Failed to load viewer: ${err.message}`;
+            });
         });
     </script>
 </body>
