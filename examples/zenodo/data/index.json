@@ -1,0 +1,1680 @@
+{
+  "papers": {
+    "mammal_occurrence_records_2025_26_in_central_and_southern_we": {
+      "zenodo_id": 18934220,
+      "title": "Mammal occurrence records (2025-26) in central and southern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2025_26_in_central_and_southern_we",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2026-03-11",
+      "pipeline_ready": true,
+      "files": [
+        "76116ee8-6ea7-49e0-b721-7b314710bd17_1758080548.jpg",
+        "03259d16-7584-423f-9d03-dbd1d02d81f7_1766972755.jpg",
+        "abf84839-c8d6-4bd5-9232-a95d6857a0f5_1749284732.jpg",
+        "b5b43470-53ca-4918-bc35-cef753dc86b1_1767029915.jpg",
+        "c00ba3bd-2430-4d41-8d3c-63e416d2cfea_1767500432.jpg",
+        "fa568242-3ffa-44d1-9bff-d068571b1759_1770887095.jpg",
+        "98d20adb-48a2-41e8-a49f-7d3500713869_1767761744.jpg",
+        "b8c03050-75c4-48ac-8982-9c9edfa53b19_1770015009.jpg",
+        "f64ebcff-34de-4ebb-aefb-c2fe4c761236_1757739465.jpg",
+        "3d96e879-7f75-48c8-9d4f-7b8963e13c16_1767926274.jpg",
+        "01_epicollect4zenodo.csv",
+        "f67d7c7b-255a-49f0-a386-0ad579cda653_1755503814.jpg",
+        "3f3dab9b-c26c-425b-9865-60c260e15892_1759130546.jpg",
+        "e36a30ea-4dad-4119-90b6-38e1519507b6_1760442173.jpg",
+        "5412b61f-8116-45c4-8d92-b8c9490090b8_1755938707.jpg",
+        "c0aedfd0-35b6-4519-ab11-4c12d4cad1f7_1771678401.jpg",
+        "074cc80f-33e7-444f-9cff-a441aa4ac11f_1765870528.jpg",
+        "726d36f3-e268-41d3-9431-e2cb67be8586_1762918230.jpg",
+        "978fcbeb-d868-4919-b715-7ff08cabd7d2_1765779483.jpg",
+        "350bc558-f48b-41a5-82d1-b3ad6bc077ff_1751098749.jpg",
+        "f619305d-e7ff-427e-93c5-8e16544915a1_1759891921.jpg",
+        "8ab8fd1c-c490-4f1d-9b64-324548bfb3ce_1767872080.jpg",
+        "443185f4-8bff-4967-ad7b-ec33aa4d291a_1754977882.jpg",
+        "0496ecda-57e3-4e28-b59e-321a1c2a42c1_1763807409.jpg",
+        "02_namesMatch.csv",
+        "b0e52253-7c5f-4075-80cc-00956fcc6ebb_1767762881.jpg",
+        "7abec243-0eb8-43d3-aed3-bb2388efb22a_1765795771.jpg",
+        "9a8eb4f1-9a62-436a-8622-cddd6a68d4c9_1767076477.jpg",
+        "38a4c456-4ecd-47cd-a871-84b7bf53fd5a_1758113227.jpg",
+        "88cde12d-5483-4bfb-a1e9-3f96565e0479_1764312463.jpg",
+        "08786203-7e5e-4876-a580-acf6f2475dd5_1762424104.jpg",
+        "1ce0dfd6-b9d0-46ea-9ab0-f560d7e98132_1766055925.jpg",
+        "b0d026ed-d043-458f-b4c3-8f17c456f463_1767850156.jpg",
+        "e5d29cea-37d9-4197-8deb-5bfd6c9da45d_1750425021.jpg",
+        "6230f4f3-74b8-4b4d-bd80-1a4f02c23fce_1755137244.jpg",
+        "4c9782d5-d03b-48cc-97da-2aed40d585c8_1759814396.jpg",
+        "f97312a3-5cf0-46d9-8cb0-004479a56c83_1766143472.jpg",
+        "2560e07a-36dc-4ff0-87d2-c7df14a30836_1752945918.jpg",
+        "1cf8d67e-a959-4bf6-b350-1df7f62d80d0_1767858429.jpg",
+        "c505e28d-c52a-4de2-b173-37d116f007f7_1763354418.jpg",
+        "3c650416-243e-42b2-a209-d78ba1d693a0_1767773840.jpg",
+        "56dc4877-bd2f-4f5a-af06-540d8ff5d40e_1760074575.jpg",
+        "747b622f-a396-4389-947b-72e3d7a207a3_1765779690.jpg",
+        "d39963a2-ef12-4c02-8145-591adf6e379f_1760151444.jpg",
+        "6e166804-39c6-4354-b2a1-30f2525ce60b_1766989371.jpg",
+        "f7e33c75-e487-44bf-9dbc-3a7fb9153ebe_1768792230.jpg",
+        "d58516f1-5479-4168-93e9-c41792f17bea_1767926329.jpg",
+        "30202f87-0795-4478-8bd4-80203b18491f_1766323250.jpg",
+        "00_README.txt",
+        "03_epicollect4gbif_Rscript_for_reference.R",
+        "79feb5c0-1a65-4c97-b3c9-f6835b90b5d0_1772069226.jpg",
+        "811fd6fd-f4a9-4caf-8750-9b08fcd3c1f1_1755931707.jpg",
+        "4fb8a302-0335-41b2-a2db-c112a09899cf_1766972399.jpg",
+        "23fde594-3f77-49e8-a6c6-369fa1061865_1749612210.jpg",
+        "a1f4839c-62c8-40ef-a14e-8fae819ce4e0_1749302881.jpg",
+        "23d4952c-b640-4d44-b6ad-eceb1f059b41_1750679975.jpg",
+        "e55cd6c9-a21e-4c0f-a995-b0ace0068a99_1762531390.jpg",
+        "d07a5a61-b28b-4d8d-bfff-a8e3c7d06d3e_1763543860.jpg",
+        "65e36952-07b8-47a5-9624-80ac15ad991e_1751976192.jpg",
+        "5f985f86-1299-4efd-8c74-a0870eea7897_1763968886.jpg",
+        "472dc145-a1ce-4921-b12a-fcc621435dfd_1757316111.jpg",
+        "47017767-c743-41cd-8eb0-04f656719a88_1755073594.jpg",
+        "2c31a01f-55ba-406d-9cbe-4399b82300f1_1760439959.jpg",
+        "c429991f-1dac-4a18-98e1-0bda37c58ffc_1763976945.jpg",
+        "b842aafe-2388-411d-ae06-0c95fdd9b59c_1759381510.jpg",
+        "16485e7c-e4cf-422d-81a0-2450eb3736ad_1764842444.jpg",
+        "ab41b1bc-5243-4bf2-9fbc-fc075cf459de_1764220811.jpg",
+        "6fe4eefc-8a5e-47f7-8bb7-5ec24f8187d4_1765864083.jpg",
+        "250bea1a-36ac-4256-b783-a815961d6bb4_1765961532.jpg",
+        "cef8c520-03b3-47d2-b77c-187642325a47_1768892117.jpg",
+        "0514938f-f0d0-48fd-ab4a-8143b3e971db_1769139664.jpg",
+        "53c610f2-2b19-469f-8707-78edee0ee129_1769227186.jpg",
+        "8d20703c-9b27-4b94-884d-e86ef701ec42_1770105476.jpg",
+        "284662ff-3c46-4fbe-964a-9143e124cb17_1758851669.jpg",
+        "3e6dfe40-849c-4f51-bda6-7c321b81b449_1766641593.jpg",
+        "81ae28bb-0008-423c-bec4-912666d2d3d1_1769140688.jpg",
+        "b758cf92-17a3-4478-9b53-affebb685d04_1770371078.jpg",
+        "82ccd8e7-5e55-43de-ad02-7a22978175f1_1769998347.jpg",
+        "3c60becb-136c-4da4-97d7-4b00d4e22547_1764927441.jpg",
+        "8e063fc0-36ee-4701-96f9-754f331fb0f8_1765251550.jpg",
+        "cb133b4e-f5d6-4676-a2e3-9d32e060b9ed_1765797360.jpg"
+      ]
+    },
+    "mammal_occurrence_records_2023_25_in_central_and_southern_we": {
+      "zenodo_id": 18910401,
+      "title": "Mammal occurrence records (2023-25) in central and southern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2023_25_in_central_and_southern_we",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2026-03-08",
+      "pipeline_ready": true,
+      "files": [
+        "a7aef8e0-c69e-4e59-88b5-dde7746c5546_1746771844.jpg",
+        "21f44f3b-2363-4419-8b42-bc9da0689703_1746705614.jpg",
+        "d9dd54f1-1afc-479d-84d0-e33742d15137_1747296317.jpg",
+        "64e3357a-6c48-460c-b071-8b66b2ccab54_1734782991.jpg",
+        "9b59bb40-5d4f-44f8-8a56-73aeba3c6147_1740281293.jpg",
+        "80616a37-4c40-43e2-b47c-d209faf1dc97_1742668065.jpg",
+        "1a9cee4e-da86-4023-9405-67368cea9f24_1744709948.jpg",
+        "796112f2-4080-490d-98da-eef55b1c6082_1738223985.jpg",
+        "9f1dbf03-ce7e-4532-8b86-023c830d2ce6_1734868549.jpg",
+        "01aa8223-7ad0-4c95-8734-0ae4c932f206_1734612552.jpg",
+        "0287f03c-eef1-445a-b2b0-b51c35328e59_1734511952.jpg",
+        "f4ff1cbb-bca2-4d04-9e23-4e6dfc6b01ba_1743224971.jpg",
+        "8a4ab8c0-fc0a-11ef-963b-19bdc7e69444_1741431335.jpg",
+        "337c3b77-58f6-445f-a391-e19ff4040ed1_1748690069.jpg",
+        "190ad653-dbf4-4748-b1ae-e72d856172e4_1733884017.jpg",
+        "ef39c8b7-01c7-488d-a627-f29610b44084_1729150564.jpg",
+        "8676550f-b2aa-4292-87c0-351ef98f89fc_1746706509.jpg",
+        "3079e99b-05b2-459a-a750-bbcef0b07870_1746938687.jpg",
+        "ccfc5ac9-5b77-4d1b-8b8e-52f648827235_1733580705.jpg",
+        "e7541cd9-e8d6-4c9c-bdb9-1f05ab2f1f97_1737625928.jpg",
+        "c22a65bf-5bc5-404b-a964-543096d4807f_1742560930.jpg",
+        "052445d0-8e96-49c8-a87c-cd1b63935530_1738902592.jpg",
+        "81397ac8-fa69-4e36-b75a-d93edb1e8755_1733561792.jpg",
+        "d6a5aaff-cee3-4481-9172-cb79647e424a_1734747395.jpg",
+        "0f322b56-32f0-4daf-b184-877bb1958a07_1739187717.jpg",
+        "b856af53-6add-4193-9d4b-9384c8cca440_1737605981.jpg",
+        "4196102b-e5d1-423f-9190-40787ef7a2fb_1738492214.jpg",
+        "1dae2f87-cdaa-4639-887b-341945a4ac4e_1727067243.jpg",
+        "461cca02-4384-4d04-8b73-64bd37eb1d0a_1737178364.jpg",
+        "542b807e-aa4d-43ab-9c1e-20a74f70b3dc_1728369149.jpg",
+        "02_namesMatch.csv",
+        "5ebe999c-0d42-4875-be3c-73d461dff0b1_1728361691.jpg",
+        "3b448187-a75b-4af3-8db2-fc4cd4cded8a_1735468733.jpg",
+        "9686ad5e-4deb-43ca-a3ca-2ba166007336_1747049482.jpg",
+        "4c909a4e-4095-432e-8118-458e9c91c22b_1737711392.jpg",
+        "d5cfa473-b168-4ca1-a906-a6f38aa230ce_1739167703.jpg",
+        "613ef665-140d-443c-b7b3-548c3d7c1a5f_1738400604.jpg",
+        "71d0bc35-0846-4863-8bc8-07d7d74c17fa_1746769898.jpg",
+        "90ce3487-cc5f-445f-a292-d129caedd0fa_1739968390.jpg",
+        "907622b1-7eac-447a-aae5-4b56ca507501_1746367125.jpg",
+        "aa20ca96-a22d-4f98-805a-6987e74ff139_1745576393.jpg",
+        "31249675-064b-4c3f-b085-198cb0854516_1739192374.jpg",
+        "01_epicollect4zenodo.csv",
+        "8e30411a-c147-4536-8dd1-8fbaea1db2b9_1737614523.jpg",
+        "5a31539b-05c5-4183-af79-6d3a58545bad_1736571704.jpg",
+        "494d10e0-fc08-11ef-a8b7-d5a0bbc059df_1741430235.jpg",
+        "eaf3cfba-865e-4c64-bcd5-3f387cb2f9f3_1726285543.jpg",
+        "7a1c3a6f-fbd0-4119-9179-eb46e2d780cb_1735123908.jpg",
+        "f02ef8d0-68de-4270-b8f8-d6d654a507cb_1744435974.jpg",
+        "11a9164b-2918-400d-8507-a0eeb4492c74_1745131200.jpg",
+        "a067ce86-ac06-4ff1-af24-844c3a4a6de9_1735819648.jpg",
+        "2f122c24-d547-4a37-93a1-84a7dde0c6b1_1741364780.jpg",
+        "b5657b8b-4c3e-451d-8409-20e6deff4fb5_1745142581.jpg",
+        "c8325133-a555-42c0-99c6-db94cb659d73_1743132588.jpg",
+        "114e8974-f259-4761-8e8f-1bcdfed2991d_1735186229.jpg",
+        "fdadbf3c-0ea8-4fc6-84d1-f743ef9c8d94_1744087060.jpg",
+        "b870614b-b1cc-472b-9cf2-d22b45ae66c6_1730948028.jpg",
+        "fe180cc3-d837-4bee-8116-259fc6e25766_1737085358.jpg",
+        "00_README.txt",
+        "18681c3a-0652-48bb-bcb0-b667e3b0c6a1_1727007889.jpg",
+        "abc15cfd-cd0b-40ef-84b8-a9757ac0856a_1741690321.jpg",
+        "ca5f99ef-88ce-4b61-9cd5-b5b36dfd402c_1728355523.jpg",
+        "aa6f9210-34db-435d-b14c-287da15b4d1e_1730026145.jpg",
+        "5b4201ea-8dec-4a54-8247-efe48d7f6a73_1730730633.jpg",
+        "c4879c1c-e51b-4e1c-b784-6ce871e9a86b_1741154179.jpg",
+        "fd51f9e4-1449-4f5a-b6e5-58800229284a_1745294724.jpg",
+        "8e7780b2-0d74-4dd4-8646-be0e5fcff9c7_1733741619.jpg",
+        "11dfdb75-1e2b-4d6e-adbf-a79c14b92e19_1746267802.jpg",
+        "8cc84e31-3b1f-4d39-96ef-17fb69cc6e45_1735440480.jpg",
+        "76a28d8b-0818-4693-b485-7b78892e1bd3_1738919335.jpg",
+        "ab03b290-1a84-469d-b583-56d0b3fcc91e_1743677852.jpg",
+        "1457c4c8-1ac7-408c-ba71-76c413083123_1740621234.jpg",
+        "48856404-f683-4157-89ba-b763a4e703ff_1740569572.jpg",
+        "fa8326a7-2532-4b8d-a78d-3ff242a45c2b_1743764651.jpg",
+        "829e1468-4eb0-4131-bb83-ffe93f0f642c_1743815674.jpg",
+        "933b697b-519b-4bce-a88d-c792861e875b_1746953539.jpg"
+      ]
+    },
+    "phenology_of_50_tree_species_across_9_years_in_a_south_asian": {
+      "zenodo_id": 18617271,
+      "title": "Phenology of 50 tree species across 9 years in a South Asian tropical rainforest indicates complex influence of climate, traits, and phylogeny",
+      "org": "ncfindia",
+      "path": "data/ncfindia/phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "authors": [
+        "Madhavan, A. P.",
+        "Kasinathan, Srinivasan",
+        "Murali, Akhil",
+        "Sonia, K. B.",
+        "Moorthi, G.",
+        "Sundarraj, T.",
+        "Vanidas, T.",
+        "Rajesh, R.",
+        "Mudappa, Divya",
+        "Raman, T. R. Shankar"
+      ],
+      "pub_date": "2026-02-15",
+      "pipeline_ready": false,
+      "files": []
+    },
+    "weather_data_2014_2025_from_iyerpadi_weather_station_valpara": {
+      "zenodo_id": 18646715,
+      "title": "Weather data (2014-2025) from Iyerpadi Weather Station, Valparai Plateau, Tamil Nadu, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/weather_data_2014_2025_from_iyerpadi_weather_station_valpara",
+      "authors": [
+        "Raman, T. R. Shankar"
+      ],
+      "pub_date": "2026-02-15",
+      "pipeline_ready": true,
+      "files": [
+        "05_iyweather3.0.Rmd",
+        "Fig2a_ombrograph.jpg",
+        "Xtra_Post installation inventory.pdf",
+        "02_parry2018rain.csv",
+        "01_Iyerpadi_Weather_Data.csv",
+        "03_IyerpadiDailyFull3.0.csv",
+        "04_IyerpadiMonthlySummary3.0.csv",
+        "Fig1_MissingValues.jpg",
+        "Fig2b_climvars.jpg",
+        "Fig3_LongTermPatterns.jpg",
+        "Xtra_11866-M U30-NRC Manual.pdf",
+        "00_README.txt"
+      ]
+    },
+    "data_from_factors_influencing_seasonal_and_monthly_changes_i": {
+      "zenodo_id": 18403197,
+      "title": "Data from: Factors influencing seasonal and monthly changes in the group size of chital or axis deer in southern India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_factors_influencing_seasonal_and_monthly_changes_i",
+      "authors": [
+        "Raman, T. R. Shankar"
+      ],
+      "pub_date": "2026-01-28",
+      "pipeline_ready": true,
+      "files": [
+        "02_Groups91-92.csv",
+        "03_additionalGroups.csv",
+        "01_Surveys.csv",
+        "04_GPREGS.csv",
+        "11_Raman1997_GroupSize_JBiosci.pdf",
+        "09_FIGS.ZIP",
+        "05_additionalNotes.csv",
+        "08_OriginalArchive_FileDetails.odt",
+        "07_SupplementaryInformation.odt",
+        "06_GP.ZIP",
+        "10_Raman1997_Tables.pdf"
+      ]
+    },
+    "data_from_effects_of_tree_plantations_on_population_and_roos": {
+      "zenodo_id": 17309569,
+      "title": "Data from: Effects of tree plantations on population and roosting ecology of an endemic agamid lizard in Western Ghats Biodiversity Hotspot",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_effects_of_tree_plantations_on_population_and_roos",
+      "authors": [
+        "Gosavi, Ninad",
+        "Lad, Himanshu",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-10-10",
+      "pipeline_ready": true,
+      "files": [
+        "dat_monilesaurus_substrate_orientation.csv",
+        "dat_monilesaurus_night.csv",
+        "dat_monilesaurus_height_roost.csv",
+        "dat_monilesaurus_night_juvenile.csv",
+        "dat_monilesaurus_night_adult.csv",
+        "README.md"
+      ]
+    },
+    "data_for_snow_leopard_mediated_apparent_competition_between_": {
+      "zenodo_id": 17384769,
+      "title": "Data for: Snow leopard-mediated apparent competition between wild ungulates and domestic livestock in the Trans-Himalaya",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_for_snow_leopard_mediated_apparent_competition_between_",
+      "authors": [
+        "Bajaj, Deepti",
+        "Khanyari, Munib",
+        "Chhering, Tandup",
+        "Chunit, Kesang",
+        "Gurmet, Kalzang",
+        "Thinley, Tanzin",
+        "Thuktan, Tanzin",
+        "Tobge, Rinchen",
+        "Sharma, Deepshikha",
+        "Mishra, Charudutt",
+        "Sharma, Rishi Kumar",
+        "Suryawanshi, Kulbhushansingh"
+      ],
+      "pub_date": "2025-10-18",
+      "pipeline_ready": true,
+      "files": [
+        "Code_Apparent_Competition.R",
+        "Metadata_Apparent_Competition.txt",
+        "livestock_count_dep.csv",
+        "sl_densityestimate.csv",
+        "ungulate_densityestimate.csv"
+      ]
+    },
+    "harmony_at_heights_spatio_temporal_interactions_between_meso": {
+      "zenodo_id": 16600207,
+      "title": "Harmony at heights?  Spatio-temporal interactions between mesocarnivores across a stress gradient in the High-Himalaya",
+      "org": "ncfindia",
+      "path": "data/ncfindia/harmony_at_heights_spatio_temporal_interactions_between_meso",
+      "authors": [
+        "Jamwal, Manjot Kaur",
+        "Bajaj, Deepti",
+        "Suryawanshi, Kulbhushansingh",
+        "Gupta, Ranjana",
+        "Khanyari, Munib"
+      ],
+      "pub_date": "2025-07-30",
+      "pipeline_ready": false,
+      "files": [
+        "Data and code Final.zip"
+      ]
+    },
+    "soil_properties_of_degraded_and_reserve_forest_areas_of_nort": {
+      "zenodo_id": 15519844,
+      "title": "Soil properties of degraded and reserve forest areas of Northern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "authors": [
+        "Lad, Himanshu",
+        "Teegalapalli, Karthik",
+        "Sadekar, Vishal",
+        "Osuri, Anand M",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-05-26",
+      "pipeline_ready": true,
+      "files": [
+        "Sahyadri2024_soil_properties.csv",
+        "Sahyadri2024_bulk_density.csv",
+        "Readme.md"
+      ]
+    },
+    "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env": {
+      "zenodo_id": 15469670,
+      "title": "Dataset for leaf, flower and fruit phenology patterns and environmental relationships in a seasonal tropical forest in the Indian Eastern Himalaya with R codes for analyses",
+      "org": "ncfindia",
+      "path": "data/ncfindia/dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env",
+      "authors": [
+        "Datta, Aparajita",
+        "Banerjee, Soumya",
+        "Naniwadekar, Rohit",
+        "Rathore, Akanksha",
+        "Borawake, Noopur",
+        "Thapa, Khem",
+        "Brah, Turuk",
+        "Shukla, Ushma",
+        "Sidhu, Swati"
+      ],
+      "pub_date": "2025 ",
+      "pipeline_ready": false,
+      "files": [
+        "CircStats.R",
+        "Weather data_2011_2022_full.csv",
+        "2011-2023_phenology_data_full.csv",
+        "Weather_phenology_data_summary_2011_2022.csv",
+        "LinePlots.R",
+        "GAMLSS.R",
+        "Fourier_analysis_mediancycle.R"
+      ]
+    },
+    "data_from_deciduous_forests_hold_conservation_value_for_bird": {
+      "zenodo_id": 14762448,
+      "title": "Data from: Deciduous forests hold conservation value for birds within South Andaman Island, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_deciduous_forests_hold_conservation_value_for_bird",
+      "authors": [
+        "Jayanth, Arpitha",
+        "Patel, Zankhna",
+        "Mubeen, Mohammed",
+        "M, Karthikayan",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-01-29",
+      "pipeline_ready": true,
+      "files": [
+        "Andaman_birds_community.R",
+        "species_list.csv",
+        "transects_veg.csv",
+        "traits_all.csv",
+        "bird_P.nex",
+        "data_hmsc.csv",
+        "birdtraits_hmsc.csv",
+        "all_birds.nex",
+        "Andaman_birds.csv",
+        "Andaman_birds_HMSC.R",
+        "ReadMe.txt"
+      ]
+    },
+    "mammal_occurrence_records_2024_in_the_valparai_plateau_and_a": {
+      "zenodo_id": 13910696,
+      "title": "Mammal occurrence records (2024) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2024_in_the_valparai_plateau_and_a",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2024-10-10",
+      "pipeline_ready": true,
+      "files": [
+        "d71f6e30-7563-451a-809b-7530cb3211eb_1712818144.jpg",
+        "01_anamalai-mammals-2024.csv",
+        "385140bb-ffe0-487a-a163-4ec56a09e732_1725601168.jpg",
+        "3c16af66-055d-44a8-9318-6bffec0b0111_1712992651.jpg",
+        "baf85566-d83a-44a5-9f9f-3bba08b73072_1708606164.jpg",
+        "5ee90794-8d4b-4bae-acdc-d9c64df01876_1710131127.jpg",
+        "897c8dd1-de92-43f6-a7ff-b38ff7d59901_1707713006.jpg",
+        "c3802cb7-4657-4266-bdd6-619e7558b732_1710131420.jpg",
+        "4be7e5c2-45a6-4216-b663-2245f02ae3f8_1711246613.jpg",
+        "7426493b-4b96-4687-910c-11853bc6c586_1710039069.jpg",
+        "ecc10eb7-d890-4093-b77e-842333b13429_1708740823.jpg",
+        "00_readMe.txt",
+        "88d4d67d-fd7c-4cb7-8e91-800d13a76740_1728017345.jpg",
+        "9347643f-b8e4-4480-bd3e-1431a4b7701f_1725688809.jpg",
+        "276a03d9-da08-48cf-bdf3-d7dcd1b421a5_1719492240.jpg",
+        "8e27d4de-c45d-48ee-8d9c-9359f43a1a8c_1712735418.jpg",
+        "188f85b7-abae-4dbc-a613-d6212a7a2714_1717933474.jpg",
+        "caebfab1-4bef-47ad-9a54-55f3f15735d6_1711117474.jpg",
+        "228bb9c6-63c5-4deb-9462-38ca7cca0902_1709956479.jpg",
+        "b2dd5b7f-8c33-4389-a47f-483370fd697c_1706504229.jpg",
+        "ba26eb8b-7be6-490f-a9a9-1b3d6f6c02ad_1709958321.jpg",
+        "40c56730-4a94-4545-b114-de614e846029_1705166168.jpg",
+        "7f204709-f8e0-45bc-b3c3-2f34cfc208c1_1724423765.jpg",
+        "daccf296-6bfe-406f-ad3c-82f200c8861f_1713945353.jpg",
+        "0f0d0c88-3f5a-4da7-89b2-dcf2b43e6088_1724407988.jpg"
+      ]
+    },
+    "data_from_effects_of_land_use_change_and_elevation_on_endemi": {
+      "zenodo_id": 13870530,
+      "title": "Data from: Effects of land use change and elevation on endemic shrub frogs in a biodiversity hotspot",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_effects_of_land_use_change_and_elevation_on_endemi",
+      "authors": [
+        "Lad, Himanshu",
+        "Gosavi, Ninad",
+        "V., Jithin",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2024-10-01",
+      "pipeline_ready": false,
+      "files": [
+        "Data_Codes_Lad_et_al.zip",
+        "README.md"
+      ]
+    },
+    "morphological_traits_of_selected_rock_outcrop_amphibians_in_": {
+      "zenodo_id": 10974286,
+      "title": "Morphological traits of selected rock outcrop amphibians in the lateritic plateaus of the northern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/morphological_traits_of_selected_rock_outcrop_amphibians_in_",
+      "authors": [
+        "Jithin, V.",
+        "Pal, Saunak",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2024-04-15",
+      "pipeline_ready": true,
+      "files": [
+        "Jithin et al_2024_Amphibian_Traits.csv",
+        "README.md"
+      ]
+    },
+    "data_and_codes_from_orchards_and_paddy_differentially_impact": {
+      "zenodo_id": 10974176,
+      "title": "Data and codes from: Orchards and paddy differentially impact rock outcrop amphibians: Insights from community- and species-level responses",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_and_codes_from_orchards_and_paddy_differentially_impact",
+      "authors": [
+        "Jithin, V.",
+        "Rane, Manali",
+        "Watve, Aparna",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2024-04-15",
+      "pipeline_ready": false,
+      "files": [
+        "README.md",
+        "data and codes.zip"
+      ]
+    },
+    "mammal_occurrence_records_2022_24_from_sakleshpura_central_w": {
+      "zenodo_id": 13340613,
+      "title": "Mammal occurrence records (2022-24) from Sakleshpura, central Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2022_24_from_sakleshpura_central_w",
+      "authors": [
+        "Karthick, Vijay",
+        "Kumar, Vijay",
+        "Osuri, Anand"
+      ],
+      "pub_date": "2024-08-20",
+      "pipeline_ready": true,
+      "files": [
+        "1bYdoQ4d9k3-eOjUoRL86D1DRSrxVz2EP.jpg",
+        "1rQiWJf0WGt26NhZNL2V33Vr2TdjgrGXn.jpg",
+        "1E7X3jnoFH9M-G8DsJe_Yig1Hf1EXNIOf.jpg",
+        "1IeER5ixKDJ8B73GMZFzYgYdv1GweNJTi.jpg",
+        "1oX-tDiir6cAlRRR9MttVQq668ToUAhqW.jpg",
+        "1fcYjrTdQYu7BqW9whBLFZR9dua4fz2Hv.jpg",
+        "000_ReadMe.txt",
+        "1ivwGFdjWsAU_mTTxhX0yTnEcxRme_lS9.jpg",
+        "1REIbZS84l4s4GtqIoByq-pGfw6ibH1f7.jpg",
+        "003_nameMatch.csv",
+        "001_mammalData.csv",
+        "1k1VxJCwDwLg3RXTfqri_Gx_xDMGZFEus.jpg",
+        "1WV8nafAJnJbHoNBYT27Uh3aBcq9ZayDa.jpg",
+        "1-s0wMqyal1y91-z8uN6uM_iSVSYhEMK_.jpg",
+        "1SpZesuQFLNX9VPVy92QfDFTPa973YFIW.jpg",
+        "002_placeLocs.csv",
+        "004_GBIF_upload_code.R",
+        "005_download_images_from_googledrive.R",
+        "1jDD8CA7we4b5TiBPGShSBNGnQj_hsrvV.jpg",
+        "006_kadamane_mammal_occurence.xlsx",
+        "1h_QBf-sLSIwvVdqhN0_ioTXVTpxPRaXX.jpg"
+      ]
+    },
+    "mammal_occurrence_records_2020_23_in_the_valparai_plateau_an": {
+      "zenodo_id": 11903722,
+      "title": "Mammal occurrence records (2020-23) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2020_23_in_the_valparai_plateau_an",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2024-06-17",
+      "pipeline_ready": true,
+      "files": [
+        "1rcn3S9x1FnKTerpzmXXGvdv_ezaaWpob.jpg",
+        "1XrEBfv7KZzBTAHSg7fIvEYJu6-_7REZW.jpg",
+        "199lGtt0WOSmVGe2HF7_CcRIXSd3zrsHT.jpg",
+        "1agUaGKiPRhebRgUmDZj9GkMmRSTikCA6.jpg",
+        "1xe3T80uYb_JznCKBT0HijlZ_5H4o-XSz.jpg",
+        "1I8mz_XbESIhgI16woh2bI7yuXzfUi0iS.jpg",
+        "1WyaZ6VRZQ9bg-cQMXg3HwsmkhGAjyOQ5.jpg",
+        "18v3IXfjmrMxgVjWEGyXJsHJSv46VYLgP.jpg",
+        "1ODQQyKyhpWJ3mEoC3tspxkh6wK5dL-YD.jpg",
+        "1Ykn0GZ2cHZGWxNY0NcltNalTC4DKG5OB.jpg",
+        "1iZ1cgLrBkCA4JpjDRjlR0Ba7kzPfV96r.jpg",
+        "1uqRi3Hw1L3pFUCwMsCFXqvS6OK76a9V-.jpg",
+        "1NX5Q7t5vqVV4A5LKI0QL4k5lvUXZSIJB.jpg",
+        "1pVfJZ2vdLQkqRcWJH-mGNYkncFK_QfRr.jpg",
+        "1PgUn3UfXITMmrbAHnpbTelcTk3PzgiEp.jpg",
+        "1uYIXVoY4-6oQrWNx3kDRoFfC2yZbnkFZ.jpg",
+        "1VnDVQsO9-MJfrbOHVLia8AYbJ2XNFusG.jpg",
+        "15W7CoM8iXFshr4Ehi7oEJoUnu6isrVFc.jpg",
+        "1zCMdEaVDSyx14CkMvlw021kiHu7PaYdD.jpg",
+        "1E8_Jl6Kb4KRWMujQTSfvI_PT3L-3UnCK.jpg",
+        "1MDKVRQDgrYR_Rrb1aBYpOInzgmGyhdiO.jpg",
+        "002_placeLocs.csv",
+        "001_mammalData.csv",
+        "003_nameMatch.csv",
+        "14jy_fJqODC6v6vafahd70aOUIZsWIfak.jpg",
+        "1UD5bgPetGwsyBMgC3Cfxrxm57jyZK3Pn.jpg",
+        "1s6kX1zlffX0woRCg5ZRQJsh77JhdtEjT.jpg",
+        "1xQnx23XaK2O7nZ_RZUIJ9vtjNai1RfCX.jpg",
+        "1Dcv1K6LDN4P5I7_UKPX3G3OBk79iZJH-.jpg",
+        "1Ii2bqVo7qDOR3B8gaXuU4rXbM4W9baZ_.jpg",
+        "1yBj3Y4ILdR0dQDe8aZYMRpaHfTEIILSc.jpg",
+        "1ElXzsbGPyuT17H4qZCTKI64ggFrmnwLF.jpg",
+        "1X-45itPBOg3Ydl33DPFWWAbBsbz4-coB.jpg",
+        "1Rehw2QlfKbUSi6Og85G6HHzE_XSL8r5d.jpg",
+        "1LZSpKwEYFUby-_Iza8IK6Bjvro5Waj-g.jpg",
+        "1VW4k9StgjzxVXnrTo5LnqJjRkM9JCW9B.jpg",
+        "1uMnkhhkGMbeaeRsFegVQVrXvzZeLqGNq.jpg",
+        "1hethdzbwkhOJJZfiYZBUtRMfs8J71mPs.jpg",
+        "1i2Tel3GsEBpZen44jsE5N-JwcGX94Tp6.jpg",
+        "10ILBfInGCbgc53kDZs1DjJ2ZfnUuMxen.jpg",
+        "1bsuxDuy_xB0EsGnWr6zwABjRNCMJKlR4.jpg",
+        "1qDkmGeWxdA-5-YGHzCTqU_RE3EHQIx4P.jpg",
+        "1m0O7lM-z5zIrbEdoeD3UXKDJJCLVlc6u.jpg",
+        "1fpcgNv5l2URS7VsKGxkVfhVqz681T3nN.jpg",
+        "1UKIntV8dqxHk2jpy4lz7-Z620ZJVQTKq.jpg",
+        "1IWOErjvOFJZP-xevgbXuejaL0Pte59N5.jpg",
+        "11FT0zBpYhPqHiiFI3nQ0QCYL2cvsavqj.jpg",
+        "1No25JJSuVJsQ3WnaU1H-qb5rz2Hc29v6.jpg",
+        "1VKUxUQLieHSx9NvtZ--DRwFuGs2FWnFZ.jpg",
+        "1mSMTaGrpHzqOiKxXxkGvuSeH66J7pyKs.jpg",
+        "1BgXs_syxbMP9Zkre7XUJ5NFWUNm4pxaV.jpg",
+        "110lnJxhVSEI5dIj6_GthIFc5Q4WQl6XS.jpg",
+        "1vXQaULHLJKIAh5T5CNKlp5aYyTKkbnlV.jpg",
+        "19Z35684X12Sr-sbQXEK89m5wpsl3gSkp.jpg",
+        "1lcRghrnrAodYtONSJZECHKuL6JQH1oVA.jpg",
+        "1YX1UYtIK9zu1t3G1eDLTUE0wXUv7HafU.jpg",
+        "1dBQ34XYweW_1QdS7xD3_CWqq8VopvHeo.jpg",
+        "10VzbxzrcBjjfXHwCIwET_NC3vSE2ZbB0.jpg",
+        "1lK26_hx-fWQ2hBaWsgXJTcfgZUzK8vjv.jpg",
+        "1ewBj_CUHKs3rBxK2MsfKE28_2Q52VrPZ.jpg",
+        "16PSG085eBQ3IaYLsCP3bT8S-SxRb1FAd.jpg",
+        "1lFl8A0keEdAkSZwvKQ1qqGJTH2guf5uG.jpg",
+        "157xWX45feeAIfYGWXYsrzAtV_r9Bmd3Y.jpg",
+        "004_mammup.Rmd",
+        "000_readMe.txt"
+      ]
+    },
+    "wood_density_for_26_plant_species_collected_from_northern_we": {
+      "zenodo_id": 11090178,
+      "title": "Wood density for 26 plant species collected from Northern Western Ghats",
+      "org": "ncfindia",
+      "path": "data/ncfindia/wood_density_for_26_plant_species_collected_from_northern_we",
+      "authors": [
+        "Lad, Himanshu",
+        "Sadekar, Vishal",
+        "Teegalapalli, Karthik",
+        "Osuri, Anand M"
+      ],
+      "pub_date": "2024-04-30",
+      "pipeline_ready": true,
+      "files": [
+        "readme_wood_density.txt",
+        "Wood Density Maharashtra.csv"
+      ]
+    },
+    "data_from_abiotic_and_biotic_drivers_on_tadpoles_in_seasonal": {
+      "zenodo_id": 10969334,
+      "title": "Data from: Abiotic and biotic drivers on tadpoles in seasonal rock pools of Western Ghats rock outcrops, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_abiotic_and_biotic_drivers_on_tadpoles_in_seasonal",
+      "authors": [
+        "Jithin, V.",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2024-04-14",
+      "pipeline_ready": true,
+      "files": [
+        "Jithin_and_Rohit_2024_Pool_Data_Raw.csv",
+        "README.md"
+      ]
+    },
+    "data_from_distribution_models_predict_climate_related_range_": {
+      "zenodo_id": 10888938,
+      "title": "Data from: Distribution models predict climate-related range alteration or extinction of eleven threatened tropical rainforest trees in the Western Ghats",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_distribution_models_predict_climate_related_range_",
+      "authors": [
+        "Madhavan, A.P.",
+        "Bhat, Kshama",
+        "Kasinathan, Srinivasan",
+        "Mudappa, Divya",
+        "Page, Navendu",
+        "Raman, T. R. Shankar"
+      ],
+      "pub_date": "2024-03-28",
+      "pipeline_ready": false,
+      "files": []
+    },
+    "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai": {
+      "zenodo_id": 10643064,
+      "title": "Fruit, seed dispersal, and life history traits of tropical rainforest trees of the Anamalai Hills, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/fruit_seed_dispersal_and_life_history_traits_of_tropical_rai",
+      "authors": [
+        "Anand M. Osuri",
+        "Dayani Chakravarthy",
+        "Murali, Akhil",
+        "Divya Mudappa",
+        "T. R. Shankar Raman"
+      ],
+      "pub_date": "2024-02-10",
+      "pipeline_ready": true,
+      "files": [
+        "Anamalais_trait_data_2024.csv",
+        "README.txt"
+      ]
+    },
+    "data_from_restoring_rainforest_fragments_survival_of_mixed_n": {
+      "zenodo_id": 10630501,
+      "title": "Data from: Restoring rainforest fragments: survival of mixed-native species seedlings under contrasting site conditions in the Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_restoring_rainforest_fragments_survival_of_mixed_n",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2024-02-07",
+      "pipeline_ready": true,
+      "files": [
+        "11_figure4.tif",
+        "01_survivalData.csv",
+        "00_README.txt",
+        "09_figure2.tif",
+        "12_figure5.tif",
+        "10_figure3.tif",
+        "04_table1.csv",
+        "05_table2.csv",
+        "08_figure1.jpg",
+        "07_table4.csv",
+        "03_Abstract.txt",
+        "06_table3.csv",
+        "02_nameMatch.csv"
+      ]
+    },
+    "line_transect_data_on_birds_from_mudumalai_and_upper_nilgiri": {
+      "zenodo_id": 10540410,
+      "title": "Line transect data on birds from Mudumalai and Upper Nilgiris, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/line_transect_data_on_birds_from_mudumalai_and_upper_nilgiri",
+      "authors": [
+        "Raman, T. R. Shankar"
+      ],
+      "pub_date": "2024-01-20",
+      "pipeline_ready": true,
+      "files": [
+        "00_README.txt",
+        "03_nilnames.csv",
+        "01_niltrans.csv",
+        "02_nilbirds.csv"
+      ]
+    },
+    "data_from_structure_and_dynamics_of_secondary_and_mature_rai": {
+      "zenodo_id": 10426971,
+      "title": "Data from: Structure and dynamics of secondary and mature rainforests: insights from South Asian long-term monitoring plots",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "authors": [
+        "Murali, Akhil",
+        "Kasinathan, Srinivasan",
+        "Bhat, Kshama",
+        "Ratnam, Jayashree",
+        "Sankaran, Mahesh",
+        "Mudappa, Divya",
+        "Raman, T. R. Shankar",
+        "Osuri, Anand M"
+      ],
+      "pub_date": "2023-12-23",
+      "pipeline_ready": true,
+      "files": [
+        "05_Manamboli_vernier.csv",
+        "06_Candura_Height_data.csv",
+        "07_Manamboli_Height_data.csv",
+        "08_Species_name_match.csv",
+        "03_Manamboli_annual_census.csv",
+        "09_R_scrpt_for_manuscript.R",
+        "01_README.txt",
+        "02_Candura_annual_census.csv",
+        "04_Candura__vernier.csv"
+      ]
+    },
+    "tree_and_habitat_structure_data_from_rainforest_fragments_an": {
+      "zenodo_id": 10077040,
+      "title": "Tree and habitat structure data from rainforest fragments and coffee plantations in the Anamalai Hills, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/tree_and_habitat_structure_data_from_rainforest_fragments_an",
+      "authors": [
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya",
+        "Sridhar, Hari",
+        "Surendra, Akshay"
+      ],
+      "pub_date": "2023-10-14",
+      "pipeline_ready": true,
+      "files": [
+        "01_sites.csv",
+        "02_allpcqdata.csv",
+        "03_pcqlocations.csv",
+        "04_allhabitat.csv",
+        "05_gbifnames.csv",
+        "06_plots2000.csv",
+        "07_anampcqs2gbif.Rmd",
+        "00_README.txt"
+      ]
+    },
+    "data_from_mammal_persistence_and_abundance_in_tropical_rainf": {
+      "zenodo_id": 7856722,
+      "title": "Data from: Mammal persistence and abundance in tropical rainforest remnants in the southern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_mammal_persistence_and_abundance_in_tropical_rainf",
+      "authors": [
+        "Sridhar, Hari",
+        "Raman, T. R. Shankar",
+        "Mudappa, Divya"
+      ],
+      "pub_date": "2023-04-24",
+      "pipeline_ready": true,
+      "files": [
+        "01_Transect_locations.csv",
+        "02_Transects_and_opportunistic_surveys.csv",
+        "04_Lion-tailed_macaque_counts.csv",
+        "05_allmammals_raw.xls",
+        "03_Opportunistic_observations_locations.csv",
+        "00_README.txt"
+      ]
+    },
+    "data_from_plant_community_structure_in_tropical_rain_forest_": {
+      "zenodo_id": 7457732,
+      "title": "Data from: Plant Community Structure in Tropical Rain Forest Fragments of the Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_plant_community_structure_in_tropical_rain_forest_",
+      "authors": [
+        "T. R. Shankar Raman",
+        "Divya Mudappa",
+        "Anand M. Osuri",
+        "N. Ayyappan",
+        "S. Muthuramkumar",
+        "N. Parthasarathy"
+      ],
+      "pub_date": "2022-12-12",
+      "pipeline_ready": true,
+      "files": [
+        "05_all_regeneration_data.csv",
+        "04_all_herbs_data.csv",
+        "09_tabula_Biotropica_appendix1.csv",
+        "03_all_liana_data.csv",
+        "08_all_species_names.csv",
+        "06_all_canopy_readings.csv",
+        "07_all_extracanopy_trees_data.csv",
+        "01_all_sites.csv",
+        "00_README.txt",
+        "10_Muthuramkumar et al 2006_Abstract and Appendix 1_extract_Biotropica.pdf",
+        "02_all_trees_adult_data.csv",
+        "11_figure_1_Biotropica_paper.jpg"
+      ]
+    },
+    "data_from_seasonal_variation_in_wildlife_roadkills_in_planta": {
+      "zenodo_id": 7060430,
+      "title": "Data from: Seasonal variation in wildlife roadkills in plantations and tropical rainforest in the Anamalai Hills, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_seasonal_variation_in_wildlife_roadkills_in_planta",
+      "authors": [
+        "P. Jeganathan",
+        "Divya Mudappa",
+        "M. Ananda Kumar",
+        "T. R. Shankar Raman"
+      ],
+      "pub_date": "2022-09-05",
+      "pipeline_ready": true,
+      "files": [
+        "03_roadkill_data_final.csv",
+        "05_roadkill_transects_all.kml",
+        "04_canopy_and_habitat.csv",
+        "01_habitat_length.csv",
+        "02_sampling_events.csv",
+        "00_README.txt",
+        "06_road_transects_map.jpg"
+      ]
+    },
+    "mammal_occurrence_records_2015_18_in_the_valparai_plateau_an": {
+      "zenodo_id": 7008315,
+      "title": "Mammal occurrence records (2015-18) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/mammal_occurrence_records_2015_18_in_the_valparai_plateau_an",
+      "authors": [
+        "Nature Conservation Foundation"
+      ],
+      "pub_date": "2022-08-19",
+      "pipeline_ready": true,
+      "files": [
+        "3ad718db-074d-4c09-b00b-03565c6079de.jpg",
+        "3bd7ea58-8926-4640-bbe5-beb2c777f0d0.jpg",
+        "3c7be076-65c8-4999-8899-0fc697077af2.jpg",
+        "3d8707b8-97f3-4c0d-b9c6-0a51e1411a47.jpg",
+        "b50645fc-b071-46ab-98d1-f3067ca3ec9a.jpg",
+        "b6b75291-9bfe-47ed-9786-fe1eeba7882c.jpg",
+        "3ee061b3-15a3-4236-bf88-59dd523e07de.jpg",
+        "3f0c807a-4608-47e0-90d0-d4d57c31fc2e.jpg",
+        "3f5c9071-fa57-4b88-9d6c-b5cba3a589e3.jpg",
+        "dc5974da-1a6b-4808-8467-84571c3d2a9e.jpg",
+        "b8c95a71-71a6-4a37-bd11-c0d7b9883f8f.jpg",
+        "18f1a105-73c5-4c51-aebf-f672284fb855.jpg",
+        "6c11912b-816f-4f15-8af1-abb6699b6d7d.jpg",
+        "16f0110a-763b-4931-b269-c0af439fe80c.jpg",
+        "60440f4f-de6d-4498-b99f-b2a16474023c.jpg",
+        "b944fd2f-41a1-43f6-ae5e-56f5e380d98f.jpg",
+        "164040cf-4969-4da7-84a2-0e55052cc194.jpg",
+        "b9de3015-29e5-4780-9cc9-97e89fbee20d.jpg",
+        "ba791c3f-41ec-4ce9-a80c-b8a9461b08bf.jpg",
+        "6af90eb1-dc8b-4a68-9a7d-919faece49a9.jpg",
+        "bbc56e4e-e033-4364-bc7b-6858232c4d86.jpg",
+        "bc0c3a01-73af-4ea6-9061-4e86b972b31e.jpg",
+        "15955ba4-d9b5-4199-b7de-5e0e2eda5a64.jpg",
+        "149e4bc5-b369-4208-a7ef-bf82936bddcc.jpg",
+        "406b54e1-82fb-4af7-b109-0592d60ddea5.jpg",
+        "41377cc1-0815-4248-a2aa-fa95faa390c2.jpg",
+        "bcadf712-5e64-44c8-b367-c8039ba52d8c.jpg",
+        "4381f81d-0cae-4fa2-815a-5f239c9eeba2.jpg",
+        "1432d2a3-0f3a-453b-b142-3bebac56d668.jpg",
+        "cb19f434-0562-423d-80d6-709d3fd259a2.jpg",
+        "515e66a3-d84b-4e6b-a5a5-747914c38461.jpg",
+        "bd2cb89d-cf5c-463f-915c-17736ca01e55.jpg",
+        "be0f31fe-bd0c-4e14-b658-df8d2961126e.jpg",
+        "43bc2058-c41c-44b6-99f6-752c7d05eeff.jpg",
+        "139cf133-f0f7-4ee9-a836-70fa78ef63e4.jpg",
+        "44ec7436-c5c9-4361-8bfe-3917e07ac125.jpg",
+        "4577d995-6336-4d56-b2ff-7983be08588f.jpg",
+        "46f1648c-521f-42b9-8fb1-096c69f94204.jpg",
+        "ffa43209-aa40-4bf4-989e-c803c890b80b.jpg",
+        "ff7507eb-ec0d-4a26-bc24-ae7b0b9b4ab3.jpg",
+        "bf1d4c09-c0ab-44c0-bc19-602a2cad4070.jpg",
+        "e1dc46b8-62f7-4f0f-9e98-39d120f45e89.jpg",
+        "6a5bade7-e915-4b7e-b76d-57aab76b5fae.jpg",
+        "69c2d42c-f560-43c7-93a7-232cb070f015.jpg",
+        "ff44c4e5-59cd-490d-bc5c-72b030de135e.jpg",
+        "512c2718-4544-4902-8472-552d92bbd5c5.jpg",
+        "cb7726ef-5950-4cc8-a9f4-e995f78d1ba2.jpg",
+        "111de1eb-9e34-402b-af4e-b4af77c4a3df.jpg",
+        "470de39a-6565-4c7a-95d2-298a7f6b8e33.jpg",
+        "4768867c-e36f-4928-8614-d41dddaef8d4.jpg",
+        "cb8ffe3d-7360-4b75-9f10-ecb7684c9921.jpg",
+        "fbdfa964-094b-4841-86d9-d0c4c41254e7.jpg",
+        "10cf5d5d-6c48-4ad3-a0bd-aec6d292c214.jpg",
+        "ebfb25f2-60c5-4a28-88de-f4bb3e2e40d6.jpg",
+        "fba66d7d-70dc-444d-a137-5b37fb0b9305.jpg",
+        "fae44723-a274-492a-84e9-91c22507bf80.jpg",
+        "faabf920-ae49-42c6-b014-053a260856a9.jpg",
+        "fa508421-c381-4d9f-a9e5-5d07a31bba4f.jpg",
+        "f8874f1e-6674-422c-b169-e9b551880154.jpg",
+        "f85296fa-98c9-43f9-a89e-0ca2aae96848.jpg",
+        "1037677e-e83a-4f79-969d-fa2ae0a22467.jpg",
+        "f83ae7d6-67c2-4761-9af9-585464dd36d2.jpg",
+        "0ea4a838-8ea6-4445-b23a-70804d8c5be1.jpg",
+        "69a84165-e5ea-42fa-a4e4-3379790262c7.jpg",
+        "f61d9976-9f6b-4b78-8644-f370fef7e7d6.jpg",
+        "f605c48f-8cf3-49df-8b79-d121883b58a3.jpg",
+        "f57e1f24-7dfe-44cb-bf30-92dcdb788014.jpg",
+        "f45f0e36-da02-44c9-903b-2ecb2a1ad0c7.jpg",
+        "f450f4e1-60c1-4f20-bf4a-8a0d6176b4b6.jpg",
+        "bf211d8d-973f-447c-946f-4535ce077fc8.jpg",
+        "f2d9be93-ef40-45cb-a7dc-040fc26197a2.jpg",
+        "f26552a4-9757-4bad-ab3b-0c81fa57f078.jpg",
+        "a71828b7-4e1f-4248-ba55-759e901f39cf.jpg",
+        "d4d9035b-053b-4513-a83e-d66701b881dc.jpg",
+        "b2525476-2eb1-4ba9-84d7-81f320a78b80.jpg",
+        "dbf68544-ece5-4e22-9527-1ee007b26a60.jpg",
+        "516e59e9-ff60-45de-ade8-06d565125e5b.jpg",
+        "4fd27e15-3367-47e1-927b-16b4647ed184.jpg",
+        "b3cdad79-2f2c-40be-af01-961c1d884dd4.jpg",
+        "b3e65f6a-2b6a-430e-8b7c-a4bbb9fb769f.jpg",
+        "ed863cca-47b7-40a3-bc41-9ebae299d8a7.jpg",
+        "6e214d5f-d63a-4718-8dad-a1613fff013c.jpg",
+        "191066c8-005b-4185-9d24-888955d47457.jpg",
+        "cac00d7e-e8bb-44a4-a590-7b81ae2c186a.jpg",
+        "6d3b8b0e-4fa5-46e9-a311-d2b406202184.jpg",
+        "caffe41a-925d-46d8-867b-6e72e9290b64.jpg",
+        "3a3a6707-95ef-4bc2-aae5-f17b6b08c01f.jpg",
+        "ecb51248-cbf5-4e38-bc3b-cd7de8b44013.jpg",
+        "1ef9fcf4-37b5-436d-8076-0c9726a2b9b4.jpg",
+        "1e75d79c-945a-49a5-95a8-f9299751bdcf.jpg",
+        "747e1d9d-54b0-404d-9e97-35d77053d823.jpg",
+        "e738a12e-4608-41b9-a28b-46ba6abea570.jpg",
+        "d79ab3ef-1d13-453e-a452-bf814516cd43.jpg",
+        "1daa2dcc-fa94-48b7-abfc-c00c5819adc1.jpg",
+        "58abba77-8367-4110-aa04-c7c5c30b9548.jpg",
+        "5868b432-91da-414d-ba7d-943e49d120b5.jpg",
+        "57e0fd86-28eb-4dbb-b26c-e45a625f10d3.jpg",
+        "e6e51382-a4c2-4402-914e-0873458e4976.jpg",
+        "4b19904b-d1cb-4498-b603-521107c37b1d.jpg",
+        "e691ab53-fa5e-449a-b743-b327471b712e.jpg",
+        "c8f01c60-fa97-44b6-92af-5b7c1b3390a1.jpg",
+        "1d5c94d2-dceb-4875-82ea-72b65ca35941.jpg",
+        "739d9d31-21db-4767-a5dc-73b396295a92.jpg",
+        "1d275cf6-a577-44d2-a0fc-d9507954d7fd.jpg",
+        "e53b5d8c-1c2e-489a-987e-51c084a3c6a7.jpg",
+        "4bbeaac6-c756-4084-9ec3-e583527077c2.jpg",
+        "1c3761ac-f088-45e7-befc-ea7eafaf918f.jpg",
+        "57742fea-91ad-47cb-9e84-36cc3b58d883.jpg",
+        "4da6f5df-3b2a-416c-87d6-de8413bae184.jpg",
+        "a7610346-20f3-4cc6-83d2-c3910e826a9b.jpg",
+        "0c636532-1f63-4142-b5a3-3dca94fac549.jpg",
+        "e4d7efc5-15fc-4fc7-b29c-54f9505ebbe9.jpg",
+        "a7d58991-6aad-43b6-8a28-ceeb1894e69c.jpg",
+        "5676f714-0bd0-4be9-b8fd-300d1cbcbceb.jpg",
+        "d51d01a0-2be1-4804-b4ac-e9ef82967607.jpg",
+        "54d603bd-da44-43bc-b4fa-0c1b7fa7b193.jpg",
+        "7221fd9b-f610-4d06-a56d-042d552e7262.jpg",
+        "a8677d8e-c324-4484-b2ee-c4a2f66c96a1.jpg",
+        "52760ad8-181e-4632-b138-5ca105509995.jpg",
+        "a9552156-f5a9-48f4-a334-0d8da556ccfd.jpg",
+        "a99702f4-b71e-4582-8bbc-b961887182a4.jpg",
+        "aa9ec21e-312b-4151-b919-7930ace4d2be.jpg",
+        "e4c78ed0-ae8b-429e-bc60-3010dcd2f9fc.jpg",
+        "649bfde2-f667-4ada-9c79-d4910c0fd791.jpg",
+        "5241be9f-3d28-4698-8dc0-aca4b07f057c.jpg",
+        "719bd691-abfe-4aeb-a8da-2ead40df9f93.jpg",
+        "e47a9116-bea7-4bba-a331-1f6a89758397.jpg",
+        "70412bfe-fac3-4c47-9539-6e1f3d76843e.jpg",
+        "e444c14b-4576-40eb-9d9f-5424212559a9.jpg",
+        "6fc22424-4f40-49cf-b3aa-1cde269049d8.jpg",
+        "6fa97872-a43b-42a0-add7-e3e0ca466f48.jpg",
+        "1c30ad78-2aa3-429c-a323-f10d30449774.jpg",
+        "f06706db-2af8-4c6c-81dc-9c6b949996ce.jpg",
+        "da5fb190-2412-44da-81a2-6919fbc20ca6.jpg",
+        "1beb220b-f526-4ce2-988d-d6a4102ddf8d.jpg",
+        "ef33f46a-8527-49ec-89f8-27b1b8cafdbc.jpg",
+        "cecfa1bb-75e9-4d72-9c10-fa6ee8c048c2.jpg",
+        "cf2647ea-91bf-455f-908b-7e52568bcc59.jpg",
+        "e40701e8-54e9-4f25-a53b-d774d0ffdfb1.jpg",
+        "d2d19dfc-34a0-4284-87e8-773c351e3db0.jpg",
+        "d30c2646-4d19-4d18-bbfb-b63c8f923dfd.jpg",
+        "0cf10b46-4121-48c8-9577-6f920c129d6f.jpg",
+        "acb961a0-bd28-4f87-a2de-18582c14b9a0.jpg",
+        "1b01a3e5-9a43-4013-ab80-d34e6ccd1ce9.jpg",
+        "aea0c49a-2f21-45a4-b5ea-4393f9bf836f.jpg",
+        "6f83da2d-2d02-40a4-8ef0-513581cbf2ae.jpg",
+        "6f72ce75-5833-4df7-b791-ad242e4651b0.jpg",
+        "6f367d04-30d2-46ce-9a7b-e8ff0585c82e.jpg",
+        "d99d0bd5-adb0-4c14-9065-ac0f9c553c8a.jpg",
+        "e23c6543-d80d-42b0-9e6e-da215acba22d.jpg",
+        "1af3d209-59d1-44ff-bc77-e7c9c3b2d7db.jpg",
+        "1a155a18-b809-49eb-9de0-4c6b8beb875e.jpg",
+        "af5f3960-f583-4f24-be31-6ab54d21486a.jpg",
+        "6ec707c7-8169-4843-892b-395c7a3c4ff8.jpg",
+        "e234c1e3-7eee-4526-b1d0-5af61f137223.jpg",
+        "d0481999-a3bc-40d4-8acc-d6d36b2e7bdb.jpg",
+        "6440f795-674d-4da1-aa59-aa2d936495f8.jpg",
+        "b052b965-2119-4283-acc1-7ae331a2546d.jpg",
+        "193cb481-0604-4774-966f-3d064a6ea14a.jpg",
+        "38915085-f44a-4b27-8b71-c4115481f72d.jpg",
+        "c8f4e6eb-37a5-4ae8-a352-b6393564e11b.jpg",
+        "b1d65828-d51d-443e-9546-1467edd84ca5.jpg",
+        "6ea1aef3-d05a-449d-ac0b-f2d68845777e.jpg",
+        "ef2d3c75-d268-49d5-a092-cfe27de1bcd8.jpg",
+        "eef1397d-1206-4633-bdaf-e931b10acf37.jpg",
+        "6e5afccf-ac44-4b36-80fb-742b007df0c6.jpg",
+        "523e2540-2ccc-43f7-ad82-c5f480df6fd0.jpg",
+        "dbe74181-bf75-432c-8ff6-b218df8e338d.jpg",
+        "f178fe82-9c29-4a71-a87d-fef674aaeb01.jpg",
+        "bfb40ad2-1684-4c7a-9ab1-da5051c030de.jpg",
+        "bfbfba0c-ecfe-4da7-8cf6-7dcd504e4712.jpg",
+        "5f188afa-b111-437c-8759-ee3bc3d53609.jpg",
+        "5e2a16bd-a5b3-440b-a815-fec481f522ba.jpg",
+        "ddc41718-546d-4b86-9aec-5972fdf13d46.jpg",
+        "4fdaeb9d-7862-466e-a129-5b2b6c5abd32.jpg",
+        "7ff99d5a-f44f-422f-aff5-f49160b991f1.jpg",
+        "c02e13dc-2987-4fc3-86d0-aef0bf270557.jpg",
+        "8268a12f-da6c-40c0-86a9-3067e8b318a4.jpg",
+        "ebdc089e-6cfa-4d22-a892-5019b5d7fe99.jpg",
+        "2b98acab-6a6b-447e-b767-867ec05100ff.jpg",
+        "8290533a-ac27-4ae6-8bb8-73b9636a0793.jpg",
+        "8321a523-8d95-40fb-9b6a-2fd210b00bfc.jpg",
+        "7f0804ba-aab8-40b5-86d9-cdbbca70c1b4.jpg",
+        "2bd7ad35-818c-485c-90ec-0135399218d4.jpg",
+        "83bad6fa-69fa-4b8a-b65b-a24ff1f74c79.jpg",
+        "ebc4ea81-d487-42f7-a697-ab5f5c8231f2.jpg",
+        "842636b6-5e1e-4c03-b7bd-61a14ffd6426.jpg",
+        "e1d51087-7db9-4c4d-8e40-76d66c62dacc.jpg",
+        "dc5c35ca-599f-4a58-9406-4bc198d75c9b.jpg",
+        "cc5b72e5-d130-45b7-8f07-cb9d363e063e.jpg",
+        "2b0564bc-68f7-46c9-8c00-2f5bb1bec47a.jpg",
+        "5c8134f1-dfcf-438d-84e3-f90547cdfa37.jpg",
+        "d86596d0-914c-4715-941e-5f2bd03db5c0.jpg",
+        "f08d293b-084e-428a-980f-d8693fb5d88a.jpg",
+        "7e3cb85b-a56e-4466-855e-1392a03ca99a.jpg",
+        "2a917837-a542-4a2d-96da-6c232aac2a65.jpg",
+        "847b661b-bb97-4f20-b001-f8baf0937376.jpg",
+        "85237e6b-d175-46f5-9c6d-1a46d4f63929.jpg",
+        "8677d12b-a847-450f-a7e8-daab14e22d1d.jpg",
+        "87e815cd-fb6f-44d4-98b6-b4ae1130acf0.jpg",
+        "274bce82-e1f1-46b3-bae6-1f88cac42d45.jpg",
+        "881c3a2e-615e-427f-982d-f668f8418e24.jpg",
+        "8868c254-dca3-4cce-a23d-ba20ba501605.jpg",
+        "886dd1d6-9473-4dfa-af29-8edc0a925c58.jpg",
+        "25d7a685-cc8b-41c0-8eac-32f0075ce304.jpg",
+        "8939e8c2-57da-4669-a1bb-a4aef0cd1f1b.jpg",
+        "25c972e0-f295-4914-b33d-d5756ded61f5.jpg",
+        "c0ef6676-01c1-4a80-b8ce-27e919c828d8.jpg",
+        "8a01b970-af15-435a-ad39-1e8b8548a7d9.jpg",
+        "c2a13bc8-2586-4257-9991-e7dba16db153.jpg",
+        "7dbe923a-e552-4cf5-a844-7d5e851921c8.jpg",
+        "7cc2ba11-48a9-496d-a49a-2c2ea559ab66.jpg",
+        "7beff987-0b92-4a03-b7b9-58de918d70fe.jpg",
+        "8a05c0a6-d32e-4db7-9267-7f0f4a913337.jpg",
+        "8a5d58f2-4403-40e2-a294-7f2ebbd8df3b.jpg",
+        "25a776cb-fd6d-4c0c-861a-be601ef7adcf.jpg",
+        "c2d70ee6-f061-44e8-bf8d-4bff1433e24d.jpg",
+        "253289c0-5bb5-42cd-bc9d-6d8232d44cc3.jpg",
+        "8a612ae8-2277-4bd3-a648-a8141db91b25.jpg",
+        "681c0b28-9777-4277-b8d0-89d0cb559c8b.jpg",
+        "000_README.txt",
+        "8afc94d1-a1c4-45c1-8857-041657ae2cf6.jpg",
+        "7b4d8214-7897-46da-890e-6ecaae94e986.jpg",
+        "24f04c7e-ffba-45ef-8977-766459a9f81c.jpg",
+        "8bad2f51-2d53-41c6-ab95-cd725404b337.jpg",
+        "8cf82bd2-6269-4c07-9807-524207391784.jpg",
+        "8d394479-4900-4abe-987a-880f9c9895e1.jpg",
+        "001_valparai_mammals.csv",
+        "24719a73-e4ca-4689-a628-f33ab2b5f2d2.jpg",
+        "8d3d478f-16ee-41fa-b8ce-6b01c3f6d2a9.jpg",
+        "c2e5f831-0bd8-4171-9cf3-16f25751fd7d.jpg",
+        "eb2aef1e-4625-47e9-bbeb-7bc57914032a.jpg",
+        "656d34b2-a5d3-42c5-bc88-8cd15ec31f77.jpg",
+        "002_valparai_mammals_photo.csv",
+        "2c83b5a4-bb22-411c-b18c-c3ffef44d194.jpg",
+        "5b817f7f-1bb1-427c-973a-891a45ffd0d4.jpg",
+        "245a4deb-ddb9-4fe3-b571-453767645c05.jpg",
+        "003_mammal_occurrence_zenodo_2015-18.csv",
+        "02c008dd-cd51-4f9a-94d8-80436662bb23.jpg",
+        "2d15b1fa-7380-4579-923e-b1bda6e12882.jpg",
+        "db96a24f-7335-4d70-b37a-e7ac0440e26f.jpg",
+        "79d46549-20cc-419b-85c0-b8462dd119c6.jpg",
+        "2d1a2682-0247-4378-ac41-fa2bb205fde4.jpg",
+        "2f060fb2-49a6-4d67-99b0-5e68b084f128.jpg",
+        "3172db04-daf0-4cf0-88f0-3cc52674b764.jpg",
+        "8ec75187-03d6-464d-b31c-22ffe42a9d91.jpg",
+        "9079e703-d690-4bd1-bd62-d9378feaa73e.jpg",
+        "9082a39a-fd6e-49a6-8e9f-426b89c46144.jpg",
+        "ce1ef295-829e-40ff-9d7a-887cb12c0c74.jpg",
+        "da8447cf-6175-4e76-8121-807ba752de5d.jpg",
+        "909b21c5-a323-4117-8b58-8e4d6650812d.jpg",
+        "9163e7b8-ab53-427a-b4e0-ede986a12fbe.jpg",
+        "9216a3f9-c4af-4422-b4ae-2c202f2aafe3.jpg",
+        "0520e1d4-c258-42fd-aba3-26f630f35228.jpg",
+        "92cd493e-2003-4a72-bea1-37cd8d2204c9.jpg",
+        "243745cb-9bb4-4a1c-bc3f-4ad51583dd37.jpg",
+        "31b34f6e-80f0-4ab2-b408-2ae608063d50.jpg",
+        "92cdd535-57ab-4895-8cf8-88467a9c7654.jpg",
+        "31f032ac-2c06-46ee-b35b-ffb5125f4d93.jpg",
+        "c3445225-277c-4be9-b413-44ca66afb0b0.jpg",
+        "052afd37-b054-419d-af38-5130210d6f1a.jpg",
+        "33fbf8f5-a5a0-4d72-842d-1161f5f7dbfd.jpg",
+        "92ce1ab9-9fbe-42c4-9e9e-0680434650f0.jpg",
+        "93ef88d2-cb54-47f3-b80f-e85507789f32.jpg",
+        "c3e84824-69d8-4546-805f-2066e9004312.jpg",
+        "948c7bcb-bd14-4b6b-9834-83a3db6baf85.jpg",
+        "e9b8cf26-fc3a-481e-a050-38c295d422ef.jpg",
+        "05b868ad-a6f7-45ab-9a18-e1805b3e7b38.jpg",
+        "9530cb14-05de-427c-8679-50338fcef1b6.jpg",
+        "074aa42a-cc6d-4522-a10a-45a9cb7314d1.jpg",
+        "c4a6ddc0-c5c3-4f25-9afa-d1668948a000.jpg",
+        "079cf003-7bd9-4e71-bbfe-c77794aa0586.jpg",
+        "9540f561-1769-4373-8e42-c67258de03ba.jpg",
+        "c7302512-763c-4620-801f-0228e0b5b041.jpg",
+        "4fd6f5ed-2c61-4187-9889-ca681df5603a.jpg",
+        "24301ae6-0511-4188-8a42-000103b4d38d.jpg",
+        "95e424be-485d-43c3-9bc2-16781287e731.jpg",
+        "9829f9ac-d9ae-49b7-a637-721e451710d2.jpg",
+        "08c31978-66bc-41db-ad5a-77793cf0911d.jpg",
+        "d15e67f7-a53e-4b3a-b597-80e6fe7fdd09.jpg",
+        "36764679-d386-45de-9981-c3c7fa8cff63.jpg",
+        "22e63147-954e-4910-a3b9-20c449a9e04a.jpg",
+        "22416781-3f11-4760-a45f-62d938f20289.jpg",
+        "9a349e98-a438-4783-86de-d1afabde3a17.jpg",
+        "9bb08d4f-da71-47be-bb58-d4208b17114d.jpg",
+        "22204c70-4502-4cdd-89bd-9f33872f0e00.jpg",
+        "9bfd6c62-4d09-46b0-905c-520f5a7ba725.jpg",
+        "21e00bd1-c63e-4505-8975-a32160f56212.jpg",
+        "e8f72260-9b62-4a34-9229-40de8165fdd4.jpg",
+        "5a4ace18-8635-4807-ab36-a9278c612972.jpg",
+        "59fe8451-3ec5-43e6-be00-31a7801cdb00.jpg",
+        "9c3ba72a-ee80-4969-a51a-3737e8cb6b90.jpg",
+        "9c763a45-1f54-4394-bcce-5ffb25c8fdcf.jpg",
+        "9d8a004a-406a-4142-869e-aac9c7f70d7a.jpg",
+        "21df138f-6659-4109-9196-1a7cb27f2554.jpg",
+        "a01a3670-f0e5-461b-9488-b2a675808a02.jpg",
+        "e8992bfa-038d-4f98-8dcc-5da962b8e823.jpg",
+        "d8058c13-899a-4169-861d-6b0a98cc7f16.jpg",
+        "a01a4e8a-2299-4d59-8968-87e8911aba06.jpg",
+        "e7f4765e-9fa6-478d-a709-e3267ff62a43.jpg",
+        "a0e35780-2a5e-4e12-8aeb-c15c7a6b087b.jpg",
+        "20edeba4-dfa1-4333-bbf1-a8a7426ca894.jpg",
+        "de6a047c-a728-425a-9d4c-322abc72316f.jpg",
+        "4db8fc94-5d38-408b-8f97-ab80de50b567.jpg",
+        "e7815e1c-b28d-4575-9607-bd7d7278be3b.jpg",
+        "0b2d2594-1d28-4cf3-8cc3-e942426c1dcf.jpg",
+        "78aafc73-2049-425d-834b-4d0c532e3045.jpg",
+        "a19396c2-98e5-4583-a47d-44424d43eb43.jpg",
+        "4e04e37f-31b6-46ca-b3da-487634fd3bd4.jpg",
+        "e12e9adb-8846-4b82-bc36-c944f3d1ab7b.jpg",
+        "20bd4b3e-9db3-429f-b56e-6049958ff2c2.jpg",
+        "dcbb2cc7-6a42-41ba-9101-2ba1ab39e308.jpg",
+        "775b408d-22d4-4bae-a608-4514ef67db4f.jpg",
+        "df8fca41-1b18-47fc-a5d6-2addb61e5d6a.jpg",
+        "d172f720-ed09-4f9c-bfea-309d90c778f9.jpg",
+        "0bf7b29b-1ff0-42b5-8cbf-bf7f94672ebb.jpg",
+        "36f85ee6-e826-4242-9ecb-e5acc87698af.jpg",
+        "762e232b-87da-4abf-84c5-1d177d3d4ff8.jpg",
+        "a255f0a8-64d8-42da-9a71-5a3daf9a21b2.jpg",
+        "4ec4c2b5-f857-430c-ae4e-351bea1448ee.jpg",
+        "df7b6d90-71b9-487b-bb3d-2576afd1e9b2.jpg",
+        "a4e65327-57a8-40b1-b8b8-477ae1fca4ca.jpg",
+        "d1e8ee9a-fdb1-48c0-86c5-f97affd93c28.jpg",
+        "c8447c17-1e6a-44f3-abf0-5830dc3880fe.jpg",
+        "e73cdcbf-4b67-45b3-8945-3d177df193a2.jpg",
+        "ca073fbc-f37e-48ca-8097-8e338012db91.jpg",
+        "1f421ad0-6418-46c4-bcdd-f62331f834ed.jpg",
+        "1f1ccc16-5349-45dc-a0b3-49776be698a3.jpg",
+        "37fa68f8-0c6d-4c81-a24d-e2addedadbba.jpg",
+        "58f5f408-59d3-4de9-ad1b-6f4ec52ecae8.jpg"
+      ]
+    },
+    "data_from_a_new_population_record_of_critically_endangered_d": {
+      "zenodo_id": 6799251,
+      "title": "Data from: A new population record of Critically Endangered Dipterocarpus bourdillonii Brandis from the Anamalai Tiger Reserve, Tamil Nadu",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_a_new_population_record_of_critically_endangered_d",
+      "authors": [
+        "Page, Navendu",
+        "Kasinathan, Srinivasan",
+        "Bhat, Kshama",
+        "Moorthi, G.",
+        "Sundarraj, T.",
+        "Mudappa, D.",
+        "Raman, T. R. S."
+      ],
+      "pub_date": "2022-07-05",
+      "pipeline_ready": true,
+      "files": [
+        "README.txt",
+        "2_Focal_tree_data_ver2.csv",
+        "Dipterocarpus_bourdillonii_survey_trails.kml",
+        "5_Seed_fruit_ver2.csv",
+        "1_Surveys_ver2.csv",
+        "4_Plant_checklist_ver2.csv",
+        "3_Tree_centred_PCQ_ver2.csv"
+      ]
+    },
+    "data_and_code_from_impacts_of_land_use_on_bird_communities_i": {
+      "zenodo_id": 17350451,
+      "title": "Data and code from: Impacts of land use on bird communities in the Western Himalaya: Insights from a two-decade-long monitoring program",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_and_code_from_impacts_of_land_use_on_bird_communities_i",
+      "authors": [
+        "Srinivasan, Sidharth",
+        "Thinley, Tanzin",
+        "Gurmet, Kalzang",
+        "Mishra, Charudutt",
+        "Suryawanshi, Kulbhushansingh"
+      ],
+      "pub_date": "2025",
+      "pipeline_ready": true,
+      "files": [
+        "metadata.txt",
+        "Impacts_of_land_use_on_bird_communities_Trans_Himalaya.R",
+        "Bird_data_mastersheet.csv"
+      ]
+    },
+    "data_from_chronic_disturbance_and_climate_water_deficit_shif": {
+      "zenodo_id": 17010537,
+      "title": "Data from: Chronic disturbance and climate water deficit shift tropical evergreen tree communities to deciduous in the Western Ghats",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_chronic_disturbance_and_climate_water_deficit_shif",
+      "authors": [
+        "Biswas, Nayantara",
+        "Biniwale, Siddharth",
+        "Taneja, Yukti Vijaya",
+        "Osuri, Anand M",
+        "Page, Navendu",
+        "Suryawanshi, Kulbhushansingh",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-08-31",
+      "pipeline_ready": true,
+      "files": [
+        "ReadMe_vegetation.txt",
+        "Data_vegetation.csv",
+        "NMDS_tree_community_code.R",
+        "nmds_veg_no_liana.csv",
+        "Revision1_analysis.R"
+      ]
+    },
+    "data_from_age_and_sex_influence_seed_dispersal_of_native_and": {
+      "zenodo_id": 17048308,
+      "title": "Data from: Age and sex influence seed dispersal of native and non-native plants by lion-tailed macaques",
+      "org": "ncfindia",
+      "path": "data/ncfindia/data_from_age_and_sex_influence_seed_dispersal_of_native_and",
+      "authors": [
+        "Kempegowda, Bindu",
+        "Kumara, Honnavalli",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-09-03",
+      "pipeline_ready": true,
+      "files": [
+        "all_analysis.R",
+        "fruit_consumption_rate.csv",
+        "total_fruits_consumed.csv",
+        "movement_rates.csv",
+        "seeds_faecal_deposits.csv",
+        "Readme.md"
+      ]
+    },
+    "cashew_orchard_soil_properties_dodamarg_northern_western_gha": {
+      "zenodo_id": 16017208,
+      "title": "Cashew orchard soil properties, Dodamarg, Northern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/cashew_orchard_soil_properties_dodamarg_northern_western_gha",
+      "authors": [
+        "Sadekar, Vishal",
+        "Satish, Aditya",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-07-17",
+      "pipeline_ready": true,
+      "files": [
+        "Dodamarg_2025_Cashew_Soil_Properties.csv",
+        "ReadMe.txt"
+      ]
+    },
+    "soil_properties_of_evergreen_and_deciduous_forests_of_the_so": {
+      "zenodo_id": 16079282,
+      "title": "Soil properties of evergreen and deciduous forests of the Southern Western Ghats, India",
+      "org": "ncfindia",
+      "path": "data/ncfindia/soil_properties_of_evergreen_and_deciduous_forests_of_the_so",
+      "authors": [
+        "Lad, Himanshu",
+        "Kempegowda, Bindu",
+        "Jayanth, Arpitha",
+        "Kumar, Krishna",
+        "Page, Navendu",
+        "Ghuman, Sartaj",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-04",
+      "pipeline_ready": true,
+      "files": [
+        "ATR_2025_Soil_Properties.csv",
+        "Readme.md"
+      ]
+    },
+    "native_trees_within_plantations_and_surrounding_forest_cover": {
+      "zenodo_id": 15459573,
+      "title": "Native trees within plantations and surrounding forest cover are essential for bird conservation in cashew-dominated landscapes within a biodiversity hotspot",
+      "org": "ncfindia",
+      "path": "data/ncfindia/native_trees_within_plantations_and_surrounding_forest_cover",
+      "authors": [
+        "Madhu, Nandita",
+        "Sadekar, Vishal",
+        "Biswas, Nayantara",
+        "Jayapal, Rajah",
+        "Rege, Anushka",
+        "Naniwadekar, Rohit"
+      ],
+      "pub_date": "2025-05-18",
+      "pipeline_ready": true,
+      "files": [
+        "nmds_data.csv",
+        "local_lsp.csv",
+        "div_lm.csv",
+        "SXY_hmsc.csv",
+        "birds_cashew_hmsc.R",
+        "birds_cashew.csv",
+        "traits_hmsc.csv",
+        "multi_scale.csv",
+        "phylotree_all_birds.nex",
+        "sp_abund_birds.csv",
+        "phylotree_hmsc.nex",
+        "sp_abund_birds_taxo.csv",
+        "sp_list.csv",
+        "sp_abund_trees_taxo.csv",
+        "ReadMe.txt",
+        "traits_all_birds.csv",
+        "corr_traits.csv",
+        "birds_cashew_comm.R"
+      ]
+    }
+  },
+  "by_author": {
+    "Raman, T. R. Shankar": [
+      "mammal_occurrence_records_2025_26_in_central_and_southern_we",
+      "mammal_occurrence_records_2023_25_in_central_and_southern_we",
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "weather_data_2014_2025_from_iyerpadi_weather_station_valpara",
+      "data_from_factors_influencing_seasonal_and_monthly_changes_i",
+      "mammal_occurrence_records_2024_in_the_valparai_plateau_and_a",
+      "mammal_occurrence_records_2020_23_in_the_valparai_plateau_an",
+      "data_from_distribution_models_predict_climate_related_range_",
+      "data_from_restoring_rainforest_fragments_survival_of_mixed_n",
+      "line_transect_data_on_birds_from_mudumalai_and_upper_nilgiri",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "tree_and_habitat_structure_data_from_rainforest_fragments_an",
+      "data_from_mammal_persistence_and_abundance_in_tropical_rainf"
+    ],
+    "Mudappa, Divya": [
+      "mammal_occurrence_records_2025_26_in_central_and_southern_we",
+      "mammal_occurrence_records_2023_25_in_central_and_southern_we",
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "mammal_occurrence_records_2024_in_the_valparai_plateau_and_a",
+      "mammal_occurrence_records_2020_23_in_the_valparai_plateau_an",
+      "data_from_distribution_models_predict_climate_related_range_",
+      "data_from_restoring_rainforest_fragments_survival_of_mixed_n",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "tree_and_habitat_structure_data_from_rainforest_fragments_an",
+      "data_from_mammal_persistence_and_abundance_in_tropical_rainf"
+    ],
+    "Madhavan, A. P.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian"
+    ],
+    "Kasinathan, Srinivasan": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "data_from_distribution_models_predict_climate_related_range_",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Murali, Akhil": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai"
+    ],
+    "Sonia, K. B.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian"
+    ],
+    "Moorthi, G.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Sundarraj, T.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian",
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Vanidas, T.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian"
+    ],
+    "Rajesh, R.": [
+      "phenology_of_50_tree_species_across_9_years_in_a_south_asian"
+    ],
+    "Gosavi, Ninad": [
+      "data_from_effects_of_tree_plantations_on_population_and_roos",
+      "data_from_effects_of_land_use_change_and_elevation_on_endemi"
+    ],
+    "Lad, Himanshu": [
+      "data_from_effects_of_tree_plantations_on_population_and_roos",
+      "soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "data_from_effects_of_land_use_change_and_elevation_on_endemi",
+      "wood_density_for_26_plant_species_collected_from_northern_we",
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Naniwadekar, Rohit": [
+      "data_from_effects_of_tree_plantations_on_population_and_roos",
+      "soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env",
+      "data_from_deciduous_forests_hold_conservation_value_for_bird",
+      "data_from_effects_of_land_use_change_and_elevation_on_endemi",
+      "morphological_traits_of_selected_rock_outcrop_amphibians_in_",
+      "data_and_codes_from_orchards_and_paddy_differentially_impact",
+      "data_from_abiotic_and_biotic_drivers_on_tadpoles_in_seasonal",
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif",
+      "data_from_age_and_sex_influence_seed_dispersal_of_native_and",
+      "cashew_orchard_soil_properties_dodamarg_northern_western_gha",
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so",
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ],
+    "Bajaj, Deepti": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "harmony_at_heights_spatio_temporal_interactions_between_meso"
+    ],
+    "Khanyari, Munib": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "harmony_at_heights_spatio_temporal_interactions_between_meso"
+    ],
+    "Chhering, Tandup": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Chunit, Kesang": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Gurmet, Kalzang": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "data_and_code_from_impacts_of_land_use_on_bird_communities_i"
+    ],
+    "Thinley, Tanzin": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "data_and_code_from_impacts_of_land_use_on_bird_communities_i"
+    ],
+    "Thuktan, Tanzin": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Tobge, Rinchen": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Sharma, Deepshikha": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Mishra, Charudutt": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "data_and_code_from_impacts_of_land_use_on_bird_communities_i"
+    ],
+    "Sharma, Rishi Kumar": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_"
+    ],
+    "Suryawanshi, Kulbhushansingh": [
+      "data_for_snow_leopard_mediated_apparent_competition_between_",
+      "harmony_at_heights_spatio_temporal_interactions_between_meso",
+      "data_and_code_from_impacts_of_land_use_on_bird_communities_i",
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif"
+    ],
+    "Jamwal, Manjot Kaur": [
+      "harmony_at_heights_spatio_temporal_interactions_between_meso"
+    ],
+    "Gupta, Ranjana": [
+      "harmony_at_heights_spatio_temporal_interactions_between_meso"
+    ],
+    "Teegalapalli, Karthik": [
+      "soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "wood_density_for_26_plant_species_collected_from_northern_we"
+    ],
+    "Sadekar, Vishal": [
+      "soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "wood_density_for_26_plant_species_collected_from_northern_we",
+      "cashew_orchard_soil_properties_dodamarg_northern_western_gha",
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ],
+    "Osuri, Anand M": [
+      "soil_properties_of_degraded_and_reserve_forest_areas_of_nort",
+      "wood_density_for_26_plant_species_collected_from_northern_we",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif"
+    ],
+    "Datta, Aparajita": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Banerjee, Soumya": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Rathore, Akanksha": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Borawake, Noopur": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Thapa, Khem": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Brah, Turuk": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Shukla, Ushma": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Sidhu, Swati": [
+      "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_env"
+    ],
+    "Jayanth, Arpitha": [
+      "data_from_deciduous_forests_hold_conservation_value_for_bird",
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Patel, Zankhna": [
+      "data_from_deciduous_forests_hold_conservation_value_for_bird"
+    ],
+    "Mubeen, Mohammed": [
+      "data_from_deciduous_forests_hold_conservation_value_for_bird"
+    ],
+    "M, Karthikayan": [
+      "data_from_deciduous_forests_hold_conservation_value_for_bird"
+    ],
+    "V., Jithin": [
+      "data_from_effects_of_land_use_change_and_elevation_on_endemi"
+    ],
+    "Jithin, V.": [
+      "morphological_traits_of_selected_rock_outcrop_amphibians_in_",
+      "data_and_codes_from_orchards_and_paddy_differentially_impact",
+      "data_from_abiotic_and_biotic_drivers_on_tadpoles_in_seasonal"
+    ],
+    "Pal, Saunak": [
+      "morphological_traits_of_selected_rock_outcrop_amphibians_in_"
+    ],
+    "Rane, Manali": [
+      "data_and_codes_from_orchards_and_paddy_differentially_impact"
+    ],
+    "Watve, Aparna": [
+      "data_and_codes_from_orchards_and_paddy_differentially_impact"
+    ],
+    "Karthick, Vijay": [
+      "mammal_occurrence_records_2022_24_from_sakleshpura_central_w"
+    ],
+    "Kumar, Vijay": [
+      "mammal_occurrence_records_2022_24_from_sakleshpura_central_w"
+    ],
+    "Osuri, Anand": [
+      "mammal_occurrence_records_2022_24_from_sakleshpura_central_w"
+    ],
+    "Madhavan, A.P.": [
+      "data_from_distribution_models_predict_climate_related_range_"
+    ],
+    "Bhat, Kshama": [
+      "data_from_distribution_models_predict_climate_related_range_",
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai",
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Page, Navendu": [
+      "data_from_distribution_models_predict_climate_related_range_",
+      "data_from_a_new_population_record_of_critically_endangered_d",
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif",
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Anand M. Osuri": [
+      "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai",
+      "data_from_plant_community_structure_in_tropical_rain_forest_"
+    ],
+    "Dayani Chakravarthy": [
+      "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai"
+    ],
+    "Divya Mudappa": [
+      "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai",
+      "data_from_plant_community_structure_in_tropical_rain_forest_",
+      "data_from_seasonal_variation_in_wildlife_roadkills_in_planta"
+    ],
+    "T. R. Shankar Raman": [
+      "fruit_seed_dispersal_and_life_history_traits_of_tropical_rai",
+      "data_from_plant_community_structure_in_tropical_rain_forest_",
+      "data_from_seasonal_variation_in_wildlife_roadkills_in_planta"
+    ],
+    "Ratnam, Jayashree": [
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai"
+    ],
+    "Sankaran, Mahesh": [
+      "data_from_structure_and_dynamics_of_secondary_and_mature_rai"
+    ],
+    "Sridhar, Hari": [
+      "tree_and_habitat_structure_data_from_rainforest_fragments_an",
+      "data_from_mammal_persistence_and_abundance_in_tropical_rainf"
+    ],
+    "Surendra, Akshay": [
+      "tree_and_habitat_structure_data_from_rainforest_fragments_an"
+    ],
+    "N. Ayyappan": [
+      "data_from_plant_community_structure_in_tropical_rain_forest_"
+    ],
+    "S. Muthuramkumar": [
+      "data_from_plant_community_structure_in_tropical_rain_forest_"
+    ],
+    "N. Parthasarathy": [
+      "data_from_plant_community_structure_in_tropical_rain_forest_"
+    ],
+    "P. Jeganathan": [
+      "data_from_seasonal_variation_in_wildlife_roadkills_in_planta"
+    ],
+    "M. Ananda Kumar": [
+      "data_from_seasonal_variation_in_wildlife_roadkills_in_planta"
+    ],
+    "Nature Conservation Foundation": [
+      "mammal_occurrence_records_2015_18_in_the_valparai_plateau_an"
+    ],
+    "Mudappa, D.": [
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Raman, T. R. S.": [
+      "data_from_a_new_population_record_of_critically_endangered_d"
+    ],
+    "Srinivasan, Sidharth": [
+      "data_and_code_from_impacts_of_land_use_on_bird_communities_i"
+    ],
+    "Biswas, Nayantara": [
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif",
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ],
+    "Biniwale, Siddharth": [
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif"
+    ],
+    "Taneja, Yukti Vijaya": [
+      "data_from_chronic_disturbance_and_climate_water_deficit_shif"
+    ],
+    "Kempegowda, Bindu": [
+      "data_from_age_and_sex_influence_seed_dispersal_of_native_and",
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Kumara, Honnavalli": [
+      "data_from_age_and_sex_influence_seed_dispersal_of_native_and"
+    ],
+    "Satish, Aditya": [
+      "cashew_orchard_soil_properties_dodamarg_northern_western_gha"
+    ],
+    "Kumar, Krishna": [
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Ghuman, Sartaj": [
+      "soil_properties_of_evergreen_and_deciduous_forests_of_the_so"
+    ],
+    "Madhu, Nandita": [
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ],
+    "Jayapal, Rajah": [
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ],
+    "Rege, Anushka": [
+      "native_trees_within_plantations_and_surrounding_forest_cover"
+    ]
+  }
+}
