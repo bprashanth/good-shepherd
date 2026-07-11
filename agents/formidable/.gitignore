@@ -1,0 +1,18 @@
+# Secrets — API keys (ANTHROPIC/OPENAI), codex auth
+.env
+*.env.local
+
+# Generated deploy outputs (resource IDs written by setup.sh) and test creds
+deploy/outputs.env
+deploy/*credentials*
+deploy/test-credentials.env
+
+# Python virtualenv + caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local scratch / run artifacts
+/tmp/
+*.log
