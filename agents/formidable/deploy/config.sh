@@ -40,7 +40,7 @@ export SECRET_NAME="formidable/codex-auth"
 # codex CLI version — PINNED so the image is reproducible and matches the
 # validated local codex (`codex --version`). Bump deliberately, then run a full
 # ./deploy.sh so verify_prod.sh confirms the new version works before it sticks.
-export CODEX_VERSION="${CODEX_VERSION:-0.142.5}"
+export CODEX_VERSION="${CODEX_VERSION:-0.144.4}"
 
 # Fargate — worker task definition
 export FARGATE_TASK_DEF="${WORKER_APP_NAME}"
