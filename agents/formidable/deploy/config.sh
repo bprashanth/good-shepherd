@@ -40,7 +40,7 @@ export SECRET_NAME="formidable/codex-auth"
 # codex CLI version — PINNED so the image is reproducible and matches the
 # validated local codex (`codex --version`). Bump deliberately, then run a full
 # ./deploy.sh so verify_prod.sh confirms the new version works before it sticks.
-export CODEX_VERSION="${CODEX_VERSION:-0.142.5}"
+export CODEX_VERSION="${CODEX_VERSION:-0.144.4}"
 
 # Fargate — worker task definition
 export FARGATE_TASK_DEF="${WORKER_APP_NAME}"
@@ -68,7 +68,7 @@ export FARGATE_MEMORY=4096
 # To change the sender address: update NOTIFICATION_FROM_EMAIL and run push.sh.
 export NOTIFICATION_FROM_EMAIL="prashanth@tech4goodcommunity.com"
 # Update PWA_URL to your Netlify/production URL so emails link to the right place
-export PWA_URL="https://formidable.netlify.app"
+export PWA_URL="https://fomoscribe.netlify.app"
 
 # Shared ECS cluster (VPC, subnet, SG) — sourced last so it can reuse vars above
 _CONFIG_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

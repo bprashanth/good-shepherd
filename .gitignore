@@ -7,8 +7,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# envs 
+# envs
 .env
+
+# codex CLI marker/creds — never commit
+.codex
+**/.codex
+
+# local server scratch data (not source)
+server/cache/
+server/db.json
+notebooks/db.json
 
 # Virtual envs
 venv/

@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends nodejs npm \
     && rm -rf /var/lib/apt/lists/*
 # Pinned via config.sh CODEX_VERSION (passed as --build-arg) for a reproducible
 # image that matches the validated local codex. Bump deliberately.
-ARG CODEX_VERSION=0.142.5
+ARG CODEX_VERSION=0.144.4
 RUN npm install -g @openai/codex@${CODEX_VERSION}
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.9.1 \
      /lambda-adapter /opt/extensions/lambda-adapter
