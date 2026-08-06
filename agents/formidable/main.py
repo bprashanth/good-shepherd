@@ -418,25 +418,51 @@ async def submit_review(job_id: str, request: Request):
 
 @app.post("/api/jobs/{job_id}/rerun")
 async def rerun_job(job_id: str, request: Request):
-    user_id  = _get_user_id(request)
-    item     = _check_ownership(user_id, job_id)
-    filename = item.get("name", {}).get("S", "input.pdf")
-    ext      = ("." + filename.rsplit(".", 1)[-1].lower()) if "." in filename else ".pdf"
-    input_key = _job_key(job_id, f"input{ext}")
+    """Rerun = create a NEW job from the source job's input PDF, leaving the
+    original untouched (it may be terminal — complete/failed). The user can
+    delete the old job if they no longer want it."""
+    user_id, cognito_email = _get_user_context(request)
+    item = _check_ownership(user_id, job_id)
 
-    _dynamo().update_item(
-        TableName=DYNAMO_TABLE,
-        Key={"user_id": {"S": user_id}, "job_id": {"S": job_id}},
-        UpdateExpression="SET #st = :s, review_state = :rs, corrections = :c REMOVE #e",
-        ExpressionAttributeNames={"#st": "status", "#e": "error"},
-        ExpressionAttributeValues={
-            ":s":  {"S": "queued"},
-            ":rs": {"S": "unreviewed"},
-            ":c":  {"M": {}},
-        },
+    name          = item.get("name", {}).get("S", "input.pdf")
+    src_input_key = item.get("input_key", {}).get("S", "")
+    if not src_input_key:
+        # Legacy jobs predate input_key — reconstruct from the display name's ext.
+        ext = ("." + name.rsplit(".", 1)[-1].lower()) if "." in name else ".pdf"
+        src_input_key = _job_key(job_id, f"input{ext}")
+    ext = ("." + src_input_key.rsplit(".", 1)[-1]) if "." in src_input_key else ".pdf"
+
+    new_job_id    = str(uuid.uuid4())
+    new_input_key = _job_key(new_job_id, f"input{ext}")
+
+    # Copy the source input into the new job's prefix (server-side S3 copy).
+    _s3().copy_object(
+        Bucket=JOBS_BUCKET,
+        CopySource={"Bucket": JOBS_BUCKET, "Key": src_input_key},
+        Key=new_input_key,
     )
-    _launch_fargate(job_id, input_key, filename, user_id)
-    return JSONResponse({"job_id": job_id, "status": "queued"}, status_code=202)
+
+    now  = datetime.now(timezone.utc).isoformat()
+    new_item = {
+        "user_id":      {"S": user_id},
+        "job_id":       {"S": new_job_id},
+        "name":         {"S": name},
+        "status":       {"S": "queued"},
+        "review_state": {"S": "unreviewed"},
+        "created_at":   {"S": now},
+        "pages":        {"N": "0"},
+        "crops":        {"N": "0"},
+        "input_key":    {"S": new_input_key},
+    }
+    if cognito_email:
+        new_item["email"] = {"S": cognito_email}
+    notification_email = item.get("notification_email", {}).get("S", "")
+    if notification_email:
+        new_item["notification_email"] = {"S": notification_email}
+    _dynamo().put_item(TableName=DYNAMO_TABLE, Item=new_item)
+
+    _launch_fargate(new_job_id, new_input_key, name, user_id, notification_email)
+    return JSONResponse({"job_id": new_job_id, "status": "queued"}, status_code=202)
 
 
 @app.get("/api/jobs/{job_id}/progress")

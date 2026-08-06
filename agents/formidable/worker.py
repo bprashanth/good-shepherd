@@ -283,7 +283,7 @@ def _send_email(to_addr: str, subject: str, body_text: str,
 
 def _send_notification_email(to_addr: str, job_name: str, success: bool) -> None:
     """Per-job completion notification (no attachments)."""
-    pwa_url   = os.environ.get("PWA_URL", "https://formidable.netlify.app")
+    pwa_url   = os.environ.get("PWA_URL", "https://fomoscribe.netlify.app")
     form_name = job_name.rsplit(".", 1)[0]
 
     if success:

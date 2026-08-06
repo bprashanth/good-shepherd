@@ -5,6 +5,33 @@ A Fargate worker runs the `codex` CLI over an uploaded PDF and produces a
 structured xlsx + crop images. Self-contained Python (no imports from
 `../../server/`).
 
+## >>> DEPLOY <<<  and what it affects
+
+Deploy the whole backend with:
+
+```
+cd deploy
+./deploy.sh
+```
+
+This reads your local codex auth, builds and pushes both images, updates the
+Lambda + Fargate task def, then runs one real codex job against prod and auto
+rolls back if it fails. See `form-idable/docs/ops.md` for the full flow.
+
+WHO IS AFFECTED when you run `deploy.sh` here:
+
+- The **Formidable PWA** (Netlify, https://fomoscribe.netlify.app), source at
+  `form-idable/pwa/`. It talks to the `/vision/*` and `/api/jobs/*` routes this
+  backend serves. A broken deploy breaks uploads, extraction, and review for
+  every user of that site. The auto rollback exists to protect them.
+- The **nightly regression** (`regression/`, EventBridge schedule
+  `formidable-nightly-regression`), which exercises this same worker image.
+- Completion and regression **emails** (SES). The link in those emails is set by
+  `PWA_URL` in `deploy/config.sh` and baked into the task def on each deploy.
+
+`deploy.sh` here does NOT deploy the PWA. The frontend ships separately via
+Netlify on a push to `form-idable`'s `main` branch.
+
 ## This is a peer backend behind the shared gateway
 
 - Routes `/vision/*` hang off the **`form-idable-api`** API Gateway and the
