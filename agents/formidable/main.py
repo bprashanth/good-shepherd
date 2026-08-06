@@ -321,9 +321,13 @@ def list_jobs(request: Request):
         TableName=DYNAMO_TABLE,
         KeyConditionExpression="user_id = :uid",
         ExpressionAttributeValues={":uid": {"S": user_id}},
-        ScanIndexForward=False,
     )
-    return [_item_to_job(item) for item in resp.get("Items", [])]
+    jobs = [_item_to_job(item) for item in resp.get("Items", [])]
+    # The table sort key is job_id (a random UUID), so DynamoDB's own ordering is
+    # arbitrary. Order by submission time instead — created_at is ISO8601, so a
+    # lexicographic sort is chronological. Newest first.
+    jobs.sort(key=lambda j: j.get("created_at") or "", reverse=True)
+    return jobs
 
 
 @app.get("/api/jobs/{job_id}/status")
