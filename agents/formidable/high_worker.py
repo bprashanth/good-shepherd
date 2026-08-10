@@ -162,8 +162,9 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
         extraction = structured.rebuild(form_dir, tag)
     else:
         extraction = structured.run(
-            form_dir, "codex:gpt-5.6-luna",
-            ["codex:gpt-5.6-terra", "codex:gpt-5.6-luna"], tag,
+            form_dir, os.environ.get("HIGH_SCHEMA_MODEL", "codex:gpt-5.6-luna"),
+            [os.environ.get("HIGH_PRIMARY_MODEL", "codex:gpt-5.6-terra"),
+             os.environ.get("HIGH_PEER_MODEL", "codex:gpt-5.6-luna")], tag,
             progress_callback=progress)
     if extraction.get("validation_errors"):
         raise RuntimeError("canonical validation failed: "
