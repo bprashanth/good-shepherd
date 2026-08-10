@@ -138,7 +138,7 @@ def _build_crops(document: dict, form_dir: Path, workdir: Path) -> dict:
 
 
 def process(source: Path, workdir: Path, *, ecology_online: bool = True,
-            reuse_existing: bool = False) -> dict:
+            reuse_existing: bool = False, progress=None) -> dict:
     """Run the production high pipeline locally inside one isolated directory."""
     analytics_mod, canonical, ecology_review, review_manifest, structured = _modules()
     form_dir = workdir / "form"
@@ -153,7 +153,8 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
         extraction = structured.run(
             form_dir, "openrouter:google/gemini-3.5-flash",
             ["openrouter:google/gemini-3.6-flash",
-             "openrouter:google/gemini-3.5-flash"], tag)
+             "openrouter:google/gemini-3.5-flash"], tag,
+            progress_callback=progress)
     if extraction.get("validation_errors"):
         raise RuntimeError("canonical validation failed: "
                            + "; ".join(extraction["validation_errors"]))
@@ -247,7 +248,11 @@ def main() -> int:
             _load_provider_key()
             _write_progress(s3, job_id, "Mapping layout and reading with two models…", 12)
             run = process(source, workdir,
-                          ecology_online=os.environ.get("HIGH_ECOLOGY_ONLINE", "1") != "0")
+                          ecology_online=os.environ.get("HIGH_ECOLOGY_ONLINE", "1") != "0",
+                          progress=lambda page, total: _write_progress(
+                              s3, job_id,
+                              f"Read page {page} of {total} with two models…",
+                              12 + round(72 * page / max(1, total))))
             _write_progress(s3, job_id, "Publishing review and analytics evidence…", 92)
 
             for name in ("output.xlsx", "crops_manifest.json", "canonical.json",
