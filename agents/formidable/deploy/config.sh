@@ -6,6 +6,7 @@
 
 APP_NAME="form-idable-vision"
 WORKER_APP_NAME="formidable-worker"
+HIGH_WORKER_APP_NAME="formidable-high-worker"
 
 export AWS_REGION="ap-south-1"
 export AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text 2>/dev/null)"
@@ -15,6 +16,8 @@ export ECR_REPO="${APP_NAME}"
 export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
 export WORKER_ECR_REPO="${WORKER_APP_NAME}"
 export WORKER_ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${WORKER_ECR_REPO}"
+export HIGH_WORKER_ECR_REPO="${HIGH_WORKER_APP_NAME}"
+export HIGH_WORKER_ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${HIGH_WORKER_ECR_REPO}"
 
 # Lambda
 export LAMBDA_FUNCTION="${APP_NAME}"
@@ -22,6 +25,7 @@ export WORKER_FUNCTION="${WORKER_APP_NAME}"
 export LAMBDA_ROLE_NAME="${APP_NAME}-role"
 export IMAGE="${APP_NAME}:latest"
 export WORKER_IMAGE="${WORKER_APP_NAME}:latest"
+export HIGH_WORKER_IMAGE="${HIGH_WORKER_APP_NAME}:latest"
 export HEALTH_CHECK_PATH="/vision/health"
 export LAMBDA_MEMORY_MB=2048
 export LAMBDA_TIMEOUT_S=600
@@ -36,6 +40,7 @@ export DYNAMO_TABLE="formidable-jobs"
 
 # Secrets Manager — codex auth.json
 export SECRET_NAME="formidable/codex-auth"
+export HIGH_PROVIDER_SECRET_NAME="formidable/openrouter-api-key"
 
 # codex CLI version — PINNED so the image is reproducible and matches the
 # validated local codex (`codex --version`). Bump deliberately, then run a full
@@ -48,6 +53,11 @@ export FARGATE_TASK_ROLE="${WORKER_APP_NAME}-task-role"
 export FARGATE_LOG_GROUP="/ecs/${WORKER_APP_NAME}"
 export FARGATE_CPU=2048
 export FARGATE_MEMORY=4096
+export HIGH_FARGATE_TASK_DEF="${HIGH_WORKER_APP_NAME}"
+export HIGH_FARGATE_TASK_ROLE="${HIGH_WORKER_APP_NAME}-task-role"
+export HIGH_FARGATE_LOG_GROUP="/ecs/${HIGH_WORKER_APP_NAME}"
+export HIGH_FARGATE_CPU=2048
+export HIGH_FARGATE_MEMORY=4096
 
 # ── Email notifications (AWS SES) ────────────────────────────────────────────
 # Uses the Fargate task's IAM role for auth — no API key needed.

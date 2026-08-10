@@ -32,6 +32,7 @@ S3_PREFIX    = os.environ.get("S3_PREFIX",     "formidable")
 DYNAMO_TABLE = os.environ.get("DYNAMO_TABLE",  "formidable-jobs")
 ECS_CLUSTER  = os.environ.get("ECS_CLUSTER",   "form-idable-agents")
 FARGATE_TASK = os.environ.get("FARGATE_TASK",  "formidable-worker")
+FARGATE_TASK_HIGH = os.environ.get("FARGATE_TASK_HIGH", "formidable-high-worker")
 ECS_SG_NAME  = os.environ.get("ECS_SG_NAME",   "form-idable-agents-sg")
 AWS_REGION   = os.environ.get("AWS_REGION",    "ap-south-1")
 ECS_SUBNET   = os.environ.get("ECS_SUBNET",    "")
@@ -150,6 +151,7 @@ def _item_to_job(item: dict) -> dict:
         "name":         _s("name") or "untitled",
         "status":       _s("status") or "queued",
         "review_state": _s("review_state") or "unreviewed",
+        "effort":       _s("effort") or "low",
         "pages":        _n("pages"),
         "crops":        _n("crops"),
         "gps":          _l("gps"),
@@ -184,7 +186,7 @@ def _get_subnet() -> str:
 
 
 def _launch_fargate(job_id: str, input_key: str, filename: str, user_id: str,
-                    notification_email: str = ""):
+                    notification_email: str = "", effort: str = "low"):
     env = [
         {"name": "JOB_ID",     "value": job_id},
         {"name": "INPUT_KEY",  "value": input_key},
@@ -193,9 +195,11 @@ def _launch_fargate(job_id: str, input_key: str, filename: str, user_id: str,
     ]
     if notification_email:
         env.append({"name": "NOTIFICATION_EMAIL", "value": notification_email})
+    task_definition = FARGATE_TASK_HIGH if effort == "high" else FARGATE_TASK
+    container_name = "high-worker" if effort == "high" else "worker"
     _ecs().run_task(
         cluster=ECS_CLUSTER,
-        taskDefinition=FARGATE_TASK,
+        taskDefinition=task_definition,
         launchType="FARGATE",
         networkConfiguration={
             "awsvpcConfiguration": {
@@ -204,7 +208,7 @@ def _launch_fargate(job_id: str, input_key: str, filename: str, user_id: str,
                 "assignPublicIp": "ENABLED",
             }
         },
-        overrides={"containerOverrides": [{"name": "worker", "environment": env}]},
+        overrides={"containerOverrides": [{"name": container_name, "environment": env}]},
     )
 
 
@@ -218,7 +222,13 @@ def _apply_corrections(job_id: str, corrections: dict):
     ws = wb.active
     for key, value in corrections.items():
         try:
-            row_str, col_str = key.split(":")
+            parts = key.split(":")
+            if len(parts) == 3:
+                page_str, row_str, col_str = parts
+                ws = wb.worksheets[max(0, int(page_str) - 1)]
+            else:
+                row_str, col_str = parts
+                ws = wb.active
             # rowNum is 1-indexed xlsx row; colIdx is 0-indexed (SheetJS XLSX.utils.decode_cell)
             ws.cell(row=int(row_str), column=int(col_str) + 1).value = value
         except Exception:
@@ -247,6 +257,9 @@ async def extract(request: Request, body: dict = Body(...)):
     filename           = body.get("filename", "input.pdf")
     display            = body.get("name") or filename
     notification_email = body.get("notification_email", "")
+    effort             = str(body.get("effort") or "low").strip().casefold()
+    if effort not in {"low", "high"}:
+        raise HTTPException(400, "effort must be 'low' or 'high'")
 
     job_id    = str(uuid.uuid4())
     ext       = ("." + filename.rsplit(".", 1)[-1].lower()) if "." in filename else ".pdf"
@@ -265,6 +278,7 @@ async def extract(request: Request, body: dict = Body(...)):
         "name":         {"S": display},
         "status":       {"S": "uploading"},
         "review_state": {"S": "unreviewed"},
+        "effort":       {"S": effort},
         "created_at":   {"S": now},
         "pages":        {"N": "0"},
         "crops":        {"N": "0"},
@@ -310,8 +324,9 @@ def start_job(job_id: str, request: Request):
         ExpressionAttributeValues={":s": {"S": "queued"}},
     )
     notification_email = item.get("notification_email", {}).get("S", "")
-    _launch_fargate(job_id, input_key, filename, user_id, notification_email)
-    return {"status": "queued"}
+    effort = item.get("effort", {}).get("S", "low")
+    _launch_fargate(job_id, input_key, filename, user_id, notification_email, effort)
+    return {"status": "queued", "effort": effort}
 
 
 @app.get("/api/jobs")
@@ -335,7 +350,26 @@ def get_status(job_id: str, request: Request):
     user_id = _get_user_id(request)
     item    = _check_ownership(user_id, job_id)
     j       = _item_to_job(item)
-    return {"status": j["status"], "pages": j["pages"], "crops": j["crops"], "error": j["error"]}
+    return {"status": j["status"], "pages": j["pages"], "crops": j["crops"],
+            "error": j["error"], "effort": j["effort"]}
+
+
+def _high_artifact(job_id: str, request: Request, filename: str):
+    user_id = _get_user_id(request)
+    item = _check_ownership(user_id, job_id)
+    if item.get("effort", {}).get("S", "low") != "high":
+        raise HTTPException(404, "artifact is available only for high-effort jobs")
+    return JSONResponse(json.loads(_s3_get(_job_key(job_id, filename))))
+
+
+@app.get("/api/jobs/{job_id}/review-manifest")
+def get_review_manifest(job_id: str, request: Request):
+    return _high_artifact(job_id, request, "review_manifest.json")
+
+
+@app.get("/api/jobs/{job_id}/analytics")
+def get_analytics(job_id: str, request: Request):
+    return _high_artifact(job_id, request, "analytics.json")
 
 
 @app.get("/api/jobs/{job_id}/manifest")
@@ -453,6 +487,7 @@ async def rerun_job(job_id: str, request: Request):
         "name":         {"S": name},
         "status":       {"S": "queued"},
         "review_state": {"S": "unreviewed"},
+        "effort":       {"S": item.get("effort", {}).get("S", "low")},
         "created_at":   {"S": now},
         "pages":        {"N": "0"},
         "crops":        {"N": "0"},
@@ -465,7 +500,8 @@ async def rerun_job(job_id: str, request: Request):
         new_item["notification_email"] = {"S": notification_email}
     _dynamo().put_item(TableName=DYNAMO_TABLE, Item=new_item)
 
-    _launch_fargate(new_job_id, new_input_key, name, user_id, notification_email)
+    effort = new_item["effort"]["S"]
+    _launch_fargate(new_job_id, new_input_key, name, user_id, notification_email, effort)
     return JSONResponse({"job_id": new_job_id, "status": "queued"}, status_code=202)
 
 

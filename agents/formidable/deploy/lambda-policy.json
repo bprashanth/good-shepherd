@@ -48,7 +48,10 @@
       "Action": [
         "ecs:RunTask"
       ],
-      "Resource": "arn:aws:ecs:*:*:task-definition/formidable-worker:*"
+      "Resource": [
+        "arn:aws:ecs:*:*:task-definition/formidable-worker:*",
+        "arn:aws:ecs:*:*:task-definition/formidable-high-worker:*"
+      ]
     },
     {
       "Sid": "PassTaskRole",
@@ -56,6 +59,7 @@
       "Action": "iam:PassRole",
       "Resource": [
         "arn:aws:iam::*:role/formidable-worker-task-role",
+        "arn:aws:iam::*:role/formidable-high-worker-task-role",
         "arn:aws:iam::*:role/ecsTaskExecutionRole"
       ]
     },

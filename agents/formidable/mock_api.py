@@ -38,6 +38,7 @@ _INITIAL_JOBS = [
         "name":         "GridVegetation_100mx100m.pdf",
         "status":       "complete",
         "review_state": "unreviewed",
+        "effort":       "low",
         "pages":        3,
         "crops":        6,
         "gps":          [10.31490, 76.83122],
@@ -52,6 +53,7 @@ _INITIAL_JOBS = [
         "name":         "LeafLitterBiomass.pdf",
         "status":       "complete",
         "review_state": "unreviewed",
+        "effort":       "low",
         "pages":        4,
         "crops":        11,
         "gps":          [10.3210, 76.8045],
@@ -66,6 +68,7 @@ _INITIAL_JOBS = [
         "name":         "RegenerationPlot5mx5m.pdf",
         "status":       "complete",
         "review_state": "unreviewed",
+        "effort":       "high",
         "pages":        3,
         "crops":        12,
         "gps":          [10.30217, 76.84301],
@@ -80,6 +83,7 @@ _INITIAL_JOBS = [
         "name":         "TreePlots20mx20m.pdf",
         "status":       "complete",
         "review_state": "unreviewed",
+        "effort":       "low",
         "pages":        3,
         "crops":        9,
         "gps":          [10.30217, 76.84301],
@@ -94,6 +98,7 @@ _INITIAL_JOBS = [
         "name":         "SaplingSurvivalMonitoring.pdf",
         "status":       "complete",
         "review_state": "unreviewed",
+        "effort":       "low",
         "pages":        2,
         "crops":        12,
         "gps":          None,
@@ -146,7 +151,8 @@ def get_status(job_id: str):
     job = next((j for j in MOCK_JOBS if j["job_id"] == job_id), None)
     if not job:
         raise HTTPException(404, "job not found")
-    return {"status": job["status"], "pages": job["pages"], "crops": job["crops"], "error": job["error"]}
+    return {"status": job["status"], "pages": job["pages"], "crops": job["crops"],
+            "error": job["error"], "effort": job.get("effort", "low")}
 
 
 @app.get("/api/jobs/{job_id}/progress")
@@ -178,6 +184,23 @@ def delete_job(job_id: str):
 def get_manifest(job_id: str):
     data = _s3_get(job_id, "crops_manifest.json")
     return JSONResponse(json.loads(data))
+
+
+def _high_artifact(job_id: str, suffix: str):
+    job = next((j for j in MOCK_JOBS if j["job_id"] == job_id), None)
+    if not job or job.get("effort", "low") != "high":
+        raise HTTPException(404, "artifact is available only for high-effort jobs")
+    return JSONResponse(json.loads(_s3_get(job_id, suffix)))
+
+
+@app.get("/api/jobs/{job_id}/review-manifest")
+def get_review_manifest(job_id: str):
+    return _high_artifact(job_id, "review_manifest.json")
+
+
+@app.get("/api/jobs/{job_id}/analytics")
+def get_analytics(job_id: str):
+    return _high_artifact(job_id, "analytics.json")
 
 
 @app.get("/api/jobs/{job_id}/pages/{filename}")
@@ -226,7 +249,13 @@ def get_xlsx(job_id: str):
 
 
 @app.post("/api/jobs/{job_id}/submit")
-async def submit_review(job_id: str):
+async def submit_review(job_id: str, request: Request):
+    job = next((j for j in MOCK_JOBS if j["job_id"] == job_id), None)
+    if not job:
+        raise HTTPException(404, "job not found")
+    body = await request.json()
+    job["review_state"] = "reviewed"
+    job["corrections"] = body.get("corrections", {})
     return {"status": "reviewed"}
 
 
@@ -236,11 +265,15 @@ async def submit_review(job_id: str):
 async def extract(body: dict):
     job_id  = str(uuid.uuid4())
     display = body.get("name") or body.get("filename") or "upload.pdf"
+    effort = str(body.get("effort") or "low").casefold()
+    if effort not in {"low", "high"}:
+        raise HTTPException(400, "effort must be 'low' or 'high'")
     new_job = {
         "job_id":       job_id,
         "name":         display,
         "status":       "uploading",
         "review_state": "unreviewed",
+        "effort":       effort,
         "pages":        0,
         "crops":        0,
         "gps":          None,
@@ -268,4 +301,4 @@ def start_job(job_id: str):
     if not job:
         raise HTTPException(404, "job not found")
     job["status"] = "queued"
-    return {"status": "queued"}
+    return {"status": "queued", "effort": job.get("effort", "low")}
