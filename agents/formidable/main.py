@@ -197,7 +197,7 @@ def _launch_fargate(job_id: str, input_key: str, filename: str, user_id: str,
         env.append({"name": "NOTIFICATION_EMAIL", "value": notification_email})
     task_definition = FARGATE_TASK_HIGH if effort == "high" else FARGATE_TASK
     container_name = "high-worker" if effort == "high" else "worker"
-    _ecs().run_task(
+    return _ecs().run_task(
         cluster=ECS_CLUSTER,
         taskDefinition=task_definition,
         launchType="FARGATE",
@@ -326,7 +326,8 @@ def start_job(job_id: str, request: Request):
     notification_email = item.get("notification_email", {}).get("S", "")
     effort = item.get("effort", {}).get("S", "low")
     _launch_fargate(job_id, input_key, filename, user_id, notification_email, effort)
-    return {"status": "queued", "effort": effort}
+    task_family = FARGATE_TASK_HIGH if effort == "high" else FARGATE_TASK
+    return {"status": "queued", "effort": effort, "task_family": task_family}
 
 
 @app.get("/api/jobs")

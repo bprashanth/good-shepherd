@@ -8,7 +8,7 @@ CONFIG_PATH="${FORMIDABLE_OPENROUTER_CONFIG:-$HOME/.config/formidable/openrouter
 python3 - "$CONFIG_PATH" <<'PY'
 import json, sys
 value = json.load(open(sys.argv[1]))
-assert value.get("api_key"), "gemini.json has no api_key"
+assert value.get("api_key"), "OpenRouter config has no api_key"
 PY
 
 if aws secretsmanager describe-secret --secret-id "$HIGH_PROVIDER_SECRET_NAME" --region "$AWS_REGION" >/dev/null 2>&1; then
