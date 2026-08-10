@@ -104,7 +104,8 @@ def _build_crops(document: dict, form_dir: Path, workdir: Path) -> dict:
         entries = []
         with Image.open(source_page) as image:
             groups = []
-            fields = page.get("metadata_fields") or []
+            fields = [*(page.get("metadata_fields") or []),
+                      *(page.get("free_text_regions") or [])]
             if fields:
                 groups.append(("Header fields", fields))
             for table in page.get("tables") or []:
