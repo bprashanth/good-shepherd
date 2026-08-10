@@ -17,7 +17,6 @@ fi
 
 aws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin \
   "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-"$SCRIPT_DIR/push_high_secret.sh"
 "$SCRIPT_DIR/_retag.sh" "$ECR_REPO" latest rollback || true
 "$SCRIPT_DIR/_retag.sh" "$HIGH_WORKER_ECR_REPO" latest rollback || true
 
@@ -26,6 +25,7 @@ docker tag "$IMAGE" "${ECR_URI}:latest"
 docker push "${ECR_URI}:latest"
 
 docker build --platform linux/arm64 --memory 8g \
+  --build-arg "CODEX_VERSION=${HIGH_CODEX_VERSION}" \
   --build-context "pipeline=${FORMID_REPO}" -f "$SERVER_DIR/Dockerfile.high" \
   -t "$HIGH_WORKER_IMAGE" "$SERVER_DIR"
 docker tag "$HIGH_WORKER_IMAGE" "${HIGH_WORKER_ECR_URI}:latest"
@@ -49,7 +49,7 @@ aws ecs register-task-definition --region "$AWS_REGION" --cli-input-json "$(cat 
   "executionRoleArn":"${EXEC_ROLE_ARN}","taskRoleArn":"${HIGH_ROLE_ARN}",
   "containerDefinitions":[{"name":"high-worker","image":"${HIGH_WORKER_ECR_URI}:latest","essential":true,
     "environment":[
-      {"name":"PROVIDER_SECRET_NAME","value":"${HIGH_PROVIDER_SECRET_NAME}"},
+      {"name":"CODEX_SECRET_NAME","value":"${CODEX_SECRET_NAME}"},
       {"name":"JOBS_BUCKET","value":"${JOBS_BUCKET}"},{"name":"AWS_REGION","value":"${AWS_REGION}"},
       {"name":"NOTIFICATION_FROM_EMAIL","value":"${NOTIFICATION_FROM_EMAIL}"},{"name":"PWA_URL","value":"${PWA_URL}"}
     ],"logConfiguration":{"logDriver":"awslogs","options":{"awslogs-group":"${HIGH_FARGATE_LOG_GROUP}","awslogs-region":"${AWS_REGION}","awslogs-stream-prefix":"ecs"}}}]

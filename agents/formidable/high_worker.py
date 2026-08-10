@@ -19,6 +19,7 @@ S3_PREFIX = os.environ.get("S3_PREFIX", "formidable")
 DYNAMO_TABLE = os.environ.get("DYNAMO_TABLE", "formidable-jobs")
 PROVIDER_SECRET_NAME = os.environ.get(
     "PROVIDER_SECRET_NAME", "formidable/openrouter-api-key")
+CODEX_SECRET_NAME = os.environ.get("CODEX_SECRET_NAME", "formidable/codex-auth")
 PIPELINE_DIR = Path(os.environ.get("FORMIDABLE_HIGH_PIPELINE_DIR", Path(__file__).parent / "high_pipeline"))
 LOG_PATH = Path("/tmp/high-run.log")
 
@@ -42,6 +43,16 @@ def _load_provider_key() -> None:
     if not key:
         raise RuntimeError("provider secret does not contain an OpenRouter API key")
     os.environ["OPENROUTER_API_KEY"] = key
+
+
+def _bootstrap_codex_auth() -> None:
+    """Install the same subscription credential used by the frozen low worker."""
+    secret = boto3.client("secretsmanager", region_name=AWS_REGION).get_secret_value(
+        SecretId=CODEX_SECRET_NAME)["SecretString"]
+    auth = json.loads(secret)
+    auth_dir = Path.home() / ".codex"
+    auth_dir.mkdir(parents=True, exist_ok=True)
+    (auth_dir / "auth.json").write_text(json.dumps(auth))
 
 
 def _modules():
@@ -151,9 +162,8 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
         extraction = structured.rebuild(form_dir, tag)
     else:
         extraction = structured.run(
-            form_dir, "openrouter:google/gemini-3.5-flash",
-            ["openrouter:google/gemini-3.6-flash",
-             "openrouter:google/gemini-3.5-flash"], tag,
+            form_dir, "codex:gpt-5.6-luna",
+            ["codex:gpt-5.6-terra", "codex:gpt-5.6-luna"], tag,
             progress_callback=progress)
     if extraction.get("validation_errors"):
         raise RuntimeError("canonical validation failed: "
@@ -245,7 +255,7 @@ def main() -> int:
                         {":s": {"S": "processing"}}, {"#st": "status"})
             _write_progress(s3, job_id, "Starting high-effort dual-reader pipeline…", 3)
             s3.download_file(JOBS_BUCKET, input_key, str(source))
-            _load_provider_key()
+            _bootstrap_codex_auth()
             _write_progress(s3, job_id, "Mapping layout and reading with two models…", 12)
             run = process(source, workdir,
                           ecology_online=os.environ.get("HIGH_ECOLOGY_ONLINE", "1") != "0",

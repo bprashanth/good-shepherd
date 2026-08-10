@@ -11,7 +11,10 @@
       "Sid": "HighProviderAuth",
       "Effect": "Allow",
       "Action": "secretsmanager:GetSecretValue",
-      "Resource": "arn:aws:secretsmanager:*:*:secret:formidable/openrouter-api-key*"
+      "Resource": [
+        "arn:aws:secretsmanager:*:*:secret:formidable/openrouter-api-key*",
+        "arn:aws:secretsmanager:*:*:secret:formidable/codex-auth*"
+      ]
     },
     {
       "Sid": "SendEmail",

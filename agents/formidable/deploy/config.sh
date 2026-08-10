@@ -40,12 +40,14 @@ export DYNAMO_TABLE="formidable-jobs"
 
 # Secrets Manager — codex auth.json
 export SECRET_NAME="formidable/codex-auth"
+export CODEX_SECRET_NAME="${CODEX_SECRET_NAME:-$SECRET_NAME}"
 export HIGH_PROVIDER_SECRET_NAME="formidable/openrouter-api-key"
 
 # codex CLI version — PINNED so the image is reproducible and matches the
 # validated local codex (`codex --version`). Bump deliberately, then run a full
 # ./deploy.sh so verify_prod.sh confirms the new version works before it sticks.
 export CODEX_VERSION="${CODEX_VERSION:-0.144.4}"
+export HIGH_CODEX_VERSION="${HIGH_CODEX_VERSION:-0.147.0}"
 
 # Fargate — worker task definition
 export FARGATE_TASK_DEF="${WORKER_APP_NAME}"

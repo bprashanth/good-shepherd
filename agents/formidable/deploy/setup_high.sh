@@ -5,7 +5,6 @@ source "$SCRIPT_DIR/config.sh"
 
 aws ecr describe-repositories --repository-names "$HIGH_WORKER_ECR_REPO" --region "$AWS_REGION" >/dev/null 2>&1 || \
   aws ecr create-repository --repository-name "$HIGH_WORKER_ECR_REPO" --region "$AWS_REGION" >/dev/null
-"$SCRIPT_DIR/push_high_secret.sh"
 
 if ! aws iam get-role --role-name "$HIGH_FARGATE_TASK_ROLE" >/dev/null 2>&1; then
   aws iam create-role --role-name "$HIGH_FARGATE_TASK_ROLE" \

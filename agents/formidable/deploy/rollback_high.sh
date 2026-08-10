@@ -32,6 +32,7 @@ if [[ "$HIGH_ROLLBACK" == true ]]; then
   "containerDefinitions":[{"name":"high-worker","image":"${HIGH_WORKER_ECR_URI}:latest","essential":true,
     "environment":[
       {"name":"PROVIDER_SECRET_NAME","value":"${HIGH_PROVIDER_SECRET_NAME}"},
+      {"name":"CODEX_SECRET_NAME","value":"${CODEX_SECRET_NAME}"},
       {"name":"JOBS_BUCKET","value":"${JOBS_BUCKET}"},{"name":"AWS_REGION","value":"${AWS_REGION}"},
       {"name":"NOTIFICATION_FROM_EMAIL","value":"${NOTIFICATION_FROM_EMAIL}"},{"name":"PWA_URL","value":"${PWA_URL}"}
     ],"logConfiguration":{"logDriver":"awslogs","options":{"awslogs-group":"${HIGH_FARGATE_LOG_GROUP}","awslogs-region":"${AWS_REGION}","awslogs-stream-prefix":"ecs"}}}]
