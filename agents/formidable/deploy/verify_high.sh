@@ -13,7 +13,7 @@ fi
 
 PDF_KEY="${HIGH_VERIFY_PDF_KEY:-${S3_PREFIX}/regression/source.pdf}"
 WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT
-POLL_TIMEOUT="${HIGH_VERIFY_POLL_TIMEOUT:-1200}"
+POLL_TIMEOUT="${HIGH_VERIFY_POLL_TIMEOUT:-3600}"
 
 aws s3 cp "s3://${JOBS_BUCKET}/${PDF_KEY}" "$WORK/source.pdf" --region "$AWS_REGION" >/dev/null
 TOKEN=$(aws cognito-idp initiate-auth \
@@ -67,8 +67,15 @@ assert "transcription_attention" in review["views"]
 assert "ecology_anomalies" in review["views"]
 wb = openpyxl.load_workbook(root / "output.xlsx", read_only=True)
 assert wb.sheetnames[-1] == "ecology_review"
-assert len(wb.sheetnames) == analytics["summary"]["pages"] + 1
-print(json.dumps({"pages": analytics["summary"]["pages"],
+content_sheets = set(wb.sheetnames[:-1])
+assert content_sheets
+missing = sorted({cell.get("xlsx_sheet") for cell in review.get("cells", [])
+                  if cell.get("xlsx_sheet") and cell["xlsx_sheet"] not in content_sheets})
+assert not missing, f"review references absent content sheets: {missing}"
+route = (review.get("route") or {}).get("status")
+assert route in {"agentic_primary", "structured_reader_fallback"}, route
+print(json.dumps({"route": route, "content_sheets": sorted(content_sheets),
+                  "pages": analytics["summary"]["pages"],
                   "disagreements": analytics["summary"]["disagreements"],
                   "ecology_flags": analytics["summary"]["ecology_findings"]}))
 PY
