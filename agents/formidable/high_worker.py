@@ -1,6 +1,7 @@
 """High-effort Fargate worker: dual literal readers plus ecology review."""
 from __future__ import annotations
 
+import copy
 import json
 import logging
 import os
@@ -166,6 +167,34 @@ def _run_agentic_primary(input_pdf: Path, primary_dir: Path, *, on_page=None) ->
     return output
 
 
+def _document_items(document: dict):
+    for page in document.get("pages") or []:
+        yield from page.get("metadata_fields") or []
+        yield from page.get("free_text_regions") or []
+        for table in page.get("tables") or []:
+            for row in table.get("rows") or []:
+                yield from row.get("cells") or []
+
+
+def _select_complete_reader(document: dict, canonical) -> tuple[dict, str, dict]:
+    """Select a fallback reader by literal coverage, without domain knowledge."""
+    models = list(document.get("models") or [])
+    if not models:
+        raise RuntimeError("structured extraction has no reader models")
+    coverage = {}
+    for model in models:
+        coverage[model] = sum(
+            str(next((reading.get("value") for reading in item.get("readings") or []
+                      if reading.get("model") == model), None) or "").strip() != ""
+            for item in _document_items(document))
+    # Stable ordering makes ties prefer the declared primary.
+    selected = max(models, key=lambda model: coverage[model])
+    fallback = copy.deepcopy(document)
+    fallback["models"] = [selected, *(model for model in models if model != selected)]
+    canonical.resolve(fallback)
+    return fallback, selected, coverage
+
+
 def process(source: Path, workdir: Path, *, ecology_online: bool = True,
             reuse_existing: bool = False, progress=None,
             primary_progress=None) -> dict:
@@ -195,15 +224,25 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
     if extraction.get("validation_errors"):
         raise RuntimeError("canonical validation failed: "
                            + "; ".join(extraction["validation_errors"]))
-    document = json.loads((canonical_dir / "canonical.json").read_text())
-    canonical.assign_xlsx_coordinates(document)
+    peer_document = json.loads((canonical_dir / "canonical.json").read_text())
+    canonical.assign_xlsx_coordinates(peer_document)
+    primary_document = copy.deepcopy(peer_document)
     bridge = primary_bridge.bind_primary(
-        document, canonical_dir / "output.xlsx", primary_xlsx)
+        primary_document, canonical_dir / "output.xlsx", primary_xlsx)
     minimum_coverage = float(os.environ.get("HIGH_PRIMARY_BRIDGE_MIN_COVERAGE", "0.80"))
-    if bridge["peer_nonblank_coverage"] < minimum_coverage:
-        raise RuntimeError(
-            f"primary/geometry bridge coverage {bridge['peer_nonblank_coverage']:.3f} "
-            f"below required {minimum_coverage:.3f}")
+    if bridge["peer_nonblank_coverage"] >= minimum_coverage:
+        document = primary_document
+        content_route = "agentic_primary"
+        selected_reader = None
+        reader_coverage = None
+    else:
+        # A plausible-looking but structurally incomplete agentic workbook is a
+        # known fatigue mode. Never retry it and never publish it. Fall back to
+        # the independently structured reader with greater literal coverage.
+        document, selected_reader, reader_coverage = _select_complete_reader(
+            peer_document, canonical)
+        canonical.assign_xlsx_coordinates(document)
+        content_route = "structured_reader_fallback"
 
     records = ecology_review.canonical_records(document)
     findings = ecology_review.numeric_findings(records)
@@ -221,10 +260,14 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
                            if finding.get("severity") in {"medium", "high"}]
     ecology_review.apply_findings(document, actionable_findings)
 
+    content_xlsx = workdir / "content.xlsx"
+    if content_route == "agentic_primary":
+        # Preserve the proven primary workbook's content and layout exactly.
+        shutil.copy2(primary_xlsx, content_xlsx)
+    else:
+        canonical.write_xlsx(document, content_xlsx)
     output_xlsx = workdir / "output.xlsx"
-    # Preserve the proven primary workbook's content and layout. High adds one
-    # audit sheet; peers/ecology never rewrite literal primary values.
-    shutil.copy2(primary_xlsx, output_xlsx)
+    shutil.copy2(content_xlsx, output_xlsx)
     ecology_review.add_review_sheet(output_xlsx, findings)
     canonical.dump(document, workdir / "canonical.json")
     (workdir / "ecology_review.json").write_text(
@@ -232,9 +275,14 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
 
     review = review_manifest.from_canonical(document, ecology)
     review["route"] = {
-        "status": "agentic_primary_peer_consensus", "path": "high_v1",
-        "reason": ("frozen low workflow retained as immutable content; two "
-                   "structured peers must agree before a red review flag"),
+        "status": content_route, "path": "high_v1",
+        "reason": (
+            "frozen low workflow retained as immutable content; two structured "
+            "peers must agree before a red review flag"
+            if content_route == "agentic_primary" else
+            "agentic workbook failed the sector-agnostic coverage gate; the more "
+            "complete structured reader is shown and every peer disagreement is red"
+        ),
     }
     errors = review_manifest.validate(review)
     if errors:
@@ -251,8 +299,11 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
         json.dumps(crops_manifest, indent=2) + "\n")
 
     run = {"version": "formidable-high-v2",
-           "route": "agentic_primary_peer_consensus",
-           "primary": {"model": "codex:agentic-low", "workbook": "output.xlsx"},
+           "route": content_route,
+           "primary": {"model": "codex:agentic-low", "workbook": "primary/output.xlsx"},
+           "content": {"workbook": "content.xlsx", "route": content_route,
+                       "selected_reader": selected_reader,
+                       "reader_nonblank_coverage": reader_coverage},
            "bridge": bridge, "extraction": extraction, "review": review["summary"],
            "analytics": analytics["summary"], "ecology_online": ecology_online}
     (workdir / "run.json").write_text(json.dumps(run, indent=2) + "\n")
