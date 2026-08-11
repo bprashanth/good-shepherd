@@ -187,8 +187,13 @@ def _select_complete_reader(document: dict, canonical) -> tuple[dict, str, dict]
             str(next((reading.get("value") for reading in item.get("readings") or []
                       if reading.get("model") == model), None) or "").strip() != ""
             for item in _document_items(document))
-    # Stable ordering makes ties prefer the declared primary.
-    selected = max(models, key=lambda model: coverage[model])
+    # Stable ordering prefers the declared reader. A small difference in filled
+    # cells is normal reader variance and can reward hallucinated content; only
+    # switch when another reader recovers at least 10% more literal evidence.
+    selected = models[0]
+    leader = max(models, key=lambda model: coverage[model])
+    if coverage[leader] >= max(1, coverage[selected]) * 1.10:
+        selected = leader
     fallback = copy.deepcopy(document)
     fallback["models"] = [selected, *(model for model in models if model != selected)]
     canonical.resolve(fallback)
