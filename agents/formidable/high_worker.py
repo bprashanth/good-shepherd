@@ -220,6 +220,7 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
             form_dir, os.environ.get("HIGH_SCHEMA_MODEL", "codex:gpt-5.6-luna"),
             [os.environ.get("HIGH_PRIMARY_MODEL", "codex:gpt-5.6-terra"),
              os.environ.get("HIGH_PEER_MODEL", "codex:gpt-5.6-luna")], tag,
+            reuse_existing=reuse_existing,
             progress_callback=progress)
     if extraction.get("validation_errors"):
         raise RuntimeError("canonical validation failed: "
