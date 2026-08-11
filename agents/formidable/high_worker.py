@@ -61,9 +61,11 @@ def _modules():
     import analytics_manifest
     import canonical
     import ecology_review
+    import primary_bridge
     import review_manifest
     import structured_pipeline
-    return analytics_manifest, canonical, ecology_review, review_manifest, structured_pipeline
+    return (analytics_manifest, canonical, ecology_review, primary_bridge,
+            review_manifest, structured_pipeline)
 
 
 def _as_pdf(source: Path, destination: Path) -> None:
@@ -148,13 +150,37 @@ def _build_crops(document: dict, form_dir: Path, workdir: Path) -> dict:
     return {"pages": manifest_pages}
 
 
+def _run_agentic_primary(input_pdf: Path, primary_dir: Path, *, on_page=None) -> Path:
+    """Run the frozen low workflow inside high without changing the low task."""
+    from worker import _run_codex
+
+    primary_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(input_pdf, primary_dir / "input.pdf")
+    shutil.copy2(Path(__file__).parent / "tools" / "render_page.py",
+                 primary_dir / "render_page.py")
+    ok, message = _run_codex(primary_dir, "input.pdf", on_page=on_page)
+    output = primary_dir / "output.xlsx"
+    if not ok or not output.exists():
+        detail = message[-1000:] if message else "output.xlsx was not produced"
+        raise RuntimeError(f"agentic primary failed: {detail}")
+    return output
+
+
 def process(source: Path, workdir: Path, *, ecology_online: bool = True,
-            reuse_existing: bool = False, progress=None) -> dict:
+            reuse_existing: bool = False, progress=None,
+            primary_progress=None) -> dict:
     """Run the production high pipeline locally inside one isolated directory."""
-    analytics_mod, canonical, ecology_review, review_manifest, structured = _modules()
+    (analytics_mod, canonical, ecology_review, primary_bridge,
+     review_manifest, structured) = _modules()
     form_dir = workdir / "form"
     form_dir.mkdir(parents=True, exist_ok=True)
     _as_pdf(source, form_dir / "input.pdf")
+    primary_dir = workdir / "primary"
+    if reuse_existing and (primary_dir / "output.xlsx").exists():
+        primary_xlsx = primary_dir / "output.xlsx"
+    else:
+        primary_xlsx = _run_agentic_primary(
+            form_dir / "input.pdf", primary_dir, on_page=primary_progress)
 
     tag = "high_v1"
     canonical_dir = form_dir / "canonical_outputs" / tag
@@ -171,6 +197,13 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
                            + "; ".join(extraction["validation_errors"]))
     document = json.loads((canonical_dir / "canonical.json").read_text())
     canonical.assign_xlsx_coordinates(document)
+    bridge = primary_bridge.bind_primary(
+        document, canonical_dir / "output.xlsx", primary_xlsx)
+    minimum_coverage = float(os.environ.get("HIGH_PRIMARY_BRIDGE_MIN_COVERAGE", "0.80"))
+    if bridge["peer_nonblank_coverage"] < minimum_coverage:
+        raise RuntimeError(
+            f"primary/geometry bridge coverage {bridge['peer_nonblank_coverage']:.3f} "
+            f"below required {minimum_coverage:.3f}")
 
     records = ecology_review.canonical_records(document)
     findings = ecology_review.numeric_findings(records)
@@ -189,15 +222,20 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
     ecology_review.apply_findings(document, actionable_findings)
 
     output_xlsx = workdir / "output.xlsx"
-    canonical.write_xlsx(document, output_xlsx)
+    # Preserve the proven primary workbook's content and layout. High adds one
+    # audit sheet; peers/ecology never rewrite literal primary values.
+    shutil.copy2(primary_xlsx, output_xlsx)
     ecology_review.add_review_sheet(output_xlsx, findings)
     canonical.dump(document, workdir / "canonical.json")
     (workdir / "ecology_review.json").write_text(
         json.dumps(ecology, indent=2, ensure_ascii=False) + "\n")
 
     review = review_manifest.from_canonical(document, ecology)
-    review["route"] = {"status": "generic_canonical", "path": "high_v1",
-                       "reason": "template fingerprinting abstained; generic page schema is the validated safe path"}
+    review["route"] = {
+        "status": "agentic_primary_peer_consensus", "path": "high_v1",
+        "reason": ("frozen low workflow retained as immutable content; two "
+                   "structured peers must agree before a red review flag"),
+    }
     errors = review_manifest.validate(review)
     if errors:
         raise RuntimeError("invalid review manifest: " + "; ".join(errors))
@@ -212,8 +250,10 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
     (workdir / "crops_manifest.json").write_text(
         json.dumps(crops_manifest, indent=2) + "\n")
 
-    run = {"version": "formidable-high-v1", "route": "generic_canonical",
-           "extraction": extraction, "review": review["summary"],
+    run = {"version": "formidable-high-v2",
+           "route": "agentic_primary_peer_consensus",
+           "primary": {"model": "codex:agentic-low", "workbook": "output.xlsx"},
+           "bridge": bridge, "extraction": extraction, "review": review["summary"],
            "analytics": analytics["summary"], "ecology_online": ecology_online}
     (workdir / "run.json").write_text(json.dumps(run, indent=2) + "\n")
 
@@ -257,13 +297,17 @@ def main() -> int:
             _write_progress(s3, job_id, "Starting high-effort dual-reader pipeline…", 3)
             s3.download_file(JOBS_BUCKET, input_key, str(source))
             _bootstrap_codex_auth()
-            _write_progress(s3, job_id, "Mapping layout and reading with two models…", 12)
+            _write_progress(s3, job_id, "Running the proven primary transcription…", 8)
             run = process(source, workdir,
                           ecology_online=os.environ.get("HIGH_ECOLOGY_ONLINE", "1") != "0",
+                          primary_progress=lambda page: _write_progress(
+                              s3, job_id,
+                              f"Primary transcribed {page} page{'s' if page != 1 else ''}…",
+                              min(28, 8 + 4 * page)),
                           progress=lambda page, total: _write_progress(
                               s3, job_id,
-                              f"Read page {page} of {total} with two models…",
-                              12 + round(72 * page / max(1, total))))
+                              f"Consensus peers read page {page} of {total}…",
+                              30 + round(54 * page / max(1, total))))
             _write_progress(s3, job_id, "Publishing review and analytics evidence…", 92)
 
             for name in ("output.xlsx", "crops_manifest.json", "canonical.json",

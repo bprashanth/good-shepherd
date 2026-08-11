@@ -25,7 +25,8 @@ docker tag "$IMAGE" "${ECR_URI}:latest"
 docker push "${ECR_URI}:latest"
 
 docker build --platform linux/arm64 --memory 8g \
-  --build-arg "CODEX_VERSION=${HIGH_CODEX_VERSION}" \
+  --build-arg "LOW_CODEX_VERSION=${CODEX_VERSION}" \
+  --build-arg "HIGH_CODEX_VERSION=${HIGH_CODEX_VERSION}" \
   --build-context "pipeline=${FORMID_REPO}" -f "$SERVER_DIR/Dockerfile.high" \
   -t "$HIGH_WORKER_IMAGE" "$SERVER_DIR"
 docker tag "$HIGH_WORKER_IMAGE" "${HIGH_WORKER_ECR_URI}:latest"
