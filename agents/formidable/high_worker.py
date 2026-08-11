@@ -184,8 +184,9 @@ def _select_complete_reader(document: dict, canonical) -> tuple[dict, str, dict]
     coverage = {}
     for model in models:
         coverage[model] = sum(
-            str(next((reading.get("value") for reading in item.get("readings") or []
-                      if reading.get("model") == model), None) or "").strip() != ""
+            (lambda value: value is not None and str(value).strip() != "")(
+                next((reading.get("value") for reading in item.get("readings") or []
+                      if reading.get("model") == model), None))
             for item in _document_items(document))
     # Stable ordering prefers the declared reader. A small difference in filled
     # cells is normal reader variance and can reward hallucinated content; only
@@ -198,6 +199,47 @@ def _select_complete_reader(document: dict, canonical) -> tuple[dict, str, dict]
     fallback["models"] = [selected, *(model for model in models if model != selected)]
     canonical.resolve(fallback)
     return fallback, selected, coverage
+
+
+def _primary_routing_evidence(document: dict) -> dict:
+    """Measure literal support and conflict without using form semantics.
+
+    Coordinate coverage alone can be perfect when an agentic workbook has
+    omitted many literal values. Compare nonblank evidence as a second axis,
+    and treat a very large peer-consensus queue as evidence that the primary
+    itself is unstable rather than a useful focused-review candidate.
+    """
+    models = list(document.get("models") or [])
+    primary = models[0] if models else None
+    peers = models[1:]
+    counts = {model: 0 for model in models}
+    target_items = consensus_conflicts = 0
+    for item in _document_items(document):
+        target_items += 1
+        consensus_conflicts += item.get("status") == "peer_consensus_disagreement"
+        for reading in item.get("readings") or []:
+            value = reading.get("value")
+            if value is not None and str(value).strip() != "":
+                counts[reading.get("model")] = counts.get(reading.get("model"), 0) + 1
+    strongest_peer = max((counts.get(model, 0) for model in peers), default=0)
+    ordered_peers = sorted((counts.get(model, 0) for model in peers), reverse=True)
+    second_peer = ordered_peers[1] if len(ordered_peers) > 1 else 0
+    primary_count = counts.get(primary, 0)
+    return {
+        "nonblank_by_model": counts,
+        "primary_literal_coverage": round(primary_count / strongest_peer, 4)
+        if strongest_peer else 1.0,
+        "strongest_peer_recovery_fraction": round(
+            strongest_peer / primary_count - 1, 4) if primary_count else (
+                1.0 if strongest_peer else 0.0),
+        "strongest_peer_lead_fraction": round(
+            strongest_peer / second_peer - 1, 4) if second_peer else (
+                1.0 if strongest_peer else 0.0),
+        "peer_consensus_conflicts": consensus_conflicts,
+        "peer_consensus_conflict_fraction": round(
+            consensus_conflicts / target_items, 4) if target_items else 0.0,
+        "target_items": target_items,
+    }
 
 
 def process(source: Path, workdir: Path, *, ecology_online: bool = True,
@@ -235,8 +277,29 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
     primary_document = copy.deepcopy(peer_document)
     bridge = primary_bridge.bind_primary(
         primary_document, canonical_dir / "output.xlsx", primary_xlsx)
-    minimum_coverage = float(os.environ.get("HIGH_PRIMARY_BRIDGE_MIN_COVERAGE", "0.80"))
-    if bridge["peer_nonblank_coverage"] >= minimum_coverage:
+    routing_evidence = _primary_routing_evidence(primary_document)
+    minimum_geometry_coverage = float(os.environ.get(
+        "HIGH_PRIMARY_BRIDGE_MIN_COVERAGE", "0.80"))
+    minimum_literal_coverage = float(os.environ.get(
+        "HIGH_PRIMARY_LITERAL_MIN_COVERAGE", "0.75"))
+    maximum_consensus_conflict = float(os.environ.get(
+        "HIGH_PRIMARY_MAX_CONSENSUS_CONFLICT", "0.20"))
+    peer_recovery_trigger = float(os.environ.get(
+        "HIGH_PRIMARY_PEER_RECOVERY_TRIGGER", "0.15"))
+    peer_lead_margin = float(os.environ.get(
+        "HIGH_PRIMARY_PEER_LEAD_MARGIN", "0.10"))
+    material_peer_recovery = (
+        routing_evidence["strongest_peer_recovery_fraction"] >= peer_recovery_trigger
+        and routing_evidence["strongest_peer_lead_fraction"] >= peer_lead_margin
+    )
+    primary_is_healthy = (
+        bridge["peer_nonblank_coverage"] >= minimum_geometry_coverage
+        and routing_evidence["primary_literal_coverage"] >= minimum_literal_coverage
+        and routing_evidence["peer_consensus_conflict_fraction"]
+        <= maximum_consensus_conflict
+        and not material_peer_recovery
+    )
+    if primary_is_healthy:
         document = primary_document
         content_route = "agentic_primary"
         selected_reader = None
@@ -286,8 +349,9 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
             "frozen low workflow retained as immutable content; two structured "
             "peers must agree before a red review flag"
             if content_route == "agentic_primary" else
-            "agentic workbook failed the sector-agnostic coverage gate; the more "
-            "complete structured reader is shown and every peer disagreement is red"
+            "agentic workbook failed a sector-agnostic geometry, literal-coverage, "
+            "or peer-conflict gate; the selected structured reader is shown and "
+            "every peer disagreement is red"
         ),
     }
     errors = review_manifest.validate(review)
@@ -310,7 +374,15 @@ def process(source: Path, workdir: Path, *, ecology_online: bool = True,
            "content": {"workbook": "content.xlsx", "route": content_route,
                        "selected_reader": selected_reader,
                        "reader_nonblank_coverage": reader_coverage},
-           "bridge": bridge, "extraction": extraction, "review": review["summary"],
+           "bridge": bridge, "routing_evidence": routing_evidence,
+           "routing_thresholds": {
+               "minimum_geometry_coverage": minimum_geometry_coverage,
+               "minimum_literal_coverage": minimum_literal_coverage,
+               "maximum_consensus_conflict_fraction": maximum_consensus_conflict,
+               "peer_recovery_trigger": peer_recovery_trigger,
+               "peer_lead_margin": peer_lead_margin,
+           },
+           "extraction": extraction, "review": review["summary"],
            "analytics": analytics["summary"], "ecology_online": ecology_online}
     (workdir / "run.json").write_text(json.dumps(run, indent=2) + "\n")
 
