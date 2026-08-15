@@ -1,0 +1,18 @@
+{
+  "total_entries_checked": 15045,
+  "passed": 15045,
+  "failed": 0,
+  "per_source_passed": {
+    "founda2022": 6321,
+    "jegana2022": 2461,
+    "karthi2024": 131,
+    "kempeg2025": 438,
+    "lad2024": 44,
+    "page2022": 40,
+    "raman2024": 635,
+    "raman2024b": 879,
+    "raman2026": 1958,
+    "raman2026b": 2138
+  },
+  "failures": []
+}

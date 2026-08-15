@@ -1,0 +1,326 @@
+{
+  "generated_at": "2026-04-20T16:09:45.051087+00:00",
+  "count": 32,
+  "sources": {
+    "raman2026": {
+      "title": "Mammal occurrence records (2025-26) in central and southern Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2025_26_in_central_and_southern_western_ghats_india",
+      "zenodo_id": "18934220",
+      "record_id": 18934220,
+      "doi": "10.5281/zenodo.18934220",
+      "doi_url": "https://doi.org/10.5281/zenodo.18934220",
+      "publication_date": "2026-03-11T08:23:49.398615+00:00",
+      "first_author": "raman"
+    },
+    "raman2026b": {
+      "title": "Mammal occurrence records (2023-25) in central and southern Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2023_25_in_central_and_southern_western_ghats_india",
+      "zenodo_id": "18910401",
+      "record_id": 18910401,
+      "doi": "10.5281/zenodo.18910401",
+      "doi_url": "https://doi.org/10.5281/zenodo.18910401",
+      "publication_date": "2026-03-09T12:37:23.554519+00:00",
+      "first_author": "raman"
+    },
+    "raman2026c": {
+      "title": "Weather data (2014-2025) from Iyerpadi Weather Station, Valparai Plateau, Tamil Nadu, India",
+      "paper_slug": "weather_data_2014_2025_from_iyerpadi_weather_station_valparai_plateau_tamil_nadu",
+      "zenodo_id": "18646715",
+      "record_id": 18646715,
+      "doi": "10.5281/zenodo.18646715",
+      "doi_url": "https://doi.org/10.5281/zenodo.18646715",
+      "publication_date": "2026-02-15T07:52:01.559114+00:00",
+      "first_author": "raman"
+    },
+    "raman2026d": {
+      "title": "Data from: Factors influencing seasonal and monthly changes in the group size of chital or axis deer in southern India",
+      "paper_slug": "factors_influencing_seasonal_and_monthly_changes_in_the_group_size_of_chital_or",
+      "zenodo_id": "18403197",
+      "record_id": 18403197,
+      "doi": "10.5281/zenodo.18403197",
+      "doi_url": "https://doi.org/10.5281/zenodo.18403197",
+      "publication_date": "2026-01-29T02:44:58.748904+00:00",
+      "first_author": "raman"
+    },
+    "gosavi2025": {
+      "title": "Data from: Effects of tree plantations on population and roosting ecology of an endemic agamid lizard in Western Ghats Biodiversity Hotspot",
+      "paper_slug": "effects_of_tree_plantations_on_population_and_roosting_ecology_of_an_endemic_aga",
+      "zenodo_id": "17309569",
+      "record_id": 17309569,
+      "doi": "10.5281/zenodo.17309569",
+      "doi_url": "https://doi.org/10.5281/zenodo.17309569",
+      "publication_date": "2025-12-26T07:10:50.219724+00:00",
+      "first_author": "gosavi"
+    },
+    "bajaj2025": {
+      "title": "Data for: Snow leopard-mediated apparent competition between wild ungulates and domestic livestock in the Trans-Himalaya",
+      "paper_slug": "data_for_snow_leopard_mediated_apparent_competition_between_wild_ungulates_and_d",
+      "zenodo_id": "17384769",
+      "record_id": 17384769,
+      "doi": "10.5281/zenodo.17384769",
+      "doi_url": "https://doi.org/10.5281/zenodo.17384769",
+      "publication_date": "2025-10-18T09:36:14.788219+00:00",
+      "first_author": "bajaj"
+    },
+    "lad2025": {
+      "title": "Soil properties of degraded and reserve forest areas of Northern Western Ghats, India",
+      "paper_slug": "soil_properties_of_degraded_and_reserve_forest_areas_of_northern_western_ghats_i",
+      "zenodo_id": "15519844",
+      "record_id": 15519844,
+      "doi": "10.5281/zenodo.15519844",
+      "doi_url": "https://doi.org/10.5281/zenodo.15519844",
+      "publication_date": "2025-05-28T17:53:40.129313+00:00",
+      "first_author": "lad"
+    },
+    "datta2025": {
+      "title": "Dataset for leaf, flower and fruit phenology patterns and environmental relationships in a seasonal tropical forest in the Indian Eastern Himalaya with R codes for analyses",
+      "paper_slug": "dataset_for_leaf_flower_and_fruit_phenology_patterns_and_environmental_relations",
+      "zenodo_id": "15469670",
+      "record_id": 15469670,
+      "doi": "10.5281/zenodo.15469670",
+      "doi_url": "https://doi.org/10.5281/zenodo.15469670",
+      "publication_date": "2025-05-20T07:20:43.324564+00:00",
+      "first_author": "datta"
+    },
+    "jayant2025": {
+      "title": "Data from: Deciduous forests hold conservation value for birds within South Andaman Island, India",
+      "paper_slug": "deciduous_forests_hold_conservation_value_for_birds_within_south_andaman_island",
+      "zenodo_id": "14762448",
+      "record_id": 14762448,
+      "doi": "10.5281/zenodo.14762448",
+      "doi_url": "https://doi.org/10.5281/zenodo.14762448",
+      "publication_date": "2025-01-29T11:47:21.106684+00:00",
+      "first_author": "jayanth"
+    },
+    "raman2024": {
+      "title": "Mammal occurrence records (2024) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2024_in_the_valparai_plateau_and_anamalai_tiger_reserv",
+      "zenodo_id": "13910696",
+      "record_id": 13910696,
+      "doi": "10.5281/zenodo.13910696",
+      "doi_url": "https://doi.org/10.5281/zenodo.13910696",
+      "publication_date": "2024-10-10T06:33:00.969792+00:00",
+      "first_author": "raman"
+    },
+    "jithin2024": {
+      "title": "Morphological traits of selected rock outcrop amphibians in the lateritic plateaus of the northern Western Ghats, India",
+      "paper_slug": "morphological_traits_of_selected_rock_outcrop_amphibians_in_the_lateritic_platea",
+      "zenodo_id": "10974286",
+      "record_id": 10974286,
+      "doi": "10.5281/zenodo.10974286",
+      "doi_url": "https://doi.org/10.5281/zenodo.10974286",
+      "publication_date": "2024-09-11T03:00:48.424516+00:00",
+      "first_author": "jithin"
+    },
+    "karthi2024": {
+      "title": "Mammal occurrence records (2022-24) from Sakleshpura, central Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2022_24_from_sakleshpura_central_western_ghats_india",
+      "zenodo_id": "13340613",
+      "record_id": 13340613,
+      "doi": "10.5281/zenodo.13340613",
+      "doi_url": "https://doi.org/10.5281/zenodo.13340613",
+      "publication_date": "2024-08-20T10:29:11.021326+00:00",
+      "first_author": "karthick"
+    },
+    "raman2024b": {
+      "title": "Mammal occurrence records (2020-23) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2020_23_in_the_valparai_plateau_and_anamalai_tiger_res",
+      "zenodo_id": "11903722",
+      "record_id": 11903722,
+      "doi": "10.5281/zenodo.11903722",
+      "doi_url": "https://doi.org/10.5281/zenodo.11903722",
+      "publication_date": "2024-06-17T07:23:22.206338+00:00",
+      "first_author": "raman"
+    },
+    "lad2024": {
+      "title": "Wood density for 26 plant species collected from Northern Western Ghats",
+      "paper_slug": "wood_density_for_26_plant_species_collected_from_northern_western_ghats",
+      "zenodo_id": "11090178",
+      "record_id": 11090178,
+      "doi": "10.5281/zenodo.11090178",
+      "doi_url": "https://doi.org/10.5281/zenodo.11090178",
+      "publication_date": "2024-04-30T05:07:43.727727+00:00",
+      "first_author": "lad"
+    },
+    "jithin2024b": {
+      "title": "Data from: Abiotic and biotic drivers on tadpoles in seasonal rock pools of Western Ghats rock outcrops, India",
+      "paper_slug": "abiotic_and_biotic_drivers_on_tadpoles_in_seasonal_rock_pools_of_western_ghats_r",
+      "zenodo_id": "10969334",
+      "record_id": 10969334,
+      "doi": "10.5281/zenodo.10969334",
+      "doi_url": "https://doi.org/10.5281/zenodo.10969334",
+      "publication_date": "2024-04-17T06:30:08.558745+00:00",
+      "first_author": "jithin"
+    },
+    "osuri2024": {
+      "title": "Fruit, seed dispersal, and life history traits of tropical rainforest trees of the Anamalai Hills, Western Ghats, India",
+      "paper_slug": "fruit_seed_dispersal_and_life_history_traits_of_tropical_rainforest_trees_of_the",
+      "zenodo_id": "10643064",
+      "record_id": 10643064,
+      "doi": "10.5281/zenodo.10643064",
+      "doi_url": "https://doi.org/10.5281/zenodo.10643064",
+      "publication_date": "2024-02-10T08:42:15.360427+00:00",
+      "first_author": "osuri"
+    },
+    "raman2024c": {
+      "title": "Data from: Restoring rainforest fragments: survival of mixed-native species seedlings under contrasting site conditions in the Western Ghats, India",
+      "paper_slug": "restoring_rainforest_fragments_survival_of_mixed_native_species_seedlings_under",
+      "zenodo_id": "10630501",
+      "record_id": 10630501,
+      "doi": "10.5281/zenodo.10630501",
+      "doi_url": "https://doi.org/10.5281/zenodo.10630501",
+      "publication_date": "2024-02-07T13:59:45.587764+00:00",
+      "first_author": "raman"
+    },
+    "raman2024d": {
+      "title": "Line transect data on birds from Mudumalai and Upper Nilgiris, India",
+      "paper_slug": "line_transect_data_on_birds_from_mudumalai_and_upper_nilgiris_india",
+      "zenodo_id": "10540410",
+      "record_id": 10540410,
+      "doi": "10.5281/zenodo.10540410",
+      "doi_url": "https://doi.org/10.5281/zenodo.10540410",
+      "publication_date": "2024-01-20T13:58:24.507459+00:00",
+      "first_author": "raman"
+    },
+    "murali2023": {
+      "title": "Data from: Structure and dynamics of secondary and mature rainforests: insights from South Asian long-term monitoring plots",
+      "paper_slug": "structure_and_dynamics_of_secondary_and_mature_rainforests_insights_from_south_a",
+      "zenodo_id": "10426971",
+      "record_id": 10426971,
+      "doi": "10.5281/zenodo.10426971",
+      "doi_url": "https://doi.org/10.5281/zenodo.10426971",
+      "publication_date": "2023-12-23T08:55:17.703967+00:00",
+      "first_author": "murali"
+    },
+    "raman2023": {
+      "title": "Tree and habitat structure data from rainforest fragments and coffee plantations in the Anamalai Hills, Western Ghats, India",
+      "paper_slug": "tree_and_habitat_structure_rainforest_fragments_and_coffee_plantations_in_the_an",
+      "zenodo_id": "10077040",
+      "record_id": 10077040,
+      "doi": "10.5281/zenodo.10077040",
+      "doi_url": "https://doi.org/10.5281/zenodo.10077040",
+      "publication_date": "2023-11-07T03:22:54.947055+00:00",
+      "first_author": "raman"
+    },
+    "sridha2023": {
+      "title": "Data from: Mammal persistence and abundance in tropical rainforest remnants in the southern Western Ghats, India",
+      "paper_slug": "mammal_persistence_and_abundance_in_tropical_rainforest_remnants_in_the_southern",
+      "zenodo_id": "7856722",
+      "record_id": 7856722,
+      "doi": "10.5281/zenodo.7856722",
+      "doi_url": "https://doi.org/10.5281/zenodo.7856722",
+      "publication_date": "2023-04-24T10:52:26.242864+00:00",
+      "first_author": "sridhar"
+    },
+    "pinto2022": {
+      "title": "Data for Manuscript : Size and wave exposure shape parrotfish distributions and function in shallow coral reefs",
+      "paper_slug": "data_for_manuscript_size_and_wave_exposure_shape_parrotfish_distributions_and_fu",
+      "zenodo_id": "7464585",
+      "record_id": 7464585,
+      "doi": "10.5281/zenodo.7464585",
+      "doi_url": "https://doi.org/10.5281/zenodo.7464585",
+      "publication_date": "2022-12-20T17:26:33.850790+00:00",
+      "first_author": "pinto"
+    },
+    "raman2022": {
+      "title": "Data from: Plant Community Structure in Tropical Rain Forest Fragments of the Western Ghats, India",
+      "paper_slug": "plant_community_structure_in_tropical_rain_forest_fragments_of_the_western_ghats",
+      "zenodo_id": "7457732",
+      "record_id": 7457732,
+      "doi": "10.5281/zenodo.7457732",
+      "doi_url": "https://doi.org/10.5281/zenodo.7457732",
+      "publication_date": "2022-12-19T13:26:29.613834+00:00",
+      "first_author": "raman"
+    },
+    "jegana2022": {
+      "title": "Data from: Seasonal variation in wildlife roadkills in plantations and tropical rainforest in the Anamalai Hills, Western Ghats, India",
+      "paper_slug": "seasonal_variation_in_wildlife_roadkills_in_plantations_and_tropical_rainforest",
+      "zenodo_id": "7060430",
+      "record_id": 7060430,
+      "doi": "10.5281/zenodo.7060430",
+      "doi_url": "https://doi.org/10.5281/zenodo.7060430",
+      "publication_date": "2022-09-08T11:39:46.413471+00:00",
+      "first_author": "jeganathan"
+    },
+    "founda2022": {
+      "title": "Mammal occurrence records (2015-18) in the Valparai Plateau and Anamalai Tiger Reserve, Western Ghats, India",
+      "paper_slug": "mammal_occurrence_records_2015_18_in_the_valparai_plateau_and_anamalai_tiger_res",
+      "zenodo_id": "7008315",
+      "record_id": 7008315,
+      "doi": "10.5281/zenodo.7008315",
+      "doi_url": "https://doi.org/10.5281/zenodo.7008315",
+      "publication_date": "2022-08-19T04:15:08.949527+00:00",
+      "first_author": "foundation"
+    },
+    "page2022": {
+      "title": "Data from: A new population record of Critically Endangered Dipterocarpus bourdillonii Brandis from the Anamalai Tiger Reserve, Tamil Nadu",
+      "paper_slug": "a_new_population_record_of_critically_endangered_dipterocarpus_bourdillonii_bran",
+      "zenodo_id": "6799251",
+      "record_id": 6799251,
+      "doi": "10.5281/zenodo.6799251",
+      "doi_url": "https://doi.org/10.5281/zenodo.6799251",
+      "publication_date": "2022-07-05T16:22:13.610128+00:00",
+      "first_author": "page"
+    },
+    "sriniv2025": {
+      "title": "Data and code from: Impacts of land use on bird communities in the Western Himalaya: Insights from a two-decade-long monitoring program",
+      "paper_slug": "data_and_code_from_impacts_of_land_use_on_bird_communities_in_the_western_himala",
+      "zenodo_id": "17350451",
+      "record_id": 17350451,
+      "doi": "10.5281/zenodo.17350451",
+      "doi_url": "https://doi.org/10.5281/zenodo.17350451",
+      "publication_date": "2025-10-14T14:33:04.106245+00:00",
+      "first_author": "srinivasan"
+    },
+    "biswas2025": {
+      "title": "Data from: Chronic disturbance and climate water deficit shift tropical evergreen tree communities to deciduous in the Western Ghats",
+      "paper_slug": "chronic_disturbance_and_climate_water_deficit_shift_tropical_evergreen_tree_comm",
+      "zenodo_id": "17010537",
+      "record_id": 17010537,
+      "doi": "10.5281/zenodo.17010537",
+      "doi_url": "https://doi.org/10.5281/zenodo.17010537",
+      "publication_date": "2025-09-18T09:21:43.405989+00:00",
+      "first_author": "biswas"
+    },
+    "kempeg2025": {
+      "title": "Data from: Age and sex influence seed dispersal of native and non-native plants by lion-tailed macaques",
+      "paper_slug": "age_and_sex_influence_seed_dispersal_of_native_and_non_native_plants_by_lion_tai",
+      "zenodo_id": "17048308",
+      "record_id": 17048308,
+      "doi": "10.5281/zenodo.17048308",
+      "doi_url": "https://doi.org/10.5281/zenodo.17048308",
+      "publication_date": "2025-09-05T10:00:10.266642+00:00",
+      "first_author": "kempegowda"
+    },
+    "sadeka2025": {
+      "title": "Cashew orchard soil properties, Dodamarg, Northern Western Ghats, India",
+      "paper_slug": "cashew_orchard_soil_properties_dodamarg_northern_western_ghats_india",
+      "zenodo_id": "16017208",
+      "record_id": 16017208,
+      "doi": "10.5281/zenodo.16017208",
+      "doi_url": "https://doi.org/10.5281/zenodo.16017208",
+      "publication_date": "2025-09-01T11:55:26.961294+00:00",
+      "first_author": "sadekar"
+    },
+    "lad2025b": {
+      "title": "Soil properties of evergreen and deciduous forests of the Southern Western Ghats, India",
+      "paper_slug": "soil_properties_of_evergreen_and_deciduous_forests_of_the_southern_western_ghats",
+      "zenodo_id": "16079282",
+      "record_id": 16079282,
+      "doi": "10.5281/zenodo.16079282",
+      "doi_url": "https://doi.org/10.5281/zenodo.16079282",
+      "publication_date": "2025-07-18T06:53:10.792376+00:00",
+      "first_author": "lad"
+    },
+    "madhu2025": {
+      "title": "Native trees within plantations and surrounding forest cover are essential for bird conservation in cashew-dominated landscapes within a biodiversity hotspot",
+      "paper_slug": "native_trees_within_plantations_and_surrounding_forest_cover_are_essential_for_b",
+      "zenodo_id": "15459573",
+      "record_id": 15459573,
+      "doi": "10.5281/zenodo.15459573",
+      "doi_url": "https://doi.org/10.5281/zenodo.15459573",
+      "publication_date": "2025-05-22T12:13:08.955367+00:00",
+      "first_author": "madhu"
+    }
+  }
+}
