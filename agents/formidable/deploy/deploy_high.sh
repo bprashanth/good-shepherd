@@ -19,7 +19,9 @@ assert_low_unchanged() {
   [[ "$task" == "$LOW_TASK" ]] || { echo "FATAL: low task revision changed" >&2; return 1; }
 }
 
+"$SCRIPT_DIR/build.sh" --test
 "$SCRIPT_DIR/setup_high.sh"
+"$SCRIPT_DIR/build_high.sh" --test
 if ! "$SCRIPT_DIR/push_high.sh"; then
   echo "High push failed; restoring the prior handler/high image." >&2
   "$SCRIPT_DIR/rollback_high.sh" || true
@@ -28,13 +30,18 @@ if ! "$SCRIPT_DIR/push_high.sh"; then
 fi
 assert_low_unchanged
 
-if "$SCRIPT_DIR/verify_high.sh"; then
+if "$SCRIPT_DIR/verify_prod.sh" && "$SCRIPT_DIR/verify_high.sh"; then
   assert_low_unchanged
-  echo "High deploy verified. Low image/task are byte-for-byte/revision unchanged."
+  echo "High deploy verified on both routes. Low image/task are byte-for-byte/revision unchanged."
   exit 0
 fi
 
 echo "High verification failed; rolling back additive handler/high image." >&2
 "$SCRIPT_DIR/rollback_high.sh"
 assert_low_unchanged
-exit 1
+if "$SCRIPT_DIR/verify_prod.sh" && "$SCRIPT_DIR/verify_high.sh"; then
+  echo "Previous High release restored; candidate rejected." >&2
+  exit 1
+fi
+echo "FATAL: a route remains unhealthy after High rollback." >&2
+exit 2

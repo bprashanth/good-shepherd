@@ -4,7 +4,6 @@
 
 # Generated deploy outputs (resource IDs written by setup.sh) and test creds
 deploy/outputs.env
-deploy/*credentials*
 deploy/test-credentials.env
 
 # Python virtualenv + caches

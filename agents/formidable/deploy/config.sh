@@ -11,7 +11,7 @@ HIGH_WORKER_APP_NAME="formidable-high-worker"
 export AWS_REGION="ap-south-1"
 export AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text 2>/dev/null)"
 
-# ECR — two repos, one per image
+# ECR — three repos, one per image
 export ECR_REPO="${APP_NAME}"
 export ECR_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}"
 export WORKER_ECR_REPO="${WORKER_APP_NAME}"
@@ -44,8 +44,8 @@ export CODEX_SECRET_NAME="${CODEX_SECRET_NAME:-$SECRET_NAME}"
 export HIGH_PROVIDER_SECRET_NAME="formidable/openrouter-api-key"
 
 # codex CLI version — PINNED so the image is reproducible and matches the
-# validated local codex (`codex --version`). Bump deliberately, then run a full
-# ./deploy.sh so verify_prod.sh confirms the new version works before it sticks.
+# validated local Codex. Bump deliberately, run the full local evaluation gate,
+# then use ./deploy.sh all so both production routes verify before acceptance.
 export CODEX_VERSION="${CODEX_VERSION:-0.144.4}"
 export HIGH_CODEX_VERSION="${HIGH_CODEX_VERSION:-0.147.0}"
 

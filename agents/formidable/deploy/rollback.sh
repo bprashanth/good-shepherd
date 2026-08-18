@@ -37,6 +37,7 @@ TASK_ROLE_ARN=$(aws iam get-role --role-name "$FARGATE_TASK_ROLE"  --query 'Role
 aws ecs register-task-definition --region "$AWS_REGION" --cli-input-json "$(cat <<JSON
 {
   "family": "${FARGATE_TASK_DEF}",
+  "runtimePlatform":{"cpuArchitecture":"X86_64","operatingSystemFamily":"LINUX"},
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "${FARGATE_CPU}", "memory": "${FARGATE_MEMORY}",

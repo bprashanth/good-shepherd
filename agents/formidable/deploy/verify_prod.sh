@@ -46,7 +46,7 @@ AUTH=(-H "Authorization: Bearer ${TOKEN}")
 echo "→ POST /vision/extract"
 RESP=$(curl -sf -X POST "${APIGW_URL}/vision/extract" "${AUTH[@]}" \
   -H "Content-Type: application/json" \
-  -d '{"filename":"TreePlots20mx20m.pdf","name":"prod-verify"}') || { echo "FAIL: /vision/extract"; exit 1; }
+  -d '{"filename":"TreePlots20mx20m.pdf","name":"prod-verify","effort":"low"}') || { echo "FAIL: /vision/extract"; exit 1; }
 JOB_ID=$(echo "$RESP" | python3 -c "import sys,json; print(json.load(sys.stdin)['job_id'])")
 UPLOAD_URL=$(echo "$RESP" | python3 -c "import sys,json; print(json.load(sys.stdin)['upload_url'])")
 echo "  job_id=${JOB_ID}"
@@ -58,7 +58,8 @@ curl -sf -X PUT --upload-file "$WORK/source.pdf" \
 
 # ── 4. Start the job (launches the worker) ─────────────────────────
 echo "→ POST /api/jobs/${JOB_ID}/start"
-curl -sf -X POST "${APIGW_URL}/api/jobs/${JOB_ID}/start" "${AUTH[@]}" >/dev/null || { echo "FAIL: start"; exit 1; }
+START=$(curl -sf -X POST "${APIGW_URL}/api/jobs/${JOB_ID}/start" "${AUTH[@]}") || { echo "FAIL: start"; exit 1; }
+python3 -c 'import json,sys; r=json.load(sys.stdin); assert r["effort"]=="low"; assert r["task_family"]=="formidable-worker"' <<<"$START"
 
 # ── 5. Poll until the xlsx is ready ───────────────────────────────
 echo "→ polling GET /vision/jobs/${JOB_ID} (timeout ${POLL_TIMEOUT}s)"
