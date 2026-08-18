@@ -16,14 +16,7 @@ COPY prompts ./prompts
 COPY xlsx_diff.py ./high_pipeline/
 COPY tools ./tools
 
-COPY --from=pipeline benchmarks/wide/analytics_manifest.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/canonical.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/ecology_review.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/primary_bridge.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/review_manifest.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/structured_pipeline.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/wide_bench.py ./high_pipeline/
-COPY --from=pipeline benchmarks/wide/wide_diff.py ./high_pipeline/
+COPY high_pipeline ./high_pipeline
 
 ENV FORMIDABLE_HIGH_PIPELINE_DIR=/app/high_pipeline
 ENV FORMIDABLE_RENDER_TOOL=/app/tools/render_page.py
